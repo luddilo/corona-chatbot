@@ -1,0 +1,1 @@
+export const answerStayHome = "Känner du dig sjuk med symtom som snuva, hosta eller feber ska du försöka låta bli att träffa andra människor. Det gäller även om du bara känner dig lite sjuk. Du ska inte gå till jobbet eller skolan. Det är viktigt att inte riskera att smitta andra."

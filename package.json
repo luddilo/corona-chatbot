@@ -1,0 +1,36 @@
+{
+  "name": "narratory-starter",
+  "version": "0.3.0",
+  "description": "A start-kit to start building chat and voice interactions using the Narratory service",
+  "config": {
+    "agent": "agent.ts"
+  },
+  "scripts": {
+    "start": "tsc && node node_modules/narratory/out/cmd/start.js",
+    "build": "tsc && node node_modules/narratory/out/cmd/build.js",
+    "chat": "node node_modules/narratory/out/cmd/chat.js",
+    "updateEntities": "node node_modules/narratory/out/generators/scanner.js",
+    "watch": "tsc --watch"
+  },
+  "watch": {
+    "updateEntities": {
+      "patterns": [
+        "src"
+      ],
+      "ignore": "src/user.ts",
+      "quiet": true,
+      "extensions": "ts"
+    }
+  },
+  "author": "luddilo",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^12.12.21",
+    "narratory": "^0.8.1"
+  },
+  "devDependencies": {
+    "concurrently": "^5.0.2",
+    "npm-watch": "^0.6.0",
+    "typescript": "^3.7.4"
+  }
+}

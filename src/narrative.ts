@@ -40,7 +40,7 @@ const intro = {
 
 const querySymptoms: BotTurn = {
   say: {
-    text: "Inledningsvis vill jag fråga, har du något av följande symptom? Hosta, luftvägar, feber?",
+    text: "Inledningsvis vill jag fråga, har du något av följande symptom? Hosta, problem med luftvägarna, feber?",
     suggestions: ["Ja", "Nej, ingen av dessa symptom"]
   },
   user: [

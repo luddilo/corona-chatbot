@@ -45,7 +45,7 @@ const querySymptoms: BotTurn = {
   user: [
     {
       intent: {
-        ...nlu.hasSymptoms,
+        ...nlu.hasSymptoms, // Combining two intents (Yes and hasSymptoms) since lists of intents are not yet supported by the platform
         examples: [...nlu.hasSymptoms.examples, ...nlu.yes.examples]
       },
       bot: {

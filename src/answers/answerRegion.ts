@@ -1,5 +1,5 @@
 import { BotTurn, ANYTHING } from "narratory"
-import * as nlu from "./nlu"
+import * as nlu from "../nlu"
 
 export const answerRegion: BotTurn[] = [
   {

@@ -1,4 +1,4 @@
-import { listOptions } from "./listOfHelpOptions";
+import { listOptions } from "../visuals";
 
 export const answerHelp = {
     say: [

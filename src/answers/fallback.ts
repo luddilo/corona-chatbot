@@ -3,7 +3,7 @@ import { EXIT } from "narratory"
 
 export const answerFallback = [
   {
-    cond: { retryCount: 1 },
+    cond: { retryCount: 0 },
     say: [
       {
         cond: {
@@ -20,7 +20,7 @@ export const answerFallback = [
     repair: true
   },
   {
-    cond: { retryCount: 2 },
+    cond: { retryCount: 1 },
     say: [
       {
         cond: {

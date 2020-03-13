@@ -1,5 +1,7 @@
 node_modules
 out
 google_credentials.json
+google_credentials_prod.json
+google_credentials_test.json
 google_credentials_kommunicate.json
 narratory_credentials.json

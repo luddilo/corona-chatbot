@@ -6,13 +6,14 @@ import { answerProtect } from "./answers/answerProtect"
 import { answerHelp } from "./answers/answerHelp"
 import { answerFallback } from "./answers/fallback"
 import { answerStayHome } from "./answers/answerStayhome"
+import { simpleQuestionAnswers } from "./answers/generatedFAQ"
 
 /* 
     Narrative, i.e the bot-driven interaction
 */
 
-
-const init: BotTurn = { // This only exists so that we can reset the bot mid-session with "welcome"
+const init: BotTurn = {
+  // This only exists so that we can reset the bot mid-session with "welcome"
   set: {
     helped: false
   },
@@ -28,11 +29,11 @@ const intro = {
         platform: "voximplant"
       },
       text:
-        "Jag heter Corre och är en bot som kan hjälpa dig svara på frågor om Coronaviruset. Jag är ny på jobbet men lär mig snabbt, så ha tålamod är du snäll."
+        "Jag är en bot som kan hjälpa dig svara på frågor om Coronaviruset. Jag är ny på jobbet men lär mig snabbt, så ha tålamod är du snäll."
     },
     {
       text:
-        "Jag är en bot som kan hjälpa dig svara på frågor om Coronaviruset. Jag är ny på jobbet men lär mig snabbt, så ha tålamod är du snäll!"
+        "Jag kan hjälpa dig svara på frågor om Coronaviruset. Jag är ny på jobbet men lär mig snabbt, så ha tålamod är du snäll!"
     }
   ]
 }
@@ -64,7 +65,7 @@ const querySymptoms: BotTurn = {
       intent: ANYTHING,
       bot: {
         say:
-          "Skönt. Tänk på att det kan ta 2 veckor för symptom att visa sig, så det är väldigt viktigt att hålla social distans, undvika större sammanhang och inte minst att tänka på personlig hygien och tvätta händerna ofta."
+          "Ok. Tänk på att det kan ta 2 veckor för symptom att visa sig, så det är väldigt viktigt att hålla social distans, undvika större sammanhang och inte minst att tänka på personlig hygien och tvätta händerna ofta."
       }
     }
   ]
@@ -85,12 +86,19 @@ const queryQuestions: BotTurn = {
   ],
   user: [
     {
+      intent: nlu.yes,
+      bot: {
+        say: "Vad undrar du?"
+      }
+    },
+    {
       intent: nlu.no,
       bot: {
         say: "Okej",
         goto: "END"
       }
     },
+    ...simpleQuestionAnswers,
     {
       intent: nlu.queryHowToProtect,
       bot: answerProtect

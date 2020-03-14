@@ -51,7 +51,7 @@ const querySymptoms: BotTurn = {
       },
       bot: {
         say:
-          "Okej. Då är det viktigt att du ringer din vårdcentral och stannar hemma för att förhindra spridning. Du kan också ringa 11313, och få rådgivning från en människa."
+          "Okej. Då är det viktigt att du stannarr hemma för att förhindra spridning. Du kan också ringa 1177, och få rådgivning från en sjuksköterska."
       }
     },
     {

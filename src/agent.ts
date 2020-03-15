@@ -9,9 +9,9 @@ const agent: Agent = {
   language: Language.Swedish,
   narrative, // See the file narrative.ts
   userInitiatives, // See the file userInitiatives.ts
-  bridges: ["Så", "Var var vi", "Jo"],
+  //bridges: ["Så", "Var var vi", "Jo"], // No bridges needed since we're looping the question state
   narratoryKey: narratoryOptions.narratoryKey,
-  googleCredentials: require("../google_credentials_prod.json"), // Populate this file, or change the link to your existing credentials file. Check the README.md for how to create it.
+  googleCredentials: require("../google_credentials_test.json"), // Populate this file, or change the link to your existing credentials file. Check the README.md for how to create it.
   fallbackWebhook: narratoryOptions.fallbackWebhook
 }
 

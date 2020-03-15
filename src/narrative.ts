@@ -29,7 +29,7 @@ const intro = {
         platform: "voximplant"
       },
       text:
-        "Jag är en bot som kan hjälpa dig svara på frågor om Coronaviruset. Jag är ny på jobbet men lär mig snabbt, så ha tålamod är du snäll."
+        "Jag kan hjälpa dig svara på frågor om Coronaviruset. Jag är ny på jobbet men lär mig snabbt, så ha gärna tålamod!"
     },
     {
       text:
@@ -40,7 +40,10 @@ const intro = {
 
 const querySymptoms: BotTurn = {
   say: {
-    text: "Inledningsvis vill jag fråga, har du något av följande symptom? Hosta, problem med luftvägarna, feber?",
+    text: [
+      "Jag vill börja med att fråga, har du feber, problem med luftvägarna eller hosta?",
+      "Inledningsvis vill jag fråga, har du något av följande symptom? Hosta, problem med luftvägarna, feber?"
+    ],
     suggestions: ["Ja", "Nej, ingen av dessa symptom"]
   },
   user: [
@@ -50,8 +53,11 @@ const querySymptoms: BotTurn = {
         examples: [...nlu.hasSymptoms.examples, ...nlu.yes.examples]
       },
       bot: {
+        set: {
+          hasSymptoms: true
+        },
         say:
-          "Okej. Då är det viktigt att du stannarr hemma för att förhindra spridning. Du kan också ringa 1177, och få rådgivning från en sjuksköterska."
+          "Okej. Då är det viktigt att du stannar hemma för att förhindra spridning. Du kan också ringa 11 77, och få rådgivning från en sjuksköterska."
       }
     },
     {
@@ -78,7 +84,7 @@ const queryQuestions: BotTurn = {
       cond: {
         helped: false
       },
-      text: ["Har du några frågor till mig?", "Undrar du någonting?"]
+      text: ["Har du några frågor till mig?", "Undrar du någonting?", "Undrar du någonting om Corona-viruset?"]
     },
     {
       text: ["Har du någon mer fråga till mig?", "Undrar du något annat?"]
@@ -88,7 +94,8 @@ const queryQuestions: BotTurn = {
     {
       intent: nlu.yes,
       bot: {
-        say: "Vad undrar du?"
+        say: "Vad undrar du?",
+        repair: true
       }
     },
     {
@@ -127,7 +134,7 @@ const queryQuestions: BotTurn = {
 }
 
 export const queryMoreQuestions: BotTurn = {
-  say: [""],
+  say: "",
   set: {
     helped: true
   },

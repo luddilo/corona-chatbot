@@ -13,7 +13,7 @@ export const answerFamily: BotTurn[] = [
       family: "barn"
     },
     say:
-      "Barn är ingen riskgrupp för Coronaviruset men om ditt barn är sjukt och har symptom som problem med andning, hög feber eller ansträngd hosta bör du kontakta 11313."
+      "Barn är ingen riskgrupp för Coronaviruset men om ditt barn är sjukt och har symptom som problem med andning, hög feber eller ansträngd hosta bör du kontakta 11 77."
   },
   {
     say:

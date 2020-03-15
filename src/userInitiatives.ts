@@ -1,13 +1,21 @@
-import { UserTurn } from "narratory"
+import { UserTurn, EXIT } from "narratory"
 import * as nlu from "./nlu"
 
 /*
     Questions and other user-driven initiatives
 */
 
-const queryRepeat : UserTurn = {
-  intent: ["Kan du repetera?", "vad sa du?", "vadå?", "vad sa du?"],
-  bot: "Jag kommer kunna göra detta i framtiden!"
+const hasSymptoms : UserTurn = {
+  intent: nlu.hasSymptoms,
+  bot: "Okej. Då är det viktigt att du stannar hemma för att förhindra spridning. Du kan också ringa 1177, och få rådgivning från en sjuksköterska."
 }
 
-export default [queryRepeat]
+const exit : UserTurn = {
+  intent: nlu.exit,
+  bot: {
+    say: "Hejdå!",
+    goto: EXIT
+  }
+}
+
+export default [hasSymptoms, exit]

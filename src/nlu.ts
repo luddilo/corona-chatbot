@@ -12,6 +12,10 @@ export const dontKnow: Intent = {
   examples: ["jag minns inte", "jag kommer inte ihåg", "jag vet inte", "vet ej"]
 }
 
+export const exit: Intent = {
+  examples: ["exit", "hejdå", "avsluta", "bye bye"]
+}
+
 const symptom: Entity = {
   name: "Symptom",
   enums: [
@@ -34,7 +38,8 @@ export const hasSymptoms: Intent = {
   examples: [
     "jag har _symptom",
     "_symptom",
-    "lite _symptom"
+    "lite _symptom",
+    "problem med _symptom",
   ]
 }
 

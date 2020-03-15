@@ -84,15 +84,20 @@ const queryQuestions: BotTurn = {
   label: "QUERY_QUESTION",
   say: [
     {
+      // Otherwise, if it is the first time we state this question
       cond: {
-        helped: false
+        turnCount: 0
       },
       text: ["Har du några frågor till mig?", "Undrar du någonting?", "Undrar du någonting om Corona-viruset?"]
     },
     {
+      // And on repetitive questions this question
       text: ["Har du någon mer fråga till mig?", "Undrar du något annat?"]
     }
   ],
+  set: {
+    ended: false
+  },
   user: [
     {
       intent: nlu.yes,
@@ -107,27 +112,6 @@ const queryQuestions: BotTurn = {
         say: "Okej",
         goto: "END"
       }
-    },
-    ...simpleQuestionAnswers,
-    {
-      intent: nlu.queryHowToProtect,
-      bot: answerProtect
-    },
-    {
-      intent: nlu.queryRegionStatus,
-      bot: answerRegion
-    },
-    {
-      intent: nlu.queryStayHome,
-      bot: answerStayHome
-    },
-    {
-      intent: nlu.queryTakeCareOfFamily,
-      bot: answerFamily
-    },
-    {
-      intent: nlu.queryHelp,
-      bot: answerHelp
     },
     {
       intent: ANYTHING,
@@ -147,6 +131,9 @@ export const queryMoreQuestions: BotTurn = {
 const goodbye: BridgeTurn = {
   label: "END",
   say: "Tack så länge",
+  set: {
+    ended: true
+  },
   bot: [
     {
       cond: {
@@ -156,7 +143,10 @@ const goodbye: BridgeTurn = {
       goto: EXIT
     },
     {
-      say: "Om du ändrar dig är det bara att säga till!",
+      say: [
+        "Säg till om du har någon mer fråga. Annars är du välkommen tillbaka!",
+        "Säg till om du har andra frågor, annars är du välkommen tillbaka"
+      ],
       user: [
         {
           intent: ANYTHING,
@@ -170,4 +160,9 @@ const goodbye: BridgeTurn = {
   ]
 }
 
-export default [init, greeting, intro, querySymptoms, queryQuestions, queryMoreQuestions, goodbye]
+const continueTalking: BotTurn = {
+  say: "",
+  goto: "QUERY_QUESTION"
+}
+
+export default [init, greeting, intro, querySymptoms, queryQuestions, queryMoreQuestions, goodbye, continueTalking]

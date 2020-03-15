@@ -32,9 +32,9 @@ export const answerRegion: BotTurn[] = [
               state: true
             },
             say:
-              "Just nu vet jag inte vad status är i _state, men jag lär mig varje dag. I dagsläget vet jag inte vad status är i _city, men jag lär mig varje dag. Region Stockholm och Göteborg är högst risk i just nu."
+              "Just nu vet jag inte vad status är i _state, men jag lär mig varje dag. Region Stockholm och Göteborg är högst risk i just nu."
           },
-          "Just nu har jag inte koll på det tyvärr, men jag lär mig varje dag. I dagsläget vet jag inte vad status är i _city, men jag lär mig varje dag. Region Stockholm och Göteborg är högst risk i just nu."
+          "Just nu har jag inte koll på det tyvärr, men jag lär mig varje dag. Region Stockholm och Göteborg är högst risk i just nu."
         ]
       },
       {

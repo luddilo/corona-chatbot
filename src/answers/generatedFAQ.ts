@@ -2,6 +2,7 @@ import { UserTurn } from "narratory"
 export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": [
+      "Vad är corona-viruset?",
       "vad är coronavirus",
       "vad är corona",
       "vad är ett coronavirus",
@@ -13,6 +14,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": [
+      "Vad är covid-19?",
       "vad är covid-19",
       "vad är covid",
       "kan du förklara vad covid-19 är"
@@ -23,6 +25,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": [
+      "vad skiljer covid-19 från säsongsinfluensa?",
       "är corona influensa",
       "vad skiljer corona från influensa",
       "vad skiljer covid från influensa",
@@ -36,6 +39,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": [
+      "Vad är symptomen av COVID-19?",
       "vad är symptomen",
       "hur märker man om man har corona",
       "hur mår man om man har corona",
@@ -50,6 +54,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": [
+      "Hur smittar covid-19?",
       "hur smittar det",
       "hur smittar covid-19",
       "hur smittar corona",
@@ -63,6 +68,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": [
+      "Finns det några särskilda riskgrupper?",
       "vilka är i riskzonen",
       "vilka är riskgrupperna",
       "vem är i riskgruppen",
@@ -76,6 +82,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": [
+      "Hur skyddar du dig själv och andra?",
       "hur skyddar man sig",
       "hur kan jag skydda mig ",
       "hur kan jag skydda min familj",
@@ -88,6 +95,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": [
+      "Skyddar munskydd mot Covid-19?",
       "funkar munskydd",
       "skyddar munskydd mot corona",
       "hjälper munskydd",
@@ -102,6 +110,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": [
+      "Kan man smittas flera gånger av det nya coronaviruset?",
       "Kan man smittas flera gånger ",
       "kan man ha corona flera gånger",
       "hur många gånger kan man ha corona",
@@ -118,6 +127,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": [
+      "Vem ska stanna hemma?",
       "ska jag stanna hemma",
       "bör jag stanna hemma",
       "är det viktigt att stanna hemma",
@@ -133,6 +143,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": [
+      "Hur länge ska jag stanna hemma?",
       "hur många dagar ska jag stanna hemma",
       "hur många dagar ska man vara i karantän",
       "måste jag vara hemma en hel vecka",
@@ -146,6 +157,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": [
+      "Hur sjuk blir man av covid-19?",
       "hur sjuk blir man av corona",
       "blir man jättesjuk av corona",
       "hur pass sjuk blir man",
@@ -158,6 +170,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": [
+      "Hur länge är man sjuk av covid-19?",
       "hur pass länge är man sjuk",
       "hur länge har man corona",
       "hur lång tid kan man ha corona",
@@ -170,6 +183,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": [
+      "Finns det vaccin eller behandling mot covid-19?",
       "finns det botemedel",
       "finns det något coronavaccin",
       "finns det något läkemedel mot corona",
@@ -183,6 +197,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": [
+      "Hur stor är dödligheten till följd av covid-19?",
       "hur många dör av corona",
       "kan man dö av corona",
       "hur många har dött av corona",
@@ -195,6 +210,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": [
+      "Hur många blir friska från covid-19?",
       "kommer alla bli friska från corona",
       "hur pass många blir friska",
       "hur stor är chansen att klara sig",
@@ -207,6 +223,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": [
+      "Ingår gravida i riskgrupperna?",
       "är det större risk om man är gravid",
       "hur stor är risken om man är gravid ",
       "hur ska man göra om man är gravid",
@@ -219,6 +236,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": [
+      "Behöver jag städa eller hantera mina sopor på något särskilt sätt?",
       "ska jag städa på något särskilt sätt",
       "måste jag städa extra noga",
       "vad ska jag göra med mina sopor",
@@ -231,6 +249,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": [
+      "Varför stänger vi inte skolorna i Sverige?",
       "varför stängs inte skolorna",
       "kommer skolorna att stängas",
       "hur länge kommer skolorna att vara öppna",
@@ -243,6 +262,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": [
+      "Smittar covid-19 under inkubationstiden?",
       "smittar corona hela tiden",
       "smittar corona direkt",
       "blir jag smittsam direkt om jag har fått corona",
@@ -255,6 +275,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": [
+      "Kan man bli smittad av en person som har covid-19 men som inte har några symtom?",
       "smittar corona utan symtom",
       "kan jag bli smittad av en person utan symtom",
       "är corona smittsamt fastän en person inte känner sig sjuk",
@@ -267,6 +288,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": [
+      "Hur länge kan viruset som orsakar covid-19 överleva utanför människokroppen?",
       "hur länge överlever corona ",
       "kan corona leva utanför kroppen",
       "kan viruset leva på ytor",
@@ -279,6 +301,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": [
+      "Kan viruset smitta till människa via post och paket?",
       "kan paket vara smittade med corona",
       "kan det vara corona på min post",
       "hur desinfierar jag min post",
@@ -291,6 +314,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": [
+      "Kan covid-19 smitta mellan djur och människa och kan mitt husdjur smittas av viruset?",
       "kan jag smittas av mitt husdjur",
       "jag jag få smittan av djur",
       "kan jag smitta mina husdjur",
@@ -303,6 +327,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": [
+      "I vilka länder pågår det smittspridning?",
       "vilka länder är smittade",
       "i vilka länder kan jag få corona",
       "finns det några säkra länder",
@@ -315,6 +340,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": [
+      "Vad innebär det att vi har en samhällsspridning av covid-19 i Sverige?",
       "vad innebär det att vi har en samhällsspridning av corona i Sverige?",
       "vad innebär samhällsspridning",
       "vad betyder samhällsspridning",
@@ -327,6 +353,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": [
+      "Vad innebär smittspårning av personer?",
       "vad är smittspårning",
       "vad betyder smittspårning",
       "vad betyder det att vara smittspårad",
@@ -339,6 +366,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": [
+      "Vad gäller för stora evenemang? regulations in Sweden",
       "vad är reglerna för stora evenemang",
       "vilka regler gäller för evenemang",
       "vad gäller för event",
@@ -351,6 +379,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": [
+      "Varför just 500 personer?",
       "vad är det för särskilt med 500 personer",
       "varför är det 500 personer",
       "hur kommer det sig att det är just 500 ",
@@ -363,6 +392,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": [
+      "Vad gäller för kollektivtrafik, arbetsplatser och skolor?",
       "vilka regler gäller för kollektivtrafik  arbetsplatser och skolor?",
       "hur många får det vara på tunnelbanan",
       "vad gäller för tunnelbanan",
@@ -375,6 +405,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": [
+      "Skulle hälsokontroller av resenärer med flyg från länder där smittspridning pågår kunna begränsa smittspridningen i Sverige?",
       "kan flygkontroller minska spridningen",
       "kan flygplatserna påverka smittspridningen",
       "kollas alla på flygplatsen",
@@ -387,6 +418,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": [
+      "Vilka råd finns det för resa till andra länder?",
       "får man resa till andra länder",
       "är det okej att resa utomlands",
       "vad gäller om man ska resa utomlands",
@@ -399,6 +431,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": [
+      "Vad ger ni för direktiv och riktlinjer till flygplatserna under coronavirusepidemin?",
       "vad gäller för flygplatser",
       "vilka regler gäller på flygplatser"
     ],
@@ -408,6 +441,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": [
+      "Vilka regler gäller för att sätta någon i karantän i Sverige?",
       "vem bestämmer vem som ska sättas i karantän",
       "kan man bli tvingad att sitta i karantän",
       "måste jag vara i karantän",
@@ -420,6 +454,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": [
+      "Behöver jag vidta några åtgärder även om jag känner mig frisk efter resa från drabbade länder?",
       "behöver jag göra något särskilt om jag är frisk",
       "ska jag göra något särskilt om jag känner mig frisk "
     ],
@@ -429,6 +464,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": [
+      "Jag har nyligen varit i ett land där smittspridning pågår och nu har jag hosta och feber. Vad ska jag göra?",
       "jag tror jag har fått corona vad ska jag göra",
       "vad gör jag om jag tror att jag har fått corona",
       "hur gör jag om jag har fått corona",
@@ -443,6 +479,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": [
+      "Vad gör Folkhälsomyndigheten?",
       "vad är Folkhälsomyndigheten",
       "vilken roll har Folkhälsomyndigheten",
       "vilket ansvar har Folkhälsomyndigheten",
@@ -454,6 +491,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": [
+      "Vad är en pandemi?",
       "vad betyder pandemi",
       "vad innebär en pandemi",
       "vad innebär pandemi",
@@ -465,6 +503,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": [
+      "Om många personer som blir smittade av covid-19 skulle behöva sjukhusvård         hur kommer sjukvården att hantera det?",
       "kommer sjukhusen att klara det",
       "hur många orkar sjukhusen ta emot",
       "hur mycket klarar vården i sverige",
@@ -477,6 +516,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": [
+      "Vad innebär det att covid-19 klassas som allmänfarlig och samhällsfarlig sjukdom enligt smittskyddslagen?",
       "vad betyder det att corona är allmänfarlig",
       "vad innebär samhällsfarlig sjukdom",
       "vad är en samhällsfarlig sjukdom ",
@@ -489,6 +529,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": [
+      "Vad är ett andningsskydd?",
       "hur använder jag ett andningsskydd",
       "vad innebär andningsskydd",
       "vad är andningsskydd mot corona",
@@ -501,6 +542,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": [
+      "Hur kan ett provsvar som först blev negativt och visar att man är frisk         vid en andra provtagning ge ett positivt svar         att man är sjuk och bär på smittan?",
       "hur kan provsvaret för corona ändras",
       "varför ändrades provsvaret",
       "kan provsvaret för corona ändras",

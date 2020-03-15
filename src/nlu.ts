@@ -113,6 +113,7 @@ const family : Entity = {
     { name: "familj", alts: ["nära och kära", "kära", "närmaste"]}
   ]
 }
+
 export const queryTakeCareOfFamily = {
   entities: {
     family

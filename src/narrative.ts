@@ -70,6 +70,9 @@ const querySymptoms: BotTurn = {
     {
       intent: ANYTHING,
       bot: {
+        set: {
+          retryCount: null // To avoid counting this as a fallback
+        },
         say:
           "Ok. Tänk på att det kan ta 2 veckor för symptom att visa sig, så det är väldigt viktigt att hålla social distans, undvika större sammanhang och inte minst att tänka på personlig hygien och tvätta händerna ofta."
       }

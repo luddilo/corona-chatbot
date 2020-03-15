@@ -9,7 +9,7 @@
     "start": "tsc && node node_modules/narratory/out/cmd/start.js",
     "build": "tsc && node node_modules/narratory/out/cmd/build.js",
     "chat": "node node_modules/narratory/out/cmd/chat.js",
-    "updateEntities": "node node_modules/narratory/out/generators/scanner.js",
+    "generate:faq": "tsc && node out/answers/generateAnswersFromGoogleSheet.js",
     "watch": "tsc --watch"
   },
   "watch": {

@@ -4,43 +4,46 @@ import Axios from "axios"
 const url =
   "https://docs.google.com/spreadsheets/d/e/2PACX-1vSz98tc6sPBHgaU1PIyDggLhfQ0G5tBc5PyEsgKfxV-u4ybAEtSp9o-qLylGh_cO9BiJXtKOiKTDa0M/pub?gid=0&single=true&output=tsv"
 
+const NUMBER_OF_TOP_ROWS_TO_SKIP = 4
+
 async function getFaq(url: string) {
   const response = await Axios.get(url)
 
-  let allTextLines = response.data.split(/\r/)
+  let allTextLines = response.data.split(/\r/).slice(NUMBER_OF_TOP_ROWS_TO_SKIP)
 
-  let headers = allTextLines[0].split("\t")
+  let numberOfDataRows = allTextLines.length
+  let numberOfCols = allTextLines[0].split("\t").length
+  
   let lines = []
-  const length = headers.length
-
-  for (let i = 0; i < allTextLines.length; i++) {
+  
+  for (let i = 0; i < numberOfDataRows; i++) {
     // split content based on comma
     let data = allTextLines[i].split("\t")
 
-    if (data.length >= headers.length) {
+    if (data.length >= numberOfCols) {
       let tarr = []
-      for (let j = 0; j < headers.length; j++) {
+      for (let j = 0; j < numberOfCols; j++) {
         tarr.push(data[j].replace("\n", ""))
       }
 
       // log each row to see output
       lines.push(tarr)
     }
-  }
+  }  
 
   const QAs: { formulations: string[]; answers: string[] }[] = []
 
-  for (let i = 0; i < length; i++) {
+  for (let i = 0; i < numberOfCols; i++) {
     QAs.push({
       formulations: [],
       answers: []
     })
   }
 
-  lines.slice(4).forEach((arr, rowNumber) => {
+  lines.forEach((arr, rowNumber) => {
     arr.forEach((text, colNumber) => {
       if (colNumber > 0 && text) {
-        if (rowNumber < 6) {
+        if (rowNumber < numberOfDataRows - 2) {
           QAs[colNumber].formulations.push(text)
         } else {
           QAs[colNumber].answers.push(text)

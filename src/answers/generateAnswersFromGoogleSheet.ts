@@ -7,56 +7,58 @@ const url =
 const NUMBER_OF_TOP_ROWS_TO_SKIP = 1
 
 async function getFaq(url: string) {
-  const response = await Axios.get(url)
+  try {
+    const response = await Axios.get(url)
 
-  let allTextLines = response.data.split(/\r/).slice(NUMBER_OF_TOP_ROWS_TO_SKIP)
+    let allTextLines = response.data.split(/\r/).slice(NUMBER_OF_TOP_ROWS_TO_SKIP)
 
-  let numberOfDataRows = allTextLines.length
-  let numberOfCols = allTextLines[0].split("\t").length
+    let numberOfDataRows = allTextLines.length
+    let numberOfCols = allTextLines[0].split("\t").length
 
-  let lines = []
+    let lines = []
 
-  for (let i = 0; i < numberOfDataRows; i++) {
-    // split content based on comma
-    let data = allTextLines[i].split("\t")
+    for (let i = 0; i < numberOfDataRows; i++) {
+      // split content based on comma
+      let data = allTextLines[i].split("\t")
 
-    if (data.length >= numberOfCols) {
-      let tarr = []
-      for (let j = 0; j < numberOfCols; j++) {
-        tarr.push(data[j].replace("\n", ""))
+      if (data.length >= numberOfCols) {
+        let tarr = []
+        for (let j = 0; j < numberOfCols; j++) {
+          tarr.push(data[j].replace("\n", ""))
+        }
+
+        // log each row to see output
+        lines.push(tarr)
       }
-
-      // log each row to see output
-      lines.push(tarr)
     }
-  }
-  console.log(lines)
 
-  const qas: { formulations: string[]; answers: string[] }[] = []
+    const qas: { formulations: string[]; answers: string[] }[] = []
 
-  lines.forEach(arr => {
-    let qa = { formulations: [], answers: [] }
-    
-    arr.forEach((text, colNumber) => {
-      if (colNumber >= 2 && colNumber <= 12 && text) {
-        console.log("adding formulation")
+    lines.forEach(arr => {
+      let qa = { formulations: [], answers: [] }
 
-        qa.formulations.push(text)
-      } else if (colNumber === 15 && text) {
-        qa.answers.push(text)
+      arr.forEach((text, colNumber) => {
+        if (colNumber >= 2 && colNumber <= 12 && text) {
+          console.log("adding formulation")
+
+          qa.formulations.push(text)
+        } else if (colNumber === 15 && text) {
+          qa.answers.push(text)
+        }
+      })
+
+      if (qa.formulations.length > 0 && qa.answers.length > 0) {
+        qas.push(qa)
       }
     })
-    
-    if (qa.formulations.length > 0 && qa.answers.length > 0) {
-      qas.push(qa)
-    }
-  })
-  console.log(qas)
-
-  return qas
+    return qas
+  } catch (err) {
+    console.log(err)
+    return null
+  }
 }
 
-export const generateSimpleAnswers = async () => {
+const generateSimpleAnswers = async () => {
   const faq = await getFaq(url)
   const userTurns = faq
     .filter(qa => qa.answers.length > 0 && qa.formulations.length > 0)

@@ -26,7 +26,7 @@ export const answerFallback = [
         cond: {
           platform: "voximplant"
         },
-        text: "Jag förstod faktiskt inte nu heller. Prova igen eller ring 113 13 istället för att prata med en människa"
+        text: "Jag förstod faktiskt inte nu heller. Försök igen, eller ring 113 13 för att prata med en människa"
       },
       {
         text: "Nej, jag förstod faktiskt inte nu heller. Testa att trycka på någon av knapparna nedan",
@@ -36,7 +36,7 @@ export const answerFallback = [
     repair: true
   },
   {
-    say: "Sorry, jag förstod inte. Prova att ringa 113 13 istället för att prata med en människa",
+    say: "Förlåt, jag förstår inte. Mitt råd är att ringa 113 13 och prata med en människa",
     goto: EXIT
   }
 ]

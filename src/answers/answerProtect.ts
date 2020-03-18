@@ -20,7 +20,7 @@ export const answerProtect: BotTurn = {
         platform: "voximplant"
       },
       text:
-        "Du skyddar dig genom att undvika att röra vid ansiktet, undvik kontakt med sjuka, tvätta händerna ofta. Hosta och nys i armvecket och stanna hemma när du är sjuk"
+        "<speak><p>Du skyddar dig genom att undvika att röra vid ansiktet </p><p>undvik kontakt med sjuka, </p><p>tvätta händerna ofta. </p><p>Hosta och nys i armvecket och stanna hemma när du är sjuk</p><p></p></speak>"
     },
     {
       text:

@@ -7,7 +7,7 @@ export const answerHelp = {
           platform: "voximplant"
         },
         text:
-          "Du kan till exempel fråga hur du skyddar dig, om din region har hög risk eller om du bör stanna hemma"
+          "<speak><p>Du kan till exempel fråga hur du skyddar dig, </p><p>om din region har hög risk eller om du bör stanna hemma</p></speak>"
       },
       {
         text: "Du kan t.ex fråga om nedan saker",

@@ -29,7 +29,7 @@ const intro = {
         platform: "voximplant"
       },
       text:
-        "Jag kan hjälpa dig svara på frågor om Coronaviruset. Jag är ny på jobbet men lär mig snabbt, så ha gärna tålamod!"
+        "<speak>Hej. Jag kan hjälpa dig svara på frågor om Coronaviruset. <p>Jag är ny på jobbet men lär mig snabbt. så ha gärna tålamod!</p></speak>"
     },
     {
       text:

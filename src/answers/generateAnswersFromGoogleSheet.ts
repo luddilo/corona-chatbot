@@ -6,6 +6,10 @@ const url =
 
 const NUMBER_OF_TOP_ROWS_TO_SKIP = 1
 
+const FIRST_QUESTION_COLUMN_INDEX = 4
+const LAST_QUESTION_COLUMN_INDEX = 13
+const ANSWER_COLUMN_INDEX = 16
+
 async function getFaq(url: string) {
   try {
     const response = await Axios.get(url)
@@ -18,7 +22,7 @@ async function getFaq(url: string) {
     let lines = []
 
     for (let i = 0; i < numberOfDataRows; i++) {
-      // split content based on comma
+      // split content based on tab
       let data = allTextLines[i].split("\t")
 
       if (data.length >= numberOfCols) {
@@ -26,8 +30,6 @@ async function getFaq(url: string) {
         for (let j = 0; j < numberOfCols; j++) {
           tarr.push(data[j].replace("\n", ""))
         }
-
-        // log each row to see output
         lines.push(tarr)
       }
     }
@@ -38,11 +40,9 @@ async function getFaq(url: string) {
       let qa = { formulations: [], answers: [] }
 
       arr.forEach((text, colNumber) => {
-        if (colNumber >= 2 && colNumber <= 12 && text) {
-          console.log("adding formulation")
-
+        if (colNumber >= FIRST_QUESTION_COLUMN_INDEX && colNumber <= LAST_QUESTION_COLUMN_INDEX && text) {
           qa.formulations.push(text)
-        } else if (colNumber === 15 && text) {
+        } else if (colNumber === ANSWER_COLUMN_INDEX && text) {
           qa.answers.push(text)
         }
       })

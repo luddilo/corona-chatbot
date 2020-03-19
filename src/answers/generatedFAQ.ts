@@ -2,44 +2,6 @@ import { UserTurn } from "narratory"
 export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": [
-      "Vad är corona-viruset?",
-      "vad är coronavirus",
-      "vad är corona",
-      "vad är ett coronavirus",
-      "förklara vad corona är"
-    ],
-    "bot": [
-      "Det finns ett stort antal virus som tillhör coronavirusfamiljen, men endast sju av dessa kan smitta och ge upphov till sjukdom hos människor. I slutet av 2019 upptäcktes ett nytt coronavirus i Kina som kan smitta människor, detta nya virus ger upphov till sjukdomen covid-19."
-    ]
-  },
-  {
-    "intent": [
-      "Vad är covid-19?",
-      "vad är covid-19",
-      "vad är covid",
-      "kan du förklara vad covid-19 är"
-    ],
-    "bot": [
-      "Covid-19 står för coronavirus disease 2019, och är det officiella namnet på sjukdomen som orsakas av det nya coronaviruset."
-    ]
-  },
-  {
-    "intent": [
-      "vad skiljer covid-19 från säsongsinfluensa?",
-      "är corona influensa",
-      "vad skiljer corona från influensa",
-      "vad skiljer covid från influensa",
-      "är influensa samma sak som corona",
-      "corona och influensa är det samma sak",
-      "är corona och influensa olika"
-    ],
-    "bot": [
-      "Corona-viruset är helt nytt vilket gör det svårt att jämföra med influensan som är återkommande. De är liknande i symptom men COVID-19 sprider sig otroligt mycket snabbare då ingen har utvecklat immunitet ännu. "
-    ]
-  },
-  {
-    "intent": [
-      "Vad är symptomen av COVID-19?",
       "vad är symptomen",
       "hur märker man om man har corona",
       "hur mår man om man har corona",
@@ -54,7 +16,6 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": [
-      "Hur smittar covid-19?",
       "hur smittar det",
       "hur smittar covid-19",
       "hur smittar corona",
@@ -68,7 +29,6 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": [
-      "Finns det några särskilda riskgrupper?",
       "vilka är i riskzonen",
       "vilka är riskgrupperna",
       "vem är i riskgruppen",
@@ -82,7 +42,6 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": [
-      "Hur skyddar du dig själv och andra?",
       "hur skyddar man sig",
       "hur kan jag skydda mig ",
       "hur kan jag skydda min familj",
@@ -95,22 +54,6 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": [
-      "Skyddar munskydd mot Covid-19?",
-      "funkar munskydd",
-      "skyddar munskydd mot corona",
-      "hjälper munskydd",
-      "kan jag skydda mig med munskydd",
-      "är det bra att ha munskydd ",
-      "borde jag ha munskydd",
-      "borde jag ha skydd för munnen"
-    ],
-    "bot": [
-      "Nej, munskydd skyddar inte den som är frisk mot covid-19. Däremot kan den som är sjuk till viss del skydda sin omgivning från att viruset sprids vid till exempel hosta och nysningar."
-    ]
-  },
-  {
-    "intent": [
-      "Kan man smittas flera gånger av det nya coronaviruset?",
       "Kan man smittas flera gånger ",
       "kan man ha corona flera gånger",
       "hur många gånger kan man ha corona",
@@ -127,7 +70,6 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": [
-      "Vem ska stanna hemma?",
       "ska jag stanna hemma",
       "bör jag stanna hemma",
       "är det viktigt att stanna hemma",
@@ -143,7 +85,6 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": [
-      "Hur länge ska jag stanna hemma?",
       "hur många dagar ska jag stanna hemma",
       "hur många dagar ska man vara i karantän",
       "måste jag vara hemma en hel vecka",
@@ -157,7 +98,6 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": [
-      "Hur sjuk blir man av covid-19?",
       "hur sjuk blir man av corona",
       "blir man jättesjuk av corona",
       "hur pass sjuk blir man",
@@ -170,7 +110,6 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": [
-      "Hur länge är man sjuk av covid-19?",
       "hur pass länge är man sjuk",
       "hur länge har man corona",
       "hur lång tid kan man ha corona",
@@ -183,21 +122,6 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": [
-      "Finns det vaccin eller behandling mot covid-19?",
-      "finns det botemedel",
-      "finns det något coronavaccin",
-      "finns det något läkemedel mot corona",
-      "kan man bli botad ",
-      "finns det vaccin än",
-      "Kan man vaccinera sig mot corona"
-    ],
-    "bot": [
-      "I nuläget finns det inget vaccin eller speciellt läkemedel mot covid-19. Internationella studier av olika typer av läkemedelsbehandlingar pågår och forskning sker kring utveckling av ett vaccin."
-    ]
-  },
-  {
-    "intent": [
-      "Hur stor är dödligheten till följd av covid-19?",
       "hur många dör av corona",
       "kan man dö av corona",
       "hur många har dött av corona",
@@ -210,20 +134,6 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": [
-      "Hur många blir friska från covid-19?",
-      "kommer alla bli friska från corona",
-      "hur pass många blir friska",
-      "hur stor är chansen att klara sig",
-      "hur många tillfrisknar från coronavirus",
-      "hur många blir friska"
-    ],
-    "bot": [
-      "Majoriteten av de som smittas blir friska förutom en mycket liten andel personer som kan bli allvarligt sjuka, varav de flesta tillhör någon riskgrupp. "
-    ]
-  },
-  {
-    "intent": [
-      "Ingår gravida i riskgrupperna?",
       "är det större risk om man är gravid",
       "hur stor är risken om man är gravid ",
       "hur ska man göra om man är gravid",
@@ -236,33 +146,6 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": [
-      "Behöver jag städa eller hantera mina sopor på något särskilt sätt?",
-      "ska jag städa på något särskilt sätt",
-      "måste jag städa extra noga",
-      "vad ska jag göra med mina sopor",
-      "kan mina sopor vara infekterade",
-      "hur städar jag om jag tror att det finns corona i hemmet"
-    ],
-    "bot": [
-      "I ett hushåll där någon smittats av det nya coronaviruset räcker det att man städar så som man gör i normala fall. Det är viktigt att tvätta händerna noga när man har städat eller hanterat sopor."
-    ]
-  },
-  {
-    "intent": [
-      "Varför stänger vi inte skolorna i Sverige?",
-      "varför stängs inte skolorna",
-      "kommer skolorna att stängas",
-      "hur länge kommer skolorna att vara öppna",
-      "hur kommer det sig att skolorna i sverige inte stängs",
-      "varför är skolorna öppna"
-    ],
-    "bot": [
-      "Det finns inga vetenskapliga studier som visar att stängning av skolor får någon större betydelse. Det finns heller inte några uppgifter som pekar på någon större spridning av covid-19 i skolor någonstans i världen. Stängda skolor skulle tvinga många inom hälso- och sjukvården att stanna hemma med sina barn, och känsliga grupper som mor- och farföräldrar skulle hos vissa familjer behöva ta hand om barnen."
-    ]
-  },
-  {
-    "intent": [
-      "Smittar covid-19 under inkubationstiden?",
       "smittar corona hela tiden",
       "smittar corona direkt",
       "blir jag smittsam direkt om jag har fått corona",
@@ -275,7 +158,6 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": [
-      "Kan man bli smittad av en person som har covid-19 men som inte har några symtom?",
       "smittar corona utan symtom",
       "kan jag bli smittad av en person utan symtom",
       "är corona smittsamt fastän en person inte känner sig sjuk",
@@ -288,85 +170,6 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": [
-      "Hur länge kan viruset som orsakar covid-19 överleva utanför människokroppen?",
-      "hur länge överlever corona ",
-      "kan corona leva utanför kroppen",
-      "kan viruset leva på ytor",
-      "kan coronavirus överleva på ett handtag",
-      "hur snabbt dör corona utanför kroppen"
-    ],
-    "bot": [
-      "Det är ännu inte klarlagt hur länge viruset kan överleva utanför kroppen. Forskningsstudier som utförts på närbesläktade coronavirus visar att de kan överleva flera dagar på ytor och föremål men för detta krävs särskilda förhållanden, så som rätt temperatur, solljus och luftfuktighet."
-    ]
-  },
-  {
-    "intent": [
-      "Kan viruset smitta till människa via post och paket?",
-      "kan paket vara smittade med corona",
-      "kan det vara corona på min post",
-      "hur desinfierar jag min post",
-      "kan det finnas corona på mina brev",
-      "kan jag bli smittad av min post"
-    ],
-    "bot": [
-      "Kunskap från liknande tidigare utbrott visar att denna typ av virus smittar från sjuka människor, och inte genom paket och postförsändelser."
-    ]
-  },
-  {
-    "intent": [
-      "Kan covid-19 smitta mellan djur och människa och kan mitt husdjur smittas av viruset?",
-      "kan jag smittas av mitt husdjur",
-      "jag jag få smittan av djur",
-      "kan jag smitta mina husdjur",
-      "smittar corona mellan människor och husdjur",
-      "hur skyddar jag mina husdjur"
-    ],
-    "bot": [
-      "Det är troligt att en djurkälla från en djurmarknad i Kina orsakade några av de första rapporterade mänskliga infektionerna. Det finns inga uppgifter idag om att covid-19 kan smitta från människa till djur."
-    ]
-  },
-  {
-    "intent": [
-      "I vilka länder pågår det smittspridning?",
-      "vilka länder är smittade",
-      "i vilka länder kan jag få corona",
-      "finns det några säkra länder",
-      "är alla länder drabbade",
-      "vilka länder har blivit smittade"
-    ],
-    "bot": [
-      "Covid-19 är nu en pandemi, vilket innebär att den finns eller kommer finnas i alla världsdelar. Sannolikt kommer covid-19 att drabba alla världens länder."
-    ]
-  },
-  {
-    "intent": [
-      "Vad innebär det att vi har en samhällsspridning av covid-19 i Sverige?",
-      "vad innebär det att vi har en samhällsspridning av corona i Sverige?",
-      "vad innebär samhällsspridning",
-      "vad betyder samhällsspridning",
-      "vad betyder spridning i samhället",
-      "har vi samhällsspridning i sverige"
-    ],
-    "bot": [
-      "I Region Stockholm og i Västra Götalandsregionen ser vi nu tecken på samhällsspridning. Det innebär att du ska försöka låta bli att träffa andra människor, och inte gå till jobbet eller skolan - även om du bara känner dig lite sjuk. Stanna hemma så länge du känner dig sjuk så du inte riskerar att smitta andra."
-    ]
-  },
-  {
-    "intent": [
-      "Vad innebär smittspårning av personer?",
-      "vad är smittspårning",
-      "vad betyder smittspårning",
-      "vad betyder det att vara smittspårad",
-      "hur smittspårar man",
-      "vad är smittspårning av corona"
-    ],
-    "bot": [
-      "Smittspårning kan ha en avgörande betydelse för att förhindra smittspridning och minska risken för större utbrott. Den behandlande läkaren ska ta reda på hur en smittad person har blivit smittad, och vem eller vilka andra som kan vara smittade eller har blivit utsatta för smitta."
-    ]
-  },
-  {
-    "intent": [
-      "Vad gäller för stora evenemang? regulations in Sweden",
       "vad är reglerna för stora evenemang",
       "vilka regler gäller för evenemang",
       "vad gäller för event",
@@ -379,20 +182,6 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": [
-      "Varför just 500 personer?",
-      "vad är det för särskilt med 500 personer",
-      "varför är det 500 personer",
-      "hur kommer det sig att det är just 500 ",
-      "vad händer efter 500",
-      "vad är problemet med fler än 500 personer"
-    ],
-    "bot": [
-      "Större evenemang riskerar att öka smittspridningen eftersom de lockar till sig åskådare från olika delar av landet. Folkhälsomyndigheten har därför bedömt att gränsen bör gå vid 500 personer. Norge valde samma gräns."
-    ]
-  },
-  {
-    "intent": [
-      "Vad gäller för kollektivtrafik, arbetsplatser och skolor?",
       "vilka regler gäller för kollektivtrafik  arbetsplatser och skolor?",
       "hur många får det vara på tunnelbanan",
       "vad gäller för tunnelbanan",
@@ -405,20 +194,6 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": [
-      "Skulle hälsokontroller av resenärer med flyg från länder där smittspridning pågår kunna begränsa smittspridningen i Sverige?",
-      "kan flygkontroller minska spridningen",
-      "kan flygplatserna påverka smittspridningen",
-      "kollas alla på flygplatsen",
-      "blir alla kontrollerade på flygplatser",
-      "är det hälsokoll på flygplatsen"
-    ],
-    "bot": [
-      "Folkhälsomyndigheten baserar sina rekommendationer om hälsokontroller bland annat på information från WHO och ECDC. Erfarenhet från SARS-epidemin visar att hälsokontroller på flygplatser inte är ett effektivt sätt att begränsa smittspridningen. Det är även resurskrävande, och fångar enbart upp smittade personer som redan har symtom."
-    ]
-  },
-  {
-    "intent": [
-      "Vilka råd finns det för resa till andra länder?",
       "får man resa till andra länder",
       "är det okej att resa utomlands",
       "vad gäller om man ska resa utomlands",
@@ -431,7 +206,6 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": [
-      "Vad ger ni för direktiv och riktlinjer till flygplatserna under coronavirusepidemin?",
       "vad gäller för flygplatser",
       "vilka regler gäller på flygplatser"
     ],
@@ -441,20 +215,6 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": [
-      "Vilka regler gäller för att sätta någon i karantän i Sverige?",
-      "vem bestämmer vem som ska sättas i karantän",
-      "kan man bli tvingad att sitta i karantän",
-      "måste jag vara i karantän",
-      "vad innebär karantän",
-      "vad innebär att sitta i karantän"
-    ],
-    "bot": [
-      "Eftersom det nya coronaviruset är klassat som samhällsfarligt kan friska personer sättas i karantän. Beslutet tas av smittskyddsläkaren i respektive sjukvårdsregion, och det är noga reglerad i smittskyddslagen. Karantän kan innebära att placeras i hemmet, en avgränsad del av en byggnad eller ett område."
-    ]
-  },
-  {
-    "intent": [
-      "Behöver jag vidta några åtgärder även om jag känner mig frisk efter resa från drabbade länder?",
       "behöver jag göra något särskilt om jag är frisk",
       "ska jag göra något särskilt om jag känner mig frisk "
     ],
@@ -464,7 +224,6 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": [
-      "Jag har nyligen varit i ett land där smittspridning pågår och nu har jag hosta och feber. Vad ska jag göra?",
       "jag tror jag har fått corona vad ska jag göra",
       "vad gör jag om jag tror att jag har fått corona",
       "hur gör jag om jag har fått corona",
@@ -479,31 +238,17 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": [
-      "Vad gör Folkhälsomyndigheten?",
-      "vad är Folkhälsomyndigheten",
-      "vilken roll har Folkhälsomyndigheten",
-      "vilket ansvar har Folkhälsomyndigheten",
-      "vad gör Folkhälsomyndigheten"
+      "har sverige beredskap",
+      "hur stor beredskap har sverige",
+      "hur är sveriges beredskap just nu ",
+      "har sverige någon beredskap "
     ],
     "bot": [
-      "Folkhälsomyndigheten (FHM) ska ta fram och förmedla vetenskapligt grundad kunskap som förebygger ohälsa och sjukdomar, och som ger samhället stöd i arbetet mot hälsohot. FHM följer händelseutvecklingen av covid-19 noga, och gör riskbedömningar samt bedömer hur utbrottet utvecklas. Sjukvård, regionala smittskyddsenheter och andra aktörer får information om det aktuella läget, och FHM tar ställning till vilka åtgärdar som är relevanta att genomföra. "
+      "Vid ett eventuellt utbrott av covid-19 är den svenska beredskapen mycket bra. Hälso- och sjukvården samt landets smittskyddsenheter har sedan lång tid tillbaka en hög medvetenhet. Det finns rutiner för hur både misstänkta och bekräftade fall ska tas omhand på ett bra och säkert sätt. Privata aktörer är också medvetna om beredskap och krishantering, och det finns möjlighet till utökade provanalyser på andra laboratorier än Folkhälsomyndigheten vid behov."
     ]
   },
   {
     "intent": [
-      "Vad är en pandemi?",
-      "vad betyder pandemi",
-      "vad innebär en pandemi",
-      "vad innebär pandemi",
-      "vad händer vid en pandemi"
-    ],
-    "bot": [
-      "En pandemi innebär en omfattande spridning till alla världens kontinenter av en helt ny typ av smittsam sjukdom. Vid en pandemi kommer sjukdomen med stor sannolikhet påverka stora delar av vårt samhälle och världens befolkning. Det är WHO som deklarerar om en smittspridning bedöms vara en pandemi, och detta gjordes den 11:e mars 2020. "
-    ]
-  },
-  {
-    "intent": [
-      "Om många personer som blir smittade av covid-19 skulle behöva sjukhusvård         hur kommer sjukvården att hantera det?",
       "kommer sjukhusen att klara det",
       "hur många orkar sjukhusen ta emot",
       "hur mycket klarar vården i sverige",
@@ -516,7 +261,244 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": [
-      "Vad innebär det att covid-19 klassas som allmänfarlig och samhällsfarlig sjukdom enligt smittskyddslagen?",
+      "varför blir inte barn avstängda",
+      "kan barn som varit i drabbade områden bli avstängda från skolan",
+      "kan barn som har en sjuk familjemedlem bli avstängda",
+      "kan ett barn bli avstängt "
+    ],
+    "bot": [
+      "Eftersom inget av de utbrott vi hittills sett av coronaviruset har haft koppling till skolor eller barn anses det osannolikt att friska barn skulle orsaka smittspridning."
+    ]
+  },
+  {
+    "intent": [
+      "vad är coronavirus",
+      "vad är corona",
+      "vad är ett coronavirus",
+      "förklara vad corona är"
+    ],
+    "bot": [
+      "Det finns ett stort antal virus som tillhör coronavirusfamiljen, men endast sju av dessa kan smitta och ge upphov till sjukdom hos människor. I slutet av 2019 upptäcktes ett nytt coronavirus i Kina som kan smitta människor, detta nya virus ger upphov till sjukdomen covid-19."
+    ]
+  },
+  {
+    "intent": [
+      "vad är covid-19",
+      "vad är covid",
+      "kan du förklara vad covid-19 är"
+    ],
+    "bot": [
+      "Covid-19 står för coronavirus disease 2019, och är det officiella namnet på sjukdomen som orsakas av det nya coronaviruset."
+    ]
+  },
+  {
+    "intent": [
+      "är corona influensa",
+      "vad skiljer corona från influensa",
+      "vad skiljer covid från influensa",
+      "är influensa samma sak som corona",
+      "corona och influensa är det samma sak",
+      "är corona och influensa olika"
+    ],
+    "bot": [
+      "Corona-viruset är helt nytt vilket gör det svårt att jämföra med influensan som är återkommande. De är liknande i symptom men COVID-19 sprider sig otroligt mycket snabbare då ingen har utvecklat immunitet ännu. "
+    ]
+  },
+  {
+    "intent": [
+      "funkar munskydd",
+      "skyddar munskydd mot corona",
+      "hjälper munskydd",
+      "kan jag skydda mig med munskydd",
+      "är det bra att ha munskydd ",
+      "borde jag ha munskydd",
+      "borde jag ha skydd för munnen"
+    ],
+    "bot": [
+      "Nej, munskydd skyddar inte den som är frisk mot covid-19. Däremot kan den som är sjuk till viss del skydda sin omgivning från att viruset sprids vid till exempel hosta och nysningar."
+    ]
+  },
+  {
+    "intent": [
+      "finns det botemedel",
+      "finns det något coronavaccin",
+      "finns det något läkemedel mot corona",
+      "kan man bli botad ",
+      "finns det vaccin än",
+      "Kan man vaccinera sig mot corona"
+    ],
+    "bot": [
+      "I nuläget finns det inget vaccin eller speciellt läkemedel mot covid-19. Internationella studier av olika typer av läkemedelsbehandlingar pågår och forskning sker kring utveckling av ett vaccin."
+    ]
+  },
+  {
+    "intent": [
+      "kommer alla bli friska från corona",
+      "hur pass många blir friska",
+      "hur stor är chansen att klara sig",
+      "hur många tillfrisknar från coronavirus",
+      "hur många blir friska"
+    ],
+    "bot": [
+      "Majoriteten av de som smittas blir friska förutom en mycket liten andel personer som kan bli allvarligt sjuka, varav de flesta tillhör någon riskgrupp. "
+    ]
+  },
+  {
+    "intent": [
+      "ska jag städa på något särskilt sätt",
+      "måste jag städa extra noga",
+      "vad ska jag göra med mina sopor",
+      "kan mina sopor vara infekterade",
+      "hur städar jag om jag tror att det finns corona i hemmet"
+    ],
+    "bot": [
+      "I ett hushåll där någon smittats av det nya coronaviruset räcker det att man städar så som man gör i normala fall. Det är viktigt att tvätta händerna noga när man har städat eller hanterat sopor."
+    ]
+  },
+  {
+    "intent": [
+      "varför stängs inte skolorna",
+      "kommer skolorna att stängas",
+      "hur länge kommer skolorna att vara öppna",
+      "hur kommer det sig att skolorna i sverige inte stängs",
+      "varför är skolorna öppna"
+    ],
+    "bot": [
+      "Det finns inga vetenskapliga studier som visar att stängning av skolor får någon större betydelse. Det finns heller inte några uppgifter som pekar på någon större spridning av covid-19 i skolor någonstans i världen. Stängda skolor skulle tvinga många inom hälso- och sjukvården att stanna hemma med sina barn, och känsliga grupper som mor- och farföräldrar skulle hos vissa familjer behöva ta hand om barnen."
+    ]
+  },
+  {
+    "intent": [
+      "hur länge överlever corona ",
+      "kan corona leva utanför kroppen",
+      "kan viruset leva på ytor",
+      "kan coronavirus överleva på ett handtag",
+      "hur snabbt dör corona utanför kroppen"
+    ],
+    "bot": [
+      "Det är ännu inte klarlagt hur länge viruset kan överleva utanför kroppen. Forskningsstudier som utförts på närbesläktade coronavirus visar att de kan överleva flera dagar på ytor och föremål men för detta krävs särskilda förhållanden, så som rätt temperatur, solljus och luftfuktighet."
+    ]
+  },
+  {
+    "intent": [
+      "kan paket vara smittade med corona",
+      "kan det vara corona på min post",
+      "hur desinfierar jag min post",
+      "kan det finnas corona på mina brev",
+      "kan jag bli smittad av min post"
+    ],
+    "bot": [
+      "Kunskap från liknande tidigare utbrott visar att denna typ av virus smittar från sjuka människor, och inte genom paket och postförsändelser."
+    ]
+  },
+  {
+    "intent": [
+      "kan jag smittas av mitt husdjur",
+      "jag jag få smittan av djur",
+      "kan jag smitta mina husdjur",
+      "smittar corona mellan människor och husdjur",
+      "hur skyddar jag mina husdjur"
+    ],
+    "bot": [
+      "Det är troligt att en djurkälla från en djurmarknad i Kina orsakade några av de första rapporterade mänskliga infektionerna. Det finns inga uppgifter idag om att covid-19 kan smitta från människa till djur."
+    ]
+  },
+  {
+    "intent": [
+      "vilka länder är smittade",
+      "i vilka länder kan jag få corona",
+      "finns det några säkra länder",
+      "är alla länder drabbade",
+      "vilka länder har blivit smittade"
+    ],
+    "bot": [
+      "Covid-19 är nu en pandemi, vilket innebär att den finns eller kommer finnas i alla världsdelar. Sannolikt kommer covid-19 att drabba alla världens länder."
+    ]
+  },
+  {
+    "intent": [
+      "vad innebär det att vi har en samhällsspridning av corona i Sverige?",
+      "vad innebär samhällsspridning",
+      "vad betyder samhällsspridning",
+      "vad betyder spridning i samhället",
+      "har vi samhällsspridning i sverige"
+    ],
+    "bot": [
+      "I Region Stockholm og i Västra Götalandsregionen ser vi nu tecken på samhällsspridning. Det innebär att du ska försöka låta bli att träffa andra människor, och inte gå till jobbet eller skolan - även om du bara känner dig lite sjuk. Stanna hemma så länge du känner dig sjuk så du inte riskerar att smitta andra."
+    ]
+  },
+  {
+    "intent": [
+      "vad är smittspårning",
+      "vad betyder smittspårning",
+      "vad betyder det att vara smittspårad",
+      "hur smittspårar man",
+      "vad är smittspårning av corona"
+    ],
+    "bot": [
+      "Smittspårning kan ha en avgörande betydelse för att förhindra smittspridning och minska risken för större utbrott. Den behandlande läkaren ska ta reda på hur en smittad person har blivit smittad, och vem eller vilka andra som kan vara smittade eller har blivit utsatta för smitta."
+    ]
+  },
+  {
+    "intent": [
+      "vad är det för särskilt med 500 personer",
+      "varför är det 500 personer",
+      "hur kommer det sig att det är just 500 ",
+      "vad händer efter 500",
+      "vad är problemet med fler än 500 personer"
+    ],
+    "bot": [
+      "Större evenemang riskerar att öka smittspridningen eftersom de lockar till sig åskådare från olika delar av landet. Folkhälsomyndigheten har därför bedömt att gränsen bör gå vid 500 personer. Norge valde samma gräns."
+    ]
+  },
+  {
+    "intent": [
+      "kan flygkontroller minska spridningen",
+      "kan flygplatserna påverka smittspridningen",
+      "kollas alla på flygplatsen",
+      "blir alla kontrollerade på flygplatser",
+      "är det hälsokoll på flygplatsen"
+    ],
+    "bot": [
+      "Folkhälsomyndigheten baserar sina rekommendationer om hälsokontroller bland annat på information från WHO och ECDC. Erfarenhet från SARS-epidemin visar att hälsokontroller på flygplatser inte är ett effektivt sätt att begränsa smittspridningen. Det är även resurskrävande, och fångar enbart upp smittade personer som redan har symtom."
+    ]
+  },
+  {
+    "intent": [
+      "vem bestämmer vem som ska sättas i karantän",
+      "kan man bli tvingad att sitta i karantän",
+      "måste jag vara i karantän",
+      "vad innebär karantän",
+      "vad innebär att sitta i karantän"
+    ],
+    "bot": [
+      "Eftersom det nya coronaviruset är klassat som samhällsfarligt kan friska personer sättas i karantän. Beslutet tas av smittskyddsläkaren i respektive sjukvårdsregion, och det är noga reglerad i smittskyddslagen. Karantän kan innebära att placeras i hemmet, en avgränsad del av en byggnad eller ett område."
+    ]
+  },
+  {
+    "intent": [
+      "vad är Folkhälsomyndigheten",
+      "vilken roll har Folkhälsomyndigheten",
+      "vilket ansvar har Folkhälsomyndigheten",
+      "vad gör Folkhälsomyndigheten"
+    ],
+    "bot": [
+      "Folkhälsomyndigheten (FHM) ska ta fram och förmedla vetenskapligt grundad kunskap som förebygger ohälsa och sjukdomar, och som ger samhället stöd i arbetet mot hälsohot. FHM följer händelseutvecklingen av covid-19 noga, och gör riskbedömningar samt bedömer hur utbrottet utvecklas. Sjukvård, regionala smittskyddsenheter och andra aktörer får information om det aktuella läget, och FHM tar ställning till vilka åtgärdar som är relevanta att genomföra. "
+    ]
+  },
+  {
+    "intent": [
+      "vad betyder pandemi",
+      "vad innebär en pandemi",
+      "vad innebär pandemi",
+      "vad händer vid en pandemi"
+    ],
+    "bot": [
+      "En pandemi innebär en omfattande spridning till alla världens kontinenter av en helt ny typ av smittsam sjukdom. Vid en pandemi kommer sjukdomen med stor sannolikhet påverka stora delar av vårt samhälle och världens befolkning. Det är WHO som deklarerar om en smittspridning bedöms vara en pandemi, och detta gjordes den 11:e mars 2020. "
+    ]
+  },
+  {
+    "intent": [
       "vad betyder det att corona är allmänfarlig",
       "vad innebär samhällsfarlig sjukdom",
       "vad är en samhällsfarlig sjukdom ",
@@ -529,7 +511,18 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": [
-      "Vad är ett andningsskydd?",
+      "vad betyder droppsmitta",
+      "vad innebär droppsmitta",
+      "hur smittar droppsmitta",
+      "vad är kontaktsmitta",
+      "vad innebär kontaktsmitta"
+    ],
+    "bot": [
+      "Vid droppsmitta sprids smittan via droppar i luften, t.ex. när någon antingen hostar, nyser eller kräks. Dessa droppar når som regel inte längre än någon meter. Luftburen smitta rör sig om små, intorkade droppar som håller sig kvar i luften, färdas långa sträckor och smittar den som andas in dem."
+    ]
+  },
+  {
+    "intent": [
       "hur använder jag ett andningsskydd",
       "vad innebär andningsskydd",
       "vad är andningsskydd mot corona",
@@ -542,7 +535,6 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": [
-      "Hur kan ett provsvar som först blev negativt och visar att man är frisk         vid en andra provtagning ge ett positivt svar         att man är sjuk och bär på smittan?",
       "hur kan provsvaret för corona ändras",
       "varför ändrades provsvaret",
       "kan provsvaret för corona ändras",

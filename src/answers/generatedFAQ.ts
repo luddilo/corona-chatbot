@@ -2,20 +2,6 @@ import { UserTurn } from "narratory"
 export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": [
-      "vad är symptomen",
-      "hur märker man om man har corona",
-      "hur mår man om man har corona",
-      "vad innebär corona",
-      "hur vet jag om jag har corona",
-      "hur vet man att man har corona",
-      "vad är symptom för covid"
-    ],
-    "bot": [
-      "De vanligaste symtomen är feber och hosta, men även andningspåverkan, halsont, huvudvärk, muskel- och ledvärk är vanliga symtom. En del blir allvarligt sjuka med exempelvis andningssvårigheter och lunginflammation."
-    ]
-  },
-  {
-    "intent": [
       "hur smittar det",
       "hur smittar covid-19",
       "hur smittar corona",
@@ -539,6 +525,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
       "vad är luftburen smitta?",
       "vad är droppsmitta?",
       "hur smittar luftburen smitta?"
+<<<<<<< HEAD
     ],
     "bot": [
       "Vid droppsmitta sprids smittan via droppar i luften, t.ex. när någon antingen hostar, nyser eller kräks. Dessa droppar når som regel inte längre än någon meter. Luftburen smitta rör sig om små, intorkade droppar som håller sig kvar i luften, färdas långa sträckor och smittar den som andas in dem. "
@@ -552,6 +539,21 @@ export const simpleQuestionAnswers : UserTurn[] = [
       "hur smittar viruset via indirekt kontakt?"
     ],
     "bot": [
+=======
+    ],
+    "bot": [
+      "Vid droppsmitta sprids smittan via droppar i luften, t.ex. när någon antingen hostar, nyser eller kräks. Dessa droppar når som regel inte längre än någon meter. Luftburen smitta rör sig om små, intorkade droppar som håller sig kvar i luften, färdas långa sträckor och smittar den som andas in dem. "
+    ]
+  },
+  {
+    "intent": [
+      "vad är direktkontakt?",
+      "vad är indirekt kontaktsmitta?",
+      "hur smittar man genom direktkontakt?",
+      "hur smittar viruset via indirekt kontakt?"
+    ],
+    "bot": [
+>>>>>>> f441b990f2d08bba0a2ffa32ce160cb2786aeb07
       "Direkt kontaktsmitta kan ske vid direkt fysisk kontakt mellan en smittbärare och en annan person. Vid indirekt kontaktsmitta överförs smittämnet istället via mellanled från en person till en annan. Kontaktsmitta är den vanligaste smittvägen i vården."
     ]
   },

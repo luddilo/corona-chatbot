@@ -1,11 +1,11 @@
 import { Entity, Intent, entities } from "narratory"
 
 export const yes: Intent = {
-  examples: ["ja", "japp", "absolut", "okej", "jajamän", "alright", "yes"]
+  examples: ["ja", "japp", "absolut", "okej", "jajamän", "alright", "yes", "javisst", "jajamensam"]
 }
 
 export const no: Intent = {
-  examples: ["nej", "nope", "no", "aldrig", "jag vill inte"]
+  examples: ["nej", "nope", "no", "aldrig", "jag vill inte", "näpp", "nä"]
 }
 
 export const dontKnow: Intent = {
@@ -13,7 +13,7 @@ export const dontKnow: Intent = {
 }
 
 export const exit: Intent = {
-  examples: ["exit", "hejdå", "avsluta", "bye bye"]
+  examples: ["exit", "hejdå", "avsluta", "bye bye", "stäng ner", "stäng av"]
 }
 
 const symptom: Entity = {

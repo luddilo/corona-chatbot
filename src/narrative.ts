@@ -37,7 +37,7 @@ const intro = {
     }
   ]
 }
-
+/*
 const querySymptoms: BotTurn = {
   say: {
     text: [
@@ -79,20 +79,17 @@ const querySymptoms: BotTurn = {
     }
   ]
 }
+*/
 
 const queryQuestions: BotTurn = {
   label: "QUERY_QUESTION",
   say: [
     {
-      // Otherwise, if it is the first time we state this question
-      cond: {
-        turnCount: 0
-      },
+      cond: { turnCount: 0 },
       text: ["Har du några frågor till mig?", "Undrar du någonting?", "Undrar du någonting om Corona-viruset?"]
     },
     {
-      // And on repetitive questions this question
-      text: ["Har du någon mer fråga till mig?", "Undrar du något annat?"]
+      text: ["Har du någon mer fråga till mig?", "Undrar du något annat?", "Undrar du något mer"]
     }
   ],
   set: {
@@ -121,7 +118,7 @@ const queryQuestions: BotTurn = {
 }
 
 export const queryMoreQuestions: BotTurn = {
-  say: "",
+  say: "Varför kommer jag aldrig hit???",
   set: {
     helped: true
   },
@@ -165,4 +162,4 @@ const continueTalking: BotTurn = {
   goto: "QUERY_QUESTION"
 }
 
-export default [init, greeting, intro, querySymptoms, queryQuestions, queryMoreQuestions, goodbye, continueTalking]
+export default [init, greeting, intro, queryQuestions, queryMoreQuestions, goodbye, continueTalking]

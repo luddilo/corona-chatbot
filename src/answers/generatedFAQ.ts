@@ -2,6 +2,20 @@ import { UserTurn } from "narratory"
 export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": [
+      "vad är symptomen",
+      "hur märker man om man har corona",
+      "hur mår man om man har corona",
+      "vad innebär corona",
+      "hur vet jag om jag har corona",
+      "hur vet man att man har corona",
+      "vad är symptom för covid"
+    ],
+    "bot": [
+      "De vanligaste symtomen är feber och hosta, men även andningspåverkan, halsont, huvudvärk, muskel- och ledvärk är vanliga symtom. En del blir allvarligt sjuka med exempelvis andningssvårigheter och lunginflammation."
+    ]
+  },
+  {
+    "intent": [
       "hur smittar det",
       "hur smittar covid-19",
       "hur smittar corona",

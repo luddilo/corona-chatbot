@@ -1,6 +1,7 @@
 import { listOptions } from "../visuals";
+import { BotTurn } from "narratory"
 
-export const answerHelp = {
+export const answerHelp : BotTurn = {
     say: [
       {
         cond: {

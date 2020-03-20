@@ -2,20 +2,6 @@ import { UserTurn } from "narratory"
 export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": [
-      "vad är symptomen",
-      "hur märker man om man har corona",
-      "hur mår man om man har corona",
-      "vad innebär corona",
-      "hur vet jag om jag har corona",
-      "hur vet man att man har corona",
-      "vad är symptom för covid"
-    ],
-    "bot": [
-      "De vanligaste symtomen är feber och hosta, men även andningspåverkan, halsont, huvudvärk, muskel- och ledvärk är vanliga symtom. En del blir allvarligt sjuka med exempelvis andningssvårigheter och lunginflammation."
-    ]
-  },
-  {
-    "intent": [
       "hur smittar det",
       "hur smittar covid-19",
       "hur smittar corona",
@@ -244,7 +230,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
       "har sverige någon beredskap "
     ],
     "bot": [
-      "Vid ett eventuellt utbrott av covid-19 är den svenska beredskapen mycket bra. Hälso- och sjukvården samt landets smittskyddsenheter har sedan lång tid tillbaka en hög medvetenhet. Det finns rutiner för hur både misstänkta och bekräftade fall ska tas omhand på ett bra och säkert sätt. Privata aktörer är också medvetna om beredskap och krishantering, och det finns möjlighet till utökade provanalyser på andra laboratorier än Folkhälsomyndigheten vid behov."
+      "Den svenska beredskapen anses mycket bra. Hälso- och sjukvården samt landets smittskyddsenheter har sedan lång tid tillbaka en hög medvetenhet. Det finns rutiner för hur både misstänkta och bekräftade fall ska tas omhand på ett bra och säkert sätt. Privata aktörer är också medvetna om beredskap och krishantering, och det finns möjlighet till utökade provanalyser på andra laboratorier än Folkhälsomyndigheten vid behov."
     ]
   },
   {
@@ -268,6 +254,28 @@ export const simpleQuestionAnswers : UserTurn[] = [
     ],
     "bot": [
       "Eftersom inget av de utbrott vi hittills sett av coronaviruset har haft koppling till skolor eller barn anses det osannolikt att friska barn skulle orsaka smittspridning."
+    ]
+  },
+  {
+    "intent": [
+      "kan sverige sättas i karantän?",
+      "blir det karantän i sverige?",
+      "riskerar sverige att sättas i karantän?",
+      "finns det risk att bli karantän i sverige?"
+    ],
+    "bot": [
+      "Eftersom covid-19 numera är klassad som samhällsfarlig, kan smittskyddsläkaren i respektive sjukvårdsregion ta beslut om karantän för friska personer. Om en mindre ingripande åtgärd, t.ex. förhållningsregler, kan få samma effekt ska den väljas istället."
+    ]
+  },
+  {
+    "intent": [
+      "finns det vaccin?",
+      "kan jag vaccinera mig mot coronaviruset?",
+      "när kommer vaccin mot corona?",
+      "finns det vaccin mot corona?"
+    ],
+    "bot": [
+      "Det finns inget vaccin och i nuläget finns det inget specifikt läkemedel mot covid-19. Internationella studier av olika typer av läkemedelsbehandlingar pågår och forskning sker kring utveckling av ett vaccin."
     ]
   },
   {
@@ -514,11 +522,23 @@ export const simpleQuestionAnswers : UserTurn[] = [
       "vad betyder droppsmitta",
       "vad innebär droppsmitta",
       "hur smittar droppsmitta",
-      "vad är kontaktsmitta",
-      "vad innebär kontaktsmitta"
+      "vad är luftburen smitta?",
+      "vad är droppsmitta?",
+      "hur smittar luftburen smitta?"
     ],
     "bot": [
-      "Vid droppsmitta sprids smittan via droppar i luften, t.ex. när någon antingen hostar, nyser eller kräks. Dessa droppar når som regel inte längre än någon meter. Luftburen smitta rör sig om små, intorkade droppar som håller sig kvar i luften, färdas långa sträckor och smittar den som andas in dem."
+      "Vid droppsmitta sprids smittan via droppar i luften, t.ex. när någon antingen hostar, nyser eller kräks. Dessa droppar når som regel inte längre än någon meter. Luftburen smitta rör sig om små, intorkade droppar som håller sig kvar i luften, färdas långa sträckor och smittar den som andas in dem. "
+    ]
+  },
+  {
+    "intent": [
+      "vad är direktkontakt?",
+      "vad är indirekt kontaktsmitta?",
+      "hur smittar man genom direktkontakt?",
+      "hur smittar viruset via indirekt kontakt?"
+    ],
+    "bot": [
+      "Direkt kontaktsmitta kan ske vid direkt fysisk kontakt mellan en smittbärare och en annan person. Vid indirekt kontaktsmitta överförs smittämnet istället via mellanled från en person till en annan. Kontaktsmitta är den vanligaste smittvägen i vården."
     ]
   },
   {
@@ -543,6 +563,177 @@ export const simpleQuestionAnswers : UserTurn[] = [
     ],
     "bot": [
       "Om patienten blir provtagen innan sjukdomen brutit ut kan detta hända. Negativa provsvar under inkubationstiden utesluter alltså inte att man är smittad. Om fortsatt misstanke om covid-19 kvarstår bör provtagning upprepas när eventuella symtom utvecklats."
+    ]
+  },
+  {
+    "intent": [
+      "hur länge kan man smitta andra?",
+      "när smittar man?",
+      "hur länge smittar en person med coronaviruset?",
+      "hur lång tid smittar corona?"
+    ],
+    "bot": [
+      "Så länge patienten är sjuk, och även i samband med själva insjuknandet."
+    ]
+  },
+  {
+    "intent": [
+      "vad är social distansiering?",
+      "vad är syftet med social distansering?",
+      "hur fungerar social distansering?",
+      "vad är målet med social distansering?",
+      "vad gäller vid social distansering?"
+    ],
+    "bot": [
+      "Social distansering syftar till att förhindra sjuka människor från att komma i nära kontakt med friska människor för att minska möjligheterna till överföring av sjukdomar. Just nu är målet med social distansering att bromsa utbrottet för att minska risken för infektion bland högrisk-grupper samt minska belastningen på sjukvårdssystem och arbetstagare."
+    ]
+  },
+  {
+    "intent": [
+      "hur gör man social distansering?",
+      "vad kan man göra för social distansering?",
+      "hur göra social distansering?"
+    ],
+    "bot": [
+      "Undvik offentliga, folktäta platser som t.ex. shopping-centrum, bio eller arenor. Håll avstånd (ungefär 2 meter, eller 6 fot) från andra om möjligt."
+    ]
+  },
+  {
+    "intent": [
+      "hur förhindrar jag spridning av virus?",
+      "vad kan jag göra för att förhindra virusspridning?",
+      "hur stoppar jag virusspridning?",
+      "hur förebygger jag virusspridning?"
+    ],
+    "bot": [
+      "Tvätta händerna regelbundet och ordentligt med tvål och vatten minst 20 sekunder. Använd alcogel om tvål och vatten inte finns tillgängligt. Vidrör varken ögon, näsa eller mun med otvättade händer. Rengör och desinfektera ytor och saker som människor vanligtvis rör. Hosta och nys i böjd armbåge eller näsduk. Se alltid till att slänga näsduken i soporna. "
+    ]
+  },
+  {
+    "intent": [
+      "kommer corona sluta spridas till sommaren?",
+      "kommer virusutbrottet avstanna när det blir varmt?",
+      "kommer spridningen av corona avta till sommaren?",
+      "kan spridningen av corona minska när vädret blir varmare?",
+      "sprids corona långsammare i varmt väder?"
+    ],
+    "bot": [
+      "För närvarande är det inte känt om spridningen av Covid-19 kommer att minska när vädret blir varmare. Utredningar gällande överförbarhet, svårighetsgrad och andra funktioner förknippade med Covid-19 pågår just nu. "
+    ]
+  },
+  {
+    "intent": [
+      "vad är inreseförbudet?",
+      "vad händer vid inreseförbudet?",
+      "när är inreseförbudet?",
+      "varför har vi inreseförbud?",
+      "när börjar inreseförbudet? ",
+      "när slutar inreseförbudet?"
+    ],
+    "bot": [
+      "Från och med den 19 mars och 30 dagar framåt kommer icke nödvändiga resor till Sverige från länder utanför Europa att stoppas. Detta efter beslut från den svenska regeringen i ett försök att minska spridningen av Covid-19. Vid behov kan beslutet komma att förlängas."
+    ]
+  },
+  {
+    "intent": [
+      "vem rörs av inreseförbudet?",
+      "vem rörs inte av inreseförbudet?",
+      "vilka undantag gäller för inreseförbudet?",
+      "görs det undantag för inreseförbudet?",
+      "vem görs undantag för gällande inreseförbudet?"
+    ],
+    "bot": [
+      "Inreseförbudet gäller för alla utländska medborgare som försöker resa in i Sverige från ett land som inte ingår i Schengensamarbetet samt Schweiz. Undantag görs för svenska medborgare och andra personer som är bosatta med eget hem i Sverige samt diplomater och personer som är i behov av internationellt skydd. Även personer som utför nödvändiga funktioner i Sverige, t.ex hälso- och sjukvårdspersonal som transporterar varor till Sverige undantas från inreseförbudet. "
+    ]
+  },
+  {
+    "intent": [
+      "kan man testa sig hemma för corona?",
+      "kan man testa sig hemma för covid?",
+      "går det att testa sig hemma?",
+      "är självtester pålitliga?",
+      "kan man lita på självtester?"
+    ],
+    "bot": [
+      "Just nu finns det tillverkare som marknadsför självtester för covid-19. I nuläget är det dock inte klart hur exakta eller känsliga dessa tester är. Folkhälsomyndigheten rekommenderar därför att dessa självtester inte används och hänvisar istället till sjukvårdens egna tester för en mer exakt och pålitlig sjukdomsbild."
+    ]
+  },
+  {
+    "intent": [
+      "behöver man läsa via distans nu?",
+      "varför behöver skolorna läsa på distans?",
+      "kommer all undervisning nu bedrivas på distans?",
+      "bedrivs undervisning på distans?",
+      "Varför ska  undervisningen för gymnasieelever och studenter ske på distans?",
+      "erbjuder skolorna undervisning på distans?"
+    ],
+    "bot": [
+      "För att bromsa spridningen av covid-19 rekommenderar Folkhälsomyndigheten från den 17 mars 2020 att undervisningen i gymnasieskolor, universitet, högskolor, yrkeshögskolor och komvux ska ske på distans. "
+    ]
+  },
+  {
+    "intent": [
+      "vad gäller angående undervisning i grundskolor?",
+      "behöver elever i grundskolan läsa på distans?",
+      "behöver elever i grundskolan stanna hemifrån?",
+      "kommer distansundervisning ske för elever i grundskolan?",
+      "är det aktuellt för elever i grundskolan att läsa på distans?",
+      "varför bedrivs inte undervisning på distans för elever i grundskolan?",
+      "vad gäller för grundskoleelever?"
+    ],
+    "bot": [
+      "Nej. Folkhälsomyndigheten rekommendationer gällande distansundervisning gäller endast från gymnasiet och uppåt. Detta för att gymnasieskolor, universitet och högskolor samlar elever och studenter från upptagningsområden som är mycket större än grundskolans. Gymnasieelever och studenter är inte heller i behov av omsorg, till skillnad från barn i grundskolan."
+    ]
+  },
+  {
+    "intent": [
+      "hur ska man bete sig om man är över 70 år?",
+      "hur ska äldre bete sig?",
+      "vad  bör äldre göra under pågående smittspridning?",
+      "vad bör äldre undvika?",
+      "kan äldre gå på promenad utomhus?",
+      "vad ska äldre göra i nuläget?",
+      "jag är 70 år, vad gör jag nu?"
+    ],
+    "bot": [
+      "Folkhälsomyndigheten uppmanar personer som är 70 år och äldre att hålla sig hemma och begränsa närmare kontakt med andra de kommande veckorna. Äldre bör även undvika folksamlingar i exempelvis kollektivtrafik, affärer eller offentliga lokaler. Promenader utomhus är ok, bara inte i grupp. Be om hjälp för att göra ärenden som exempelvis handla mat ."
+    ]
+  },
+  {
+    "intent": [
+      "hur skyddar vi de äldre?",
+      "hur skyddar vi de som är 70 år eller äldre?",
+      "hur kan man ta hand om äldre?",
+      "hur håller man äldre borta från viruset?",
+      "kan jag ha närkontakt med äldre?",
+      "hur skyddar jag äldre från smitta?"
+    ],
+    "bot": [
+      "Det är viktigt att skydda de äldre från smitta. Ha därför ingen närkontakt med personer som är 70 år och äldre om det inte är helt nödvändigt. Stanna hemma när du känner dig sjuk, även om du bara är lite förkyld. Covid-19 kan ge lindriga symtom som liknar en förkylning, så det är viktigt att vara vaksam."
+    ]
+  },
+  {
+    "intent": [
+      "vem kan testas för corona?",
+      "vilka personer kan testa sig för corona?",
+      "kan jag testa mig för corona?",
+      "när kan man testa sig för corona?",
+      "ska man stanna hemma när man uppvisar symptom på corona?"
+    ],
+    "bot": [
+      "Personer som är i behov av vård på sjukhus, alternativt personal inom sjukvård och äldreomsorg med misstänkt covid-19. Alla som är sjuka i förkylning eller influensaliknande symtom ska vara hemma för att inte riskera att sprida smitta vidare till andra. "
+    ]
+  },
+  {
+    "intent": [
+      "måste alla i familjen stanna hemma om en är sjuk?",
+      "måste man stanna hemma om någon i hushållet är sjuk?",
+      "om någon i hushållet är sjuk utan symptom, måste resten av hushållet stanna hemma då?",
+      "kan man gå till skolan även om någon i familjen är sjuk?",
+      "kan man gå till jobbet även fast någon i hushållet är sjuk?"
+    ],
+    "bot": [
+      "Så länge andra familjemedlemmar inte har symtom kan de göra som vanligt och gå till skola, förskola eller jobb."
     ]
   }
 ]

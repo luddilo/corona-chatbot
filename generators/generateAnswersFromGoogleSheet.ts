@@ -1,7 +1,7 @@
 import Axios from "axios"
 import { UserTurn, ANYTHING, Intent } from "narratory"
 import { confirmRight, confirmWrong } from "../src/nlu"
-const narratoryOptions = require("../../config.json")
+const config = require("../../config.json")
 
 // https://docs.google.com/spreadsheets/d/1PAf9wmSxVnCBjIHft_-n0HOlRaq_LRlNMHeMPvYb2GU/edit#gid=901191674
 const url =
@@ -97,7 +97,7 @@ const generateSimpleAnswers = async () => {
             { intent: confirmRight, bot: "Tack!" },
             { intent: confirmWrong, bot: {
               say: "Tack!",
-              url: narratoryOptions.confirmWrongAnswerWebhook,
+              url: config.confirmWrongAnswerWebhook,
               params: ["classifiedQuestion", "classifiedUtterance"],
               asyncWebhook: true
             }},

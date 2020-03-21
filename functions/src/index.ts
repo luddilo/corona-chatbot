@@ -1,7 +1,6 @@
 import { cloudFunction } from "narratory-cloud"
 import { LogTurn } from "narratory"
 import Axios from "axios"
-const narratoryOptions = require("../../config.json")
 
 // The cloud function, defined here using a Narratory-cloud helper-method
 export const regions = cloudFunction(async (req, res) => {
@@ -34,7 +33,7 @@ export const confirmWrong = cloudFunction(async (req, res) => {
     "question: ",
     ""
   )}"`
-  const notificationUrl = narratoryOptions.fallbackWebhook
+  const notificationUrl = require("../config.json").slackWebhook
 
   Axios.post(notificationUrl, {
     text: message

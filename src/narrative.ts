@@ -29,55 +29,24 @@ const intro = {
         platform: "voximplant"
       },
       text:
-        "Jag kan hjälpa dig svara på frågor om Coronaviruset. Jag är ny på jobbet men lär mig snabbt, så ha gärna tålamod!"
+        "Detta är en testversion av en chatbot för att svara på frågor om Coronaviruset. Förhoppningsvis kan du hjälpa mig bli bättre!"
     },
     {
       text:
-        "Jag kan hjälpa dig svara på frågor om Coronaviruset. Jag är ny på jobbet men lär mig snabbt, så ha tålamod är du snäll!"
+        "Detta är en testversion av en chatbot för att svara på frågor om Coronaviruset. Förhoppningsvis kan du hjälpa mig bli bättre!"
     }
   ]
 }
 
-const querySymptoms: BotTurn = {
+const querySymptoms: BridgeTurn = {
   say: {
     text: [
-      "Jag vill börja med att fråga, har du feber, problem med luftvägarna eller hosta?",
-      "Inledningsvis vill jag fråga, har du något av följande symptom? Hosta, problem med luftvägarna, feber?"
+      "Inledningsvis vill jag säga att om du har symptom som hosta, problem med luftvägarna, feber eller halsont ska du stanna hemma. Om du har problem med andning, ring 112."
     ],
-    suggestions: ["Ja", "Nej, ingen av dessa symptom"]
   },
-  user: [
-    {
-      intent: {
-        ...nlu.hasSymptoms, // Combining two intents (Yes and hasSymptoms) since lists of intents are not yet supported by the platform
-        examples: [...nlu.hasSymptoms.examples, ...nlu.yes.examples]
-      },
-      bot: {
-        set: {
-          hasSymptoms: true
-        },
-        say:
-          "Okej. Då är det viktigt att du stannar hemma för att förhindra spridning. Du kan också ringa 11 77, och få rådgivning från en sjuksköterska."
-      }
-    },
-    {
-      intent: nlu.no,
-      bot: {
-        say:
-          "Skönt. Tänk på att det kan ta 2 veckor för symptom att visa sig, så det är väldigt viktigt att hålla social distans, undvika större sammanhang och inte minst att tänka på personlig hygien och tvätta händerna ofta."
-      }
-    },
-    {
-      intent: ANYTHING,
-      bot: {
-        set: {
-          retryCount: null // To avoid counting this as a fallback
-        },
-        say:
-          "Ok. Tänk på att det kan ta 2 veckor för symptom att visa sig, så det är väldigt viktigt att hålla social distans, undvika större sammanhang och inte minst att tänka på personlig hygien och tvätta händerna ofta."
-      }
-    }
-  ]
+  bot: {
+    say: "Så"
+  }
 }
 
 const queryQuestions: BotTurn = {

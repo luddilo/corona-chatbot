@@ -58,7 +58,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
           },
           "bot": {
             "say": "Tack!",
-            "url": "https://abfbb529.eu.ngrok.io/healthadvisor-nnbwwd/europe-west1/confirmWrong",
+            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
             "params": [
               "classifiedQuestion",
               "classifiedUtterance"
@@ -137,7 +137,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
           },
           "bot": {
             "say": "Tack!",
-            "url": "https://abfbb529.eu.ngrok.io/healthadvisor-nnbwwd/europe-west1/confirmWrong",
+            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
             "params": [
               "classifiedQuestion",
               "classifiedUtterance"
@@ -216,7 +216,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
           },
           "bot": {
             "say": "Tack!",
-            "url": "https://abfbb529.eu.ngrok.io/healthadvisor-nnbwwd/europe-west1/confirmWrong",
+            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
             "params": [
               "classifiedQuestion",
               "classifiedUtterance"
@@ -294,7 +294,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
           },
           "bot": {
             "say": "Tack!",
-            "url": "https://abfbb529.eu.ngrok.io/healthadvisor-nnbwwd/europe-west1/confirmWrong",
+            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
             "params": [
               "classifiedQuestion",
               "classifiedUtterance"
@@ -376,7 +376,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
           },
           "bot": {
             "say": "Tack!",
-            "url": "https://abfbb529.eu.ngrok.io/healthadvisor-nnbwwd/europe-west1/confirmWrong",
+            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
             "params": [
               "classifiedQuestion",
               "classifiedUtterance"
@@ -457,7 +457,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
           },
           "bot": {
             "say": "Tack!",
-            "url": "https://abfbb529.eu.ngrok.io/healthadvisor-nnbwwd/europe-west1/confirmWrong",
+            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
             "params": [
               "classifiedQuestion",
               "classifiedUtterance"
@@ -536,7 +536,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
           },
           "bot": {
             "say": "Tack!",
-            "url": "https://abfbb529.eu.ngrok.io/healthadvisor-nnbwwd/europe-west1/confirmWrong",
+            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
             "params": [
               "classifiedQuestion",
               "classifiedUtterance"
@@ -614,7 +614,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
           },
           "bot": {
             "say": "Tack!",
-            "url": "https://abfbb529.eu.ngrok.io/healthadvisor-nnbwwd/europe-west1/confirmWrong",
+            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
             "params": [
               "classifiedQuestion",
               "classifiedUtterance"
@@ -692,7 +692,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
           },
           "bot": {
             "say": "Tack!",
-            "url": "https://abfbb529.eu.ngrok.io/healthadvisor-nnbwwd/europe-west1/confirmWrong",
+            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
             "params": [
               "classifiedQuestion",
               "classifiedUtterance"
@@ -770,7 +770,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
           },
           "bot": {
             "say": "Tack!",
-            "url": "https://abfbb529.eu.ngrok.io/healthadvisor-nnbwwd/europe-west1/confirmWrong",
+            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
             "params": [
               "classifiedQuestion",
               "classifiedUtterance"
@@ -848,7 +848,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
           },
           "bot": {
             "say": "Tack!",
-            "url": "https://abfbb529.eu.ngrok.io/healthadvisor-nnbwwd/europe-west1/confirmWrong",
+            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
             "params": [
               "classifiedQuestion",
               "classifiedUtterance"
@@ -926,7 +926,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
           },
           "bot": {
             "say": "Tack!",
-            "url": "https://abfbb529.eu.ngrok.io/healthadvisor-nnbwwd/europe-west1/confirmWrong",
+            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
             "params": [
               "classifiedQuestion",
               "classifiedUtterance"
@@ -1004,7 +1004,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
           },
           "bot": {
             "say": "Tack!",
-            "url": "https://abfbb529.eu.ngrok.io/healthadvisor-nnbwwd/europe-west1/confirmWrong",
+            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
             "params": [
               "classifiedQuestion",
               "classifiedUtterance"
@@ -1082,7 +1082,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
           },
           "bot": {
             "say": "Tack!",
-            "url": "https://abfbb529.eu.ngrok.io/healthadvisor-nnbwwd/europe-west1/confirmWrong",
+            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
             "params": [
               "classifiedQuestion",
               "classifiedUtterance"
@@ -1160,7 +1160,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
           },
           "bot": {
             "say": "Tack!",
-            "url": "https://abfbb529.eu.ngrok.io/healthadvisor-nnbwwd/europe-west1/confirmWrong",
+            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
             "params": [
               "classifiedQuestion",
               "classifiedUtterance"
@@ -1238,7 +1238,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
           },
           "bot": {
             "say": "Tack!",
-            "url": "https://abfbb529.eu.ngrok.io/healthadvisor-nnbwwd/europe-west1/confirmWrong",
+            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
             "params": [
               "classifiedQuestion",
               "classifiedUtterance"
@@ -1313,7 +1313,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
           },
           "bot": {
             "say": "Tack!",
-            "url": "https://abfbb529.eu.ngrok.io/healthadvisor-nnbwwd/europe-west1/confirmWrong",
+            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
             "params": [
               "classifiedQuestion",
               "classifiedUtterance"
@@ -1388,7 +1388,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
           },
           "bot": {
             "say": "Tack!",
-            "url": "https://abfbb529.eu.ngrok.io/healthadvisor-nnbwwd/europe-west1/confirmWrong",
+            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
             "params": [
               "classifiedQuestion",
               "classifiedUtterance"
@@ -1468,7 +1468,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
           },
           "bot": {
             "say": "Tack!",
-            "url": "https://abfbb529.eu.ngrok.io/healthadvisor-nnbwwd/europe-west1/confirmWrong",
+            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
             "params": [
               "classifiedQuestion",
               "classifiedUtterance"
@@ -1545,7 +1545,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
           },
           "bot": {
             "say": "Tack!",
-            "url": "https://abfbb529.eu.ngrok.io/healthadvisor-nnbwwd/europe-west1/confirmWrong",
+            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
             "params": [
               "classifiedQuestion",
               "classifiedUtterance"
@@ -1623,7 +1623,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
           },
           "bot": {
             "say": "Tack!",
-            "url": "https://abfbb529.eu.ngrok.io/healthadvisor-nnbwwd/europe-west1/confirmWrong",
+            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
             "params": [
               "classifiedQuestion",
               "classifiedUtterance"
@@ -1700,7 +1700,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
           },
           "bot": {
             "say": "Tack!",
-            "url": "https://abfbb529.eu.ngrok.io/healthadvisor-nnbwwd/europe-west1/confirmWrong",
+            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
             "params": [
               "classifiedQuestion",
               "classifiedUtterance"
@@ -1777,7 +1777,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
           },
           "bot": {
             "say": "Tack!",
-            "url": "https://abfbb529.eu.ngrok.io/healthadvisor-nnbwwd/europe-west1/confirmWrong",
+            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
             "params": [
               "classifiedQuestion",
               "classifiedUtterance"
@@ -1854,7 +1854,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
           },
           "bot": {
             "say": "Tack!",
-            "url": "https://abfbb529.eu.ngrok.io/healthadvisor-nnbwwd/europe-west1/confirmWrong",
+            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
             "params": [
               "classifiedQuestion",
               "classifiedUtterance"
@@ -1931,7 +1931,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
           },
           "bot": {
             "say": "Tack!",
-            "url": "https://abfbb529.eu.ngrok.io/healthadvisor-nnbwwd/europe-west1/confirmWrong",
+            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
             "params": [
               "classifiedQuestion",
               "classifiedUtterance"
@@ -2007,7 +2007,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
           },
           "bot": {
             "say": "Tack!",
-            "url": "https://abfbb529.eu.ngrok.io/healthadvisor-nnbwwd/europe-west1/confirmWrong",
+            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
             "params": [
               "classifiedQuestion",
               "classifiedUtterance"
@@ -2086,7 +2086,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
           },
           "bot": {
             "say": "Tack!",
-            "url": "https://abfbb529.eu.ngrok.io/healthadvisor-nnbwwd/europe-west1/confirmWrong",
+            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
             "params": [
               "classifiedQuestion",
               "classifiedUtterance"
@@ -2166,7 +2166,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
           },
           "bot": {
             "say": "Tack!",
-            "url": "https://abfbb529.eu.ngrok.io/healthadvisor-nnbwwd/europe-west1/confirmWrong",
+            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
             "params": [
               "classifiedQuestion",
               "classifiedUtterance"
@@ -2245,7 +2245,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
           },
           "bot": {
             "say": "Tack!",
-            "url": "https://abfbb529.eu.ngrok.io/healthadvisor-nnbwwd/europe-west1/confirmWrong",
+            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
             "params": [
               "classifiedQuestion",
               "classifiedUtterance"
@@ -2323,7 +2323,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
           },
           "bot": {
             "say": "Tack!",
-            "url": "https://abfbb529.eu.ngrok.io/healthadvisor-nnbwwd/europe-west1/confirmWrong",
+            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
             "params": [
               "classifiedQuestion",
               "classifiedUtterance"
@@ -2401,7 +2401,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
           },
           "bot": {
             "say": "Tack!",
-            "url": "https://abfbb529.eu.ngrok.io/healthadvisor-nnbwwd/europe-west1/confirmWrong",
+            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
             "params": [
               "classifiedQuestion",
               "classifiedUtterance"
@@ -2479,7 +2479,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
           },
           "bot": {
             "say": "Tack!",
-            "url": "https://abfbb529.eu.ngrok.io/healthadvisor-nnbwwd/europe-west1/confirmWrong",
+            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
             "params": [
               "classifiedQuestion",
               "classifiedUtterance"
@@ -2557,7 +2557,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
           },
           "bot": {
             "say": "Tack!",
-            "url": "https://abfbb529.eu.ngrok.io/healthadvisor-nnbwwd/europe-west1/confirmWrong",
+            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
             "params": [
               "classifiedQuestion",
               "classifiedUtterance"
@@ -2635,7 +2635,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
           },
           "bot": {
             "say": "Tack!",
-            "url": "https://abfbb529.eu.ngrok.io/healthadvisor-nnbwwd/europe-west1/confirmWrong",
+            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
             "params": [
               "classifiedQuestion",
               "classifiedUtterance"
@@ -2713,7 +2713,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
           },
           "bot": {
             "say": "Tack!",
-            "url": "https://abfbb529.eu.ngrok.io/healthadvisor-nnbwwd/europe-west1/confirmWrong",
+            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
             "params": [
               "classifiedQuestion",
               "classifiedUtterance"
@@ -2791,7 +2791,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
           },
           "bot": {
             "say": "Tack!",
-            "url": "https://abfbb529.eu.ngrok.io/healthadvisor-nnbwwd/europe-west1/confirmWrong",
+            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
             "params": [
               "classifiedQuestion",
               "classifiedUtterance"
@@ -2869,7 +2869,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
           },
           "bot": {
             "say": "Tack!",
-            "url": "https://abfbb529.eu.ngrok.io/healthadvisor-nnbwwd/europe-west1/confirmWrong",
+            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
             "params": [
               "classifiedQuestion",
               "classifiedUtterance"
@@ -2947,7 +2947,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
           },
           "bot": {
             "say": "Tack!",
-            "url": "https://abfbb529.eu.ngrok.io/healthadvisor-nnbwwd/europe-west1/confirmWrong",
+            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
             "params": [
               "classifiedQuestion",
               "classifiedUtterance"
@@ -3025,7 +3025,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
           },
           "bot": {
             "say": "Tack!",
-            "url": "https://abfbb529.eu.ngrok.io/healthadvisor-nnbwwd/europe-west1/confirmWrong",
+            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
             "params": [
               "classifiedQuestion",
               "classifiedUtterance"
@@ -3103,7 +3103,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
           },
           "bot": {
             "say": "Tack!",
-            "url": "https://abfbb529.eu.ngrok.io/healthadvisor-nnbwwd/europe-west1/confirmWrong",
+            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
             "params": [
               "classifiedQuestion",
               "classifiedUtterance"
@@ -3181,7 +3181,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
           },
           "bot": {
             "say": "Tack!",
-            "url": "https://abfbb529.eu.ngrok.io/healthadvisor-nnbwwd/europe-west1/confirmWrong",
+            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
             "params": [
               "classifiedQuestion",
               "classifiedUtterance"
@@ -3258,7 +3258,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
           },
           "bot": {
             "say": "Tack!",
-            "url": "https://abfbb529.eu.ngrok.io/healthadvisor-nnbwwd/europe-west1/confirmWrong",
+            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
             "params": [
               "classifiedQuestion",
               "classifiedUtterance"
@@ -3335,7 +3335,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
           },
           "bot": {
             "say": "Tack!",
-            "url": "https://abfbb529.eu.ngrok.io/healthadvisor-nnbwwd/europe-west1/confirmWrong",
+            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
             "params": [
               "classifiedQuestion",
               "classifiedUtterance"
@@ -3413,7 +3413,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
           },
           "bot": {
             "say": "Tack!",
-            "url": "https://abfbb529.eu.ngrok.io/healthadvisor-nnbwwd/europe-west1/confirmWrong",
+            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
             "params": [
               "classifiedQuestion",
               "classifiedUtterance"
@@ -3492,7 +3492,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
           },
           "bot": {
             "say": "Tack!",
-            "url": "https://abfbb529.eu.ngrok.io/healthadvisor-nnbwwd/europe-west1/confirmWrong",
+            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
             "params": [
               "classifiedQuestion",
               "classifiedUtterance"
@@ -3569,7 +3569,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
           },
           "bot": {
             "say": "Tack!",
-            "url": "https://abfbb529.eu.ngrok.io/healthadvisor-nnbwwd/europe-west1/confirmWrong",
+            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
             "params": [
               "classifiedQuestion",
               "classifiedUtterance"
@@ -3647,7 +3647,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
           },
           "bot": {
             "say": "Tack!",
-            "url": "https://abfbb529.eu.ngrok.io/healthadvisor-nnbwwd/europe-west1/confirmWrong",
+            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
             "params": [
               "classifiedQuestion",
               "classifiedUtterance"
@@ -3725,7 +3725,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
           },
           "bot": {
             "say": "Tack!",
-            "url": "https://abfbb529.eu.ngrok.io/healthadvisor-nnbwwd/europe-west1/confirmWrong",
+            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
             "params": [
               "classifiedQuestion",
               "classifiedUtterance"
@@ -3802,7 +3802,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
           },
           "bot": {
             "say": "Tack!",
-            "url": "https://abfbb529.eu.ngrok.io/healthadvisor-nnbwwd/europe-west1/confirmWrong",
+            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
             "params": [
               "classifiedQuestion",
               "classifiedUtterance"
@@ -3880,7 +3880,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
           },
           "bot": {
             "say": "Tack!",
-            "url": "https://abfbb529.eu.ngrok.io/healthadvisor-nnbwwd/europe-west1/confirmWrong",
+            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
             "params": [
               "classifiedQuestion",
               "classifiedUtterance"
@@ -3956,7 +3956,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
           },
           "bot": {
             "say": "Tack!",
-            "url": "https://abfbb529.eu.ngrok.io/healthadvisor-nnbwwd/europe-west1/confirmWrong",
+            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
             "params": [
               "classifiedQuestion",
               "classifiedUtterance"
@@ -4033,7 +4033,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
           },
           "bot": {
             "say": "Tack!",
-            "url": "https://abfbb529.eu.ngrok.io/healthadvisor-nnbwwd/europe-west1/confirmWrong",
+            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
             "params": [
               "classifiedQuestion",
               "classifiedUtterance"
@@ -4111,7 +4111,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
           },
           "bot": {
             "say": "Tack!",
-            "url": "https://abfbb529.eu.ngrok.io/healthadvisor-nnbwwd/europe-west1/confirmWrong",
+            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
             "params": [
               "classifiedQuestion",
               "classifiedUtterance"
@@ -4190,7 +4190,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
           },
           "bot": {
             "say": "Tack!",
-            "url": "https://abfbb529.eu.ngrok.io/healthadvisor-nnbwwd/europe-west1/confirmWrong",
+            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
             "params": [
               "classifiedQuestion",
               "classifiedUtterance"
@@ -4268,7 +4268,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
           },
           "bot": {
             "say": "Tack!",
-            "url": "https://abfbb529.eu.ngrok.io/healthadvisor-nnbwwd/europe-west1/confirmWrong",
+            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
             "params": [
               "classifiedQuestion",
               "classifiedUtterance"
@@ -4346,7 +4346,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
           },
           "bot": {
             "say": "Tack!",
-            "url": "https://abfbb529.eu.ngrok.io/healthadvisor-nnbwwd/europe-west1/confirmWrong",
+            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
             "params": [
               "classifiedQuestion",
               "classifiedUtterance"
@@ -4425,7 +4425,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
           },
           "bot": {
             "say": "Tack!",
-            "url": "https://abfbb529.eu.ngrok.io/healthadvisor-nnbwwd/europe-west1/confirmWrong",
+            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
             "params": [
               "classifiedQuestion",
               "classifiedUtterance"
@@ -4505,7 +4505,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
           },
           "bot": {
             "say": "Tack!",
-            "url": "https://abfbb529.eu.ngrok.io/healthadvisor-nnbwwd/europe-west1/confirmWrong",
+            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
             "params": [
               "classifiedQuestion",
               "classifiedUtterance"
@@ -4585,7 +4585,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
           },
           "bot": {
             "say": "Tack!",
-            "url": "https://abfbb529.eu.ngrok.io/healthadvisor-nnbwwd/europe-west1/confirmWrong",
+            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
             "params": [
               "classifiedQuestion",
               "classifiedUtterance"
@@ -4664,7 +4664,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
           },
           "bot": {
             "say": "Tack!",
-            "url": "https://abfbb529.eu.ngrok.io/healthadvisor-nnbwwd/europe-west1/confirmWrong",
+            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
             "params": [
               "classifiedQuestion",
               "classifiedUtterance"
@@ -4742,7 +4742,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
           },
           "bot": {
             "say": "Tack!",
-            "url": "https://abfbb529.eu.ngrok.io/healthadvisor-nnbwwd/europe-west1/confirmWrong",
+            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
             "params": [
               "classifiedQuestion",
               "classifiedUtterance"
@@ -4820,7 +4820,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
           },
           "bot": {
             "say": "Tack!",
-            "url": "https://abfbb529.eu.ngrok.io/healthadvisor-nnbwwd/europe-west1/confirmWrong",
+            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
             "params": [
               "classifiedQuestion",
               "classifiedUtterance"

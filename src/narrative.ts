@@ -20,7 +20,7 @@ const init: BotTurn = {
   say: ""
 }
 
-const greeting = ["Hej", "Hallå", "Hej"]
+const greeting = ["Hej", "Hej", "Hallå"]
 
 const intro = {
   say: [
@@ -29,67 +29,33 @@ const intro = {
         platform: "voximplant"
       },
       text:
-        "Jag kan hjälpa dig svara på frågor om Coronaviruset. Jag är ny på jobbet men lär mig snabbt, så ha gärna tålamod!"
+        "Jag kan svara på frågor om Coronaviruset. Jag är ny på jobbet men lär mig snabbt, så ha gärna tålamod!"
     },
     {
       text:
-        "Jag kan hjälpa dig svara på frågor om Coronaviruset. Jag är ny på jobbet men lär mig snabbt, så ha tålamod är du snäll!"
+        "Jag kan svara på frågor om Coronaviruset. Jag är ny på jobbet men lär mig snabbt, så ha tålamod är du snäll!"
     }
   ]
 }
-/*
-const querySymptoms: BotTurn = {
-  say: {
-    text: [
-      "Jag vill börja med att fråga, har du feber, problem med luftvägarna eller hosta?",
-      "Inledningsvis vill jag fråga, har du något av följande symptom? Hosta, problem med luftvägarna, feber?"
-    ],
-    suggestions: ["Ja", "Nej, ingen av dessa symptom"]
-  },
-  user: [
-    {
-      intent: {
-        ...nlu.hasSymptoms, // Combining two intents (Yes and hasSymptoms) since lists of intents are not yet supported by the platform
-        examples: [...nlu.hasSymptoms.examples, ...nlu.yes.examples]
-      },
-      bot: {
-        set: {
-          hasSymptoms: true
-        },
-        say:
-          "Okej. Då är det viktigt att du stannar hemma för att förhindra spridning. Du kan också ringa 11 77, och få rådgivning från en sjuksköterska."
-      }
-    },
-    {
-      intent: nlu.no,
-      bot: {
-        say:
-          "Skönt. Tänk på att det kan ta 2 veckor för symptom att visa sig, så det är väldigt viktigt att hålla social distans, undvika större sammanhang och inte minst att tänka på personlig hygien och tvätta händerna ofta."
-      }
-    },
-    {
-      intent: ANYTHING,
-      bot: {
-        set: {
-          retryCount: null // To avoid counting this as a fallback
-        },
-        say:
-          "Ok. Tänk på att det kan ta 2 veckor för symptom att visa sig, så det är väldigt viktigt att hålla social distans, undvika större sammanhang och inte minst att tänka på personlig hygien och tvätta händerna ofta."
-      }
-    }
-  ]
-}
-*/
 
 const queryQuestions: BotTurn = {
   label: "QUERY_QUESTION",
   say: [
     {
-      cond: { turnCount: 0 },
+      cond: { 
+        platform: "voximplant",
+        turnCount: 0 
+      },
+      text: ["Har du några frågor?", "Undrar du nånting?", "Undrar du nånting om Corona-viruset?"]
+    },
+    {
+      cond: {
+        turnCount: 0
+      },
       text: ["Har du några frågor till mig?", "Undrar du någonting?", "Undrar du någonting om Corona-viruset?"]
     },
     {
-      text: ["Har du någon mer fråga till mig?", "Undrar du något annat?", "Undrar du något mer"]
+      text: ["Har du någon mer fråga till mig?", "Undrar du något annat?", "Undrar du något mer?"]
     }
   ],
   set: {

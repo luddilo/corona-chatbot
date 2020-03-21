@@ -8,6 +8,17 @@ export const no: Intent = {
   examples: ["nej", "nope", "no", "aldrig", "jag vill inte"]
 }
 
+export const confirmRight: Intent = {
+  name: "confirmRight",
+  examples: [...yes.examples, "korrekt", "det stämmer", "det är rätt", "rätt", "stämmer"]
+}
+
+ 
+export const confirmWrong: Intent = {
+  name: "confirmWrong",
+  examples: [...no.examples, "ej korrekt", "det stämmer inte", "det är fel", "fel", "stämmer ej"]
+}
+
 export const dontKnow: Intent = {
   examples: ["jag minns inte", "jag kommer inte ihåg", "jag vet inte", "vet ej"]
 }

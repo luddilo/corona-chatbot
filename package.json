@@ -9,7 +9,7 @@
     "start": "tsc && node node_modules/narratory/out/cmd/start.js",
     "build": "tsc && node node_modules/narratory/out/cmd/build.js",
     "chat": "node node_modules/narratory/out/cmd/chat.js",
-    "generate:faq": "tsc && node out/answers/generateAnswersFromGoogleSheet.js",
+    "generate:faq": "tsc && node out/generators/generateAnswersFromGoogleSheet.js",
     "watch": "tsc --watch"
   },
   "watch": {
@@ -26,7 +26,8 @@
   "license": "ISC",
   "dependencies": {
     "@types/node": "^12.12.21",
-    "narratory": "^0.8.3"
+    "axios": "^0.19.2",
+    "narratory": "^0.9.0"
   },
   "devDependencies": {
     "concurrently": "^5.0.2",

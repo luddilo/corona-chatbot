@@ -1,0 +1,5 @@
+{ 
+	"fallbackWebhook": "https://hooks.slack.com/services/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",
+	"logWebhook": "https://abfbb529.eu.ngrok.io/healthadvisor-nnbwwd/europe-west1/log",
+	"confirmWrongAnswerWebhook": "https://abfbb529.eu.ngrok.io/healthadvisor-nnbwwd/europe-west1/confirmWrong"
+}

@@ -2,7 +2,7 @@ import narrative from "./narrative"
 import userInitiatives from "./userInitiatives"
 import { Agent, Language } from "narratory"
 
-const narratoryOptions = require("../narratory_credentials.json")
+const narratoryOptions = require("../config.json")
 
 const agent: Agent = {
   agentName: "CoronaBot",
@@ -12,7 +12,8 @@ const agent: Agent = {
   bridges: ["Så"], // No bridges needed since we're looping the question state
   narratoryKey: narratoryOptions.narratoryKey,
   googleCredentials: require("../google_credentials_test.json"), // Populate this file, or change the link to your existing credentials file. Check the README.md for how to create it.
-  fallbackWebhook: narratoryOptions.fallbackWebhook
+  fallbackWebhook: narratoryOptions.fallbackWebhook,
+  logWebhook: narratoryOptions.logWebhook
 }
 
 export default agent

@@ -6,6 +6,7 @@ import { answerRegion } from "./answers/answerRegion"
 import { answerStayHome } from "./answers/answerStayhome"
 import { answerFamily } from "./answers/answerFamily"
 import { answerHelp } from "./answers/answerHelp"
+import { followupAge } from "./followup/followupAge"
 
 /*
     Questions and other user-driven initiatives
@@ -45,6 +46,10 @@ const questions: UserTurn[] = [
   {
     intent: nlu.queryHelp,
     bot: answerHelp
+  },
+  {
+    intent: nlu.querySocializing,
+    bot: followupAge
   }
 ]
 

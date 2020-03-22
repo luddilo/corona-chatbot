@@ -1,5 +1,20 @@
 import { Entity, Intent, entities } from "narratory"
 
+const symptom: Entity = {
+  name: "Symptom",
+  enums: [
+    {
+      name: "feber", alts: ["hög temperatur", "frossa"]
+    }, 
+    {
+      name: "luftvägar", alts: ["problem med andning", "andningsproblem", "andningssvårigheter"]
+    }, 
+    {
+      name: "hosta", alts: ["hostig"]
+    }
+  ]
+}
+
 export const yes: Intent = {
   examples: ["ja", "japp", "absolut", "okej", "jajamän", "alright", "yes"]
 }
@@ -27,18 +42,14 @@ export const exit: Intent = {
   examples: ["exit", "hejdå", "avsluta", "bye bye"]
 }
 
-const symptom: Entity = {
-  name: "Symptom",
-  enums: [
-    {
-      name: "feber", alts: ["hög temperatur", "frossa"]
-    }, 
-    {
-      name: "luftvägar", alts: ["problem med andning", "andningsproblem", "andningssvårigheter"]
-    }, 
-    {
-      name: "hosta", alts: ["hostig"]
-    }
+export const ageIntent: Intent = {
+  entities: {age: entities.numberInteger},
+  examples: [
+      "_age",
+      "jag är _age",
+      "_age år",
+      "jag har _age år på nacken",
+      "_age jordsnurr"
   ]
 }
 
@@ -113,6 +124,14 @@ export const queryStayHome : Intent = {
     "när måste jag vara hemma",
     "ska jag undvika att gå ut",
     "ska jag stanna hemma nu",
+  ]
+}
+
+export const querySocializing: Intent = {
+  examples: [
+    "kan jag träffa vänner",
+    "får jag träffa min familj",
+    "kan jag hänga med mina kompisar"
   ]
 }
 

@@ -42,17 +42,6 @@ export const exit: Intent = {
   examples: ["exit", "hejdå", "avsluta", "bye bye"]
 }
 
-export const ageIntent: Intent = {
-  entities: {age: entities.numberInteger},
-  examples: [
-      "_age",
-      "jag är _age",
-      "_age år",
-      "jag har _age år på nacken",
-      "_age jordsnurr"
-  ]
-}
-
 export const hasSymptoms: Intent = {
   entities: {
     symptom

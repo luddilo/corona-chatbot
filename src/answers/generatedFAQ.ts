@@ -14,70 +14,75 @@ export const simpleQuestionAnswers : UserTurn[] = [
       ]
     },
     "bot": {
-      "say": "De vanligaste symtomen är feber och hosta, men även andningspåverkan, halsont, huvudvärk, muskel- och ledvärk är vanliga symtom. En del blir allvarligt sjuka med exempelvis andningssvårigheter och lunginflammation.. Var det ett korrekt svar?",
+      "say": [
+        "De vanligaste symtomen är feber och hosta, men även andningspåverkan, halsont, huvudvärk, muskel- och ledvärk är vanliga symtom. En del blir allvarligt sjuka med exempelvis andningssvårigheter och lunginflammation."
+      ],
       "set": {
         "classifiedQuestion": "question: vad är symptomen",
         "classifiedUtterance": "_user_text"
       },
-      "user": [
-        {
-          "intent": {
-            "name": "confirmRight",
-            "examples": [
-              "ja",
-              "japp",
-              "absolut",
-              "okej",
-              "jajamän",
-              "alright",
-              "yes",
-              "korrekt",
-              "det stämmer",
-              "det är rätt",
-              "rätt",
-              "stämmer"
-            ]
+      "bot": {
+        "say": "Var det ett korrekt svar?",
+        "user": [
+          {
+            "intent": {
+              "name": "confirmRight",
+              "examples": [
+                "ja",
+                "japp",
+                "absolut",
+                "okej",
+                "jajamän",
+                "alright",
+                "yes",
+                "korrekt",
+                "det stämmer",
+                "det är rätt",
+                "rätt",
+                "stämmer"
+              ]
+            },
+            "bot": "Tack!"
           },
-          "bot": "Tack!"
-        },
-        {
-          "intent": {
-            "name": "confirmWrong",
-            "examples": [
-              "nej",
-              "nope",
-              "no",
-              "aldrig",
-              "jag vill inte",
-              "ej korrekt",
-              "det stämmer inte",
-              "det är fel",
-              "fel",
-              "stämmer ej"
-            ]
+          {
+            "intent": {
+              "name": "confirmWrong",
+              "examples": [
+                "nej",
+                "nope",
+                "no",
+                "aldrig",
+                "jag vill inte",
+                "ej korrekt",
+                "det stämmer inte",
+                "det är fel",
+                "fel",
+                "stämmer ej"
+              ]
+            },
+            "bot": {
+              "say": "Tack!",
+              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
+              "params": [
+                "classifiedQuestion",
+                "classifiedUtterance"
+              ],
+              "asyncWebhook": true
+            }
           },
-          "bot": {
-            "say": "Tack!",
-            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-            "params": [
-              "classifiedQuestion",
-              "classifiedUtterance"
-            ],
-            "asyncWebhook": true
+          {
+            "intent": {
+              "examples": [
+                "__ANYTHING"
+              ]
+            },
+            "bot": {
+              "say": "Förlåt, var det rätt eller fel svar?",
+              "repair": true
+            }
           }
-        },
-        {
-          "intent": {
-            "examples": [
-              "__ANYTHING"
-            ]
-          },
-          "bot": {
-            "say": "Förlåt, var det rätt eller fel svar?",
-            "repair": true
-          }
-        }
-      ]
+        ]
+      }
     }
   },
   {
@@ -93,70 +98,75 @@ export const simpleQuestionAnswers : UserTurn[] = [
       ]
     },
     "bot": {
-      "say": "Viruset smittar i första hand genom kontakt med droppar och sekret från luftvägarna. Smitta kan därför ske vid hostningar och nysningar, eller vid kontakt med personer. Det är fortfarande oklart om viruset kan smitta via droppar som landat på ytor eller föremål.. Var det ett korrekt svar?",
+      "say": [
+        "Viruset smittar i första hand genom kontakt med droppar och sekret från luftvägarna. Smitta kan därför ske vid hostningar och nysningar, eller vid kontakt med personer. Det är fortfarande oklart om viruset kan smitta via droppar som landat på ytor eller föremål."
+      ],
       "set": {
         "classifiedQuestion": "question: hur smittar det",
         "classifiedUtterance": "_user_text"
       },
-      "user": [
-        {
-          "intent": {
-            "name": "confirmRight",
-            "examples": [
-              "ja",
-              "japp",
-              "absolut",
-              "okej",
-              "jajamän",
-              "alright",
-              "yes",
-              "korrekt",
-              "det stämmer",
-              "det är rätt",
-              "rätt",
-              "stämmer"
-            ]
+      "bot": {
+        "say": "Var det ett korrekt svar?",
+        "user": [
+          {
+            "intent": {
+              "name": "confirmRight",
+              "examples": [
+                "ja",
+                "japp",
+                "absolut",
+                "okej",
+                "jajamän",
+                "alright",
+                "yes",
+                "korrekt",
+                "det stämmer",
+                "det är rätt",
+                "rätt",
+                "stämmer"
+              ]
+            },
+            "bot": "Tack!"
           },
-          "bot": "Tack!"
-        },
-        {
-          "intent": {
-            "name": "confirmWrong",
-            "examples": [
-              "nej",
-              "nope",
-              "no",
-              "aldrig",
-              "jag vill inte",
-              "ej korrekt",
-              "det stämmer inte",
-              "det är fel",
-              "fel",
-              "stämmer ej"
-            ]
+          {
+            "intent": {
+              "name": "confirmWrong",
+              "examples": [
+                "nej",
+                "nope",
+                "no",
+                "aldrig",
+                "jag vill inte",
+                "ej korrekt",
+                "det stämmer inte",
+                "det är fel",
+                "fel",
+                "stämmer ej"
+              ]
+            },
+            "bot": {
+              "say": "Tack!",
+              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
+              "params": [
+                "classifiedQuestion",
+                "classifiedUtterance"
+              ],
+              "asyncWebhook": true
+            }
           },
-          "bot": {
-            "say": "Tack!",
-            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-            "params": [
-              "classifiedQuestion",
-              "classifiedUtterance"
-            ],
-            "asyncWebhook": true
+          {
+            "intent": {
+              "examples": [
+                "__ANYTHING"
+              ]
+            },
+            "bot": {
+              "say": "Förlåt, var det rätt eller fel svar?",
+              "repair": true
+            }
           }
-        },
-        {
-          "intent": {
-            "examples": [
-              "__ANYTHING"
-            ]
-          },
-          "bot": {
-            "say": "Förlåt, var det rätt eller fel svar?",
-            "repair": true
-          }
-        }
-      ]
+        ]
+      }
     }
   },
   {
@@ -172,70 +182,75 @@ export const simpleQuestionAnswers : UserTurn[] = [
       ]
     },
     "bot": {
-      "say": "Studier gjorda vid Folkhälsomyndigheten visar att hög ålder är den främsta riskfaktorn. Personer med hög ålder i kombination med andra sjukdomar, såsom högt blodtryck, hjärt- kärlsjukdom, lungsjukdom, cancer eller diabetes är också överrepresenterade.. Var det ett korrekt svar?",
+      "say": [
+        "Studier gjorda vid Folkhälsomyndigheten visar att hög ålder är den främsta riskfaktorn. Personer med hög ålder i kombination med andra sjukdomar, såsom högt blodtryck, hjärt- kärlsjukdom, lungsjukdom, cancer eller diabetes är också överrepresenterade."
+      ],
       "set": {
         "classifiedQuestion": "question: vilka är i riskzonen",
         "classifiedUtterance": "_user_text"
       },
-      "user": [
-        {
-          "intent": {
-            "name": "confirmRight",
-            "examples": [
-              "ja",
-              "japp",
-              "absolut",
-              "okej",
-              "jajamän",
-              "alright",
-              "yes",
-              "korrekt",
-              "det stämmer",
-              "det är rätt",
-              "rätt",
-              "stämmer"
-            ]
+      "bot": {
+        "say": "Var det ett korrekt svar?",
+        "user": [
+          {
+            "intent": {
+              "name": "confirmRight",
+              "examples": [
+                "ja",
+                "japp",
+                "absolut",
+                "okej",
+                "jajamän",
+                "alright",
+                "yes",
+                "korrekt",
+                "det stämmer",
+                "det är rätt",
+                "rätt",
+                "stämmer"
+              ]
+            },
+            "bot": "Tack!"
           },
-          "bot": "Tack!"
-        },
-        {
-          "intent": {
-            "name": "confirmWrong",
-            "examples": [
-              "nej",
-              "nope",
-              "no",
-              "aldrig",
-              "jag vill inte",
-              "ej korrekt",
-              "det stämmer inte",
-              "det är fel",
-              "fel",
-              "stämmer ej"
-            ]
+          {
+            "intent": {
+              "name": "confirmWrong",
+              "examples": [
+                "nej",
+                "nope",
+                "no",
+                "aldrig",
+                "jag vill inte",
+                "ej korrekt",
+                "det stämmer inte",
+                "det är fel",
+                "fel",
+                "stämmer ej"
+              ]
+            },
+            "bot": {
+              "say": "Tack!",
+              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
+              "params": [
+                "classifiedQuestion",
+                "classifiedUtterance"
+              ],
+              "asyncWebhook": true
+            }
           },
-          "bot": {
-            "say": "Tack!",
-            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-            "params": [
-              "classifiedQuestion",
-              "classifiedUtterance"
-            ],
-            "asyncWebhook": true
+          {
+            "intent": {
+              "examples": [
+                "__ANYTHING"
+              ]
+            },
+            "bot": {
+              "say": "Förlåt, var det rätt eller fel svar?",
+              "repair": true
+            }
           }
-        },
-        {
-          "intent": {
-            "examples": [
-              "__ANYTHING"
-            ]
-          },
-          "bot": {
-            "say": "Förlåt, var det rätt eller fel svar?",
-            "repair": true
-          }
-        }
-      ]
+        ]
+      }
     }
   },
   {
@@ -250,70 +265,75 @@ export const simpleQuestionAnswers : UserTurn[] = [
       ]
     },
     "bot": {
-      "say": "Undvik att röra vid ansiktet och ögonen, och undvik nära kontakt med sjuka människor. Tvätta händerna ofta eller använd handsprit som alternativ. Hosta/nysa i armvecket eller i en pappersnäsduk. Stanna hemma när du är sjuk.. Var det ett korrekt svar?",
+      "say": [
+        "Undvik att röra vid ansiktet och ögonen, och undvik nära kontakt med sjuka människor. Tvätta händerna ofta eller använd handsprit som alternativ. Hosta/nysa i armvecket eller i en pappersnäsduk. Stanna hemma när du är sjuk."
+      ],
       "set": {
         "classifiedQuestion": "question: hur skyddar man sig",
         "classifiedUtterance": "_user_text"
       },
-      "user": [
-        {
-          "intent": {
-            "name": "confirmRight",
-            "examples": [
-              "ja",
-              "japp",
-              "absolut",
-              "okej",
-              "jajamän",
-              "alright",
-              "yes",
-              "korrekt",
-              "det stämmer",
-              "det är rätt",
-              "rätt",
-              "stämmer"
-            ]
+      "bot": {
+        "say": "Var det ett korrekt svar?",
+        "user": [
+          {
+            "intent": {
+              "name": "confirmRight",
+              "examples": [
+                "ja",
+                "japp",
+                "absolut",
+                "okej",
+                "jajamän",
+                "alright",
+                "yes",
+                "korrekt",
+                "det stämmer",
+                "det är rätt",
+                "rätt",
+                "stämmer"
+              ]
+            },
+            "bot": "Tack!"
           },
-          "bot": "Tack!"
-        },
-        {
-          "intent": {
-            "name": "confirmWrong",
-            "examples": [
-              "nej",
-              "nope",
-              "no",
-              "aldrig",
-              "jag vill inte",
-              "ej korrekt",
-              "det stämmer inte",
-              "det är fel",
-              "fel",
-              "stämmer ej"
-            ]
+          {
+            "intent": {
+              "name": "confirmWrong",
+              "examples": [
+                "nej",
+                "nope",
+                "no",
+                "aldrig",
+                "jag vill inte",
+                "ej korrekt",
+                "det stämmer inte",
+                "det är fel",
+                "fel",
+                "stämmer ej"
+              ]
+            },
+            "bot": {
+              "say": "Tack!",
+              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
+              "params": [
+                "classifiedQuestion",
+                "classifiedUtterance"
+              ],
+              "asyncWebhook": true
+            }
           },
-          "bot": {
-            "say": "Tack!",
-            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-            "params": [
-              "classifiedQuestion",
-              "classifiedUtterance"
-            ],
-            "asyncWebhook": true
+          {
+            "intent": {
+              "examples": [
+                "__ANYTHING"
+              ]
+            },
+            "bot": {
+              "say": "Förlåt, var det rätt eller fel svar?",
+              "repair": true
+            }
           }
-        },
-        {
-          "intent": {
-            "examples": [
-              "__ANYTHING"
-            ]
-          },
-          "bot": {
-            "say": "Förlåt, var det rätt eller fel svar?",
-            "repair": true
-          }
-        }
-      ]
+        ]
+      }
     }
   },
   {
@@ -332,70 +352,75 @@ export const simpleQuestionAnswers : UserTurn[] = [
       ]
     },
     "bot": {
-      "say": "Det är oklart hur länge man kommer att vara immun. Utifrån tidigare erfarenheter så är bedömningen att immuniteten varar så länge att man inte kommer att smittas fler gånger under en och samma säsong.. Var det ett korrekt svar?",
+      "say": [
+        "Det är oklart hur länge man kommer att vara immun. Utifrån tidigare erfarenheter så är bedömningen att immuniteten varar så länge att man inte kommer att smittas fler gånger under en och samma säsong."
+      ],
       "set": {
         "classifiedQuestion": "question: Kan man smittas flera gånger ",
         "classifiedUtterance": "_user_text"
       },
-      "user": [
-        {
-          "intent": {
-            "name": "confirmRight",
-            "examples": [
-              "ja",
-              "japp",
-              "absolut",
-              "okej",
-              "jajamän",
-              "alright",
-              "yes",
-              "korrekt",
-              "det stämmer",
-              "det är rätt",
-              "rätt",
-              "stämmer"
-            ]
+      "bot": {
+        "say": "Var det ett korrekt svar?",
+        "user": [
+          {
+            "intent": {
+              "name": "confirmRight",
+              "examples": [
+                "ja",
+                "japp",
+                "absolut",
+                "okej",
+                "jajamän",
+                "alright",
+                "yes",
+                "korrekt",
+                "det stämmer",
+                "det är rätt",
+                "rätt",
+                "stämmer"
+              ]
+            },
+            "bot": "Tack!"
           },
-          "bot": "Tack!"
-        },
-        {
-          "intent": {
-            "name": "confirmWrong",
-            "examples": [
-              "nej",
-              "nope",
-              "no",
-              "aldrig",
-              "jag vill inte",
-              "ej korrekt",
-              "det stämmer inte",
-              "det är fel",
-              "fel",
-              "stämmer ej"
-            ]
+          {
+            "intent": {
+              "name": "confirmWrong",
+              "examples": [
+                "nej",
+                "nope",
+                "no",
+                "aldrig",
+                "jag vill inte",
+                "ej korrekt",
+                "det stämmer inte",
+                "det är fel",
+                "fel",
+                "stämmer ej"
+              ]
+            },
+            "bot": {
+              "say": "Tack!",
+              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
+              "params": [
+                "classifiedQuestion",
+                "classifiedUtterance"
+              ],
+              "asyncWebhook": true
+            }
           },
-          "bot": {
-            "say": "Tack!",
-            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-            "params": [
-              "classifiedQuestion",
-              "classifiedUtterance"
-            ],
-            "asyncWebhook": true
+          {
+            "intent": {
+              "examples": [
+                "__ANYTHING"
+              ]
+            },
+            "bot": {
+              "say": "Förlåt, var det rätt eller fel svar?",
+              "repair": true
+            }
           }
-        },
-        {
-          "intent": {
-            "examples": [
-              "__ANYTHING"
-            ]
-          },
-          "bot": {
-            "say": "Förlåt, var det rätt eller fel svar?",
-            "repair": true
-          }
-        }
-      ]
+        ]
+      }
     }
   },
   {
@@ -413,70 +438,75 @@ export const simpleQuestionAnswers : UserTurn[] = [
       ]
     },
     "bot": {
-      "say": "Vid symtom som snuva, hosta eller feber ska du försöka låta bli att träffa andra människor, även om du bara känner dig lite sjuk. Du ska inte gå till jobbet eller skolan.. Var det ett korrekt svar?",
+      "say": [
+        "Vid symtom som snuva, hosta eller feber ska du försöka låta bli att träffa andra människor, även om du bara känner dig lite sjuk. Du ska inte gå till jobbet eller skolan."
+      ],
       "set": {
         "classifiedQuestion": "question: ska jag stanna hemma",
         "classifiedUtterance": "_user_text"
       },
-      "user": [
-        {
-          "intent": {
-            "name": "confirmRight",
-            "examples": [
-              "ja",
-              "japp",
-              "absolut",
-              "okej",
-              "jajamän",
-              "alright",
-              "yes",
-              "korrekt",
-              "det stämmer",
-              "det är rätt",
-              "rätt",
-              "stämmer"
-            ]
+      "bot": {
+        "say": "Var det ett korrekt svar?",
+        "user": [
+          {
+            "intent": {
+              "name": "confirmRight",
+              "examples": [
+                "ja",
+                "japp",
+                "absolut",
+                "okej",
+                "jajamän",
+                "alright",
+                "yes",
+                "korrekt",
+                "det stämmer",
+                "det är rätt",
+                "rätt",
+                "stämmer"
+              ]
+            },
+            "bot": "Tack!"
           },
-          "bot": "Tack!"
-        },
-        {
-          "intent": {
-            "name": "confirmWrong",
-            "examples": [
-              "nej",
-              "nope",
-              "no",
-              "aldrig",
-              "jag vill inte",
-              "ej korrekt",
-              "det stämmer inte",
-              "det är fel",
-              "fel",
-              "stämmer ej"
-            ]
+          {
+            "intent": {
+              "name": "confirmWrong",
+              "examples": [
+                "nej",
+                "nope",
+                "no",
+                "aldrig",
+                "jag vill inte",
+                "ej korrekt",
+                "det stämmer inte",
+                "det är fel",
+                "fel",
+                "stämmer ej"
+              ]
+            },
+            "bot": {
+              "say": "Tack!",
+              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
+              "params": [
+                "classifiedQuestion",
+                "classifiedUtterance"
+              ],
+              "asyncWebhook": true
+            }
           },
-          "bot": {
-            "say": "Tack!",
-            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-            "params": [
-              "classifiedQuestion",
-              "classifiedUtterance"
-            ],
-            "asyncWebhook": true
+          {
+            "intent": {
+              "examples": [
+                "__ANYTHING"
+              ]
+            },
+            "bot": {
+              "say": "Förlåt, var det rätt eller fel svar?",
+              "repair": true
+            }
           }
-        },
-        {
-          "intent": {
-            "examples": [
-              "__ANYTHING"
-            ]
-          },
-          "bot": {
-            "say": "Förlåt, var det rätt eller fel svar?",
-            "repair": true
-          }
-        }
-      ]
+        ]
+      }
     }
   },
   {
@@ -492,70 +522,75 @@ export const simpleQuestionAnswers : UserTurn[] = [
       ]
     },
     "bot": {
-      "say": "Stanna hemma så länge du känner dig sjuk, och vänta minst två dygn efter att du blivit frisk innan du går till jobb eller skola.. Var det ett korrekt svar?",
+      "say": [
+        "Stanna hemma så länge du känner dig sjuk, och vänta minst två dygn efter att du blivit frisk innan du går till jobb eller skola."
+      ],
       "set": {
         "classifiedQuestion": "question: hur många dagar ska jag stanna hemma",
         "classifiedUtterance": "_user_text"
       },
-      "user": [
-        {
-          "intent": {
-            "name": "confirmRight",
-            "examples": [
-              "ja",
-              "japp",
-              "absolut",
-              "okej",
-              "jajamän",
-              "alright",
-              "yes",
-              "korrekt",
-              "det stämmer",
-              "det är rätt",
-              "rätt",
-              "stämmer"
-            ]
+      "bot": {
+        "say": "Var det ett korrekt svar?",
+        "user": [
+          {
+            "intent": {
+              "name": "confirmRight",
+              "examples": [
+                "ja",
+                "japp",
+                "absolut",
+                "okej",
+                "jajamän",
+                "alright",
+                "yes",
+                "korrekt",
+                "det stämmer",
+                "det är rätt",
+                "rätt",
+                "stämmer"
+              ]
+            },
+            "bot": "Tack!"
           },
-          "bot": "Tack!"
-        },
-        {
-          "intent": {
-            "name": "confirmWrong",
-            "examples": [
-              "nej",
-              "nope",
-              "no",
-              "aldrig",
-              "jag vill inte",
-              "ej korrekt",
-              "det stämmer inte",
-              "det är fel",
-              "fel",
-              "stämmer ej"
-            ]
+          {
+            "intent": {
+              "name": "confirmWrong",
+              "examples": [
+                "nej",
+                "nope",
+                "no",
+                "aldrig",
+                "jag vill inte",
+                "ej korrekt",
+                "det stämmer inte",
+                "det är fel",
+                "fel",
+                "stämmer ej"
+              ]
+            },
+            "bot": {
+              "say": "Tack!",
+              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
+              "params": [
+                "classifiedQuestion",
+                "classifiedUtterance"
+              ],
+              "asyncWebhook": true
+            }
           },
-          "bot": {
-            "say": "Tack!",
-            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-            "params": [
-              "classifiedQuestion",
-              "classifiedUtterance"
-            ],
-            "asyncWebhook": true
+          {
+            "intent": {
+              "examples": [
+                "__ANYTHING"
+              ]
+            },
+            "bot": {
+              "say": "Förlåt, var det rätt eller fel svar?",
+              "repair": true
+            }
           }
-        },
-        {
-          "intent": {
-            "examples": [
-              "__ANYTHING"
-            ]
-          },
-          "bot": {
-            "say": "Förlåt, var det rätt eller fel svar?",
-            "repair": true
-          }
-        }
-      ]
+        ]
+      }
     }
   },
   {
@@ -570,70 +605,75 @@ export const simpleQuestionAnswers : UserTurn[] = [
       ]
     },
     "bot": {
-      "say": "De allra flesta som smittas blir lindrigt sjuka med luftvägssymtom som går över av sig själva, men vissa drabbas av allvarligare sjukdom som lunginflammation.. Var det ett korrekt svar?",
+      "say": [
+        "De allra flesta som smittas blir lindrigt sjuka med luftvägssymtom som går över av sig själva, men vissa drabbas av allvarligare sjukdom som lunginflammation."
+      ],
       "set": {
         "classifiedQuestion": "question: hur sjuk blir man av corona",
         "classifiedUtterance": "_user_text"
       },
-      "user": [
-        {
-          "intent": {
-            "name": "confirmRight",
-            "examples": [
-              "ja",
-              "japp",
-              "absolut",
-              "okej",
-              "jajamän",
-              "alright",
-              "yes",
-              "korrekt",
-              "det stämmer",
-              "det är rätt",
-              "rätt",
-              "stämmer"
-            ]
+      "bot": {
+        "say": "Var det ett korrekt svar?",
+        "user": [
+          {
+            "intent": {
+              "name": "confirmRight",
+              "examples": [
+                "ja",
+                "japp",
+                "absolut",
+                "okej",
+                "jajamän",
+                "alright",
+                "yes",
+                "korrekt",
+                "det stämmer",
+                "det är rätt",
+                "rätt",
+                "stämmer"
+              ]
+            },
+            "bot": "Tack!"
           },
-          "bot": "Tack!"
-        },
-        {
-          "intent": {
-            "name": "confirmWrong",
-            "examples": [
-              "nej",
-              "nope",
-              "no",
-              "aldrig",
-              "jag vill inte",
-              "ej korrekt",
-              "det stämmer inte",
-              "det är fel",
-              "fel",
-              "stämmer ej"
-            ]
+          {
+            "intent": {
+              "name": "confirmWrong",
+              "examples": [
+                "nej",
+                "nope",
+                "no",
+                "aldrig",
+                "jag vill inte",
+                "ej korrekt",
+                "det stämmer inte",
+                "det är fel",
+                "fel",
+                "stämmer ej"
+              ]
+            },
+            "bot": {
+              "say": "Tack!",
+              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
+              "params": [
+                "classifiedQuestion",
+                "classifiedUtterance"
+              ],
+              "asyncWebhook": true
+            }
           },
-          "bot": {
-            "say": "Tack!",
-            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-            "params": [
-              "classifiedQuestion",
-              "classifiedUtterance"
-            ],
-            "asyncWebhook": true
+          {
+            "intent": {
+              "examples": [
+                "__ANYTHING"
+              ]
+            },
+            "bot": {
+              "say": "Förlåt, var det rätt eller fel svar?",
+              "repair": true
+            }
           }
-        },
-        {
-          "intent": {
-            "examples": [
-              "__ANYTHING"
-            ]
-          },
-          "bot": {
-            "say": "Förlåt, var det rätt eller fel svar?",
-            "repair": true
-          }
-        }
-      ]
+        ]
+      }
     }
   },
   {
@@ -648,70 +688,75 @@ export const simpleQuestionAnswers : UserTurn[] = [
       ]
     },
     "bot": {
-      "say": "Den kunskap vi har nu visar att de flesta som fått lindriga symtom blev friska efter två veckor. För de som blev allvarligt sjuka tog det mellan tre och sex veckor innan de var friska igen.. Var det ett korrekt svar?",
+      "say": [
+        "Den kunskap vi har nu visar att de flesta som fått lindriga symtom blev friska efter två veckor. För de som blev allvarligt sjuka tog det mellan tre och sex veckor innan de var friska igen."
+      ],
       "set": {
         "classifiedQuestion": "question: hur pass länge är man sjuk",
         "classifiedUtterance": "_user_text"
       },
-      "user": [
-        {
-          "intent": {
-            "name": "confirmRight",
-            "examples": [
-              "ja",
-              "japp",
-              "absolut",
-              "okej",
-              "jajamän",
-              "alright",
-              "yes",
-              "korrekt",
-              "det stämmer",
-              "det är rätt",
-              "rätt",
-              "stämmer"
-            ]
+      "bot": {
+        "say": "Var det ett korrekt svar?",
+        "user": [
+          {
+            "intent": {
+              "name": "confirmRight",
+              "examples": [
+                "ja",
+                "japp",
+                "absolut",
+                "okej",
+                "jajamän",
+                "alright",
+                "yes",
+                "korrekt",
+                "det stämmer",
+                "det är rätt",
+                "rätt",
+                "stämmer"
+              ]
+            },
+            "bot": "Tack!"
           },
-          "bot": "Tack!"
-        },
-        {
-          "intent": {
-            "name": "confirmWrong",
-            "examples": [
-              "nej",
-              "nope",
-              "no",
-              "aldrig",
-              "jag vill inte",
-              "ej korrekt",
-              "det stämmer inte",
-              "det är fel",
-              "fel",
-              "stämmer ej"
-            ]
+          {
+            "intent": {
+              "name": "confirmWrong",
+              "examples": [
+                "nej",
+                "nope",
+                "no",
+                "aldrig",
+                "jag vill inte",
+                "ej korrekt",
+                "det stämmer inte",
+                "det är fel",
+                "fel",
+                "stämmer ej"
+              ]
+            },
+            "bot": {
+              "say": "Tack!",
+              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
+              "params": [
+                "classifiedQuestion",
+                "classifiedUtterance"
+              ],
+              "asyncWebhook": true
+            }
           },
-          "bot": {
-            "say": "Tack!",
-            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-            "params": [
-              "classifiedQuestion",
-              "classifiedUtterance"
-            ],
-            "asyncWebhook": true
+          {
+            "intent": {
+              "examples": [
+                "__ANYTHING"
+              ]
+            },
+            "bot": {
+              "say": "Förlåt, var det rätt eller fel svar?",
+              "repair": true
+            }
           }
-        },
-        {
-          "intent": {
-            "examples": [
-              "__ANYTHING"
-            ]
-          },
-          "bot": {
-            "say": "Förlåt, var det rätt eller fel svar?",
-            "repair": true
-          }
-        }
-      ]
+        ]
+      }
     }
   },
   {
@@ -726,70 +771,75 @@ export const simpleQuestionAnswers : UserTurn[] = [
       ]
     },
     "bot": {
-      "say": "WHO uppskattar i dagsläget att dödligheten är 1–2 % av de redan infekterade men uppskattningarna är fortfarande osäkra. Det kan finnas fler fall än vad som har rapporterats vilket kan innebära att dödligheten kommer att sjunka.. Var det ett korrekt svar?",
+      "say": [
+        "WHO uppskattar i dagsläget att dödligheten är 1–2 % av de redan infekterade men uppskattningarna är fortfarande osäkra. Det kan finnas fler fall än vad som har rapporterats vilket kan innebära att dödligheten kommer att sjunka."
+      ],
       "set": {
         "classifiedQuestion": "question: hur många dör av corona",
         "classifiedUtterance": "_user_text"
       },
-      "user": [
-        {
-          "intent": {
-            "name": "confirmRight",
-            "examples": [
-              "ja",
-              "japp",
-              "absolut",
-              "okej",
-              "jajamän",
-              "alright",
-              "yes",
-              "korrekt",
-              "det stämmer",
-              "det är rätt",
-              "rätt",
-              "stämmer"
-            ]
+      "bot": {
+        "say": "Var det ett korrekt svar?",
+        "user": [
+          {
+            "intent": {
+              "name": "confirmRight",
+              "examples": [
+                "ja",
+                "japp",
+                "absolut",
+                "okej",
+                "jajamän",
+                "alright",
+                "yes",
+                "korrekt",
+                "det stämmer",
+                "det är rätt",
+                "rätt",
+                "stämmer"
+              ]
+            },
+            "bot": "Tack!"
           },
-          "bot": "Tack!"
-        },
-        {
-          "intent": {
-            "name": "confirmWrong",
-            "examples": [
-              "nej",
-              "nope",
-              "no",
-              "aldrig",
-              "jag vill inte",
-              "ej korrekt",
-              "det stämmer inte",
-              "det är fel",
-              "fel",
-              "stämmer ej"
-            ]
+          {
+            "intent": {
+              "name": "confirmWrong",
+              "examples": [
+                "nej",
+                "nope",
+                "no",
+                "aldrig",
+                "jag vill inte",
+                "ej korrekt",
+                "det stämmer inte",
+                "det är fel",
+                "fel",
+                "stämmer ej"
+              ]
+            },
+            "bot": {
+              "say": "Tack!",
+              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
+              "params": [
+                "classifiedQuestion",
+                "classifiedUtterance"
+              ],
+              "asyncWebhook": true
+            }
           },
-          "bot": {
-            "say": "Tack!",
-            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-            "params": [
-              "classifiedQuestion",
-              "classifiedUtterance"
-            ],
-            "asyncWebhook": true
+          {
+            "intent": {
+              "examples": [
+                "__ANYTHING"
+              ]
+            },
+            "bot": {
+              "say": "Förlåt, var det rätt eller fel svar?",
+              "repair": true
+            }
           }
-        },
-        {
-          "intent": {
-            "examples": [
-              "__ANYTHING"
-            ]
-          },
-          "bot": {
-            "say": "Förlåt, var det rätt eller fel svar?",
-            "repair": true
-          }
-        }
-      ]
+        ]
+      }
     }
   },
   {
@@ -804,70 +854,75 @@ export const simpleQuestionAnswers : UserTurn[] = [
       ]
     },
     "bot": {
-      "say": "För närvarande finns det begränsad information om covid-19 och graviditet. Vi rekommenderar att gravida kvinnor vidtar samma försiktighetsåtgärder som med alla smittsamma sjukdomar.. Var det ett korrekt svar?",
+      "say": [
+        "För närvarande finns det begränsad information om covid-19 och graviditet. Vi rekommenderar att gravida kvinnor vidtar samma försiktighetsåtgärder som med alla smittsamma sjukdomar."
+      ],
       "set": {
         "classifiedQuestion": "question: är det större risk om man är gravid",
         "classifiedUtterance": "_user_text"
       },
-      "user": [
-        {
-          "intent": {
-            "name": "confirmRight",
-            "examples": [
-              "ja",
-              "japp",
-              "absolut",
-              "okej",
-              "jajamän",
-              "alright",
-              "yes",
-              "korrekt",
-              "det stämmer",
-              "det är rätt",
-              "rätt",
-              "stämmer"
-            ]
+      "bot": {
+        "say": "Var det ett korrekt svar?",
+        "user": [
+          {
+            "intent": {
+              "name": "confirmRight",
+              "examples": [
+                "ja",
+                "japp",
+                "absolut",
+                "okej",
+                "jajamän",
+                "alright",
+                "yes",
+                "korrekt",
+                "det stämmer",
+                "det är rätt",
+                "rätt",
+                "stämmer"
+              ]
+            },
+            "bot": "Tack!"
           },
-          "bot": "Tack!"
-        },
-        {
-          "intent": {
-            "name": "confirmWrong",
-            "examples": [
-              "nej",
-              "nope",
-              "no",
-              "aldrig",
-              "jag vill inte",
-              "ej korrekt",
-              "det stämmer inte",
-              "det är fel",
-              "fel",
-              "stämmer ej"
-            ]
+          {
+            "intent": {
+              "name": "confirmWrong",
+              "examples": [
+                "nej",
+                "nope",
+                "no",
+                "aldrig",
+                "jag vill inte",
+                "ej korrekt",
+                "det stämmer inte",
+                "det är fel",
+                "fel",
+                "stämmer ej"
+              ]
+            },
+            "bot": {
+              "say": "Tack!",
+              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
+              "params": [
+                "classifiedQuestion",
+                "classifiedUtterance"
+              ],
+              "asyncWebhook": true
+            }
           },
-          "bot": {
-            "say": "Tack!",
-            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-            "params": [
-              "classifiedQuestion",
-              "classifiedUtterance"
-            ],
-            "asyncWebhook": true
+          {
+            "intent": {
+              "examples": [
+                "__ANYTHING"
+              ]
+            },
+            "bot": {
+              "say": "Förlåt, var det rätt eller fel svar?",
+              "repair": true
+            }
           }
-        },
-        {
-          "intent": {
-            "examples": [
-              "__ANYTHING"
-            ]
-          },
-          "bot": {
-            "say": "Förlåt, var det rätt eller fel svar?",
-            "repair": true
-          }
-        }
-      ]
+        ]
+      }
     }
   },
   {
@@ -882,70 +937,75 @@ export const simpleQuestionAnswers : UserTurn[] = [
       ]
     },
     "bot": {
-      "say": "Tillgänglig fakta visar att viruset smittar när man är sjuk och i samband med insjuknandet, och inte under inkubationstiden. De som har varit utsatta för smitta ska dock vara uppmärksamma på tidiga sjukdomstecken.. Var det ett korrekt svar?",
+      "say": [
+        "Tillgänglig fakta visar att viruset smittar när man är sjuk och i samband med insjuknandet, och inte under inkubationstiden. De som har varit utsatta för smitta ska dock vara uppmärksamma på tidiga sjukdomstecken."
+      ],
       "set": {
         "classifiedQuestion": "question: smittar corona hela tiden",
         "classifiedUtterance": "_user_text"
       },
-      "user": [
-        {
-          "intent": {
-            "name": "confirmRight",
-            "examples": [
-              "ja",
-              "japp",
-              "absolut",
-              "okej",
-              "jajamän",
-              "alright",
-              "yes",
-              "korrekt",
-              "det stämmer",
-              "det är rätt",
-              "rätt",
-              "stämmer"
-            ]
+      "bot": {
+        "say": "Var det ett korrekt svar?",
+        "user": [
+          {
+            "intent": {
+              "name": "confirmRight",
+              "examples": [
+                "ja",
+                "japp",
+                "absolut",
+                "okej",
+                "jajamän",
+                "alright",
+                "yes",
+                "korrekt",
+                "det stämmer",
+                "det är rätt",
+                "rätt",
+                "stämmer"
+              ]
+            },
+            "bot": "Tack!"
           },
-          "bot": "Tack!"
-        },
-        {
-          "intent": {
-            "name": "confirmWrong",
-            "examples": [
-              "nej",
-              "nope",
-              "no",
-              "aldrig",
-              "jag vill inte",
-              "ej korrekt",
-              "det stämmer inte",
-              "det är fel",
-              "fel",
-              "stämmer ej"
-            ]
+          {
+            "intent": {
+              "name": "confirmWrong",
+              "examples": [
+                "nej",
+                "nope",
+                "no",
+                "aldrig",
+                "jag vill inte",
+                "ej korrekt",
+                "det stämmer inte",
+                "det är fel",
+                "fel",
+                "stämmer ej"
+              ]
+            },
+            "bot": {
+              "say": "Tack!",
+              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
+              "params": [
+                "classifiedQuestion",
+                "classifiedUtterance"
+              ],
+              "asyncWebhook": true
+            }
           },
-          "bot": {
-            "say": "Tack!",
-            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-            "params": [
-              "classifiedQuestion",
-              "classifiedUtterance"
-            ],
-            "asyncWebhook": true
+          {
+            "intent": {
+              "examples": [
+                "__ANYTHING"
+              ]
+            },
+            "bot": {
+              "say": "Förlåt, var det rätt eller fel svar?",
+              "repair": true
+            }
           }
-        },
-        {
-          "intent": {
-            "examples": [
-              "__ANYTHING"
-            ]
-          },
-          "bot": {
-            "say": "Förlåt, var det rätt eller fel svar?",
-            "repair": true
-          }
-        }
-      ]
+        ]
+      }
     }
   },
   {
@@ -960,70 +1020,75 @@ export const simpleQuestionAnswers : UserTurn[] = [
       ]
     },
     "bot": {
-      "say": "Epidemin drivs av personer med symtom på sjukdom, men en del som är sjuka får bara milda symtom. Man kan därför bli smittat av någon som inte känner sig sjuk, men som har t. ex. mild hosta.. Var det ett korrekt svar?",
+      "say": [
+        "Epidemin drivs av personer med symtom på sjukdom, men en del som är sjuka får bara milda symtom. Man kan därför bli smittat av någon som inte känner sig sjuk, men som har t. ex. mild hosta."
+      ],
       "set": {
         "classifiedQuestion": "question: smittar corona utan symtom",
         "classifiedUtterance": "_user_text"
       },
-      "user": [
-        {
-          "intent": {
-            "name": "confirmRight",
-            "examples": [
-              "ja",
-              "japp",
-              "absolut",
-              "okej",
-              "jajamän",
-              "alright",
-              "yes",
-              "korrekt",
-              "det stämmer",
-              "det är rätt",
-              "rätt",
-              "stämmer"
-            ]
+      "bot": {
+        "say": "Var det ett korrekt svar?",
+        "user": [
+          {
+            "intent": {
+              "name": "confirmRight",
+              "examples": [
+                "ja",
+                "japp",
+                "absolut",
+                "okej",
+                "jajamän",
+                "alright",
+                "yes",
+                "korrekt",
+                "det stämmer",
+                "det är rätt",
+                "rätt",
+                "stämmer"
+              ]
+            },
+            "bot": "Tack!"
           },
-          "bot": "Tack!"
-        },
-        {
-          "intent": {
-            "name": "confirmWrong",
-            "examples": [
-              "nej",
-              "nope",
-              "no",
-              "aldrig",
-              "jag vill inte",
-              "ej korrekt",
-              "det stämmer inte",
-              "det är fel",
-              "fel",
-              "stämmer ej"
-            ]
+          {
+            "intent": {
+              "name": "confirmWrong",
+              "examples": [
+                "nej",
+                "nope",
+                "no",
+                "aldrig",
+                "jag vill inte",
+                "ej korrekt",
+                "det stämmer inte",
+                "det är fel",
+                "fel",
+                "stämmer ej"
+              ]
+            },
+            "bot": {
+              "say": "Tack!",
+              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
+              "params": [
+                "classifiedQuestion",
+                "classifiedUtterance"
+              ],
+              "asyncWebhook": true
+            }
           },
-          "bot": {
-            "say": "Tack!",
-            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-            "params": [
-              "classifiedQuestion",
-              "classifiedUtterance"
-            ],
-            "asyncWebhook": true
+          {
+            "intent": {
+              "examples": [
+                "__ANYTHING"
+              ]
+            },
+            "bot": {
+              "say": "Förlåt, var det rätt eller fel svar?",
+              "repair": true
+            }
           }
-        },
-        {
-          "intent": {
-            "examples": [
-              "__ANYTHING"
-            ]
-          },
-          "bot": {
-            "say": "Förlåt, var det rätt eller fel svar?",
-            "repair": true
-          }
-        }
-      ]
+        ]
+      }
     }
   },
   {
@@ -1038,70 +1103,75 @@ export const simpleQuestionAnswers : UserTurn[] = [
       ]
     },
     "bot": {
-      "say": "Regeringen beslutade den 11:e mars att stoppa alla allmänna sammankomster och offentliga tillställningar med fler än 500 personer. Syftet är att förhindra att ett stort antal människor från olika ställen kommer och samlas på en och samma plats.. Var det ett korrekt svar?",
+      "say": [
+        "Regeringen beslutade den 11:e mars att stoppa alla allmänna sammankomster och offentliga tillställningar med fler än 500 personer. Syftet är att förhindra att ett stort antal människor från olika ställen kommer och samlas på en och samma plats."
+      ],
       "set": {
         "classifiedQuestion": "question: vad är reglerna för stora evenemang",
         "classifiedUtterance": "_user_text"
       },
-      "user": [
-        {
-          "intent": {
-            "name": "confirmRight",
-            "examples": [
-              "ja",
-              "japp",
-              "absolut",
-              "okej",
-              "jajamän",
-              "alright",
-              "yes",
-              "korrekt",
-              "det stämmer",
-              "det är rätt",
-              "rätt",
-              "stämmer"
-            ]
+      "bot": {
+        "say": "Var det ett korrekt svar?",
+        "user": [
+          {
+            "intent": {
+              "name": "confirmRight",
+              "examples": [
+                "ja",
+                "japp",
+                "absolut",
+                "okej",
+                "jajamän",
+                "alright",
+                "yes",
+                "korrekt",
+                "det stämmer",
+                "det är rätt",
+                "rätt",
+                "stämmer"
+              ]
+            },
+            "bot": "Tack!"
           },
-          "bot": "Tack!"
-        },
-        {
-          "intent": {
-            "name": "confirmWrong",
-            "examples": [
-              "nej",
-              "nope",
-              "no",
-              "aldrig",
-              "jag vill inte",
-              "ej korrekt",
-              "det stämmer inte",
-              "det är fel",
-              "fel",
-              "stämmer ej"
-            ]
+          {
+            "intent": {
+              "name": "confirmWrong",
+              "examples": [
+                "nej",
+                "nope",
+                "no",
+                "aldrig",
+                "jag vill inte",
+                "ej korrekt",
+                "det stämmer inte",
+                "det är fel",
+                "fel",
+                "stämmer ej"
+              ]
+            },
+            "bot": {
+              "say": "Tack!",
+              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
+              "params": [
+                "classifiedQuestion",
+                "classifiedUtterance"
+              ],
+              "asyncWebhook": true
+            }
           },
-          "bot": {
-            "say": "Tack!",
-            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-            "params": [
-              "classifiedQuestion",
-              "classifiedUtterance"
-            ],
-            "asyncWebhook": true
+          {
+            "intent": {
+              "examples": [
+                "__ANYTHING"
+              ]
+            },
+            "bot": {
+              "say": "Förlåt, var det rätt eller fel svar?",
+              "repair": true
+            }
           }
-        },
-        {
-          "intent": {
-            "examples": [
-              "__ANYTHING"
-            ]
-          },
-          "bot": {
-            "say": "Förlåt, var det rätt eller fel svar?",
-            "repair": true
-          }
-        }
-      ]
+        ]
+      }
     }
   },
   {
@@ -1116,70 +1186,75 @@ export const simpleQuestionAnswers : UserTurn[] = [
       ]
     },
     "bot": {
-      "say": "Kollektivtrafik, arbetsplatser och skolor fungerar som vanligt. Folkhälsomyndigheten har gjort bedömningen att det fortfarande är viktigt att kollektivtrafiken fungerar och att friska personer kan åka till jobbet och skolan. . Var det ett korrekt svar?",
+      "say": [
+        "Kollektivtrafik, arbetsplatser och skolor fungerar som vanligt. Folkhälsomyndigheten har gjort bedömningen att det fortfarande är viktigt att kollektivtrafiken fungerar och att friska personer kan åka till jobbet och skolan. "
+      ],
       "set": {
         "classifiedQuestion": "question: vilka regler gäller för kollektivtrafik  arbetsplatser och skolor?",
         "classifiedUtterance": "_user_text"
       },
-      "user": [
-        {
-          "intent": {
-            "name": "confirmRight",
-            "examples": [
-              "ja",
-              "japp",
-              "absolut",
-              "okej",
-              "jajamän",
-              "alright",
-              "yes",
-              "korrekt",
-              "det stämmer",
-              "det är rätt",
-              "rätt",
-              "stämmer"
-            ]
+      "bot": {
+        "say": "Var det ett korrekt svar?",
+        "user": [
+          {
+            "intent": {
+              "name": "confirmRight",
+              "examples": [
+                "ja",
+                "japp",
+                "absolut",
+                "okej",
+                "jajamän",
+                "alright",
+                "yes",
+                "korrekt",
+                "det stämmer",
+                "det är rätt",
+                "rätt",
+                "stämmer"
+              ]
+            },
+            "bot": "Tack!"
           },
-          "bot": "Tack!"
-        },
-        {
-          "intent": {
-            "name": "confirmWrong",
-            "examples": [
-              "nej",
-              "nope",
-              "no",
-              "aldrig",
-              "jag vill inte",
-              "ej korrekt",
-              "det stämmer inte",
-              "det är fel",
-              "fel",
-              "stämmer ej"
-            ]
+          {
+            "intent": {
+              "name": "confirmWrong",
+              "examples": [
+                "nej",
+                "nope",
+                "no",
+                "aldrig",
+                "jag vill inte",
+                "ej korrekt",
+                "det stämmer inte",
+                "det är fel",
+                "fel",
+                "stämmer ej"
+              ]
+            },
+            "bot": {
+              "say": "Tack!",
+              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
+              "params": [
+                "classifiedQuestion",
+                "classifiedUtterance"
+              ],
+              "asyncWebhook": true
+            }
           },
-          "bot": {
-            "say": "Tack!",
-            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-            "params": [
-              "classifiedQuestion",
-              "classifiedUtterance"
-            ],
-            "asyncWebhook": true
+          {
+            "intent": {
+              "examples": [
+                "__ANYTHING"
+              ]
+            },
+            "bot": {
+              "say": "Förlåt, var det rätt eller fel svar?",
+              "repair": true
+            }
           }
-        },
-        {
-          "intent": {
-            "examples": [
-              "__ANYTHING"
-            ]
-          },
-          "bot": {
-            "say": "Förlåt, var det rätt eller fel svar?",
-            "repair": true
-          }
-        }
-      ]
+        ]
+      }
     }
   },
   {
@@ -1194,70 +1269,75 @@ export const simpleQuestionAnswers : UserTurn[] = [
       ]
     },
     "bot": {
-      "say": "Det är Utrikesdepartementet (UD) som utfärdar reseavrådan till andra länder. Besök deras webbplats for att få den senaste informationen. . Var det ett korrekt svar?",
+      "say": [
+        "Det är Utrikesdepartementet (UD) som utfärdar reseavrådan till andra länder. Besök deras webbplats for att få den senaste informationen. "
+      ],
       "set": {
         "classifiedQuestion": "question: får man resa till andra länder",
         "classifiedUtterance": "_user_text"
       },
-      "user": [
-        {
-          "intent": {
-            "name": "confirmRight",
-            "examples": [
-              "ja",
-              "japp",
-              "absolut",
-              "okej",
-              "jajamän",
-              "alright",
-              "yes",
-              "korrekt",
-              "det stämmer",
-              "det är rätt",
-              "rätt",
-              "stämmer"
-            ]
+      "bot": {
+        "say": "Var det ett korrekt svar?",
+        "user": [
+          {
+            "intent": {
+              "name": "confirmRight",
+              "examples": [
+                "ja",
+                "japp",
+                "absolut",
+                "okej",
+                "jajamän",
+                "alright",
+                "yes",
+                "korrekt",
+                "det stämmer",
+                "det är rätt",
+                "rätt",
+                "stämmer"
+              ]
+            },
+            "bot": "Tack!"
           },
-          "bot": "Tack!"
-        },
-        {
-          "intent": {
-            "name": "confirmWrong",
-            "examples": [
-              "nej",
-              "nope",
-              "no",
-              "aldrig",
-              "jag vill inte",
-              "ej korrekt",
-              "det stämmer inte",
-              "det är fel",
-              "fel",
-              "stämmer ej"
-            ]
+          {
+            "intent": {
+              "name": "confirmWrong",
+              "examples": [
+                "nej",
+                "nope",
+                "no",
+                "aldrig",
+                "jag vill inte",
+                "ej korrekt",
+                "det stämmer inte",
+                "det är fel",
+                "fel",
+                "stämmer ej"
+              ]
+            },
+            "bot": {
+              "say": "Tack!",
+              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
+              "params": [
+                "classifiedQuestion",
+                "classifiedUtterance"
+              ],
+              "asyncWebhook": true
+            }
           },
-          "bot": {
-            "say": "Tack!",
-            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-            "params": [
-              "classifiedQuestion",
-              "classifiedUtterance"
-            ],
-            "asyncWebhook": true
+          {
+            "intent": {
+              "examples": [
+                "__ANYTHING"
+              ]
+            },
+            "bot": {
+              "say": "Förlåt, var det rätt eller fel svar?",
+              "repair": true
+            }
           }
-        },
-        {
-          "intent": {
-            "examples": [
-              "__ANYTHING"
-            ]
-          },
-          "bot": {
-            "say": "Förlåt, var det rätt eller fel svar?",
-            "repair": true
-          }
-        }
-      ]
+        ]
+      }
     }
   },
   {
@@ -1269,70 +1349,75 @@ export const simpleQuestionAnswers : UserTurn[] = [
       ]
     },
     "bot": {
-      "say": "Vi har fortlöpande dialog med flygplatserna och samarbetar på EU–nivå om dessa frågor. Vi har fokus på information till flygplatser om vart man ska vända sig om man får tecken på sjukdom.. Var det ett korrekt svar?",
+      "say": [
+        "Vi har fortlöpande dialog med flygplatserna och samarbetar på EU–nivå om dessa frågor. Vi har fokus på information till flygplatser om vart man ska vända sig om man får tecken på sjukdom."
+      ],
       "set": {
         "classifiedQuestion": "question: vad gäller för flygplatser",
         "classifiedUtterance": "_user_text"
       },
-      "user": [
-        {
-          "intent": {
-            "name": "confirmRight",
-            "examples": [
-              "ja",
-              "japp",
-              "absolut",
-              "okej",
-              "jajamän",
-              "alright",
-              "yes",
-              "korrekt",
-              "det stämmer",
-              "det är rätt",
-              "rätt",
-              "stämmer"
-            ]
+      "bot": {
+        "say": "Var det ett korrekt svar?",
+        "user": [
+          {
+            "intent": {
+              "name": "confirmRight",
+              "examples": [
+                "ja",
+                "japp",
+                "absolut",
+                "okej",
+                "jajamän",
+                "alright",
+                "yes",
+                "korrekt",
+                "det stämmer",
+                "det är rätt",
+                "rätt",
+                "stämmer"
+              ]
+            },
+            "bot": "Tack!"
           },
-          "bot": "Tack!"
-        },
-        {
-          "intent": {
-            "name": "confirmWrong",
-            "examples": [
-              "nej",
-              "nope",
-              "no",
-              "aldrig",
-              "jag vill inte",
-              "ej korrekt",
-              "det stämmer inte",
-              "det är fel",
-              "fel",
-              "stämmer ej"
-            ]
+          {
+            "intent": {
+              "name": "confirmWrong",
+              "examples": [
+                "nej",
+                "nope",
+                "no",
+                "aldrig",
+                "jag vill inte",
+                "ej korrekt",
+                "det stämmer inte",
+                "det är fel",
+                "fel",
+                "stämmer ej"
+              ]
+            },
+            "bot": {
+              "say": "Tack!",
+              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
+              "params": [
+                "classifiedQuestion",
+                "classifiedUtterance"
+              ],
+              "asyncWebhook": true
+            }
           },
-          "bot": {
-            "say": "Tack!",
-            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-            "params": [
-              "classifiedQuestion",
-              "classifiedUtterance"
-            ],
-            "asyncWebhook": true
+          {
+            "intent": {
+              "examples": [
+                "__ANYTHING"
+              ]
+            },
+            "bot": {
+              "say": "Förlåt, var det rätt eller fel svar?",
+              "repair": true
+            }
           }
-        },
-        {
-          "intent": {
-            "examples": [
-              "__ANYTHING"
-            ]
-          },
-          "bot": {
-            "say": "Förlåt, var det rätt eller fel svar?",
-            "repair": true
-          }
-        }
-      ]
+        ]
+      }
     }
   },
   {
@@ -1344,70 +1429,75 @@ export const simpleQuestionAnswers : UserTurn[] = [
       ]
     },
     "bot": {
-      "say": "Om du inte har hosta, andningssvårigheter eller feber kan du leva precis som vanligt. Däremot är det jätteviktigt att stanna hemma om man känner sig sjuk.. Var det ett korrekt svar?",
+      "say": [
+        "Om du inte har hosta, andningssvårigheter eller feber kan du leva precis som vanligt. Däremot är det jätteviktigt att stanna hemma om man känner sig sjuk."
+      ],
       "set": {
         "classifiedQuestion": "question: behöver jag göra något särskilt om jag är frisk",
         "classifiedUtterance": "_user_text"
       },
-      "user": [
-        {
-          "intent": {
-            "name": "confirmRight",
-            "examples": [
-              "ja",
-              "japp",
-              "absolut",
-              "okej",
-              "jajamän",
-              "alright",
-              "yes",
-              "korrekt",
-              "det stämmer",
-              "det är rätt",
-              "rätt",
-              "stämmer"
-            ]
+      "bot": {
+        "say": "Var det ett korrekt svar?",
+        "user": [
+          {
+            "intent": {
+              "name": "confirmRight",
+              "examples": [
+                "ja",
+                "japp",
+                "absolut",
+                "okej",
+                "jajamän",
+                "alright",
+                "yes",
+                "korrekt",
+                "det stämmer",
+                "det är rätt",
+                "rätt",
+                "stämmer"
+              ]
+            },
+            "bot": "Tack!"
           },
-          "bot": "Tack!"
-        },
-        {
-          "intent": {
-            "name": "confirmWrong",
-            "examples": [
-              "nej",
-              "nope",
-              "no",
-              "aldrig",
-              "jag vill inte",
-              "ej korrekt",
-              "det stämmer inte",
-              "det är fel",
-              "fel",
-              "stämmer ej"
-            ]
+          {
+            "intent": {
+              "name": "confirmWrong",
+              "examples": [
+                "nej",
+                "nope",
+                "no",
+                "aldrig",
+                "jag vill inte",
+                "ej korrekt",
+                "det stämmer inte",
+                "det är fel",
+                "fel",
+                "stämmer ej"
+              ]
+            },
+            "bot": {
+              "say": "Tack!",
+              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
+              "params": [
+                "classifiedQuestion",
+                "classifiedUtterance"
+              ],
+              "asyncWebhook": true
+            }
           },
-          "bot": {
-            "say": "Tack!",
-            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-            "params": [
-              "classifiedQuestion",
-              "classifiedUtterance"
-            ],
-            "asyncWebhook": true
+          {
+            "intent": {
+              "examples": [
+                "__ANYTHING"
+              ]
+            },
+            "bot": {
+              "say": "Förlåt, var det rätt eller fel svar?",
+              "repair": true
+            }
           }
-        },
-        {
-          "intent": {
-            "examples": [
-              "__ANYTHING"
-            ]
-          },
-          "bot": {
-            "say": "Förlåt, var det rätt eller fel svar?",
-            "repair": true
-          }
-        }
-      ]
+        ]
+      }
     }
   },
   {
@@ -1424,70 +1514,75 @@ export const simpleQuestionAnswers : UserTurn[] = [
       ]
     },
     "bot": {
-      "say": "Det är mycket viktigt att stanna hemma när man känner sig sjuk. Om man inte klarar sig med egenvård i hemmet ska man ringa 1177 för sjukvårdsrådgivning. Besök inte någon vårdinrättning, utan kontakta alltid 1177 Vårdguiden först.. Var det ett korrekt svar?",
+      "say": [
+        "Det är mycket viktigt att stanna hemma när man känner sig sjuk. Om man inte klarar sig med egenvård i hemmet ska man ringa 1177 för sjukvårdsrådgivning. Besök inte någon vårdinrättning, utan kontakta alltid 1177 Vårdguiden först."
+      ],
       "set": {
         "classifiedQuestion": "question: jag tror jag har fått corona vad ska jag göra",
         "classifiedUtterance": "_user_text"
       },
-      "user": [
-        {
-          "intent": {
-            "name": "confirmRight",
-            "examples": [
-              "ja",
-              "japp",
-              "absolut",
-              "okej",
-              "jajamän",
-              "alright",
-              "yes",
-              "korrekt",
-              "det stämmer",
-              "det är rätt",
-              "rätt",
-              "stämmer"
-            ]
+      "bot": {
+        "say": "Var det ett korrekt svar?",
+        "user": [
+          {
+            "intent": {
+              "name": "confirmRight",
+              "examples": [
+                "ja",
+                "japp",
+                "absolut",
+                "okej",
+                "jajamän",
+                "alright",
+                "yes",
+                "korrekt",
+                "det stämmer",
+                "det är rätt",
+                "rätt",
+                "stämmer"
+              ]
+            },
+            "bot": "Tack!"
           },
-          "bot": "Tack!"
-        },
-        {
-          "intent": {
-            "name": "confirmWrong",
-            "examples": [
-              "nej",
-              "nope",
-              "no",
-              "aldrig",
-              "jag vill inte",
-              "ej korrekt",
-              "det stämmer inte",
-              "det är fel",
-              "fel",
-              "stämmer ej"
-            ]
+          {
+            "intent": {
+              "name": "confirmWrong",
+              "examples": [
+                "nej",
+                "nope",
+                "no",
+                "aldrig",
+                "jag vill inte",
+                "ej korrekt",
+                "det stämmer inte",
+                "det är fel",
+                "fel",
+                "stämmer ej"
+              ]
+            },
+            "bot": {
+              "say": "Tack!",
+              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
+              "params": [
+                "classifiedQuestion",
+                "classifiedUtterance"
+              ],
+              "asyncWebhook": true
+            }
           },
-          "bot": {
-            "say": "Tack!",
-            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-            "params": [
-              "classifiedQuestion",
-              "classifiedUtterance"
-            ],
-            "asyncWebhook": true
+          {
+            "intent": {
+              "examples": [
+                "__ANYTHING"
+              ]
+            },
+            "bot": {
+              "say": "Förlåt, var det rätt eller fel svar?",
+              "repair": true
+            }
           }
-        },
-        {
-          "intent": {
-            "examples": [
-              "__ANYTHING"
-            ]
-          },
-          "bot": {
-            "say": "Förlåt, var det rätt eller fel svar?",
-            "repair": true
-          }
-        }
-      ]
+        ]
+      }
     }
   },
   {
@@ -1501,70 +1596,75 @@ export const simpleQuestionAnswers : UserTurn[] = [
       ]
     },
     "bot": {
-      "say": "Den svenska beredskapen anses mycket bra. Hälso- och sjukvården samt landets smittskyddsenheter har sedan lång tid tillbaka en hög medvetenhet. Det finns rutiner för hur både misstänkta och bekräftade fall ska tas omhand på ett bra och säkert sätt. Privata aktörer är också medvetna om beredskap och krishantering, och det finns möjlighet till utökade provanalyser på andra laboratorier än Folkhälsomyndigheten vid behov.. Var det ett korrekt svar?",
+      "say": [
+        "Den svenska beredskapen anses mycket bra. Hälso- och sjukvården samt landets smittskyddsenheter har sedan lång tid tillbaka en hög medvetenhet. Det finns rutiner för hur både misstänkta och bekräftade fall ska tas omhand på ett bra och säkert sätt. Privata aktörer är också medvetna om beredskap och krishantering, och det finns möjlighet till utökade provanalyser på andra laboratorier än Folkhälsomyndigheten vid behov."
+      ],
       "set": {
         "classifiedQuestion": "question: har sverige beredskap",
         "classifiedUtterance": "_user_text"
       },
-      "user": [
-        {
-          "intent": {
-            "name": "confirmRight",
-            "examples": [
-              "ja",
-              "japp",
-              "absolut",
-              "okej",
-              "jajamän",
-              "alright",
-              "yes",
-              "korrekt",
-              "det stämmer",
-              "det är rätt",
-              "rätt",
-              "stämmer"
-            ]
+      "bot": {
+        "say": "Var det ett korrekt svar?",
+        "user": [
+          {
+            "intent": {
+              "name": "confirmRight",
+              "examples": [
+                "ja",
+                "japp",
+                "absolut",
+                "okej",
+                "jajamän",
+                "alright",
+                "yes",
+                "korrekt",
+                "det stämmer",
+                "det är rätt",
+                "rätt",
+                "stämmer"
+              ]
+            },
+            "bot": "Tack!"
           },
-          "bot": "Tack!"
-        },
-        {
-          "intent": {
-            "name": "confirmWrong",
-            "examples": [
-              "nej",
-              "nope",
-              "no",
-              "aldrig",
-              "jag vill inte",
-              "ej korrekt",
-              "det stämmer inte",
-              "det är fel",
-              "fel",
-              "stämmer ej"
-            ]
+          {
+            "intent": {
+              "name": "confirmWrong",
+              "examples": [
+                "nej",
+                "nope",
+                "no",
+                "aldrig",
+                "jag vill inte",
+                "ej korrekt",
+                "det stämmer inte",
+                "det är fel",
+                "fel",
+                "stämmer ej"
+              ]
+            },
+            "bot": {
+              "say": "Tack!",
+              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
+              "params": [
+                "classifiedQuestion",
+                "classifiedUtterance"
+              ],
+              "asyncWebhook": true
+            }
           },
-          "bot": {
-            "say": "Tack!",
-            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-            "params": [
-              "classifiedQuestion",
-              "classifiedUtterance"
-            ],
-            "asyncWebhook": true
+          {
+            "intent": {
+              "examples": [
+                "__ANYTHING"
+              ]
+            },
+            "bot": {
+              "say": "Förlåt, var det rätt eller fel svar?",
+              "repair": true
+            }
           }
-        },
-        {
-          "intent": {
-            "examples": [
-              "__ANYTHING"
-            ]
-          },
-          "bot": {
-            "say": "Förlåt, var det rätt eller fel svar?",
-            "repair": true
-          }
-        }
-      ]
+        ]
+      }
     }
   },
   {
@@ -1579,70 +1679,75 @@ export const simpleQuestionAnswers : UserTurn[] = [
       ]
     },
     "bot": {
-      "say": "Erfarenheter från influensasäsonger med många smittade som behöver vård, visar att påfrestning på sjukvården då uppstår med behov av omprioriteringar och samarbeten inom och mellan regioner. Liknande situation kan uppstå om covid-19 får omfattande spridning i befolkningen. Sjukvårdens pandemiplanering kan då behöva användas.. Var det ett korrekt svar?",
+      "say": [
+        "Erfarenheter från influensasäsonger med många smittade som behöver vård, visar att påfrestning på sjukvården då uppstår med behov av omprioriteringar och samarbeten inom och mellan regioner. Liknande situation kan uppstå om covid-19 får omfattande spridning i befolkningen. Sjukvårdens pandemiplanering kan då behöva användas."
+      ],
       "set": {
         "classifiedQuestion": "question: kommer sjukhusen att klara det",
         "classifiedUtterance": "_user_text"
       },
-      "user": [
-        {
-          "intent": {
-            "name": "confirmRight",
-            "examples": [
-              "ja",
-              "japp",
-              "absolut",
-              "okej",
-              "jajamän",
-              "alright",
-              "yes",
-              "korrekt",
-              "det stämmer",
-              "det är rätt",
-              "rätt",
-              "stämmer"
-            ]
+      "bot": {
+        "say": "Var det ett korrekt svar?",
+        "user": [
+          {
+            "intent": {
+              "name": "confirmRight",
+              "examples": [
+                "ja",
+                "japp",
+                "absolut",
+                "okej",
+                "jajamän",
+                "alright",
+                "yes",
+                "korrekt",
+                "det stämmer",
+                "det är rätt",
+                "rätt",
+                "stämmer"
+              ]
+            },
+            "bot": "Tack!"
           },
-          "bot": "Tack!"
-        },
-        {
-          "intent": {
-            "name": "confirmWrong",
-            "examples": [
-              "nej",
-              "nope",
-              "no",
-              "aldrig",
-              "jag vill inte",
-              "ej korrekt",
-              "det stämmer inte",
-              "det är fel",
-              "fel",
-              "stämmer ej"
-            ]
+          {
+            "intent": {
+              "name": "confirmWrong",
+              "examples": [
+                "nej",
+                "nope",
+                "no",
+                "aldrig",
+                "jag vill inte",
+                "ej korrekt",
+                "det stämmer inte",
+                "det är fel",
+                "fel",
+                "stämmer ej"
+              ]
+            },
+            "bot": {
+              "say": "Tack!",
+              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
+              "params": [
+                "classifiedQuestion",
+                "classifiedUtterance"
+              ],
+              "asyncWebhook": true
+            }
           },
-          "bot": {
-            "say": "Tack!",
-            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-            "params": [
-              "classifiedQuestion",
-              "classifiedUtterance"
-            ],
-            "asyncWebhook": true
+          {
+            "intent": {
+              "examples": [
+                "__ANYTHING"
+              ]
+            },
+            "bot": {
+              "say": "Förlåt, var det rätt eller fel svar?",
+              "repair": true
+            }
           }
-        },
-        {
-          "intent": {
-            "examples": [
-              "__ANYTHING"
-            ]
-          },
-          "bot": {
-            "say": "Förlåt, var det rätt eller fel svar?",
-            "repair": true
-          }
-        }
-      ]
+        ]
+      }
     }
   },
   {
@@ -1656,70 +1761,75 @@ export const simpleQuestionAnswers : UserTurn[] = [
       ]
     },
     "bot": {
-      "say": "Eftersom inget av de utbrott vi hittills sett av coronaviruset har haft koppling till skolor eller barn anses det osannolikt att friska barn skulle orsaka smittspridning.. Var det ett korrekt svar?",
+      "say": [
+        "Eftersom inget av de utbrott vi hittills sett av coronaviruset har haft koppling till skolor eller barn anses det osannolikt att friska barn skulle orsaka smittspridning."
+      ],
       "set": {
         "classifiedQuestion": "question: varför blir inte barn avstängda",
         "classifiedUtterance": "_user_text"
       },
-      "user": [
-        {
-          "intent": {
-            "name": "confirmRight",
-            "examples": [
-              "ja",
-              "japp",
-              "absolut",
-              "okej",
-              "jajamän",
-              "alright",
-              "yes",
-              "korrekt",
-              "det stämmer",
-              "det är rätt",
-              "rätt",
-              "stämmer"
-            ]
+      "bot": {
+        "say": "Var det ett korrekt svar?",
+        "user": [
+          {
+            "intent": {
+              "name": "confirmRight",
+              "examples": [
+                "ja",
+                "japp",
+                "absolut",
+                "okej",
+                "jajamän",
+                "alright",
+                "yes",
+                "korrekt",
+                "det stämmer",
+                "det är rätt",
+                "rätt",
+                "stämmer"
+              ]
+            },
+            "bot": "Tack!"
           },
-          "bot": "Tack!"
-        },
-        {
-          "intent": {
-            "name": "confirmWrong",
-            "examples": [
-              "nej",
-              "nope",
-              "no",
-              "aldrig",
-              "jag vill inte",
-              "ej korrekt",
-              "det stämmer inte",
-              "det är fel",
-              "fel",
-              "stämmer ej"
-            ]
+          {
+            "intent": {
+              "name": "confirmWrong",
+              "examples": [
+                "nej",
+                "nope",
+                "no",
+                "aldrig",
+                "jag vill inte",
+                "ej korrekt",
+                "det stämmer inte",
+                "det är fel",
+                "fel",
+                "stämmer ej"
+              ]
+            },
+            "bot": {
+              "say": "Tack!",
+              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
+              "params": [
+                "classifiedQuestion",
+                "classifiedUtterance"
+              ],
+              "asyncWebhook": true
+            }
           },
-          "bot": {
-            "say": "Tack!",
-            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-            "params": [
-              "classifiedQuestion",
-              "classifiedUtterance"
-            ],
-            "asyncWebhook": true
+          {
+            "intent": {
+              "examples": [
+                "__ANYTHING"
+              ]
+            },
+            "bot": {
+              "say": "Förlåt, var det rätt eller fel svar?",
+              "repair": true
+            }
           }
-        },
-        {
-          "intent": {
-            "examples": [
-              "__ANYTHING"
-            ]
-          },
-          "bot": {
-            "say": "Förlåt, var det rätt eller fel svar?",
-            "repair": true
-          }
-        }
-      ]
+        ]
+      }
     }
   },
   {
@@ -1733,70 +1843,75 @@ export const simpleQuestionAnswers : UserTurn[] = [
       ]
     },
     "bot": {
-      "say": "Eftersom covid-19 numera är klassad som samhällsfarlig, kan smittskyddsläkaren i respektive sjukvårdsregion ta beslut om karantän för friska personer. Om en mindre ingripande åtgärd, t.ex. förhållningsregler, kan få samma effekt ska den väljas istället.. Var det ett korrekt svar?",
+      "say": [
+        "Eftersom covid-19 numera är klassad som samhällsfarlig, kan smittskyddsläkaren i respektive sjukvårdsregion ta beslut om karantän för friska personer. Om en mindre ingripande åtgärd, t.ex. förhållningsregler, kan få samma effekt ska den väljas istället."
+      ],
       "set": {
         "classifiedQuestion": "question: kan sverige sättas i karantän?",
         "classifiedUtterance": "_user_text"
       },
-      "user": [
-        {
-          "intent": {
-            "name": "confirmRight",
-            "examples": [
-              "ja",
-              "japp",
-              "absolut",
-              "okej",
-              "jajamän",
-              "alright",
-              "yes",
-              "korrekt",
-              "det stämmer",
-              "det är rätt",
-              "rätt",
-              "stämmer"
-            ]
+      "bot": {
+        "say": "Var det ett korrekt svar?",
+        "user": [
+          {
+            "intent": {
+              "name": "confirmRight",
+              "examples": [
+                "ja",
+                "japp",
+                "absolut",
+                "okej",
+                "jajamän",
+                "alright",
+                "yes",
+                "korrekt",
+                "det stämmer",
+                "det är rätt",
+                "rätt",
+                "stämmer"
+              ]
+            },
+            "bot": "Tack!"
           },
-          "bot": "Tack!"
-        },
-        {
-          "intent": {
-            "name": "confirmWrong",
-            "examples": [
-              "nej",
-              "nope",
-              "no",
-              "aldrig",
-              "jag vill inte",
-              "ej korrekt",
-              "det stämmer inte",
-              "det är fel",
-              "fel",
-              "stämmer ej"
-            ]
+          {
+            "intent": {
+              "name": "confirmWrong",
+              "examples": [
+                "nej",
+                "nope",
+                "no",
+                "aldrig",
+                "jag vill inte",
+                "ej korrekt",
+                "det stämmer inte",
+                "det är fel",
+                "fel",
+                "stämmer ej"
+              ]
+            },
+            "bot": {
+              "say": "Tack!",
+              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
+              "params": [
+                "classifiedQuestion",
+                "classifiedUtterance"
+              ],
+              "asyncWebhook": true
+            }
           },
-          "bot": {
-            "say": "Tack!",
-            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-            "params": [
-              "classifiedQuestion",
-              "classifiedUtterance"
-            ],
-            "asyncWebhook": true
+          {
+            "intent": {
+              "examples": [
+                "__ANYTHING"
+              ]
+            },
+            "bot": {
+              "say": "Förlåt, var det rätt eller fel svar?",
+              "repair": true
+            }
           }
-        },
-        {
-          "intent": {
-            "examples": [
-              "__ANYTHING"
-            ]
-          },
-          "bot": {
-            "say": "Förlåt, var det rätt eller fel svar?",
-            "repair": true
-          }
-        }
-      ]
+        ]
+      }
     }
   },
   {
@@ -1810,70 +1925,75 @@ export const simpleQuestionAnswers : UserTurn[] = [
       ]
     },
     "bot": {
-      "say": "Det finns inget vaccin och i nuläget finns det inget specifikt läkemedel mot covid-19. Internationella studier av olika typer av läkemedelsbehandlingar pågår och forskning sker kring utveckling av ett vaccin.. Var det ett korrekt svar?",
+      "say": [
+        "Det finns inget vaccin och i nuläget finns det inget specifikt läkemedel mot covid-19. Internationella studier av olika typer av läkemedelsbehandlingar pågår och forskning sker kring utveckling av ett vaccin."
+      ],
       "set": {
         "classifiedQuestion": "question: finns det vaccin?",
         "classifiedUtterance": "_user_text"
       },
-      "user": [
-        {
-          "intent": {
-            "name": "confirmRight",
-            "examples": [
-              "ja",
-              "japp",
-              "absolut",
-              "okej",
-              "jajamän",
-              "alright",
-              "yes",
-              "korrekt",
-              "det stämmer",
-              "det är rätt",
-              "rätt",
-              "stämmer"
-            ]
+      "bot": {
+        "say": "Var det ett korrekt svar?",
+        "user": [
+          {
+            "intent": {
+              "name": "confirmRight",
+              "examples": [
+                "ja",
+                "japp",
+                "absolut",
+                "okej",
+                "jajamän",
+                "alright",
+                "yes",
+                "korrekt",
+                "det stämmer",
+                "det är rätt",
+                "rätt",
+                "stämmer"
+              ]
+            },
+            "bot": "Tack!"
           },
-          "bot": "Tack!"
-        },
-        {
-          "intent": {
-            "name": "confirmWrong",
-            "examples": [
-              "nej",
-              "nope",
-              "no",
-              "aldrig",
-              "jag vill inte",
-              "ej korrekt",
-              "det stämmer inte",
-              "det är fel",
-              "fel",
-              "stämmer ej"
-            ]
+          {
+            "intent": {
+              "name": "confirmWrong",
+              "examples": [
+                "nej",
+                "nope",
+                "no",
+                "aldrig",
+                "jag vill inte",
+                "ej korrekt",
+                "det stämmer inte",
+                "det är fel",
+                "fel",
+                "stämmer ej"
+              ]
+            },
+            "bot": {
+              "say": "Tack!",
+              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
+              "params": [
+                "classifiedQuestion",
+                "classifiedUtterance"
+              ],
+              "asyncWebhook": true
+            }
           },
-          "bot": {
-            "say": "Tack!",
-            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-            "params": [
-              "classifiedQuestion",
-              "classifiedUtterance"
-            ],
-            "asyncWebhook": true
+          {
+            "intent": {
+              "examples": [
+                "__ANYTHING"
+              ]
+            },
+            "bot": {
+              "say": "Förlåt, var det rätt eller fel svar?",
+              "repair": true
+            }
           }
-        },
-        {
-          "intent": {
-            "examples": [
-              "__ANYTHING"
-            ]
-          },
-          "bot": {
-            "say": "Förlåt, var det rätt eller fel svar?",
-            "repair": true
-          }
-        }
-      ]
+        ]
+      }
     }
   },
   {
@@ -1887,70 +2007,75 @@ export const simpleQuestionAnswers : UserTurn[] = [
       ]
     },
     "bot": {
-      "say": "Det finns ett stort antal virus som tillhör coronavirusfamiljen, men endast sju av dessa kan smitta och ge upphov till sjukdom hos människor. I slutet av 2019 upptäcktes ett nytt coronavirus i Kina som kan smitta människor, detta nya virus ger upphov till sjukdomen covid-19.. Var det ett korrekt svar?",
+      "say": [
+        "Det finns ett stort antal virus som tillhör coronavirusfamiljen, men endast sju av dessa kan smitta och ge upphov till sjukdom hos människor. I slutet av 2019 upptäcktes ett nytt coronavirus i Kina som kan smitta människor, detta nya virus ger upphov till sjukdomen covid-19."
+      ],
       "set": {
         "classifiedQuestion": "question: vad är coronavirus",
         "classifiedUtterance": "_user_text"
       },
-      "user": [
-        {
-          "intent": {
-            "name": "confirmRight",
-            "examples": [
-              "ja",
-              "japp",
-              "absolut",
-              "okej",
-              "jajamän",
-              "alright",
-              "yes",
-              "korrekt",
-              "det stämmer",
-              "det är rätt",
-              "rätt",
-              "stämmer"
-            ]
+      "bot": {
+        "say": "Var det ett korrekt svar?",
+        "user": [
+          {
+            "intent": {
+              "name": "confirmRight",
+              "examples": [
+                "ja",
+                "japp",
+                "absolut",
+                "okej",
+                "jajamän",
+                "alright",
+                "yes",
+                "korrekt",
+                "det stämmer",
+                "det är rätt",
+                "rätt",
+                "stämmer"
+              ]
+            },
+            "bot": "Tack!"
           },
-          "bot": "Tack!"
-        },
-        {
-          "intent": {
-            "name": "confirmWrong",
-            "examples": [
-              "nej",
-              "nope",
-              "no",
-              "aldrig",
-              "jag vill inte",
-              "ej korrekt",
-              "det stämmer inte",
-              "det är fel",
-              "fel",
-              "stämmer ej"
-            ]
+          {
+            "intent": {
+              "name": "confirmWrong",
+              "examples": [
+                "nej",
+                "nope",
+                "no",
+                "aldrig",
+                "jag vill inte",
+                "ej korrekt",
+                "det stämmer inte",
+                "det är fel",
+                "fel",
+                "stämmer ej"
+              ]
+            },
+            "bot": {
+              "say": "Tack!",
+              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
+              "params": [
+                "classifiedQuestion",
+                "classifiedUtterance"
+              ],
+              "asyncWebhook": true
+            }
           },
-          "bot": {
-            "say": "Tack!",
-            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-            "params": [
-              "classifiedQuestion",
-              "classifiedUtterance"
-            ],
-            "asyncWebhook": true
+          {
+            "intent": {
+              "examples": [
+                "__ANYTHING"
+              ]
+            },
+            "bot": {
+              "say": "Förlåt, var det rätt eller fel svar?",
+              "repair": true
+            }
           }
-        },
-        {
-          "intent": {
-            "examples": [
-              "__ANYTHING"
-            ]
-          },
-          "bot": {
-            "say": "Förlåt, var det rätt eller fel svar?",
-            "repair": true
-          }
-        }
-      ]
+        ]
+      }
     }
   },
   {
@@ -1963,70 +2088,75 @@ export const simpleQuestionAnswers : UserTurn[] = [
       ]
     },
     "bot": {
-      "say": "Covid-19 står för coronavirus disease 2019, och är det officiella namnet på sjukdomen som orsakas av det nya coronaviruset.. Var det ett korrekt svar?",
+      "say": [
+        "Covid-19 står för coronavirus disease 2019, och är det officiella namnet på sjukdomen som orsakas av det nya coronaviruset."
+      ],
       "set": {
         "classifiedQuestion": "question: vad är covid-19",
         "classifiedUtterance": "_user_text"
       },
-      "user": [
-        {
-          "intent": {
-            "name": "confirmRight",
-            "examples": [
-              "ja",
-              "japp",
-              "absolut",
-              "okej",
-              "jajamän",
-              "alright",
-              "yes",
-              "korrekt",
-              "det stämmer",
-              "det är rätt",
-              "rätt",
-              "stämmer"
-            ]
+      "bot": {
+        "say": "Var det ett korrekt svar?",
+        "user": [
+          {
+            "intent": {
+              "name": "confirmRight",
+              "examples": [
+                "ja",
+                "japp",
+                "absolut",
+                "okej",
+                "jajamän",
+                "alright",
+                "yes",
+                "korrekt",
+                "det stämmer",
+                "det är rätt",
+                "rätt",
+                "stämmer"
+              ]
+            },
+            "bot": "Tack!"
           },
-          "bot": "Tack!"
-        },
-        {
-          "intent": {
-            "name": "confirmWrong",
-            "examples": [
-              "nej",
-              "nope",
-              "no",
-              "aldrig",
-              "jag vill inte",
-              "ej korrekt",
-              "det stämmer inte",
-              "det är fel",
-              "fel",
-              "stämmer ej"
-            ]
+          {
+            "intent": {
+              "name": "confirmWrong",
+              "examples": [
+                "nej",
+                "nope",
+                "no",
+                "aldrig",
+                "jag vill inte",
+                "ej korrekt",
+                "det stämmer inte",
+                "det är fel",
+                "fel",
+                "stämmer ej"
+              ]
+            },
+            "bot": {
+              "say": "Tack!",
+              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
+              "params": [
+                "classifiedQuestion",
+                "classifiedUtterance"
+              ],
+              "asyncWebhook": true
+            }
           },
-          "bot": {
-            "say": "Tack!",
-            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-            "params": [
-              "classifiedQuestion",
-              "classifiedUtterance"
-            ],
-            "asyncWebhook": true
+          {
+            "intent": {
+              "examples": [
+                "__ANYTHING"
+              ]
+            },
+            "bot": {
+              "say": "Förlåt, var det rätt eller fel svar?",
+              "repair": true
+            }
           }
-        },
-        {
-          "intent": {
-            "examples": [
-              "__ANYTHING"
-            ]
-          },
-          "bot": {
-            "say": "Förlåt, var det rätt eller fel svar?",
-            "repair": true
-          }
-        }
-      ]
+        ]
+      }
     }
   },
   {
@@ -2042,70 +2172,75 @@ export const simpleQuestionAnswers : UserTurn[] = [
       ]
     },
     "bot": {
-      "say": "Corona-viruset är helt nytt vilket gör det svårt att jämföra med influensan som är återkommande. De är liknande i symptom men COVID-19 sprider sig otroligt mycket snabbare då ingen har utvecklat immunitet ännu. . Var det ett korrekt svar?",
+      "say": [
+        "Corona-viruset är helt nytt vilket gör det svårt att jämföra med influensan som är återkommande. De är liknande i symptom men COVID-19 sprider sig otroligt mycket snabbare då ingen har utvecklat immunitet ännu. "
+      ],
       "set": {
         "classifiedQuestion": "question: är corona influensa",
         "classifiedUtterance": "_user_text"
       },
-      "user": [
-        {
-          "intent": {
-            "name": "confirmRight",
-            "examples": [
-              "ja",
-              "japp",
-              "absolut",
-              "okej",
-              "jajamän",
-              "alright",
-              "yes",
-              "korrekt",
-              "det stämmer",
-              "det är rätt",
-              "rätt",
-              "stämmer"
-            ]
+      "bot": {
+        "say": "Var det ett korrekt svar?",
+        "user": [
+          {
+            "intent": {
+              "name": "confirmRight",
+              "examples": [
+                "ja",
+                "japp",
+                "absolut",
+                "okej",
+                "jajamän",
+                "alright",
+                "yes",
+                "korrekt",
+                "det stämmer",
+                "det är rätt",
+                "rätt",
+                "stämmer"
+              ]
+            },
+            "bot": "Tack!"
           },
-          "bot": "Tack!"
-        },
-        {
-          "intent": {
-            "name": "confirmWrong",
-            "examples": [
-              "nej",
-              "nope",
-              "no",
-              "aldrig",
-              "jag vill inte",
-              "ej korrekt",
-              "det stämmer inte",
-              "det är fel",
-              "fel",
-              "stämmer ej"
-            ]
+          {
+            "intent": {
+              "name": "confirmWrong",
+              "examples": [
+                "nej",
+                "nope",
+                "no",
+                "aldrig",
+                "jag vill inte",
+                "ej korrekt",
+                "det stämmer inte",
+                "det är fel",
+                "fel",
+                "stämmer ej"
+              ]
+            },
+            "bot": {
+              "say": "Tack!",
+              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
+              "params": [
+                "classifiedQuestion",
+                "classifiedUtterance"
+              ],
+              "asyncWebhook": true
+            }
           },
-          "bot": {
-            "say": "Tack!",
-            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-            "params": [
-              "classifiedQuestion",
-              "classifiedUtterance"
-            ],
-            "asyncWebhook": true
+          {
+            "intent": {
+              "examples": [
+                "__ANYTHING"
+              ]
+            },
+            "bot": {
+              "say": "Förlåt, var det rätt eller fel svar?",
+              "repair": true
+            }
           }
-        },
-        {
-          "intent": {
-            "examples": [
-              "__ANYTHING"
-            ]
-          },
-          "bot": {
-            "say": "Förlåt, var det rätt eller fel svar?",
-            "repair": true
-          }
-        }
-      ]
+        ]
+      }
     }
   },
   {
@@ -2122,70 +2257,75 @@ export const simpleQuestionAnswers : UserTurn[] = [
       ]
     },
     "bot": {
-      "say": "Nej, munskydd skyddar inte den som är frisk mot covid-19. Däremot kan den som är sjuk till viss del skydda sin omgivning från att viruset sprids vid till exempel hosta och nysningar.. Var det ett korrekt svar?",
+      "say": [
+        "Nej, munskydd skyddar inte den som är frisk mot covid-19. Däremot kan den som är sjuk till viss del skydda sin omgivning från att viruset sprids vid till exempel hosta och nysningar."
+      ],
       "set": {
         "classifiedQuestion": "question: funkar munskydd",
         "classifiedUtterance": "_user_text"
       },
-      "user": [
-        {
-          "intent": {
-            "name": "confirmRight",
-            "examples": [
-              "ja",
-              "japp",
-              "absolut",
-              "okej",
-              "jajamän",
-              "alright",
-              "yes",
-              "korrekt",
-              "det stämmer",
-              "det är rätt",
-              "rätt",
-              "stämmer"
-            ]
+      "bot": {
+        "say": "Var det ett korrekt svar?",
+        "user": [
+          {
+            "intent": {
+              "name": "confirmRight",
+              "examples": [
+                "ja",
+                "japp",
+                "absolut",
+                "okej",
+                "jajamän",
+                "alright",
+                "yes",
+                "korrekt",
+                "det stämmer",
+                "det är rätt",
+                "rätt",
+                "stämmer"
+              ]
+            },
+            "bot": "Tack!"
           },
-          "bot": "Tack!"
-        },
-        {
-          "intent": {
-            "name": "confirmWrong",
-            "examples": [
-              "nej",
-              "nope",
-              "no",
-              "aldrig",
-              "jag vill inte",
-              "ej korrekt",
-              "det stämmer inte",
-              "det är fel",
-              "fel",
-              "stämmer ej"
-            ]
+          {
+            "intent": {
+              "name": "confirmWrong",
+              "examples": [
+                "nej",
+                "nope",
+                "no",
+                "aldrig",
+                "jag vill inte",
+                "ej korrekt",
+                "det stämmer inte",
+                "det är fel",
+                "fel",
+                "stämmer ej"
+              ]
+            },
+            "bot": {
+              "say": "Tack!",
+              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
+              "params": [
+                "classifiedQuestion",
+                "classifiedUtterance"
+              ],
+              "asyncWebhook": true
+            }
           },
-          "bot": {
-            "say": "Tack!",
-            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-            "params": [
-              "classifiedQuestion",
-              "classifiedUtterance"
-            ],
-            "asyncWebhook": true
+          {
+            "intent": {
+              "examples": [
+                "__ANYTHING"
+              ]
+            },
+            "bot": {
+              "say": "Förlåt, var det rätt eller fel svar?",
+              "repair": true
+            }
           }
-        },
-        {
-          "intent": {
-            "examples": [
-              "__ANYTHING"
-            ]
-          },
-          "bot": {
-            "say": "Förlåt, var det rätt eller fel svar?",
-            "repair": true
-          }
-        }
-      ]
+        ]
+      }
     }
   },
   {
@@ -2201,70 +2341,75 @@ export const simpleQuestionAnswers : UserTurn[] = [
       ]
     },
     "bot": {
-      "say": "I nuläget finns det inget vaccin eller speciellt läkemedel mot covid-19. Internationella studier av olika typer av läkemedelsbehandlingar pågår och forskning sker kring utveckling av ett vaccin.. Var det ett korrekt svar?",
+      "say": [
+        "I nuläget finns det inget vaccin eller speciellt läkemedel mot covid-19. Internationella studier av olika typer av läkemedelsbehandlingar pågår och forskning sker kring utveckling av ett vaccin."
+      ],
       "set": {
         "classifiedQuestion": "question: finns det botemedel",
         "classifiedUtterance": "_user_text"
       },
-      "user": [
-        {
-          "intent": {
-            "name": "confirmRight",
-            "examples": [
-              "ja",
-              "japp",
-              "absolut",
-              "okej",
-              "jajamän",
-              "alright",
-              "yes",
-              "korrekt",
-              "det stämmer",
-              "det är rätt",
-              "rätt",
-              "stämmer"
-            ]
+      "bot": {
+        "say": "Var det ett korrekt svar?",
+        "user": [
+          {
+            "intent": {
+              "name": "confirmRight",
+              "examples": [
+                "ja",
+                "japp",
+                "absolut",
+                "okej",
+                "jajamän",
+                "alright",
+                "yes",
+                "korrekt",
+                "det stämmer",
+                "det är rätt",
+                "rätt",
+                "stämmer"
+              ]
+            },
+            "bot": "Tack!"
           },
-          "bot": "Tack!"
-        },
-        {
-          "intent": {
-            "name": "confirmWrong",
-            "examples": [
-              "nej",
-              "nope",
-              "no",
-              "aldrig",
-              "jag vill inte",
-              "ej korrekt",
-              "det stämmer inte",
-              "det är fel",
-              "fel",
-              "stämmer ej"
-            ]
+          {
+            "intent": {
+              "name": "confirmWrong",
+              "examples": [
+                "nej",
+                "nope",
+                "no",
+                "aldrig",
+                "jag vill inte",
+                "ej korrekt",
+                "det stämmer inte",
+                "det är fel",
+                "fel",
+                "stämmer ej"
+              ]
+            },
+            "bot": {
+              "say": "Tack!",
+              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
+              "params": [
+                "classifiedQuestion",
+                "classifiedUtterance"
+              ],
+              "asyncWebhook": true
+            }
           },
-          "bot": {
-            "say": "Tack!",
-            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-            "params": [
-              "classifiedQuestion",
-              "classifiedUtterance"
-            ],
-            "asyncWebhook": true
+          {
+            "intent": {
+              "examples": [
+                "__ANYTHING"
+              ]
+            },
+            "bot": {
+              "say": "Förlåt, var det rätt eller fel svar?",
+              "repair": true
+            }
           }
-        },
-        {
-          "intent": {
-            "examples": [
-              "__ANYTHING"
-            ]
-          },
-          "bot": {
-            "say": "Förlåt, var det rätt eller fel svar?",
-            "repair": true
-          }
-        }
-      ]
+        ]
+      }
     }
   },
   {
@@ -2279,70 +2424,75 @@ export const simpleQuestionAnswers : UserTurn[] = [
       ]
     },
     "bot": {
-      "say": "Majoriteten av de som smittas blir friska förutom en mycket liten andel personer som kan bli allvarligt sjuka, varav de flesta tillhör någon riskgrupp. . Var det ett korrekt svar?",
+      "say": [
+        "Majoriteten av de som smittas blir friska förutom en mycket liten andel personer som kan bli allvarligt sjuka, varav de flesta tillhör någon riskgrupp. "
+      ],
       "set": {
         "classifiedQuestion": "question: kommer alla bli friska från corona",
         "classifiedUtterance": "_user_text"
       },
-      "user": [
-        {
-          "intent": {
-            "name": "confirmRight",
-            "examples": [
-              "ja",
-              "japp",
-              "absolut",
-              "okej",
-              "jajamän",
-              "alright",
-              "yes",
-              "korrekt",
-              "det stämmer",
-              "det är rätt",
-              "rätt",
-              "stämmer"
-            ]
+      "bot": {
+        "say": "Var det ett korrekt svar?",
+        "user": [
+          {
+            "intent": {
+              "name": "confirmRight",
+              "examples": [
+                "ja",
+                "japp",
+                "absolut",
+                "okej",
+                "jajamän",
+                "alright",
+                "yes",
+                "korrekt",
+                "det stämmer",
+                "det är rätt",
+                "rätt",
+                "stämmer"
+              ]
+            },
+            "bot": "Tack!"
           },
-          "bot": "Tack!"
-        },
-        {
-          "intent": {
-            "name": "confirmWrong",
-            "examples": [
-              "nej",
-              "nope",
-              "no",
-              "aldrig",
-              "jag vill inte",
-              "ej korrekt",
-              "det stämmer inte",
-              "det är fel",
-              "fel",
-              "stämmer ej"
-            ]
+          {
+            "intent": {
+              "name": "confirmWrong",
+              "examples": [
+                "nej",
+                "nope",
+                "no",
+                "aldrig",
+                "jag vill inte",
+                "ej korrekt",
+                "det stämmer inte",
+                "det är fel",
+                "fel",
+                "stämmer ej"
+              ]
+            },
+            "bot": {
+              "say": "Tack!",
+              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
+              "params": [
+                "classifiedQuestion",
+                "classifiedUtterance"
+              ],
+              "asyncWebhook": true
+            }
           },
-          "bot": {
-            "say": "Tack!",
-            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-            "params": [
-              "classifiedQuestion",
-              "classifiedUtterance"
-            ],
-            "asyncWebhook": true
+          {
+            "intent": {
+              "examples": [
+                "__ANYTHING"
+              ]
+            },
+            "bot": {
+              "say": "Förlåt, var det rätt eller fel svar?",
+              "repair": true
+            }
           }
-        },
-        {
-          "intent": {
-            "examples": [
-              "__ANYTHING"
-            ]
-          },
-          "bot": {
-            "say": "Förlåt, var det rätt eller fel svar?",
-            "repair": true
-          }
-        }
-      ]
+        ]
+      }
     }
   },
   {
@@ -2357,70 +2507,75 @@ export const simpleQuestionAnswers : UserTurn[] = [
       ]
     },
     "bot": {
-      "say": "I ett hushåll där någon smittats av det nya coronaviruset räcker det att man städar så som man gör i normala fall. Det är viktigt att tvätta händerna noga när man har städat eller hanterat sopor.. Var det ett korrekt svar?",
+      "say": [
+        "I ett hushåll där någon smittats av det nya coronaviruset räcker det att man städar så som man gör i normala fall. Det är viktigt att tvätta händerna noga när man har städat eller hanterat sopor."
+      ],
       "set": {
         "classifiedQuestion": "question: ska jag städa på något särskilt sätt",
         "classifiedUtterance": "_user_text"
       },
-      "user": [
-        {
-          "intent": {
-            "name": "confirmRight",
-            "examples": [
-              "ja",
-              "japp",
-              "absolut",
-              "okej",
-              "jajamän",
-              "alright",
-              "yes",
-              "korrekt",
-              "det stämmer",
-              "det är rätt",
-              "rätt",
-              "stämmer"
-            ]
+      "bot": {
+        "say": "Var det ett korrekt svar?",
+        "user": [
+          {
+            "intent": {
+              "name": "confirmRight",
+              "examples": [
+                "ja",
+                "japp",
+                "absolut",
+                "okej",
+                "jajamän",
+                "alright",
+                "yes",
+                "korrekt",
+                "det stämmer",
+                "det är rätt",
+                "rätt",
+                "stämmer"
+              ]
+            },
+            "bot": "Tack!"
           },
-          "bot": "Tack!"
-        },
-        {
-          "intent": {
-            "name": "confirmWrong",
-            "examples": [
-              "nej",
-              "nope",
-              "no",
-              "aldrig",
-              "jag vill inte",
-              "ej korrekt",
-              "det stämmer inte",
-              "det är fel",
-              "fel",
-              "stämmer ej"
-            ]
+          {
+            "intent": {
+              "name": "confirmWrong",
+              "examples": [
+                "nej",
+                "nope",
+                "no",
+                "aldrig",
+                "jag vill inte",
+                "ej korrekt",
+                "det stämmer inte",
+                "det är fel",
+                "fel",
+                "stämmer ej"
+              ]
+            },
+            "bot": {
+              "say": "Tack!",
+              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
+              "params": [
+                "classifiedQuestion",
+                "classifiedUtterance"
+              ],
+              "asyncWebhook": true
+            }
           },
-          "bot": {
-            "say": "Tack!",
-            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-            "params": [
-              "classifiedQuestion",
-              "classifiedUtterance"
-            ],
-            "asyncWebhook": true
+          {
+            "intent": {
+              "examples": [
+                "__ANYTHING"
+              ]
+            },
+            "bot": {
+              "say": "Förlåt, var det rätt eller fel svar?",
+              "repair": true
+            }
           }
-        },
-        {
-          "intent": {
-            "examples": [
-              "__ANYTHING"
-            ]
-          },
-          "bot": {
-            "say": "Förlåt, var det rätt eller fel svar?",
-            "repair": true
-          }
-        }
-      ]
+        ]
+      }
     }
   },
   {
@@ -2435,70 +2590,75 @@ export const simpleQuestionAnswers : UserTurn[] = [
       ]
     },
     "bot": {
-      "say": "Det finns inga vetenskapliga studier som visar att stängning av skolor får någon större betydelse. Det finns heller inte några uppgifter som pekar på någon större spridning av covid-19 i skolor någonstans i världen. Stängda skolor skulle tvinga många inom hälso- och sjukvården att stanna hemma med sina barn, och känsliga grupper som mor- och farföräldrar skulle hos vissa familjer behöva ta hand om barnen.. Var det ett korrekt svar?",
+      "say": [
+        "Det finns inga vetenskapliga studier som visar att stängning av skolor får någon större betydelse. Det finns heller inte några uppgifter som pekar på någon större spridning av covid-19 i skolor någonstans i världen. Stängda skolor skulle tvinga många inom hälso- och sjukvården att stanna hemma med sina barn, och känsliga grupper som mor- och farföräldrar skulle hos vissa familjer behöva ta hand om barnen."
+      ],
       "set": {
         "classifiedQuestion": "question: varför stängs inte skolorna",
         "classifiedUtterance": "_user_text"
       },
-      "user": [
-        {
-          "intent": {
-            "name": "confirmRight",
-            "examples": [
-              "ja",
-              "japp",
-              "absolut",
-              "okej",
-              "jajamän",
-              "alright",
-              "yes",
-              "korrekt",
-              "det stämmer",
-              "det är rätt",
-              "rätt",
-              "stämmer"
-            ]
+      "bot": {
+        "say": "Var det ett korrekt svar?",
+        "user": [
+          {
+            "intent": {
+              "name": "confirmRight",
+              "examples": [
+                "ja",
+                "japp",
+                "absolut",
+                "okej",
+                "jajamän",
+                "alright",
+                "yes",
+                "korrekt",
+                "det stämmer",
+                "det är rätt",
+                "rätt",
+                "stämmer"
+              ]
+            },
+            "bot": "Tack!"
           },
-          "bot": "Tack!"
-        },
-        {
-          "intent": {
-            "name": "confirmWrong",
-            "examples": [
-              "nej",
-              "nope",
-              "no",
-              "aldrig",
-              "jag vill inte",
-              "ej korrekt",
-              "det stämmer inte",
-              "det är fel",
-              "fel",
-              "stämmer ej"
-            ]
+          {
+            "intent": {
+              "name": "confirmWrong",
+              "examples": [
+                "nej",
+                "nope",
+                "no",
+                "aldrig",
+                "jag vill inte",
+                "ej korrekt",
+                "det stämmer inte",
+                "det är fel",
+                "fel",
+                "stämmer ej"
+              ]
+            },
+            "bot": {
+              "say": "Tack!",
+              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
+              "params": [
+                "classifiedQuestion",
+                "classifiedUtterance"
+              ],
+              "asyncWebhook": true
+            }
           },
-          "bot": {
-            "say": "Tack!",
-            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-            "params": [
-              "classifiedQuestion",
-              "classifiedUtterance"
-            ],
-            "asyncWebhook": true
+          {
+            "intent": {
+              "examples": [
+                "__ANYTHING"
+              ]
+            },
+            "bot": {
+              "say": "Förlåt, var det rätt eller fel svar?",
+              "repair": true
+            }
           }
-        },
-        {
-          "intent": {
-            "examples": [
-              "__ANYTHING"
-            ]
-          },
-          "bot": {
-            "say": "Förlåt, var det rätt eller fel svar?",
-            "repair": true
-          }
-        }
-      ]
+        ]
+      }
     }
   },
   {
@@ -2513,70 +2673,75 @@ export const simpleQuestionAnswers : UserTurn[] = [
       ]
     },
     "bot": {
-      "say": "Det är ännu inte klarlagt hur länge viruset kan överleva utanför kroppen. Forskningsstudier som utförts på närbesläktade coronavirus visar att de kan överleva flera dagar på ytor och föremål men för detta krävs särskilda förhållanden, så som rätt temperatur, solljus och luftfuktighet.. Var det ett korrekt svar?",
+      "say": [
+        "Det är ännu inte klarlagt hur länge viruset kan överleva utanför kroppen. Forskningsstudier som utförts på närbesläktade coronavirus visar att de kan överleva flera dagar på ytor och föremål men för detta krävs särskilda förhållanden, så som rätt temperatur, solljus och luftfuktighet."
+      ],
       "set": {
         "classifiedQuestion": "question: hur länge överlever corona ",
         "classifiedUtterance": "_user_text"
       },
-      "user": [
-        {
-          "intent": {
-            "name": "confirmRight",
-            "examples": [
-              "ja",
-              "japp",
-              "absolut",
-              "okej",
-              "jajamän",
-              "alright",
-              "yes",
-              "korrekt",
-              "det stämmer",
-              "det är rätt",
-              "rätt",
-              "stämmer"
-            ]
+      "bot": {
+        "say": "Var det ett korrekt svar?",
+        "user": [
+          {
+            "intent": {
+              "name": "confirmRight",
+              "examples": [
+                "ja",
+                "japp",
+                "absolut",
+                "okej",
+                "jajamän",
+                "alright",
+                "yes",
+                "korrekt",
+                "det stämmer",
+                "det är rätt",
+                "rätt",
+                "stämmer"
+              ]
+            },
+            "bot": "Tack!"
           },
-          "bot": "Tack!"
-        },
-        {
-          "intent": {
-            "name": "confirmWrong",
-            "examples": [
-              "nej",
-              "nope",
-              "no",
-              "aldrig",
-              "jag vill inte",
-              "ej korrekt",
-              "det stämmer inte",
-              "det är fel",
-              "fel",
-              "stämmer ej"
-            ]
+          {
+            "intent": {
+              "name": "confirmWrong",
+              "examples": [
+                "nej",
+                "nope",
+                "no",
+                "aldrig",
+                "jag vill inte",
+                "ej korrekt",
+                "det stämmer inte",
+                "det är fel",
+                "fel",
+                "stämmer ej"
+              ]
+            },
+            "bot": {
+              "say": "Tack!",
+              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
+              "params": [
+                "classifiedQuestion",
+                "classifiedUtterance"
+              ],
+              "asyncWebhook": true
+            }
           },
-          "bot": {
-            "say": "Tack!",
-            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-            "params": [
-              "classifiedQuestion",
-              "classifiedUtterance"
-            ],
-            "asyncWebhook": true
+          {
+            "intent": {
+              "examples": [
+                "__ANYTHING"
+              ]
+            },
+            "bot": {
+              "say": "Förlåt, var det rätt eller fel svar?",
+              "repair": true
+            }
           }
-        },
-        {
-          "intent": {
-            "examples": [
-              "__ANYTHING"
-            ]
-          },
-          "bot": {
-            "say": "Förlåt, var det rätt eller fel svar?",
-            "repair": true
-          }
-        }
-      ]
+        ]
+      }
     }
   },
   {
@@ -2591,70 +2756,75 @@ export const simpleQuestionAnswers : UserTurn[] = [
       ]
     },
     "bot": {
-      "say": "Kunskap från liknande tidigare utbrott visar att denna typ av virus smittar från sjuka människor, och inte genom paket och postförsändelser.. Var det ett korrekt svar?",
+      "say": [
+        "Kunskap från liknande tidigare utbrott visar att denna typ av virus smittar från sjuka människor, och inte genom paket och postförsändelser."
+      ],
       "set": {
         "classifiedQuestion": "question: kan paket vara smittade med corona",
         "classifiedUtterance": "_user_text"
       },
-      "user": [
-        {
-          "intent": {
-            "name": "confirmRight",
-            "examples": [
-              "ja",
-              "japp",
-              "absolut",
-              "okej",
-              "jajamän",
-              "alright",
-              "yes",
-              "korrekt",
-              "det stämmer",
-              "det är rätt",
-              "rätt",
-              "stämmer"
-            ]
+      "bot": {
+        "say": "Var det ett korrekt svar?",
+        "user": [
+          {
+            "intent": {
+              "name": "confirmRight",
+              "examples": [
+                "ja",
+                "japp",
+                "absolut",
+                "okej",
+                "jajamän",
+                "alright",
+                "yes",
+                "korrekt",
+                "det stämmer",
+                "det är rätt",
+                "rätt",
+                "stämmer"
+              ]
+            },
+            "bot": "Tack!"
           },
-          "bot": "Tack!"
-        },
-        {
-          "intent": {
-            "name": "confirmWrong",
-            "examples": [
-              "nej",
-              "nope",
-              "no",
-              "aldrig",
-              "jag vill inte",
-              "ej korrekt",
-              "det stämmer inte",
-              "det är fel",
-              "fel",
-              "stämmer ej"
-            ]
+          {
+            "intent": {
+              "name": "confirmWrong",
+              "examples": [
+                "nej",
+                "nope",
+                "no",
+                "aldrig",
+                "jag vill inte",
+                "ej korrekt",
+                "det stämmer inte",
+                "det är fel",
+                "fel",
+                "stämmer ej"
+              ]
+            },
+            "bot": {
+              "say": "Tack!",
+              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
+              "params": [
+                "classifiedQuestion",
+                "classifiedUtterance"
+              ],
+              "asyncWebhook": true
+            }
           },
-          "bot": {
-            "say": "Tack!",
-            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-            "params": [
-              "classifiedQuestion",
-              "classifiedUtterance"
-            ],
-            "asyncWebhook": true
+          {
+            "intent": {
+              "examples": [
+                "__ANYTHING"
+              ]
+            },
+            "bot": {
+              "say": "Förlåt, var det rätt eller fel svar?",
+              "repair": true
+            }
           }
-        },
-        {
-          "intent": {
-            "examples": [
-              "__ANYTHING"
-            ]
-          },
-          "bot": {
-            "say": "Förlåt, var det rätt eller fel svar?",
-            "repair": true
-          }
-        }
-      ]
+        ]
+      }
     }
   },
   {
@@ -2669,70 +2839,75 @@ export const simpleQuestionAnswers : UserTurn[] = [
       ]
     },
     "bot": {
-      "say": "Det är troligt att en djurkälla från en djurmarknad i Kina orsakade några av de första rapporterade mänskliga infektionerna. Det finns inga uppgifter idag om att covid-19 kan smitta från människa till djur.. Var det ett korrekt svar?",
+      "say": [
+        "Det är troligt att en djurkälla från en djurmarknad i Kina orsakade några av de första rapporterade mänskliga infektionerna. Det finns inga uppgifter idag om att covid-19 kan smitta från människa till djur."
+      ],
       "set": {
         "classifiedQuestion": "question: kan jag smittas av mitt husdjur",
         "classifiedUtterance": "_user_text"
       },
-      "user": [
-        {
-          "intent": {
-            "name": "confirmRight",
-            "examples": [
-              "ja",
-              "japp",
-              "absolut",
-              "okej",
-              "jajamän",
-              "alright",
-              "yes",
-              "korrekt",
-              "det stämmer",
-              "det är rätt",
-              "rätt",
-              "stämmer"
-            ]
+      "bot": {
+        "say": "Var det ett korrekt svar?",
+        "user": [
+          {
+            "intent": {
+              "name": "confirmRight",
+              "examples": [
+                "ja",
+                "japp",
+                "absolut",
+                "okej",
+                "jajamän",
+                "alright",
+                "yes",
+                "korrekt",
+                "det stämmer",
+                "det är rätt",
+                "rätt",
+                "stämmer"
+              ]
+            },
+            "bot": "Tack!"
           },
-          "bot": "Tack!"
-        },
-        {
-          "intent": {
-            "name": "confirmWrong",
-            "examples": [
-              "nej",
-              "nope",
-              "no",
-              "aldrig",
-              "jag vill inte",
-              "ej korrekt",
-              "det stämmer inte",
-              "det är fel",
-              "fel",
-              "stämmer ej"
-            ]
+          {
+            "intent": {
+              "name": "confirmWrong",
+              "examples": [
+                "nej",
+                "nope",
+                "no",
+                "aldrig",
+                "jag vill inte",
+                "ej korrekt",
+                "det stämmer inte",
+                "det är fel",
+                "fel",
+                "stämmer ej"
+              ]
+            },
+            "bot": {
+              "say": "Tack!",
+              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
+              "params": [
+                "classifiedQuestion",
+                "classifiedUtterance"
+              ],
+              "asyncWebhook": true
+            }
           },
-          "bot": {
-            "say": "Tack!",
-            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-            "params": [
-              "classifiedQuestion",
-              "classifiedUtterance"
-            ],
-            "asyncWebhook": true
+          {
+            "intent": {
+              "examples": [
+                "__ANYTHING"
+              ]
+            },
+            "bot": {
+              "say": "Förlåt, var det rätt eller fel svar?",
+              "repair": true
+            }
           }
-        },
-        {
-          "intent": {
-            "examples": [
-              "__ANYTHING"
-            ]
-          },
-          "bot": {
-            "say": "Förlåt, var det rätt eller fel svar?",
-            "repair": true
-          }
-        }
-      ]
+        ]
+      }
     }
   },
   {
@@ -2747,70 +2922,75 @@ export const simpleQuestionAnswers : UserTurn[] = [
       ]
     },
     "bot": {
-      "say": "Covid-19 är nu en pandemi, vilket innebär att den finns eller kommer finnas i alla världsdelar. Sannolikt kommer covid-19 att drabba alla världens länder.. Var det ett korrekt svar?",
+      "say": [
+        "Covid-19 är nu en pandemi, vilket innebär att den finns eller kommer finnas i alla världsdelar. Sannolikt kommer covid-19 att drabba alla världens länder."
+      ],
       "set": {
         "classifiedQuestion": "question: vilka länder är smittade",
         "classifiedUtterance": "_user_text"
       },
-      "user": [
-        {
-          "intent": {
-            "name": "confirmRight",
-            "examples": [
-              "ja",
-              "japp",
-              "absolut",
-              "okej",
-              "jajamän",
-              "alright",
-              "yes",
-              "korrekt",
-              "det stämmer",
-              "det är rätt",
-              "rätt",
-              "stämmer"
-            ]
+      "bot": {
+        "say": "Var det ett korrekt svar?",
+        "user": [
+          {
+            "intent": {
+              "name": "confirmRight",
+              "examples": [
+                "ja",
+                "japp",
+                "absolut",
+                "okej",
+                "jajamän",
+                "alright",
+                "yes",
+                "korrekt",
+                "det stämmer",
+                "det är rätt",
+                "rätt",
+                "stämmer"
+              ]
+            },
+            "bot": "Tack!"
           },
-          "bot": "Tack!"
-        },
-        {
-          "intent": {
-            "name": "confirmWrong",
-            "examples": [
-              "nej",
-              "nope",
-              "no",
-              "aldrig",
-              "jag vill inte",
-              "ej korrekt",
-              "det stämmer inte",
-              "det är fel",
-              "fel",
-              "stämmer ej"
-            ]
+          {
+            "intent": {
+              "name": "confirmWrong",
+              "examples": [
+                "nej",
+                "nope",
+                "no",
+                "aldrig",
+                "jag vill inte",
+                "ej korrekt",
+                "det stämmer inte",
+                "det är fel",
+                "fel",
+                "stämmer ej"
+              ]
+            },
+            "bot": {
+              "say": "Tack!",
+              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
+              "params": [
+                "classifiedQuestion",
+                "classifiedUtterance"
+              ],
+              "asyncWebhook": true
+            }
           },
-          "bot": {
-            "say": "Tack!",
-            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-            "params": [
-              "classifiedQuestion",
-              "classifiedUtterance"
-            ],
-            "asyncWebhook": true
+          {
+            "intent": {
+              "examples": [
+                "__ANYTHING"
+              ]
+            },
+            "bot": {
+              "say": "Förlåt, var det rätt eller fel svar?",
+              "repair": true
+            }
           }
-        },
-        {
-          "intent": {
-            "examples": [
-              "__ANYTHING"
-            ]
-          },
-          "bot": {
-            "say": "Förlåt, var det rätt eller fel svar?",
-            "repair": true
-          }
-        }
-      ]
+        ]
+      }
     }
   },
   {
@@ -2825,70 +3005,75 @@ export const simpleQuestionAnswers : UserTurn[] = [
       ]
     },
     "bot": {
-      "say": "I Region Stockholm og i Västra Götalandsregionen ser vi nu tecken på samhällsspridning. Det innebär att du ska försöka låta bli att träffa andra människor, och inte gå till jobbet eller skolan - även om du bara känner dig lite sjuk. Stanna hemma så länge du känner dig sjuk så du inte riskerar att smitta andra.. Var det ett korrekt svar?",
+      "say": [
+        "I Region Stockholm og i Västra Götalandsregionen ser vi nu tecken på samhällsspridning. Det innebär att du ska försöka låta bli att träffa andra människor, och inte gå till jobbet eller skolan - även om du bara känner dig lite sjuk. Stanna hemma så länge du känner dig sjuk så du inte riskerar att smitta andra."
+      ],
       "set": {
         "classifiedQuestion": "question: vad innebär det att vi har en samhällsspridning av corona i Sverige?",
         "classifiedUtterance": "_user_text"
       },
-      "user": [
-        {
-          "intent": {
-            "name": "confirmRight",
-            "examples": [
-              "ja",
-              "japp",
-              "absolut",
-              "okej",
-              "jajamän",
-              "alright",
-              "yes",
-              "korrekt",
-              "det stämmer",
-              "det är rätt",
-              "rätt",
-              "stämmer"
-            ]
+      "bot": {
+        "say": "Var det ett korrekt svar?",
+        "user": [
+          {
+            "intent": {
+              "name": "confirmRight",
+              "examples": [
+                "ja",
+                "japp",
+                "absolut",
+                "okej",
+                "jajamän",
+                "alright",
+                "yes",
+                "korrekt",
+                "det stämmer",
+                "det är rätt",
+                "rätt",
+                "stämmer"
+              ]
+            },
+            "bot": "Tack!"
           },
-          "bot": "Tack!"
-        },
-        {
-          "intent": {
-            "name": "confirmWrong",
-            "examples": [
-              "nej",
-              "nope",
-              "no",
-              "aldrig",
-              "jag vill inte",
-              "ej korrekt",
-              "det stämmer inte",
-              "det är fel",
-              "fel",
-              "stämmer ej"
-            ]
+          {
+            "intent": {
+              "name": "confirmWrong",
+              "examples": [
+                "nej",
+                "nope",
+                "no",
+                "aldrig",
+                "jag vill inte",
+                "ej korrekt",
+                "det stämmer inte",
+                "det är fel",
+                "fel",
+                "stämmer ej"
+              ]
+            },
+            "bot": {
+              "say": "Tack!",
+              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
+              "params": [
+                "classifiedQuestion",
+                "classifiedUtterance"
+              ],
+              "asyncWebhook": true
+            }
           },
-          "bot": {
-            "say": "Tack!",
-            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-            "params": [
-              "classifiedQuestion",
-              "classifiedUtterance"
-            ],
-            "asyncWebhook": true
+          {
+            "intent": {
+              "examples": [
+                "__ANYTHING"
+              ]
+            },
+            "bot": {
+              "say": "Förlåt, var det rätt eller fel svar?",
+              "repair": true
+            }
           }
-        },
-        {
-          "intent": {
-            "examples": [
-              "__ANYTHING"
-            ]
-          },
-          "bot": {
-            "say": "Förlåt, var det rätt eller fel svar?",
-            "repair": true
-          }
-        }
-      ]
+        ]
+      }
     }
   },
   {
@@ -2903,70 +3088,75 @@ export const simpleQuestionAnswers : UserTurn[] = [
       ]
     },
     "bot": {
-      "say": "Smittspårning kan ha en avgörande betydelse för att förhindra smittspridning och minska risken för större utbrott. Den behandlande läkaren ska ta reda på hur en smittad person har blivit smittad, och vem eller vilka andra som kan vara smittade eller har blivit utsatta för smitta.. Var det ett korrekt svar?",
+      "say": [
+        "Smittspårning kan ha en avgörande betydelse för att förhindra smittspridning och minska risken för större utbrott. Den behandlande läkaren ska ta reda på hur en smittad person har blivit smittad, och vem eller vilka andra som kan vara smittade eller har blivit utsatta för smitta."
+      ],
       "set": {
         "classifiedQuestion": "question: vad är smittspårning",
         "classifiedUtterance": "_user_text"
       },
-      "user": [
-        {
-          "intent": {
-            "name": "confirmRight",
-            "examples": [
-              "ja",
-              "japp",
-              "absolut",
-              "okej",
-              "jajamän",
-              "alright",
-              "yes",
-              "korrekt",
-              "det stämmer",
-              "det är rätt",
-              "rätt",
-              "stämmer"
-            ]
+      "bot": {
+        "say": "Var det ett korrekt svar?",
+        "user": [
+          {
+            "intent": {
+              "name": "confirmRight",
+              "examples": [
+                "ja",
+                "japp",
+                "absolut",
+                "okej",
+                "jajamän",
+                "alright",
+                "yes",
+                "korrekt",
+                "det stämmer",
+                "det är rätt",
+                "rätt",
+                "stämmer"
+              ]
+            },
+            "bot": "Tack!"
           },
-          "bot": "Tack!"
-        },
-        {
-          "intent": {
-            "name": "confirmWrong",
-            "examples": [
-              "nej",
-              "nope",
-              "no",
-              "aldrig",
-              "jag vill inte",
-              "ej korrekt",
-              "det stämmer inte",
-              "det är fel",
-              "fel",
-              "stämmer ej"
-            ]
+          {
+            "intent": {
+              "name": "confirmWrong",
+              "examples": [
+                "nej",
+                "nope",
+                "no",
+                "aldrig",
+                "jag vill inte",
+                "ej korrekt",
+                "det stämmer inte",
+                "det är fel",
+                "fel",
+                "stämmer ej"
+              ]
+            },
+            "bot": {
+              "say": "Tack!",
+              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
+              "params": [
+                "classifiedQuestion",
+                "classifiedUtterance"
+              ],
+              "asyncWebhook": true
+            }
           },
-          "bot": {
-            "say": "Tack!",
-            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-            "params": [
-              "classifiedQuestion",
-              "classifiedUtterance"
-            ],
-            "asyncWebhook": true
+          {
+            "intent": {
+              "examples": [
+                "__ANYTHING"
+              ]
+            },
+            "bot": {
+              "say": "Förlåt, var det rätt eller fel svar?",
+              "repair": true
+            }
           }
-        },
-        {
-          "intent": {
-            "examples": [
-              "__ANYTHING"
-            ]
-          },
-          "bot": {
-            "say": "Förlåt, var det rätt eller fel svar?",
-            "repair": true
-          }
-        }
-      ]
+        ]
+      }
     }
   },
   {
@@ -2981,70 +3171,75 @@ export const simpleQuestionAnswers : UserTurn[] = [
       ]
     },
     "bot": {
-      "say": "Större evenemang riskerar att öka smittspridningen eftersom de lockar till sig åskådare från olika delar av landet. Folkhälsomyndigheten har därför bedömt att gränsen bör gå vid 500 personer. Norge valde samma gräns.. Var det ett korrekt svar?",
+      "say": [
+        "Större evenemang riskerar att öka smittspridningen eftersom de lockar till sig åskådare från olika delar av landet. Folkhälsomyndigheten har därför bedömt att gränsen bör gå vid 500 personer. Norge valde samma gräns."
+      ],
       "set": {
         "classifiedQuestion": "question: vad är det för särskilt med 500 personer",
         "classifiedUtterance": "_user_text"
       },
-      "user": [
-        {
-          "intent": {
-            "name": "confirmRight",
-            "examples": [
-              "ja",
-              "japp",
-              "absolut",
-              "okej",
-              "jajamän",
-              "alright",
-              "yes",
-              "korrekt",
-              "det stämmer",
-              "det är rätt",
-              "rätt",
-              "stämmer"
-            ]
+      "bot": {
+        "say": "Var det ett korrekt svar?",
+        "user": [
+          {
+            "intent": {
+              "name": "confirmRight",
+              "examples": [
+                "ja",
+                "japp",
+                "absolut",
+                "okej",
+                "jajamän",
+                "alright",
+                "yes",
+                "korrekt",
+                "det stämmer",
+                "det är rätt",
+                "rätt",
+                "stämmer"
+              ]
+            },
+            "bot": "Tack!"
           },
-          "bot": "Tack!"
-        },
-        {
-          "intent": {
-            "name": "confirmWrong",
-            "examples": [
-              "nej",
-              "nope",
-              "no",
-              "aldrig",
-              "jag vill inte",
-              "ej korrekt",
-              "det stämmer inte",
-              "det är fel",
-              "fel",
-              "stämmer ej"
-            ]
+          {
+            "intent": {
+              "name": "confirmWrong",
+              "examples": [
+                "nej",
+                "nope",
+                "no",
+                "aldrig",
+                "jag vill inte",
+                "ej korrekt",
+                "det stämmer inte",
+                "det är fel",
+                "fel",
+                "stämmer ej"
+              ]
+            },
+            "bot": {
+              "say": "Tack!",
+              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
+              "params": [
+                "classifiedQuestion",
+                "classifiedUtterance"
+              ],
+              "asyncWebhook": true
+            }
           },
-          "bot": {
-            "say": "Tack!",
-            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-            "params": [
-              "classifiedQuestion",
-              "classifiedUtterance"
-            ],
-            "asyncWebhook": true
+          {
+            "intent": {
+              "examples": [
+                "__ANYTHING"
+              ]
+            },
+            "bot": {
+              "say": "Förlåt, var det rätt eller fel svar?",
+              "repair": true
+            }
           }
-        },
-        {
-          "intent": {
-            "examples": [
-              "__ANYTHING"
-            ]
-          },
-          "bot": {
-            "say": "Förlåt, var det rätt eller fel svar?",
-            "repair": true
-          }
-        }
-      ]
+        ]
+      }
     }
   },
   {
@@ -3059,70 +3254,75 @@ export const simpleQuestionAnswers : UserTurn[] = [
       ]
     },
     "bot": {
-      "say": "Folkhälsomyndigheten baserar sina rekommendationer om hälsokontroller bland annat på information från WHO och ECDC. Erfarenhet från SARS-epidemin visar att hälsokontroller på flygplatser inte är ett effektivt sätt att begränsa smittspridningen. Det är även resurskrävande, och fångar enbart upp smittade personer som redan har symtom.. Var det ett korrekt svar?",
+      "say": [
+        "Folkhälsomyndigheten baserar sina rekommendationer om hälsokontroller bland annat på information från WHO och ECDC. Erfarenhet från SARS-epidemin visar att hälsokontroller på flygplatser inte är ett effektivt sätt att begränsa smittspridningen. Det är även resurskrävande, och fångar enbart upp smittade personer som redan har symtom."
+      ],
       "set": {
         "classifiedQuestion": "question: kan flygkontroller minska spridningen",
         "classifiedUtterance": "_user_text"
       },
-      "user": [
-        {
-          "intent": {
-            "name": "confirmRight",
-            "examples": [
-              "ja",
-              "japp",
-              "absolut",
-              "okej",
-              "jajamän",
-              "alright",
-              "yes",
-              "korrekt",
-              "det stämmer",
-              "det är rätt",
-              "rätt",
-              "stämmer"
-            ]
+      "bot": {
+        "say": "Var det ett korrekt svar?",
+        "user": [
+          {
+            "intent": {
+              "name": "confirmRight",
+              "examples": [
+                "ja",
+                "japp",
+                "absolut",
+                "okej",
+                "jajamän",
+                "alright",
+                "yes",
+                "korrekt",
+                "det stämmer",
+                "det är rätt",
+                "rätt",
+                "stämmer"
+              ]
+            },
+            "bot": "Tack!"
           },
-          "bot": "Tack!"
-        },
-        {
-          "intent": {
-            "name": "confirmWrong",
-            "examples": [
-              "nej",
-              "nope",
-              "no",
-              "aldrig",
-              "jag vill inte",
-              "ej korrekt",
-              "det stämmer inte",
-              "det är fel",
-              "fel",
-              "stämmer ej"
-            ]
+          {
+            "intent": {
+              "name": "confirmWrong",
+              "examples": [
+                "nej",
+                "nope",
+                "no",
+                "aldrig",
+                "jag vill inte",
+                "ej korrekt",
+                "det stämmer inte",
+                "det är fel",
+                "fel",
+                "stämmer ej"
+              ]
+            },
+            "bot": {
+              "say": "Tack!",
+              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
+              "params": [
+                "classifiedQuestion",
+                "classifiedUtterance"
+              ],
+              "asyncWebhook": true
+            }
           },
-          "bot": {
-            "say": "Tack!",
-            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-            "params": [
-              "classifiedQuestion",
-              "classifiedUtterance"
-            ],
-            "asyncWebhook": true
+          {
+            "intent": {
+              "examples": [
+                "__ANYTHING"
+              ]
+            },
+            "bot": {
+              "say": "Förlåt, var det rätt eller fel svar?",
+              "repair": true
+            }
           }
-        },
-        {
-          "intent": {
-            "examples": [
-              "__ANYTHING"
-            ]
-          },
-          "bot": {
-            "say": "Förlåt, var det rätt eller fel svar?",
-            "repair": true
-          }
-        }
-      ]
+        ]
+      }
     }
   },
   {
@@ -3137,70 +3337,75 @@ export const simpleQuestionAnswers : UserTurn[] = [
       ]
     },
     "bot": {
-      "say": "Eftersom det nya coronaviruset är klassat som samhällsfarligt kan friska personer sättas i karantän. Beslutet tas av smittskyddsläkaren i respektive sjukvårdsregion, och det är noga reglerad i smittskyddslagen. Karantän kan innebära att placeras i hemmet, en avgränsad del av en byggnad eller ett område.. Var det ett korrekt svar?",
+      "say": [
+        "Eftersom det nya coronaviruset är klassat som samhällsfarligt kan friska personer sättas i karantän. Beslutet tas av smittskyddsläkaren i respektive sjukvårdsregion, och det är noga reglerad i smittskyddslagen. Karantän kan innebära att placeras i hemmet, en avgränsad del av en byggnad eller ett område."
+      ],
       "set": {
         "classifiedQuestion": "question: vem bestämmer vem som ska sättas i karantän",
         "classifiedUtterance": "_user_text"
       },
-      "user": [
-        {
-          "intent": {
-            "name": "confirmRight",
-            "examples": [
-              "ja",
-              "japp",
-              "absolut",
-              "okej",
-              "jajamän",
-              "alright",
-              "yes",
-              "korrekt",
-              "det stämmer",
-              "det är rätt",
-              "rätt",
-              "stämmer"
-            ]
+      "bot": {
+        "say": "Var det ett korrekt svar?",
+        "user": [
+          {
+            "intent": {
+              "name": "confirmRight",
+              "examples": [
+                "ja",
+                "japp",
+                "absolut",
+                "okej",
+                "jajamän",
+                "alright",
+                "yes",
+                "korrekt",
+                "det stämmer",
+                "det är rätt",
+                "rätt",
+                "stämmer"
+              ]
+            },
+            "bot": "Tack!"
           },
-          "bot": "Tack!"
-        },
-        {
-          "intent": {
-            "name": "confirmWrong",
-            "examples": [
-              "nej",
-              "nope",
-              "no",
-              "aldrig",
-              "jag vill inte",
-              "ej korrekt",
-              "det stämmer inte",
-              "det är fel",
-              "fel",
-              "stämmer ej"
-            ]
+          {
+            "intent": {
+              "name": "confirmWrong",
+              "examples": [
+                "nej",
+                "nope",
+                "no",
+                "aldrig",
+                "jag vill inte",
+                "ej korrekt",
+                "det stämmer inte",
+                "det är fel",
+                "fel",
+                "stämmer ej"
+              ]
+            },
+            "bot": {
+              "say": "Tack!",
+              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
+              "params": [
+                "classifiedQuestion",
+                "classifiedUtterance"
+              ],
+              "asyncWebhook": true
+            }
           },
-          "bot": {
-            "say": "Tack!",
-            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-            "params": [
-              "classifiedQuestion",
-              "classifiedUtterance"
-            ],
-            "asyncWebhook": true
+          {
+            "intent": {
+              "examples": [
+                "__ANYTHING"
+              ]
+            },
+            "bot": {
+              "say": "Förlåt, var det rätt eller fel svar?",
+              "repair": true
+            }
           }
-        },
-        {
-          "intent": {
-            "examples": [
-              "__ANYTHING"
-            ]
-          },
-          "bot": {
-            "say": "Förlåt, var det rätt eller fel svar?",
-            "repair": true
-          }
-        }
-      ]
+        ]
+      }
     }
   },
   {
@@ -3214,70 +3419,75 @@ export const simpleQuestionAnswers : UserTurn[] = [
       ]
     },
     "bot": {
-      "say": "Folkhälsomyndigheten (FHM) ska ta fram och förmedla vetenskapligt grundad kunskap som förebygger ohälsa och sjukdomar, och som ger samhället stöd i arbetet mot hälsohot. FHM följer händelseutvecklingen av covid-19 noga, och gör riskbedömningar samt bedömer hur utbrottet utvecklas. Sjukvård, regionala smittskyddsenheter och andra aktörer får information om det aktuella läget, och FHM tar ställning till vilka åtgärdar som är relevanta att genomföra. . Var det ett korrekt svar?",
+      "say": [
+        "Folkhälsomyndigheten (FHM) ska ta fram och förmedla vetenskapligt grundad kunskap som förebygger ohälsa och sjukdomar, och som ger samhället stöd i arbetet mot hälsohot. FHM följer händelseutvecklingen av covid-19 noga, och gör riskbedömningar samt bedömer hur utbrottet utvecklas. Sjukvård, regionala smittskyddsenheter och andra aktörer får information om det aktuella läget, och FHM tar ställning till vilka åtgärdar som är relevanta att genomföra. "
+      ],
       "set": {
         "classifiedQuestion": "question: vad är Folkhälsomyndigheten",
         "classifiedUtterance": "_user_text"
       },
-      "user": [
-        {
-          "intent": {
-            "name": "confirmRight",
-            "examples": [
-              "ja",
-              "japp",
-              "absolut",
-              "okej",
-              "jajamän",
-              "alright",
-              "yes",
-              "korrekt",
-              "det stämmer",
-              "det är rätt",
-              "rätt",
-              "stämmer"
-            ]
+      "bot": {
+        "say": "Var det ett korrekt svar?",
+        "user": [
+          {
+            "intent": {
+              "name": "confirmRight",
+              "examples": [
+                "ja",
+                "japp",
+                "absolut",
+                "okej",
+                "jajamän",
+                "alright",
+                "yes",
+                "korrekt",
+                "det stämmer",
+                "det är rätt",
+                "rätt",
+                "stämmer"
+              ]
+            },
+            "bot": "Tack!"
           },
-          "bot": "Tack!"
-        },
-        {
-          "intent": {
-            "name": "confirmWrong",
-            "examples": [
-              "nej",
-              "nope",
-              "no",
-              "aldrig",
-              "jag vill inte",
-              "ej korrekt",
-              "det stämmer inte",
-              "det är fel",
-              "fel",
-              "stämmer ej"
-            ]
+          {
+            "intent": {
+              "name": "confirmWrong",
+              "examples": [
+                "nej",
+                "nope",
+                "no",
+                "aldrig",
+                "jag vill inte",
+                "ej korrekt",
+                "det stämmer inte",
+                "det är fel",
+                "fel",
+                "stämmer ej"
+              ]
+            },
+            "bot": {
+              "say": "Tack!",
+              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
+              "params": [
+                "classifiedQuestion",
+                "classifiedUtterance"
+              ],
+              "asyncWebhook": true
+            }
           },
-          "bot": {
-            "say": "Tack!",
-            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-            "params": [
-              "classifiedQuestion",
-              "classifiedUtterance"
-            ],
-            "asyncWebhook": true
+          {
+            "intent": {
+              "examples": [
+                "__ANYTHING"
+              ]
+            },
+            "bot": {
+              "say": "Förlåt, var det rätt eller fel svar?",
+              "repair": true
+            }
           }
-        },
-        {
-          "intent": {
-            "examples": [
-              "__ANYTHING"
-            ]
-          },
-          "bot": {
-            "say": "Förlåt, var det rätt eller fel svar?",
-            "repair": true
-          }
-        }
-      ]
+        ]
+      }
     }
   },
   {
@@ -3291,70 +3501,75 @@ export const simpleQuestionAnswers : UserTurn[] = [
       ]
     },
     "bot": {
-      "say": "En pandemi innebär en omfattande spridning till alla världens kontinenter av en helt ny typ av smittsam sjukdom. Vid en pandemi kommer sjukdomen med stor sannolikhet påverka stora delar av vårt samhälle och världens befolkning. Det är WHO som deklarerar om en smittspridning bedöms vara en pandemi, och detta gjordes den 11:e mars 2020. . Var det ett korrekt svar?",
+      "say": [
+        "En pandemi innebär en omfattande spridning till alla världens kontinenter av en helt ny typ av smittsam sjukdom. Vid en pandemi kommer sjukdomen med stor sannolikhet påverka stora delar av vårt samhälle och världens befolkning. Det är WHO som deklarerar om en smittspridning bedöms vara en pandemi, och detta gjordes den 11:e mars 2020. "
+      ],
       "set": {
         "classifiedQuestion": "question: vad betyder pandemi",
         "classifiedUtterance": "_user_text"
       },
-      "user": [
-        {
-          "intent": {
-            "name": "confirmRight",
-            "examples": [
-              "ja",
-              "japp",
-              "absolut",
-              "okej",
-              "jajamän",
-              "alright",
-              "yes",
-              "korrekt",
-              "det stämmer",
-              "det är rätt",
-              "rätt",
-              "stämmer"
-            ]
+      "bot": {
+        "say": "Var det ett korrekt svar?",
+        "user": [
+          {
+            "intent": {
+              "name": "confirmRight",
+              "examples": [
+                "ja",
+                "japp",
+                "absolut",
+                "okej",
+                "jajamän",
+                "alright",
+                "yes",
+                "korrekt",
+                "det stämmer",
+                "det är rätt",
+                "rätt",
+                "stämmer"
+              ]
+            },
+            "bot": "Tack!"
           },
-          "bot": "Tack!"
-        },
-        {
-          "intent": {
-            "name": "confirmWrong",
-            "examples": [
-              "nej",
-              "nope",
-              "no",
-              "aldrig",
-              "jag vill inte",
-              "ej korrekt",
-              "det stämmer inte",
-              "det är fel",
-              "fel",
-              "stämmer ej"
-            ]
+          {
+            "intent": {
+              "name": "confirmWrong",
+              "examples": [
+                "nej",
+                "nope",
+                "no",
+                "aldrig",
+                "jag vill inte",
+                "ej korrekt",
+                "det stämmer inte",
+                "det är fel",
+                "fel",
+                "stämmer ej"
+              ]
+            },
+            "bot": {
+              "say": "Tack!",
+              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
+              "params": [
+                "classifiedQuestion",
+                "classifiedUtterance"
+              ],
+              "asyncWebhook": true
+            }
           },
-          "bot": {
-            "say": "Tack!",
-            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-            "params": [
-              "classifiedQuestion",
-              "classifiedUtterance"
-            ],
-            "asyncWebhook": true
+          {
+            "intent": {
+              "examples": [
+                "__ANYTHING"
+              ]
+            },
+            "bot": {
+              "say": "Förlåt, var det rätt eller fel svar?",
+              "repair": true
+            }
           }
-        },
-        {
-          "intent": {
-            "examples": [
-              "__ANYTHING"
-            ]
-          },
-          "bot": {
-            "say": "Förlåt, var det rätt eller fel svar?",
-            "repair": true
-          }
-        }
-      ]
+        ]
+      }
     }
   },
   {
@@ -3369,70 +3584,75 @@ export const simpleQuestionAnswers : UserTurn[] = [
       ]
     },
     "bot": {
-      "say": "Att klassa smittan som allmänfarlig och samhällsfarlig stärker den svenska beredskapen vid samhällsspridning av covid-19, eftersom det gör det möjligt att vidta de förebyggande åtgärder som är relevanta för att hindra en spridning av smitta i samhället. För allmänfarlig och samhällsfarlig smitta finns möjligheter att besluta om åtgärder som exempelvis karantän, isolering, hälsoundersökningar vid inresa och avspärrningar av områden.. Var det ett korrekt svar?",
+      "say": [
+        "Att klassa smittan som allmänfarlig och samhällsfarlig stärker den svenska beredskapen vid samhällsspridning av covid-19, eftersom det gör det möjligt att vidta de förebyggande åtgärder som är relevanta för att hindra en spridning av smitta i samhället. För allmänfarlig och samhällsfarlig smitta finns möjligheter att besluta om åtgärder som exempelvis karantän, isolering, hälsoundersökningar vid inresa och avspärrningar av områden."
+      ],
       "set": {
         "classifiedQuestion": "question: vad betyder det att corona är allmänfarlig",
         "classifiedUtterance": "_user_text"
       },
-      "user": [
-        {
-          "intent": {
-            "name": "confirmRight",
-            "examples": [
-              "ja",
-              "japp",
-              "absolut",
-              "okej",
-              "jajamän",
-              "alright",
-              "yes",
-              "korrekt",
-              "det stämmer",
-              "det är rätt",
-              "rätt",
-              "stämmer"
-            ]
+      "bot": {
+        "say": "Var det ett korrekt svar?",
+        "user": [
+          {
+            "intent": {
+              "name": "confirmRight",
+              "examples": [
+                "ja",
+                "japp",
+                "absolut",
+                "okej",
+                "jajamän",
+                "alright",
+                "yes",
+                "korrekt",
+                "det stämmer",
+                "det är rätt",
+                "rätt",
+                "stämmer"
+              ]
+            },
+            "bot": "Tack!"
           },
-          "bot": "Tack!"
-        },
-        {
-          "intent": {
-            "name": "confirmWrong",
-            "examples": [
-              "nej",
-              "nope",
-              "no",
-              "aldrig",
-              "jag vill inte",
-              "ej korrekt",
-              "det stämmer inte",
-              "det är fel",
-              "fel",
-              "stämmer ej"
-            ]
+          {
+            "intent": {
+              "name": "confirmWrong",
+              "examples": [
+                "nej",
+                "nope",
+                "no",
+                "aldrig",
+                "jag vill inte",
+                "ej korrekt",
+                "det stämmer inte",
+                "det är fel",
+                "fel",
+                "stämmer ej"
+              ]
+            },
+            "bot": {
+              "say": "Tack!",
+              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
+              "params": [
+                "classifiedQuestion",
+                "classifiedUtterance"
+              ],
+              "asyncWebhook": true
+            }
           },
-          "bot": {
-            "say": "Tack!",
-            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-            "params": [
-              "classifiedQuestion",
-              "classifiedUtterance"
-            ],
-            "asyncWebhook": true
+          {
+            "intent": {
+              "examples": [
+                "__ANYTHING"
+              ]
+            },
+            "bot": {
+              "say": "Förlåt, var det rätt eller fel svar?",
+              "repair": true
+            }
           }
-        },
-        {
-          "intent": {
-            "examples": [
-              "__ANYTHING"
-            ]
-          },
-          "bot": {
-            "say": "Förlåt, var det rätt eller fel svar?",
-            "repair": true
-          }
-        }
-      ]
+        ]
+      }
     }
   },
   {
@@ -3448,70 +3668,75 @@ export const simpleQuestionAnswers : UserTurn[] = [
       ]
     },
     "bot": {
-      "say": "Vid droppsmitta sprids smittan via droppar i luften, t.ex. när någon antingen hostar, nyser eller kräks. Dessa droppar når som regel inte längre än någon meter. Luftburen smitta rör sig om små, intorkade droppar som håller sig kvar i luften, färdas långa sträckor och smittar den som andas in dem. . Var det ett korrekt svar?",
+      "say": [
+        "Vid droppsmitta sprids smittan via droppar i luften, t.ex. när någon antingen hostar, nyser eller kräks. Dessa droppar når som regel inte längre än någon meter. Luftburen smitta rör sig om små, intorkade droppar som håller sig kvar i luften, färdas långa sträckor och smittar den som andas in dem. "
+      ],
       "set": {
         "classifiedQuestion": "question: vad betyder droppsmitta",
         "classifiedUtterance": "_user_text"
       },
-      "user": [
-        {
-          "intent": {
-            "name": "confirmRight",
-            "examples": [
-              "ja",
-              "japp",
-              "absolut",
-              "okej",
-              "jajamän",
-              "alright",
-              "yes",
-              "korrekt",
-              "det stämmer",
-              "det är rätt",
-              "rätt",
-              "stämmer"
-            ]
+      "bot": {
+        "say": "Var det ett korrekt svar?",
+        "user": [
+          {
+            "intent": {
+              "name": "confirmRight",
+              "examples": [
+                "ja",
+                "japp",
+                "absolut",
+                "okej",
+                "jajamän",
+                "alright",
+                "yes",
+                "korrekt",
+                "det stämmer",
+                "det är rätt",
+                "rätt",
+                "stämmer"
+              ]
+            },
+            "bot": "Tack!"
           },
-          "bot": "Tack!"
-        },
-        {
-          "intent": {
-            "name": "confirmWrong",
-            "examples": [
-              "nej",
-              "nope",
-              "no",
-              "aldrig",
-              "jag vill inte",
-              "ej korrekt",
-              "det stämmer inte",
-              "det är fel",
-              "fel",
-              "stämmer ej"
-            ]
+          {
+            "intent": {
+              "name": "confirmWrong",
+              "examples": [
+                "nej",
+                "nope",
+                "no",
+                "aldrig",
+                "jag vill inte",
+                "ej korrekt",
+                "det stämmer inte",
+                "det är fel",
+                "fel",
+                "stämmer ej"
+              ]
+            },
+            "bot": {
+              "say": "Tack!",
+              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
+              "params": [
+                "classifiedQuestion",
+                "classifiedUtterance"
+              ],
+              "asyncWebhook": true
+            }
           },
-          "bot": {
-            "say": "Tack!",
-            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-            "params": [
-              "classifiedQuestion",
-              "classifiedUtterance"
-            ],
-            "asyncWebhook": true
+          {
+            "intent": {
+              "examples": [
+                "__ANYTHING"
+              ]
+            },
+            "bot": {
+              "say": "Förlåt, var det rätt eller fel svar?",
+              "repair": true
+            }
           }
-        },
-        {
-          "intent": {
-            "examples": [
-              "__ANYTHING"
-            ]
-          },
-          "bot": {
-            "say": "Förlåt, var det rätt eller fel svar?",
-            "repair": true
-          }
-        }
-      ]
+        ]
+      }
     }
   },
   {
@@ -3525,70 +3750,75 @@ export const simpleQuestionAnswers : UserTurn[] = [
       ]
     },
     "bot": {
-      "say": "Direkt kontaktsmitta kan ske vid direkt fysisk kontakt mellan en smittbärare och en annan person. Vid indirekt kontaktsmitta överförs smittämnet istället via mellanled från en person till en annan. Kontaktsmitta är den vanligaste smittvägen i vården.. Var det ett korrekt svar?",
+      "say": [
+        "Direkt kontaktsmitta kan ske vid direkt fysisk kontakt mellan en smittbärare och en annan person. Vid indirekt kontaktsmitta överförs smittämnet istället via mellanled från en person till en annan. Kontaktsmitta är den vanligaste smittvägen i vården."
+      ],
       "set": {
         "classifiedQuestion": "question: vad är direktkontakt?",
         "classifiedUtterance": "_user_text"
       },
-      "user": [
-        {
-          "intent": {
-            "name": "confirmRight",
-            "examples": [
-              "ja",
-              "japp",
-              "absolut",
-              "okej",
-              "jajamän",
-              "alright",
-              "yes",
-              "korrekt",
-              "det stämmer",
-              "det är rätt",
-              "rätt",
-              "stämmer"
-            ]
+      "bot": {
+        "say": "Var det ett korrekt svar?",
+        "user": [
+          {
+            "intent": {
+              "name": "confirmRight",
+              "examples": [
+                "ja",
+                "japp",
+                "absolut",
+                "okej",
+                "jajamän",
+                "alright",
+                "yes",
+                "korrekt",
+                "det stämmer",
+                "det är rätt",
+                "rätt",
+                "stämmer"
+              ]
+            },
+            "bot": "Tack!"
           },
-          "bot": "Tack!"
-        },
-        {
-          "intent": {
-            "name": "confirmWrong",
-            "examples": [
-              "nej",
-              "nope",
-              "no",
-              "aldrig",
-              "jag vill inte",
-              "ej korrekt",
-              "det stämmer inte",
-              "det är fel",
-              "fel",
-              "stämmer ej"
-            ]
+          {
+            "intent": {
+              "name": "confirmWrong",
+              "examples": [
+                "nej",
+                "nope",
+                "no",
+                "aldrig",
+                "jag vill inte",
+                "ej korrekt",
+                "det stämmer inte",
+                "det är fel",
+                "fel",
+                "stämmer ej"
+              ]
+            },
+            "bot": {
+              "say": "Tack!",
+              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
+              "params": [
+                "classifiedQuestion",
+                "classifiedUtterance"
+              ],
+              "asyncWebhook": true
+            }
           },
-          "bot": {
-            "say": "Tack!",
-            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-            "params": [
-              "classifiedQuestion",
-              "classifiedUtterance"
-            ],
-            "asyncWebhook": true
+          {
+            "intent": {
+              "examples": [
+                "__ANYTHING"
+              ]
+            },
+            "bot": {
+              "say": "Förlåt, var det rätt eller fel svar?",
+              "repair": true
+            }
           }
-        },
-        {
-          "intent": {
-            "examples": [
-              "__ANYTHING"
-            ]
-          },
-          "bot": {
-            "say": "Förlåt, var det rätt eller fel svar?",
-            "repair": true
-          }
-        }
-      ]
+        ]
+      }
     }
   },
   {
@@ -3603,70 +3833,75 @@ export const simpleQuestionAnswers : UserTurn[] = [
       ]
     },
     "bot": {
-      "say": "Andningsskydd används inom sjukvården där det finns hög smittrisk. Ofta har de inbyggda filter som filtrerar bort smittämnen och andra partiklar från luften man andas in. För att andningsskyddet ska ge avsett skydd måste det anpassas till den som ska använda det plus att personen behöver träning i hur det ska användas.. Var det ett korrekt svar?",
+      "say": [
+        "Andningsskydd används inom sjukvården där det finns hög smittrisk. Ofta har de inbyggda filter som filtrerar bort smittämnen och andra partiklar från luften man andas in. För att andningsskyddet ska ge avsett skydd måste det anpassas till den som ska använda det plus att personen behöver träning i hur det ska användas."
+      ],
       "set": {
         "classifiedQuestion": "question: hur använder jag ett andningsskydd",
         "classifiedUtterance": "_user_text"
       },
-      "user": [
-        {
-          "intent": {
-            "name": "confirmRight",
-            "examples": [
-              "ja",
-              "japp",
-              "absolut",
-              "okej",
-              "jajamän",
-              "alright",
-              "yes",
-              "korrekt",
-              "det stämmer",
-              "det är rätt",
-              "rätt",
-              "stämmer"
-            ]
+      "bot": {
+        "say": "Var det ett korrekt svar?",
+        "user": [
+          {
+            "intent": {
+              "name": "confirmRight",
+              "examples": [
+                "ja",
+                "japp",
+                "absolut",
+                "okej",
+                "jajamän",
+                "alright",
+                "yes",
+                "korrekt",
+                "det stämmer",
+                "det är rätt",
+                "rätt",
+                "stämmer"
+              ]
+            },
+            "bot": "Tack!"
           },
-          "bot": "Tack!"
-        },
-        {
-          "intent": {
-            "name": "confirmWrong",
-            "examples": [
-              "nej",
-              "nope",
-              "no",
-              "aldrig",
-              "jag vill inte",
-              "ej korrekt",
-              "det stämmer inte",
-              "det är fel",
-              "fel",
-              "stämmer ej"
-            ]
+          {
+            "intent": {
+              "name": "confirmWrong",
+              "examples": [
+                "nej",
+                "nope",
+                "no",
+                "aldrig",
+                "jag vill inte",
+                "ej korrekt",
+                "det stämmer inte",
+                "det är fel",
+                "fel",
+                "stämmer ej"
+              ]
+            },
+            "bot": {
+              "say": "Tack!",
+              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
+              "params": [
+                "classifiedQuestion",
+                "classifiedUtterance"
+              ],
+              "asyncWebhook": true
+            }
           },
-          "bot": {
-            "say": "Tack!",
-            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-            "params": [
-              "classifiedQuestion",
-              "classifiedUtterance"
-            ],
-            "asyncWebhook": true
+          {
+            "intent": {
+              "examples": [
+                "__ANYTHING"
+              ]
+            },
+            "bot": {
+              "say": "Förlåt, var det rätt eller fel svar?",
+              "repair": true
+            }
           }
-        },
-        {
-          "intent": {
-            "examples": [
-              "__ANYTHING"
-            ]
-          },
-          "bot": {
-            "say": "Förlåt, var det rätt eller fel svar?",
-            "repair": true
-          }
-        }
-      ]
+        ]
+      }
     }
   },
   {
@@ -3681,70 +3916,75 @@ export const simpleQuestionAnswers : UserTurn[] = [
       ]
     },
     "bot": {
-      "say": "Om patienten blir provtagen innan sjukdomen brutit ut kan detta hända. Negativa provsvar under inkubationstiden utesluter alltså inte att man är smittad. Om fortsatt misstanke om covid-19 kvarstår bör provtagning upprepas när eventuella symtom utvecklats.. Var det ett korrekt svar?",
+      "say": [
+        "Om patienten blir provtagen innan sjukdomen brutit ut kan detta hända. Negativa provsvar under inkubationstiden utesluter alltså inte att man är smittad. Om fortsatt misstanke om covid-19 kvarstår bör provtagning upprepas när eventuella symtom utvecklats."
+      ],
       "set": {
         "classifiedQuestion": "question: hur kan provsvaret för corona ändras",
         "classifiedUtterance": "_user_text"
       },
-      "user": [
-        {
-          "intent": {
-            "name": "confirmRight",
-            "examples": [
-              "ja",
-              "japp",
-              "absolut",
-              "okej",
-              "jajamän",
-              "alright",
-              "yes",
-              "korrekt",
-              "det stämmer",
-              "det är rätt",
-              "rätt",
-              "stämmer"
-            ]
+      "bot": {
+        "say": "Var det ett korrekt svar?",
+        "user": [
+          {
+            "intent": {
+              "name": "confirmRight",
+              "examples": [
+                "ja",
+                "japp",
+                "absolut",
+                "okej",
+                "jajamän",
+                "alright",
+                "yes",
+                "korrekt",
+                "det stämmer",
+                "det är rätt",
+                "rätt",
+                "stämmer"
+              ]
+            },
+            "bot": "Tack!"
           },
-          "bot": "Tack!"
-        },
-        {
-          "intent": {
-            "name": "confirmWrong",
-            "examples": [
-              "nej",
-              "nope",
-              "no",
-              "aldrig",
-              "jag vill inte",
-              "ej korrekt",
-              "det stämmer inte",
-              "det är fel",
-              "fel",
-              "stämmer ej"
-            ]
+          {
+            "intent": {
+              "name": "confirmWrong",
+              "examples": [
+                "nej",
+                "nope",
+                "no",
+                "aldrig",
+                "jag vill inte",
+                "ej korrekt",
+                "det stämmer inte",
+                "det är fel",
+                "fel",
+                "stämmer ej"
+              ]
+            },
+            "bot": {
+              "say": "Tack!",
+              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
+              "params": [
+                "classifiedQuestion",
+                "classifiedUtterance"
+              ],
+              "asyncWebhook": true
+            }
           },
-          "bot": {
-            "say": "Tack!",
-            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-            "params": [
-              "classifiedQuestion",
-              "classifiedUtterance"
-            ],
-            "asyncWebhook": true
+          {
+            "intent": {
+              "examples": [
+                "__ANYTHING"
+              ]
+            },
+            "bot": {
+              "say": "Förlåt, var det rätt eller fel svar?",
+              "repair": true
+            }
           }
-        },
-        {
-          "intent": {
-            "examples": [
-              "__ANYTHING"
-            ]
-          },
-          "bot": {
-            "say": "Förlåt, var det rätt eller fel svar?",
-            "repair": true
-          }
-        }
-      ]
+        ]
+      }
     }
   },
   {
@@ -3758,70 +3998,75 @@ export const simpleQuestionAnswers : UserTurn[] = [
       ]
     },
     "bot": {
-      "say": "Så länge patienten är sjuk, och även i samband med själva insjuknandet.. Var det ett korrekt svar?",
+      "say": [
+        "Så länge patienten är sjuk, och även i samband med själva insjuknandet."
+      ],
       "set": {
         "classifiedQuestion": "question: hur länge kan man smitta andra?",
         "classifiedUtterance": "_user_text"
       },
-      "user": [
-        {
-          "intent": {
-            "name": "confirmRight",
-            "examples": [
-              "ja",
-              "japp",
-              "absolut",
-              "okej",
-              "jajamän",
-              "alright",
-              "yes",
-              "korrekt",
-              "det stämmer",
-              "det är rätt",
-              "rätt",
-              "stämmer"
-            ]
+      "bot": {
+        "say": "Var det ett korrekt svar?",
+        "user": [
+          {
+            "intent": {
+              "name": "confirmRight",
+              "examples": [
+                "ja",
+                "japp",
+                "absolut",
+                "okej",
+                "jajamän",
+                "alright",
+                "yes",
+                "korrekt",
+                "det stämmer",
+                "det är rätt",
+                "rätt",
+                "stämmer"
+              ]
+            },
+            "bot": "Tack!"
           },
-          "bot": "Tack!"
-        },
-        {
-          "intent": {
-            "name": "confirmWrong",
-            "examples": [
-              "nej",
-              "nope",
-              "no",
-              "aldrig",
-              "jag vill inte",
-              "ej korrekt",
-              "det stämmer inte",
-              "det är fel",
-              "fel",
-              "stämmer ej"
-            ]
+          {
+            "intent": {
+              "name": "confirmWrong",
+              "examples": [
+                "nej",
+                "nope",
+                "no",
+                "aldrig",
+                "jag vill inte",
+                "ej korrekt",
+                "det stämmer inte",
+                "det är fel",
+                "fel",
+                "stämmer ej"
+              ]
+            },
+            "bot": {
+              "say": "Tack!",
+              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
+              "params": [
+                "classifiedQuestion",
+                "classifiedUtterance"
+              ],
+              "asyncWebhook": true
+            }
           },
-          "bot": {
-            "say": "Tack!",
-            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-            "params": [
-              "classifiedQuestion",
-              "classifiedUtterance"
-            ],
-            "asyncWebhook": true
+          {
+            "intent": {
+              "examples": [
+                "__ANYTHING"
+              ]
+            },
+            "bot": {
+              "say": "Förlåt, var det rätt eller fel svar?",
+              "repair": true
+            }
           }
-        },
-        {
-          "intent": {
-            "examples": [
-              "__ANYTHING"
-            ]
-          },
-          "bot": {
-            "say": "Förlåt, var det rätt eller fel svar?",
-            "repair": true
-          }
-        }
-      ]
+        ]
+      }
     }
   },
   {
@@ -3836,70 +4081,75 @@ export const simpleQuestionAnswers : UserTurn[] = [
       ]
     },
     "bot": {
-      "say": "Social distansering syftar till att förhindra sjuka människor från att komma i nära kontakt med friska människor för att minska möjligheterna till överföring av sjukdomar. Just nu är målet med social distansering att bromsa utbrottet för att minska risken för infektion bland högrisk-grupper samt minska belastningen på sjukvårdssystem och arbetstagare.. Var det ett korrekt svar?",
+      "say": [
+        "Social distansering syftar till att förhindra sjuka människor från att komma i nära kontakt med friska människor för att minska möjligheterna till överföring av sjukdomar. Just nu är målet med social distansering att bromsa utbrottet för att minska risken för infektion bland högrisk-grupper samt minska belastningen på sjukvårdssystem och arbetstagare."
+      ],
       "set": {
         "classifiedQuestion": "question: vad är social distansiering?",
         "classifiedUtterance": "_user_text"
       },
-      "user": [
-        {
-          "intent": {
-            "name": "confirmRight",
-            "examples": [
-              "ja",
-              "japp",
-              "absolut",
-              "okej",
-              "jajamän",
-              "alright",
-              "yes",
-              "korrekt",
-              "det stämmer",
-              "det är rätt",
-              "rätt",
-              "stämmer"
-            ]
+      "bot": {
+        "say": "Var det ett korrekt svar?",
+        "user": [
+          {
+            "intent": {
+              "name": "confirmRight",
+              "examples": [
+                "ja",
+                "japp",
+                "absolut",
+                "okej",
+                "jajamän",
+                "alright",
+                "yes",
+                "korrekt",
+                "det stämmer",
+                "det är rätt",
+                "rätt",
+                "stämmer"
+              ]
+            },
+            "bot": "Tack!"
           },
-          "bot": "Tack!"
-        },
-        {
-          "intent": {
-            "name": "confirmWrong",
-            "examples": [
-              "nej",
-              "nope",
-              "no",
-              "aldrig",
-              "jag vill inte",
-              "ej korrekt",
-              "det stämmer inte",
-              "det är fel",
-              "fel",
-              "stämmer ej"
-            ]
+          {
+            "intent": {
+              "name": "confirmWrong",
+              "examples": [
+                "nej",
+                "nope",
+                "no",
+                "aldrig",
+                "jag vill inte",
+                "ej korrekt",
+                "det stämmer inte",
+                "det är fel",
+                "fel",
+                "stämmer ej"
+              ]
+            },
+            "bot": {
+              "say": "Tack!",
+              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
+              "params": [
+                "classifiedQuestion",
+                "classifiedUtterance"
+              ],
+              "asyncWebhook": true
+            }
           },
-          "bot": {
-            "say": "Tack!",
-            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-            "params": [
-              "classifiedQuestion",
-              "classifiedUtterance"
-            ],
-            "asyncWebhook": true
+          {
+            "intent": {
+              "examples": [
+                "__ANYTHING"
+              ]
+            },
+            "bot": {
+              "say": "Förlåt, var det rätt eller fel svar?",
+              "repair": true
+            }
           }
-        },
-        {
-          "intent": {
-            "examples": [
-              "__ANYTHING"
-            ]
-          },
-          "bot": {
-            "say": "Förlåt, var det rätt eller fel svar?",
-            "repair": true
-          }
-        }
-      ]
+        ]
+      }
     }
   },
   {
@@ -3912,70 +4162,75 @@ export const simpleQuestionAnswers : UserTurn[] = [
       ]
     },
     "bot": {
-      "say": "Undvik offentliga, folktäta platser som t.ex. shopping-centrum, bio eller arenor. Håll avstånd (ungefär 2 meter, eller 6 fot) från andra om möjligt.. Var det ett korrekt svar?",
+      "say": [
+        "Undvik offentliga, folktäta platser som t.ex. shopping-centrum, bio eller arenor. Håll avstånd (ungefär 2 meter, eller 6 fot) från andra om möjligt."
+      ],
       "set": {
         "classifiedQuestion": "question: hur gör man social distansering?",
         "classifiedUtterance": "_user_text"
       },
-      "user": [
-        {
-          "intent": {
-            "name": "confirmRight",
-            "examples": [
-              "ja",
-              "japp",
-              "absolut",
-              "okej",
-              "jajamän",
-              "alright",
-              "yes",
-              "korrekt",
-              "det stämmer",
-              "det är rätt",
-              "rätt",
-              "stämmer"
-            ]
+      "bot": {
+        "say": "Var det ett korrekt svar?",
+        "user": [
+          {
+            "intent": {
+              "name": "confirmRight",
+              "examples": [
+                "ja",
+                "japp",
+                "absolut",
+                "okej",
+                "jajamän",
+                "alright",
+                "yes",
+                "korrekt",
+                "det stämmer",
+                "det är rätt",
+                "rätt",
+                "stämmer"
+              ]
+            },
+            "bot": "Tack!"
           },
-          "bot": "Tack!"
-        },
-        {
-          "intent": {
-            "name": "confirmWrong",
-            "examples": [
-              "nej",
-              "nope",
-              "no",
-              "aldrig",
-              "jag vill inte",
-              "ej korrekt",
-              "det stämmer inte",
-              "det är fel",
-              "fel",
-              "stämmer ej"
-            ]
+          {
+            "intent": {
+              "name": "confirmWrong",
+              "examples": [
+                "nej",
+                "nope",
+                "no",
+                "aldrig",
+                "jag vill inte",
+                "ej korrekt",
+                "det stämmer inte",
+                "det är fel",
+                "fel",
+                "stämmer ej"
+              ]
+            },
+            "bot": {
+              "say": "Tack!",
+              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
+              "params": [
+                "classifiedQuestion",
+                "classifiedUtterance"
+              ],
+              "asyncWebhook": true
+            }
           },
-          "bot": {
-            "say": "Tack!",
-            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-            "params": [
-              "classifiedQuestion",
-              "classifiedUtterance"
-            ],
-            "asyncWebhook": true
+          {
+            "intent": {
+              "examples": [
+                "__ANYTHING"
+              ]
+            },
+            "bot": {
+              "say": "Förlåt, var det rätt eller fel svar?",
+              "repair": true
+            }
           }
-        },
-        {
-          "intent": {
-            "examples": [
-              "__ANYTHING"
-            ]
-          },
-          "bot": {
-            "say": "Förlåt, var det rätt eller fel svar?",
-            "repair": true
-          }
-        }
-      ]
+        ]
+      }
     }
   },
   {
@@ -3989,70 +4244,75 @@ export const simpleQuestionAnswers : UserTurn[] = [
       ]
     },
     "bot": {
-      "say": "Tvätta händerna regelbundet och ordentligt med tvål och vatten minst 20 sekunder. Använd alcogel om tvål och vatten inte finns tillgängligt. Vidrör varken ögon, näsa eller mun med otvättade händer. Rengör och desinfektera ytor och saker som människor vanligtvis rör. Hosta och nys i böjd armbåge eller näsduk. Se alltid till att slänga näsduken i soporna. . Var det ett korrekt svar?",
+      "say": [
+        "Tvätta händerna regelbundet och ordentligt med tvål och vatten minst 20 sekunder. Använd alcogel om tvål och vatten inte finns tillgängligt. Vidrör varken ögon, näsa eller mun med otvättade händer. Rengör och desinfektera ytor och saker som människor vanligtvis rör. Hosta och nys i böjd armbåge eller näsduk. Se alltid till att slänga näsduken i soporna. "
+      ],
       "set": {
         "classifiedQuestion": "question: hur förhindrar jag spridning av virus?",
         "classifiedUtterance": "_user_text"
       },
-      "user": [
-        {
-          "intent": {
-            "name": "confirmRight",
-            "examples": [
-              "ja",
-              "japp",
-              "absolut",
-              "okej",
-              "jajamän",
-              "alright",
-              "yes",
-              "korrekt",
-              "det stämmer",
-              "det är rätt",
-              "rätt",
-              "stämmer"
-            ]
+      "bot": {
+        "say": "Var det ett korrekt svar?",
+        "user": [
+          {
+            "intent": {
+              "name": "confirmRight",
+              "examples": [
+                "ja",
+                "japp",
+                "absolut",
+                "okej",
+                "jajamän",
+                "alright",
+                "yes",
+                "korrekt",
+                "det stämmer",
+                "det är rätt",
+                "rätt",
+                "stämmer"
+              ]
+            },
+            "bot": "Tack!"
           },
-          "bot": "Tack!"
-        },
-        {
-          "intent": {
-            "name": "confirmWrong",
-            "examples": [
-              "nej",
-              "nope",
-              "no",
-              "aldrig",
-              "jag vill inte",
-              "ej korrekt",
-              "det stämmer inte",
-              "det är fel",
-              "fel",
-              "stämmer ej"
-            ]
+          {
+            "intent": {
+              "name": "confirmWrong",
+              "examples": [
+                "nej",
+                "nope",
+                "no",
+                "aldrig",
+                "jag vill inte",
+                "ej korrekt",
+                "det stämmer inte",
+                "det är fel",
+                "fel",
+                "stämmer ej"
+              ]
+            },
+            "bot": {
+              "say": "Tack!",
+              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
+              "params": [
+                "classifiedQuestion",
+                "classifiedUtterance"
+              ],
+              "asyncWebhook": true
+            }
           },
-          "bot": {
-            "say": "Tack!",
-            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-            "params": [
-              "classifiedQuestion",
-              "classifiedUtterance"
-            ],
-            "asyncWebhook": true
+          {
+            "intent": {
+              "examples": [
+                "__ANYTHING"
+              ]
+            },
+            "bot": {
+              "say": "Förlåt, var det rätt eller fel svar?",
+              "repair": true
+            }
           }
-        },
-        {
-          "intent": {
-            "examples": [
-              "__ANYTHING"
-            ]
-          },
-          "bot": {
-            "say": "Förlåt, var det rätt eller fel svar?",
-            "repair": true
-          }
-        }
-      ]
+        ]
+      }
     }
   },
   {
@@ -4067,70 +4327,75 @@ export const simpleQuestionAnswers : UserTurn[] = [
       ]
     },
     "bot": {
-      "say": "För närvarande är det inte känt om spridningen av Covid-19 kommer att minska när vädret blir varmare. Utredningar gällande överförbarhet, svårighetsgrad och andra funktioner förknippade med Covid-19 pågår just nu. . Var det ett korrekt svar?",
+      "say": [
+        "För närvarande är det inte känt om spridningen av Covid-19 kommer att minska när vädret blir varmare. Utredningar gällande överförbarhet, svårighetsgrad och andra funktioner förknippade med Covid-19 pågår just nu. "
+      ],
       "set": {
         "classifiedQuestion": "question: kommer corona sluta spridas till sommaren?",
         "classifiedUtterance": "_user_text"
       },
-      "user": [
-        {
-          "intent": {
-            "name": "confirmRight",
-            "examples": [
-              "ja",
-              "japp",
-              "absolut",
-              "okej",
-              "jajamän",
-              "alright",
-              "yes",
-              "korrekt",
-              "det stämmer",
-              "det är rätt",
-              "rätt",
-              "stämmer"
-            ]
+      "bot": {
+        "say": "Var det ett korrekt svar?",
+        "user": [
+          {
+            "intent": {
+              "name": "confirmRight",
+              "examples": [
+                "ja",
+                "japp",
+                "absolut",
+                "okej",
+                "jajamän",
+                "alright",
+                "yes",
+                "korrekt",
+                "det stämmer",
+                "det är rätt",
+                "rätt",
+                "stämmer"
+              ]
+            },
+            "bot": "Tack!"
           },
-          "bot": "Tack!"
-        },
-        {
-          "intent": {
-            "name": "confirmWrong",
-            "examples": [
-              "nej",
-              "nope",
-              "no",
-              "aldrig",
-              "jag vill inte",
-              "ej korrekt",
-              "det stämmer inte",
-              "det är fel",
-              "fel",
-              "stämmer ej"
-            ]
+          {
+            "intent": {
+              "name": "confirmWrong",
+              "examples": [
+                "nej",
+                "nope",
+                "no",
+                "aldrig",
+                "jag vill inte",
+                "ej korrekt",
+                "det stämmer inte",
+                "det är fel",
+                "fel",
+                "stämmer ej"
+              ]
+            },
+            "bot": {
+              "say": "Tack!",
+              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
+              "params": [
+                "classifiedQuestion",
+                "classifiedUtterance"
+              ],
+              "asyncWebhook": true
+            }
           },
-          "bot": {
-            "say": "Tack!",
-            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-            "params": [
-              "classifiedQuestion",
-              "classifiedUtterance"
-            ],
-            "asyncWebhook": true
+          {
+            "intent": {
+              "examples": [
+                "__ANYTHING"
+              ]
+            },
+            "bot": {
+              "say": "Förlåt, var det rätt eller fel svar?",
+              "repair": true
+            }
           }
-        },
-        {
-          "intent": {
-            "examples": [
-              "__ANYTHING"
-            ]
-          },
-          "bot": {
-            "say": "Förlåt, var det rätt eller fel svar?",
-            "repair": true
-          }
-        }
-      ]
+        ]
+      }
     }
   },
   {
@@ -4146,70 +4411,75 @@ export const simpleQuestionAnswers : UserTurn[] = [
       ]
     },
     "bot": {
-      "say": "Från och med den 19 mars och 30 dagar framåt kommer icke nödvändiga resor till Sverige från länder utanför Europa att stoppas. Detta efter beslut från den svenska regeringen i ett försök att minska spridningen av Covid-19. Vid behov kan beslutet komma att förlängas.. Var det ett korrekt svar?",
+      "say": [
+        "Från och med den 19 mars och 30 dagar framåt kommer icke nödvändiga resor till Sverige från länder utanför Europa att stoppas. Detta efter beslut från den svenska regeringen i ett försök att minska spridningen av Covid-19. Vid behov kan beslutet komma att förlängas."
+      ],
       "set": {
         "classifiedQuestion": "question: vad är inreseförbudet?",
         "classifiedUtterance": "_user_text"
       },
-      "user": [
-        {
-          "intent": {
-            "name": "confirmRight",
-            "examples": [
-              "ja",
-              "japp",
-              "absolut",
-              "okej",
-              "jajamän",
-              "alright",
-              "yes",
-              "korrekt",
-              "det stämmer",
-              "det är rätt",
-              "rätt",
-              "stämmer"
-            ]
+      "bot": {
+        "say": "Var det ett korrekt svar?",
+        "user": [
+          {
+            "intent": {
+              "name": "confirmRight",
+              "examples": [
+                "ja",
+                "japp",
+                "absolut",
+                "okej",
+                "jajamän",
+                "alright",
+                "yes",
+                "korrekt",
+                "det stämmer",
+                "det är rätt",
+                "rätt",
+                "stämmer"
+              ]
+            },
+            "bot": "Tack!"
           },
-          "bot": "Tack!"
-        },
-        {
-          "intent": {
-            "name": "confirmWrong",
-            "examples": [
-              "nej",
-              "nope",
-              "no",
-              "aldrig",
-              "jag vill inte",
-              "ej korrekt",
-              "det stämmer inte",
-              "det är fel",
-              "fel",
-              "stämmer ej"
-            ]
+          {
+            "intent": {
+              "name": "confirmWrong",
+              "examples": [
+                "nej",
+                "nope",
+                "no",
+                "aldrig",
+                "jag vill inte",
+                "ej korrekt",
+                "det stämmer inte",
+                "det är fel",
+                "fel",
+                "stämmer ej"
+              ]
+            },
+            "bot": {
+              "say": "Tack!",
+              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
+              "params": [
+                "classifiedQuestion",
+                "classifiedUtterance"
+              ],
+              "asyncWebhook": true
+            }
           },
-          "bot": {
-            "say": "Tack!",
-            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-            "params": [
-              "classifiedQuestion",
-              "classifiedUtterance"
-            ],
-            "asyncWebhook": true
+          {
+            "intent": {
+              "examples": [
+                "__ANYTHING"
+              ]
+            },
+            "bot": {
+              "say": "Förlåt, var det rätt eller fel svar?",
+              "repair": true
+            }
           }
-        },
-        {
-          "intent": {
-            "examples": [
-              "__ANYTHING"
-            ]
-          },
-          "bot": {
-            "say": "Förlåt, var det rätt eller fel svar?",
-            "repair": true
-          }
-        }
-      ]
+        ]
+      }
     }
   },
   {
@@ -4224,70 +4494,75 @@ export const simpleQuestionAnswers : UserTurn[] = [
       ]
     },
     "bot": {
-      "say": "Inreseförbudet gäller för alla utländska medborgare som försöker resa in i Sverige från ett land som inte ingår i Schengensamarbetet samt Schweiz. Undantag görs för svenska medborgare och andra personer som är bosatta med eget hem i Sverige samt diplomater och personer som är i behov av internationellt skydd. Även personer som utför nödvändiga funktioner i Sverige, t.ex hälso- och sjukvårdspersonal som transporterar varor till Sverige undantas från inreseförbudet. . Var det ett korrekt svar?",
+      "say": [
+        "Inreseförbudet gäller för alla utländska medborgare som försöker resa in i Sverige från ett land som inte ingår i Schengensamarbetet samt Schweiz. Undantag görs för svenska medborgare och andra personer som är bosatta med eget hem i Sverige samt diplomater och personer som är i behov av internationellt skydd. Även personer som utför nödvändiga funktioner i Sverige, t.ex hälso- och sjukvårdspersonal som transporterar varor till Sverige undantas från inreseförbudet. "
+      ],
       "set": {
         "classifiedQuestion": "question: vem rörs av inreseförbudet?",
         "classifiedUtterance": "_user_text"
       },
-      "user": [
-        {
-          "intent": {
-            "name": "confirmRight",
-            "examples": [
-              "ja",
-              "japp",
-              "absolut",
-              "okej",
-              "jajamän",
-              "alright",
-              "yes",
-              "korrekt",
-              "det stämmer",
-              "det är rätt",
-              "rätt",
-              "stämmer"
-            ]
+      "bot": {
+        "say": "Var det ett korrekt svar?",
+        "user": [
+          {
+            "intent": {
+              "name": "confirmRight",
+              "examples": [
+                "ja",
+                "japp",
+                "absolut",
+                "okej",
+                "jajamän",
+                "alright",
+                "yes",
+                "korrekt",
+                "det stämmer",
+                "det är rätt",
+                "rätt",
+                "stämmer"
+              ]
+            },
+            "bot": "Tack!"
           },
-          "bot": "Tack!"
-        },
-        {
-          "intent": {
-            "name": "confirmWrong",
-            "examples": [
-              "nej",
-              "nope",
-              "no",
-              "aldrig",
-              "jag vill inte",
-              "ej korrekt",
-              "det stämmer inte",
-              "det är fel",
-              "fel",
-              "stämmer ej"
-            ]
+          {
+            "intent": {
+              "name": "confirmWrong",
+              "examples": [
+                "nej",
+                "nope",
+                "no",
+                "aldrig",
+                "jag vill inte",
+                "ej korrekt",
+                "det stämmer inte",
+                "det är fel",
+                "fel",
+                "stämmer ej"
+              ]
+            },
+            "bot": {
+              "say": "Tack!",
+              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
+              "params": [
+                "classifiedQuestion",
+                "classifiedUtterance"
+              ],
+              "asyncWebhook": true
+            }
           },
-          "bot": {
-            "say": "Tack!",
-            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-            "params": [
-              "classifiedQuestion",
-              "classifiedUtterance"
-            ],
-            "asyncWebhook": true
+          {
+            "intent": {
+              "examples": [
+                "__ANYTHING"
+              ]
+            },
+            "bot": {
+              "say": "Förlåt, var det rätt eller fel svar?",
+              "repair": true
+            }
           }
-        },
-        {
-          "intent": {
-            "examples": [
-              "__ANYTHING"
-            ]
-          },
-          "bot": {
-            "say": "Förlåt, var det rätt eller fel svar?",
-            "repair": true
-          }
-        }
-      ]
+        ]
+      }
     }
   },
   {
@@ -4302,70 +4577,75 @@ export const simpleQuestionAnswers : UserTurn[] = [
       ]
     },
     "bot": {
-      "say": "Just nu finns det tillverkare som marknadsför självtester för covid-19. I nuläget är det dock inte klart hur exakta eller känsliga dessa tester är. Folkhälsomyndigheten rekommenderar därför att dessa självtester inte används och hänvisar istället till sjukvårdens egna tester för en mer exakt och pålitlig sjukdomsbild.. Var det ett korrekt svar?",
+      "say": [
+        "Just nu finns det tillverkare som marknadsför självtester för covid-19. I nuläget är det dock inte klart hur exakta eller känsliga dessa tester är. Folkhälsomyndigheten rekommenderar därför att dessa självtester inte används och hänvisar istället till sjukvårdens egna tester för en mer exakt och pålitlig sjukdomsbild."
+      ],
       "set": {
         "classifiedQuestion": "question: kan man testa sig hemma för corona?",
         "classifiedUtterance": "_user_text"
       },
-      "user": [
-        {
-          "intent": {
-            "name": "confirmRight",
-            "examples": [
-              "ja",
-              "japp",
-              "absolut",
-              "okej",
-              "jajamän",
-              "alright",
-              "yes",
-              "korrekt",
-              "det stämmer",
-              "det är rätt",
-              "rätt",
-              "stämmer"
-            ]
+      "bot": {
+        "say": "Var det ett korrekt svar?",
+        "user": [
+          {
+            "intent": {
+              "name": "confirmRight",
+              "examples": [
+                "ja",
+                "japp",
+                "absolut",
+                "okej",
+                "jajamän",
+                "alright",
+                "yes",
+                "korrekt",
+                "det stämmer",
+                "det är rätt",
+                "rätt",
+                "stämmer"
+              ]
+            },
+            "bot": "Tack!"
           },
-          "bot": "Tack!"
-        },
-        {
-          "intent": {
-            "name": "confirmWrong",
-            "examples": [
-              "nej",
-              "nope",
-              "no",
-              "aldrig",
-              "jag vill inte",
-              "ej korrekt",
-              "det stämmer inte",
-              "det är fel",
-              "fel",
-              "stämmer ej"
-            ]
+          {
+            "intent": {
+              "name": "confirmWrong",
+              "examples": [
+                "nej",
+                "nope",
+                "no",
+                "aldrig",
+                "jag vill inte",
+                "ej korrekt",
+                "det stämmer inte",
+                "det är fel",
+                "fel",
+                "stämmer ej"
+              ]
+            },
+            "bot": {
+              "say": "Tack!",
+              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
+              "params": [
+                "classifiedQuestion",
+                "classifiedUtterance"
+              ],
+              "asyncWebhook": true
+            }
           },
-          "bot": {
-            "say": "Tack!",
-            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-            "params": [
-              "classifiedQuestion",
-              "classifiedUtterance"
-            ],
-            "asyncWebhook": true
+          {
+            "intent": {
+              "examples": [
+                "__ANYTHING"
+              ]
+            },
+            "bot": {
+              "say": "Förlåt, var det rätt eller fel svar?",
+              "repair": true
+            }
           }
-        },
-        {
-          "intent": {
-            "examples": [
-              "__ANYTHING"
-            ]
-          },
-          "bot": {
-            "say": "Förlåt, var det rätt eller fel svar?",
-            "repair": true
-          }
-        }
-      ]
+        ]
+      }
     }
   },
   {
@@ -4381,70 +4661,75 @@ export const simpleQuestionAnswers : UserTurn[] = [
       ]
     },
     "bot": {
-      "say": "För att bromsa spridningen av covid-19 rekommenderar Folkhälsomyndigheten från den 17 mars 2020 att undervisningen i gymnasieskolor, universitet, högskolor, yrkeshögskolor och komvux ska ske på distans. . Var det ett korrekt svar?",
+      "say": [
+        "För att bromsa spridningen av covid-19 rekommenderar Folkhälsomyndigheten från den 17 mars 2020 att undervisningen i gymnasieskolor, universitet, högskolor, yrkeshögskolor och komvux ska ske på distans. "
+      ],
       "set": {
         "classifiedQuestion": "question: behöver man läsa via distans nu?",
         "classifiedUtterance": "_user_text"
       },
-      "user": [
-        {
-          "intent": {
-            "name": "confirmRight",
-            "examples": [
-              "ja",
-              "japp",
-              "absolut",
-              "okej",
-              "jajamän",
-              "alright",
-              "yes",
-              "korrekt",
-              "det stämmer",
-              "det är rätt",
-              "rätt",
-              "stämmer"
-            ]
+      "bot": {
+        "say": "Var det ett korrekt svar?",
+        "user": [
+          {
+            "intent": {
+              "name": "confirmRight",
+              "examples": [
+                "ja",
+                "japp",
+                "absolut",
+                "okej",
+                "jajamän",
+                "alright",
+                "yes",
+                "korrekt",
+                "det stämmer",
+                "det är rätt",
+                "rätt",
+                "stämmer"
+              ]
+            },
+            "bot": "Tack!"
           },
-          "bot": "Tack!"
-        },
-        {
-          "intent": {
-            "name": "confirmWrong",
-            "examples": [
-              "nej",
-              "nope",
-              "no",
-              "aldrig",
-              "jag vill inte",
-              "ej korrekt",
-              "det stämmer inte",
-              "det är fel",
-              "fel",
-              "stämmer ej"
-            ]
+          {
+            "intent": {
+              "name": "confirmWrong",
+              "examples": [
+                "nej",
+                "nope",
+                "no",
+                "aldrig",
+                "jag vill inte",
+                "ej korrekt",
+                "det stämmer inte",
+                "det är fel",
+                "fel",
+                "stämmer ej"
+              ]
+            },
+            "bot": {
+              "say": "Tack!",
+              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
+              "params": [
+                "classifiedQuestion",
+                "classifiedUtterance"
+              ],
+              "asyncWebhook": true
+            }
           },
-          "bot": {
-            "say": "Tack!",
-            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-            "params": [
-              "classifiedQuestion",
-              "classifiedUtterance"
-            ],
-            "asyncWebhook": true
+          {
+            "intent": {
+              "examples": [
+                "__ANYTHING"
+              ]
+            },
+            "bot": {
+              "say": "Förlåt, var det rätt eller fel svar?",
+              "repair": true
+            }
           }
-        },
-        {
-          "intent": {
-            "examples": [
-              "__ANYTHING"
-            ]
-          },
-          "bot": {
-            "say": "Förlåt, var det rätt eller fel svar?",
-            "repair": true
-          }
-        }
-      ]
+        ]
+      }
     }
   },
   {
@@ -4461,70 +4746,75 @@ export const simpleQuestionAnswers : UserTurn[] = [
       ]
     },
     "bot": {
-      "say": "Nej. Folkhälsomyndigheten rekommendationer gällande distansundervisning gäller endast från gymnasiet och uppåt. Detta för att gymnasieskolor, universitet och högskolor samlar elever och studenter från upptagningsområden som är mycket större än grundskolans. Gymnasieelever och studenter är inte heller i behov av omsorg, till skillnad från barn i grundskolan.. Var det ett korrekt svar?",
+      "say": [
+        "Nej. Folkhälsomyndigheten rekommendationer gällande distansundervisning gäller endast från gymnasiet och uppåt. Detta för att gymnasieskolor, universitet och högskolor samlar elever och studenter från upptagningsområden som är mycket större än grundskolans. Gymnasieelever och studenter är inte heller i behov av omsorg, till skillnad från barn i grundskolan."
+      ],
       "set": {
         "classifiedQuestion": "question: vad gäller angående undervisning i grundskolor?",
         "classifiedUtterance": "_user_text"
       },
-      "user": [
-        {
-          "intent": {
-            "name": "confirmRight",
-            "examples": [
-              "ja",
-              "japp",
-              "absolut",
-              "okej",
-              "jajamän",
-              "alright",
-              "yes",
-              "korrekt",
-              "det stämmer",
-              "det är rätt",
-              "rätt",
-              "stämmer"
-            ]
+      "bot": {
+        "say": "Var det ett korrekt svar?",
+        "user": [
+          {
+            "intent": {
+              "name": "confirmRight",
+              "examples": [
+                "ja",
+                "japp",
+                "absolut",
+                "okej",
+                "jajamän",
+                "alright",
+                "yes",
+                "korrekt",
+                "det stämmer",
+                "det är rätt",
+                "rätt",
+                "stämmer"
+              ]
+            },
+            "bot": "Tack!"
           },
-          "bot": "Tack!"
-        },
-        {
-          "intent": {
-            "name": "confirmWrong",
-            "examples": [
-              "nej",
-              "nope",
-              "no",
-              "aldrig",
-              "jag vill inte",
-              "ej korrekt",
-              "det stämmer inte",
-              "det är fel",
-              "fel",
-              "stämmer ej"
-            ]
+          {
+            "intent": {
+              "name": "confirmWrong",
+              "examples": [
+                "nej",
+                "nope",
+                "no",
+                "aldrig",
+                "jag vill inte",
+                "ej korrekt",
+                "det stämmer inte",
+                "det är fel",
+                "fel",
+                "stämmer ej"
+              ]
+            },
+            "bot": {
+              "say": "Tack!",
+              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
+              "params": [
+                "classifiedQuestion",
+                "classifiedUtterance"
+              ],
+              "asyncWebhook": true
+            }
           },
-          "bot": {
-            "say": "Tack!",
-            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-            "params": [
-              "classifiedQuestion",
-              "classifiedUtterance"
-            ],
-            "asyncWebhook": true
+          {
+            "intent": {
+              "examples": [
+                "__ANYTHING"
+              ]
+            },
+            "bot": {
+              "say": "Förlåt, var det rätt eller fel svar?",
+              "repair": true
+            }
           }
-        },
-        {
-          "intent": {
-            "examples": [
-              "__ANYTHING"
-            ]
-          },
-          "bot": {
-            "say": "Förlåt, var det rätt eller fel svar?",
-            "repair": true
-          }
-        }
-      ]
+        ]
+      }
     }
   },
   {
@@ -4541,70 +4831,75 @@ export const simpleQuestionAnswers : UserTurn[] = [
       ]
     },
     "bot": {
-      "say": "Folkhälsomyndigheten uppmanar personer som är 70 år och äldre att hålla sig hemma och begränsa närmare kontakt med andra de kommande veckorna. Äldre bör även undvika folksamlingar i exempelvis kollektivtrafik, affärer eller offentliga lokaler. Promenader utomhus är ok, bara inte i grupp. Be om hjälp för att göra ärenden som exempelvis handla mat .. Var det ett korrekt svar?",
+      "say": [
+        "Folkhälsomyndigheten uppmanar personer som är 70 år och äldre att hålla sig hemma och begränsa närmare kontakt med andra de kommande veckorna. Äldre bör även undvika folksamlingar i exempelvis kollektivtrafik, affärer eller offentliga lokaler. Promenader utomhus är ok, bara inte i grupp. Be om hjälp för att göra ärenden som exempelvis handla mat ."
+      ],
       "set": {
         "classifiedQuestion": "question: hur ska man bete sig om man är över 70 år?",
         "classifiedUtterance": "_user_text"
       },
-      "user": [
-        {
-          "intent": {
-            "name": "confirmRight",
-            "examples": [
-              "ja",
-              "japp",
-              "absolut",
-              "okej",
-              "jajamän",
-              "alright",
-              "yes",
-              "korrekt",
-              "det stämmer",
-              "det är rätt",
-              "rätt",
-              "stämmer"
-            ]
+      "bot": {
+        "say": "Var det ett korrekt svar?",
+        "user": [
+          {
+            "intent": {
+              "name": "confirmRight",
+              "examples": [
+                "ja",
+                "japp",
+                "absolut",
+                "okej",
+                "jajamän",
+                "alright",
+                "yes",
+                "korrekt",
+                "det stämmer",
+                "det är rätt",
+                "rätt",
+                "stämmer"
+              ]
+            },
+            "bot": "Tack!"
           },
-          "bot": "Tack!"
-        },
-        {
-          "intent": {
-            "name": "confirmWrong",
-            "examples": [
-              "nej",
-              "nope",
-              "no",
-              "aldrig",
-              "jag vill inte",
-              "ej korrekt",
-              "det stämmer inte",
-              "det är fel",
-              "fel",
-              "stämmer ej"
-            ]
+          {
+            "intent": {
+              "name": "confirmWrong",
+              "examples": [
+                "nej",
+                "nope",
+                "no",
+                "aldrig",
+                "jag vill inte",
+                "ej korrekt",
+                "det stämmer inte",
+                "det är fel",
+                "fel",
+                "stämmer ej"
+              ]
+            },
+            "bot": {
+              "say": "Tack!",
+              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
+              "params": [
+                "classifiedQuestion",
+                "classifiedUtterance"
+              ],
+              "asyncWebhook": true
+            }
           },
-          "bot": {
-            "say": "Tack!",
-            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-            "params": [
-              "classifiedQuestion",
-              "classifiedUtterance"
-            ],
-            "asyncWebhook": true
+          {
+            "intent": {
+              "examples": [
+                "__ANYTHING"
+              ]
+            },
+            "bot": {
+              "say": "Förlåt, var det rätt eller fel svar?",
+              "repair": true
+            }
           }
-        },
-        {
-          "intent": {
-            "examples": [
-              "__ANYTHING"
-            ]
-          },
-          "bot": {
-            "say": "Förlåt, var det rätt eller fel svar?",
-            "repair": true
-          }
-        }
-      ]
+        ]
+      }
     }
   },
   {
@@ -4620,70 +4915,75 @@ export const simpleQuestionAnswers : UserTurn[] = [
       ]
     },
     "bot": {
-      "say": "Det är viktigt att skydda de äldre från smitta. Ha därför ingen närkontakt med personer som är 70 år och äldre om det inte är helt nödvändigt. Stanna hemma när du känner dig sjuk, även om du bara är lite förkyld. Covid-19 kan ge lindriga symtom som liknar en förkylning, så det är viktigt att vara vaksam.. Var det ett korrekt svar?",
+      "say": [
+        "Det är viktigt att skydda de äldre från smitta. Ha därför ingen närkontakt med personer som är 70 år och äldre om det inte är helt nödvändigt. Stanna hemma när du känner dig sjuk, även om du bara är lite förkyld. Covid-19 kan ge lindriga symtom som liknar en förkylning, så det är viktigt att vara vaksam."
+      ],
       "set": {
         "classifiedQuestion": "question: hur skyddar vi de äldre?",
         "classifiedUtterance": "_user_text"
       },
-      "user": [
-        {
-          "intent": {
-            "name": "confirmRight",
-            "examples": [
-              "ja",
-              "japp",
-              "absolut",
-              "okej",
-              "jajamän",
-              "alright",
-              "yes",
-              "korrekt",
-              "det stämmer",
-              "det är rätt",
-              "rätt",
-              "stämmer"
-            ]
+      "bot": {
+        "say": "Var det ett korrekt svar?",
+        "user": [
+          {
+            "intent": {
+              "name": "confirmRight",
+              "examples": [
+                "ja",
+                "japp",
+                "absolut",
+                "okej",
+                "jajamän",
+                "alright",
+                "yes",
+                "korrekt",
+                "det stämmer",
+                "det är rätt",
+                "rätt",
+                "stämmer"
+              ]
+            },
+            "bot": "Tack!"
           },
-          "bot": "Tack!"
-        },
-        {
-          "intent": {
-            "name": "confirmWrong",
-            "examples": [
-              "nej",
-              "nope",
-              "no",
-              "aldrig",
-              "jag vill inte",
-              "ej korrekt",
-              "det stämmer inte",
-              "det är fel",
-              "fel",
-              "stämmer ej"
-            ]
+          {
+            "intent": {
+              "name": "confirmWrong",
+              "examples": [
+                "nej",
+                "nope",
+                "no",
+                "aldrig",
+                "jag vill inte",
+                "ej korrekt",
+                "det stämmer inte",
+                "det är fel",
+                "fel",
+                "stämmer ej"
+              ]
+            },
+            "bot": {
+              "say": "Tack!",
+              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
+              "params": [
+                "classifiedQuestion",
+                "classifiedUtterance"
+              ],
+              "asyncWebhook": true
+            }
           },
-          "bot": {
-            "say": "Tack!",
-            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-            "params": [
-              "classifiedQuestion",
-              "classifiedUtterance"
-            ],
-            "asyncWebhook": true
+          {
+            "intent": {
+              "examples": [
+                "__ANYTHING"
+              ]
+            },
+            "bot": {
+              "say": "Förlåt, var det rätt eller fel svar?",
+              "repair": true
+            }
           }
-        },
-        {
-          "intent": {
-            "examples": [
-              "__ANYTHING"
-            ]
-          },
-          "bot": {
-            "say": "Förlåt, var det rätt eller fel svar?",
-            "repair": true
-          }
-        }
-      ]
+        ]
+      }
     }
   },
   {
@@ -4698,70 +4998,75 @@ export const simpleQuestionAnswers : UserTurn[] = [
       ]
     },
     "bot": {
-      "say": "Personer som är i behov av vård på sjukhus, alternativt personal inom sjukvård och äldreomsorg med misstänkt covid-19. Alla som är sjuka i förkylning eller influensaliknande symtom ska vara hemma för att inte riskera att sprida smitta vidare till andra. . Var det ett korrekt svar?",
+      "say": [
+        "Personer som är i behov av vård på sjukhus, alternativt personal inom sjukvård och äldreomsorg med misstänkt covid-19. Alla som är sjuka i förkylning eller influensaliknande symtom ska vara hemma för att inte riskera att sprida smitta vidare till andra. "
+      ],
       "set": {
         "classifiedQuestion": "question: vem kan testas för corona?",
         "classifiedUtterance": "_user_text"
       },
-      "user": [
-        {
-          "intent": {
-            "name": "confirmRight",
-            "examples": [
-              "ja",
-              "japp",
-              "absolut",
-              "okej",
-              "jajamän",
-              "alright",
-              "yes",
-              "korrekt",
-              "det stämmer",
-              "det är rätt",
-              "rätt",
-              "stämmer"
-            ]
+      "bot": {
+        "say": "Var det ett korrekt svar?",
+        "user": [
+          {
+            "intent": {
+              "name": "confirmRight",
+              "examples": [
+                "ja",
+                "japp",
+                "absolut",
+                "okej",
+                "jajamän",
+                "alright",
+                "yes",
+                "korrekt",
+                "det stämmer",
+                "det är rätt",
+                "rätt",
+                "stämmer"
+              ]
+            },
+            "bot": "Tack!"
           },
-          "bot": "Tack!"
-        },
-        {
-          "intent": {
-            "name": "confirmWrong",
-            "examples": [
-              "nej",
-              "nope",
-              "no",
-              "aldrig",
-              "jag vill inte",
-              "ej korrekt",
-              "det stämmer inte",
-              "det är fel",
-              "fel",
-              "stämmer ej"
-            ]
+          {
+            "intent": {
+              "name": "confirmWrong",
+              "examples": [
+                "nej",
+                "nope",
+                "no",
+                "aldrig",
+                "jag vill inte",
+                "ej korrekt",
+                "det stämmer inte",
+                "det är fel",
+                "fel",
+                "stämmer ej"
+              ]
+            },
+            "bot": {
+              "say": "Tack!",
+              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
+              "params": [
+                "classifiedQuestion",
+                "classifiedUtterance"
+              ],
+              "asyncWebhook": true
+            }
           },
-          "bot": {
-            "say": "Tack!",
-            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-            "params": [
-              "classifiedQuestion",
-              "classifiedUtterance"
-            ],
-            "asyncWebhook": true
+          {
+            "intent": {
+              "examples": [
+                "__ANYTHING"
+              ]
+            },
+            "bot": {
+              "say": "Förlåt, var det rätt eller fel svar?",
+              "repair": true
+            }
           }
-        },
-        {
-          "intent": {
-            "examples": [
-              "__ANYTHING"
-            ]
-          },
-          "bot": {
-            "say": "Förlåt, var det rätt eller fel svar?",
-            "repair": true
-          }
-        }
-      ]
+        ]
+      }
     }
   },
   {
@@ -4776,70 +5081,75 @@ export const simpleQuestionAnswers : UserTurn[] = [
       ]
     },
     "bot": {
-      "say": "Så länge andra familjemedlemmar inte har symtom kan de göra som vanligt och gå till skola, förskola eller jobb.. Var det ett korrekt svar?",
+      "say": [
+        "Så länge andra familjemedlemmar inte har symtom kan de göra som vanligt och gå till skola, förskola eller jobb."
+      ],
       "set": {
         "classifiedQuestion": "question: måste alla i familjen stanna hemma om en är sjuk?",
         "classifiedUtterance": "_user_text"
       },
-      "user": [
-        {
-          "intent": {
-            "name": "confirmRight",
-            "examples": [
-              "ja",
-              "japp",
-              "absolut",
-              "okej",
-              "jajamän",
-              "alright",
-              "yes",
-              "korrekt",
-              "det stämmer",
-              "det är rätt",
-              "rätt",
-              "stämmer"
-            ]
+      "bot": {
+        "say": "Var det ett korrekt svar?",
+        "user": [
+          {
+            "intent": {
+              "name": "confirmRight",
+              "examples": [
+                "ja",
+                "japp",
+                "absolut",
+                "okej",
+                "jajamän",
+                "alright",
+                "yes",
+                "korrekt",
+                "det stämmer",
+                "det är rätt",
+                "rätt",
+                "stämmer"
+              ]
+            },
+            "bot": "Tack!"
           },
-          "bot": "Tack!"
-        },
-        {
-          "intent": {
-            "name": "confirmWrong",
-            "examples": [
-              "nej",
-              "nope",
-              "no",
-              "aldrig",
-              "jag vill inte",
-              "ej korrekt",
-              "det stämmer inte",
-              "det är fel",
-              "fel",
-              "stämmer ej"
-            ]
+          {
+            "intent": {
+              "name": "confirmWrong",
+              "examples": [
+                "nej",
+                "nope",
+                "no",
+                "aldrig",
+                "jag vill inte",
+                "ej korrekt",
+                "det stämmer inte",
+                "det är fel",
+                "fel",
+                "stämmer ej"
+              ]
+            },
+            "bot": {
+              "say": "Tack!",
+              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
+              "params": [
+                "classifiedQuestion",
+                "classifiedUtterance"
+              ],
+              "asyncWebhook": true
+            }
           },
-          "bot": {
-            "say": "Tack!",
-            "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-            "params": [
-              "classifiedQuestion",
-              "classifiedUtterance"
-            ],
-            "asyncWebhook": true
+          {
+            "intent": {
+              "examples": [
+                "__ANYTHING"
+              ]
+            },
+            "bot": {
+              "say": "Förlåt, var det rätt eller fel svar?",
+              "repair": true
+            }
           }
-        },
-        {
-          "intent": {
-            "examples": [
-              "__ANYTHING"
-            ]
-          },
-          "bot": {
-            "say": "Förlåt, var det rätt eller fel svar?",
-            "repair": true
-          }
-        }
-      ]
+        ]
+      }
     }
   }
 ]

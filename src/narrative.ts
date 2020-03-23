@@ -12,37 +12,40 @@ import { simpleQuestionAnswers } from "./answers/generatedFAQ"
     Narrative, i.e the bot-driven interaction
 */
 
-const init: BotTurn = {
-  // This only exists so that we can reset the bot mid-session with "welcome"
-  set: {
-    helped: false
+const greeting: BotTurn = {
+  cond: {
+    user_hotStarted: false
   },
-  say: ""
+  say: ["Hej", "Hallå", "Hej"]
 }
 
-const greeting = ["Hej", "Hallå", "Hej"]
-
 const intro = {
+  cond: {
+    user_hotStarted: false
+  },
   say: [
     {
       cond: {
         platform: "voximplant"
       },
       text:
-        "Detta är en testversion av en chatbot för att svara på frågor om Coronaviruset. Förhoppningsvis kan du hjälpa mig bli bättre!"
+        "Jag är en testversion av en chatt-bått för att svara på frågor om Coronaviruset"
     },
     {
       text:
-        "Detta är en testversion av en chatbot för att svara på frågor om Coronaviruset. Förhoppningsvis kan du hjälpa mig bli bättre!"
+        "Detta är en testversion av en chatbot för att svara på frågor om Coronaviruset"
     }
   ]
 }
 
 const querySymptoms: BridgeTurn = {
+  cond: {
+    user_hotStarted: false
+  },
   say: {
     text: [
-      "Inledningsvis vill jag säga att om du har symptom som hosta, problem med luftvägarna, feber eller halsont ska du stanna hemma. Om du har problem med andning, ring 112."
-    ],
+      "Inledningsvis vill jag säga att om du har symptom som problem med luftvägarna, hosta, feber eller halsont ska du stanna hemma. Om du har problem med andning, ring 1 1 2."
+    ]
   },
   bot: {
     say: "Så"
@@ -53,14 +56,15 @@ const queryQuestions: BotTurn = {
   label: "QUERY_QUESTION",
   say: [
     {
-      // Otherwise, if it is the first time we state this question
+      // If it is the first time we state this question and we haven't hotStarted, i.e jumped directly to a
       cond: {
-        turnCount: 0
+        turnCount: 0,
+        hotStarted: false
       },
       text: ["Har du några frågor till mig?", "Undrar du någonting?", "Undrar du någonting om Corona-viruset?"]
     },
     {
-      // And on repetitive questions this question
+      // On repetitive questions or if we hotStarted
       text: ["Har du någon mer fråga till mig?", "Undrar du något annat?"]
     }
   ],
@@ -91,9 +95,6 @@ const queryQuestions: BotTurn = {
 
 export const queryMoreQuestions: BotTurn = {
   say: "",
-  set: {
-    helped: true
-  },
   goto: "QUERY_QUESTION"
 }
 
@@ -134,4 +135,4 @@ const continueTalking: BotTurn = {
   goto: "QUERY_QUESTION"
 }
 
-export default [init, greeting, intro, querySymptoms, queryQuestions, queryMoreQuestions, goodbye, continueTalking]
+export default [greeting, intro, querySymptoms, queryQuestions, queryMoreQuestions, goodbye, continueTalking]

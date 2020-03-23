@@ -68,7 +68,7 @@ const generateSimpleAnswers = async () => {
   console.log("Generating src/answers/generatedFAQ.ts")
   const faq = await getFaq(url)
   console.log("Got faq from Google sheet")
-  
+
   let userTurns: UserTurn[] = faq
     .filter(qa => qa.answers.length > 0 && qa.formulations.length > 0)
     .map(qa => {
@@ -88,27 +88,33 @@ const generateSimpleAnswers = async () => {
       return {
         ...userTurn,
         bot: {
-          say: userTurn.bot + ". Var det ett korrekt svar?",
+          say: userTurn.bot as string[],
           set: {
             classifiedQuestion: (userTurn.intent as Intent).name,
             classifiedUtterance: "_user_text"
           },
-          user: [
-            { intent: confirmRight, bot: "Tack!" },
-            { intent: confirmWrong, bot: {
-              say: "Tack!",
-              url: config.confirmWrongAnswerWebhook,
-              params: ["classifiedQuestion", "classifiedUtterance"],
-              asyncWebhook: true
-            }},
-            {
-              intent: ANYTHING,
-              bot: {
-                say: "Förlåt, var det rätt eller fel svar?",
-                repair: true
+          bot: {
+            say: "Var det ett korrekt svar?",
+            user: [
+              { intent: confirmRight, bot: "Tack!" },
+              {
+                intent: confirmWrong,
+                bot: {
+                  say: "Tack!",
+                  url: config.confirmWrongAnswerWebhook,
+                  params: ["classifiedQuestion", "classifiedUtterance"],
+                  asyncWebhook: true
+                }
+              },
+              {
+                intent: ANYTHING,
+                bot: {
+                  say: "Förlåt, var det rätt eller fel svar?",
+                  repair: true
+                }
               }
-            }
-          ]
+            ]
+          }
         }
       }
     })

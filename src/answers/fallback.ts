@@ -6,14 +6,11 @@ export const answerFallback = [
     cond: { retryCount: 0 },
     say: [
       {
-        cond: {
-          platform: "voximplant"
-        },
-        text:
-          "Jag förstod inte. Du kan till exempel fråga hur du skyddar dig, om din region har hög risk eller om du bör stanna hemma"
+        cond: { platform: "voximplant" },
+        text: "Jag förstod inte. Du kan till exempel fråga hur coronavirus smittar, vilka symptomen är och hur man skyddar sig."
       },
       {
-        text: "Tyvärr förstod jag inte din fråga. Prova igen",
+        text: "Tyvärr förstod jag inte din fråga. Ställ gärna en ny.",
         content: listOptions
       }
     ],
@@ -23,20 +20,25 @@ export const answerFallback = [
     cond: { retryCount: 1 },
     say: [
       {
-        cond: {
-          platform: "voximplant"
-        },
-        text: "Jag förstod faktiskt inte nu heller. Försök igen, eller ring 113 13 för att prata med en människa"
+        cond: { platform: "voximplant" },
+        text: "Förlåt, men jag förstod inte nu heller. Försök igen, eller ring 113 13 för att prata med en människa."
       },
       {
-        text: "Nej, jag förstod faktiskt inte nu heller. Testa att trycka på någon av knapparna nedan",
+        text: "Förlåt, men jag förstod inte nu heller. Testa att trycka på någon av knapparna nedan.",
         content: listOptions
       }
     ],
     repair: true
   },
   {
-    say: "Förlåt, jag förstår inte. Mitt råd är att ringa 113 13 och prata med en människa",
+    say: [
+      {
+        cond: { platform: "voximplant" },
+        text: "Vi verkar ha lite svårt att förstå varandra. Mitt råd är att ringa 113 13 där du kan få prata med en människa.",
+      },
+      { text: "Vi verkar ha lite svårt att förstå varandra, så jag föreslår att du letar upp den information du söker på Folkhälsomyndighetens hemsida i stället."
+    },
+  ],
     goto: EXIT
   }
 ]

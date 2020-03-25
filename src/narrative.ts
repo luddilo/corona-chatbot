@@ -25,15 +25,11 @@ const intro = {
   },
   say: [
     {
-      cond: {
-        platform: "voximplant"
-      },
-      text:
-        "Jag är en testversion av en chatt-bått för att svara på frågor om Coronaviruset"
+      cond: { platform: "voximplant" },
+      text: "Jag är en testversion av en chatt-bått som kan svara på frågor om coronaviruset."
     },
     {
-      text:
-        "Detta är en testversion av en chatbot för att svara på frågor om Coronaviruset"
+      text: "Detta är en testversion av en chatbot som kan svara på frågor om coronaviruset."
     }
   ]
 }
@@ -42,13 +38,17 @@ const querySymptoms: BridgeTurn = {
   cond: {
     user_hotStarted: false
   },
-  say: {
-    text: [
-      "Inledningsvis vill jag säga att om du har symptom som problem med luftvägarna, hosta, feber eller halsont ska du stanna hemma. Om du har problem med andning, ring 1 1 2."
-    ]
-  },
+  say: [
+    { 
+      cond: { platform: "voximplant" },
+      text: "Inledningsvis vill jag säga att om du har symptom som problem med luftvägarna, hosta, feber eller halsont ska du stanna hemma. Om du har problem med andning, ring 1 1 2."
+    },
+    {
+      text: "Inledningsvis vill jag säga att om du har symptom som problem med luftvägarna, hosta, feber eller halsont ska du stanna hemma. Om du har problem med andning, ring 112."
+    }
+  ],
   bot: {
-    say: "Så"
+    say: "Så."
   }
 }
 
@@ -61,7 +61,12 @@ const queryQuestions: BotTurn = {
         turnCount: 0,
         hotStarted: false
       },
-      text: ["Har du några frågor till mig?", "Undrar du någonting?", "Undrar du någonting om Corona-viruset?"]
+      text: [
+        "Har du några frågor till mig?", 
+        "Har du några frågor?",
+        "Undrar du någonting?",
+        "Undrar du någonting om coronaviruset?"
+      ]
     },
     {
       // On repetitive questions or if we hotStarted

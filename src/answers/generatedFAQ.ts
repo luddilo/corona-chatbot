@@ -3,19 +3,38 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "question: vad är symptomen",
+      "entities": {
+        "CORONA": {
+          "name": "CORONA",
+          "enums": [
+            {
+              "name": "CORONA",
+              "alts": [
+                "covid",
+                "covid19",
+                "covid-19",
+                "corona viruset",
+                "coronavirus",
+                "covid 19",
+                "corona"
+              ]
+            }
+          ]
+        }
+      },
       "examples": [
         "vad är symptomen",
-        "hur märker man om man har corona",
-        "hur mår man om man har corona",
-        "vad innebär corona",
-        "hur vet jag om jag har corona",
-        "hur vet man att man har corona",
-        "vad är symptom för covid"
+        "hur märker man om man har _CORONA",
+        "hur mår man om man har _CORONA",
+        "vad innebär _CORONA",
+        "hur vet jag om jag har _CORONA",
+        "hur vet man att man har _CORONA",
+        "vad är symptom för _CORONA"
       ]
     },
     "bot": {
       "say": [
-        "De vanligaste symtomen är feber och hosta, men även andningspåverkan, halsont, huvudvärk, muskel- och ledvärk är vanliga symtom. En del blir allvarligt sjuka med exempelvis andningssvårigheter och lunginflammation."
+        "Enligt Folkhälsomyndigheten är de vanligaste symtomen feber och hosta, men även andningspåverkan, halsont, huvudvärk, muskel- och ledvärk är vanliga symtom. De flesta får lindriga besvär som går över av sig själva med egenvård i hemmet. En del blir allvarligt sjuka med exempelvis svårigheter att andas och lunginflammation."
       ],
       "set": {
         "classifiedQuestion": "question: vad är symptomen",
@@ -61,7 +80,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             },
             "bot": {
-              "say": "Tack!",
+              "say": [
+                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
+                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
+              ],
               "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
               "params": [
                 "classifiedQuestion",
@@ -76,10 +98,18 @@ export const simpleQuestionAnswers : UserTurn[] = [
                 "__ANYTHING"
               ]
             },
-            "bot": {
-              "say": "Förlåt, var det rätt eller fel svar?",
-              "repair": true
-            }
+            "bot": [
+              {
+                "cond": {
+                  "turnCount": 0
+                },
+                "say": "Förlåt, var det rätt eller fel svar?",
+                "repair": true
+              },
+              {
+                "say": "Jag förstod inte, men låt oss gå vidare"
+              }
+            ]
           }
         ]
       }
@@ -88,6 +118,25 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "question: hur smittar det",
+      "entities": {
+        "CORONA": {
+          "name": "CORONA",
+          "enums": [
+            {
+              "name": "CORONA",
+              "alts": [
+                "covid",
+                "covid19",
+                "covid-19",
+                "corona viruset",
+                "coronavirus",
+                "covid 19",
+                "corona"
+              ]
+            }
+          ]
+        }
+      },
       "examples": [
         "hur smittar det",
         "hur smittar covid-19",
@@ -99,7 +148,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "Viruset smittar i första hand genom kontakt med droppar och sekret från luftvägarna. Smitta kan därför ske vid hostningar och nysningar, eller vid kontakt med personer. Det är fortfarande oklart om viruset kan smitta via droppar som landat på ytor eller föremål."
+        "Viruset smittar i första hand genom kontakt med droppar och sekret från luftvägarna. Smitta kan därför ske vid hostningar och nysningar, eller vid kontakt med personer. Det är fortfarande oklart om viruset kan smitta via droppar som landat på ytor eller föremål. Genom att tvätta händerna och undvika att röra vid ansiktet samt att undvika nära kontakt med sjuka människor minskar risken för smitta. "
       ],
       "set": {
         "classifiedQuestion": "question: hur smittar det",
@@ -145,7 +194,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             },
             "bot": {
-              "say": "Tack!",
+              "say": [
+                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
+                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
+              ],
               "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
               "params": [
                 "classifiedQuestion",
@@ -160,10 +212,18 @@ export const simpleQuestionAnswers : UserTurn[] = [
                 "__ANYTHING"
               ]
             },
-            "bot": {
-              "say": "Förlåt, var det rätt eller fel svar?",
-              "repair": true
-            }
+            "bot": [
+              {
+                "cond": {
+                  "turnCount": 0
+                },
+                "say": "Förlåt, var det rätt eller fel svar?",
+                "repair": true
+              },
+              {
+                "say": "Jag förstod inte, men låt oss gå vidare"
+              }
+            ]
           }
         ]
       }
@@ -172,6 +232,25 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "question: vilka är i riskzonen",
+      "entities": {
+        "CORONA": {
+          "name": "CORONA",
+          "enums": [
+            {
+              "name": "CORONA",
+              "alts": [
+                "covid",
+                "covid19",
+                "covid-19",
+                "corona viruset",
+                "coronavirus",
+                "covid 19",
+                "corona"
+              ]
+            }
+          ]
+        }
+      },
       "examples": [
         "vilka är i riskzonen",
         "vilka är riskgrupperna",
@@ -183,7 +262,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "Studier gjorda vid Folkhälsomyndigheten visar att hög ålder är den främsta riskfaktorn. Personer med hög ålder i kombination med andra sjukdomar, såsom högt blodtryck, hjärt- kärlsjukdom, lungsjukdom, cancer eller diabetes är också överrepresenterade."
+        "Alla kan få coronavirus. Många får bara milda symptom, men vissa blir väldigt sjuka och behöver vård. Även de med milda symptom kan smitta, vilket kan bli farligt om de smittar människor i riskgrupper. Enligt Folkhälsomyndigheten visar studier att hög ålder är den främsta riskfaktorn för att bli väldigt sjuk. Personer med hög ålder i kombination med andra sjukdomar, såsom högt blodtryck, hjärt- kärlsjukdom, lungsjukdom, cancer eller diabetes är extra utsatta.  Just nu rekommenderas du som är över 70 år att försöka undvika platser med många människor, för att vara extra försiktig. Det kan exempelvis vara kollektivtrafiken, affärer eller apotek. Har du någon i din närhet som kan hjälpa dig med ärenden, så fråga dem. Men undvik nära kontakt med andra människor. Du kan också kontakta kommunen där du bor om du behöver hjälp."
       ],
       "set": {
         "classifiedQuestion": "question: vilka är i riskzonen",
@@ -229,7 +308,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             },
             "bot": {
-              "say": "Tack!",
+              "say": [
+                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
+                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
+              ],
               "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
               "params": [
                 "classifiedQuestion",
@@ -244,10 +326,18 @@ export const simpleQuestionAnswers : UserTurn[] = [
                 "__ANYTHING"
               ]
             },
-            "bot": {
-              "say": "Förlåt, var det rätt eller fel svar?",
-              "repair": true
-            }
+            "bot": [
+              {
+                "cond": {
+                  "turnCount": 0
+                },
+                "say": "Förlåt, var det rätt eller fel svar?",
+                "repair": true
+              },
+              {
+                "say": "Jag förstod inte, men låt oss gå vidare"
+              }
+            ]
           }
         ]
       }
@@ -256,9 +346,28 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "question: hur skyddar man sig",
+      "entities": {
+        "CORONA": {
+          "name": "CORONA",
+          "enums": [
+            {
+              "name": "CORONA",
+              "alts": [
+                "covid",
+                "covid19",
+                "covid-19",
+                "corona viruset",
+                "coronavirus",
+                "covid 19",
+                "corona"
+              ]
+            }
+          ]
+        }
+      },
       "examples": [
         "hur skyddar man sig",
-        "hur kan jag skydda mig ",
+        "hur kan jag skydda mig",
         "hur kan jag skydda min familj",
         "vilka försiktighetsåtgärder kan jag ta",
         "hur kan jag minimera risken"
@@ -266,7 +375,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "Undvik att röra vid ansiktet och ögonen, och undvik nära kontakt med sjuka människor. Tvätta händerna ofta eller använd handsprit som alternativ. Hosta/nysa i armvecket eller i en pappersnäsduk. Stanna hemma när du är sjuk."
+        "Undvik att röra vid ansiktet och ögonen, och undvik kontakt med sjuka människor. Tvätta händerna väldigt ofta med tvål och varmt vatten. Om du är ute där du inte har tvål och vatten så kan du använda handsprit. Genom att hosta och nysa i armvecket eller i en pappersnäsduk hindrar du smitta från att spridas i din omgivning eller från att förorena dina händer. Stanna hemma om du känner dig krasslig, även om det bara är väldigt lätta symtom. Även personer som inte känner sig så sjuka och bara har lite hosta eller feber kan smitta andra. Du kan smitta så länge du har symtom, och även några dagar efteråt, så stanna hemma i några dagar även om du känner dig frisk igen."
       ],
       "set": {
         "classifiedQuestion": "question: hur skyddar man sig",
@@ -312,7 +421,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             },
             "bot": {
-              "say": "Tack!",
+              "say": [
+                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
+                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
+              ],
               "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
               "params": [
                 "classifiedQuestion",
@@ -327,10 +439,18 @@ export const simpleQuestionAnswers : UserTurn[] = [
                 "__ANYTHING"
               ]
             },
-            "bot": {
-              "say": "Förlåt, var det rätt eller fel svar?",
-              "repair": true
-            }
+            "bot": [
+              {
+                "cond": {
+                  "turnCount": 0
+                },
+                "say": "Förlåt, var det rätt eller fel svar?",
+                "repair": true
+              },
+              {
+                "say": "Jag förstod inte, men låt oss gå vidare"
+              }
+            ]
           }
         ]
       }
@@ -338,9 +458,28 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": {
-      "name": "question: Kan man smittas flera gånger ",
+      "name": "question: Kan man smittas flera gånger",
+      "entities": {
+        "CORONA": {
+          "name": "CORONA",
+          "enums": [
+            {
+              "name": "CORONA",
+              "alts": [
+                "covid",
+                "covid19",
+                "covid-19",
+                "corona viruset",
+                "coronavirus",
+                "covid 19",
+                "corona"
+              ]
+            }
+          ]
+        }
+      },
       "examples": [
-        "Kan man smittas flera gånger ",
+        "Kan man smittas flera gånger",
         "kan man ha corona flera gånger",
         "hur många gånger kan man ha corona",
         "kan jag ha corona två gånger",
@@ -356,7 +495,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Det är oklart hur länge man kommer att vara immun. Utifrån tidigare erfarenheter så är bedömningen att immuniteten varar så länge att man inte kommer att smittas fler gånger under en och samma säsong."
       ],
       "set": {
-        "classifiedQuestion": "question: Kan man smittas flera gånger ",
+        "classifiedQuestion": "question: Kan man smittas flera gånger",
         "classifiedUtterance": "_user_text"
       },
       "bot": {
@@ -399,7 +538,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             },
             "bot": {
-              "say": "Tack!",
+              "say": [
+                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
+                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
+              ],
               "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
               "params": [
                 "classifiedQuestion",
@@ -414,10 +556,18 @@ export const simpleQuestionAnswers : UserTurn[] = [
                 "__ANYTHING"
               ]
             },
-            "bot": {
-              "say": "Förlåt, var det rätt eller fel svar?",
-              "repair": true
-            }
+            "bot": [
+              {
+                "cond": {
+                  "turnCount": 0
+                },
+                "say": "Förlåt, var det rätt eller fel svar?",
+                "repair": true
+              },
+              {
+                "say": "Jag förstod inte, men låt oss gå vidare"
+              }
+            ]
           }
         ]
       }
@@ -426,6 +576,25 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "question: ska jag stanna hemma",
+      "entities": {
+        "CORONA": {
+          "name": "CORONA",
+          "enums": [
+            {
+              "name": "CORONA",
+              "alts": [
+                "covid",
+                "covid19",
+                "covid-19",
+                "corona viruset",
+                "coronavirus",
+                "covid 19",
+                "corona"
+              ]
+            }
+          ]
+        }
+      },
       "examples": [
         "ska jag stanna hemma",
         "bör jag stanna hemma",
@@ -439,7 +608,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "Vid symtom som snuva, hosta eller feber ska du försöka låta bli att träffa andra människor, även om du bara känner dig lite sjuk. Du ska inte gå till jobbet eller skolan."
+        "Känner du dig sjuk med symtom som snuva, hosta eller feber ska du låta bli att träffa andra människor. Det gäller även om du bara känner dig lite sjuk. Du ska inte gå till jobbet eller skolan, inte resa med buss, tåg, tunnelbana eller flyg och inte heller gå ut för att handla. Om du känner dig det minsta sjuk, stanna hemma. När du känner dig helt frisk, stanna hemma i minst två dagar till.  Folkhälsomyndigheten ger också rådet att du jobbar hemifrån i den mån det är möjligt, även om du är frisk. Syftet är att minska hastigheten i smittspridningen och att hålla nere antalet personer som behöver sjukhusvård. Många länder i världen uppmanar människor att hålla sig hemma även om de är friska för att sakta ner smittspridningen."
       ],
       "set": {
         "classifiedQuestion": "question: ska jag stanna hemma",
@@ -485,7 +654,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             },
             "bot": {
-              "say": "Tack!",
+              "say": [
+                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
+                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
+              ],
               "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
               "params": [
                 "classifiedQuestion",
@@ -500,10 +672,18 @@ export const simpleQuestionAnswers : UserTurn[] = [
                 "__ANYTHING"
               ]
             },
-            "bot": {
-              "say": "Förlåt, var det rätt eller fel svar?",
-              "repair": true
-            }
+            "bot": [
+              {
+                "cond": {
+                  "turnCount": 0
+                },
+                "say": "Förlåt, var det rätt eller fel svar?",
+                "repair": true
+              },
+              {
+                "say": "Jag förstod inte, men låt oss gå vidare"
+              }
+            ]
           }
         ]
       }
@@ -512,6 +692,25 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "question: hur många dagar ska jag stanna hemma",
+      "entities": {
+        "CORONA": {
+          "name": "CORONA",
+          "enums": [
+            {
+              "name": "CORONA",
+              "alts": [
+                "covid",
+                "covid19",
+                "covid-19",
+                "corona viruset",
+                "coronavirus",
+                "covid 19",
+                "corona"
+              ]
+            }
+          ]
+        }
+      },
       "examples": [
         "hur många dagar ska jag stanna hemma",
         "hur många dagar ska man vara i karantän",
@@ -523,7 +722,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "Stanna hemma så länge du känner dig sjuk, och vänta minst två dygn efter att du blivit frisk innan du går till jobb eller skola."
+        "Stanna hemma tills du är helt frisk och stanna sedan hemma i minst två dygn till innan du går till jobbet, åker i kollektivtrafiken eller går och handlar. Om du har äldre släktingar, kan du som anhörig och närstående undvika att träffa dem, särskilt om du har varit sjuk. Det är för att skydda dem från virus."
       ],
       "set": {
         "classifiedQuestion": "question: hur många dagar ska jag stanna hemma",
@@ -569,7 +768,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             },
             "bot": {
-              "say": "Tack!",
+              "say": [
+                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
+                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
+              ],
               "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
               "params": [
                 "classifiedQuestion",
@@ -584,10 +786,18 @@ export const simpleQuestionAnswers : UserTurn[] = [
                 "__ANYTHING"
               ]
             },
-            "bot": {
-              "say": "Förlåt, var det rätt eller fel svar?",
-              "repair": true
-            }
+            "bot": [
+              {
+                "cond": {
+                  "turnCount": 0
+                },
+                "say": "Förlåt, var det rätt eller fel svar?",
+                "repair": true
+              },
+              {
+                "say": "Jag förstod inte, men låt oss gå vidare"
+              }
+            ]
           }
         ]
       }
@@ -596,6 +806,25 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "question: hur sjuk blir man av corona",
+      "entities": {
+        "CORONA": {
+          "name": "CORONA",
+          "enums": [
+            {
+              "name": "CORONA",
+              "alts": [
+                "covid",
+                "covid19",
+                "covid-19",
+                "corona viruset",
+                "coronavirus",
+                "covid 19",
+                "corona"
+              ]
+            }
+          ]
+        }
+      },
       "examples": [
         "hur sjuk blir man av corona",
         "blir man jättesjuk av corona",
@@ -606,7 +835,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "De allra flesta som smittas blir lindrigt sjuka med luftvägssymtom som går över av sig själva, men vissa drabbas av allvarligare sjukdom som lunginflammation."
+        "Enligt Vårdguiden blir de allra flesta som smittas lindrigt sjuka med luftvägssymtom som går över av sig själva, men vissa drabbas av allvarligare sjukdom som lunginflammation. De som blir allvarligt sjuka kan behöva läggas in på sjukhus och få hjälp med andningen. Därför är det viktigt att inte för många blir sjuka samtidigt."
       ],
       "set": {
         "classifiedQuestion": "question: hur sjuk blir man av corona",
@@ -652,7 +881,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             },
             "bot": {
-              "say": "Tack!",
+              "say": [
+                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
+                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
+              ],
               "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
               "params": [
                 "classifiedQuestion",
@@ -667,10 +899,18 @@ export const simpleQuestionAnswers : UserTurn[] = [
                 "__ANYTHING"
               ]
             },
-            "bot": {
-              "say": "Förlåt, var det rätt eller fel svar?",
-              "repair": true
-            }
+            "bot": [
+              {
+                "cond": {
+                  "turnCount": 0
+                },
+                "say": "Förlåt, var det rätt eller fel svar?",
+                "repair": true
+              },
+              {
+                "say": "Jag förstod inte, men låt oss gå vidare"
+              }
+            ]
           }
         ]
       }
@@ -679,6 +919,25 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "question: hur pass länge är man sjuk",
+      "entities": {
+        "CORONA": {
+          "name": "CORONA",
+          "enums": [
+            {
+              "name": "CORONA",
+              "alts": [
+                "covid",
+                "covid19",
+                "covid-19",
+                "corona viruset",
+                "coronavirus",
+                "covid 19",
+                "corona"
+              ]
+            }
+          ]
+        }
+      },
       "examples": [
         "hur pass länge är man sjuk",
         "hur länge har man corona",
@@ -689,7 +948,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "Den kunskap vi har nu visar att de flesta som fått lindriga symtom blev friska efter två veckor. För de som blev allvarligt sjuka tog det mellan tre och sex veckor innan de var friska igen."
+        "Enligt Folkhälsomyndigheten blir flesta som fått lindriga symtom  friska efter två veckor. För de som blev allvarligt sjuka tog det mellan tre och sex veckor innan de var friska igen.   De som blev allvarligt sjuka hade andningssvårigheter, som snabb andning och låg syresättning av blodet. En del av dem behövde intensivvård, till exempel med respirator. Dessa allvarliga symtom kom vanligen en vecka efter insjuknandet."
       ],
       "set": {
         "classifiedQuestion": "question: hur pass länge är man sjuk",
@@ -735,7 +994,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             },
             "bot": {
-              "say": "Tack!",
+              "say": [
+                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
+                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
+              ],
               "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
               "params": [
                 "classifiedQuestion",
@@ -750,10 +1012,18 @@ export const simpleQuestionAnswers : UserTurn[] = [
                 "__ANYTHING"
               ]
             },
-            "bot": {
-              "say": "Förlåt, var det rätt eller fel svar?",
-              "repair": true
-            }
+            "bot": [
+              {
+                "cond": {
+                  "turnCount": 0
+                },
+                "say": "Förlåt, var det rätt eller fel svar?",
+                "repair": true
+              },
+              {
+                "say": "Jag förstod inte, men låt oss gå vidare"
+              }
+            ]
           }
         ]
       }
@@ -762,6 +1032,25 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "question: hur många dör av corona",
+      "entities": {
+        "CORONA": {
+          "name": "CORONA",
+          "enums": [
+            {
+              "name": "CORONA",
+              "alts": [
+                "covid",
+                "covid19",
+                "covid-19",
+                "corona viruset",
+                "coronavirus",
+                "covid 19",
+                "corona"
+              ]
+            }
+          ]
+        }
+      },
       "examples": [
         "hur många dör av corona",
         "kan man dö av corona",
@@ -772,7 +1061,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "WHO uppskattar i dagsläget att dödligheten är 1–2 % av de redan infekterade men uppskattningarna är fortfarande osäkra. Det kan finnas fler fall än vad som har rapporterats vilket kan innebära att dödligheten kommer att sjunka."
+        "Många har dött i sjukdomen, främst äldre och sjuka. WHO uppskattar idag att dödligheten är 1–2 % av de redan smittade men uppskattningarna är fortfarande osäkra. Det kan finnas fler fall än vad som har rapporterats vilket kan innebära att dödligheten kommer att sjunka. Det är mycket ovanligt att unga friska människor dör, men äldre och sjuka är en riskgrupp som dör mycket oftare. Enligt den Brittiska regeringens expertråd kan dödligheten bland människor över 80 år vara över 8%, medans den bland människor yngre än 50 år är mindre än 0.5%. Bland dem som behöver läggas in på sjukhus uppskattar expertrådet att det kan vara 12% som dör."
       ],
       "set": {
         "classifiedQuestion": "question: hur många dör av corona",
@@ -818,7 +1107,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             },
             "bot": {
-              "say": "Tack!",
+              "say": [
+                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
+                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
+              ],
               "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
               "params": [
                 "classifiedQuestion",
@@ -833,10 +1125,18 @@ export const simpleQuestionAnswers : UserTurn[] = [
                 "__ANYTHING"
               ]
             },
-            "bot": {
-              "say": "Förlåt, var det rätt eller fel svar?",
-              "repair": true
-            }
+            "bot": [
+              {
+                "cond": {
+                  "turnCount": 0
+                },
+                "say": "Förlåt, var det rätt eller fel svar?",
+                "repair": true
+              },
+              {
+                "say": "Jag förstod inte, men låt oss gå vidare"
+              }
+            ]
           }
         ]
       }
@@ -845,9 +1145,28 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "question: är det större risk om man är gravid",
+      "entities": {
+        "CORONA": {
+          "name": "CORONA",
+          "enums": [
+            {
+              "name": "CORONA",
+              "alts": [
+                "covid",
+                "covid19",
+                "covid-19",
+                "corona viruset",
+                "coronavirus",
+                "covid 19",
+                "corona"
+              ]
+            }
+          ]
+        }
+      },
       "examples": [
         "är det större risk om man är gravid",
-        "hur stor är risken om man är gravid ",
+        "hur stor är risken om man är gravid",
         "hur ska man göra om man är gravid",
         "är graviditet en riskgrupp",
         "är gravida kvinnor i riskgruppen"
@@ -901,7 +1220,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             },
             "bot": {
-              "say": "Tack!",
+              "say": [
+                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
+                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
+              ],
               "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
               "params": [
                 "classifiedQuestion",
@@ -916,10 +1238,18 @@ export const simpleQuestionAnswers : UserTurn[] = [
                 "__ANYTHING"
               ]
             },
-            "bot": {
-              "say": "Förlåt, var det rätt eller fel svar?",
-              "repair": true
-            }
+            "bot": [
+              {
+                "cond": {
+                  "turnCount": 0
+                },
+                "say": "Förlåt, var det rätt eller fel svar?",
+                "repair": true
+              },
+              {
+                "say": "Jag förstod inte, men låt oss gå vidare"
+              }
+            ]
           }
         ]
       }
@@ -928,17 +1258,37 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "question: smittar corona hela tiden",
+      "entities": {
+        "CORONA": {
+          "name": "CORONA",
+          "enums": [
+            {
+              "name": "CORONA",
+              "alts": [
+                "covid",
+                "covid19",
+                "covid-19",
+                "corona viruset",
+                "coronavirus",
+                "covid 19",
+                "corona"
+              ]
+            }
+          ]
+        }
+      },
       "examples": [
         "smittar corona hela tiden",
         "smittar corona direkt",
         "blir jag smittsam direkt om jag har fått corona",
-        "är corona genast smittsamt ",
-        "hur snabbt smittar jag om jag fått covid-19"
+        "är corona genast smittsamt",
+        "hur snabbt smittar jag om jag fått covid-19",
+        "smittar jag under inkubationstiden"
       ]
     },
     "bot": {
       "say": [
-        "Tillgänglig fakta visar att viruset smittar när man är sjuk och i samband med insjuknandet, och inte under inkubationstiden. De som har varit utsatta för smitta ska dock vara uppmärksamma på tidiga sjukdomstecken."
+        "Folkhälsomyndighetens bedömning av forskningen är att viruset smittar när man är sjuk och i samband med insjuknandet, och inte under inkubationstiden. De som har varit utsatta för smitta ska vara uppmärksamma på tidiga sjukdomstecken, eftersom du smittar så fort du har även milda symtom. "
       ],
       "set": {
         "classifiedQuestion": "question: smittar corona hela tiden",
@@ -984,7 +1334,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             },
             "bot": {
-              "say": "Tack!",
+              "say": [
+                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
+                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
+              ],
               "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
               "params": [
                 "classifiedQuestion",
@@ -999,10 +1352,18 @@ export const simpleQuestionAnswers : UserTurn[] = [
                 "__ANYTHING"
               ]
             },
-            "bot": {
-              "say": "Förlåt, var det rätt eller fel svar?",
-              "repair": true
-            }
+            "bot": [
+              {
+                "cond": {
+                  "turnCount": 0
+                },
+                "say": "Förlåt, var det rätt eller fel svar?",
+                "repair": true
+              },
+              {
+                "say": "Jag förstod inte, men låt oss gå vidare"
+              }
+            ]
           }
         ]
       }
@@ -1011,6 +1372,25 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "question: smittar corona utan symtom",
+      "entities": {
+        "CORONA": {
+          "name": "CORONA",
+          "enums": [
+            {
+              "name": "CORONA",
+              "alts": [
+                "covid",
+                "covid19",
+                "covid-19",
+                "corona viruset",
+                "coronavirus",
+                "covid 19",
+                "corona"
+              ]
+            }
+          ]
+        }
+      },
       "examples": [
         "smittar corona utan symtom",
         "kan jag bli smittad av en person utan symtom",
@@ -1021,7 +1401,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "Epidemin drivs av personer med symtom på sjukdom, men en del som är sjuka får bara milda symtom. Man kan därför bli smittat av någon som inte känner sig sjuk, men som har t. ex. mild hosta."
+        "Enligt Folkhälsomyndigheten drivs smittspridningen av personer med symtom på sjukdom, men en del som är sjuka får bara milda symtom. Man kan därför bli smittad av någon som inte känner sig sjuk, men som har t. ex. mild hosta. "
       ],
       "set": {
         "classifiedQuestion": "question: smittar corona utan symtom",
@@ -1067,7 +1447,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             },
             "bot": {
-              "say": "Tack!",
+              "say": [
+                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
+                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
+              ],
               "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
               "params": [
                 "classifiedQuestion",
@@ -1082,10 +1465,18 @@ export const simpleQuestionAnswers : UserTurn[] = [
                 "__ANYTHING"
               ]
             },
-            "bot": {
-              "say": "Förlåt, var det rätt eller fel svar?",
-              "repair": true
-            }
+            "bot": [
+              {
+                "cond": {
+                  "turnCount": 0
+                },
+                "say": "Förlåt, var det rätt eller fel svar?",
+                "repair": true
+              },
+              {
+                "say": "Jag förstod inte, men låt oss gå vidare"
+              }
+            ]
           }
         ]
       }
@@ -1094,6 +1485,25 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "question: vad är reglerna för stora evenemang",
+      "entities": {
+        "CORONA": {
+          "name": "CORONA",
+          "enums": [
+            {
+              "name": "CORONA",
+              "alts": [
+                "covid",
+                "covid19",
+                "covid-19",
+                "corona viruset",
+                "coronavirus",
+                "covid 19",
+                "corona"
+              ]
+            }
+          ]
+        }
+      },
       "examples": [
         "vad är reglerna för stora evenemang",
         "vilka regler gäller för evenemang",
@@ -1104,7 +1514,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "Regeringen beslutade den 11:e mars att stoppa alla allmänna sammankomster och offentliga tillställningar med fler än 500 personer. Syftet är att förhindra att ett stort antal människor från olika ställen kommer och samlas på en och samma plats."
+        "Regeringen beslutade den 11:e mars att stoppa alla allmänna sammankomster och offentliga tillställningar med fler än 500 personer. Syftet är att förhindra att ett stort antal människor från olika ställen kommer och samlas på en och samma plats. Även mindre arrangemang ska följa Folkhälsomyndighetens riskbedömning och ställas in om de inte kan göras säkra. Skälet till att många mindre evenemang ställs in är att arrangörer vill ta sitt ansvar i att minska smittspridningen."
       ],
       "set": {
         "classifiedQuestion": "question: vad är reglerna för stora evenemang",
@@ -1150,7 +1560,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             },
             "bot": {
-              "say": "Tack!",
+              "say": [
+                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
+                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
+              ],
               "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
               "params": [
                 "classifiedQuestion",
@@ -1165,10 +1578,18 @@ export const simpleQuestionAnswers : UserTurn[] = [
                 "__ANYTHING"
               ]
             },
-            "bot": {
-              "say": "Förlåt, var det rätt eller fel svar?",
-              "repair": true
-            }
+            "bot": [
+              {
+                "cond": {
+                  "turnCount": 0
+                },
+                "say": "Förlåt, var det rätt eller fel svar?",
+                "repair": true
+              },
+              {
+                "say": "Jag förstod inte, men låt oss gå vidare"
+              }
+            ]
           }
         ]
       }
@@ -1177,6 +1598,25 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "question: vilka regler gäller för kollektivtrafik  arbetsplatser och skolor?",
+      "entities": {
+        "CORONA": {
+          "name": "CORONA",
+          "enums": [
+            {
+              "name": "CORONA",
+              "alts": [
+                "covid",
+                "covid19",
+                "covid-19",
+                "corona viruset",
+                "coronavirus",
+                "covid 19",
+                "corona"
+              ]
+            }
+          ]
+        }
+      },
       "examples": [
         "vilka regler gäller för kollektivtrafik  arbetsplatser och skolor?",
         "hur många får det vara på tunnelbanan",
@@ -1187,7 +1627,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "Kollektivtrafik, arbetsplatser och skolor fungerar som vanligt. Folkhälsomyndigheten har gjort bedömningen att det fortfarande är viktigt att kollektivtrafiken fungerar och att friska personer kan åka till jobbet och skolan. "
+        "Den omfattande spridningen av det nya coronaviruset gör att situationen för resenärer och pendlare snabbt kan förändras. I Stockholm gäller reducerad trafik i kollektivtrafiken. Håll minst 1 meters avstånd till andra resenärer.  Folkhälsomyndighetens råd är därför att du jobbar hemifrån i den mån det är möjligt, i samråd med din arbetsgivare. Syftet är att minska hastigheten i smittspridningen och att hålla nere antalet personer som behöver sjukhusvård."
       ],
       "set": {
         "classifiedQuestion": "question: vilka regler gäller för kollektivtrafik  arbetsplatser och skolor?",
@@ -1233,7 +1673,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             },
             "bot": {
-              "say": "Tack!",
+              "say": [
+                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
+                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
+              ],
               "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
               "params": [
                 "classifiedQuestion",
@@ -1248,10 +1691,18 @@ export const simpleQuestionAnswers : UserTurn[] = [
                 "__ANYTHING"
               ]
             },
-            "bot": {
-              "say": "Förlåt, var det rätt eller fel svar?",
-              "repair": true
-            }
+            "bot": [
+              {
+                "cond": {
+                  "turnCount": 0
+                },
+                "say": "Förlåt, var det rätt eller fel svar?",
+                "repair": true
+              },
+              {
+                "say": "Jag förstod inte, men låt oss gå vidare"
+              }
+            ]
           }
         ]
       }
@@ -1260,6 +1711,25 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "question: får man resa till andra länder",
+      "entities": {
+        "CORONA": {
+          "name": "CORONA",
+          "enums": [
+            {
+              "name": "CORONA",
+              "alts": [
+                "covid",
+                "covid19",
+                "covid-19",
+                "corona viruset",
+                "coronavirus",
+                "covid 19",
+                "corona"
+              ]
+            }
+          ]
+        }
+      },
       "examples": [
         "får man resa till andra länder",
         "är det okej att resa utomlands",
@@ -1270,7 +1740,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "Det är Utrikesdepartementet (UD) som utfärdar reseavrådan till andra länder. Besök deras webbplats for att få den senaste informationen. "
+        "Det är Utrikesdepartementet (UD) som utfärdar reseavrådan till andra länder. Sedan i början på Mars avråder UD från icke nödvändiga resor till alla länder. Besök deras webbplats for att få den senaste informationen.  Det är dessutom många länder som inte tar emot inresande just nu för att begränsa smittspridningen."
       ],
       "set": {
         "classifiedQuestion": "question: får man resa till andra länder",
@@ -1316,7 +1786,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             },
             "bot": {
-              "say": "Tack!",
+              "say": [
+                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
+                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
+              ],
               "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
               "params": [
                 "classifiedQuestion",
@@ -1331,90 +1804,18 @@ export const simpleQuestionAnswers : UserTurn[] = [
                 "__ANYTHING"
               ]
             },
-            "bot": {
-              "say": "Förlåt, var det rätt eller fel svar?",
-              "repair": true
-            }
-          }
-        ]
-      }
-    }
-  },
-  {
-    "intent": {
-      "name": "question: vad gäller för flygplatser",
-      "examples": [
-        "vad gäller för flygplatser",
-        "vilka regler gäller på flygplatser"
-      ]
-    },
-    "bot": {
-      "say": [
-        "Vi har fortlöpande dialog med flygplatserna och samarbetar på EU–nivå om dessa frågor. Vi har fokus på information till flygplatser om vart man ska vända sig om man får tecken på sjukdom."
-      ],
-      "set": {
-        "classifiedQuestion": "question: vad gäller för flygplatser",
-        "classifiedUtterance": "_user_text"
-      },
-      "bot": {
-        "say": "Var det ett korrekt svar?",
-        "user": [
-          {
-            "intent": {
-              "name": "confirmRight",
-              "examples": [
-                "ja",
-                "japp",
-                "absolut",
-                "okej",
-                "jajamän",
-                "alright",
-                "yes",
-                "korrekt",
-                "det stämmer",
-                "det är rätt",
-                "rätt",
-                "stämmer"
-              ]
-            },
-            "bot": "Tack!"
-          },
-          {
-            "intent": {
-              "name": "confirmWrong",
-              "examples": [
-                "nej",
-                "nope",
-                "no",
-                "aldrig",
-                "jag vill inte",
-                "ej korrekt",
-                "det stämmer inte",
-                "det är fel",
-                "fel",
-                "stämmer ej"
-              ]
-            },
-            "bot": {
-              "say": "Tack!",
-              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-              "params": [
-                "classifiedQuestion",
-                "classifiedUtterance"
-              ],
-              "asyncWebhook": true
-            }
-          },
-          {
-            "intent": {
-              "examples": [
-                "__ANYTHING"
-              ]
-            },
-            "bot": {
-              "say": "Förlåt, var det rätt eller fel svar?",
-              "repair": true
-            }
+            "bot": [
+              {
+                "cond": {
+                  "turnCount": 0
+                },
+                "say": "Förlåt, var det rätt eller fel svar?",
+                "repair": true
+              },
+              {
+                "say": "Jag förstod inte, men låt oss gå vidare"
+              }
+            ]
           }
         ]
       }
@@ -1423,9 +1824,28 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "question: behöver jag göra något särskilt om jag är frisk",
+      "entities": {
+        "CORONA": {
+          "name": "CORONA",
+          "enums": [
+            {
+              "name": "CORONA",
+              "alts": [
+                "covid",
+                "covid19",
+                "covid-19",
+                "corona viruset",
+                "coronavirus",
+                "covid 19",
+                "corona"
+              ]
+            }
+          ]
+        }
+      },
       "examples": [
         "behöver jag göra något särskilt om jag är frisk",
-        "ska jag göra något särskilt om jag känner mig frisk "
+        "ska jag göra något särskilt om jag känner mig frisk"
       ]
     },
     "bot": {
@@ -1476,7 +1896,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             },
             "bot": {
-              "say": "Tack!",
+              "say": [
+                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
+                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
+              ],
               "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
               "params": [
                 "classifiedQuestion",
@@ -1491,10 +1914,18 @@ export const simpleQuestionAnswers : UserTurn[] = [
                 "__ANYTHING"
               ]
             },
-            "bot": {
-              "say": "Förlåt, var det rätt eller fel svar?",
-              "repair": true
-            }
+            "bot": [
+              {
+                "cond": {
+                  "turnCount": 0
+                },
+                "say": "Förlåt, var det rätt eller fel svar?",
+                "repair": true
+              },
+              {
+                "say": "Jag förstod inte, men låt oss gå vidare"
+              }
+            ]
           }
         ]
       }
@@ -1503,6 +1934,25 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "question: jag tror jag har fått corona vad ska jag göra",
+      "entities": {
+        "CORONA": {
+          "name": "CORONA",
+          "enums": [
+            {
+              "name": "CORONA",
+              "alts": [
+                "covid",
+                "covid19",
+                "covid-19",
+                "corona viruset",
+                "coronavirus",
+                "covid 19",
+                "corona"
+              ]
+            }
+          ]
+        }
+      },
       "examples": [
         "jag tror jag har fått corona vad ska jag göra",
         "vad gör jag om jag tror att jag har fått corona",
@@ -1561,7 +2011,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             },
             "bot": {
-              "say": "Tack!",
+              "say": [
+                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
+                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
+              ],
               "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
               "params": [
                 "classifiedQuestion",
@@ -1576,10 +2029,18 @@ export const simpleQuestionAnswers : UserTurn[] = [
                 "__ANYTHING"
               ]
             },
-            "bot": {
-              "say": "Förlåt, var det rätt eller fel svar?",
-              "repair": true
-            }
+            "bot": [
+              {
+                "cond": {
+                  "turnCount": 0
+                },
+                "say": "Förlåt, var det rätt eller fel svar?",
+                "repair": true
+              },
+              {
+                "say": "Jag förstod inte, men låt oss gå vidare"
+              }
+            ]
           }
         ]
       }
@@ -1588,11 +2049,30 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "question: har sverige beredskap",
+      "entities": {
+        "CORONA": {
+          "name": "CORONA",
+          "enums": [
+            {
+              "name": "CORONA",
+              "alts": [
+                "covid",
+                "covid19",
+                "covid-19",
+                "corona viruset",
+                "coronavirus",
+                "covid 19",
+                "corona"
+              ]
+            }
+          ]
+        }
+      },
       "examples": [
         "har sverige beredskap",
         "hur stor beredskap har sverige",
-        "hur är sveriges beredskap just nu ",
-        "har sverige någon beredskap "
+        "hur är sveriges beredskap just nu",
+        "har sverige någon beredskap"
       ]
     },
     "bot": {
@@ -1643,7 +2123,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             },
             "bot": {
-              "say": "Tack!",
+              "say": [
+                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
+                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
+              ],
               "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
               "params": [
                 "classifiedQuestion",
@@ -1658,10 +2141,18 @@ export const simpleQuestionAnswers : UserTurn[] = [
                 "__ANYTHING"
               ]
             },
-            "bot": {
-              "say": "Förlåt, var det rätt eller fel svar?",
-              "repair": true
-            }
+            "bot": [
+              {
+                "cond": {
+                  "turnCount": 0
+                },
+                "say": "Förlåt, var det rätt eller fel svar?",
+                "repair": true
+              },
+              {
+                "say": "Jag förstod inte, men låt oss gå vidare"
+              }
+            ]
           }
         ]
       }
@@ -1670,6 +2161,25 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "question: kommer sjukhusen att klara det",
+      "entities": {
+        "CORONA": {
+          "name": "CORONA",
+          "enums": [
+            {
+              "name": "CORONA",
+              "alts": [
+                "covid",
+                "covid19",
+                "covid-19",
+                "corona viruset",
+                "coronavirus",
+                "covid 19",
+                "corona"
+              ]
+            }
+          ]
+        }
+      },
       "examples": [
         "kommer sjukhusen att klara det",
         "hur många orkar sjukhusen ta emot",
@@ -1726,7 +2236,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             },
             "bot": {
-              "say": "Tack!",
+              "say": [
+                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
+                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
+              ],
               "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
               "params": [
                 "classifiedQuestion",
@@ -1741,10 +2254,18 @@ export const simpleQuestionAnswers : UserTurn[] = [
                 "__ANYTHING"
               ]
             },
-            "bot": {
-              "say": "Förlåt, var det rätt eller fel svar?",
-              "repair": true
-            }
+            "bot": [
+              {
+                "cond": {
+                  "turnCount": 0
+                },
+                "say": "Förlåt, var det rätt eller fel svar?",
+                "repair": true
+              },
+              {
+                "say": "Jag förstod inte, men låt oss gå vidare"
+              }
+            ]
           }
         ]
       }
@@ -1753,11 +2274,30 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "question: varför blir inte barn avstängda",
+      "entities": {
+        "CORONA": {
+          "name": "CORONA",
+          "enums": [
+            {
+              "name": "CORONA",
+              "alts": [
+                "covid",
+                "covid19",
+                "covid-19",
+                "corona viruset",
+                "coronavirus",
+                "covid 19",
+                "corona"
+              ]
+            }
+          ]
+        }
+      },
       "examples": [
         "varför blir inte barn avstängda",
         "kan barn som varit i drabbade områden bli avstängda från skolan",
         "kan barn som har en sjuk familjemedlem bli avstängda",
-        "kan ett barn bli avstängt "
+        "kan ett barn bli avstängt"
       ]
     },
     "bot": {
@@ -1808,7 +2348,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             },
             "bot": {
-              "say": "Tack!",
+              "say": [
+                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
+                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
+              ],
               "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
               "params": [
                 "classifiedQuestion",
@@ -1823,10 +2366,18 @@ export const simpleQuestionAnswers : UserTurn[] = [
                 "__ANYTHING"
               ]
             },
-            "bot": {
-              "say": "Förlåt, var det rätt eller fel svar?",
-              "repair": true
-            }
+            "bot": [
+              {
+                "cond": {
+                  "turnCount": 0
+                },
+                "say": "Förlåt, var det rätt eller fel svar?",
+                "repair": true
+              },
+              {
+                "say": "Jag förstod inte, men låt oss gå vidare"
+              }
+            ]
           }
         ]
       }
@@ -1835,6 +2386,25 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "question: kan sverige sättas i karantän?",
+      "entities": {
+        "CORONA": {
+          "name": "CORONA",
+          "enums": [
+            {
+              "name": "CORONA",
+              "alts": [
+                "covid",
+                "covid19",
+                "covid-19",
+                "corona viruset",
+                "coronavirus",
+                "covid 19",
+                "corona"
+              ]
+            }
+          ]
+        }
+      },
       "examples": [
         "kan sverige sättas i karantän?",
         "blir det karantän i sverige?",
@@ -1890,7 +2460,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             },
             "bot": {
-              "say": "Tack!",
+              "say": [
+                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
+                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
+              ],
               "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
               "params": [
                 "classifiedQuestion",
@@ -1905,10 +2478,18 @@ export const simpleQuestionAnswers : UserTurn[] = [
                 "__ANYTHING"
               ]
             },
-            "bot": {
-              "say": "Förlåt, var det rätt eller fel svar?",
-              "repair": true
-            }
+            "bot": [
+              {
+                "cond": {
+                  "turnCount": 0
+                },
+                "say": "Förlåt, var det rätt eller fel svar?",
+                "repair": true
+              },
+              {
+                "say": "Jag förstod inte, men låt oss gå vidare"
+              }
+            ]
           }
         ]
       }
@@ -1917,10 +2498,30 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "question: finns det vaccin?",
+      "entities": {
+        "CORONA": {
+          "name": "CORONA",
+          "enums": [
+            {
+              "name": "CORONA",
+              "alts": [
+                "covid",
+                "covid19",
+                "covid-19",
+                "corona viruset",
+                "coronavirus",
+                "covid 19",
+                "corona"
+              ]
+            }
+          ]
+        }
+      },
       "examples": [
         "finns det vaccin?",
         "kan jag vaccinera mig mot coronaviruset?",
         "när kommer vaccin mot corona?",
+        "finns det vaccin mot corona?",
         "finns det vaccin mot corona?"
       ]
     },
@@ -1972,7 +2573,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             },
             "bot": {
-              "say": "Tack!",
+              "say": [
+                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
+                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
+              ],
               "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
               "params": [
                 "classifiedQuestion",
@@ -1987,10 +2591,18 @@ export const simpleQuestionAnswers : UserTurn[] = [
                 "__ANYTHING"
               ]
             },
-            "bot": {
-              "say": "Förlåt, var det rätt eller fel svar?",
-              "repair": true
-            }
+            "bot": [
+              {
+                "cond": {
+                  "turnCount": 0
+                },
+                "say": "Förlåt, var det rätt eller fel svar?",
+                "repair": true
+              },
+              {
+                "say": "Jag förstod inte, men låt oss gå vidare"
+              }
+            ]
           }
         ]
       }
@@ -1999,6 +2611,25 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "question: vad är coronavirus",
+      "entities": {
+        "CORONA": {
+          "name": "CORONA",
+          "enums": [
+            {
+              "name": "CORONA",
+              "alts": [
+                "covid",
+                "covid19",
+                "covid-19",
+                "corona viruset",
+                "coronavirus",
+                "covid 19",
+                "corona"
+              ]
+            }
+          ]
+        }
+      },
       "examples": [
         "vad är coronavirus",
         "vad är corona",
@@ -2054,7 +2685,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             },
             "bot": {
-              "say": "Tack!",
+              "say": [
+                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
+                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
+              ],
               "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
               "params": [
                 "classifiedQuestion",
@@ -2069,10 +2703,18 @@ export const simpleQuestionAnswers : UserTurn[] = [
                 "__ANYTHING"
               ]
             },
-            "bot": {
-              "say": "Förlåt, var det rätt eller fel svar?",
-              "repair": true
-            }
+            "bot": [
+              {
+                "cond": {
+                  "turnCount": 0
+                },
+                "say": "Förlåt, var det rätt eller fel svar?",
+                "repair": true
+              },
+              {
+                "say": "Jag förstod inte, men låt oss gå vidare"
+              }
+            ]
           }
         ]
       }
@@ -2081,6 +2723,25 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "question: vad är covid-19",
+      "entities": {
+        "CORONA": {
+          "name": "CORONA",
+          "enums": [
+            {
+              "name": "CORONA",
+              "alts": [
+                "covid",
+                "covid19",
+                "covid-19",
+                "corona viruset",
+                "coronavirus",
+                "covid 19",
+                "corona"
+              ]
+            }
+          ]
+        }
+      },
       "examples": [
         "vad är covid-19",
         "vad är covid",
@@ -2135,7 +2796,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             },
             "bot": {
-              "say": "Tack!",
+              "say": [
+                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
+                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
+              ],
               "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
               "params": [
                 "classifiedQuestion",
@@ -2150,10 +2814,18 @@ export const simpleQuestionAnswers : UserTurn[] = [
                 "__ANYTHING"
               ]
             },
-            "bot": {
-              "say": "Förlåt, var det rätt eller fel svar?",
-              "repair": true
-            }
+            "bot": [
+              {
+                "cond": {
+                  "turnCount": 0
+                },
+                "say": "Förlåt, var det rätt eller fel svar?",
+                "repair": true
+              },
+              {
+                "say": "Jag förstod inte, men låt oss gå vidare"
+              }
+            ]
           }
         ]
       }
@@ -2162,6 +2834,25 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "question: är corona influensa",
+      "entities": {
+        "CORONA": {
+          "name": "CORONA",
+          "enums": [
+            {
+              "name": "CORONA",
+              "alts": [
+                "covid",
+                "covid19",
+                "covid-19",
+                "corona viruset",
+                "coronavirus",
+                "covid 19",
+                "corona"
+              ]
+            }
+          ]
+        }
+      },
       "examples": [
         "är corona influensa",
         "vad skiljer corona från influensa",
@@ -2173,7 +2864,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "Corona-viruset är helt nytt vilket gör det svårt att jämföra med influensan som är återkommande. De är liknande i symptom men COVID-19 sprider sig otroligt mycket snabbare då ingen har utvecklat immunitet ännu. "
+        "Corona-viruset är helt nytt vilket gör det svårt att jämföra med influensan som är återkommande. De är liknande i symptom men COVID-19 sprider sig otroligt mycket snabbare då ingen har utvecklat immunitet ännu."
       ],
       "set": {
         "classifiedQuestion": "question: är corona influensa",
@@ -2219,7 +2910,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             },
             "bot": {
-              "say": "Tack!",
+              "say": [
+                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
+                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
+              ],
               "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
               "params": [
                 "classifiedQuestion",
@@ -2234,10 +2928,18 @@ export const simpleQuestionAnswers : UserTurn[] = [
                 "__ANYTHING"
               ]
             },
-            "bot": {
-              "say": "Förlåt, var det rätt eller fel svar?",
-              "repair": true
-            }
+            "bot": [
+              {
+                "cond": {
+                  "turnCount": 0
+                },
+                "say": "Förlåt, var det rätt eller fel svar?",
+                "repair": true
+              },
+              {
+                "say": "Jag förstod inte, men låt oss gå vidare"
+              }
+            ]
           }
         ]
       }
@@ -2246,12 +2948,31 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "question: funkar munskydd",
+      "entities": {
+        "CORONA": {
+          "name": "CORONA",
+          "enums": [
+            {
+              "name": "CORONA",
+              "alts": [
+                "covid",
+                "covid19",
+                "covid-19",
+                "corona viruset",
+                "coronavirus",
+                "covid 19",
+                "corona"
+              ]
+            }
+          ]
+        }
+      },
       "examples": [
         "funkar munskydd",
         "skyddar munskydd mot corona",
         "hjälper munskydd",
         "kan jag skydda mig med munskydd",
-        "är det bra att ha munskydd ",
+        "är det bra att ha munskydd",
         "borde jag ha munskydd",
         "borde jag ha skydd för munnen"
       ]
@@ -2304,7 +3025,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             },
             "bot": {
-              "say": "Tack!",
+              "say": [
+                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
+                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
+              ],
               "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
               "params": [
                 "classifiedQuestion",
@@ -2319,10 +3043,18 @@ export const simpleQuestionAnswers : UserTurn[] = [
                 "__ANYTHING"
               ]
             },
-            "bot": {
-              "say": "Förlåt, var det rätt eller fel svar?",
-              "repair": true
-            }
+            "bot": [
+              {
+                "cond": {
+                  "turnCount": 0
+                },
+                "say": "Förlåt, var det rätt eller fel svar?",
+                "repair": true
+              },
+              {
+                "say": "Jag förstod inte, men låt oss gå vidare"
+              }
+            ]
           }
         ]
       }
@@ -2331,11 +3063,30 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "question: finns det botemedel",
+      "entities": {
+        "CORONA": {
+          "name": "CORONA",
+          "enums": [
+            {
+              "name": "CORONA",
+              "alts": [
+                "covid",
+                "covid19",
+                "covid-19",
+                "corona viruset",
+                "coronavirus",
+                "covid 19",
+                "corona"
+              ]
+            }
+          ]
+        }
+      },
       "examples": [
         "finns det botemedel",
         "finns det något coronavaccin",
         "finns det något läkemedel mot corona",
-        "kan man bli botad ",
+        "kan man bli botad",
         "finns det vaccin än",
         "Kan man vaccinera sig mot corona"
       ]
@@ -2388,7 +3139,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             },
             "bot": {
-              "say": "Tack!",
+              "say": [
+                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
+                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
+              ],
               "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
               "params": [
                 "classifiedQuestion",
@@ -2403,10 +3157,18 @@ export const simpleQuestionAnswers : UserTurn[] = [
                 "__ANYTHING"
               ]
             },
-            "bot": {
-              "say": "Förlåt, var det rätt eller fel svar?",
-              "repair": true
-            }
+            "bot": [
+              {
+                "cond": {
+                  "turnCount": 0
+                },
+                "say": "Förlåt, var det rätt eller fel svar?",
+                "repair": true
+              },
+              {
+                "say": "Jag förstod inte, men låt oss gå vidare"
+              }
+            ]
           }
         ]
       }
@@ -2415,6 +3177,25 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "question: kommer alla bli friska från corona",
+      "entities": {
+        "CORONA": {
+          "name": "CORONA",
+          "enums": [
+            {
+              "name": "CORONA",
+              "alts": [
+                "covid",
+                "covid19",
+                "covid-19",
+                "corona viruset",
+                "coronavirus",
+                "covid 19",
+                "corona"
+              ]
+            }
+          ]
+        }
+      },
       "examples": [
         "kommer alla bli friska från corona",
         "hur pass många blir friska",
@@ -2425,7 +3206,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "Majoriteten av de som smittas blir friska förutom en mycket liten andel personer som kan bli allvarligt sjuka, varav de flesta tillhör någon riskgrupp. "
+        "Majoriteten av de som smittas blir friska förutom en mycket liten andel personer som kan bli allvarligt sjuka, varav de flesta tillhör någon riskgrupp."
       ],
       "set": {
         "classifiedQuestion": "question: kommer alla bli friska från corona",
@@ -2471,7 +3252,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             },
             "bot": {
-              "say": "Tack!",
+              "say": [
+                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
+                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
+              ],
               "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
               "params": [
                 "classifiedQuestion",
@@ -2486,10 +3270,18 @@ export const simpleQuestionAnswers : UserTurn[] = [
                 "__ANYTHING"
               ]
             },
-            "bot": {
-              "say": "Förlåt, var det rätt eller fel svar?",
-              "repair": true
-            }
+            "bot": [
+              {
+                "cond": {
+                  "turnCount": 0
+                },
+                "say": "Förlåt, var det rätt eller fel svar?",
+                "repair": true
+              },
+              {
+                "say": "Jag förstod inte, men låt oss gå vidare"
+              }
+            ]
           }
         ]
       }
@@ -2498,6 +3290,25 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "question: ska jag städa på något särskilt sätt",
+      "entities": {
+        "CORONA": {
+          "name": "CORONA",
+          "enums": [
+            {
+              "name": "CORONA",
+              "alts": [
+                "covid",
+                "covid19",
+                "covid-19",
+                "corona viruset",
+                "coronavirus",
+                "covid 19",
+                "corona"
+              ]
+            }
+          ]
+        }
+      },
       "examples": [
         "ska jag städa på något särskilt sätt",
         "måste jag städa extra noga",
@@ -2554,7 +3365,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             },
             "bot": {
-              "say": "Tack!",
+              "say": [
+                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
+                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
+              ],
               "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
               "params": [
                 "classifiedQuestion",
@@ -2569,10 +3383,18 @@ export const simpleQuestionAnswers : UserTurn[] = [
                 "__ANYTHING"
               ]
             },
-            "bot": {
-              "say": "Förlåt, var det rätt eller fel svar?",
-              "repair": true
-            }
+            "bot": [
+              {
+                "cond": {
+                  "turnCount": 0
+                },
+                "say": "Förlåt, var det rätt eller fel svar?",
+                "repair": true
+              },
+              {
+                "say": "Jag förstod inte, men låt oss gå vidare"
+              }
+            ]
           }
         ]
       }
@@ -2581,6 +3403,25 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "question: varför stängs inte skolorna",
+      "entities": {
+        "CORONA": {
+          "name": "CORONA",
+          "enums": [
+            {
+              "name": "CORONA",
+              "alts": [
+                "covid",
+                "covid19",
+                "covid-19",
+                "corona viruset",
+                "coronavirus",
+                "covid 19",
+                "corona"
+              ]
+            }
+          ]
+        }
+      },
       "examples": [
         "varför stängs inte skolorna",
         "kommer skolorna att stängas",
@@ -2637,7 +3478,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             },
             "bot": {
-              "say": "Tack!",
+              "say": [
+                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
+                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
+              ],
               "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
               "params": [
                 "classifiedQuestion",
@@ -2652,10 +3496,18 @@ export const simpleQuestionAnswers : UserTurn[] = [
                 "__ANYTHING"
               ]
             },
-            "bot": {
-              "say": "Förlåt, var det rätt eller fel svar?",
-              "repair": true
-            }
+            "bot": [
+              {
+                "cond": {
+                  "turnCount": 0
+                },
+                "say": "Förlåt, var det rätt eller fel svar?",
+                "repair": true
+              },
+              {
+                "say": "Jag förstod inte, men låt oss gå vidare"
+              }
+            ]
           }
         ]
       }
@@ -2663,9 +3515,28 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": {
-      "name": "question: hur länge överlever corona ",
+      "name": "question: hur länge överlever corona",
+      "entities": {
+        "CORONA": {
+          "name": "CORONA",
+          "enums": [
+            {
+              "name": "CORONA",
+              "alts": [
+                "covid",
+                "covid19",
+                "covid-19",
+                "corona viruset",
+                "coronavirus",
+                "covid 19",
+                "corona"
+              ]
+            }
+          ]
+        }
+      },
       "examples": [
-        "hur länge överlever corona ",
+        "hur länge överlever corona",
         "kan corona leva utanför kroppen",
         "kan viruset leva på ytor",
         "kan coronavirus överleva på ett handtag",
@@ -2677,7 +3548,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Det är ännu inte klarlagt hur länge viruset kan överleva utanför kroppen. Forskningsstudier som utförts på närbesläktade coronavirus visar att de kan överleva flera dagar på ytor och föremål men för detta krävs särskilda förhållanden, så som rätt temperatur, solljus och luftfuktighet."
       ],
       "set": {
-        "classifiedQuestion": "question: hur länge överlever corona ",
+        "classifiedQuestion": "question: hur länge överlever corona",
         "classifiedUtterance": "_user_text"
       },
       "bot": {
@@ -2720,7 +3591,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             },
             "bot": {
-              "say": "Tack!",
+              "say": [
+                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
+                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
+              ],
               "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
               "params": [
                 "classifiedQuestion",
@@ -2735,10 +3609,18 @@ export const simpleQuestionAnswers : UserTurn[] = [
                 "__ANYTHING"
               ]
             },
-            "bot": {
-              "say": "Förlåt, var det rätt eller fel svar?",
-              "repair": true
-            }
+            "bot": [
+              {
+                "cond": {
+                  "turnCount": 0
+                },
+                "say": "Förlåt, var det rätt eller fel svar?",
+                "repair": true
+              },
+              {
+                "say": "Jag förstod inte, men låt oss gå vidare"
+              }
+            ]
           }
         ]
       }
@@ -2747,6 +3629,25 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "question: kan paket vara smittade med corona",
+      "entities": {
+        "CORONA": {
+          "name": "CORONA",
+          "enums": [
+            {
+              "name": "CORONA",
+              "alts": [
+                "covid",
+                "covid19",
+                "covid-19",
+                "corona viruset",
+                "coronavirus",
+                "covid 19",
+                "corona"
+              ]
+            }
+          ]
+        }
+      },
       "examples": [
         "kan paket vara smittade med corona",
         "kan det vara corona på min post",
@@ -2803,7 +3704,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             },
             "bot": {
-              "say": "Tack!",
+              "say": [
+                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
+                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
+              ],
               "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
               "params": [
                 "classifiedQuestion",
@@ -2818,10 +3722,18 @@ export const simpleQuestionAnswers : UserTurn[] = [
                 "__ANYTHING"
               ]
             },
-            "bot": {
-              "say": "Förlåt, var det rätt eller fel svar?",
-              "repair": true
-            }
+            "bot": [
+              {
+                "cond": {
+                  "turnCount": 0
+                },
+                "say": "Förlåt, var det rätt eller fel svar?",
+                "repair": true
+              },
+              {
+                "say": "Jag förstod inte, men låt oss gå vidare"
+              }
+            ]
           }
         ]
       }
@@ -2830,6 +3742,25 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "question: kan jag smittas av mitt husdjur",
+      "entities": {
+        "CORONA": {
+          "name": "CORONA",
+          "enums": [
+            {
+              "name": "CORONA",
+              "alts": [
+                "covid",
+                "covid19",
+                "covid-19",
+                "corona viruset",
+                "coronavirus",
+                "covid 19",
+                "corona"
+              ]
+            }
+          ]
+        }
+      },
       "examples": [
         "kan jag smittas av mitt husdjur",
         "jag jag få smittan av djur",
@@ -2886,7 +3817,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             },
             "bot": {
-              "say": "Tack!",
+              "say": [
+                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
+                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
+              ],
               "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
               "params": [
                 "classifiedQuestion",
@@ -2901,10 +3835,18 @@ export const simpleQuestionAnswers : UserTurn[] = [
                 "__ANYTHING"
               ]
             },
-            "bot": {
-              "say": "Förlåt, var det rätt eller fel svar?",
-              "repair": true
-            }
+            "bot": [
+              {
+                "cond": {
+                  "turnCount": 0
+                },
+                "say": "Förlåt, var det rätt eller fel svar?",
+                "repair": true
+              },
+              {
+                "say": "Jag förstod inte, men låt oss gå vidare"
+              }
+            ]
           }
         ]
       }
@@ -2913,6 +3855,25 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "question: vilka länder är smittade",
+      "entities": {
+        "CORONA": {
+          "name": "CORONA",
+          "enums": [
+            {
+              "name": "CORONA",
+              "alts": [
+                "covid",
+                "covid19",
+                "covid-19",
+                "corona viruset",
+                "coronavirus",
+                "covid 19",
+                "corona"
+              ]
+            }
+          ]
+        }
+      },
       "examples": [
         "vilka länder är smittade",
         "i vilka länder kan jag få corona",
@@ -2969,7 +3930,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             },
             "bot": {
-              "say": "Tack!",
+              "say": [
+                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
+                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
+              ],
               "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
               "params": [
                 "classifiedQuestion",
@@ -2984,10 +3948,18 @@ export const simpleQuestionAnswers : UserTurn[] = [
                 "__ANYTHING"
               ]
             },
-            "bot": {
-              "say": "Förlåt, var det rätt eller fel svar?",
-              "repair": true
-            }
+            "bot": [
+              {
+                "cond": {
+                  "turnCount": 0
+                },
+                "say": "Förlåt, var det rätt eller fel svar?",
+                "repair": true
+              },
+              {
+                "say": "Jag förstod inte, men låt oss gå vidare"
+              }
+            ]
           }
         ]
       }
@@ -2996,6 +3968,25 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "question: vad innebär det att vi har en samhällsspridning av corona i Sverige?",
+      "entities": {
+        "CORONA": {
+          "name": "CORONA",
+          "enums": [
+            {
+              "name": "CORONA",
+              "alts": [
+                "covid",
+                "covid19",
+                "covid-19",
+                "corona viruset",
+                "coronavirus",
+                "covid 19",
+                "corona"
+              ]
+            }
+          ]
+        }
+      },
       "examples": [
         "vad innebär det att vi har en samhällsspridning av corona i Sverige?",
         "vad innebär samhällsspridning",
@@ -3052,7 +4043,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             },
             "bot": {
-              "say": "Tack!",
+              "say": [
+                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
+                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
+              ],
               "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
               "params": [
                 "classifiedQuestion",
@@ -3067,10 +4061,18 @@ export const simpleQuestionAnswers : UserTurn[] = [
                 "__ANYTHING"
               ]
             },
-            "bot": {
-              "say": "Förlåt, var det rätt eller fel svar?",
-              "repair": true
-            }
+            "bot": [
+              {
+                "cond": {
+                  "turnCount": 0
+                },
+                "say": "Förlåt, var det rätt eller fel svar?",
+                "repair": true
+              },
+              {
+                "say": "Jag förstod inte, men låt oss gå vidare"
+              }
+            ]
           }
         ]
       }
@@ -3079,6 +4081,25 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "question: vad är smittspårning",
+      "entities": {
+        "CORONA": {
+          "name": "CORONA",
+          "enums": [
+            {
+              "name": "CORONA",
+              "alts": [
+                "covid",
+                "covid19",
+                "covid-19",
+                "corona viruset",
+                "coronavirus",
+                "covid 19",
+                "corona"
+              ]
+            }
+          ]
+        }
+      },
       "examples": [
         "vad är smittspårning",
         "vad betyder smittspårning",
@@ -3135,7 +4156,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             },
             "bot": {
-              "say": "Tack!",
+              "say": [
+                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
+                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
+              ],
               "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
               "params": [
                 "classifiedQuestion",
@@ -3150,10 +4174,18 @@ export const simpleQuestionAnswers : UserTurn[] = [
                 "__ANYTHING"
               ]
             },
-            "bot": {
-              "say": "Förlåt, var det rätt eller fel svar?",
-              "repair": true
-            }
+            "bot": [
+              {
+                "cond": {
+                  "turnCount": 0
+                },
+                "say": "Förlåt, var det rätt eller fel svar?",
+                "repair": true
+              },
+              {
+                "say": "Jag förstod inte, men låt oss gå vidare"
+              }
+            ]
           }
         ]
       }
@@ -3162,10 +4194,29 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "question: vad är det för särskilt med 500 personer",
+      "entities": {
+        "CORONA": {
+          "name": "CORONA",
+          "enums": [
+            {
+              "name": "CORONA",
+              "alts": [
+                "covid",
+                "covid19",
+                "covid-19",
+                "corona viruset",
+                "coronavirus",
+                "covid 19",
+                "corona"
+              ]
+            }
+          ]
+        }
+      },
       "examples": [
         "vad är det för särskilt med 500 personer",
         "varför är det 500 personer",
-        "hur kommer det sig att det är just 500 ",
+        "hur kommer det sig att det är just 500",
         "vad händer efter 500",
         "vad är problemet med fler än 500 personer"
       ]
@@ -3218,7 +4269,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             },
             "bot": {
-              "say": "Tack!",
+              "say": [
+                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
+                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
+              ],
               "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
               "params": [
                 "classifiedQuestion",
@@ -3233,10 +4287,18 @@ export const simpleQuestionAnswers : UserTurn[] = [
                 "__ANYTHING"
               ]
             },
-            "bot": {
-              "say": "Förlåt, var det rätt eller fel svar?",
-              "repair": true
-            }
+            "bot": [
+              {
+                "cond": {
+                  "turnCount": 0
+                },
+                "say": "Förlåt, var det rätt eller fel svar?",
+                "repair": true
+              },
+              {
+                "say": "Jag förstod inte, men låt oss gå vidare"
+              }
+            ]
           }
         ]
       }
@@ -3245,6 +4307,25 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "question: kan flygkontroller minska spridningen",
+      "entities": {
+        "CORONA": {
+          "name": "CORONA",
+          "enums": [
+            {
+              "name": "CORONA",
+              "alts": [
+                "covid",
+                "covid19",
+                "covid-19",
+                "corona viruset",
+                "coronavirus",
+                "covid 19",
+                "corona"
+              ]
+            }
+          ]
+        }
+      },
       "examples": [
         "kan flygkontroller minska spridningen",
         "kan flygplatserna påverka smittspridningen",
@@ -3301,7 +4382,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             },
             "bot": {
-              "say": "Tack!",
+              "say": [
+                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
+                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
+              ],
               "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
               "params": [
                 "classifiedQuestion",
@@ -3316,10 +4400,18 @@ export const simpleQuestionAnswers : UserTurn[] = [
                 "__ANYTHING"
               ]
             },
-            "bot": {
-              "say": "Förlåt, var det rätt eller fel svar?",
-              "repair": true
-            }
+            "bot": [
+              {
+                "cond": {
+                  "turnCount": 0
+                },
+                "say": "Förlåt, var det rätt eller fel svar?",
+                "repair": true
+              },
+              {
+                "say": "Jag förstod inte, men låt oss gå vidare"
+              }
+            ]
           }
         ]
       }
@@ -3328,6 +4420,25 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "question: vem bestämmer vem som ska sättas i karantän",
+      "entities": {
+        "CORONA": {
+          "name": "CORONA",
+          "enums": [
+            {
+              "name": "CORONA",
+              "alts": [
+                "covid",
+                "covid19",
+                "covid-19",
+                "corona viruset",
+                "coronavirus",
+                "covid 19",
+                "corona"
+              ]
+            }
+          ]
+        }
+      },
       "examples": [
         "vem bestämmer vem som ska sättas i karantän",
         "kan man bli tvingad att sitta i karantän",
@@ -3384,7 +4495,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             },
             "bot": {
-              "say": "Tack!",
+              "say": [
+                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
+                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
+              ],
               "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
               "params": [
                 "classifiedQuestion",
@@ -3399,10 +4513,18 @@ export const simpleQuestionAnswers : UserTurn[] = [
                 "__ANYTHING"
               ]
             },
-            "bot": {
-              "say": "Förlåt, var det rätt eller fel svar?",
-              "repair": true
-            }
+            "bot": [
+              {
+                "cond": {
+                  "turnCount": 0
+                },
+                "say": "Förlåt, var det rätt eller fel svar?",
+                "repair": true
+              },
+              {
+                "say": "Jag förstod inte, men låt oss gå vidare"
+              }
+            ]
           }
         ]
       }
@@ -3411,6 +4533,25 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "question: vad är Folkhälsomyndigheten",
+      "entities": {
+        "CORONA": {
+          "name": "CORONA",
+          "enums": [
+            {
+              "name": "CORONA",
+              "alts": [
+                "covid",
+                "covid19",
+                "covid-19",
+                "corona viruset",
+                "coronavirus",
+                "covid 19",
+                "corona"
+              ]
+            }
+          ]
+        }
+      },
       "examples": [
         "vad är Folkhälsomyndigheten",
         "vilken roll har Folkhälsomyndigheten",
@@ -3420,7 +4561,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "Folkhälsomyndigheten (FHM) ska ta fram och förmedla vetenskapligt grundad kunskap som förebygger ohälsa och sjukdomar, och som ger samhället stöd i arbetet mot hälsohot. FHM följer händelseutvecklingen av covid-19 noga, och gör riskbedömningar samt bedömer hur utbrottet utvecklas. Sjukvård, regionala smittskyddsenheter och andra aktörer får information om det aktuella läget, och FHM tar ställning till vilka åtgärdar som är relevanta att genomföra. "
+        "Folkhälsomyndigheten (FHM) ska ta fram och förmedla vetenskapligt grundad kunskap som förebygger ohälsa och sjukdomar, och som ger samhället stöd i arbetet mot hälsohot. FHM följer händelseutvecklingen av covid-19 noga, och gör riskbedömningar samt bedömer hur utbrottet utvecklas. Sjukvård, regionala smittskyddsenheter och andra aktörer får information om det aktuella läget, och FHM tar ställning till vilka åtgärdar som är relevanta att genomföra."
       ],
       "set": {
         "classifiedQuestion": "question: vad är Folkhälsomyndigheten",
@@ -3466,7 +4607,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             },
             "bot": {
-              "say": "Tack!",
+              "say": [
+                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
+                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
+              ],
               "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
               "params": [
                 "classifiedQuestion",
@@ -3481,10 +4625,18 @@ export const simpleQuestionAnswers : UserTurn[] = [
                 "__ANYTHING"
               ]
             },
-            "bot": {
-              "say": "Förlåt, var det rätt eller fel svar?",
-              "repair": true
-            }
+            "bot": [
+              {
+                "cond": {
+                  "turnCount": 0
+                },
+                "say": "Förlåt, var det rätt eller fel svar?",
+                "repair": true
+              },
+              {
+                "say": "Jag förstod inte, men låt oss gå vidare"
+              }
+            ]
           }
         ]
       }
@@ -3493,6 +4645,25 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "question: vad betyder pandemi",
+      "entities": {
+        "CORONA": {
+          "name": "CORONA",
+          "enums": [
+            {
+              "name": "CORONA",
+              "alts": [
+                "covid",
+                "covid19",
+                "covid-19",
+                "corona viruset",
+                "coronavirus",
+                "covid 19",
+                "corona"
+              ]
+            }
+          ]
+        }
+      },
       "examples": [
         "vad betyder pandemi",
         "vad innebär en pandemi",
@@ -3502,7 +4673,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "En pandemi innebär en omfattande spridning till alla världens kontinenter av en helt ny typ av smittsam sjukdom. Vid en pandemi kommer sjukdomen med stor sannolikhet påverka stora delar av vårt samhälle och världens befolkning. Det är WHO som deklarerar om en smittspridning bedöms vara en pandemi, och detta gjordes den 11:e mars 2020. "
+        "En pandemi innebär en omfattande spridning till alla världens kontinenter av en helt ny typ av smittsam sjukdom. Vid en pandemi kommer sjukdomen med stor sannolikhet påverka stora delar av vårt samhälle och världens befolkning. Det är WHO som deklarerar om en smittspridning bedöms vara en pandemi, och detta gjordes den 11:e mars 2020."
       ],
       "set": {
         "classifiedQuestion": "question: vad betyder pandemi",
@@ -3548,7 +4719,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             },
             "bot": {
-              "say": "Tack!",
+              "say": [
+                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
+                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
+              ],
               "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
               "params": [
                 "classifiedQuestion",
@@ -3563,10 +4737,18 @@ export const simpleQuestionAnswers : UserTurn[] = [
                 "__ANYTHING"
               ]
             },
-            "bot": {
-              "say": "Förlåt, var det rätt eller fel svar?",
-              "repair": true
-            }
+            "bot": [
+              {
+                "cond": {
+                  "turnCount": 0
+                },
+                "say": "Förlåt, var det rätt eller fel svar?",
+                "repair": true
+              },
+              {
+                "say": "Jag förstod inte, men låt oss gå vidare"
+              }
+            ]
           }
         ]
       }
@@ -3575,12 +4757,31 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "question: vad betyder det att corona är allmänfarlig",
+      "entities": {
+        "CORONA": {
+          "name": "CORONA",
+          "enums": [
+            {
+              "name": "CORONA",
+              "alts": [
+                "covid",
+                "covid19",
+                "covid-19",
+                "corona viruset",
+                "coronavirus",
+                "covid 19",
+                "corona"
+              ]
+            }
+          ]
+        }
+      },
       "examples": [
         "vad betyder det att corona är allmänfarlig",
         "vad innebär samhällsfarlig sjukdom",
-        "vad är en samhällsfarlig sjukdom ",
+        "vad är en samhällsfarlig sjukdom",
         "vad är allmänfarlig",
-        "är corona samhällsfarlig "
+        "är corona samhällsfarlig"
       ]
     },
     "bot": {
@@ -3631,7 +4832,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             },
             "bot": {
-              "say": "Tack!",
+              "say": [
+                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
+                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
+              ],
               "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
               "params": [
                 "classifiedQuestion",
@@ -3646,10 +4850,18 @@ export const simpleQuestionAnswers : UserTurn[] = [
                 "__ANYTHING"
               ]
             },
-            "bot": {
-              "say": "Förlåt, var det rätt eller fel svar?",
-              "repair": true
-            }
+            "bot": [
+              {
+                "cond": {
+                  "turnCount": 0
+                },
+                "say": "Förlåt, var det rätt eller fel svar?",
+                "repair": true
+              },
+              {
+                "say": "Jag förstod inte, men låt oss gå vidare"
+              }
+            ]
           }
         ]
       }
@@ -3658,6 +4870,25 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "question: vad betyder droppsmitta",
+      "entities": {
+        "CORONA": {
+          "name": "CORONA",
+          "enums": [
+            {
+              "name": "CORONA",
+              "alts": [
+                "covid",
+                "covid19",
+                "covid-19",
+                "corona viruset",
+                "coronavirus",
+                "covid 19",
+                "corona"
+              ]
+            }
+          ]
+        }
+      },
       "examples": [
         "vad betyder droppsmitta",
         "vad innebär droppsmitta",
@@ -3669,7 +4900,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "Vid droppsmitta sprids smittan via droppar i luften, t.ex. när någon antingen hostar, nyser eller kräks. Dessa droppar når som regel inte längre än någon meter. Luftburen smitta rör sig om små, intorkade droppar som håller sig kvar i luften, färdas långa sträckor och smittar den som andas in dem. "
+        "Vid droppsmitta sprids smittan via droppar i luften, t.ex. när någon antingen hostar, nyser eller kräks. Dessa droppar når som regel inte längre än någon meter. Luftburen smitta rör sig om små, intorkade droppar som håller sig kvar i luften, färdas långa sträckor och smittar den som andas in dem."
       ],
       "set": {
         "classifiedQuestion": "question: vad betyder droppsmitta",
@@ -3715,7 +4946,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             },
             "bot": {
-              "say": "Tack!",
+              "say": [
+                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
+                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
+              ],
               "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
               "params": [
                 "classifiedQuestion",
@@ -3730,10 +4964,18 @@ export const simpleQuestionAnswers : UserTurn[] = [
                 "__ANYTHING"
               ]
             },
-            "bot": {
-              "say": "Förlåt, var det rätt eller fel svar?",
-              "repair": true
-            }
+            "bot": [
+              {
+                "cond": {
+                  "turnCount": 0
+                },
+                "say": "Förlåt, var det rätt eller fel svar?",
+                "repair": true
+              },
+              {
+                "say": "Jag förstod inte, men låt oss gå vidare"
+              }
+            ]
           }
         ]
       }
@@ -3742,6 +4984,25 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "question: vad är direktkontakt?",
+      "entities": {
+        "CORONA": {
+          "name": "CORONA",
+          "enums": [
+            {
+              "name": "CORONA",
+              "alts": [
+                "covid",
+                "covid19",
+                "covid-19",
+                "corona viruset",
+                "coronavirus",
+                "covid 19",
+                "corona"
+              ]
+            }
+          ]
+        }
+      },
       "examples": [
         "vad är direktkontakt?",
         "vad är indirekt kontaktsmitta?",
@@ -3797,7 +5058,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             },
             "bot": {
-              "say": "Tack!",
+              "say": [
+                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
+                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
+              ],
               "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
               "params": [
                 "classifiedQuestion",
@@ -3812,10 +5076,18 @@ export const simpleQuestionAnswers : UserTurn[] = [
                 "__ANYTHING"
               ]
             },
-            "bot": {
-              "say": "Förlåt, var det rätt eller fel svar?",
-              "repair": true
-            }
+            "bot": [
+              {
+                "cond": {
+                  "turnCount": 0
+                },
+                "say": "Förlåt, var det rätt eller fel svar?",
+                "repair": true
+              },
+              {
+                "say": "Jag förstod inte, men låt oss gå vidare"
+              }
+            ]
           }
         ]
       }
@@ -3824,6 +5096,25 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "question: hur använder jag ett andningsskydd",
+      "entities": {
+        "CORONA": {
+          "name": "CORONA",
+          "enums": [
+            {
+              "name": "CORONA",
+              "alts": [
+                "covid",
+                "covid19",
+                "covid-19",
+                "corona viruset",
+                "coronavirus",
+                "covid 19",
+                "corona"
+              ]
+            }
+          ]
+        }
+      },
       "examples": [
         "hur använder jag ett andningsskydd",
         "vad innebär andningsskydd",
@@ -3880,7 +5171,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             },
             "bot": {
-              "say": "Tack!",
+              "say": [
+                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
+                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
+              ],
               "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
               "params": [
                 "classifiedQuestion",
@@ -3895,10 +5189,18 @@ export const simpleQuestionAnswers : UserTurn[] = [
                 "__ANYTHING"
               ]
             },
-            "bot": {
-              "say": "Förlåt, var det rätt eller fel svar?",
-              "repair": true
-            }
+            "bot": [
+              {
+                "cond": {
+                  "turnCount": 0
+                },
+                "say": "Förlåt, var det rätt eller fel svar?",
+                "repair": true
+              },
+              {
+                "say": "Jag förstod inte, men låt oss gå vidare"
+              }
+            ]
           }
         ]
       }
@@ -3907,6 +5209,25 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "question: hur kan provsvaret för corona ändras",
+      "entities": {
+        "CORONA": {
+          "name": "CORONA",
+          "enums": [
+            {
+              "name": "CORONA",
+              "alts": [
+                "covid",
+                "covid19",
+                "covid-19",
+                "corona viruset",
+                "coronavirus",
+                "covid 19",
+                "corona"
+              ]
+            }
+          ]
+        }
+      },
       "examples": [
         "hur kan provsvaret för corona ändras",
         "varför ändrades provsvaret",
@@ -3963,7 +5284,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             },
             "bot": {
-              "say": "Tack!",
+              "say": [
+                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
+                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
+              ],
               "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
               "params": [
                 "classifiedQuestion",
@@ -3978,10 +5302,18 @@ export const simpleQuestionAnswers : UserTurn[] = [
                 "__ANYTHING"
               ]
             },
-            "bot": {
-              "say": "Förlåt, var det rätt eller fel svar?",
-              "repair": true
-            }
+            "bot": [
+              {
+                "cond": {
+                  "turnCount": 0
+                },
+                "say": "Förlåt, var det rätt eller fel svar?",
+                "repair": true
+              },
+              {
+                "say": "Jag förstod inte, men låt oss gå vidare"
+              }
+            ]
           }
         ]
       }
@@ -3990,6 +5322,25 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "question: hur länge kan man smitta andra?",
+      "entities": {
+        "CORONA": {
+          "name": "CORONA",
+          "enums": [
+            {
+              "name": "CORONA",
+              "alts": [
+                "covid",
+                "covid19",
+                "covid-19",
+                "corona viruset",
+                "coronavirus",
+                "covid 19",
+                "corona"
+              ]
+            }
+          ]
+        }
+      },
       "examples": [
         "hur länge kan man smitta andra?",
         "när smittar man?",
@@ -3999,7 +5350,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "Så länge patienten är sjuk, och även i samband med själva insjuknandet."
+        "Enligt Folkhälsomyndigheten drivs smittspridningen av personer med symtom på sjukdom, men en del som är sjuka får bara milda symtom. Man kan därför bli smittad av någon som inte känner sig sjuk, men som har t. ex. mild hosta. Om man varit sjuk men inte vet om man haft coronavirus, så ska man vara hemma tills man är frisk och sedan ytterligare minst två dagar. "
       ],
       "set": {
         "classifiedQuestion": "question: hur länge kan man smitta andra?",
@@ -4045,7 +5396,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             },
             "bot": {
-              "say": "Tack!",
+              "say": [
+                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
+                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
+              ],
               "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
               "params": [
                 "classifiedQuestion",
@@ -4060,10 +5414,18 @@ export const simpleQuestionAnswers : UserTurn[] = [
                 "__ANYTHING"
               ]
             },
-            "bot": {
-              "say": "Förlåt, var det rätt eller fel svar?",
-              "repair": true
-            }
+            "bot": [
+              {
+                "cond": {
+                  "turnCount": 0
+                },
+                "say": "Förlåt, var det rätt eller fel svar?",
+                "repair": true
+              },
+              {
+                "say": "Jag förstod inte, men låt oss gå vidare"
+              }
+            ]
           }
         ]
       }
@@ -4072,6 +5434,25 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "question: vad är social distansiering?",
+      "entities": {
+        "CORONA": {
+          "name": "CORONA",
+          "enums": [
+            {
+              "name": "CORONA",
+              "alts": [
+                "covid",
+                "covid19",
+                "covid-19",
+                "corona viruset",
+                "coronavirus",
+                "covid 19",
+                "corona"
+              ]
+            }
+          ]
+        }
+      },
       "examples": [
         "vad är social distansiering?",
         "vad är syftet med social distansering?",
@@ -4128,7 +5509,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             },
             "bot": {
-              "say": "Tack!",
+              "say": [
+                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
+                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
+              ],
               "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
               "params": [
                 "classifiedQuestion",
@@ -4143,10 +5527,18 @@ export const simpleQuestionAnswers : UserTurn[] = [
                 "__ANYTHING"
               ]
             },
-            "bot": {
-              "say": "Förlåt, var det rätt eller fel svar?",
-              "repair": true
-            }
+            "bot": [
+              {
+                "cond": {
+                  "turnCount": 0
+                },
+                "say": "Förlåt, var det rätt eller fel svar?",
+                "repair": true
+              },
+              {
+                "say": "Jag förstod inte, men låt oss gå vidare"
+              }
+            ]
           }
         ]
       }
@@ -4155,9 +5547,29 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "question: hur gör man social distansering?",
+      "entities": {
+        "CORONA": {
+          "name": "CORONA",
+          "enums": [
+            {
+              "name": "CORONA",
+              "alts": [
+                "covid",
+                "covid19",
+                "covid-19",
+                "corona viruset",
+                "coronavirus",
+                "covid 19",
+                "corona"
+              ]
+            }
+          ]
+        }
+      },
       "examples": [
         "hur gör man social distansering?",
         "vad kan man göra för social distansering?",
+        "hur göra social distansering?",
         "hur göra social distansering?"
       ]
     },
@@ -4209,7 +5621,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             },
             "bot": {
-              "say": "Tack!",
+              "say": [
+                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
+                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
+              ],
               "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
               "params": [
                 "classifiedQuestion",
@@ -4224,10 +5639,18 @@ export const simpleQuestionAnswers : UserTurn[] = [
                 "__ANYTHING"
               ]
             },
-            "bot": {
-              "say": "Förlåt, var det rätt eller fel svar?",
-              "repair": true
-            }
+            "bot": [
+              {
+                "cond": {
+                  "turnCount": 0
+                },
+                "say": "Förlåt, var det rätt eller fel svar?",
+                "repair": true
+              },
+              {
+                "say": "Jag förstod inte, men låt oss gå vidare"
+              }
+            ]
           }
         ]
       }
@@ -4236,16 +5659,36 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "question: hur förhindrar jag spridning av virus?",
+      "entities": {
+        "CORONA": {
+          "name": "CORONA",
+          "enums": [
+            {
+              "name": "CORONA",
+              "alts": [
+                "covid",
+                "covid19",
+                "covid-19",
+                "corona viruset",
+                "coronavirus",
+                "covid 19",
+                "corona"
+              ]
+            }
+          ]
+        }
+      },
       "examples": [
         "hur förhindrar jag spridning av virus?",
         "vad kan jag göra för att förhindra virusspridning?",
         "hur stoppar jag virusspridning?",
+        "hur förebygger jag virusspridning?",
         "hur förebygger jag virusspridning?"
       ]
     },
     "bot": {
       "say": [
-        "Tvätta händerna regelbundet och ordentligt med tvål och vatten minst 20 sekunder. Använd alcogel om tvål och vatten inte finns tillgängligt. Vidrör varken ögon, näsa eller mun med otvättade händer. Rengör och desinfektera ytor och saker som människor vanligtvis rör. Hosta och nys i böjd armbåge eller näsduk. Se alltid till att slänga näsduken i soporna. "
+        "Tvätta händerna regelbundet och ordentligt med tvål och vatten minst 20 sekunder. Använd alcogel om tvål och vatten inte finns tillgängligt. Vidrör varken ögon, näsa eller mun med otvättade händer. Rengör och desinfektera ytor och saker som människor vanligtvis rör. Hosta och nys i böjd armbåge eller näsduk. Se alltid till att slänga näsduken i soporna."
       ],
       "set": {
         "classifiedQuestion": "question: hur förhindrar jag spridning av virus?",
@@ -4291,7 +5734,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             },
             "bot": {
-              "say": "Tack!",
+              "say": [
+                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
+                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
+              ],
               "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
               "params": [
                 "classifiedQuestion",
@@ -4306,10 +5752,18 @@ export const simpleQuestionAnswers : UserTurn[] = [
                 "__ANYTHING"
               ]
             },
-            "bot": {
-              "say": "Förlåt, var det rätt eller fel svar?",
-              "repair": true
-            }
+            "bot": [
+              {
+                "cond": {
+                  "turnCount": 0
+                },
+                "say": "Förlåt, var det rätt eller fel svar?",
+                "repair": true
+              },
+              {
+                "say": "Jag förstod inte, men låt oss gå vidare"
+              }
+            ]
           }
         ]
       }
@@ -4318,11 +5772,31 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "question: kommer corona sluta spridas till sommaren?",
+      "entities": {
+        "CORONA": {
+          "name": "CORONA",
+          "enums": [
+            {
+              "name": "CORONA",
+              "alts": [
+                "covid",
+                "covid19",
+                "covid-19",
+                "corona viruset",
+                "coronavirus",
+                "covid 19",
+                "corona"
+              ]
+            }
+          ]
+        }
+      },
       "examples": [
         "kommer corona sluta spridas till sommaren?",
         "kommer virusutbrottet avstanna när det blir varmt?",
         "kommer spridningen av corona avta till sommaren?",
         "kan spridningen av corona minska när vädret blir varmare?",
+        "sprids corona långsammare i varmt väder?",
         "sprids corona långsammare i varmt väder?"
       ]
     },
@@ -4374,7 +5848,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             },
             "bot": {
-              "say": "Tack!",
+              "say": [
+                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
+                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
+              ],
               "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
               "params": [
                 "classifiedQuestion",
@@ -4389,10 +5866,18 @@ export const simpleQuestionAnswers : UserTurn[] = [
                 "__ANYTHING"
               ]
             },
-            "bot": {
-              "say": "Förlåt, var det rätt eller fel svar?",
-              "repair": true
-            }
+            "bot": [
+              {
+                "cond": {
+                  "turnCount": 0
+                },
+                "say": "Förlåt, var det rätt eller fel svar?",
+                "repair": true
+              },
+              {
+                "say": "Jag förstod inte, men låt oss gå vidare"
+              }
+            ]
           }
         ]
       }
@@ -4401,12 +5886,32 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "question: vad är inreseförbudet?",
+      "entities": {
+        "CORONA": {
+          "name": "CORONA",
+          "enums": [
+            {
+              "name": "CORONA",
+              "alts": [
+                "covid",
+                "covid19",
+                "covid-19",
+                "corona viruset",
+                "coronavirus",
+                "covid 19",
+                "corona"
+              ]
+            }
+          ]
+        }
+      },
       "examples": [
         "vad är inreseförbudet?",
         "vad händer vid inreseförbudet?",
         "när är inreseförbudet?",
         "varför har vi inreseförbud?",
-        "när börjar inreseförbudet? ",
+        "när börjar inreseförbudet?",
+        "när slutar inreseförbudet?",
         "när slutar inreseförbudet?"
       ]
     },
@@ -4458,7 +5963,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             },
             "bot": {
-              "say": "Tack!",
+              "say": [
+                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
+                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
+              ],
               "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
               "params": [
                 "classifiedQuestion",
@@ -4473,10 +5981,18 @@ export const simpleQuestionAnswers : UserTurn[] = [
                 "__ANYTHING"
               ]
             },
-            "bot": {
-              "say": "Förlåt, var det rätt eller fel svar?",
-              "repair": true
-            }
+            "bot": [
+              {
+                "cond": {
+                  "turnCount": 0
+                },
+                "say": "Förlåt, var det rätt eller fel svar?",
+                "repair": true
+              },
+              {
+                "say": "Jag förstod inte, men låt oss gå vidare"
+              }
+            ]
           }
         ]
       }
@@ -4485,6 +6001,25 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "question: vem rörs av inreseförbudet?",
+      "entities": {
+        "CORONA": {
+          "name": "CORONA",
+          "enums": [
+            {
+              "name": "CORONA",
+              "alts": [
+                "covid",
+                "covid19",
+                "covid-19",
+                "corona viruset",
+                "coronavirus",
+                "covid 19",
+                "corona"
+              ]
+            }
+          ]
+        }
+      },
       "examples": [
         "vem rörs av inreseförbudet?",
         "vem rörs inte av inreseförbudet?",
@@ -4541,7 +6076,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             },
             "bot": {
-              "say": "Tack!",
+              "say": [
+                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
+                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
+              ],
               "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
               "params": [
                 "classifiedQuestion",
@@ -4556,10 +6094,18 @@ export const simpleQuestionAnswers : UserTurn[] = [
                 "__ANYTHING"
               ]
             },
-            "bot": {
-              "say": "Förlåt, var det rätt eller fel svar?",
-              "repair": true
-            }
+            "bot": [
+              {
+                "cond": {
+                  "turnCount": 0
+                },
+                "say": "Förlåt, var det rätt eller fel svar?",
+                "repair": true
+              },
+              {
+                "say": "Jag förstod inte, men låt oss gå vidare"
+              }
+            ]
           }
         ]
       }
@@ -4568,6 +6114,25 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "question: kan man testa sig hemma för corona?",
+      "entities": {
+        "CORONA": {
+          "name": "CORONA",
+          "enums": [
+            {
+              "name": "CORONA",
+              "alts": [
+                "covid",
+                "covid19",
+                "covid-19",
+                "corona viruset",
+                "coronavirus",
+                "covid 19",
+                "corona"
+              ]
+            }
+          ]
+        }
+      },
       "examples": [
         "kan man testa sig hemma för corona?",
         "kan man testa sig hemma för covid?",
@@ -4624,7 +6189,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             },
             "bot": {
-              "say": "Tack!",
+              "say": [
+                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
+                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
+              ],
               "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
               "params": [
                 "classifiedQuestion",
@@ -4639,10 +6207,18 @@ export const simpleQuestionAnswers : UserTurn[] = [
                 "__ANYTHING"
               ]
             },
-            "bot": {
-              "say": "Förlåt, var det rätt eller fel svar?",
-              "repair": true
-            }
+            "bot": [
+              {
+                "cond": {
+                  "turnCount": 0
+                },
+                "say": "Förlåt, var det rätt eller fel svar?",
+                "repair": true
+              },
+              {
+                "say": "Jag förstod inte, men låt oss gå vidare"
+              }
+            ]
           }
         ]
       }
@@ -4651,6 +6227,25 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "question: behöver man läsa via distans nu?",
+      "entities": {
+        "CORONA": {
+          "name": "CORONA",
+          "enums": [
+            {
+              "name": "CORONA",
+              "alts": [
+                "covid",
+                "covid19",
+                "covid-19",
+                "corona viruset",
+                "coronavirus",
+                "covid 19",
+                "corona"
+              ]
+            }
+          ]
+        }
+      },
       "examples": [
         "behöver man läsa via distans nu?",
         "varför behöver skolorna läsa på distans?",
@@ -4662,7 +6257,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "För att bromsa spridningen av covid-19 rekommenderar Folkhälsomyndigheten från den 17 mars 2020 att undervisningen i gymnasieskolor, universitet, högskolor, yrkeshögskolor och komvux ska ske på distans. "
+        "För att bromsa spridningen av covid-19 rekommenderar Folkhälsomyndigheten från den 17 mars 2020 att undervisningen i gymnasieskolor, universitet, högskolor, yrkeshögskolor och komvux ska ske på distans."
       ],
       "set": {
         "classifiedQuestion": "question: behöver man läsa via distans nu?",
@@ -4708,7 +6303,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             },
             "bot": {
-              "say": "Tack!",
+              "say": [
+                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
+                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
+              ],
               "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
               "params": [
                 "classifiedQuestion",
@@ -4723,10 +6321,18 @@ export const simpleQuestionAnswers : UserTurn[] = [
                 "__ANYTHING"
               ]
             },
-            "bot": {
-              "say": "Förlåt, var det rätt eller fel svar?",
-              "repair": true
-            }
+            "bot": [
+              {
+                "cond": {
+                  "turnCount": 0
+                },
+                "say": "Förlåt, var det rätt eller fel svar?",
+                "repair": true
+              },
+              {
+                "say": "Jag förstod inte, men låt oss gå vidare"
+              }
+            ]
           }
         ]
       }
@@ -4735,6 +6341,25 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "question: vad gäller angående undervisning i grundskolor?",
+      "entities": {
+        "CORONA": {
+          "name": "CORONA",
+          "enums": [
+            {
+              "name": "CORONA",
+              "alts": [
+                "covid",
+                "covid19",
+                "covid-19",
+                "corona viruset",
+                "coronavirus",
+                "covid 19",
+                "corona"
+              ]
+            }
+          ]
+        }
+      },
       "examples": [
         "vad gäller angående undervisning i grundskolor?",
         "behöver elever i grundskolan läsa på distans?",
@@ -4793,7 +6418,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             },
             "bot": {
-              "say": "Tack!",
+              "say": [
+                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
+                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
+              ],
               "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
               "params": [
                 "classifiedQuestion",
@@ -4808,10 +6436,18 @@ export const simpleQuestionAnswers : UserTurn[] = [
                 "__ANYTHING"
               ]
             },
-            "bot": {
-              "say": "Förlåt, var det rätt eller fel svar?",
-              "repair": true
-            }
+            "bot": [
+              {
+                "cond": {
+                  "turnCount": 0
+                },
+                "say": "Förlåt, var det rätt eller fel svar?",
+                "repair": true
+              },
+              {
+                "say": "Jag förstod inte, men låt oss gå vidare"
+              }
+            ]
           }
         ]
       }
@@ -4820,6 +6456,25 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "question: hur ska man bete sig om man är över 70 år?",
+      "entities": {
+        "CORONA": {
+          "name": "CORONA",
+          "enums": [
+            {
+              "name": "CORONA",
+              "alts": [
+                "covid",
+                "covid19",
+                "covid-19",
+                "corona viruset",
+                "coronavirus",
+                "covid 19",
+                "corona"
+              ]
+            }
+          ]
+        }
+      },
       "examples": [
         "hur ska man bete sig om man är över 70 år?",
         "hur ska äldre bete sig?",
@@ -4878,7 +6533,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             },
             "bot": {
-              "say": "Tack!",
+              "say": [
+                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
+                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
+              ],
               "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
               "params": [
                 "classifiedQuestion",
@@ -4893,10 +6551,18 @@ export const simpleQuestionAnswers : UserTurn[] = [
                 "__ANYTHING"
               ]
             },
-            "bot": {
-              "say": "Förlåt, var det rätt eller fel svar?",
-              "repair": true
-            }
+            "bot": [
+              {
+                "cond": {
+                  "turnCount": 0
+                },
+                "say": "Förlåt, var det rätt eller fel svar?",
+                "repair": true
+              },
+              {
+                "say": "Jag förstod inte, men låt oss gå vidare"
+              }
+            ]
           }
         ]
       }
@@ -4905,6 +6571,25 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "question: hur skyddar vi de äldre?",
+      "entities": {
+        "CORONA": {
+          "name": "CORONA",
+          "enums": [
+            {
+              "name": "CORONA",
+              "alts": [
+                "covid",
+                "covid19",
+                "covid-19",
+                "corona viruset",
+                "coronavirus",
+                "covid 19",
+                "corona"
+              ]
+            }
+          ]
+        }
+      },
       "examples": [
         "hur skyddar vi de äldre?",
         "hur skyddar vi de som är 70 år eller äldre?",
@@ -4962,7 +6647,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             },
             "bot": {
-              "say": "Tack!",
+              "say": [
+                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
+                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
+              ],
               "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
               "params": [
                 "classifiedQuestion",
@@ -4977,10 +6665,18 @@ export const simpleQuestionAnswers : UserTurn[] = [
                 "__ANYTHING"
               ]
             },
-            "bot": {
-              "say": "Förlåt, var det rätt eller fel svar?",
-              "repair": true
-            }
+            "bot": [
+              {
+                "cond": {
+                  "turnCount": 0
+                },
+                "say": "Förlåt, var det rätt eller fel svar?",
+                "repair": true
+              },
+              {
+                "say": "Jag förstod inte, men låt oss gå vidare"
+              }
+            ]
           }
         ]
       }
@@ -4989,6 +6685,25 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "question: vem kan testas för corona?",
+      "entities": {
+        "CORONA": {
+          "name": "CORONA",
+          "enums": [
+            {
+              "name": "CORONA",
+              "alts": [
+                "covid",
+                "covid19",
+                "covid-19",
+                "corona viruset",
+                "coronavirus",
+                "covid 19",
+                "corona"
+              ]
+            }
+          ]
+        }
+      },
       "examples": [
         "vem kan testas för corona?",
         "vilka personer kan testa sig för corona?",
@@ -4999,7 +6714,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "Personer som är i behov av vård på sjukhus, alternativt personal inom sjukvård och äldreomsorg med misstänkt covid-19. Alla som är sjuka i förkylning eller influensaliknande symtom ska vara hemma för att inte riskera att sprida smitta vidare till andra. "
+        "Personer som är i behov av vård på sjukhus, alternativt personal inom sjukvård och äldreomsorg med misstänkt smitta av det nya coronaviruset. Alla som är sjuka i förkylning eller influensaliknande symtom ska vara hemma för att inte riskera att sprida smitta vidare till andra."
       ],
       "set": {
         "classifiedQuestion": "question: vem kan testas för corona?",
@@ -5045,7 +6760,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             },
             "bot": {
-              "say": "Tack!",
+              "say": [
+                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
+                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
+              ],
               "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
               "params": [
                 "classifiedQuestion",
@@ -5060,10 +6778,18 @@ export const simpleQuestionAnswers : UserTurn[] = [
                 "__ANYTHING"
               ]
             },
-            "bot": {
-              "say": "Förlåt, var det rätt eller fel svar?",
-              "repair": true
-            }
+            "bot": [
+              {
+                "cond": {
+                  "turnCount": 0
+                },
+                "say": "Förlåt, var det rätt eller fel svar?",
+                "repair": true
+              },
+              {
+                "say": "Jag förstod inte, men låt oss gå vidare"
+              }
+            ]
           }
         ]
       }
@@ -5072,6 +6798,25 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "question: måste alla i familjen stanna hemma om en är sjuk?",
+      "entities": {
+        "CORONA": {
+          "name": "CORONA",
+          "enums": [
+            {
+              "name": "CORONA",
+              "alts": [
+                "covid",
+                "covid19",
+                "covid-19",
+                "corona viruset",
+                "coronavirus",
+                "covid 19",
+                "corona"
+              ]
+            }
+          ]
+        }
+      },
       "examples": [
         "måste alla i familjen stanna hemma om en är sjuk?",
         "måste man stanna hemma om någon i hushållet är sjuk?",
@@ -5082,7 +6827,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "Så länge andra familjemedlemmar inte har symtom kan de göra som vanligt och gå till skola, förskola eller jobb."
+        "Så länge andra familjemedlemmar inte har symtom kan de göra som vanligt. Det är dock väldigt viktigt att vara uppmärksam på symptom och stanna hemma vid första tecken på sjukdom."
       ],
       "set": {
         "classifiedQuestion": "question: måste alla i familjen stanna hemma om en är sjuk?",
@@ -5128,7 +6873,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             },
             "bot": {
-              "say": "Tack!",
+              "say": [
+                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
+                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
+              ],
               "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
               "params": [
                 "classifiedQuestion",
@@ -5143,10 +6891,18 @@ export const simpleQuestionAnswers : UserTurn[] = [
                 "__ANYTHING"
               ]
             },
-            "bot": {
-              "say": "Förlåt, var det rätt eller fel svar?",
-              "repair": true
-            }
+            "bot": [
+              {
+                "cond": {
+                  "turnCount": 0
+                },
+                "say": "Förlåt, var det rätt eller fel svar?",
+                "repair": true
+              },
+              {
+                "say": "Jag förstod inte, men låt oss gå vidare"
+              }
+            ]
           }
         ]
       }

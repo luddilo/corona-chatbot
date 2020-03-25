@@ -3,16 +3,16 @@ import { List, Item } from "narratory"
 export const listOptions = new List({
   items: [
     new Item({
-      title: "Hur skyddar jag mig?"
+      title: "Vad är coronavirus?"
     }),
     new Item({
-      title: "Är min region extra hotad?"
+      title: "Hur smittar coronaviruset?"
     }),
     new Item({
-      title: "Behöver jag stanna hemma?"
+      title: "Vilka är de vanligaste symptomen?"
     }),
     new Item({
-      title: "Hur ska jag ta hand om mina nära och kära?"
+      title: "Hur skyddar man sig från smittan?"
     })
   ]
 })

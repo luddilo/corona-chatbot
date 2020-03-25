@@ -1,4 +1,4 @@
-import { BotTurn, ANYTHING, EXIT } from "narratory"
+import { BotTurn, ANYTHING, EXIT, BridgeTurn } from "narratory"
 import * as nlu from "./nlu"
 import { answerFallback } from "./answers/fallback"
 
@@ -22,19 +22,29 @@ const intro = {
       cond: {
         platform: "voximplant"
       },
-      text: "Jag är en testversion av en chatt-bått för att svara på frågor om Coronaviruset"
-    }
+      text: "Jag är en chatt-bått som kan svara på frågor om det nya Coronaviruset"
+    },
+    "Jag kan svara på frågor om det nya Corona viruset"
   ]
 }
 
-const querySymptoms: BotTurn = {
+const querySymptoms: BridgeTurn = {
   cond: {
     user_hotStarted: false
   },
-  say: {
-    text: [
-      "Inledningsvis vill jag säga att om du har symptom som problem med luftvägarna, hosta, feber eller halsont ska du stanna hemma. Om du har problem med andning, ring 1 1 2. Så"
-    ]
+  say: [
+    {
+      cond: { platform: "voximplant" },
+      text:
+        "Inledningsvis vill jag säga att om du känner dig sjukt är det viktigt att du stannar hemma. Om du har problem med andning, ring 1 1 2."
+    },
+    {
+      text:
+        "Inledningsvis vill jag säga att om du känner dig sjukt är det viktigt att du stannar hemma. Om du har problem med andning, ring 112."
+    }
+  ],
+  bot: {
+    say: "Så."
   }
 }
 
@@ -53,9 +63,9 @@ const queryQuestions: BotTurn = {
         "Undrar du någonting om det nya Corona-viruset?"
       ],
       ssml: [
-        "Har du några frågor till mig om Corona-viruset", // Since pronounciation of COVID-19 isn't great..
+        "Har du några frågor till mig?",
         "Undrar du någonting?",
-        "Undrar du någonting om det nya Corona-viruset?"
+        "Undrar du någonting om det nya Corona-viruset?" // Since pronounciation of COVID-19 isn't great..
       ]
     },
     {

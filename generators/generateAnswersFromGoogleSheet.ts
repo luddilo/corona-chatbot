@@ -1,13 +1,11 @@
-import Axios from "axios"
-import { UserTurn, ANYTHING, Intent } from "narratory"
-import { confirmRight, confirmWrong } from "../src/nlu"
-import { getLinesFromTsv } from "./getLines"
+import { UserTurn } from "narratory"
 import { getAnswerWithPrompts } from "./getAnswerWithPrompts"
 import { getUserTurn } from "./getUserTurn"
 import { getFaq } from "./getFaq"
 import { getEntities } from "./generateEntities"
+import * as fs from "fs"
 
-const generateSimpleAnswers = async () => {
+export const generateSimpleAnswers = async () => {
   console.log("Generating src/answers/generatedFAQ.ts")
   const faq = await getFaq()
   console.log("Got faq from Google sheet")
@@ -43,11 +41,7 @@ const generateSimpleAnswers = async () => {
     2
   )}`
 
-  await require("fs").writeFile("src/answers/generatedFAQ.ts", str, (err: any) => {
-    if (err) console.log("Failed writing generated FAQ file. Err:", err)
-  })
-  console.log("Printed file")
-  //process.exit()
-}
+  fs.writeFileSync("src/answers/generatedFAQ.ts", str)
 
-generateSimpleAnswers()
+  console.log("Printed file")
+}

@@ -37,82 +37,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Enligt Folkhälsomyndigheten är de vanligaste symtomen feber och hosta, men även andningspåverkan, halsont, huvudvärk, muskel- och ledvärk är vanliga symtom. De flesta får lindriga besvär som går över av sig själva med egenvård i hemmet. En del blir allvarligt sjuka med exempelvis svårigheter att andas och lunginflammation."
       ],
       "set": {
-        "classifiedQuestion": "question: vad är symptomen",
-        "classifiedUtterance": "_user_text"
-      },
-      "bot": {
-        "say": "Var det ett korrekt svar?",
-        "user": [
-          {
-            "intent": {
-              "name": "confirmRight",
-              "examples": [
-                "ja",
-                "japp",
-                "absolut",
-                "okej",
-                "jajamän",
-                "alright",
-                "yes",
-                "korrekt",
-                "det stämmer",
-                "det är rätt",
-                "rätt",
-                "stämmer"
-              ]
-            },
-            "bot": "Tack!"
-          },
-          {
-            "intent": {
-              "name": "confirmWrong",
-              "examples": [
-                "nej",
-                "nope",
-                "no",
-                "aldrig",
-                "jag vill inte",
-                "ej korrekt",
-                "det stämmer inte",
-                "det är fel",
-                "fel",
-                "stämmer ej"
-              ]
-            },
-            "bot": {
-              "say": [
-                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
-                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
-              ],
-              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-              "params": [
-                "classifiedQuestion",
-                "classifiedUtterance"
-              ],
-              "asyncWebhook": true
-            }
-          },
-          {
-            "intent": {
-              "examples": [
-                "__ANYTHING"
-              ]
-            },
-            "bot": [
-              {
-                "cond": {
-                  "turnCount": 0
-                },
-                "say": "Förlåt, var det rätt eller fel svar?",
-                "repair": true
-              },
-              {
-                "say": "Jag förstod inte, men låt oss gå vidare"
-              }
-            ]
-          }
+        "classifiedIntentName": "question: vad är symptomen",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Enligt Folkhälsomyndigheten är de vanligaste symtomen feber och hosta, men även andningspåverkan, halsont, huvudvärk, muskel- och ledvärk är vanliga symtom. De flesta får lindriga besvär som går över av sig själva med egenvård i hemmet. En del blir allvarligt sjuka med exempelvis svårigheter att andas och lunginflammation."
         ]
-      }
+      },
+      "goto": "VERIFY_ANSWER"
     }
   },
   {
@@ -151,82 +82,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Viruset smittar i första hand genom kontakt med droppar och sekret från luftvägarna. Smitta kan därför ske vid hostningar och nysningar, eller vid kontakt med personer. Det är fortfarande oklart om viruset kan smitta via droppar som landat på ytor eller föremål. Genom att tvätta händerna och undvika att röra vid ansiktet samt att undvika nära kontakt med sjuka människor minskar risken för smitta. "
       ],
       "set": {
-        "classifiedQuestion": "question: hur smittar det",
-        "classifiedUtterance": "_user_text"
-      },
-      "bot": {
-        "say": "Var det ett korrekt svar?",
-        "user": [
-          {
-            "intent": {
-              "name": "confirmRight",
-              "examples": [
-                "ja",
-                "japp",
-                "absolut",
-                "okej",
-                "jajamän",
-                "alright",
-                "yes",
-                "korrekt",
-                "det stämmer",
-                "det är rätt",
-                "rätt",
-                "stämmer"
-              ]
-            },
-            "bot": "Tack!"
-          },
-          {
-            "intent": {
-              "name": "confirmWrong",
-              "examples": [
-                "nej",
-                "nope",
-                "no",
-                "aldrig",
-                "jag vill inte",
-                "ej korrekt",
-                "det stämmer inte",
-                "det är fel",
-                "fel",
-                "stämmer ej"
-              ]
-            },
-            "bot": {
-              "say": [
-                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
-                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
-              ],
-              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-              "params": [
-                "classifiedQuestion",
-                "classifiedUtterance"
-              ],
-              "asyncWebhook": true
-            }
-          },
-          {
-            "intent": {
-              "examples": [
-                "__ANYTHING"
-              ]
-            },
-            "bot": [
-              {
-                "cond": {
-                  "turnCount": 0
-                },
-                "say": "Förlåt, var det rätt eller fel svar?",
-                "repair": true
-              },
-              {
-                "say": "Jag förstod inte, men låt oss gå vidare"
-              }
-            ]
-          }
+        "classifiedIntentName": "question: hur smittar det",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Viruset smittar i första hand genom kontakt med droppar och sekret från luftvägarna. Smitta kan därför ske vid hostningar och nysningar, eller vid kontakt med personer. Det är fortfarande oklart om viruset kan smitta via droppar som landat på ytor eller föremål. Genom att tvätta händerna och undvika att röra vid ansiktet samt att undvika nära kontakt med sjuka människor minskar risken för smitta. "
         ]
-      }
+      },
+      "goto": "VERIFY_ANSWER"
     }
   },
   {
@@ -265,82 +127,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Alla kan få coronavirus. Många får bara milda symptom, men vissa blir väldigt sjuka och behöver vård. Även de med milda symptom kan smitta, vilket kan bli farligt om de smittar människor i riskgrupper. Enligt Folkhälsomyndigheten visar studier att hög ålder är den främsta riskfaktorn för att bli väldigt sjuk. Personer med hög ålder i kombination med andra sjukdomar, såsom högt blodtryck, hjärt- kärlsjukdom, lungsjukdom, cancer eller diabetes är extra utsatta.  Just nu rekommenderas du som är över 70 år att försöka undvika platser med många människor, för att vara extra försiktig. Det kan exempelvis vara kollektivtrafiken, affärer eller apotek. Har du någon i din närhet som kan hjälpa dig med ärenden, så fråga dem. Men undvik nära kontakt med andra människor. Du kan också kontakta kommunen där du bor om du behöver hjälp."
       ],
       "set": {
-        "classifiedQuestion": "question: vilka är i riskzonen",
-        "classifiedUtterance": "_user_text"
-      },
-      "bot": {
-        "say": "Var det ett korrekt svar?",
-        "user": [
-          {
-            "intent": {
-              "name": "confirmRight",
-              "examples": [
-                "ja",
-                "japp",
-                "absolut",
-                "okej",
-                "jajamän",
-                "alright",
-                "yes",
-                "korrekt",
-                "det stämmer",
-                "det är rätt",
-                "rätt",
-                "stämmer"
-              ]
-            },
-            "bot": "Tack!"
-          },
-          {
-            "intent": {
-              "name": "confirmWrong",
-              "examples": [
-                "nej",
-                "nope",
-                "no",
-                "aldrig",
-                "jag vill inte",
-                "ej korrekt",
-                "det stämmer inte",
-                "det är fel",
-                "fel",
-                "stämmer ej"
-              ]
-            },
-            "bot": {
-              "say": [
-                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
-                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
-              ],
-              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-              "params": [
-                "classifiedQuestion",
-                "classifiedUtterance"
-              ],
-              "asyncWebhook": true
-            }
-          },
-          {
-            "intent": {
-              "examples": [
-                "__ANYTHING"
-              ]
-            },
-            "bot": [
-              {
-                "cond": {
-                  "turnCount": 0
-                },
-                "say": "Förlåt, var det rätt eller fel svar?",
-                "repair": true
-              },
-              {
-                "say": "Jag förstod inte, men låt oss gå vidare"
-              }
-            ]
-          }
+        "classifiedIntentName": "question: vilka är i riskzonen",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Alla kan få coronavirus. Många får bara milda symptom, men vissa blir väldigt sjuka och behöver vård. Även de med milda symptom kan smitta, vilket kan bli farligt om de smittar människor i riskgrupper. Enligt Folkhälsomyndigheten visar studier att hög ålder är den främsta riskfaktorn för att bli väldigt sjuk. Personer med hög ålder i kombination med andra sjukdomar, såsom högt blodtryck, hjärt- kärlsjukdom, lungsjukdom, cancer eller diabetes är extra utsatta.  Just nu rekommenderas du som är över 70 år att försöka undvika platser med många människor, för att vara extra försiktig. Det kan exempelvis vara kollektivtrafiken, affärer eller apotek. Har du någon i din närhet som kan hjälpa dig med ärenden, så fråga dem. Men undvik nära kontakt med andra människor. Du kan också kontakta kommunen där du bor om du behöver hjälp."
         ]
-      }
+      },
+      "goto": "VERIFY_ANSWER"
     }
   },
   {
@@ -378,82 +171,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Undvik att röra vid ansiktet och ögonen, och undvik kontakt med sjuka människor. Tvätta händerna väldigt ofta med tvål och varmt vatten. Om du är ute där du inte har tvål och vatten så kan du använda handsprit. Genom att hosta och nysa i armvecket eller i en pappersnäsduk hindrar du smitta från att spridas i din omgivning eller från att förorena dina händer. Stanna hemma om du känner dig krasslig, även om det bara är väldigt lätta symtom. Även personer som inte känner sig så sjuka och bara har lite hosta eller feber kan smitta andra. Du kan smitta så länge du har symtom, och även några dagar efteråt, så stanna hemma i några dagar även om du känner dig frisk igen."
       ],
       "set": {
-        "classifiedQuestion": "question: hur skyddar man sig",
-        "classifiedUtterance": "_user_text"
-      },
-      "bot": {
-        "say": "Var det ett korrekt svar?",
-        "user": [
-          {
-            "intent": {
-              "name": "confirmRight",
-              "examples": [
-                "ja",
-                "japp",
-                "absolut",
-                "okej",
-                "jajamän",
-                "alright",
-                "yes",
-                "korrekt",
-                "det stämmer",
-                "det är rätt",
-                "rätt",
-                "stämmer"
-              ]
-            },
-            "bot": "Tack!"
-          },
-          {
-            "intent": {
-              "name": "confirmWrong",
-              "examples": [
-                "nej",
-                "nope",
-                "no",
-                "aldrig",
-                "jag vill inte",
-                "ej korrekt",
-                "det stämmer inte",
-                "det är fel",
-                "fel",
-                "stämmer ej"
-              ]
-            },
-            "bot": {
-              "say": [
-                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
-                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
-              ],
-              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-              "params": [
-                "classifiedQuestion",
-                "classifiedUtterance"
-              ],
-              "asyncWebhook": true
-            }
-          },
-          {
-            "intent": {
-              "examples": [
-                "__ANYTHING"
-              ]
-            },
-            "bot": [
-              {
-                "cond": {
-                  "turnCount": 0
-                },
-                "say": "Förlåt, var det rätt eller fel svar?",
-                "repair": true
-              },
-              {
-                "say": "Jag förstod inte, men låt oss gå vidare"
-              }
-            ]
-          }
+        "classifiedIntentName": "question: hur skyddar man sig",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Undvik att röra vid ansiktet och ögonen, och undvik kontakt med sjuka människor. Tvätta händerna väldigt ofta med tvål och varmt vatten. Om du är ute där du inte har tvål och vatten så kan du använda handsprit. Genom att hosta och nysa i armvecket eller i en pappersnäsduk hindrar du smitta från att spridas i din omgivning eller från att förorena dina händer. Stanna hemma om du känner dig krasslig, även om det bara är väldigt lätta symtom. Även personer som inte känner sig så sjuka och bara har lite hosta eller feber kan smitta andra. Du kan smitta så länge du har symtom, och även några dagar efteråt, så stanna hemma i några dagar även om du känner dig frisk igen."
         ]
-      }
+      },
+      "goto": "VERIFY_ANSWER"
     }
   },
   {
@@ -495,82 +219,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Det är oklart hur länge man kommer att vara immun. Utifrån tidigare erfarenheter så är bedömningen att immuniteten varar så länge att man inte kommer att smittas fler gånger under en och samma säsong."
       ],
       "set": {
-        "classifiedQuestion": "question: Kan man smittas flera gånger",
-        "classifiedUtterance": "_user_text"
-      },
-      "bot": {
-        "say": "Var det ett korrekt svar?",
-        "user": [
-          {
-            "intent": {
-              "name": "confirmRight",
-              "examples": [
-                "ja",
-                "japp",
-                "absolut",
-                "okej",
-                "jajamän",
-                "alright",
-                "yes",
-                "korrekt",
-                "det stämmer",
-                "det är rätt",
-                "rätt",
-                "stämmer"
-              ]
-            },
-            "bot": "Tack!"
-          },
-          {
-            "intent": {
-              "name": "confirmWrong",
-              "examples": [
-                "nej",
-                "nope",
-                "no",
-                "aldrig",
-                "jag vill inte",
-                "ej korrekt",
-                "det stämmer inte",
-                "det är fel",
-                "fel",
-                "stämmer ej"
-              ]
-            },
-            "bot": {
-              "say": [
-                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
-                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
-              ],
-              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-              "params": [
-                "classifiedQuestion",
-                "classifiedUtterance"
-              ],
-              "asyncWebhook": true
-            }
-          },
-          {
-            "intent": {
-              "examples": [
-                "__ANYTHING"
-              ]
-            },
-            "bot": [
-              {
-                "cond": {
-                  "turnCount": 0
-                },
-                "say": "Förlåt, var det rätt eller fel svar?",
-                "repair": true
-              },
-              {
-                "say": "Jag förstod inte, men låt oss gå vidare"
-              }
-            ]
-          }
+        "classifiedIntentName": "question: Kan man smittas flera gånger",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Det är oklart hur länge man kommer att vara immun. Utifrån tidigare erfarenheter så är bedömningen att immuniteten varar så länge att man inte kommer att smittas fler gånger under en och samma säsong."
         ]
-      }
+      },
+      "goto": "VERIFY_ANSWER"
     }
   },
   {
@@ -611,82 +266,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Känner du dig sjuk med symtom som snuva, hosta eller feber ska du låta bli att träffa andra människor. Det gäller även om du bara känner dig lite sjuk. Du ska inte gå till jobbet eller skolan, inte resa med buss, tåg, tunnelbana eller flyg och inte heller gå ut för att handla. Om du känner dig det minsta sjuk, stanna hemma. När du känner dig helt frisk, stanna hemma i minst två dagar till.  Folkhälsomyndigheten ger också rådet att du jobbar hemifrån i den mån det är möjligt, även om du är frisk. Syftet är att minska hastigheten i smittspridningen och att hålla nere antalet personer som behöver sjukhusvård. Många länder i världen uppmanar människor att hålla sig hemma även om de är friska för att sakta ner smittspridningen."
       ],
       "set": {
-        "classifiedQuestion": "question: ska jag stanna hemma",
-        "classifiedUtterance": "_user_text"
-      },
-      "bot": {
-        "say": "Var det ett korrekt svar?",
-        "user": [
-          {
-            "intent": {
-              "name": "confirmRight",
-              "examples": [
-                "ja",
-                "japp",
-                "absolut",
-                "okej",
-                "jajamän",
-                "alright",
-                "yes",
-                "korrekt",
-                "det stämmer",
-                "det är rätt",
-                "rätt",
-                "stämmer"
-              ]
-            },
-            "bot": "Tack!"
-          },
-          {
-            "intent": {
-              "name": "confirmWrong",
-              "examples": [
-                "nej",
-                "nope",
-                "no",
-                "aldrig",
-                "jag vill inte",
-                "ej korrekt",
-                "det stämmer inte",
-                "det är fel",
-                "fel",
-                "stämmer ej"
-              ]
-            },
-            "bot": {
-              "say": [
-                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
-                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
-              ],
-              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-              "params": [
-                "classifiedQuestion",
-                "classifiedUtterance"
-              ],
-              "asyncWebhook": true
-            }
-          },
-          {
-            "intent": {
-              "examples": [
-                "__ANYTHING"
-              ]
-            },
-            "bot": [
-              {
-                "cond": {
-                  "turnCount": 0
-                },
-                "say": "Förlåt, var det rätt eller fel svar?",
-                "repair": true
-              },
-              {
-                "say": "Jag förstod inte, men låt oss gå vidare"
-              }
-            ]
-          }
+        "classifiedIntentName": "question: ska jag stanna hemma",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Känner du dig sjuk med symtom som snuva, hosta eller feber ska du låta bli att träffa andra människor. Det gäller även om du bara känner dig lite sjuk. Du ska inte gå till jobbet eller skolan, inte resa med buss, tåg, tunnelbana eller flyg och inte heller gå ut för att handla. Om du känner dig det minsta sjuk, stanna hemma. När du känner dig helt frisk, stanna hemma i minst två dagar till.  Folkhälsomyndigheten ger också rådet att du jobbar hemifrån i den mån det är möjligt, även om du är frisk. Syftet är att minska hastigheten i smittspridningen och att hålla nere antalet personer som behöver sjukhusvård. Många länder i världen uppmanar människor att hålla sig hemma även om de är friska för att sakta ner smittspridningen."
         ]
-      }
+      },
+      "goto": "VERIFY_ANSWER"
     }
   },
   {
@@ -722,85 +308,16 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "Stanna hemma tills du är helt frisk och stanna sedan hemma i minst två dygn till innan du går till jobbet, åker i kollektivtrafiken eller går och handlar. Om du har äldre släktingar, kan du som anhörig och närstående undvika att träffa dem, särskilt om du har varit sjuk. Det är för att skydda dem från virus."
+        "Stanna hemma tills du är helt frisk och i minst två dygn till innan du går till jobbet, åker i kollektivtrafiken eller går och handlar. Om du har äldre släktingar, kan du som anhörig och närstående undvika att träffa dem, särskilt om du har varit sjuk. Det är för att skydda dem från virus."
       ],
       "set": {
-        "classifiedQuestion": "question: hur många dagar ska jag stanna hemma",
-        "classifiedUtterance": "_user_text"
-      },
-      "bot": {
-        "say": "Var det ett korrekt svar?",
-        "user": [
-          {
-            "intent": {
-              "name": "confirmRight",
-              "examples": [
-                "ja",
-                "japp",
-                "absolut",
-                "okej",
-                "jajamän",
-                "alright",
-                "yes",
-                "korrekt",
-                "det stämmer",
-                "det är rätt",
-                "rätt",
-                "stämmer"
-              ]
-            },
-            "bot": "Tack!"
-          },
-          {
-            "intent": {
-              "name": "confirmWrong",
-              "examples": [
-                "nej",
-                "nope",
-                "no",
-                "aldrig",
-                "jag vill inte",
-                "ej korrekt",
-                "det stämmer inte",
-                "det är fel",
-                "fel",
-                "stämmer ej"
-              ]
-            },
-            "bot": {
-              "say": [
-                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
-                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
-              ],
-              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-              "params": [
-                "classifiedQuestion",
-                "classifiedUtterance"
-              ],
-              "asyncWebhook": true
-            }
-          },
-          {
-            "intent": {
-              "examples": [
-                "__ANYTHING"
-              ]
-            },
-            "bot": [
-              {
-                "cond": {
-                  "turnCount": 0
-                },
-                "say": "Förlåt, var det rätt eller fel svar?",
-                "repair": true
-              },
-              {
-                "say": "Jag förstod inte, men låt oss gå vidare"
-              }
-            ]
-          }
+        "classifiedIntentName": "question: hur många dagar ska jag stanna hemma",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Stanna hemma tills du är helt frisk och i minst två dygn till innan du går till jobbet, åker i kollektivtrafiken eller går och handlar. Om du har äldre släktingar, kan du som anhörig och närstående undvika att träffa dem, särskilt om du har varit sjuk. Det är för att skydda dem från virus."
         ]
-      }
+      },
+      "goto": "VERIFY_ANSWER"
     }
   },
   {
@@ -838,82 +355,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Enligt Vårdguiden blir de allra flesta som smittas lindrigt sjuka med luftvägssymtom som går över av sig själva, men vissa drabbas av allvarligare sjukdom som lunginflammation. De som blir allvarligt sjuka kan behöva läggas in på sjukhus och få hjälp med andningen. Därför är det viktigt att inte för många blir sjuka samtidigt."
       ],
       "set": {
-        "classifiedQuestion": "question: hur sjuk blir man av corona",
-        "classifiedUtterance": "_user_text"
-      },
-      "bot": {
-        "say": "Var det ett korrekt svar?",
-        "user": [
-          {
-            "intent": {
-              "name": "confirmRight",
-              "examples": [
-                "ja",
-                "japp",
-                "absolut",
-                "okej",
-                "jajamän",
-                "alright",
-                "yes",
-                "korrekt",
-                "det stämmer",
-                "det är rätt",
-                "rätt",
-                "stämmer"
-              ]
-            },
-            "bot": "Tack!"
-          },
-          {
-            "intent": {
-              "name": "confirmWrong",
-              "examples": [
-                "nej",
-                "nope",
-                "no",
-                "aldrig",
-                "jag vill inte",
-                "ej korrekt",
-                "det stämmer inte",
-                "det är fel",
-                "fel",
-                "stämmer ej"
-              ]
-            },
-            "bot": {
-              "say": [
-                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
-                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
-              ],
-              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-              "params": [
-                "classifiedQuestion",
-                "classifiedUtterance"
-              ],
-              "asyncWebhook": true
-            }
-          },
-          {
-            "intent": {
-              "examples": [
-                "__ANYTHING"
-              ]
-            },
-            "bot": [
-              {
-                "cond": {
-                  "turnCount": 0
-                },
-                "say": "Förlåt, var det rätt eller fel svar?",
-                "repair": true
-              },
-              {
-                "say": "Jag förstod inte, men låt oss gå vidare"
-              }
-            ]
-          }
+        "classifiedIntentName": "question: hur sjuk blir man av corona",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Enligt Vårdguiden blir de allra flesta som smittas lindrigt sjuka med luftvägssymtom som går över av sig själva, men vissa drabbas av allvarligare sjukdom som lunginflammation. De som blir allvarligt sjuka kan behöva läggas in på sjukhus och få hjälp med andningen. Därför är det viktigt att inte för många blir sjuka samtidigt."
         ]
-      }
+      },
+      "goto": "VERIFY_ANSWER"
     }
   },
   {
@@ -951,82 +399,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Enligt Folkhälsomyndigheten blir flesta som fått lindriga symtom  friska efter två veckor. För de som blev allvarligt sjuka tog det mellan tre och sex veckor innan de var friska igen.   De som blev allvarligt sjuka hade andningssvårigheter, som snabb andning och låg syresättning av blodet. En del av dem behövde intensivvård, till exempel med respirator. Dessa allvarliga symtom kom vanligen en vecka efter insjuknandet."
       ],
       "set": {
-        "classifiedQuestion": "question: hur pass länge är man sjuk",
-        "classifiedUtterance": "_user_text"
-      },
-      "bot": {
-        "say": "Var det ett korrekt svar?",
-        "user": [
-          {
-            "intent": {
-              "name": "confirmRight",
-              "examples": [
-                "ja",
-                "japp",
-                "absolut",
-                "okej",
-                "jajamän",
-                "alright",
-                "yes",
-                "korrekt",
-                "det stämmer",
-                "det är rätt",
-                "rätt",
-                "stämmer"
-              ]
-            },
-            "bot": "Tack!"
-          },
-          {
-            "intent": {
-              "name": "confirmWrong",
-              "examples": [
-                "nej",
-                "nope",
-                "no",
-                "aldrig",
-                "jag vill inte",
-                "ej korrekt",
-                "det stämmer inte",
-                "det är fel",
-                "fel",
-                "stämmer ej"
-              ]
-            },
-            "bot": {
-              "say": [
-                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
-                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
-              ],
-              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-              "params": [
-                "classifiedQuestion",
-                "classifiedUtterance"
-              ],
-              "asyncWebhook": true
-            }
-          },
-          {
-            "intent": {
-              "examples": [
-                "__ANYTHING"
-              ]
-            },
-            "bot": [
-              {
-                "cond": {
-                  "turnCount": 0
-                },
-                "say": "Förlåt, var det rätt eller fel svar?",
-                "repair": true
-              },
-              {
-                "say": "Jag förstod inte, men låt oss gå vidare"
-              }
-            ]
-          }
+        "classifiedIntentName": "question: hur pass länge är man sjuk",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Enligt Folkhälsomyndigheten blir flesta som fått lindriga symtom  friska efter två veckor. För de som blev allvarligt sjuka tog det mellan tre och sex veckor innan de var friska igen.   De som blev allvarligt sjuka hade andningssvårigheter, som snabb andning och låg syresättning av blodet. En del av dem behövde intensivvård, till exempel med respirator. Dessa allvarliga symtom kom vanligen en vecka efter insjuknandet."
         ]
-      }
+      },
+      "goto": "VERIFY_ANSWER"
     }
   },
   {
@@ -1064,82 +443,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Många har dött i sjukdomen, främst äldre och sjuka. WHO uppskattar idag att dödligheten är 1–2 % av de redan smittade men uppskattningarna är fortfarande osäkra. Det kan finnas fler fall än vad som har rapporterats vilket kan innebära att dödligheten kommer att sjunka. Det är mycket ovanligt att unga friska människor dör, men äldre och sjuka är en riskgrupp som dör mycket oftare. Enligt den Brittiska regeringens expertråd kan dödligheten bland människor över 80 år vara över 8%, medans den bland människor yngre än 50 år är mindre än 0.5%. Bland dem som behöver läggas in på sjukhus uppskattar expertrådet att det kan vara 12% som dör."
       ],
       "set": {
-        "classifiedQuestion": "question: hur många dör av corona",
-        "classifiedUtterance": "_user_text"
-      },
-      "bot": {
-        "say": "Var det ett korrekt svar?",
-        "user": [
-          {
-            "intent": {
-              "name": "confirmRight",
-              "examples": [
-                "ja",
-                "japp",
-                "absolut",
-                "okej",
-                "jajamän",
-                "alright",
-                "yes",
-                "korrekt",
-                "det stämmer",
-                "det är rätt",
-                "rätt",
-                "stämmer"
-              ]
-            },
-            "bot": "Tack!"
-          },
-          {
-            "intent": {
-              "name": "confirmWrong",
-              "examples": [
-                "nej",
-                "nope",
-                "no",
-                "aldrig",
-                "jag vill inte",
-                "ej korrekt",
-                "det stämmer inte",
-                "det är fel",
-                "fel",
-                "stämmer ej"
-              ]
-            },
-            "bot": {
-              "say": [
-                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
-                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
-              ],
-              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-              "params": [
-                "classifiedQuestion",
-                "classifiedUtterance"
-              ],
-              "asyncWebhook": true
-            }
-          },
-          {
-            "intent": {
-              "examples": [
-                "__ANYTHING"
-              ]
-            },
-            "bot": [
-              {
-                "cond": {
-                  "turnCount": 0
-                },
-                "say": "Förlåt, var det rätt eller fel svar?",
-                "repair": true
-              },
-              {
-                "say": "Jag förstod inte, men låt oss gå vidare"
-              }
-            ]
-          }
+        "classifiedIntentName": "question: hur många dör av corona",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Många har dött i sjukdomen, främst äldre och sjuka. WHO uppskattar idag att dödligheten är 1–2 % av de redan smittade men uppskattningarna är fortfarande osäkra. Det kan finnas fler fall än vad som har rapporterats vilket kan innebära att dödligheten kommer att sjunka. Det är mycket ovanligt att unga friska människor dör, men äldre och sjuka är en riskgrupp som dör mycket oftare. Enligt den Brittiska regeringens expertråd kan dödligheten bland människor över 80 år vara över 8%, medans den bland människor yngre än 50 år är mindre än 0.5%. Bland dem som behöver läggas in på sjukhus uppskattar expertrådet att det kan vara 12% som dör."
         ]
-      }
+      },
+      "goto": "VERIFY_ANSWER"
     }
   },
   {
@@ -1177,82 +487,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "För närvarande finns det begränsad information om covid-19 och graviditet. Vi rekommenderar att gravida kvinnor vidtar samma försiktighetsåtgärder som med alla smittsamma sjukdomar."
       ],
       "set": {
-        "classifiedQuestion": "question: är det större risk om man är gravid",
-        "classifiedUtterance": "_user_text"
-      },
-      "bot": {
-        "say": "Var det ett korrekt svar?",
-        "user": [
-          {
-            "intent": {
-              "name": "confirmRight",
-              "examples": [
-                "ja",
-                "japp",
-                "absolut",
-                "okej",
-                "jajamän",
-                "alright",
-                "yes",
-                "korrekt",
-                "det stämmer",
-                "det är rätt",
-                "rätt",
-                "stämmer"
-              ]
-            },
-            "bot": "Tack!"
-          },
-          {
-            "intent": {
-              "name": "confirmWrong",
-              "examples": [
-                "nej",
-                "nope",
-                "no",
-                "aldrig",
-                "jag vill inte",
-                "ej korrekt",
-                "det stämmer inte",
-                "det är fel",
-                "fel",
-                "stämmer ej"
-              ]
-            },
-            "bot": {
-              "say": [
-                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
-                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
-              ],
-              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-              "params": [
-                "classifiedQuestion",
-                "classifiedUtterance"
-              ],
-              "asyncWebhook": true
-            }
-          },
-          {
-            "intent": {
-              "examples": [
-                "__ANYTHING"
-              ]
-            },
-            "bot": [
-              {
-                "cond": {
-                  "turnCount": 0
-                },
-                "say": "Förlåt, var det rätt eller fel svar?",
-                "repair": true
-              },
-              {
-                "say": "Jag förstod inte, men låt oss gå vidare"
-              }
-            ]
-          }
+        "classifiedIntentName": "question: är det större risk om man är gravid",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "För närvarande finns det begränsad information om covid-19 och graviditet. Vi rekommenderar att gravida kvinnor vidtar samma försiktighetsåtgärder som med alla smittsamma sjukdomar."
         ]
-      }
+      },
+      "goto": "VERIFY_ANSWER"
     }
   },
   {
@@ -1291,82 +532,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Folkhälsomyndighetens bedömning av forskningen är att viruset smittar när man är sjuk och i samband med insjuknandet, och inte under inkubationstiden. De som har varit utsatta för smitta ska vara uppmärksamma på tidiga sjukdomstecken, eftersom du smittar så fort du har även milda symtom. "
       ],
       "set": {
-        "classifiedQuestion": "question: smittar corona hela tiden",
-        "classifiedUtterance": "_user_text"
-      },
-      "bot": {
-        "say": "Var det ett korrekt svar?",
-        "user": [
-          {
-            "intent": {
-              "name": "confirmRight",
-              "examples": [
-                "ja",
-                "japp",
-                "absolut",
-                "okej",
-                "jajamän",
-                "alright",
-                "yes",
-                "korrekt",
-                "det stämmer",
-                "det är rätt",
-                "rätt",
-                "stämmer"
-              ]
-            },
-            "bot": "Tack!"
-          },
-          {
-            "intent": {
-              "name": "confirmWrong",
-              "examples": [
-                "nej",
-                "nope",
-                "no",
-                "aldrig",
-                "jag vill inte",
-                "ej korrekt",
-                "det stämmer inte",
-                "det är fel",
-                "fel",
-                "stämmer ej"
-              ]
-            },
-            "bot": {
-              "say": [
-                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
-                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
-              ],
-              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-              "params": [
-                "classifiedQuestion",
-                "classifiedUtterance"
-              ],
-              "asyncWebhook": true
-            }
-          },
-          {
-            "intent": {
-              "examples": [
-                "__ANYTHING"
-              ]
-            },
-            "bot": [
-              {
-                "cond": {
-                  "turnCount": 0
-                },
-                "say": "Förlåt, var det rätt eller fel svar?",
-                "repair": true
-              },
-              {
-                "say": "Jag förstod inte, men låt oss gå vidare"
-              }
-            ]
-          }
+        "classifiedIntentName": "question: smittar corona hela tiden",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Folkhälsomyndighetens bedömning av forskningen är att viruset smittar när man är sjuk och i samband med insjuknandet, och inte under inkubationstiden. De som har varit utsatta för smitta ska vara uppmärksamma på tidiga sjukdomstecken, eftersom du smittar så fort du har även milda symtom. "
         ]
-      }
+      },
+      "goto": "VERIFY_ANSWER"
     }
   },
   {
@@ -1401,85 +573,16 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "Enligt Folkhälsomyndigheten drivs smittspridningen av personer med symtom på sjukdom, men en del som är sjuka får bara milda symtom. Man kan därför bli smittad av någon som inte känner sig sjuk, men som har t. ex. mild hosta. "
+        "Enligt Folkhälsomyndigheten drivs smittspridningen av personer med symptom på sjukdom, men en del som är sjuka får bara milda symptom. Man kan därför bli smittad av någon som inte känner sig sjuk, men som har t. ex. mild hosta. "
       ],
       "set": {
-        "classifiedQuestion": "question: smittar corona utan symtom",
-        "classifiedUtterance": "_user_text"
-      },
-      "bot": {
-        "say": "Var det ett korrekt svar?",
-        "user": [
-          {
-            "intent": {
-              "name": "confirmRight",
-              "examples": [
-                "ja",
-                "japp",
-                "absolut",
-                "okej",
-                "jajamän",
-                "alright",
-                "yes",
-                "korrekt",
-                "det stämmer",
-                "det är rätt",
-                "rätt",
-                "stämmer"
-              ]
-            },
-            "bot": "Tack!"
-          },
-          {
-            "intent": {
-              "name": "confirmWrong",
-              "examples": [
-                "nej",
-                "nope",
-                "no",
-                "aldrig",
-                "jag vill inte",
-                "ej korrekt",
-                "det stämmer inte",
-                "det är fel",
-                "fel",
-                "stämmer ej"
-              ]
-            },
-            "bot": {
-              "say": [
-                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
-                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
-              ],
-              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-              "params": [
-                "classifiedQuestion",
-                "classifiedUtterance"
-              ],
-              "asyncWebhook": true
-            }
-          },
-          {
-            "intent": {
-              "examples": [
-                "__ANYTHING"
-              ]
-            },
-            "bot": [
-              {
-                "cond": {
-                  "turnCount": 0
-                },
-                "say": "Förlåt, var det rätt eller fel svar?",
-                "repair": true
-              },
-              {
-                "say": "Jag förstod inte, men låt oss gå vidare"
-              }
-            ]
-          }
+        "classifiedIntentName": "question: smittar corona utan symtom",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Enligt Folkhälsomyndigheten drivs smittspridningen av personer med symptom på sjukdom, men en del som är sjuka får bara milda symptom. Man kan därför bli smittad av någon som inte känner sig sjuk, men som har t. ex. mild hosta. "
         ]
-      }
+      },
+      "goto": "VERIFY_ANSWER"
     }
   },
   {
@@ -1517,82 +620,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Regeringen beslutade den 11:e mars att stoppa alla allmänna sammankomster och offentliga tillställningar med fler än 500 personer. Syftet är att förhindra att ett stort antal människor från olika ställen kommer och samlas på en och samma plats. Även mindre arrangemang ska följa Folkhälsomyndighetens riskbedömning och ställas in om de inte kan göras säkra. Skälet till att många mindre evenemang ställs in är att arrangörer vill ta sitt ansvar i att minska smittspridningen."
       ],
       "set": {
-        "classifiedQuestion": "question: vad är reglerna för stora evenemang",
-        "classifiedUtterance": "_user_text"
-      },
-      "bot": {
-        "say": "Var det ett korrekt svar?",
-        "user": [
-          {
-            "intent": {
-              "name": "confirmRight",
-              "examples": [
-                "ja",
-                "japp",
-                "absolut",
-                "okej",
-                "jajamän",
-                "alright",
-                "yes",
-                "korrekt",
-                "det stämmer",
-                "det är rätt",
-                "rätt",
-                "stämmer"
-              ]
-            },
-            "bot": "Tack!"
-          },
-          {
-            "intent": {
-              "name": "confirmWrong",
-              "examples": [
-                "nej",
-                "nope",
-                "no",
-                "aldrig",
-                "jag vill inte",
-                "ej korrekt",
-                "det stämmer inte",
-                "det är fel",
-                "fel",
-                "stämmer ej"
-              ]
-            },
-            "bot": {
-              "say": [
-                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
-                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
-              ],
-              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-              "params": [
-                "classifiedQuestion",
-                "classifiedUtterance"
-              ],
-              "asyncWebhook": true
-            }
-          },
-          {
-            "intent": {
-              "examples": [
-                "__ANYTHING"
-              ]
-            },
-            "bot": [
-              {
-                "cond": {
-                  "turnCount": 0
-                },
-                "say": "Förlåt, var det rätt eller fel svar?",
-                "repair": true
-              },
-              {
-                "say": "Jag förstod inte, men låt oss gå vidare"
-              }
-            ]
-          }
+        "classifiedIntentName": "question: vad är reglerna för stora evenemang",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Regeringen beslutade den 11:e mars att stoppa alla allmänna sammankomster och offentliga tillställningar med fler än 500 personer. Syftet är att förhindra att ett stort antal människor från olika ställen kommer och samlas på en och samma plats. Även mindre arrangemang ska följa Folkhälsomyndighetens riskbedömning och ställas in om de inte kan göras säkra. Skälet till att många mindre evenemang ställs in är att arrangörer vill ta sitt ansvar i att minska smittspridningen."
         ]
-      }
+      },
+      "goto": "VERIFY_ANSWER"
     }
   },
   {
@@ -1630,82 +664,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Den omfattande spridningen av det nya coronaviruset gör att situationen för resenärer och pendlare snabbt kan förändras. I Stockholm gäller reducerad trafik i kollektivtrafiken. Håll minst 1 meters avstånd till andra resenärer.  Folkhälsomyndighetens råd är därför att du jobbar hemifrån i den mån det är möjligt, i samråd med din arbetsgivare. Syftet är att minska hastigheten i smittspridningen och att hålla nere antalet personer som behöver sjukhusvård."
       ],
       "set": {
-        "classifiedQuestion": "question: vilka regler gäller för kollektivtrafik  arbetsplatser och skolor?",
-        "classifiedUtterance": "_user_text"
-      },
-      "bot": {
-        "say": "Var det ett korrekt svar?",
-        "user": [
-          {
-            "intent": {
-              "name": "confirmRight",
-              "examples": [
-                "ja",
-                "japp",
-                "absolut",
-                "okej",
-                "jajamän",
-                "alright",
-                "yes",
-                "korrekt",
-                "det stämmer",
-                "det är rätt",
-                "rätt",
-                "stämmer"
-              ]
-            },
-            "bot": "Tack!"
-          },
-          {
-            "intent": {
-              "name": "confirmWrong",
-              "examples": [
-                "nej",
-                "nope",
-                "no",
-                "aldrig",
-                "jag vill inte",
-                "ej korrekt",
-                "det stämmer inte",
-                "det är fel",
-                "fel",
-                "stämmer ej"
-              ]
-            },
-            "bot": {
-              "say": [
-                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
-                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
-              ],
-              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-              "params": [
-                "classifiedQuestion",
-                "classifiedUtterance"
-              ],
-              "asyncWebhook": true
-            }
-          },
-          {
-            "intent": {
-              "examples": [
-                "__ANYTHING"
-              ]
-            },
-            "bot": [
-              {
-                "cond": {
-                  "turnCount": 0
-                },
-                "say": "Förlåt, var det rätt eller fel svar?",
-                "repair": true
-              },
-              {
-                "say": "Jag förstod inte, men låt oss gå vidare"
-              }
-            ]
-          }
+        "classifiedIntentName": "question: vilka regler gäller för kollektivtrafik  arbetsplatser och skolor?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Den omfattande spridningen av det nya coronaviruset gör att situationen för resenärer och pendlare snabbt kan förändras. I Stockholm gäller reducerad trafik i kollektivtrafiken. Håll minst 1 meters avstånd till andra resenärer.  Folkhälsomyndighetens råd är därför att du jobbar hemifrån i den mån det är möjligt, i samråd med din arbetsgivare. Syftet är att minska hastigheten i smittspridningen och att hålla nere antalet personer som behöver sjukhusvård."
         ]
-      }
+      },
+      "goto": "VERIFY_ANSWER"
     }
   },
   {
@@ -1740,85 +705,16 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "Det är Utrikesdepartementet (UD) som utfärdar reseavrådan till andra länder. Sedan i början på Mars avråder UD från icke nödvändiga resor till alla länder. Besök deras webbplats for att få den senaste informationen.  Det är dessutom många länder som inte tar emot inresande just nu för att begränsa smittspridningen."
+        "Det är Utrikesdepartementet (UD) som utfärdar reseavrådan till andra länder. Sedan i början på mars avråder UD från icke nödvändiga resor till alla länder. Besök deras webbplats för att få den senaste informationen. Det är dessutom många länder som inte tar emot inresande just nu för att begränsa smittspridningen."
       ],
       "set": {
-        "classifiedQuestion": "question: får man resa till andra länder",
-        "classifiedUtterance": "_user_text"
-      },
-      "bot": {
-        "say": "Var det ett korrekt svar?",
-        "user": [
-          {
-            "intent": {
-              "name": "confirmRight",
-              "examples": [
-                "ja",
-                "japp",
-                "absolut",
-                "okej",
-                "jajamän",
-                "alright",
-                "yes",
-                "korrekt",
-                "det stämmer",
-                "det är rätt",
-                "rätt",
-                "stämmer"
-              ]
-            },
-            "bot": "Tack!"
-          },
-          {
-            "intent": {
-              "name": "confirmWrong",
-              "examples": [
-                "nej",
-                "nope",
-                "no",
-                "aldrig",
-                "jag vill inte",
-                "ej korrekt",
-                "det stämmer inte",
-                "det är fel",
-                "fel",
-                "stämmer ej"
-              ]
-            },
-            "bot": {
-              "say": [
-                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
-                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
-              ],
-              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-              "params": [
-                "classifiedQuestion",
-                "classifiedUtterance"
-              ],
-              "asyncWebhook": true
-            }
-          },
-          {
-            "intent": {
-              "examples": [
-                "__ANYTHING"
-              ]
-            },
-            "bot": [
-              {
-                "cond": {
-                  "turnCount": 0
-                },
-                "say": "Förlåt, var det rätt eller fel svar?",
-                "repair": true
-              },
-              {
-                "say": "Jag förstod inte, men låt oss gå vidare"
-              }
-            ]
-          }
+        "classifiedIntentName": "question: får man resa till andra länder",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Det är Utrikesdepartementet (UD) som utfärdar reseavrådan till andra länder. Sedan i början på mars avråder UD från icke nödvändiga resor till alla länder. Besök deras webbplats för att få den senaste informationen. Det är dessutom många länder som inte tar emot inresande just nu för att begränsa smittspridningen."
         ]
-      }
+      },
+      "goto": "VERIFY_ANSWER"
     }
   },
   {
@@ -1853,82 +749,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Om du inte har hosta, andningssvårigheter eller feber kan du leva precis som vanligt. Däremot är det jätteviktigt att stanna hemma om man känner sig sjuk."
       ],
       "set": {
-        "classifiedQuestion": "question: behöver jag göra något särskilt om jag är frisk",
-        "classifiedUtterance": "_user_text"
-      },
-      "bot": {
-        "say": "Var det ett korrekt svar?",
-        "user": [
-          {
-            "intent": {
-              "name": "confirmRight",
-              "examples": [
-                "ja",
-                "japp",
-                "absolut",
-                "okej",
-                "jajamän",
-                "alright",
-                "yes",
-                "korrekt",
-                "det stämmer",
-                "det är rätt",
-                "rätt",
-                "stämmer"
-              ]
-            },
-            "bot": "Tack!"
-          },
-          {
-            "intent": {
-              "name": "confirmWrong",
-              "examples": [
-                "nej",
-                "nope",
-                "no",
-                "aldrig",
-                "jag vill inte",
-                "ej korrekt",
-                "det stämmer inte",
-                "det är fel",
-                "fel",
-                "stämmer ej"
-              ]
-            },
-            "bot": {
-              "say": [
-                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
-                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
-              ],
-              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-              "params": [
-                "classifiedQuestion",
-                "classifiedUtterance"
-              ],
-              "asyncWebhook": true
-            }
-          },
-          {
-            "intent": {
-              "examples": [
-                "__ANYTHING"
-              ]
-            },
-            "bot": [
-              {
-                "cond": {
-                  "turnCount": 0
-                },
-                "say": "Förlåt, var det rätt eller fel svar?",
-                "repair": true
-              },
-              {
-                "say": "Jag förstod inte, men låt oss gå vidare"
-              }
-            ]
-          }
+        "classifiedIntentName": "question: behöver jag göra något särskilt om jag är frisk",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Om du inte har hosta, andningssvårigheter eller feber kan du leva precis som vanligt. Däremot är det jätteviktigt att stanna hemma om man känner sig sjuk."
         ]
-      }
+      },
+      "goto": "VERIFY_ANSWER"
     }
   },
   {
@@ -1965,85 +792,16 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "Det är mycket viktigt att stanna hemma när man känner sig sjuk. Om man inte klarar sig med egenvård i hemmet ska man ringa 1177 för sjukvårdsrådgivning. Besök inte någon vårdinrättning, utan kontakta alltid 1177 Vårdguiden först."
+        "Det är mycket viktigt att du stannar hemma om du känner dig sjuk. Klarar du dig inte med egenvård i hemmet ska du ringa 1177 för sjukvårdsrådgivning. Besök inte någon vårdinrättning, utan kontakta alltid 1177 Vårdguiden först."
       ],
       "set": {
-        "classifiedQuestion": "question: jag tror jag har fått corona vad ska jag göra",
-        "classifiedUtterance": "_user_text"
-      },
-      "bot": {
-        "say": "Var det ett korrekt svar?",
-        "user": [
-          {
-            "intent": {
-              "name": "confirmRight",
-              "examples": [
-                "ja",
-                "japp",
-                "absolut",
-                "okej",
-                "jajamän",
-                "alright",
-                "yes",
-                "korrekt",
-                "det stämmer",
-                "det är rätt",
-                "rätt",
-                "stämmer"
-              ]
-            },
-            "bot": "Tack!"
-          },
-          {
-            "intent": {
-              "name": "confirmWrong",
-              "examples": [
-                "nej",
-                "nope",
-                "no",
-                "aldrig",
-                "jag vill inte",
-                "ej korrekt",
-                "det stämmer inte",
-                "det är fel",
-                "fel",
-                "stämmer ej"
-              ]
-            },
-            "bot": {
-              "say": [
-                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
-                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
-              ],
-              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-              "params": [
-                "classifiedQuestion",
-                "classifiedUtterance"
-              ],
-              "asyncWebhook": true
-            }
-          },
-          {
-            "intent": {
-              "examples": [
-                "__ANYTHING"
-              ]
-            },
-            "bot": [
-              {
-                "cond": {
-                  "turnCount": 0
-                },
-                "say": "Förlåt, var det rätt eller fel svar?",
-                "repair": true
-              },
-              {
-                "say": "Jag förstod inte, men låt oss gå vidare"
-              }
-            ]
-          }
+        "classifiedIntentName": "question: jag tror jag har fått corona vad ska jag göra",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Det är mycket viktigt att du stannar hemma om du känner dig sjuk. Klarar du dig inte med egenvård i hemmet ska du ringa 1177 för sjukvårdsrådgivning. Besök inte någon vårdinrättning, utan kontakta alltid 1177 Vårdguiden först."
         ]
-      }
+      },
+      "goto": "VERIFY_ANSWER"
     }
   },
   {
@@ -2077,85 +835,16 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "Den svenska beredskapen anses mycket bra. Hälso- och sjukvården samt landets smittskyddsenheter har sedan lång tid tillbaka en hög medvetenhet. Det finns rutiner för hur både misstänkta och bekräftade fall ska tas omhand på ett bra och säkert sätt. Privata aktörer är också medvetna om beredskap och krishantering, och det finns möjlighet till utökade provanalyser på andra laboratorier än Folkhälsomyndigheten vid behov."
+        "Den svenska beredskapen anses vara mycket bra. Hälso- och sjukvården samt landets smittskyddsenheter har sedan lång tid tillbaka en hög medvetenhet. Det finns rutiner för hur både misstänkta och bekräftade fall ska tas omhand på ett bra och säkert sätt. Privata aktörer är också medvetna om beredskap och krishantering, och det finns möjlighet till utökade provanalyser på andra laboratorier än Folkhälsomyndigheten vid behov."
       ],
       "set": {
-        "classifiedQuestion": "question: har sverige beredskap",
-        "classifiedUtterance": "_user_text"
-      },
-      "bot": {
-        "say": "Var det ett korrekt svar?",
-        "user": [
-          {
-            "intent": {
-              "name": "confirmRight",
-              "examples": [
-                "ja",
-                "japp",
-                "absolut",
-                "okej",
-                "jajamän",
-                "alright",
-                "yes",
-                "korrekt",
-                "det stämmer",
-                "det är rätt",
-                "rätt",
-                "stämmer"
-              ]
-            },
-            "bot": "Tack!"
-          },
-          {
-            "intent": {
-              "name": "confirmWrong",
-              "examples": [
-                "nej",
-                "nope",
-                "no",
-                "aldrig",
-                "jag vill inte",
-                "ej korrekt",
-                "det stämmer inte",
-                "det är fel",
-                "fel",
-                "stämmer ej"
-              ]
-            },
-            "bot": {
-              "say": [
-                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
-                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
-              ],
-              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-              "params": [
-                "classifiedQuestion",
-                "classifiedUtterance"
-              ],
-              "asyncWebhook": true
-            }
-          },
-          {
-            "intent": {
-              "examples": [
-                "__ANYTHING"
-              ]
-            },
-            "bot": [
-              {
-                "cond": {
-                  "turnCount": 0
-                },
-                "say": "Förlåt, var det rätt eller fel svar?",
-                "repair": true
-              },
-              {
-                "say": "Jag förstod inte, men låt oss gå vidare"
-              }
-            ]
-          }
+        "classifiedIntentName": "question: har sverige beredskap",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Den svenska beredskapen anses vara mycket bra. Hälso- och sjukvården samt landets smittskyddsenheter har sedan lång tid tillbaka en hög medvetenhet. Det finns rutiner för hur både misstänkta och bekräftade fall ska tas omhand på ett bra och säkert sätt. Privata aktörer är också medvetna om beredskap och krishantering, och det finns möjlighet till utökade provanalyser på andra laboratorier än Folkhälsomyndigheten vid behov."
         ]
-      }
+      },
+      "goto": "VERIFY_ANSWER"
     }
   },
   {
@@ -2193,82 +882,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Erfarenheter från influensasäsonger med många smittade som behöver vård, visar att påfrestning på sjukvården då uppstår med behov av omprioriteringar och samarbeten inom och mellan regioner. Liknande situation kan uppstå om covid-19 får omfattande spridning i befolkningen. Sjukvårdens pandemiplanering kan då behöva användas."
       ],
       "set": {
-        "classifiedQuestion": "question: kommer sjukhusen att klara det",
-        "classifiedUtterance": "_user_text"
-      },
-      "bot": {
-        "say": "Var det ett korrekt svar?",
-        "user": [
-          {
-            "intent": {
-              "name": "confirmRight",
-              "examples": [
-                "ja",
-                "japp",
-                "absolut",
-                "okej",
-                "jajamän",
-                "alright",
-                "yes",
-                "korrekt",
-                "det stämmer",
-                "det är rätt",
-                "rätt",
-                "stämmer"
-              ]
-            },
-            "bot": "Tack!"
-          },
-          {
-            "intent": {
-              "name": "confirmWrong",
-              "examples": [
-                "nej",
-                "nope",
-                "no",
-                "aldrig",
-                "jag vill inte",
-                "ej korrekt",
-                "det stämmer inte",
-                "det är fel",
-                "fel",
-                "stämmer ej"
-              ]
-            },
-            "bot": {
-              "say": [
-                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
-                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
-              ],
-              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-              "params": [
-                "classifiedQuestion",
-                "classifiedUtterance"
-              ],
-              "asyncWebhook": true
-            }
-          },
-          {
-            "intent": {
-              "examples": [
-                "__ANYTHING"
-              ]
-            },
-            "bot": [
-              {
-                "cond": {
-                  "turnCount": 0
-                },
-                "say": "Förlåt, var det rätt eller fel svar?",
-                "repair": true
-              },
-              {
-                "say": "Jag förstod inte, men låt oss gå vidare"
-              }
-            ]
-          }
+        "classifiedIntentName": "question: kommer sjukhusen att klara det",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Erfarenheter från influensasäsonger med många smittade som behöver vård, visar att påfrestning på sjukvården då uppstår med behov av omprioriteringar och samarbeten inom och mellan regioner. Liknande situation kan uppstå om covid-19 får omfattande spridning i befolkningen. Sjukvårdens pandemiplanering kan då behöva användas."
         ]
-      }
+      },
+      "goto": "VERIFY_ANSWER"
     }
   },
   {
@@ -2305,82 +925,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Eftersom inget av de utbrott vi hittills sett av coronaviruset har haft koppling till skolor eller barn anses det osannolikt att friska barn skulle orsaka smittspridning."
       ],
       "set": {
-        "classifiedQuestion": "question: varför blir inte barn avstängda",
-        "classifiedUtterance": "_user_text"
-      },
-      "bot": {
-        "say": "Var det ett korrekt svar?",
-        "user": [
-          {
-            "intent": {
-              "name": "confirmRight",
-              "examples": [
-                "ja",
-                "japp",
-                "absolut",
-                "okej",
-                "jajamän",
-                "alright",
-                "yes",
-                "korrekt",
-                "det stämmer",
-                "det är rätt",
-                "rätt",
-                "stämmer"
-              ]
-            },
-            "bot": "Tack!"
-          },
-          {
-            "intent": {
-              "name": "confirmWrong",
-              "examples": [
-                "nej",
-                "nope",
-                "no",
-                "aldrig",
-                "jag vill inte",
-                "ej korrekt",
-                "det stämmer inte",
-                "det är fel",
-                "fel",
-                "stämmer ej"
-              ]
-            },
-            "bot": {
-              "say": [
-                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
-                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
-              ],
-              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-              "params": [
-                "classifiedQuestion",
-                "classifiedUtterance"
-              ],
-              "asyncWebhook": true
-            }
-          },
-          {
-            "intent": {
-              "examples": [
-                "__ANYTHING"
-              ]
-            },
-            "bot": [
-              {
-                "cond": {
-                  "turnCount": 0
-                },
-                "say": "Förlåt, var det rätt eller fel svar?",
-                "repair": true
-              },
-              {
-                "say": "Jag förstod inte, men låt oss gå vidare"
-              }
-            ]
-          }
+        "classifiedIntentName": "question: varför blir inte barn avstängda",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Eftersom inget av de utbrott vi hittills sett av coronaviruset har haft koppling till skolor eller barn anses det osannolikt att friska barn skulle orsaka smittspridning."
         ]
-      }
+      },
+      "goto": "VERIFY_ANSWER"
     }
   },
   {
@@ -2417,82 +968,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Eftersom covid-19 numera är klassad som samhällsfarlig, kan smittskyddsläkaren i respektive sjukvårdsregion ta beslut om karantän för friska personer. Om en mindre ingripande åtgärd, t.ex. förhållningsregler, kan få samma effekt ska den väljas istället."
       ],
       "set": {
-        "classifiedQuestion": "question: kan sverige sättas i karantän?",
-        "classifiedUtterance": "_user_text"
-      },
-      "bot": {
-        "say": "Var det ett korrekt svar?",
-        "user": [
-          {
-            "intent": {
-              "name": "confirmRight",
-              "examples": [
-                "ja",
-                "japp",
-                "absolut",
-                "okej",
-                "jajamän",
-                "alright",
-                "yes",
-                "korrekt",
-                "det stämmer",
-                "det är rätt",
-                "rätt",
-                "stämmer"
-              ]
-            },
-            "bot": "Tack!"
-          },
-          {
-            "intent": {
-              "name": "confirmWrong",
-              "examples": [
-                "nej",
-                "nope",
-                "no",
-                "aldrig",
-                "jag vill inte",
-                "ej korrekt",
-                "det stämmer inte",
-                "det är fel",
-                "fel",
-                "stämmer ej"
-              ]
-            },
-            "bot": {
-              "say": [
-                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
-                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
-              ],
-              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-              "params": [
-                "classifiedQuestion",
-                "classifiedUtterance"
-              ],
-              "asyncWebhook": true
-            }
-          },
-          {
-            "intent": {
-              "examples": [
-                "__ANYTHING"
-              ]
-            },
-            "bot": [
-              {
-                "cond": {
-                  "turnCount": 0
-                },
-                "say": "Förlåt, var det rätt eller fel svar?",
-                "repair": true
-              },
-              {
-                "say": "Jag förstod inte, men låt oss gå vidare"
-              }
-            ]
-          }
+        "classifiedIntentName": "question: kan sverige sättas i karantän?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Eftersom covid-19 numera är klassad som samhällsfarlig, kan smittskyddsläkaren i respektive sjukvårdsregion ta beslut om karantän för friska personer. Om en mindre ingripande åtgärd, t.ex. förhållningsregler, kan få samma effekt ska den väljas istället."
         ]
-      }
+      },
+      "goto": "VERIFY_ANSWER"
     }
   },
   {
@@ -2530,82 +1012,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Det finns inget vaccin och i nuläget finns det inget specifikt läkemedel mot covid-19. Internationella studier av olika typer av läkemedelsbehandlingar pågår och forskning sker kring utveckling av ett vaccin."
       ],
       "set": {
-        "classifiedQuestion": "question: finns det vaccin?",
-        "classifiedUtterance": "_user_text"
-      },
-      "bot": {
-        "say": "Var det ett korrekt svar?",
-        "user": [
-          {
-            "intent": {
-              "name": "confirmRight",
-              "examples": [
-                "ja",
-                "japp",
-                "absolut",
-                "okej",
-                "jajamän",
-                "alright",
-                "yes",
-                "korrekt",
-                "det stämmer",
-                "det är rätt",
-                "rätt",
-                "stämmer"
-              ]
-            },
-            "bot": "Tack!"
-          },
-          {
-            "intent": {
-              "name": "confirmWrong",
-              "examples": [
-                "nej",
-                "nope",
-                "no",
-                "aldrig",
-                "jag vill inte",
-                "ej korrekt",
-                "det stämmer inte",
-                "det är fel",
-                "fel",
-                "stämmer ej"
-              ]
-            },
-            "bot": {
-              "say": [
-                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
-                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
-              ],
-              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-              "params": [
-                "classifiedQuestion",
-                "classifiedUtterance"
-              ],
-              "asyncWebhook": true
-            }
-          },
-          {
-            "intent": {
-              "examples": [
-                "__ANYTHING"
-              ]
-            },
-            "bot": [
-              {
-                "cond": {
-                  "turnCount": 0
-                },
-                "say": "Förlåt, var det rätt eller fel svar?",
-                "repair": true
-              },
-              {
-                "say": "Jag förstod inte, men låt oss gå vidare"
-              }
-            ]
-          }
+        "classifiedIntentName": "question: finns det vaccin?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Det finns inget vaccin och i nuläget finns det inget specifikt läkemedel mot covid-19. Internationella studier av olika typer av läkemedelsbehandlingar pågår och forskning sker kring utveckling av ett vaccin."
         ]
-      }
+      },
+      "goto": "VERIFY_ANSWER"
     }
   },
   {
@@ -2642,82 +1055,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Det finns ett stort antal virus som tillhör coronavirusfamiljen, men endast sju av dessa kan smitta och ge upphov till sjukdom hos människor. I slutet av 2019 upptäcktes ett nytt coronavirus i Kina som kan smitta människor, detta nya virus ger upphov till sjukdomen covid-19."
       ],
       "set": {
-        "classifiedQuestion": "question: vad är coronavirus",
-        "classifiedUtterance": "_user_text"
-      },
-      "bot": {
-        "say": "Var det ett korrekt svar?",
-        "user": [
-          {
-            "intent": {
-              "name": "confirmRight",
-              "examples": [
-                "ja",
-                "japp",
-                "absolut",
-                "okej",
-                "jajamän",
-                "alright",
-                "yes",
-                "korrekt",
-                "det stämmer",
-                "det är rätt",
-                "rätt",
-                "stämmer"
-              ]
-            },
-            "bot": "Tack!"
-          },
-          {
-            "intent": {
-              "name": "confirmWrong",
-              "examples": [
-                "nej",
-                "nope",
-                "no",
-                "aldrig",
-                "jag vill inte",
-                "ej korrekt",
-                "det stämmer inte",
-                "det är fel",
-                "fel",
-                "stämmer ej"
-              ]
-            },
-            "bot": {
-              "say": [
-                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
-                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
-              ],
-              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-              "params": [
-                "classifiedQuestion",
-                "classifiedUtterance"
-              ],
-              "asyncWebhook": true
-            }
-          },
-          {
-            "intent": {
-              "examples": [
-                "__ANYTHING"
-              ]
-            },
-            "bot": [
-              {
-                "cond": {
-                  "turnCount": 0
-                },
-                "say": "Förlåt, var det rätt eller fel svar?",
-                "repair": true
-              },
-              {
-                "say": "Jag förstod inte, men låt oss gå vidare"
-              }
-            ]
-          }
+        "classifiedIntentName": "question: vad är coronavirus",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Det finns ett stort antal virus som tillhör coronavirusfamiljen, men endast sju av dessa kan smitta och ge upphov till sjukdom hos människor. I slutet av 2019 upptäcktes ett nytt coronavirus i Kina som kan smitta människor, detta nya virus ger upphov till sjukdomen covid-19."
         ]
-      }
+      },
+      "goto": "VERIFY_ANSWER"
     }
   },
   {
@@ -2753,82 +1097,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Covid-19 står för coronavirus disease 2019, och är det officiella namnet på sjukdomen som orsakas av det nya coronaviruset."
       ],
       "set": {
-        "classifiedQuestion": "question: vad är covid-19",
-        "classifiedUtterance": "_user_text"
-      },
-      "bot": {
-        "say": "Var det ett korrekt svar?",
-        "user": [
-          {
-            "intent": {
-              "name": "confirmRight",
-              "examples": [
-                "ja",
-                "japp",
-                "absolut",
-                "okej",
-                "jajamän",
-                "alright",
-                "yes",
-                "korrekt",
-                "det stämmer",
-                "det är rätt",
-                "rätt",
-                "stämmer"
-              ]
-            },
-            "bot": "Tack!"
-          },
-          {
-            "intent": {
-              "name": "confirmWrong",
-              "examples": [
-                "nej",
-                "nope",
-                "no",
-                "aldrig",
-                "jag vill inte",
-                "ej korrekt",
-                "det stämmer inte",
-                "det är fel",
-                "fel",
-                "stämmer ej"
-              ]
-            },
-            "bot": {
-              "say": [
-                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
-                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
-              ],
-              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-              "params": [
-                "classifiedQuestion",
-                "classifiedUtterance"
-              ],
-              "asyncWebhook": true
-            }
-          },
-          {
-            "intent": {
-              "examples": [
-                "__ANYTHING"
-              ]
-            },
-            "bot": [
-              {
-                "cond": {
-                  "turnCount": 0
-                },
-                "say": "Förlåt, var det rätt eller fel svar?",
-                "repair": true
-              },
-              {
-                "say": "Jag förstod inte, men låt oss gå vidare"
-              }
-            ]
-          }
+        "classifiedIntentName": "question: vad är covid-19",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Covid-19 står för coronavirus disease 2019, och är det officiella namnet på sjukdomen som orsakas av det nya coronaviruset."
         ]
-      }
+      },
+      "goto": "VERIFY_ANSWER"
     }
   },
   {
@@ -2864,85 +1139,16 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "Corona-viruset är helt nytt vilket gör det svårt att jämföra med influensan som är återkommande. De är liknande i symptom men COVID-19 sprider sig otroligt mycket snabbare då ingen har utvecklat immunitet ännu."
+        "Coronaviruset är helt nytt vilket gör det svårt att jämföra med influensan som är återkommande. De är liknande i symptom men covid-19 sprider sig otroligt mycket snabbare då ingen har utvecklat immunitet ännu."
       ],
       "set": {
-        "classifiedQuestion": "question: är corona influensa",
-        "classifiedUtterance": "_user_text"
-      },
-      "bot": {
-        "say": "Var det ett korrekt svar?",
-        "user": [
-          {
-            "intent": {
-              "name": "confirmRight",
-              "examples": [
-                "ja",
-                "japp",
-                "absolut",
-                "okej",
-                "jajamän",
-                "alright",
-                "yes",
-                "korrekt",
-                "det stämmer",
-                "det är rätt",
-                "rätt",
-                "stämmer"
-              ]
-            },
-            "bot": "Tack!"
-          },
-          {
-            "intent": {
-              "name": "confirmWrong",
-              "examples": [
-                "nej",
-                "nope",
-                "no",
-                "aldrig",
-                "jag vill inte",
-                "ej korrekt",
-                "det stämmer inte",
-                "det är fel",
-                "fel",
-                "stämmer ej"
-              ]
-            },
-            "bot": {
-              "say": [
-                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
-                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
-              ],
-              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-              "params": [
-                "classifiedQuestion",
-                "classifiedUtterance"
-              ],
-              "asyncWebhook": true
-            }
-          },
-          {
-            "intent": {
-              "examples": [
-                "__ANYTHING"
-              ]
-            },
-            "bot": [
-              {
-                "cond": {
-                  "turnCount": 0
-                },
-                "say": "Förlåt, var det rätt eller fel svar?",
-                "repair": true
-              },
-              {
-                "say": "Jag förstod inte, men låt oss gå vidare"
-              }
-            ]
-          }
+        "classifiedIntentName": "question: är corona influensa",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Coronaviruset är helt nytt vilket gör det svårt att jämföra med influensan som är återkommande. De är liknande i symptom men covid-19 sprider sig otroligt mycket snabbare då ingen har utvecklat immunitet ännu."
         ]
-      }
+      },
+      "goto": "VERIFY_ANSWER"
     }
   },
   {
@@ -2982,82 +1188,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Nej, munskydd skyddar inte den som är frisk mot covid-19. Däremot kan den som är sjuk till viss del skydda sin omgivning från att viruset sprids vid till exempel hosta och nysningar."
       ],
       "set": {
-        "classifiedQuestion": "question: funkar munskydd",
-        "classifiedUtterance": "_user_text"
-      },
-      "bot": {
-        "say": "Var det ett korrekt svar?",
-        "user": [
-          {
-            "intent": {
-              "name": "confirmRight",
-              "examples": [
-                "ja",
-                "japp",
-                "absolut",
-                "okej",
-                "jajamän",
-                "alright",
-                "yes",
-                "korrekt",
-                "det stämmer",
-                "det är rätt",
-                "rätt",
-                "stämmer"
-              ]
-            },
-            "bot": "Tack!"
-          },
-          {
-            "intent": {
-              "name": "confirmWrong",
-              "examples": [
-                "nej",
-                "nope",
-                "no",
-                "aldrig",
-                "jag vill inte",
-                "ej korrekt",
-                "det stämmer inte",
-                "det är fel",
-                "fel",
-                "stämmer ej"
-              ]
-            },
-            "bot": {
-              "say": [
-                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
-                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
-              ],
-              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-              "params": [
-                "classifiedQuestion",
-                "classifiedUtterance"
-              ],
-              "asyncWebhook": true
-            }
-          },
-          {
-            "intent": {
-              "examples": [
-                "__ANYTHING"
-              ]
-            },
-            "bot": [
-              {
-                "cond": {
-                  "turnCount": 0
-                },
-                "say": "Förlåt, var det rätt eller fel svar?",
-                "repair": true
-              },
-              {
-                "say": "Jag förstod inte, men låt oss gå vidare"
-              }
-            ]
-          }
+        "classifiedIntentName": "question: funkar munskydd",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Nej, munskydd skyddar inte den som är frisk mot covid-19. Däremot kan den som är sjuk till viss del skydda sin omgivning från att viruset sprids vid till exempel hosta och nysningar."
         ]
-      }
+      },
+      "goto": "VERIFY_ANSWER"
     }
   },
   {
@@ -3096,82 +1233,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "I nuläget finns det inget vaccin eller speciellt läkemedel mot covid-19. Internationella studier av olika typer av läkemedelsbehandlingar pågår och forskning sker kring utveckling av ett vaccin."
       ],
       "set": {
-        "classifiedQuestion": "question: finns det botemedel",
-        "classifiedUtterance": "_user_text"
-      },
-      "bot": {
-        "say": "Var det ett korrekt svar?",
-        "user": [
-          {
-            "intent": {
-              "name": "confirmRight",
-              "examples": [
-                "ja",
-                "japp",
-                "absolut",
-                "okej",
-                "jajamän",
-                "alright",
-                "yes",
-                "korrekt",
-                "det stämmer",
-                "det är rätt",
-                "rätt",
-                "stämmer"
-              ]
-            },
-            "bot": "Tack!"
-          },
-          {
-            "intent": {
-              "name": "confirmWrong",
-              "examples": [
-                "nej",
-                "nope",
-                "no",
-                "aldrig",
-                "jag vill inte",
-                "ej korrekt",
-                "det stämmer inte",
-                "det är fel",
-                "fel",
-                "stämmer ej"
-              ]
-            },
-            "bot": {
-              "say": [
-                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
-                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
-              ],
-              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-              "params": [
-                "classifiedQuestion",
-                "classifiedUtterance"
-              ],
-              "asyncWebhook": true
-            }
-          },
-          {
-            "intent": {
-              "examples": [
-                "__ANYTHING"
-              ]
-            },
-            "bot": [
-              {
-                "cond": {
-                  "turnCount": 0
-                },
-                "say": "Förlåt, var det rätt eller fel svar?",
-                "repair": true
-              },
-              {
-                "say": "Jag förstod inte, men låt oss gå vidare"
-              }
-            ]
-          }
+        "classifiedIntentName": "question: finns det botemedel",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "I nuläget finns det inget vaccin eller speciellt läkemedel mot covid-19. Internationella studier av olika typer av läkemedelsbehandlingar pågår och forskning sker kring utveckling av ett vaccin."
         ]
-      }
+      },
+      "goto": "VERIFY_ANSWER"
     }
   },
   {
@@ -3209,82 +1277,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Majoriteten av de som smittas blir friska förutom en mycket liten andel personer som kan bli allvarligt sjuka, varav de flesta tillhör någon riskgrupp."
       ],
       "set": {
-        "classifiedQuestion": "question: kommer alla bli friska från corona",
-        "classifiedUtterance": "_user_text"
-      },
-      "bot": {
-        "say": "Var det ett korrekt svar?",
-        "user": [
-          {
-            "intent": {
-              "name": "confirmRight",
-              "examples": [
-                "ja",
-                "japp",
-                "absolut",
-                "okej",
-                "jajamän",
-                "alright",
-                "yes",
-                "korrekt",
-                "det stämmer",
-                "det är rätt",
-                "rätt",
-                "stämmer"
-              ]
-            },
-            "bot": "Tack!"
-          },
-          {
-            "intent": {
-              "name": "confirmWrong",
-              "examples": [
-                "nej",
-                "nope",
-                "no",
-                "aldrig",
-                "jag vill inte",
-                "ej korrekt",
-                "det stämmer inte",
-                "det är fel",
-                "fel",
-                "stämmer ej"
-              ]
-            },
-            "bot": {
-              "say": [
-                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
-                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
-              ],
-              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-              "params": [
-                "classifiedQuestion",
-                "classifiedUtterance"
-              ],
-              "asyncWebhook": true
-            }
-          },
-          {
-            "intent": {
-              "examples": [
-                "__ANYTHING"
-              ]
-            },
-            "bot": [
-              {
-                "cond": {
-                  "turnCount": 0
-                },
-                "say": "Förlåt, var det rätt eller fel svar?",
-                "repair": true
-              },
-              {
-                "say": "Jag förstod inte, men låt oss gå vidare"
-              }
-            ]
-          }
+        "classifiedIntentName": "question: kommer alla bli friska från corona",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Majoriteten av de som smittas blir friska förutom en mycket liten andel personer som kan bli allvarligt sjuka, varav de flesta tillhör någon riskgrupp."
         ]
-      }
+      },
+      "goto": "VERIFY_ANSWER"
     }
   },
   {
@@ -3322,82 +1321,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "I ett hushåll där någon smittats av det nya coronaviruset räcker det att man städar så som man gör i normala fall. Det är viktigt att tvätta händerna noga när man har städat eller hanterat sopor."
       ],
       "set": {
-        "classifiedQuestion": "question: ska jag städa på något särskilt sätt",
-        "classifiedUtterance": "_user_text"
-      },
-      "bot": {
-        "say": "Var det ett korrekt svar?",
-        "user": [
-          {
-            "intent": {
-              "name": "confirmRight",
-              "examples": [
-                "ja",
-                "japp",
-                "absolut",
-                "okej",
-                "jajamän",
-                "alright",
-                "yes",
-                "korrekt",
-                "det stämmer",
-                "det är rätt",
-                "rätt",
-                "stämmer"
-              ]
-            },
-            "bot": "Tack!"
-          },
-          {
-            "intent": {
-              "name": "confirmWrong",
-              "examples": [
-                "nej",
-                "nope",
-                "no",
-                "aldrig",
-                "jag vill inte",
-                "ej korrekt",
-                "det stämmer inte",
-                "det är fel",
-                "fel",
-                "stämmer ej"
-              ]
-            },
-            "bot": {
-              "say": [
-                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
-                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
-              ],
-              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-              "params": [
-                "classifiedQuestion",
-                "classifiedUtterance"
-              ],
-              "asyncWebhook": true
-            }
-          },
-          {
-            "intent": {
-              "examples": [
-                "__ANYTHING"
-              ]
-            },
-            "bot": [
-              {
-                "cond": {
-                  "turnCount": 0
-                },
-                "say": "Förlåt, var det rätt eller fel svar?",
-                "repair": true
-              },
-              {
-                "say": "Jag förstod inte, men låt oss gå vidare"
-              }
-            ]
-          }
+        "classifiedIntentName": "question: ska jag städa på något särskilt sätt",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "I ett hushåll där någon smittats av det nya coronaviruset räcker det att man städar så som man gör i normala fall. Det är viktigt att tvätta händerna noga när man har städat eller hanterat sopor."
         ]
-      }
+      },
+      "goto": "VERIFY_ANSWER"
     }
   },
   {
@@ -3435,82 +1365,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Det finns inga vetenskapliga studier som visar att stängning av skolor får någon större betydelse. Det finns heller inte några uppgifter som pekar på någon större spridning av covid-19 i skolor någonstans i världen. Stängda skolor skulle tvinga många inom hälso- och sjukvården att stanna hemma med sina barn, och känsliga grupper som mor- och farföräldrar skulle hos vissa familjer behöva ta hand om barnen."
       ],
       "set": {
-        "classifiedQuestion": "question: varför stängs inte skolorna",
-        "classifiedUtterance": "_user_text"
-      },
-      "bot": {
-        "say": "Var det ett korrekt svar?",
-        "user": [
-          {
-            "intent": {
-              "name": "confirmRight",
-              "examples": [
-                "ja",
-                "japp",
-                "absolut",
-                "okej",
-                "jajamän",
-                "alright",
-                "yes",
-                "korrekt",
-                "det stämmer",
-                "det är rätt",
-                "rätt",
-                "stämmer"
-              ]
-            },
-            "bot": "Tack!"
-          },
-          {
-            "intent": {
-              "name": "confirmWrong",
-              "examples": [
-                "nej",
-                "nope",
-                "no",
-                "aldrig",
-                "jag vill inte",
-                "ej korrekt",
-                "det stämmer inte",
-                "det är fel",
-                "fel",
-                "stämmer ej"
-              ]
-            },
-            "bot": {
-              "say": [
-                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
-                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
-              ],
-              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-              "params": [
-                "classifiedQuestion",
-                "classifiedUtterance"
-              ],
-              "asyncWebhook": true
-            }
-          },
-          {
-            "intent": {
-              "examples": [
-                "__ANYTHING"
-              ]
-            },
-            "bot": [
-              {
-                "cond": {
-                  "turnCount": 0
-                },
-                "say": "Förlåt, var det rätt eller fel svar?",
-                "repair": true
-              },
-              {
-                "say": "Jag förstod inte, men låt oss gå vidare"
-              }
-            ]
-          }
+        "classifiedIntentName": "question: varför stängs inte skolorna",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Det finns inga vetenskapliga studier som visar att stängning av skolor får någon större betydelse. Det finns heller inte några uppgifter som pekar på någon större spridning av covid-19 i skolor någonstans i världen. Stängda skolor skulle tvinga många inom hälso- och sjukvården att stanna hemma med sina barn, och känsliga grupper som mor- och farföräldrar skulle hos vissa familjer behöva ta hand om barnen."
         ]
-      }
+      },
+      "goto": "VERIFY_ANSWER"
     }
   },
   {
@@ -3548,82 +1409,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Det är ännu inte klarlagt hur länge viruset kan överleva utanför kroppen. Forskningsstudier som utförts på närbesläktade coronavirus visar att de kan överleva flera dagar på ytor och föremål men för detta krävs särskilda förhållanden, så som rätt temperatur, solljus och luftfuktighet."
       ],
       "set": {
-        "classifiedQuestion": "question: hur länge överlever corona",
-        "classifiedUtterance": "_user_text"
-      },
-      "bot": {
-        "say": "Var det ett korrekt svar?",
-        "user": [
-          {
-            "intent": {
-              "name": "confirmRight",
-              "examples": [
-                "ja",
-                "japp",
-                "absolut",
-                "okej",
-                "jajamän",
-                "alright",
-                "yes",
-                "korrekt",
-                "det stämmer",
-                "det är rätt",
-                "rätt",
-                "stämmer"
-              ]
-            },
-            "bot": "Tack!"
-          },
-          {
-            "intent": {
-              "name": "confirmWrong",
-              "examples": [
-                "nej",
-                "nope",
-                "no",
-                "aldrig",
-                "jag vill inte",
-                "ej korrekt",
-                "det stämmer inte",
-                "det är fel",
-                "fel",
-                "stämmer ej"
-              ]
-            },
-            "bot": {
-              "say": [
-                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
-                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
-              ],
-              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-              "params": [
-                "classifiedQuestion",
-                "classifiedUtterance"
-              ],
-              "asyncWebhook": true
-            }
-          },
-          {
-            "intent": {
-              "examples": [
-                "__ANYTHING"
-              ]
-            },
-            "bot": [
-              {
-                "cond": {
-                  "turnCount": 0
-                },
-                "say": "Förlåt, var det rätt eller fel svar?",
-                "repair": true
-              },
-              {
-                "say": "Jag förstod inte, men låt oss gå vidare"
-              }
-            ]
-          }
+        "classifiedIntentName": "question: hur länge överlever corona",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Det är ännu inte klarlagt hur länge viruset kan överleva utanför kroppen. Forskningsstudier som utförts på närbesläktade coronavirus visar att de kan överleva flera dagar på ytor och föremål men för detta krävs särskilda förhållanden, så som rätt temperatur, solljus och luftfuktighet."
         ]
-      }
+      },
+      "goto": "VERIFY_ANSWER"
     }
   },
   {
@@ -3661,82 +1453,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Kunskap från liknande tidigare utbrott visar att denna typ av virus smittar från sjuka människor, och inte genom paket och postförsändelser."
       ],
       "set": {
-        "classifiedQuestion": "question: kan paket vara smittade med corona",
-        "classifiedUtterance": "_user_text"
-      },
-      "bot": {
-        "say": "Var det ett korrekt svar?",
-        "user": [
-          {
-            "intent": {
-              "name": "confirmRight",
-              "examples": [
-                "ja",
-                "japp",
-                "absolut",
-                "okej",
-                "jajamän",
-                "alright",
-                "yes",
-                "korrekt",
-                "det stämmer",
-                "det är rätt",
-                "rätt",
-                "stämmer"
-              ]
-            },
-            "bot": "Tack!"
-          },
-          {
-            "intent": {
-              "name": "confirmWrong",
-              "examples": [
-                "nej",
-                "nope",
-                "no",
-                "aldrig",
-                "jag vill inte",
-                "ej korrekt",
-                "det stämmer inte",
-                "det är fel",
-                "fel",
-                "stämmer ej"
-              ]
-            },
-            "bot": {
-              "say": [
-                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
-                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
-              ],
-              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-              "params": [
-                "classifiedQuestion",
-                "classifiedUtterance"
-              ],
-              "asyncWebhook": true
-            }
-          },
-          {
-            "intent": {
-              "examples": [
-                "__ANYTHING"
-              ]
-            },
-            "bot": [
-              {
-                "cond": {
-                  "turnCount": 0
-                },
-                "say": "Förlåt, var det rätt eller fel svar?",
-                "repair": true
-              },
-              {
-                "say": "Jag förstod inte, men låt oss gå vidare"
-              }
-            ]
-          }
+        "classifiedIntentName": "question: kan paket vara smittade med corona",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Kunskap från liknande tidigare utbrott visar att denna typ av virus smittar från sjuka människor, och inte genom paket och postförsändelser."
         ]
-      }
+      },
+      "goto": "VERIFY_ANSWER"
     }
   },
   {
@@ -3774,82 +1497,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Det är troligt att en djurkälla från en djurmarknad i Kina orsakade några av de första rapporterade mänskliga infektionerna. Det finns inga uppgifter idag om att covid-19 kan smitta från människa till djur."
       ],
       "set": {
-        "classifiedQuestion": "question: kan jag smittas av mitt husdjur",
-        "classifiedUtterance": "_user_text"
-      },
-      "bot": {
-        "say": "Var det ett korrekt svar?",
-        "user": [
-          {
-            "intent": {
-              "name": "confirmRight",
-              "examples": [
-                "ja",
-                "japp",
-                "absolut",
-                "okej",
-                "jajamän",
-                "alright",
-                "yes",
-                "korrekt",
-                "det stämmer",
-                "det är rätt",
-                "rätt",
-                "stämmer"
-              ]
-            },
-            "bot": "Tack!"
-          },
-          {
-            "intent": {
-              "name": "confirmWrong",
-              "examples": [
-                "nej",
-                "nope",
-                "no",
-                "aldrig",
-                "jag vill inte",
-                "ej korrekt",
-                "det stämmer inte",
-                "det är fel",
-                "fel",
-                "stämmer ej"
-              ]
-            },
-            "bot": {
-              "say": [
-                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
-                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
-              ],
-              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-              "params": [
-                "classifiedQuestion",
-                "classifiedUtterance"
-              ],
-              "asyncWebhook": true
-            }
-          },
-          {
-            "intent": {
-              "examples": [
-                "__ANYTHING"
-              ]
-            },
-            "bot": [
-              {
-                "cond": {
-                  "turnCount": 0
-                },
-                "say": "Förlåt, var det rätt eller fel svar?",
-                "repair": true
-              },
-              {
-                "say": "Jag förstod inte, men låt oss gå vidare"
-              }
-            ]
-          }
+        "classifiedIntentName": "question: kan jag smittas av mitt husdjur",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Det är troligt att en djurkälla från en djurmarknad i Kina orsakade några av de första rapporterade mänskliga infektionerna. Det finns inga uppgifter idag om att covid-19 kan smitta från människa till djur."
         ]
-      }
+      },
+      "goto": "VERIFY_ANSWER"
     }
   },
   {
@@ -3887,82 +1541,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Covid-19 är nu en pandemi, vilket innebär att den finns eller kommer finnas i alla världsdelar. Sannolikt kommer covid-19 att drabba alla världens länder."
       ],
       "set": {
-        "classifiedQuestion": "question: vilka länder är smittade",
-        "classifiedUtterance": "_user_text"
-      },
-      "bot": {
-        "say": "Var det ett korrekt svar?",
-        "user": [
-          {
-            "intent": {
-              "name": "confirmRight",
-              "examples": [
-                "ja",
-                "japp",
-                "absolut",
-                "okej",
-                "jajamän",
-                "alright",
-                "yes",
-                "korrekt",
-                "det stämmer",
-                "det är rätt",
-                "rätt",
-                "stämmer"
-              ]
-            },
-            "bot": "Tack!"
-          },
-          {
-            "intent": {
-              "name": "confirmWrong",
-              "examples": [
-                "nej",
-                "nope",
-                "no",
-                "aldrig",
-                "jag vill inte",
-                "ej korrekt",
-                "det stämmer inte",
-                "det är fel",
-                "fel",
-                "stämmer ej"
-              ]
-            },
-            "bot": {
-              "say": [
-                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
-                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
-              ],
-              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-              "params": [
-                "classifiedQuestion",
-                "classifiedUtterance"
-              ],
-              "asyncWebhook": true
-            }
-          },
-          {
-            "intent": {
-              "examples": [
-                "__ANYTHING"
-              ]
-            },
-            "bot": [
-              {
-                "cond": {
-                  "turnCount": 0
-                },
-                "say": "Förlåt, var det rätt eller fel svar?",
-                "repair": true
-              },
-              {
-                "say": "Jag förstod inte, men låt oss gå vidare"
-              }
-            ]
-          }
+        "classifiedIntentName": "question: vilka länder är smittade",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Covid-19 är nu en pandemi, vilket innebär att den finns eller kommer finnas i alla världsdelar. Sannolikt kommer covid-19 att drabba alla världens länder."
         ]
-      }
+      },
+      "goto": "VERIFY_ANSWER"
     }
   },
   {
@@ -4000,82 +1585,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "I Region Stockholm og i Västra Götalandsregionen ser vi nu tecken på samhällsspridning. Det innebär att du ska försöka låta bli att träffa andra människor, och inte gå till jobbet eller skolan - även om du bara känner dig lite sjuk. Stanna hemma så länge du känner dig sjuk så du inte riskerar att smitta andra."
       ],
       "set": {
-        "classifiedQuestion": "question: vad innebär det att vi har en samhällsspridning av corona i Sverige?",
-        "classifiedUtterance": "_user_text"
-      },
-      "bot": {
-        "say": "Var det ett korrekt svar?",
-        "user": [
-          {
-            "intent": {
-              "name": "confirmRight",
-              "examples": [
-                "ja",
-                "japp",
-                "absolut",
-                "okej",
-                "jajamän",
-                "alright",
-                "yes",
-                "korrekt",
-                "det stämmer",
-                "det är rätt",
-                "rätt",
-                "stämmer"
-              ]
-            },
-            "bot": "Tack!"
-          },
-          {
-            "intent": {
-              "name": "confirmWrong",
-              "examples": [
-                "nej",
-                "nope",
-                "no",
-                "aldrig",
-                "jag vill inte",
-                "ej korrekt",
-                "det stämmer inte",
-                "det är fel",
-                "fel",
-                "stämmer ej"
-              ]
-            },
-            "bot": {
-              "say": [
-                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
-                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
-              ],
-              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-              "params": [
-                "classifiedQuestion",
-                "classifiedUtterance"
-              ],
-              "asyncWebhook": true
-            }
-          },
-          {
-            "intent": {
-              "examples": [
-                "__ANYTHING"
-              ]
-            },
-            "bot": [
-              {
-                "cond": {
-                  "turnCount": 0
-                },
-                "say": "Förlåt, var det rätt eller fel svar?",
-                "repair": true
-              },
-              {
-                "say": "Jag förstod inte, men låt oss gå vidare"
-              }
-            ]
-          }
+        "classifiedIntentName": "question: vad innebär det att vi har en samhällsspridning av corona i Sverige?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "I Region Stockholm og i Västra Götalandsregionen ser vi nu tecken på samhällsspridning. Det innebär att du ska försöka låta bli att träffa andra människor, och inte gå till jobbet eller skolan - även om du bara känner dig lite sjuk. Stanna hemma så länge du känner dig sjuk så du inte riskerar att smitta andra."
         ]
-      }
+      },
+      "goto": "VERIFY_ANSWER"
     }
   },
   {
@@ -4113,82 +1629,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Smittspårning kan ha en avgörande betydelse för att förhindra smittspridning och minska risken för större utbrott. Den behandlande läkaren ska ta reda på hur en smittad person har blivit smittad, och vem eller vilka andra som kan vara smittade eller har blivit utsatta för smitta."
       ],
       "set": {
-        "classifiedQuestion": "question: vad är smittspårning",
-        "classifiedUtterance": "_user_text"
-      },
-      "bot": {
-        "say": "Var det ett korrekt svar?",
-        "user": [
-          {
-            "intent": {
-              "name": "confirmRight",
-              "examples": [
-                "ja",
-                "japp",
-                "absolut",
-                "okej",
-                "jajamän",
-                "alright",
-                "yes",
-                "korrekt",
-                "det stämmer",
-                "det är rätt",
-                "rätt",
-                "stämmer"
-              ]
-            },
-            "bot": "Tack!"
-          },
-          {
-            "intent": {
-              "name": "confirmWrong",
-              "examples": [
-                "nej",
-                "nope",
-                "no",
-                "aldrig",
-                "jag vill inte",
-                "ej korrekt",
-                "det stämmer inte",
-                "det är fel",
-                "fel",
-                "stämmer ej"
-              ]
-            },
-            "bot": {
-              "say": [
-                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
-                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
-              ],
-              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-              "params": [
-                "classifiedQuestion",
-                "classifiedUtterance"
-              ],
-              "asyncWebhook": true
-            }
-          },
-          {
-            "intent": {
-              "examples": [
-                "__ANYTHING"
-              ]
-            },
-            "bot": [
-              {
-                "cond": {
-                  "turnCount": 0
-                },
-                "say": "Förlåt, var det rätt eller fel svar?",
-                "repair": true
-              },
-              {
-                "say": "Jag förstod inte, men låt oss gå vidare"
-              }
-            ]
-          }
+        "classifiedIntentName": "question: vad är smittspårning",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Smittspårning kan ha en avgörande betydelse för att förhindra smittspridning och minska risken för större utbrott. Den behandlande läkaren ska ta reda på hur en smittad person har blivit smittad, och vem eller vilka andra som kan vara smittade eller har blivit utsatta för smitta."
         ]
-      }
+      },
+      "goto": "VERIFY_ANSWER"
     }
   },
   {
@@ -4226,82 +1673,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Större evenemang riskerar att öka smittspridningen eftersom de lockar till sig åskådare från olika delar av landet. Folkhälsomyndigheten har därför bedömt att gränsen bör gå vid 500 personer. Norge valde samma gräns."
       ],
       "set": {
-        "classifiedQuestion": "question: vad är det för särskilt med 500 personer",
-        "classifiedUtterance": "_user_text"
-      },
-      "bot": {
-        "say": "Var det ett korrekt svar?",
-        "user": [
-          {
-            "intent": {
-              "name": "confirmRight",
-              "examples": [
-                "ja",
-                "japp",
-                "absolut",
-                "okej",
-                "jajamän",
-                "alright",
-                "yes",
-                "korrekt",
-                "det stämmer",
-                "det är rätt",
-                "rätt",
-                "stämmer"
-              ]
-            },
-            "bot": "Tack!"
-          },
-          {
-            "intent": {
-              "name": "confirmWrong",
-              "examples": [
-                "nej",
-                "nope",
-                "no",
-                "aldrig",
-                "jag vill inte",
-                "ej korrekt",
-                "det stämmer inte",
-                "det är fel",
-                "fel",
-                "stämmer ej"
-              ]
-            },
-            "bot": {
-              "say": [
-                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
-                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
-              ],
-              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-              "params": [
-                "classifiedQuestion",
-                "classifiedUtterance"
-              ],
-              "asyncWebhook": true
-            }
-          },
-          {
-            "intent": {
-              "examples": [
-                "__ANYTHING"
-              ]
-            },
-            "bot": [
-              {
-                "cond": {
-                  "turnCount": 0
-                },
-                "say": "Förlåt, var det rätt eller fel svar?",
-                "repair": true
-              },
-              {
-                "say": "Jag förstod inte, men låt oss gå vidare"
-              }
-            ]
-          }
+        "classifiedIntentName": "question: vad är det för särskilt med 500 personer",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Större evenemang riskerar att öka smittspridningen eftersom de lockar till sig åskådare från olika delar av landet. Folkhälsomyndigheten har därför bedömt att gränsen bör gå vid 500 personer. Norge valde samma gräns."
         ]
-      }
+      },
+      "goto": "VERIFY_ANSWER"
     }
   },
   {
@@ -4339,82 +1717,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Folkhälsomyndigheten baserar sina rekommendationer om hälsokontroller bland annat på information från WHO och ECDC. Erfarenhet från SARS-epidemin visar att hälsokontroller på flygplatser inte är ett effektivt sätt att begränsa smittspridningen. Det är även resurskrävande, och fångar enbart upp smittade personer som redan har symtom."
       ],
       "set": {
-        "classifiedQuestion": "question: kan flygkontroller minska spridningen",
-        "classifiedUtterance": "_user_text"
-      },
-      "bot": {
-        "say": "Var det ett korrekt svar?",
-        "user": [
-          {
-            "intent": {
-              "name": "confirmRight",
-              "examples": [
-                "ja",
-                "japp",
-                "absolut",
-                "okej",
-                "jajamän",
-                "alright",
-                "yes",
-                "korrekt",
-                "det stämmer",
-                "det är rätt",
-                "rätt",
-                "stämmer"
-              ]
-            },
-            "bot": "Tack!"
-          },
-          {
-            "intent": {
-              "name": "confirmWrong",
-              "examples": [
-                "nej",
-                "nope",
-                "no",
-                "aldrig",
-                "jag vill inte",
-                "ej korrekt",
-                "det stämmer inte",
-                "det är fel",
-                "fel",
-                "stämmer ej"
-              ]
-            },
-            "bot": {
-              "say": [
-                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
-                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
-              ],
-              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-              "params": [
-                "classifiedQuestion",
-                "classifiedUtterance"
-              ],
-              "asyncWebhook": true
-            }
-          },
-          {
-            "intent": {
-              "examples": [
-                "__ANYTHING"
-              ]
-            },
-            "bot": [
-              {
-                "cond": {
-                  "turnCount": 0
-                },
-                "say": "Förlåt, var det rätt eller fel svar?",
-                "repair": true
-              },
-              {
-                "say": "Jag förstod inte, men låt oss gå vidare"
-              }
-            ]
-          }
+        "classifiedIntentName": "question: kan flygkontroller minska spridningen",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Folkhälsomyndigheten baserar sina rekommendationer om hälsokontroller bland annat på information från WHO och ECDC. Erfarenhet från SARS-epidemin visar att hälsokontroller på flygplatser inte är ett effektivt sätt att begränsa smittspridningen. Det är även resurskrävande, och fångar enbart upp smittade personer som redan har symtom."
         ]
-      }
+      },
+      "goto": "VERIFY_ANSWER"
     }
   },
   {
@@ -4452,82 +1761,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Eftersom det nya coronaviruset är klassat som samhällsfarligt kan friska personer sättas i karantän. Beslutet tas av smittskyddsläkaren i respektive sjukvårdsregion, och det är noga reglerad i smittskyddslagen. Karantän kan innebära att placeras i hemmet, en avgränsad del av en byggnad eller ett område."
       ],
       "set": {
-        "classifiedQuestion": "question: vem bestämmer vem som ska sättas i karantän",
-        "classifiedUtterance": "_user_text"
-      },
-      "bot": {
-        "say": "Var det ett korrekt svar?",
-        "user": [
-          {
-            "intent": {
-              "name": "confirmRight",
-              "examples": [
-                "ja",
-                "japp",
-                "absolut",
-                "okej",
-                "jajamän",
-                "alright",
-                "yes",
-                "korrekt",
-                "det stämmer",
-                "det är rätt",
-                "rätt",
-                "stämmer"
-              ]
-            },
-            "bot": "Tack!"
-          },
-          {
-            "intent": {
-              "name": "confirmWrong",
-              "examples": [
-                "nej",
-                "nope",
-                "no",
-                "aldrig",
-                "jag vill inte",
-                "ej korrekt",
-                "det stämmer inte",
-                "det är fel",
-                "fel",
-                "stämmer ej"
-              ]
-            },
-            "bot": {
-              "say": [
-                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
-                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
-              ],
-              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-              "params": [
-                "classifiedQuestion",
-                "classifiedUtterance"
-              ],
-              "asyncWebhook": true
-            }
-          },
-          {
-            "intent": {
-              "examples": [
-                "__ANYTHING"
-              ]
-            },
-            "bot": [
-              {
-                "cond": {
-                  "turnCount": 0
-                },
-                "say": "Förlåt, var det rätt eller fel svar?",
-                "repair": true
-              },
-              {
-                "say": "Jag förstod inte, men låt oss gå vidare"
-              }
-            ]
-          }
+        "classifiedIntentName": "question: vem bestämmer vem som ska sättas i karantän",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Eftersom det nya coronaviruset är klassat som samhällsfarligt kan friska personer sättas i karantän. Beslutet tas av smittskyddsläkaren i respektive sjukvårdsregion, och det är noga reglerad i smittskyddslagen. Karantän kan innebära att placeras i hemmet, en avgränsad del av en byggnad eller ett område."
         ]
-      }
+      },
+      "goto": "VERIFY_ANSWER"
     }
   },
   {
@@ -4564,82 +1804,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Folkhälsomyndigheten (FHM) ska ta fram och förmedla vetenskapligt grundad kunskap som förebygger ohälsa och sjukdomar, och som ger samhället stöd i arbetet mot hälsohot. FHM följer händelseutvecklingen av covid-19 noga, och gör riskbedömningar samt bedömer hur utbrottet utvecklas. Sjukvård, regionala smittskyddsenheter och andra aktörer får information om det aktuella läget, och FHM tar ställning till vilka åtgärdar som är relevanta att genomföra."
       ],
       "set": {
-        "classifiedQuestion": "question: vad är Folkhälsomyndigheten",
-        "classifiedUtterance": "_user_text"
-      },
-      "bot": {
-        "say": "Var det ett korrekt svar?",
-        "user": [
-          {
-            "intent": {
-              "name": "confirmRight",
-              "examples": [
-                "ja",
-                "japp",
-                "absolut",
-                "okej",
-                "jajamän",
-                "alright",
-                "yes",
-                "korrekt",
-                "det stämmer",
-                "det är rätt",
-                "rätt",
-                "stämmer"
-              ]
-            },
-            "bot": "Tack!"
-          },
-          {
-            "intent": {
-              "name": "confirmWrong",
-              "examples": [
-                "nej",
-                "nope",
-                "no",
-                "aldrig",
-                "jag vill inte",
-                "ej korrekt",
-                "det stämmer inte",
-                "det är fel",
-                "fel",
-                "stämmer ej"
-              ]
-            },
-            "bot": {
-              "say": [
-                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
-                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
-              ],
-              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-              "params": [
-                "classifiedQuestion",
-                "classifiedUtterance"
-              ],
-              "asyncWebhook": true
-            }
-          },
-          {
-            "intent": {
-              "examples": [
-                "__ANYTHING"
-              ]
-            },
-            "bot": [
-              {
-                "cond": {
-                  "turnCount": 0
-                },
-                "say": "Förlåt, var det rätt eller fel svar?",
-                "repair": true
-              },
-              {
-                "say": "Jag förstod inte, men låt oss gå vidare"
-              }
-            ]
-          }
+        "classifiedIntentName": "question: vad är Folkhälsomyndigheten",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Folkhälsomyndigheten (FHM) ska ta fram och förmedla vetenskapligt grundad kunskap som förebygger ohälsa och sjukdomar, och som ger samhället stöd i arbetet mot hälsohot. FHM följer händelseutvecklingen av covid-19 noga, och gör riskbedömningar samt bedömer hur utbrottet utvecklas. Sjukvård, regionala smittskyddsenheter och andra aktörer får information om det aktuella läget, och FHM tar ställning till vilka åtgärdar som är relevanta att genomföra."
         ]
-      }
+      },
+      "goto": "VERIFY_ANSWER"
     }
   },
   {
@@ -4676,82 +1847,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "En pandemi innebär en omfattande spridning till alla världens kontinenter av en helt ny typ av smittsam sjukdom. Vid en pandemi kommer sjukdomen med stor sannolikhet påverka stora delar av vårt samhälle och världens befolkning. Det är WHO som deklarerar om en smittspridning bedöms vara en pandemi, och detta gjordes den 11:e mars 2020."
       ],
       "set": {
-        "classifiedQuestion": "question: vad betyder pandemi",
-        "classifiedUtterance": "_user_text"
-      },
-      "bot": {
-        "say": "Var det ett korrekt svar?",
-        "user": [
-          {
-            "intent": {
-              "name": "confirmRight",
-              "examples": [
-                "ja",
-                "japp",
-                "absolut",
-                "okej",
-                "jajamän",
-                "alright",
-                "yes",
-                "korrekt",
-                "det stämmer",
-                "det är rätt",
-                "rätt",
-                "stämmer"
-              ]
-            },
-            "bot": "Tack!"
-          },
-          {
-            "intent": {
-              "name": "confirmWrong",
-              "examples": [
-                "nej",
-                "nope",
-                "no",
-                "aldrig",
-                "jag vill inte",
-                "ej korrekt",
-                "det stämmer inte",
-                "det är fel",
-                "fel",
-                "stämmer ej"
-              ]
-            },
-            "bot": {
-              "say": [
-                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
-                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
-              ],
-              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-              "params": [
-                "classifiedQuestion",
-                "classifiedUtterance"
-              ],
-              "asyncWebhook": true
-            }
-          },
-          {
-            "intent": {
-              "examples": [
-                "__ANYTHING"
-              ]
-            },
-            "bot": [
-              {
-                "cond": {
-                  "turnCount": 0
-                },
-                "say": "Förlåt, var det rätt eller fel svar?",
-                "repair": true
-              },
-              {
-                "say": "Jag förstod inte, men låt oss gå vidare"
-              }
-            ]
-          }
+        "classifiedIntentName": "question: vad betyder pandemi",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "En pandemi innebär en omfattande spridning till alla världens kontinenter av en helt ny typ av smittsam sjukdom. Vid en pandemi kommer sjukdomen med stor sannolikhet påverka stora delar av vårt samhälle och världens befolkning. Det är WHO som deklarerar om en smittspridning bedöms vara en pandemi, och detta gjordes den 11:e mars 2020."
         ]
-      }
+      },
+      "goto": "VERIFY_ANSWER"
     }
   },
   {
@@ -4789,82 +1891,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Att klassa smittan som allmänfarlig och samhällsfarlig stärker den svenska beredskapen vid samhällsspridning av covid-19, eftersom det gör det möjligt att vidta de förebyggande åtgärder som är relevanta för att hindra en spridning av smitta i samhället. För allmänfarlig och samhällsfarlig smitta finns möjligheter att besluta om åtgärder som exempelvis karantän, isolering, hälsoundersökningar vid inresa och avspärrningar av områden."
       ],
       "set": {
-        "classifiedQuestion": "question: vad betyder det att corona är allmänfarlig",
-        "classifiedUtterance": "_user_text"
-      },
-      "bot": {
-        "say": "Var det ett korrekt svar?",
-        "user": [
-          {
-            "intent": {
-              "name": "confirmRight",
-              "examples": [
-                "ja",
-                "japp",
-                "absolut",
-                "okej",
-                "jajamän",
-                "alright",
-                "yes",
-                "korrekt",
-                "det stämmer",
-                "det är rätt",
-                "rätt",
-                "stämmer"
-              ]
-            },
-            "bot": "Tack!"
-          },
-          {
-            "intent": {
-              "name": "confirmWrong",
-              "examples": [
-                "nej",
-                "nope",
-                "no",
-                "aldrig",
-                "jag vill inte",
-                "ej korrekt",
-                "det stämmer inte",
-                "det är fel",
-                "fel",
-                "stämmer ej"
-              ]
-            },
-            "bot": {
-              "say": [
-                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
-                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
-              ],
-              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-              "params": [
-                "classifiedQuestion",
-                "classifiedUtterance"
-              ],
-              "asyncWebhook": true
-            }
-          },
-          {
-            "intent": {
-              "examples": [
-                "__ANYTHING"
-              ]
-            },
-            "bot": [
-              {
-                "cond": {
-                  "turnCount": 0
-                },
-                "say": "Förlåt, var det rätt eller fel svar?",
-                "repair": true
-              },
-              {
-                "say": "Jag förstod inte, men låt oss gå vidare"
-              }
-            ]
-          }
+        "classifiedIntentName": "question: vad betyder det att corona är allmänfarlig",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Att klassa smittan som allmänfarlig och samhällsfarlig stärker den svenska beredskapen vid samhällsspridning av covid-19, eftersom det gör det möjligt att vidta de förebyggande åtgärder som är relevanta för att hindra en spridning av smitta i samhället. För allmänfarlig och samhällsfarlig smitta finns möjligheter att besluta om åtgärder som exempelvis karantän, isolering, hälsoundersökningar vid inresa och avspärrningar av områden."
         ]
-      }
+      },
+      "goto": "VERIFY_ANSWER"
     }
   },
   {
@@ -4903,82 +1936,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Vid droppsmitta sprids smittan via droppar i luften, t.ex. när någon antingen hostar, nyser eller kräks. Dessa droppar når som regel inte längre än någon meter. Luftburen smitta rör sig om små, intorkade droppar som håller sig kvar i luften, färdas långa sträckor och smittar den som andas in dem."
       ],
       "set": {
-        "classifiedQuestion": "question: vad betyder droppsmitta",
-        "classifiedUtterance": "_user_text"
-      },
-      "bot": {
-        "say": "Var det ett korrekt svar?",
-        "user": [
-          {
-            "intent": {
-              "name": "confirmRight",
-              "examples": [
-                "ja",
-                "japp",
-                "absolut",
-                "okej",
-                "jajamän",
-                "alright",
-                "yes",
-                "korrekt",
-                "det stämmer",
-                "det är rätt",
-                "rätt",
-                "stämmer"
-              ]
-            },
-            "bot": "Tack!"
-          },
-          {
-            "intent": {
-              "name": "confirmWrong",
-              "examples": [
-                "nej",
-                "nope",
-                "no",
-                "aldrig",
-                "jag vill inte",
-                "ej korrekt",
-                "det stämmer inte",
-                "det är fel",
-                "fel",
-                "stämmer ej"
-              ]
-            },
-            "bot": {
-              "say": [
-                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
-                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
-              ],
-              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-              "params": [
-                "classifiedQuestion",
-                "classifiedUtterance"
-              ],
-              "asyncWebhook": true
-            }
-          },
-          {
-            "intent": {
-              "examples": [
-                "__ANYTHING"
-              ]
-            },
-            "bot": [
-              {
-                "cond": {
-                  "turnCount": 0
-                },
-                "say": "Förlåt, var det rätt eller fel svar?",
-                "repair": true
-              },
-              {
-                "say": "Jag förstod inte, men låt oss gå vidare"
-              }
-            ]
-          }
+        "classifiedIntentName": "question: vad betyder droppsmitta",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Vid droppsmitta sprids smittan via droppar i luften, t.ex. när någon antingen hostar, nyser eller kräks. Dessa droppar når som regel inte längre än någon meter. Luftburen smitta rör sig om små, intorkade droppar som håller sig kvar i luften, färdas långa sträckor och smittar den som andas in dem."
         ]
-      }
+      },
+      "goto": "VERIFY_ANSWER"
     }
   },
   {
@@ -5015,82 +1979,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Direkt kontaktsmitta kan ske vid direkt fysisk kontakt mellan en smittbärare och en annan person. Vid indirekt kontaktsmitta överförs smittämnet istället via mellanled från en person till en annan. Kontaktsmitta är den vanligaste smittvägen i vården."
       ],
       "set": {
-        "classifiedQuestion": "question: vad är direktkontakt?",
-        "classifiedUtterance": "_user_text"
-      },
-      "bot": {
-        "say": "Var det ett korrekt svar?",
-        "user": [
-          {
-            "intent": {
-              "name": "confirmRight",
-              "examples": [
-                "ja",
-                "japp",
-                "absolut",
-                "okej",
-                "jajamän",
-                "alright",
-                "yes",
-                "korrekt",
-                "det stämmer",
-                "det är rätt",
-                "rätt",
-                "stämmer"
-              ]
-            },
-            "bot": "Tack!"
-          },
-          {
-            "intent": {
-              "name": "confirmWrong",
-              "examples": [
-                "nej",
-                "nope",
-                "no",
-                "aldrig",
-                "jag vill inte",
-                "ej korrekt",
-                "det stämmer inte",
-                "det är fel",
-                "fel",
-                "stämmer ej"
-              ]
-            },
-            "bot": {
-              "say": [
-                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
-                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
-              ],
-              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-              "params": [
-                "classifiedQuestion",
-                "classifiedUtterance"
-              ],
-              "asyncWebhook": true
-            }
-          },
-          {
-            "intent": {
-              "examples": [
-                "__ANYTHING"
-              ]
-            },
-            "bot": [
-              {
-                "cond": {
-                  "turnCount": 0
-                },
-                "say": "Förlåt, var det rätt eller fel svar?",
-                "repair": true
-              },
-              {
-                "say": "Jag förstod inte, men låt oss gå vidare"
-              }
-            ]
-          }
+        "classifiedIntentName": "question: vad är direktkontakt?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Direkt kontaktsmitta kan ske vid direkt fysisk kontakt mellan en smittbärare och en annan person. Vid indirekt kontaktsmitta överförs smittämnet istället via mellanled från en person till en annan. Kontaktsmitta är den vanligaste smittvägen i vården."
         ]
-      }
+      },
+      "goto": "VERIFY_ANSWER"
     }
   },
   {
@@ -5128,82 +2023,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Andningsskydd används inom sjukvården där det finns hög smittrisk. Ofta har de inbyggda filter som filtrerar bort smittämnen och andra partiklar från luften man andas in. För att andningsskyddet ska ge avsett skydd måste det anpassas till den som ska använda det plus att personen behöver träning i hur det ska användas."
       ],
       "set": {
-        "classifiedQuestion": "question: hur använder jag ett andningsskydd",
-        "classifiedUtterance": "_user_text"
-      },
-      "bot": {
-        "say": "Var det ett korrekt svar?",
-        "user": [
-          {
-            "intent": {
-              "name": "confirmRight",
-              "examples": [
-                "ja",
-                "japp",
-                "absolut",
-                "okej",
-                "jajamän",
-                "alright",
-                "yes",
-                "korrekt",
-                "det stämmer",
-                "det är rätt",
-                "rätt",
-                "stämmer"
-              ]
-            },
-            "bot": "Tack!"
-          },
-          {
-            "intent": {
-              "name": "confirmWrong",
-              "examples": [
-                "nej",
-                "nope",
-                "no",
-                "aldrig",
-                "jag vill inte",
-                "ej korrekt",
-                "det stämmer inte",
-                "det är fel",
-                "fel",
-                "stämmer ej"
-              ]
-            },
-            "bot": {
-              "say": [
-                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
-                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
-              ],
-              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-              "params": [
-                "classifiedQuestion",
-                "classifiedUtterance"
-              ],
-              "asyncWebhook": true
-            }
-          },
-          {
-            "intent": {
-              "examples": [
-                "__ANYTHING"
-              ]
-            },
-            "bot": [
-              {
-                "cond": {
-                  "turnCount": 0
-                },
-                "say": "Förlåt, var det rätt eller fel svar?",
-                "repair": true
-              },
-              {
-                "say": "Jag förstod inte, men låt oss gå vidare"
-              }
-            ]
-          }
+        "classifiedIntentName": "question: hur använder jag ett andningsskydd",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Andningsskydd används inom sjukvården där det finns hög smittrisk. Ofta har de inbyggda filter som filtrerar bort smittämnen och andra partiklar från luften man andas in. För att andningsskyddet ska ge avsett skydd måste det anpassas till den som ska använda det plus att personen behöver träning i hur det ska användas."
         ]
-      }
+      },
+      "goto": "VERIFY_ANSWER"
     }
   },
   {
@@ -5241,82 +2067,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Om patienten blir provtagen innan sjukdomen brutit ut kan detta hända. Negativa provsvar under inkubationstiden utesluter alltså inte att man är smittad. Om fortsatt misstanke om covid-19 kvarstår bör provtagning upprepas när eventuella symtom utvecklats."
       ],
       "set": {
-        "classifiedQuestion": "question: hur kan provsvaret för corona ändras",
-        "classifiedUtterance": "_user_text"
-      },
-      "bot": {
-        "say": "Var det ett korrekt svar?",
-        "user": [
-          {
-            "intent": {
-              "name": "confirmRight",
-              "examples": [
-                "ja",
-                "japp",
-                "absolut",
-                "okej",
-                "jajamän",
-                "alright",
-                "yes",
-                "korrekt",
-                "det stämmer",
-                "det är rätt",
-                "rätt",
-                "stämmer"
-              ]
-            },
-            "bot": "Tack!"
-          },
-          {
-            "intent": {
-              "name": "confirmWrong",
-              "examples": [
-                "nej",
-                "nope",
-                "no",
-                "aldrig",
-                "jag vill inte",
-                "ej korrekt",
-                "det stämmer inte",
-                "det är fel",
-                "fel",
-                "stämmer ej"
-              ]
-            },
-            "bot": {
-              "say": [
-                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
-                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
-              ],
-              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-              "params": [
-                "classifiedQuestion",
-                "classifiedUtterance"
-              ],
-              "asyncWebhook": true
-            }
-          },
-          {
-            "intent": {
-              "examples": [
-                "__ANYTHING"
-              ]
-            },
-            "bot": [
-              {
-                "cond": {
-                  "turnCount": 0
-                },
-                "say": "Förlåt, var det rätt eller fel svar?",
-                "repair": true
-              },
-              {
-                "say": "Jag förstod inte, men låt oss gå vidare"
-              }
-            ]
-          }
+        "classifiedIntentName": "question: hur kan provsvaret för corona ändras",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Om patienten blir provtagen innan sjukdomen brutit ut kan detta hända. Negativa provsvar under inkubationstiden utesluter alltså inte att man är smittad. Om fortsatt misstanke om covid-19 kvarstår bör provtagning upprepas när eventuella symtom utvecklats."
         ]
-      }
+      },
+      "goto": "VERIFY_ANSWER"
     }
   },
   {
@@ -5353,82 +2110,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Enligt Folkhälsomyndigheten drivs smittspridningen av personer med symtom på sjukdom, men en del som är sjuka får bara milda symtom. Man kan därför bli smittad av någon som inte känner sig sjuk, men som har t. ex. mild hosta. Om man varit sjuk men inte vet om man haft coronavirus, så ska man vara hemma tills man är frisk och sedan ytterligare minst två dagar. "
       ],
       "set": {
-        "classifiedQuestion": "question: hur länge kan man smitta andra?",
-        "classifiedUtterance": "_user_text"
-      },
-      "bot": {
-        "say": "Var det ett korrekt svar?",
-        "user": [
-          {
-            "intent": {
-              "name": "confirmRight",
-              "examples": [
-                "ja",
-                "japp",
-                "absolut",
-                "okej",
-                "jajamän",
-                "alright",
-                "yes",
-                "korrekt",
-                "det stämmer",
-                "det är rätt",
-                "rätt",
-                "stämmer"
-              ]
-            },
-            "bot": "Tack!"
-          },
-          {
-            "intent": {
-              "name": "confirmWrong",
-              "examples": [
-                "nej",
-                "nope",
-                "no",
-                "aldrig",
-                "jag vill inte",
-                "ej korrekt",
-                "det stämmer inte",
-                "det är fel",
-                "fel",
-                "stämmer ej"
-              ]
-            },
-            "bot": {
-              "say": [
-                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
-                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
-              ],
-              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-              "params": [
-                "classifiedQuestion",
-                "classifiedUtterance"
-              ],
-              "asyncWebhook": true
-            }
-          },
-          {
-            "intent": {
-              "examples": [
-                "__ANYTHING"
-              ]
-            },
-            "bot": [
-              {
-                "cond": {
-                  "turnCount": 0
-                },
-                "say": "Förlåt, var det rätt eller fel svar?",
-                "repair": true
-              },
-              {
-                "say": "Jag förstod inte, men låt oss gå vidare"
-              }
-            ]
-          }
+        "classifiedIntentName": "question: hur länge kan man smitta andra?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Enligt Folkhälsomyndigheten drivs smittspridningen av personer med symtom på sjukdom, men en del som är sjuka får bara milda symtom. Man kan därför bli smittad av någon som inte känner sig sjuk, men som har t. ex. mild hosta. Om man varit sjuk men inte vet om man haft coronavirus, så ska man vara hemma tills man är frisk och sedan ytterligare minst två dagar. "
         ]
-      }
+      },
+      "goto": "VERIFY_ANSWER"
     }
   },
   {
@@ -5466,82 +2154,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Social distansering syftar till att förhindra sjuka människor från att komma i nära kontakt med friska människor för att minska möjligheterna till överföring av sjukdomar. Just nu är målet med social distansering att bromsa utbrottet för att minska risken för infektion bland högrisk-grupper samt minska belastningen på sjukvårdssystem och arbetstagare."
       ],
       "set": {
-        "classifiedQuestion": "question: vad är social distansiering?",
-        "classifiedUtterance": "_user_text"
-      },
-      "bot": {
-        "say": "Var det ett korrekt svar?",
-        "user": [
-          {
-            "intent": {
-              "name": "confirmRight",
-              "examples": [
-                "ja",
-                "japp",
-                "absolut",
-                "okej",
-                "jajamän",
-                "alright",
-                "yes",
-                "korrekt",
-                "det stämmer",
-                "det är rätt",
-                "rätt",
-                "stämmer"
-              ]
-            },
-            "bot": "Tack!"
-          },
-          {
-            "intent": {
-              "name": "confirmWrong",
-              "examples": [
-                "nej",
-                "nope",
-                "no",
-                "aldrig",
-                "jag vill inte",
-                "ej korrekt",
-                "det stämmer inte",
-                "det är fel",
-                "fel",
-                "stämmer ej"
-              ]
-            },
-            "bot": {
-              "say": [
-                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
-                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
-              ],
-              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-              "params": [
-                "classifiedQuestion",
-                "classifiedUtterance"
-              ],
-              "asyncWebhook": true
-            }
-          },
-          {
-            "intent": {
-              "examples": [
-                "__ANYTHING"
-              ]
-            },
-            "bot": [
-              {
-                "cond": {
-                  "turnCount": 0
-                },
-                "say": "Förlåt, var det rätt eller fel svar?",
-                "repair": true
-              },
-              {
-                "say": "Jag förstod inte, men låt oss gå vidare"
-              }
-            ]
-          }
+        "classifiedIntentName": "question: vad är social distansiering?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Social distansering syftar till att förhindra sjuka människor från att komma i nära kontakt med friska människor för att minska möjligheterna till överföring av sjukdomar. Just nu är målet med social distansering att bromsa utbrottet för att minska risken för infektion bland högrisk-grupper samt minska belastningen på sjukvårdssystem och arbetstagare."
         ]
-      }
+      },
+      "goto": "VERIFY_ANSWER"
     }
   },
   {
@@ -5578,82 +2197,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Undvik offentliga, folktäta platser som t.ex. shopping-centrum, bio eller arenor. Håll avstånd (ungefär 2 meter, eller 6 fot) från andra om möjligt."
       ],
       "set": {
-        "classifiedQuestion": "question: hur gör man social distansering?",
-        "classifiedUtterance": "_user_text"
-      },
-      "bot": {
-        "say": "Var det ett korrekt svar?",
-        "user": [
-          {
-            "intent": {
-              "name": "confirmRight",
-              "examples": [
-                "ja",
-                "japp",
-                "absolut",
-                "okej",
-                "jajamän",
-                "alright",
-                "yes",
-                "korrekt",
-                "det stämmer",
-                "det är rätt",
-                "rätt",
-                "stämmer"
-              ]
-            },
-            "bot": "Tack!"
-          },
-          {
-            "intent": {
-              "name": "confirmWrong",
-              "examples": [
-                "nej",
-                "nope",
-                "no",
-                "aldrig",
-                "jag vill inte",
-                "ej korrekt",
-                "det stämmer inte",
-                "det är fel",
-                "fel",
-                "stämmer ej"
-              ]
-            },
-            "bot": {
-              "say": [
-                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
-                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
-              ],
-              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-              "params": [
-                "classifiedQuestion",
-                "classifiedUtterance"
-              ],
-              "asyncWebhook": true
-            }
-          },
-          {
-            "intent": {
-              "examples": [
-                "__ANYTHING"
-              ]
-            },
-            "bot": [
-              {
-                "cond": {
-                  "turnCount": 0
-                },
-                "say": "Förlåt, var det rätt eller fel svar?",
-                "repair": true
-              },
-              {
-                "say": "Jag förstod inte, men låt oss gå vidare"
-              }
-            ]
-          }
+        "classifiedIntentName": "question: hur gör man social distansering?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Undvik offentliga, folktäta platser som t.ex. shopping-centrum, bio eller arenor. Håll avstånd (ungefär 2 meter, eller 6 fot) från andra om möjligt."
         ]
-      }
+      },
+      "goto": "VERIFY_ANSWER"
     }
   },
   {
@@ -5691,82 +2241,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Tvätta händerna regelbundet och ordentligt med tvål och vatten minst 20 sekunder. Använd alcogel om tvål och vatten inte finns tillgängligt. Vidrör varken ögon, näsa eller mun med otvättade händer. Rengör och desinfektera ytor och saker som människor vanligtvis rör. Hosta och nys i böjd armbåge eller näsduk. Se alltid till att slänga näsduken i soporna."
       ],
       "set": {
-        "classifiedQuestion": "question: hur förhindrar jag spridning av virus?",
-        "classifiedUtterance": "_user_text"
-      },
-      "bot": {
-        "say": "Var det ett korrekt svar?",
-        "user": [
-          {
-            "intent": {
-              "name": "confirmRight",
-              "examples": [
-                "ja",
-                "japp",
-                "absolut",
-                "okej",
-                "jajamän",
-                "alright",
-                "yes",
-                "korrekt",
-                "det stämmer",
-                "det är rätt",
-                "rätt",
-                "stämmer"
-              ]
-            },
-            "bot": "Tack!"
-          },
-          {
-            "intent": {
-              "name": "confirmWrong",
-              "examples": [
-                "nej",
-                "nope",
-                "no",
-                "aldrig",
-                "jag vill inte",
-                "ej korrekt",
-                "det stämmer inte",
-                "det är fel",
-                "fel",
-                "stämmer ej"
-              ]
-            },
-            "bot": {
-              "say": [
-                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
-                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
-              ],
-              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-              "params": [
-                "classifiedQuestion",
-                "classifiedUtterance"
-              ],
-              "asyncWebhook": true
-            }
-          },
-          {
-            "intent": {
-              "examples": [
-                "__ANYTHING"
-              ]
-            },
-            "bot": [
-              {
-                "cond": {
-                  "turnCount": 0
-                },
-                "say": "Förlåt, var det rätt eller fel svar?",
-                "repair": true
-              },
-              {
-                "say": "Jag förstod inte, men låt oss gå vidare"
-              }
-            ]
-          }
+        "classifiedIntentName": "question: hur förhindrar jag spridning av virus?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Tvätta händerna regelbundet och ordentligt med tvål och vatten minst 20 sekunder. Använd alcogel om tvål och vatten inte finns tillgängligt. Vidrör varken ögon, näsa eller mun med otvättade händer. Rengör och desinfektera ytor och saker som människor vanligtvis rör. Hosta och nys i böjd armbåge eller näsduk. Se alltid till att slänga näsduken i soporna."
         ]
-      }
+      },
+      "goto": "VERIFY_ANSWER"
     }
   },
   {
@@ -5805,82 +2286,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "För närvarande är det inte känt om spridningen av Covid-19 kommer att minska när vädret blir varmare. Utredningar gällande överförbarhet, svårighetsgrad och andra funktioner förknippade med Covid-19 pågår just nu. "
       ],
       "set": {
-        "classifiedQuestion": "question: kommer corona sluta spridas till sommaren?",
-        "classifiedUtterance": "_user_text"
-      },
-      "bot": {
-        "say": "Var det ett korrekt svar?",
-        "user": [
-          {
-            "intent": {
-              "name": "confirmRight",
-              "examples": [
-                "ja",
-                "japp",
-                "absolut",
-                "okej",
-                "jajamän",
-                "alright",
-                "yes",
-                "korrekt",
-                "det stämmer",
-                "det är rätt",
-                "rätt",
-                "stämmer"
-              ]
-            },
-            "bot": "Tack!"
-          },
-          {
-            "intent": {
-              "name": "confirmWrong",
-              "examples": [
-                "nej",
-                "nope",
-                "no",
-                "aldrig",
-                "jag vill inte",
-                "ej korrekt",
-                "det stämmer inte",
-                "det är fel",
-                "fel",
-                "stämmer ej"
-              ]
-            },
-            "bot": {
-              "say": [
-                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
-                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
-              ],
-              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-              "params": [
-                "classifiedQuestion",
-                "classifiedUtterance"
-              ],
-              "asyncWebhook": true
-            }
-          },
-          {
-            "intent": {
-              "examples": [
-                "__ANYTHING"
-              ]
-            },
-            "bot": [
-              {
-                "cond": {
-                  "turnCount": 0
-                },
-                "say": "Förlåt, var det rätt eller fel svar?",
-                "repair": true
-              },
-              {
-                "say": "Jag förstod inte, men låt oss gå vidare"
-              }
-            ]
-          }
+        "classifiedIntentName": "question: kommer corona sluta spridas till sommaren?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "För närvarande är det inte känt om spridningen av Covid-19 kommer att minska när vädret blir varmare. Utredningar gällande överförbarhet, svårighetsgrad och andra funktioner förknippade med Covid-19 pågår just nu. "
         ]
-      }
+      },
+      "goto": "VERIFY_ANSWER"
     }
   },
   {
@@ -5920,82 +2332,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Från och med den 19 mars och 30 dagar framåt kommer icke nödvändiga resor till Sverige från länder utanför Europa att stoppas. Detta efter beslut från den svenska regeringen i ett försök att minska spridningen av Covid-19. Vid behov kan beslutet komma att förlängas."
       ],
       "set": {
-        "classifiedQuestion": "question: vad är inreseförbudet?",
-        "classifiedUtterance": "_user_text"
-      },
-      "bot": {
-        "say": "Var det ett korrekt svar?",
-        "user": [
-          {
-            "intent": {
-              "name": "confirmRight",
-              "examples": [
-                "ja",
-                "japp",
-                "absolut",
-                "okej",
-                "jajamän",
-                "alright",
-                "yes",
-                "korrekt",
-                "det stämmer",
-                "det är rätt",
-                "rätt",
-                "stämmer"
-              ]
-            },
-            "bot": "Tack!"
-          },
-          {
-            "intent": {
-              "name": "confirmWrong",
-              "examples": [
-                "nej",
-                "nope",
-                "no",
-                "aldrig",
-                "jag vill inte",
-                "ej korrekt",
-                "det stämmer inte",
-                "det är fel",
-                "fel",
-                "stämmer ej"
-              ]
-            },
-            "bot": {
-              "say": [
-                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
-                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
-              ],
-              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-              "params": [
-                "classifiedQuestion",
-                "classifiedUtterance"
-              ],
-              "asyncWebhook": true
-            }
-          },
-          {
-            "intent": {
-              "examples": [
-                "__ANYTHING"
-              ]
-            },
-            "bot": [
-              {
-                "cond": {
-                  "turnCount": 0
-                },
-                "say": "Förlåt, var det rätt eller fel svar?",
-                "repair": true
-              },
-              {
-                "say": "Jag förstod inte, men låt oss gå vidare"
-              }
-            ]
-          }
+        "classifiedIntentName": "question: vad är inreseförbudet?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Från och med den 19 mars och 30 dagar framåt kommer icke nödvändiga resor till Sverige från länder utanför Europa att stoppas. Detta efter beslut från den svenska regeringen i ett försök att minska spridningen av Covid-19. Vid behov kan beslutet komma att förlängas."
         ]
-      }
+      },
+      "goto": "VERIFY_ANSWER"
     }
   },
   {
@@ -6033,82 +2376,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Inreseförbudet gäller för alla utländska medborgare som försöker resa in i Sverige från ett land som inte ingår i Schengensamarbetet samt Schweiz. Undantag görs för svenska medborgare och andra personer som är bosatta med eget hem i Sverige samt diplomater och personer som är i behov av internationellt skydd. Även personer som utför nödvändiga funktioner i Sverige, t.ex hälso- och sjukvårdspersonal som transporterar varor till Sverige undantas från inreseförbudet. "
       ],
       "set": {
-        "classifiedQuestion": "question: vem rörs av inreseförbudet?",
-        "classifiedUtterance": "_user_text"
-      },
-      "bot": {
-        "say": "Var det ett korrekt svar?",
-        "user": [
-          {
-            "intent": {
-              "name": "confirmRight",
-              "examples": [
-                "ja",
-                "japp",
-                "absolut",
-                "okej",
-                "jajamän",
-                "alright",
-                "yes",
-                "korrekt",
-                "det stämmer",
-                "det är rätt",
-                "rätt",
-                "stämmer"
-              ]
-            },
-            "bot": "Tack!"
-          },
-          {
-            "intent": {
-              "name": "confirmWrong",
-              "examples": [
-                "nej",
-                "nope",
-                "no",
-                "aldrig",
-                "jag vill inte",
-                "ej korrekt",
-                "det stämmer inte",
-                "det är fel",
-                "fel",
-                "stämmer ej"
-              ]
-            },
-            "bot": {
-              "say": [
-                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
-                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
-              ],
-              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-              "params": [
-                "classifiedQuestion",
-                "classifiedUtterance"
-              ],
-              "asyncWebhook": true
-            }
-          },
-          {
-            "intent": {
-              "examples": [
-                "__ANYTHING"
-              ]
-            },
-            "bot": [
-              {
-                "cond": {
-                  "turnCount": 0
-                },
-                "say": "Förlåt, var det rätt eller fel svar?",
-                "repair": true
-              },
-              {
-                "say": "Jag förstod inte, men låt oss gå vidare"
-              }
-            ]
-          }
+        "classifiedIntentName": "question: vem rörs av inreseförbudet?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Inreseförbudet gäller för alla utländska medborgare som försöker resa in i Sverige från ett land som inte ingår i Schengensamarbetet samt Schweiz. Undantag görs för svenska medborgare och andra personer som är bosatta med eget hem i Sverige samt diplomater och personer som är i behov av internationellt skydd. Även personer som utför nödvändiga funktioner i Sverige, t.ex hälso- och sjukvårdspersonal som transporterar varor till Sverige undantas från inreseförbudet. "
         ]
-      }
+      },
+      "goto": "VERIFY_ANSWER"
     }
   },
   {
@@ -6146,82 +2420,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Just nu finns det tillverkare som marknadsför självtester för covid-19. I nuläget är det dock inte klart hur exakta eller känsliga dessa tester är. Folkhälsomyndigheten rekommenderar därför att dessa självtester inte används och hänvisar istället till sjukvårdens egna tester för en mer exakt och pålitlig sjukdomsbild."
       ],
       "set": {
-        "classifiedQuestion": "question: kan man testa sig hemma för corona?",
-        "classifiedUtterance": "_user_text"
-      },
-      "bot": {
-        "say": "Var det ett korrekt svar?",
-        "user": [
-          {
-            "intent": {
-              "name": "confirmRight",
-              "examples": [
-                "ja",
-                "japp",
-                "absolut",
-                "okej",
-                "jajamän",
-                "alright",
-                "yes",
-                "korrekt",
-                "det stämmer",
-                "det är rätt",
-                "rätt",
-                "stämmer"
-              ]
-            },
-            "bot": "Tack!"
-          },
-          {
-            "intent": {
-              "name": "confirmWrong",
-              "examples": [
-                "nej",
-                "nope",
-                "no",
-                "aldrig",
-                "jag vill inte",
-                "ej korrekt",
-                "det stämmer inte",
-                "det är fel",
-                "fel",
-                "stämmer ej"
-              ]
-            },
-            "bot": {
-              "say": [
-                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
-                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
-              ],
-              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-              "params": [
-                "classifiedQuestion",
-                "classifiedUtterance"
-              ],
-              "asyncWebhook": true
-            }
-          },
-          {
-            "intent": {
-              "examples": [
-                "__ANYTHING"
-              ]
-            },
-            "bot": [
-              {
-                "cond": {
-                  "turnCount": 0
-                },
-                "say": "Förlåt, var det rätt eller fel svar?",
-                "repair": true
-              },
-              {
-                "say": "Jag förstod inte, men låt oss gå vidare"
-              }
-            ]
-          }
+        "classifiedIntentName": "question: kan man testa sig hemma för corona?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Just nu finns det tillverkare som marknadsför självtester för covid-19. I nuläget är det dock inte klart hur exakta eller känsliga dessa tester är. Folkhälsomyndigheten rekommenderar därför att dessa självtester inte används och hänvisar istället till sjukvårdens egna tester för en mer exakt och pålitlig sjukdomsbild."
         ]
-      }
+      },
+      "goto": "VERIFY_ANSWER"
     }
   },
   {
@@ -6260,82 +2465,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "För att bromsa spridningen av covid-19 rekommenderar Folkhälsomyndigheten från den 17 mars 2020 att undervisningen i gymnasieskolor, universitet, högskolor, yrkeshögskolor och komvux ska ske på distans."
       ],
       "set": {
-        "classifiedQuestion": "question: behöver man läsa via distans nu?",
-        "classifiedUtterance": "_user_text"
-      },
-      "bot": {
-        "say": "Var det ett korrekt svar?",
-        "user": [
-          {
-            "intent": {
-              "name": "confirmRight",
-              "examples": [
-                "ja",
-                "japp",
-                "absolut",
-                "okej",
-                "jajamän",
-                "alright",
-                "yes",
-                "korrekt",
-                "det stämmer",
-                "det är rätt",
-                "rätt",
-                "stämmer"
-              ]
-            },
-            "bot": "Tack!"
-          },
-          {
-            "intent": {
-              "name": "confirmWrong",
-              "examples": [
-                "nej",
-                "nope",
-                "no",
-                "aldrig",
-                "jag vill inte",
-                "ej korrekt",
-                "det stämmer inte",
-                "det är fel",
-                "fel",
-                "stämmer ej"
-              ]
-            },
-            "bot": {
-              "say": [
-                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
-                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
-              ],
-              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-              "params": [
-                "classifiedQuestion",
-                "classifiedUtterance"
-              ],
-              "asyncWebhook": true
-            }
-          },
-          {
-            "intent": {
-              "examples": [
-                "__ANYTHING"
-              ]
-            },
-            "bot": [
-              {
-                "cond": {
-                  "turnCount": 0
-                },
-                "say": "Förlåt, var det rätt eller fel svar?",
-                "repair": true
-              },
-              {
-                "say": "Jag förstod inte, men låt oss gå vidare"
-              }
-            ]
-          }
+        "classifiedIntentName": "question: behöver man läsa via distans nu?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "För att bromsa spridningen av covid-19 rekommenderar Folkhälsomyndigheten från den 17 mars 2020 att undervisningen i gymnasieskolor, universitet, högskolor, yrkeshögskolor och komvux ska ske på distans."
         ]
-      }
+      },
+      "goto": "VERIFY_ANSWER"
     }
   },
   {
@@ -6375,82 +2511,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Nej. Folkhälsomyndigheten rekommendationer gällande distansundervisning gäller endast från gymnasiet och uppåt. Detta för att gymnasieskolor, universitet och högskolor samlar elever och studenter från upptagningsområden som är mycket större än grundskolans. Gymnasieelever och studenter är inte heller i behov av omsorg, till skillnad från barn i grundskolan."
       ],
       "set": {
-        "classifiedQuestion": "question: vad gäller angående undervisning i grundskolor?",
-        "classifiedUtterance": "_user_text"
-      },
-      "bot": {
-        "say": "Var det ett korrekt svar?",
-        "user": [
-          {
-            "intent": {
-              "name": "confirmRight",
-              "examples": [
-                "ja",
-                "japp",
-                "absolut",
-                "okej",
-                "jajamän",
-                "alright",
-                "yes",
-                "korrekt",
-                "det stämmer",
-                "det är rätt",
-                "rätt",
-                "stämmer"
-              ]
-            },
-            "bot": "Tack!"
-          },
-          {
-            "intent": {
-              "name": "confirmWrong",
-              "examples": [
-                "nej",
-                "nope",
-                "no",
-                "aldrig",
-                "jag vill inte",
-                "ej korrekt",
-                "det stämmer inte",
-                "det är fel",
-                "fel",
-                "stämmer ej"
-              ]
-            },
-            "bot": {
-              "say": [
-                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
-                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
-              ],
-              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-              "params": [
-                "classifiedQuestion",
-                "classifiedUtterance"
-              ],
-              "asyncWebhook": true
-            }
-          },
-          {
-            "intent": {
-              "examples": [
-                "__ANYTHING"
-              ]
-            },
-            "bot": [
-              {
-                "cond": {
-                  "turnCount": 0
-                },
-                "say": "Förlåt, var det rätt eller fel svar?",
-                "repair": true
-              },
-              {
-                "say": "Jag förstod inte, men låt oss gå vidare"
-              }
-            ]
-          }
+        "classifiedIntentName": "question: vad gäller angående undervisning i grundskolor?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Nej. Folkhälsomyndigheten rekommendationer gällande distansundervisning gäller endast från gymnasiet och uppåt. Detta för att gymnasieskolor, universitet och högskolor samlar elever och studenter från upptagningsområden som är mycket större än grundskolans. Gymnasieelever och studenter är inte heller i behov av omsorg, till skillnad från barn i grundskolan."
         ]
-      }
+      },
+      "goto": "VERIFY_ANSWER"
     }
   },
   {
@@ -6490,82 +2557,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Folkhälsomyndigheten uppmanar personer som är 70 år och äldre att hålla sig hemma och begränsa närmare kontakt med andra de kommande veckorna. Äldre bör även undvika folksamlingar i exempelvis kollektivtrafik, affärer eller offentliga lokaler. Promenader utomhus är ok, bara inte i grupp. Be om hjälp för att göra ärenden som exempelvis handla mat ."
       ],
       "set": {
-        "classifiedQuestion": "question: hur ska man bete sig om man är över 70 år?",
-        "classifiedUtterance": "_user_text"
-      },
-      "bot": {
-        "say": "Var det ett korrekt svar?",
-        "user": [
-          {
-            "intent": {
-              "name": "confirmRight",
-              "examples": [
-                "ja",
-                "japp",
-                "absolut",
-                "okej",
-                "jajamän",
-                "alright",
-                "yes",
-                "korrekt",
-                "det stämmer",
-                "det är rätt",
-                "rätt",
-                "stämmer"
-              ]
-            },
-            "bot": "Tack!"
-          },
-          {
-            "intent": {
-              "name": "confirmWrong",
-              "examples": [
-                "nej",
-                "nope",
-                "no",
-                "aldrig",
-                "jag vill inte",
-                "ej korrekt",
-                "det stämmer inte",
-                "det är fel",
-                "fel",
-                "stämmer ej"
-              ]
-            },
-            "bot": {
-              "say": [
-                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
-                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
-              ],
-              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-              "params": [
-                "classifiedQuestion",
-                "classifiedUtterance"
-              ],
-              "asyncWebhook": true
-            }
-          },
-          {
-            "intent": {
-              "examples": [
-                "__ANYTHING"
-              ]
-            },
-            "bot": [
-              {
-                "cond": {
-                  "turnCount": 0
-                },
-                "say": "Förlåt, var det rätt eller fel svar?",
-                "repair": true
-              },
-              {
-                "say": "Jag förstod inte, men låt oss gå vidare"
-              }
-            ]
-          }
+        "classifiedIntentName": "question: hur ska man bete sig om man är över 70 år?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Folkhälsomyndigheten uppmanar personer som är 70 år och äldre att hålla sig hemma och begränsa närmare kontakt med andra de kommande veckorna. Äldre bör även undvika folksamlingar i exempelvis kollektivtrafik, affärer eller offentliga lokaler. Promenader utomhus är ok, bara inte i grupp. Be om hjälp för att göra ärenden som exempelvis handla mat ."
         ]
-      }
+      },
+      "goto": "VERIFY_ANSWER"
     }
   },
   {
@@ -6604,82 +2602,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Det är viktigt att skydda de äldre från smitta. Ha därför ingen närkontakt med personer som är 70 år och äldre om det inte är helt nödvändigt. Stanna hemma när du känner dig sjuk, även om du bara är lite förkyld. Covid-19 kan ge lindriga symtom som liknar en förkylning, så det är viktigt att vara vaksam."
       ],
       "set": {
-        "classifiedQuestion": "question: hur skyddar vi de äldre?",
-        "classifiedUtterance": "_user_text"
-      },
-      "bot": {
-        "say": "Var det ett korrekt svar?",
-        "user": [
-          {
-            "intent": {
-              "name": "confirmRight",
-              "examples": [
-                "ja",
-                "japp",
-                "absolut",
-                "okej",
-                "jajamän",
-                "alright",
-                "yes",
-                "korrekt",
-                "det stämmer",
-                "det är rätt",
-                "rätt",
-                "stämmer"
-              ]
-            },
-            "bot": "Tack!"
-          },
-          {
-            "intent": {
-              "name": "confirmWrong",
-              "examples": [
-                "nej",
-                "nope",
-                "no",
-                "aldrig",
-                "jag vill inte",
-                "ej korrekt",
-                "det stämmer inte",
-                "det är fel",
-                "fel",
-                "stämmer ej"
-              ]
-            },
-            "bot": {
-              "say": [
-                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
-                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
-              ],
-              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-              "params": [
-                "classifiedQuestion",
-                "classifiedUtterance"
-              ],
-              "asyncWebhook": true
-            }
-          },
-          {
-            "intent": {
-              "examples": [
-                "__ANYTHING"
-              ]
-            },
-            "bot": [
-              {
-                "cond": {
-                  "turnCount": 0
-                },
-                "say": "Förlåt, var det rätt eller fel svar?",
-                "repair": true
-              },
-              {
-                "say": "Jag förstod inte, men låt oss gå vidare"
-              }
-            ]
-          }
+        "classifiedIntentName": "question: hur skyddar vi de äldre?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Det är viktigt att skydda de äldre från smitta. Ha därför ingen närkontakt med personer som är 70 år och äldre om det inte är helt nödvändigt. Stanna hemma när du känner dig sjuk, även om du bara är lite förkyld. Covid-19 kan ge lindriga symtom som liknar en förkylning, så det är viktigt att vara vaksam."
         ]
-      }
+      },
+      "goto": "VERIFY_ANSWER"
     }
   },
   {
@@ -6717,82 +2646,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Personer som är i behov av vård på sjukhus, alternativt personal inom sjukvård och äldreomsorg med misstänkt smitta av det nya coronaviruset. Alla som är sjuka i förkylning eller influensaliknande symtom ska vara hemma för att inte riskera att sprida smitta vidare till andra."
       ],
       "set": {
-        "classifiedQuestion": "question: vem kan testas för corona?",
-        "classifiedUtterance": "_user_text"
-      },
-      "bot": {
-        "say": "Var det ett korrekt svar?",
-        "user": [
-          {
-            "intent": {
-              "name": "confirmRight",
-              "examples": [
-                "ja",
-                "japp",
-                "absolut",
-                "okej",
-                "jajamän",
-                "alright",
-                "yes",
-                "korrekt",
-                "det stämmer",
-                "det är rätt",
-                "rätt",
-                "stämmer"
-              ]
-            },
-            "bot": "Tack!"
-          },
-          {
-            "intent": {
-              "name": "confirmWrong",
-              "examples": [
-                "nej",
-                "nope",
-                "no",
-                "aldrig",
-                "jag vill inte",
-                "ej korrekt",
-                "det stämmer inte",
-                "det är fel",
-                "fel",
-                "stämmer ej"
-              ]
-            },
-            "bot": {
-              "say": [
-                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
-                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
-              ],
-              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-              "params": [
-                "classifiedQuestion",
-                "classifiedUtterance"
-              ],
-              "asyncWebhook": true
-            }
-          },
-          {
-            "intent": {
-              "examples": [
-                "__ANYTHING"
-              ]
-            },
-            "bot": [
-              {
-                "cond": {
-                  "turnCount": 0
-                },
-                "say": "Förlåt, var det rätt eller fel svar?",
-                "repair": true
-              },
-              {
-                "say": "Jag förstod inte, men låt oss gå vidare"
-              }
-            ]
-          }
+        "classifiedIntentName": "question: vem kan testas för corona?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Personer som är i behov av vård på sjukhus, alternativt personal inom sjukvård och äldreomsorg med misstänkt smitta av det nya coronaviruset. Alla som är sjuka i förkylning eller influensaliknande symtom ska vara hemma för att inte riskera att sprida smitta vidare till andra."
         ]
-      }
+      },
+      "goto": "VERIFY_ANSWER"
     }
   },
   {
@@ -6830,82 +2690,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Så länge andra familjemedlemmar inte har symtom kan de göra som vanligt. Det är dock väldigt viktigt att vara uppmärksam på symptom och stanna hemma vid första tecken på sjukdom."
       ],
       "set": {
-        "classifiedQuestion": "question: måste alla i familjen stanna hemma om en är sjuk?",
-        "classifiedUtterance": "_user_text"
-      },
-      "bot": {
-        "say": "Var det ett korrekt svar?",
-        "user": [
-          {
-            "intent": {
-              "name": "confirmRight",
-              "examples": [
-                "ja",
-                "japp",
-                "absolut",
-                "okej",
-                "jajamän",
-                "alright",
-                "yes",
-                "korrekt",
-                "det stämmer",
-                "det är rätt",
-                "rätt",
-                "stämmer"
-              ]
-            },
-            "bot": "Tack!"
-          },
-          {
-            "intent": {
-              "name": "confirmWrong",
-              "examples": [
-                "nej",
-                "nope",
-                "no",
-                "aldrig",
-                "jag vill inte",
-                "ej korrekt",
-                "det stämmer inte",
-                "det är fel",
-                "fel",
-                "stämmer ej"
-              ]
-            },
-            "bot": {
-              "say": [
-                "Oj. Jag förstår. Tack för hjälpen att bli bättre!",
-                "Oj. Sorry. Tack för att du hjälper mig bli bättre!"
-              ],
-              "url": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong",
-              "params": [
-                "classifiedQuestion",
-                "classifiedUtterance"
-              ],
-              "asyncWebhook": true
-            }
-          },
-          {
-            "intent": {
-              "examples": [
-                "__ANYTHING"
-              ]
-            },
-            "bot": [
-              {
-                "cond": {
-                  "turnCount": 0
-                },
-                "say": "Förlåt, var det rätt eller fel svar?",
-                "repair": true
-              },
-              {
-                "say": "Jag förstod inte, men låt oss gå vidare"
-              }
-            ]
-          }
+        "classifiedIntentName": "question: måste alla i familjen stanna hemma om en är sjuk?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Så länge andra familjemedlemmar inte har symtom kan de göra som vanligt. Det är dock väldigt viktigt att vara uppmärksam på symptom och stanna hemma vid första tecken på sjukdom."
         ]
-      }
+      },
+      "goto": "VERIFY_ANSWER"
     }
   }
 ]

@@ -7,7 +7,8 @@ export const answerFallback = [
     say: [
       {
         cond: { platform: "voximplant" },
-        text: "Jag förstod inte. Du kan till exempel fråga hur coronavirus smittar, vilka symptomen är och hur man skyddar sig."
+        text:
+          "Jag förstod inte. Du kan till exempel fråga hur coronavirus smittar, vilka symptomen är och hur man skyddar sig."
       },
       {
         text: "Tyvärr förstod jag inte din fråga. Ställ gärna en ny.",
@@ -31,14 +32,13 @@ export const answerFallback = [
     repair: true
   },
   {
-    say: [
-      {
-        cond: { platform: "voximplant" },
-        text: "Vi verkar ha lite svårt att förstå varandra. Mitt råd är att ringa 113 13 där du kan få prata med en människa.",
-      },
-      { text: "Vi verkar ha lite svårt att förstå varandra, så jag föreslår att du letar upp den information du söker på Folkhälsomyndighetens hemsida i stället."
-    },
-  ],
+    cond: { platform: "voximplant" },
+    say:
+      "Vi verkar ha lite svårt att förstå varandra. Mitt råd är att ringa 113 13 där du kan få prata med en människa. Hejdå!"
+  },
+  {
+    say:
+      "Vi verkar ha lite svårt att förstå varandra, så jag föreslår att du letar upp den information du söker på Folkhälsomyndighetens hemsida i stället.",
     goto: EXIT
   }
 ]

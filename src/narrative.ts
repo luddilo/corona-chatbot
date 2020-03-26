@@ -36,11 +36,11 @@ const querySymptoms: BridgeTurn = {
     {
       cond: { platform: "voximplant" },
       text:
-        "Inledningsvis vill jag säga att om du känner dig sjukt är det viktigt att du stannar hemma. Om du har problem med andning, ring 1 1 2."
+        "Inledningsvis vill jag säga att om du känner dig sjuk så är det viktigt att du stannar hemma. Om du har problem med andning, ring 1 1 2."
     },
     {
       text:
-        "Inledningsvis vill jag säga att om du känner dig sjukt är det viktigt att du stannar hemma. Om du har problem med andning, ring 112."
+        "Inledningsvis, om du känner dig sjuk är det viktigt att du stannar hemma. Om du har problem med andning, ring 112."
     }
   ],
   bot: {

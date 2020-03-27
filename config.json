@@ -1,5 +1,4 @@
-{ 
-	"fallbackWebhook": "",
-	"logWebhook": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/log",
-	"confirmWrongAnswerWebhook": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong"
+{
+  "logWebhook": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/log",
+  "confirmWrongAnswerWebhook": "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/confirmWrong"
 }

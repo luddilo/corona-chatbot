@@ -6,3 +6,6 @@
 typings/
 
 node_modules/
+
+config.json
+google_credentials.json

@@ -24,7 +24,7 @@ const intro = {
       },
       text: "Jag är en chatt-bått som kan svara på frågor om det nya Coronaviruset"
     },
-    "Jag kan svara på frågor om det nya Corona viruset"
+    "Jag kan svara på frågor om det nya Coronaviruset"
   ]
 }
 
@@ -40,7 +40,7 @@ const querySymptoms: BridgeTurn = {
     },
     {
       text:
-        "Inledningsvis, om du känner dig sjuk är det viktigt att du stannar hemma. Om du har problem med andning, ring 112."
+        "Glöm inte att du måste stanna hemma om du känner dig sjuk. Om du har problem med andning, ring 112."
     }
   ],
   bot: {

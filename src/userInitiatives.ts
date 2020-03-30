@@ -6,6 +6,7 @@ import { answerRegion } from "./answers/answerRegion"
 import { answerStayHome } from "./answers/answerStayhome"
 import { answerFamily } from "./answers/answerFamily"
 import { answerHelp } from "./answers/answerHelp"
+import { answerDiagnosis } from "./answers/answerDiagnosis"
 
 /*
     Questions and other user-driven initiatives
@@ -27,6 +28,14 @@ const questions: UserTurn[] = [
       "Okej. Då är det viktigt att du stannar hemma för att förhindra spridning. Du kan också ringa 1177, och få rådgivning från en sjuksköterska."
   },
   {
+    intent: nlu.queryDiagnosis,
+    bot: answerDiagnosis
+  },
+  {
+    intent: nlu.queryNeedCare,
+    bot: answerDiagnosis
+  },
+  {
     intent: nlu.queryHowToProtect,
     bot: answerProtect
   },
@@ -42,6 +51,7 @@ const questions: UserTurn[] = [
     intent: nlu.queryTakeCareOfFamily,
     bot: answerFamily
   },
+
   {
     intent: nlu.queryHelp,
     bot: answerHelp

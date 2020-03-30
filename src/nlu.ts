@@ -64,6 +64,22 @@ export const queryHelp: Intent = {
   ]
 }
 
+export const queryDiagnosis: Intent = {
+  examples: [
+    "har jag corona",
+    "har jag covid 19",
+    "är jag smittad"
+  ]
+}
+
+export const queryNeedCare: Intent = {
+  examples: [
+    "när behöver jag ringa vården",
+    "behöver jag ringa vården",
+    "när behöver jag kontakta vården"
+  ]
+}
+
 export const queryHowToProtect : Intent = {
   examples: [
     "hur skyddar jag mig",

@@ -23,7 +23,7 @@ export const answerDiagnosis: BotTurn = {
       },
       {
         text:
-          "Region Stockholm har utvecklat en tjänst där du kan göra en självskattning för att se om du behöver kontakta vården eller kan egenvårda dig. Du hittar den via länken nedan.",
+          "Det kan jag tyvärr inte svara på. Däremot har Region Stockholm utvecklat en tjänst där du kan göra en självskattning för att se om du behöver kontakta vården eller kan egenvårda dig. Du hittar den via länken nedan.",
         content: card
       }
     ]

@@ -20,6 +20,44 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             }
           ]
+        },
+        "INFECTING_ACTIVITY": {
+          "name": "INFECTING_ACTIVITY",
+          "enums": [
+            {
+              "name": "INFECTING_ACTIVITY",
+              "alts": [
+                "hålla i handen",
+                "kyssar",
+                "kyssa",
+                "puss",
+                "pussa",
+                "kyss",
+                "pussar",
+                "kram",
+                "kramar",
+                "kramas",
+                "pussas",
+                "kyssas",
+                "hostar"
+              ]
+            }
+          ]
+        },
+        "OCCUPATION": {
+          "name": "OCCUPATION",
+          "enums": [
+            {
+              "name": "OCCUPATION",
+              "alts": [
+                "jobbet",
+                "skolan",
+                "dagis",
+                "förskolan",
+                "arbetet"
+              ]
+            }
+          ]
         }
       },
       "examples": [
@@ -27,24 +65,22 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "hur märker man om man har _CORONA",
         "hur mår man om man har _CORONA",
         "vad innebär _CORONA",
-        "hur vet jag om jag har _CORONA",
-        "hur vet man att man har _CORONA",
-        "vad är symptom för _CORONA"
+        "vad är symptom för _CORONA",
+        "vad är symptomen",
+        "hur märker man om man har CORONA",
+        "hur mår man om man har CORONA",
+        "vad innebär CORONA",
+        "vad är symptom för CORONA",
+        "vad är symptomen",
+        "hur märker man om man har CORONA",
+        "hur mår man om man har CORONA",
+        "vad innebär CORONA",
+        "vad är symptom för CORONA"
       ]
     },
-    "bot": {
-      "say": [
-        "Enligt Folkhälsomyndigheten är de vanligaste symtomen feber och hosta, men även andningspåverkan, halsont, huvudvärk, muskel- och ledvärk är vanliga symtom. De flesta får lindriga besvär som går över av sig själva med egenvård i hemmet. En del blir allvarligt sjuka med exempelvis svårigheter att andas och lunginflammation."
-      ],
-      "set": {
-        "classifiedIntentName": "question: vad är symptomen",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Enligt Folkhälsomyndigheten är de vanligaste symtomen feber och hosta, men även andningspåverkan, halsont, huvudvärk, muskel- och ledvärk är vanliga symtom. De flesta får lindriga besvär som går över av sig själva med egenvård i hemmet. En del blir allvarligt sjuka med exempelvis svårigheter att andas och lunginflammation."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
+    "bot": [
+      "Enligt Folkhälsomyndigheten är de vanligaste symtomen feber och hosta, men även andningspåverkan, halsont, huvudvärk, muskel- och ledvärk är vanliga symtom. De flesta får lindriga besvär som går över av sig själva med egenvård i hemmet. En del blir allvarligt sjuka med exempelvis svårigheter att andas och lunginflammation."
+    ]
   },
   {
     "intent": {
@@ -66,30 +102,82 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             }
           ]
+        },
+        "INFECTING_ACTIVITY": {
+          "name": "INFECTING_ACTIVITY",
+          "enums": [
+            {
+              "name": "INFECTING_ACTIVITY",
+              "alts": [
+                "hålla i handen",
+                "kyssar",
+                "kyssa",
+                "puss",
+                "pussa",
+                "kyss",
+                "pussar",
+                "kram",
+                "kramar",
+                "kramas",
+                "pussas",
+                "kyssas",
+                "hostar"
+              ]
+            }
+          ]
+        },
+        "OCCUPATION": {
+          "name": "OCCUPATION",
+          "enums": [
+            {
+              "name": "OCCUPATION",
+              "alts": [
+                "jobbet",
+                "skolan",
+                "dagis",
+                "förskolan",
+                "arbetet"
+              ]
+            }
+          ]
         }
       },
       "examples": [
         "hur smittar det",
-        "hur smittar covid-19",
-        "hur smittar corona",
         "är jag smittsam",
         "hur kan jag undvika att smitta andra",
-        "hur vet jag om jag smittar"
+        "hur vet jag om jag smittar",
+        "smittar det genom INFECTING_ACTIVITY",
+        "smittar _CORONA genom INFECTING_ACTIVITY",
+        "smittar det att INFECTING_ACTIVITY",
+        "smittar det om man får en INFECTING_ACTIVITY",
+        "smittar det via INFECTING_ACTIVITY",
+        "smittar _CORONA med INFECTING_ACTIVITY",
+        "hur smittar det",
+        "är jag smittsam",
+        "hur kan jag undvika att smitta andra",
+        "hur vet jag om jag smittar",
+        "smittar det genom _INFECTING_ACTIVITY",
+        "smittar CORONA genom _INFECTING_ACTIVITY",
+        "smittar det att _INFECTING_ACTIVITY",
+        "smittar det om man får en _INFECTING_ACTIVITY",
+        "smittar det via _INFECTING_ACTIVITY",
+        "smittar CORONA med _INFECTING_ACTIVITY",
+        "hur smittar det",
+        "är jag smittsam",
+        "hur kan jag undvika att smitta andra",
+        "hur vet jag om jag smittar",
+        "smittar det genom INFECTING_ACTIVITY",
+        "smittar CORONA genom INFECTING_ACTIVITY",
+        "smittar det att INFECTING_ACTIVITY",
+        "smittar det om man får en INFECTING_ACTIVITY",
+        "smittar det via INFECTING_ACTIVITY",
+        "smittar CORONA med INFECTING_ACTIVITY"
       ]
     },
-    "bot": {
-      "say": [
-        "Viruset smittar i första hand genom kontakt med droppar och sekret från luftvägarna. Smitta kan därför ske vid hostningar och nysningar, eller vid kontakt med personer. Det är fortfarande oklart om viruset kan smitta via droppar som landat på ytor eller föremål. Genom att tvätta händerna och undvika att röra vid ansiktet samt att undvika nära kontakt med sjuka människor minskar risken för smitta. "
-      ],
-      "set": {
-        "classifiedIntentName": "question: hur smittar det",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Viruset smittar i första hand genom kontakt med droppar och sekret från luftvägarna. Smitta kan därför ske vid hostningar och nysningar, eller vid kontakt med personer. Det är fortfarande oklart om viruset kan smitta via droppar som landat på ytor eller föremål. Genom att tvätta händerna och undvika att röra vid ansiktet samt att undvika nära kontakt med sjuka människor minskar risken för smitta. "
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
+    "bot": [
+      "Viruset smittar i första hand genom kontakt med droppar och sekret från luftvägarna. Smitta kan därför ske vid hostningar och nysningar, eller vid kontakt med personer. Det är fortfarande oklart om viruset kan smitta via droppar som landat på ytor eller föremål. Genom att tvätta händerna och undvika att röra vid ansiktet samt att undvika nära kontakt med sjuka människor minskar risken för smitta. "
+    ]
   },
   {
     "intent": {
@@ -111,6 +199,44 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             }
           ]
+        },
+        "INFECTING_ACTIVITY": {
+          "name": "INFECTING_ACTIVITY",
+          "enums": [
+            {
+              "name": "INFECTING_ACTIVITY",
+              "alts": [
+                "hålla i handen",
+                "kyssar",
+                "kyssa",
+                "puss",
+                "pussa",
+                "kyss",
+                "pussar",
+                "kram",
+                "kramar",
+                "kramas",
+                "pussas",
+                "kyssas",
+                "hostar"
+              ]
+            }
+          ]
+        },
+        "OCCUPATION": {
+          "name": "OCCUPATION",
+          "enums": [
+            {
+              "name": "OCCUPATION",
+              "alts": [
+                "jobbet",
+                "skolan",
+                "dagis",
+                "förskolan",
+                "arbetet"
+              ]
+            }
+          ]
         }
       },
       "examples": [
@@ -119,22 +245,24 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "vem är i riskgruppen",
         "riskgrupper vilka är i dem",
         "vilka är mest i riskzonen",
+        "vem riskerar få corona",
+        "vilka är i riskzonen",
+        "vilka är riskgrupperna",
+        "vem är i riskgruppen",
+        "riskgrupper vilka är i dem",
+        "vilka är mest i riskzonen",
+        "vem riskerar få corona",
+        "vilka är i riskzonen",
+        "vilka är riskgrupperna",
+        "vem är i riskgruppen",
+        "riskgrupper vilka är i dem",
+        "vilka är mest i riskzonen",
         "vem riskerar få corona"
       ]
     },
-    "bot": {
-      "say": [
-        "Alla kan få coronavirus. Många får bara milda symptom, men vissa blir väldigt sjuka och behöver vård. Även de med milda symptom kan smitta, vilket kan bli farligt om de smittar människor i riskgrupper. Enligt Folkhälsomyndigheten visar studier att hög ålder är den främsta riskfaktorn för att bli väldigt sjuk. Personer med hög ålder i kombination med andra sjukdomar, såsom högt blodtryck, hjärt- kärlsjukdom, lungsjukdom, cancer eller diabetes är extra utsatta.  Just nu rekommenderas du som är över 70 år att försöka undvika platser med många människor, för att vara extra försiktig. Det kan exempelvis vara kollektivtrafiken, affärer eller apotek. Har du någon i din närhet som kan hjälpa dig med ärenden, så fråga dem. Men undvik nära kontakt med andra människor. Du kan också kontakta kommunen där du bor om du behöver hjälp."
-      ],
-      "set": {
-        "classifiedIntentName": "question: vilka är i riskzonen",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Alla kan få coronavirus. Många får bara milda symptom, men vissa blir väldigt sjuka och behöver vård. Även de med milda symptom kan smitta, vilket kan bli farligt om de smittar människor i riskgrupper. Enligt Folkhälsomyndigheten visar studier att hög ålder är den främsta riskfaktorn för att bli väldigt sjuk. Personer med hög ålder i kombination med andra sjukdomar, såsom högt blodtryck, hjärt- kärlsjukdom, lungsjukdom, cancer eller diabetes är extra utsatta.  Just nu rekommenderas du som är över 70 år att försöka undvika platser med många människor, för att vara extra försiktig. Det kan exempelvis vara kollektivtrafiken, affärer eller apotek. Har du någon i din närhet som kan hjälpa dig med ärenden, så fråga dem. Men undvik nära kontakt med andra människor. Du kan också kontakta kommunen där du bor om du behöver hjälp."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
+    "bot": [
+      "Alla kan få coronavirus. Många får bara milda symptom, men vissa blir väldigt sjuka och behöver vård. Även de med milda symptom kan smitta, vilket kan bli farligt om de smittar människor i riskgrupper. Enligt Folkhälsomyndigheten visar studier att hög ålder är den främsta riskfaktorn för att bli väldigt sjuk. Personer med hög ålder i kombination med andra sjukdomar, såsom högt blodtryck, hjärt- kärlsjukdom, lungsjukdom, cancer eller diabetes är extra utsatta.  Just nu rekommenderas du som är över 70 år att försöka undvika platser med många människor, för att vara extra försiktig. Det kan exempelvis vara kollektivtrafiken, affärer eller apotek. Har du någon i din närhet som kan hjälpa dig med ärenden, så fråga dem. Men undvik nära kontakt med andra människor. Du kan också kontakta kommunen där du bor om du behöver hjälp."
+    ]
   },
   {
     "intent": {
@@ -156,6 +284,44 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             }
           ]
+        },
+        "INFECTING_ACTIVITY": {
+          "name": "INFECTING_ACTIVITY",
+          "enums": [
+            {
+              "name": "INFECTING_ACTIVITY",
+              "alts": [
+                "hålla i handen",
+                "kyssar",
+                "kyssa",
+                "puss",
+                "pussa",
+                "kyss",
+                "pussar",
+                "kram",
+                "kramar",
+                "kramas",
+                "pussas",
+                "kyssas",
+                "hostar"
+              ]
+            }
+          ]
+        },
+        "OCCUPATION": {
+          "name": "OCCUPATION",
+          "enums": [
+            {
+              "name": "OCCUPATION",
+              "alts": [
+                "jobbet",
+                "skolan",
+                "dagis",
+                "förskolan",
+                "arbetet"
+              ]
+            }
+          ]
         }
       },
       "examples": [
@@ -163,22 +329,22 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "hur kan jag skydda mig",
         "hur kan jag skydda min familj",
         "vilka försiktighetsåtgärder kan jag ta",
+        "hur kan jag minimera risken",
+        "hur skyddar man sig",
+        "hur kan jag skydda mig",
+        "hur kan jag skydda min familj",
+        "vilka försiktighetsåtgärder kan jag ta",
+        "hur kan jag minimera risken",
+        "hur skyddar man sig",
+        "hur kan jag skydda mig",
+        "hur kan jag skydda min familj",
+        "vilka försiktighetsåtgärder kan jag ta",
         "hur kan jag minimera risken"
       ]
     },
-    "bot": {
-      "say": [
-        "Undvik att röra vid ansiktet och ögonen, och undvik kontakt med sjuka människor. Tvätta händerna väldigt ofta med tvål och varmt vatten. Om du är ute där du inte har tvål och vatten så kan du använda handsprit. Genom att hosta och nysa i armvecket eller i en pappersnäsduk hindrar du smitta från att spridas i din omgivning eller från att förorena dina händer. Stanna hemma om du känner dig krasslig, även om det bara är väldigt lätta symtom. Även personer som inte känner sig så sjuka och bara har lite hosta eller feber kan smitta andra. Du kan smitta så länge du har symtom, och även några dagar efteråt, så stanna hemma i några dagar även om du känner dig frisk igen."
-      ],
-      "set": {
-        "classifiedIntentName": "question: hur skyddar man sig",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Undvik att röra vid ansiktet och ögonen, och undvik kontakt med sjuka människor. Tvätta händerna väldigt ofta med tvål och varmt vatten. Om du är ute där du inte har tvål och vatten så kan du använda handsprit. Genom att hosta och nysa i armvecket eller i en pappersnäsduk hindrar du smitta från att spridas i din omgivning eller från att förorena dina händer. Stanna hemma om du känner dig krasslig, även om det bara är väldigt lätta symtom. Även personer som inte känner sig så sjuka och bara har lite hosta eller feber kan smitta andra. Du kan smitta så länge du har symtom, och även några dagar efteråt, så stanna hemma i några dagar även om du känner dig frisk igen."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
+    "bot": [
+      "Undvik att röra vid ansiktet och ögonen, och undvik kontakt med sjuka människor. Tvätta händerna väldigt ofta med tvål och varmt vatten. Om du är ute där du inte har tvål och vatten så kan du använda handsprit. Genom att hosta och nysa i armvecket eller i en pappersnäsduk hindrar du smitta från att spridas i din omgivning eller från att förorena dina händer. Stanna hemma om du känner dig krasslig, även om det bara är väldigt lätta symtom. Även personer som inte känner sig så sjuka och bara har lite hosta eller feber kan smitta andra. Du kan smitta så länge du har symtom, och även några dagar efteråt, så stanna hemma i några dagar även om du känner dig frisk igen."
+    ]
   },
   {
     "intent": {
@@ -200,33 +366,79 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             }
           ]
+        },
+        "INFECTING_ACTIVITY": {
+          "name": "INFECTING_ACTIVITY",
+          "enums": [
+            {
+              "name": "INFECTING_ACTIVITY",
+              "alts": [
+                "hålla i handen",
+                "kyssar",
+                "kyssa",
+                "puss",
+                "pussa",
+                "kyss",
+                "pussar",
+                "kram",
+                "kramar",
+                "kramas",
+                "pussas",
+                "kyssas",
+                "hostar"
+              ]
+            }
+          ]
+        },
+        "OCCUPATION": {
+          "name": "OCCUPATION",
+          "enums": [
+            {
+              "name": "OCCUPATION",
+              "alts": [
+                "jobbet",
+                "skolan",
+                "dagis",
+                "förskolan",
+                "arbetet"
+              ]
+            }
+          ]
         }
       },
       "examples": [
         "Kan man smittas flera gånger",
-        "kan man ha corona flera gånger",
-        "hur många gånger kan man ha corona",
-        "kan jag ha corona två gånger",
-        "kan corona smitta två gånger på samma person",
-        "kan corona återkomma",
-        "kan corona komma igen",
+        "kan man ha _CORONA flera gånger",
+        "hur många gånger kan man ha _CORONA",
+        "kan jag ha _CORONA två gånger",
+        "kan _CORONA smitta två gånger på samma person",
+        "kan _CORONA återkomma",
+        "kan _CORONA komma igen",
+        "kan det komma igen",
+        "kan jag bli smittad igen",
+        "Kan man smittas flera gånger",
+        "kan man ha CORONA flera gånger",
+        "hur många gånger kan man ha CORONA",
+        "kan jag ha CORONA två gånger",
+        "kan CORONA smitta två gånger på samma person",
+        "kan CORONA återkomma",
+        "kan CORONA komma igen",
+        "kan det komma igen",
+        "kan jag bli smittad igen",
+        "Kan man smittas flera gånger",
+        "kan man ha CORONA flera gånger",
+        "hur många gånger kan man ha CORONA",
+        "kan jag ha CORONA två gånger",
+        "kan CORONA smitta två gånger på samma person",
+        "kan CORONA återkomma",
+        "kan CORONA komma igen",
         "kan det komma igen",
         "kan jag bli smittad igen"
       ]
     },
-    "bot": {
-      "say": [
-        "Det är oklart hur länge man kommer att vara immun. Utifrån tidigare erfarenheter så är bedömningen att immuniteten varar så länge att man inte kommer att smittas fler gånger under en och samma säsong."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Kan man smittas flera gånger",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Det är oklart hur länge man kommer att vara immun. Utifrån tidigare erfarenheter så är bedömningen att immuniteten varar så länge att man inte kommer att smittas fler gånger under en och samma säsong."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
+    "bot": [
+      "Det är oklart hur länge man kommer att vara immun. Utifrån tidigare erfarenheter så är bedömningen att immuniteten varar så länge att man inte kommer att smittas fler gånger under en och samma säsong."
+    ]
   },
   {
     "intent": {
@@ -248,6 +460,44 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             }
           ]
+        },
+        "INFECTING_ACTIVITY": {
+          "name": "INFECTING_ACTIVITY",
+          "enums": [
+            {
+              "name": "INFECTING_ACTIVITY",
+              "alts": [
+                "hålla i handen",
+                "kyssar",
+                "kyssa",
+                "puss",
+                "pussa",
+                "kyss",
+                "pussar",
+                "kram",
+                "kramar",
+                "kramas",
+                "pussas",
+                "kyssas",
+                "hostar"
+              ]
+            }
+          ]
+        },
+        "OCCUPATION": {
+          "name": "OCCUPATION",
+          "enums": [
+            {
+              "name": "OCCUPATION",
+              "alts": [
+                "jobbet",
+                "skolan",
+                "dagis",
+                "förskolan",
+                "arbetet"
+              ]
+            }
+          ]
         }
       },
       "examples": [
@@ -258,22 +508,101 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "när ska jag stanna hemma",
         "borde jag vara i husarrest",
         "borde jag vara i karantän",
+        "ska jag vara i karantän",
+        "ska jag stanna hemma",
+        "bör jag stanna hemma",
+        "är det viktigt att stanna hemma",
+        "måste jag vara hemma",
+        "när ska jag stanna hemma",
+        "borde jag vara i husarrest",
+        "borde jag vara i karantän",
+        "ska jag vara i karantän",
+        "ska jag stanna hemma",
+        "bör jag stanna hemma",
+        "är det viktigt att stanna hemma",
+        "måste jag vara hemma",
+        "när ska jag stanna hemma",
+        "borde jag vara i husarrest",
+        "borde jag vara i karantän",
         "ska jag vara i karantän"
       ]
     },
-    "bot": {
-      "say": [
-        "Känner du dig sjuk med symtom som snuva, hosta eller feber ska du låta bli att träffa andra människor. Det gäller även om du bara känner dig lite sjuk. Du ska inte gå till jobbet eller skolan, inte resa med buss, tåg, tunnelbana eller flyg och inte heller gå ut för att handla. Om du känner dig det minsta sjuk, stanna hemma. När du känner dig helt frisk, stanna hemma i minst två dagar till.  Folkhälsomyndigheten ger också rådet att du jobbar hemifrån i den mån det är möjligt, även om du är frisk. Syftet är att minska hastigheten i smittspridningen och att hålla nere antalet personer som behöver sjukhusvård. Många länder i världen uppmanar människor att hålla sig hemma även om de är friska för att sakta ner smittspridningen."
-      ],
-      "set": {
-        "classifiedIntentName": "question: ska jag stanna hemma",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Känner du dig sjuk med symtom som snuva, hosta eller feber ska du låta bli att träffa andra människor. Det gäller även om du bara känner dig lite sjuk. Du ska inte gå till jobbet eller skolan, inte resa med buss, tåg, tunnelbana eller flyg och inte heller gå ut för att handla. Om du känner dig det minsta sjuk, stanna hemma. När du känner dig helt frisk, stanna hemma i minst två dagar till.  Folkhälsomyndigheten ger också rådet att du jobbar hemifrån i den mån det är möjligt, även om du är frisk. Syftet är att minska hastigheten i smittspridningen och att hålla nere antalet personer som behöver sjukhusvård. Många länder i världen uppmanar människor att hålla sig hemma även om de är friska för att sakta ner smittspridningen."
-        ]
+    "bot": [
+      "Känner du dig sjuk med symtom som snuva, hosta eller feber ska du låta bli att träffa andra människor. Det gäller även om du bara känner dig lite sjuk. Du ska inte gå till jobbet eller skolan, inte resa med buss, tåg, tunnelbana eller flyg och inte heller gå ut för att handla. Om du känner dig det minsta sjuk, stanna hemma. När du känner dig helt frisk, stanna hemma i minst två dagar till.  Folkhälsomyndigheten ger också rådet att du jobbar hemifrån i den mån det är möjligt, även om du är frisk. Syftet är att minska hastigheten i smittspridningen och att hålla nere antalet personer som behöver sjukhusvård. Många länder i världen uppmanar människor att hålla sig hemma även om de är friska för att sakta ner smittspridningen."
+    ]
+  },
+  {
+    "intent": {
+      "name": "question: får jag gå till OCCUPATION",
+      "entities": {
+        "CORONA": {
+          "name": "CORONA",
+          "enums": [
+            {
+              "name": "CORONA",
+              "alts": [
+                "covid",
+                "covid19",
+                "covid-19",
+                "corona viruset",
+                "coronavirus",
+                "covid 19",
+                "corona"
+              ]
+            }
+          ]
+        },
+        "INFECTING_ACTIVITY": {
+          "name": "INFECTING_ACTIVITY",
+          "enums": [
+            {
+              "name": "INFECTING_ACTIVITY",
+              "alts": [
+                "hålla i handen",
+                "kyssar",
+                "kyssa",
+                "puss",
+                "pussa",
+                "kyss",
+                "pussar",
+                "kram",
+                "kramar",
+                "kramas",
+                "pussas",
+                "kyssas",
+                "hostar"
+              ]
+            }
+          ]
+        },
+        "OCCUPATION": {
+          "name": "OCCUPATION",
+          "enums": [
+            {
+              "name": "OCCUPATION",
+              "alts": [
+                "jobbet",
+                "skolan",
+                "dagis",
+                "förskolan",
+                "arbetet"
+              ]
+            }
+          ]
+        }
       },
-      "goto": "VERIFY_ANSWER"
-    }
+      "examples": [
+        "får jag gå till OCCUPATION",
+        "kan jag gå till OCCUPATION",
+        "får jag gå till OCCUPATION",
+        "kan jag gå till OCCUPATION",
+        "får jag gå till _OCCUPATION",
+        "kan jag gå till _OCCUPATION"
+      ]
+    },
+    "bot": [
+      "Känner du dig sjuk med symtom som snuva, hosta eller feber ska du låta bli att träffa andra människor. Det gäller även om du bara känner dig lite sjuk. Du ska inte gå till jobbet eller skolan, inte resa med buss, tåg, tunnelbana eller flyg och inte heller gå ut för att handla. Om du känner dig det minsta sjuk, stanna hemma. När du känner dig helt frisk, stanna hemma i minst två dagar till.  Folkhälsomyndigheten ger också rådet att du jobbar hemifrån i den mån det är möjligt, även om du är frisk. Syftet är att minska hastigheten i smittspridningen och att hålla nere antalet personer som behöver sjukhusvård. Många länder i världen uppmanar människor att hålla sig hemma även om de är friska för att sakta ner smittspridningen."
+    ]
   },
   {
     "intent": {
@@ -295,6 +624,44 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             }
           ]
+        },
+        "INFECTING_ACTIVITY": {
+          "name": "INFECTING_ACTIVITY",
+          "enums": [
+            {
+              "name": "INFECTING_ACTIVITY",
+              "alts": [
+                "hålla i handen",
+                "kyssar",
+                "kyssa",
+                "puss",
+                "pussa",
+                "kyss",
+                "pussar",
+                "kram",
+                "kramar",
+                "kramas",
+                "pussas",
+                "kyssas",
+                "hostar"
+              ]
+            }
+          ]
+        },
+        "OCCUPATION": {
+          "name": "OCCUPATION",
+          "enums": [
+            {
+              "name": "OCCUPATION",
+              "alts": [
+                "jobbet",
+                "skolan",
+                "dagis",
+                "förskolan",
+                "arbetet"
+              ]
+            }
+          ]
         }
       },
       "examples": [
@@ -303,22 +670,24 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "måste jag vara hemma en hel vecka",
         "hur vet jag hur länge jag måste stanna hemma",
         "hur långt ska jag vara hemma",
+        "hur länge ska jag vara hemma",
+        "hur många dagar ska jag stanna hemma",
+        "hur många dagar ska man vara i karantän",
+        "måste jag vara hemma en hel vecka",
+        "hur vet jag hur länge jag måste stanna hemma",
+        "hur långt ska jag vara hemma",
+        "hur länge ska jag vara hemma",
+        "hur många dagar ska jag stanna hemma",
+        "hur många dagar ska man vara i karantän",
+        "måste jag vara hemma en hel vecka",
+        "hur vet jag hur länge jag måste stanna hemma",
+        "hur långt ska jag vara hemma",
         "hur länge ska jag vara hemma"
       ]
     },
-    "bot": {
-      "say": [
-        "Stanna hemma tills du är helt frisk och i minst två dygn till innan du går till jobbet, åker i kollektivtrafiken eller går och handlar. Om du har äldre släktingar, kan du som anhörig och närstående undvika att träffa dem, särskilt om du har varit sjuk. Det är för att skydda dem från virus."
-      ],
-      "set": {
-        "classifiedIntentName": "question: hur många dagar ska jag stanna hemma",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Stanna hemma tills du är helt frisk och i minst två dygn till innan du går till jobbet, åker i kollektivtrafiken eller går och handlar. Om du har äldre släktingar, kan du som anhörig och närstående undvika att träffa dem, särskilt om du har varit sjuk. Det är för att skydda dem från virus."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
+    "bot": [
+      "Stanna hemma tills du är helt frisk och i minst två dygn till innan du går till jobbet, åker i kollektivtrafiken eller går och handlar. Om du har äldre släktingar, kan du som anhörig och närstående undvika att träffa dem, särskilt om du har varit sjuk. Det är för att skydda dem från virus."
+    ]
   },
   {
     "intent": {
@@ -340,6 +709,44 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             }
           ]
+        },
+        "INFECTING_ACTIVITY": {
+          "name": "INFECTING_ACTIVITY",
+          "enums": [
+            {
+              "name": "INFECTING_ACTIVITY",
+              "alts": [
+                "hålla i handen",
+                "kyssar",
+                "kyssa",
+                "puss",
+                "pussa",
+                "kyss",
+                "pussar",
+                "kram",
+                "kramar",
+                "kramas",
+                "pussas",
+                "kyssas",
+                "hostar"
+              ]
+            }
+          ]
+        },
+        "OCCUPATION": {
+          "name": "OCCUPATION",
+          "enums": [
+            {
+              "name": "OCCUPATION",
+              "alts": [
+                "jobbet",
+                "skolan",
+                "dagis",
+                "förskolan",
+                "arbetet"
+              ]
+            }
+          ]
         }
       },
       "examples": [
@@ -347,22 +754,22 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "blir man jättesjuk av corona",
         "hur pass sjuk blir man",
         "hur sjuk kan jag bli",
+        "blir man alltid väldigt sjuk",
+        "hur sjuk blir man av corona",
+        "blir man jättesjuk av corona",
+        "hur pass sjuk blir man",
+        "hur sjuk kan jag bli",
+        "blir man alltid väldigt sjuk",
+        "hur sjuk blir man av corona",
+        "blir man jättesjuk av corona",
+        "hur pass sjuk blir man",
+        "hur sjuk kan jag bli",
         "blir man alltid väldigt sjuk"
       ]
     },
-    "bot": {
-      "say": [
-        "Enligt Vårdguiden blir de allra flesta som smittas lindrigt sjuka med luftvägssymtom som går över av sig själva, men vissa drabbas av allvarligare sjukdom som lunginflammation. De som blir allvarligt sjuka kan behöva läggas in på sjukhus och få hjälp med andningen. Därför är det viktigt att inte för många blir sjuka samtidigt."
-      ],
-      "set": {
-        "classifiedIntentName": "question: hur sjuk blir man av corona",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Enligt Vårdguiden blir de allra flesta som smittas lindrigt sjuka med luftvägssymtom som går över av sig själva, men vissa drabbas av allvarligare sjukdom som lunginflammation. De som blir allvarligt sjuka kan behöva läggas in på sjukhus och få hjälp med andningen. Därför är det viktigt att inte för många blir sjuka samtidigt."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
+    "bot": [
+      "Enligt Vårdguiden blir de allra flesta som smittas lindrigt sjuka med luftvägssymtom som går över av sig själva, men vissa drabbas av allvarligare sjukdom som lunginflammation. De som blir allvarligt sjuka kan behöva läggas in på sjukhus och få hjälp med andningen. Därför är det viktigt att inte för många blir sjuka samtidigt."
+    ]
   },
   {
     "intent": {
@@ -384,29 +791,67 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             }
           ]
+        },
+        "INFECTING_ACTIVITY": {
+          "name": "INFECTING_ACTIVITY",
+          "enums": [
+            {
+              "name": "INFECTING_ACTIVITY",
+              "alts": [
+                "hålla i handen",
+                "kyssar",
+                "kyssa",
+                "puss",
+                "pussa",
+                "kyss",
+                "pussar",
+                "kram",
+                "kramar",
+                "kramas",
+                "pussas",
+                "kyssas",
+                "hostar"
+              ]
+            }
+          ]
+        },
+        "OCCUPATION": {
+          "name": "OCCUPATION",
+          "enums": [
+            {
+              "name": "OCCUPATION",
+              "alts": [
+                "jobbet",
+                "skolan",
+                "dagis",
+                "förskolan",
+                "arbetet"
+              ]
+            }
+          ]
         }
       },
       "examples": [
         "hur pass länge är man sjuk",
         "hur länge har man corona",
         "hur lång tid kan man ha corona",
-        "hur lång tid innan man corona går över",
+        "hur lång tid tar det innan _CORONA går över",
+        "när går corona över",
+        "hur pass länge är man sjuk",
+        "hur länge har man corona",
+        "hur lång tid kan man ha corona",
+        "hur lång tid tar det innan CORONA går över",
+        "när går corona över",
+        "hur pass länge är man sjuk",
+        "hur länge har man corona",
+        "hur lång tid kan man ha corona",
+        "hur lång tid tar det innan CORONA går över",
         "när går corona över"
       ]
     },
-    "bot": {
-      "say": [
-        "Enligt Folkhälsomyndigheten blir flesta som fått lindriga symtom  friska efter två veckor. För de som blev allvarligt sjuka tog det mellan tre och sex veckor innan de var friska igen.   De som blev allvarligt sjuka hade andningssvårigheter, som snabb andning och låg syresättning av blodet. En del av dem behövde intensivvård, till exempel med respirator. Dessa allvarliga symtom kom vanligen en vecka efter insjuknandet."
-      ],
-      "set": {
-        "classifiedIntentName": "question: hur pass länge är man sjuk",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Enligt Folkhälsomyndigheten blir flesta som fått lindriga symtom  friska efter två veckor. För de som blev allvarligt sjuka tog det mellan tre och sex veckor innan de var friska igen.   De som blev allvarligt sjuka hade andningssvårigheter, som snabb andning och låg syresättning av blodet. En del av dem behövde intensivvård, till exempel med respirator. Dessa allvarliga symtom kom vanligen en vecka efter insjuknandet."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
+    "bot": [
+      "Enligt Folkhälsomyndigheten blir flesta som fått lindriga symtom  friska efter två veckor. För de som blev allvarligt sjuka tog det mellan tre och sex veckor innan de var friska igen.   De som blev allvarligt sjuka hade andningssvårigheter, som snabb andning och låg syresättning av blodet. En del av dem behövde intensivvård, till exempel med respirator. Dessa allvarliga symtom kom vanligen en vecka efter insjuknandet."
+    ]
   },
   {
     "intent": {
@@ -428,6 +873,44 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             }
           ]
+        },
+        "INFECTING_ACTIVITY": {
+          "name": "INFECTING_ACTIVITY",
+          "enums": [
+            {
+              "name": "INFECTING_ACTIVITY",
+              "alts": [
+                "hålla i handen",
+                "kyssar",
+                "kyssa",
+                "puss",
+                "pussa",
+                "kyss",
+                "pussar",
+                "kram",
+                "kramar",
+                "kramas",
+                "pussas",
+                "kyssas",
+                "hostar"
+              ]
+            }
+          ]
+        },
+        "OCCUPATION": {
+          "name": "OCCUPATION",
+          "enums": [
+            {
+              "name": "OCCUPATION",
+              "alts": [
+                "jobbet",
+                "skolan",
+                "dagis",
+                "förskolan",
+                "arbetet"
+              ]
+            }
+          ]
         }
       },
       "examples": [
@@ -435,22 +918,22 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "kan man dö av corona",
         "hur många har dött av corona",
         "är det många som dör av covid-19",
+        "vad är risken att dö av corona",
+        "hur många dör av corona",
+        "kan man dö av corona",
+        "hur många har dött av corona",
+        "är det många som dör av covid-19",
+        "vad är risken att dö av corona",
+        "hur många dör av corona",
+        "kan man dö av corona",
+        "hur många har dött av corona",
+        "är det många som dör av covid-19",
         "vad är risken att dö av corona"
       ]
     },
-    "bot": {
-      "say": [
-        "Många har dött i sjukdomen, främst äldre och sjuka. WHO uppskattar idag att dödligheten är 1–2 % av de redan smittade men uppskattningarna är fortfarande osäkra. Det kan finnas fler fall än vad som har rapporterats vilket kan innebära att dödligheten kommer att sjunka. Det är mycket ovanligt att unga friska människor dör, men äldre och sjuka är en riskgrupp som dör mycket oftare. Enligt den Brittiska regeringens expertråd kan dödligheten bland människor över 80 år vara över 8%, medans den bland människor yngre än 50 år är mindre än 0.5%. Bland dem som behöver läggas in på sjukhus uppskattar expertrådet att det kan vara 12% som dör."
-      ],
-      "set": {
-        "classifiedIntentName": "question: hur många dör av corona",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Många har dött i sjukdomen, främst äldre och sjuka. WHO uppskattar idag att dödligheten är 1–2 % av de redan smittade men uppskattningarna är fortfarande osäkra. Det kan finnas fler fall än vad som har rapporterats vilket kan innebära att dödligheten kommer att sjunka. Det är mycket ovanligt att unga friska människor dör, men äldre och sjuka är en riskgrupp som dör mycket oftare. Enligt den Brittiska regeringens expertråd kan dödligheten bland människor över 80 år vara över 8%, medans den bland människor yngre än 50 år är mindre än 0.5%. Bland dem som behöver läggas in på sjukhus uppskattar expertrådet att det kan vara 12% som dör."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
+    "bot": [
+      "Många har dött i sjukdomen, främst äldre och sjuka. WHO uppskattar idag att dödligheten är 1–2 % av de redan smittade men uppskattningarna är fortfarande osäkra. Det kan finnas fler fall än vad som har rapporterats vilket kan innebära att dödligheten kommer att sjunka. Det är mycket ovanligt att unga friska människor dör, men äldre och sjuka är en riskgrupp som dör mycket oftare. Enligt den Brittiska regeringens expertråd kan dödligheten bland människor över 80 år vara över 8%, medans den bland människor yngre än 50 år är mindre än 0.5%. Bland dem som behöver läggas in på sjukhus uppskattar expertrådet att det kan vara 12% som dör."
+    ]
   },
   {
     "intent": {
@@ -472,6 +955,44 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             }
           ]
+        },
+        "INFECTING_ACTIVITY": {
+          "name": "INFECTING_ACTIVITY",
+          "enums": [
+            {
+              "name": "INFECTING_ACTIVITY",
+              "alts": [
+                "hålla i handen",
+                "kyssar",
+                "kyssa",
+                "puss",
+                "pussa",
+                "kyss",
+                "pussar",
+                "kram",
+                "kramar",
+                "kramas",
+                "pussas",
+                "kyssas",
+                "hostar"
+              ]
+            }
+          ]
+        },
+        "OCCUPATION": {
+          "name": "OCCUPATION",
+          "enums": [
+            {
+              "name": "OCCUPATION",
+              "alts": [
+                "jobbet",
+                "skolan",
+                "dagis",
+                "förskolan",
+                "arbetet"
+              ]
+            }
+          ]
         }
       },
       "examples": [
@@ -479,22 +1000,22 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "hur stor är risken om man är gravid",
         "hur ska man göra om man är gravid",
         "är graviditet en riskgrupp",
+        "är gravida kvinnor i riskgruppen",
+        "är det större risk om man är gravid",
+        "hur stor är risken om man är gravid",
+        "hur ska man göra om man är gravid",
+        "är graviditet en riskgrupp",
+        "är gravida kvinnor i riskgruppen",
+        "är det större risk om man är gravid",
+        "hur stor är risken om man är gravid",
+        "hur ska man göra om man är gravid",
+        "är graviditet en riskgrupp",
         "är gravida kvinnor i riskgruppen"
       ]
     },
-    "bot": {
-      "say": [
-        "För närvarande finns det begränsad information om covid-19 och graviditet. Vi rekommenderar att gravida kvinnor vidtar samma försiktighetsåtgärder som med alla smittsamma sjukdomar."
-      ],
-      "set": {
-        "classifiedIntentName": "question: är det större risk om man är gravid",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "För närvarande finns det begränsad information om covid-19 och graviditet. Vi rekommenderar att gravida kvinnor vidtar samma försiktighetsåtgärder som med alla smittsamma sjukdomar."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
+    "bot": [
+      "För närvarande finns det begränsad information om covid-19 och graviditet. Vi rekommenderar att gravida kvinnor vidtar samma försiktighetsåtgärder som med alla smittsamma sjukdomar."
+    ]
   },
   {
     "intent": {
@@ -516,6 +1037,44 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             }
           ]
+        },
+        "INFECTING_ACTIVITY": {
+          "name": "INFECTING_ACTIVITY",
+          "enums": [
+            {
+              "name": "INFECTING_ACTIVITY",
+              "alts": [
+                "hålla i handen",
+                "kyssar",
+                "kyssa",
+                "puss",
+                "pussa",
+                "kyss",
+                "pussar",
+                "kram",
+                "kramar",
+                "kramas",
+                "pussas",
+                "kyssas",
+                "hostar"
+              ]
+            }
+          ]
+        },
+        "OCCUPATION": {
+          "name": "OCCUPATION",
+          "enums": [
+            {
+              "name": "OCCUPATION",
+              "alts": [
+                "jobbet",
+                "skolan",
+                "dagis",
+                "förskolan",
+                "arbetet"
+              ]
+            }
+          ]
         }
       },
       "examples": [
@@ -524,22 +1083,24 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "blir jag smittsam direkt om jag har fått corona",
         "är corona genast smittsamt",
         "hur snabbt smittar jag om jag fått covid-19",
+        "smittar jag under inkubationstiden",
+        "smittar corona hela tiden",
+        "smittar corona direkt",
+        "blir jag smittsam direkt om jag har fått corona",
+        "är corona genast smittsamt",
+        "hur snabbt smittar jag om jag fått covid-19",
+        "smittar jag under inkubationstiden",
+        "smittar corona hela tiden",
+        "smittar corona direkt",
+        "blir jag smittsam direkt om jag har fått corona",
+        "är corona genast smittsamt",
+        "hur snabbt smittar jag om jag fått covid-19",
         "smittar jag under inkubationstiden"
       ]
     },
-    "bot": {
-      "say": [
-        "Folkhälsomyndighetens bedömning av forskningen är att viruset smittar när man är sjuk och i samband med insjuknandet, och inte under inkubationstiden. De som har varit utsatta för smitta ska vara uppmärksamma på tidiga sjukdomstecken, eftersom du smittar så fort du har även milda symtom. "
-      ],
-      "set": {
-        "classifiedIntentName": "question: smittar corona hela tiden",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Folkhälsomyndighetens bedömning av forskningen är att viruset smittar när man är sjuk och i samband med insjuknandet, och inte under inkubationstiden. De som har varit utsatta för smitta ska vara uppmärksamma på tidiga sjukdomstecken, eftersom du smittar så fort du har även milda symtom. "
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
+    "bot": [
+      "Folkhälsomyndighetens bedömning av forskningen är att viruset smittar när man är sjuk och i samband med insjuknandet, och inte under inkubationstiden. De som har varit utsatta för smitta ska vara uppmärksamma på tidiga sjukdomstecken, eftersom du smittar så fort du har även milda symtom. "
+    ]
   },
   {
     "intent": {
@@ -561,6 +1122,44 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             }
           ]
+        },
+        "INFECTING_ACTIVITY": {
+          "name": "INFECTING_ACTIVITY",
+          "enums": [
+            {
+              "name": "INFECTING_ACTIVITY",
+              "alts": [
+                "hålla i handen",
+                "kyssar",
+                "kyssa",
+                "puss",
+                "pussa",
+                "kyss",
+                "pussar",
+                "kram",
+                "kramar",
+                "kramas",
+                "pussas",
+                "kyssas",
+                "hostar"
+              ]
+            }
+          ]
+        },
+        "OCCUPATION": {
+          "name": "OCCUPATION",
+          "enums": [
+            {
+              "name": "OCCUPATION",
+              "alts": [
+                "jobbet",
+                "skolan",
+                "dagis",
+                "förskolan",
+                "arbetet"
+              ]
+            }
+          ]
         }
       },
       "examples": [
@@ -568,22 +1167,22 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "kan jag bli smittad av en person utan symtom",
         "är corona smittsamt fastän en person inte känner sig sjuk",
         "måste det finnas symtom för att det ska vara smittsamt",
+        "är corona smittsamt om man bara hostar lite",
+        "smittar corona utan symtom",
+        "kan jag bli smittad av en person utan symtom",
+        "är corona smittsamt fastän en person inte känner sig sjuk",
+        "måste det finnas symtom för att det ska vara smittsamt",
+        "är corona smittsamt om man bara hostar lite",
+        "smittar corona utan symtom",
+        "kan jag bli smittad av en person utan symtom",
+        "är corona smittsamt fastän en person inte känner sig sjuk",
+        "måste det finnas symtom för att det ska vara smittsamt",
         "är corona smittsamt om man bara hostar lite"
       ]
     },
-    "bot": {
-      "say": [
-        "Enligt Folkhälsomyndigheten drivs smittspridningen av personer med symptom på sjukdom, men en del som är sjuka får bara milda symptom. Man kan därför bli smittad av någon som inte känner sig sjuk, men som har t. ex. mild hosta. "
-      ],
-      "set": {
-        "classifiedIntentName": "question: smittar corona utan symtom",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Enligt Folkhälsomyndigheten drivs smittspridningen av personer med symptom på sjukdom, men en del som är sjuka får bara milda symptom. Man kan därför bli smittad av någon som inte känner sig sjuk, men som har t. ex. mild hosta. "
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
+    "bot": [
+      "Enligt Folkhälsomyndigheten drivs smittspridningen av personer med symptom på sjukdom, men en del som är sjuka får bara milda symptom. Man kan därför bli smittad av någon som inte känner sig sjuk, men som har t. ex. mild hosta. "
+    ]
   },
   {
     "intent": {
@@ -605,6 +1204,44 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             }
           ]
+        },
+        "INFECTING_ACTIVITY": {
+          "name": "INFECTING_ACTIVITY",
+          "enums": [
+            {
+              "name": "INFECTING_ACTIVITY",
+              "alts": [
+                "hålla i handen",
+                "kyssar",
+                "kyssa",
+                "puss",
+                "pussa",
+                "kyss",
+                "pussar",
+                "kram",
+                "kramar",
+                "kramas",
+                "pussas",
+                "kyssas",
+                "hostar"
+              ]
+            }
+          ]
+        },
+        "OCCUPATION": {
+          "name": "OCCUPATION",
+          "enums": [
+            {
+              "name": "OCCUPATION",
+              "alts": [
+                "jobbet",
+                "skolan",
+                "dagis",
+                "förskolan",
+                "arbetet"
+              ]
+            }
+          ]
         }
       },
       "examples": [
@@ -612,22 +1249,22 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "vilka regler gäller för evenemang",
         "vad gäller för event",
         "är alla evenemang inställda",
+        "kommer alla event ställas in",
+        "vad är reglerna för stora evenemang",
+        "vilka regler gäller för evenemang",
+        "vad gäller för event",
+        "är alla evenemang inställda",
+        "kommer alla event ställas in",
+        "vad är reglerna för stora evenemang",
+        "vilka regler gäller för evenemang",
+        "vad gäller för event",
+        "är alla evenemang inställda",
         "kommer alla event ställas in"
       ]
     },
-    "bot": {
-      "say": [
-        "Regeringen beslutade den 11:e mars att stoppa alla allmänna sammankomster och offentliga tillställningar med fler än 500 personer. Syftet är att förhindra att ett stort antal människor från olika ställen kommer och samlas på en och samma plats. Även mindre arrangemang ska följa Folkhälsomyndighetens riskbedömning och ställas in om de inte kan göras säkra. Skälet till att många mindre evenemang ställs in är att arrangörer vill ta sitt ansvar i att minska smittspridningen."
-      ],
-      "set": {
-        "classifiedIntentName": "question: vad är reglerna för stora evenemang",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Regeringen beslutade den 11:e mars att stoppa alla allmänna sammankomster och offentliga tillställningar med fler än 500 personer. Syftet är att förhindra att ett stort antal människor från olika ställen kommer och samlas på en och samma plats. Även mindre arrangemang ska följa Folkhälsomyndighetens riskbedömning och ställas in om de inte kan göras säkra. Skälet till att många mindre evenemang ställs in är att arrangörer vill ta sitt ansvar i att minska smittspridningen."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
+    "bot": [
+      "Regeringen beslutade den 11:e mars att stoppa alla allmänna sammankomster och offentliga tillställningar med fler än 500 personer. Syftet är att förhindra att ett stort antal människor från olika ställen kommer och samlas på en och samma plats. Även mindre arrangemang ska följa Folkhälsomyndighetens riskbedömning och ställas in om de inte kan göras säkra. Skälet till att många mindre evenemang ställs in är att arrangörer vill ta sitt ansvar i att minska smittspridningen."
+    ]
   },
   {
     "intent": {
@@ -649,6 +1286,44 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             }
           ]
+        },
+        "INFECTING_ACTIVITY": {
+          "name": "INFECTING_ACTIVITY",
+          "enums": [
+            {
+              "name": "INFECTING_ACTIVITY",
+              "alts": [
+                "hålla i handen",
+                "kyssar",
+                "kyssa",
+                "puss",
+                "pussa",
+                "kyss",
+                "pussar",
+                "kram",
+                "kramar",
+                "kramas",
+                "pussas",
+                "kyssas",
+                "hostar"
+              ]
+            }
+          ]
+        },
+        "OCCUPATION": {
+          "name": "OCCUPATION",
+          "enums": [
+            {
+              "name": "OCCUPATION",
+              "alts": [
+                "jobbet",
+                "skolan",
+                "dagis",
+                "förskolan",
+                "arbetet"
+              ]
+            }
+          ]
         }
       },
       "examples": [
@@ -656,22 +1331,22 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "hur många får det vara på tunnelbanan",
         "vad gäller för tunnelbanan",
         "vad gäller för kollektivtrafiken",
+        "hur många får det vara på en arbetsplats",
+        "vilka regler gäller för kollektivtrafik  arbetsplatser och skolor?",
+        "hur många får det vara på tunnelbanan",
+        "vad gäller för tunnelbanan",
+        "vad gäller för kollektivtrafiken",
+        "hur många får det vara på en arbetsplats",
+        "vilka regler gäller för kollektivtrafik  arbetsplatser och skolor?",
+        "hur många får det vara på tunnelbanan",
+        "vad gäller för tunnelbanan",
+        "vad gäller för kollektivtrafiken",
         "hur många får det vara på en arbetsplats"
       ]
     },
-    "bot": {
-      "say": [
-        "Den omfattande spridningen av det nya coronaviruset gör att situationen för resenärer och pendlare snabbt kan förändras. I Stockholm gäller reducerad trafik i kollektivtrafiken. Håll minst 1 meters avstånd till andra resenärer.  Folkhälsomyndighetens råd är därför att du jobbar hemifrån i den mån det är möjligt, i samråd med din arbetsgivare. Syftet är att minska hastigheten i smittspridningen och att hålla nere antalet personer som behöver sjukhusvård."
-      ],
-      "set": {
-        "classifiedIntentName": "question: vilka regler gäller för kollektivtrafik  arbetsplatser och skolor?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Den omfattande spridningen av det nya coronaviruset gör att situationen för resenärer och pendlare snabbt kan förändras. I Stockholm gäller reducerad trafik i kollektivtrafiken. Håll minst 1 meters avstånd till andra resenärer.  Folkhälsomyndighetens råd är därför att du jobbar hemifrån i den mån det är möjligt, i samråd med din arbetsgivare. Syftet är att minska hastigheten i smittspridningen och att hålla nere antalet personer som behöver sjukhusvård."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
+    "bot": [
+      "Den omfattande spridningen av det nya coronaviruset gör att situationen för resenärer och pendlare snabbt kan förändras. I Stockholm gäller reducerad trafik i kollektivtrafiken. Håll minst 1 meters avstånd till andra resenärer.  Folkhälsomyndighetens råd är därför att du jobbar hemifrån i den mån det är möjligt, i samråd med din arbetsgivare. Syftet är att minska hastigheten i smittspridningen och att hålla nere antalet personer som behöver sjukhusvård."
+    ]
   },
   {
     "intent": {
@@ -693,6 +1368,44 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             }
           ]
+        },
+        "INFECTING_ACTIVITY": {
+          "name": "INFECTING_ACTIVITY",
+          "enums": [
+            {
+              "name": "INFECTING_ACTIVITY",
+              "alts": [
+                "hålla i handen",
+                "kyssar",
+                "kyssa",
+                "puss",
+                "pussa",
+                "kyss",
+                "pussar",
+                "kram",
+                "kramar",
+                "kramas",
+                "pussas",
+                "kyssas",
+                "hostar"
+              ]
+            }
+          ]
+        },
+        "OCCUPATION": {
+          "name": "OCCUPATION",
+          "enums": [
+            {
+              "name": "OCCUPATION",
+              "alts": [
+                "jobbet",
+                "skolan",
+                "dagis",
+                "förskolan",
+                "arbetet"
+              ]
+            }
+          ]
         }
       },
       "examples": [
@@ -700,22 +1413,22 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "är det okej att resa utomlands",
         "vad gäller om man ska resa utomlands",
         "är det ok att åka utomlands",
+        "måste jag ställa in min semester utomlands",
+        "får man resa till andra länder",
+        "är det okej att resa utomlands",
+        "vad gäller om man ska resa utomlands",
+        "är det ok att åka utomlands",
+        "måste jag ställa in min semester utomlands",
+        "får man resa till andra länder",
+        "är det okej att resa utomlands",
+        "vad gäller om man ska resa utomlands",
+        "är det ok att åka utomlands",
         "måste jag ställa in min semester utomlands"
       ]
     },
-    "bot": {
-      "say": [
-        "Det är Utrikesdepartementet (UD) som utfärdar reseavrådan till andra länder. Sedan i början på mars avråder UD från icke nödvändiga resor till alla länder. Besök deras webbplats för att få den senaste informationen. Det är dessutom många länder som inte tar emot inresande just nu för att begränsa smittspridningen."
-      ],
-      "set": {
-        "classifiedIntentName": "question: får man resa till andra länder",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Det är Utrikesdepartementet (UD) som utfärdar reseavrådan till andra länder. Sedan i början på mars avråder UD från icke nödvändiga resor till alla länder. Besök deras webbplats för att få den senaste informationen. Det är dessutom många länder som inte tar emot inresande just nu för att begränsa smittspridningen."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
+    "bot": [
+      "Det är Utrikesdepartementet (UD) som utfärdar reseavrådan till andra länder. Sedan i början på mars avråder UD från icke nödvändiga resor till alla länder. Besök deras webbplats för att få den senaste informationen. Det är dessutom många länder som inte tar emot inresande just nu för att begränsa smittspridningen."
+    ]
   },
   {
     "intent": {
@@ -737,26 +1450,58 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             }
           ]
+        },
+        "INFECTING_ACTIVITY": {
+          "name": "INFECTING_ACTIVITY",
+          "enums": [
+            {
+              "name": "INFECTING_ACTIVITY",
+              "alts": [
+                "hålla i handen",
+                "kyssar",
+                "kyssa",
+                "puss",
+                "pussa",
+                "kyss",
+                "pussar",
+                "kram",
+                "kramar",
+                "kramas",
+                "pussas",
+                "kyssas",
+                "hostar"
+              ]
+            }
+          ]
+        },
+        "OCCUPATION": {
+          "name": "OCCUPATION",
+          "enums": [
+            {
+              "name": "OCCUPATION",
+              "alts": [
+                "jobbet",
+                "skolan",
+                "dagis",
+                "förskolan",
+                "arbetet"
+              ]
+            }
+          ]
         }
       },
       "examples": [
         "behöver jag göra något särskilt om jag är frisk",
+        "ska jag göra något särskilt om jag känner mig frisk",
+        "behöver jag göra något särskilt om jag är frisk",
+        "ska jag göra något särskilt om jag känner mig frisk",
+        "behöver jag göra något särskilt om jag är frisk",
         "ska jag göra något särskilt om jag känner mig frisk"
       ]
     },
-    "bot": {
-      "say": [
-        "Om du inte har hosta, andningssvårigheter eller feber kan du leva precis som vanligt. Däremot är det jätteviktigt att stanna hemma om man känner sig sjuk."
-      ],
-      "set": {
-        "classifiedIntentName": "question: behöver jag göra något särskilt om jag är frisk",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Om du inte har hosta, andningssvårigheter eller feber kan du leva precis som vanligt. Däremot är det jätteviktigt att stanna hemma om man känner sig sjuk."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
+    "bot": [
+      "Om du inte har hosta, andningssvårigheter eller feber kan du leva precis som vanligt. Däremot är det jätteviktigt att stanna hemma om man känner sig sjuk."
+    ]
   },
   {
     "intent": {
@@ -778,6 +1523,44 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             }
           ]
+        },
+        "INFECTING_ACTIVITY": {
+          "name": "INFECTING_ACTIVITY",
+          "enums": [
+            {
+              "name": "INFECTING_ACTIVITY",
+              "alts": [
+                "hålla i handen",
+                "kyssar",
+                "kyssa",
+                "puss",
+                "pussa",
+                "kyss",
+                "pussar",
+                "kram",
+                "kramar",
+                "kramas",
+                "pussas",
+                "kyssas",
+                "hostar"
+              ]
+            }
+          ]
+        },
+        "OCCUPATION": {
+          "name": "OCCUPATION",
+          "enums": [
+            {
+              "name": "OCCUPATION",
+              "alts": [
+                "jobbet",
+                "skolan",
+                "dagis",
+                "förskolan",
+                "arbetet"
+              ]
+            }
+          ]
         }
       },
       "examples": [
@@ -787,22 +1570,26 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "vad ska jag göra jag har fått corona",
         "om jag tror jag har corona vad ska jag göra",
         "jag har corona vad ska jag göra",
+        "jag misstänker att jag kanske har corona vad gör jag nu",
+        "jag tror jag har fått corona vad ska jag göra",
+        "vad gör jag om jag tror att jag har fått corona",
+        "hur gör jag om jag har fått corona",
+        "vad ska jag göra jag har fått corona",
+        "om jag tror jag har corona vad ska jag göra",
+        "jag har corona vad ska jag göra",
+        "jag misstänker att jag kanske har corona vad gör jag nu",
+        "jag tror jag har fått corona vad ska jag göra",
+        "vad gör jag om jag tror att jag har fått corona",
+        "hur gör jag om jag har fått corona",
+        "vad ska jag göra jag har fått corona",
+        "om jag tror jag har corona vad ska jag göra",
+        "jag har corona vad ska jag göra",
         "jag misstänker att jag kanske har corona vad gör jag nu"
       ]
     },
-    "bot": {
-      "say": [
-        "Det är mycket viktigt att du stannar hemma om du känner dig sjuk. Klarar du dig inte med egenvård i hemmet ska du ringa 1177 för sjukvårdsrådgivning. Besök inte någon vårdinrättning, utan kontakta alltid 1177 Vårdguiden först."
-      ],
-      "set": {
-        "classifiedIntentName": "question: jag tror jag har fått corona vad ska jag göra",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Det är mycket viktigt att du stannar hemma om du känner dig sjuk. Klarar du dig inte med egenvård i hemmet ska du ringa 1177 för sjukvårdsrådgivning. Besök inte någon vårdinrättning, utan kontakta alltid 1177 Vårdguiden först."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
+    "bot": [
+      "Det är mycket viktigt att du stannar hemma om du känner dig sjuk. Klarar du dig inte med egenvård i hemmet ska du ringa 1177 för sjukvårdsrådgivning. Besök inte någon vårdinrättning, utan kontakta alltid 1177 Vårdguiden först."
+    ]
   },
   {
     "intent": {
@@ -824,28 +1611,64 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             }
           ]
+        },
+        "INFECTING_ACTIVITY": {
+          "name": "INFECTING_ACTIVITY",
+          "enums": [
+            {
+              "name": "INFECTING_ACTIVITY",
+              "alts": [
+                "hålla i handen",
+                "kyssar",
+                "kyssa",
+                "puss",
+                "pussa",
+                "kyss",
+                "pussar",
+                "kram",
+                "kramar",
+                "kramas",
+                "pussas",
+                "kyssas",
+                "hostar"
+              ]
+            }
+          ]
+        },
+        "OCCUPATION": {
+          "name": "OCCUPATION",
+          "enums": [
+            {
+              "name": "OCCUPATION",
+              "alts": [
+                "jobbet",
+                "skolan",
+                "dagis",
+                "förskolan",
+                "arbetet"
+              ]
+            }
+          ]
         }
       },
       "examples": [
         "har sverige beredskap",
         "hur stor beredskap har sverige",
         "hur är sveriges beredskap just nu",
+        "har sverige någon beredskap",
+        "har sverige beredskap",
+        "hur stor beredskap har sverige",
+        "hur är sveriges beredskap just nu",
+        "har sverige någon beredskap",
+        "har sverige beredskap",
+        "hur stor beredskap har sverige",
+        "hur är sveriges beredskap just nu",
         "har sverige någon beredskap"
       ]
     },
-    "bot": {
-      "say": [
-        "Den svenska beredskapen anses vara mycket bra. Hälso- och sjukvården samt landets smittskyddsenheter har sedan lång tid tillbaka en hög medvetenhet. Det finns rutiner för hur både misstänkta och bekräftade fall ska tas omhand på ett bra och säkert sätt. Privata aktörer är också medvetna om beredskap och krishantering, och det finns möjlighet till utökade provanalyser på andra laboratorier än Folkhälsomyndigheten vid behov."
-      ],
-      "set": {
-        "classifiedIntentName": "question: har sverige beredskap",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Den svenska beredskapen anses vara mycket bra. Hälso- och sjukvården samt landets smittskyddsenheter har sedan lång tid tillbaka en hög medvetenhet. Det finns rutiner för hur både misstänkta och bekräftade fall ska tas omhand på ett bra och säkert sätt. Privata aktörer är också medvetna om beredskap och krishantering, och det finns möjlighet till utökade provanalyser på andra laboratorier än Folkhälsomyndigheten vid behov."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
+    "bot": [
+      "Den svenska beredskapen anses vara mycket bra. Hälso- och sjukvården samt landets smittskyddsenheter har sedan lång tid tillbaka en hög medvetenhet. Det finns rutiner för hur både misstänkta och bekräftade fall ska tas omhand på ett bra och säkert sätt. Privata aktörer är också medvetna om beredskap och krishantering, och det finns möjlighet till utökade provanalyser på andra laboratorier än Folkhälsomyndigheten vid behov."
+    ]
   },
   {
     "intent": {
@@ -867,6 +1690,44 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             }
           ]
+        },
+        "INFECTING_ACTIVITY": {
+          "name": "INFECTING_ACTIVITY",
+          "enums": [
+            {
+              "name": "INFECTING_ACTIVITY",
+              "alts": [
+                "hålla i handen",
+                "kyssar",
+                "kyssa",
+                "puss",
+                "pussa",
+                "kyss",
+                "pussar",
+                "kram",
+                "kramar",
+                "kramas",
+                "pussas",
+                "kyssas",
+                "hostar"
+              ]
+            }
+          ]
+        },
+        "OCCUPATION": {
+          "name": "OCCUPATION",
+          "enums": [
+            {
+              "name": "OCCUPATION",
+              "alts": [
+                "jobbet",
+                "skolan",
+                "dagis",
+                "förskolan",
+                "arbetet"
+              ]
+            }
+          ]
         }
       },
       "examples": [
@@ -874,22 +1735,22 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "hur många orkar sjukhusen ta emot",
         "hur mycket klarar vården i sverige",
         "kommer alla kunna få vård mot corona i sverige",
+        "får alla vård om många är smittade samtidigt",
+        "kommer sjukhusen att klara det",
+        "hur många orkar sjukhusen ta emot",
+        "hur mycket klarar vården i sverige",
+        "kommer alla kunna få vård mot corona i sverige",
+        "får alla vård om många är smittade samtidigt",
+        "kommer sjukhusen att klara det",
+        "hur många orkar sjukhusen ta emot",
+        "hur mycket klarar vården i sverige",
+        "kommer alla kunna få vård mot corona i sverige",
         "får alla vård om många är smittade samtidigt"
       ]
     },
-    "bot": {
-      "say": [
-        "Erfarenheter från influensasäsonger med många smittade som behöver vård, visar att påfrestning på sjukvården då uppstår med behov av omprioriteringar och samarbeten inom och mellan regioner. Liknande situation kan uppstå om covid-19 får omfattande spridning i befolkningen. Sjukvårdens pandemiplanering kan då behöva användas."
-      ],
-      "set": {
-        "classifiedIntentName": "question: kommer sjukhusen att klara det",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Erfarenheter från influensasäsonger med många smittade som behöver vård, visar att påfrestning på sjukvården då uppstår med behov av omprioriteringar och samarbeten inom och mellan regioner. Liknande situation kan uppstå om covid-19 får omfattande spridning i befolkningen. Sjukvårdens pandemiplanering kan då behöva användas."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
+    "bot": [
+      "Erfarenheter från influensasäsonger med många smittade som behöver vård, visar att påfrestning på sjukvården då uppstår med behov av omprioriteringar och samarbeten inom och mellan regioner. Liknande situation kan uppstå om covid-19 får omfattande spridning i befolkningen. Sjukvårdens pandemiplanering kan då behöva användas."
+    ]
   },
   {
     "intent": {
@@ -911,28 +1772,64 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             }
           ]
+        },
+        "INFECTING_ACTIVITY": {
+          "name": "INFECTING_ACTIVITY",
+          "enums": [
+            {
+              "name": "INFECTING_ACTIVITY",
+              "alts": [
+                "hålla i handen",
+                "kyssar",
+                "kyssa",
+                "puss",
+                "pussa",
+                "kyss",
+                "pussar",
+                "kram",
+                "kramar",
+                "kramas",
+                "pussas",
+                "kyssas",
+                "hostar"
+              ]
+            }
+          ]
+        },
+        "OCCUPATION": {
+          "name": "OCCUPATION",
+          "enums": [
+            {
+              "name": "OCCUPATION",
+              "alts": [
+                "jobbet",
+                "skolan",
+                "dagis",
+                "förskolan",
+                "arbetet"
+              ]
+            }
+          ]
         }
       },
       "examples": [
         "varför blir inte barn avstängda",
         "kan barn som varit i drabbade områden bli avstängda från skolan",
         "kan barn som har en sjuk familjemedlem bli avstängda",
+        "kan ett barn bli avstängt",
+        "varför blir inte barn avstängda",
+        "kan barn som varit i drabbade områden bli avstängda från skolan",
+        "kan barn som har en sjuk familjemedlem bli avstängda",
+        "kan ett barn bli avstängt",
+        "varför blir inte barn avstängda",
+        "kan barn som varit i drabbade områden bli avstängda från skolan",
+        "kan barn som har en sjuk familjemedlem bli avstängda",
         "kan ett barn bli avstängt"
       ]
     },
-    "bot": {
-      "say": [
-        "Eftersom inget av de utbrott vi hittills sett av coronaviruset har haft koppling till skolor eller barn anses det osannolikt att friska barn skulle orsaka smittspridning."
-      ],
-      "set": {
-        "classifiedIntentName": "question: varför blir inte barn avstängda",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Eftersom inget av de utbrott vi hittills sett av coronaviruset har haft koppling till skolor eller barn anses det osannolikt att friska barn skulle orsaka smittspridning."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
+    "bot": [
+      "Eftersom inget av de utbrott vi hittills sett av coronaviruset har haft koppling till skolor eller barn anses det osannolikt att friska barn skulle orsaka smittspridning."
+    ]
   },
   {
     "intent": {
@@ -954,28 +1851,64 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             }
           ]
+        },
+        "INFECTING_ACTIVITY": {
+          "name": "INFECTING_ACTIVITY",
+          "enums": [
+            {
+              "name": "INFECTING_ACTIVITY",
+              "alts": [
+                "hålla i handen",
+                "kyssar",
+                "kyssa",
+                "puss",
+                "pussa",
+                "kyss",
+                "pussar",
+                "kram",
+                "kramar",
+                "kramas",
+                "pussas",
+                "kyssas",
+                "hostar"
+              ]
+            }
+          ]
+        },
+        "OCCUPATION": {
+          "name": "OCCUPATION",
+          "enums": [
+            {
+              "name": "OCCUPATION",
+              "alts": [
+                "jobbet",
+                "skolan",
+                "dagis",
+                "förskolan",
+                "arbetet"
+              ]
+            }
+          ]
         }
       },
       "examples": [
         "kan sverige sättas i karantän?",
         "blir det karantän i sverige?",
         "riskerar sverige att sättas i karantän?",
+        "finns det risk att bli karantän i sverige?",
+        "kan sverige sättas i karantän?",
+        "blir det karantän i sverige?",
+        "riskerar sverige att sättas i karantän?",
+        "finns det risk att bli karantän i sverige?",
+        "kan sverige sättas i karantän?",
+        "blir det karantän i sverige?",
+        "riskerar sverige att sättas i karantän?",
         "finns det risk att bli karantän i sverige?"
       ]
     },
-    "bot": {
-      "say": [
-        "Eftersom covid-19 numera är klassad som samhällsfarlig, kan smittskyddsläkaren i respektive sjukvårdsregion ta beslut om karantän för friska personer. Om en mindre ingripande åtgärd, t.ex. förhållningsregler, kan få samma effekt ska den väljas istället."
-      ],
-      "set": {
-        "classifiedIntentName": "question: kan sverige sättas i karantän?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Eftersom covid-19 numera är klassad som samhällsfarlig, kan smittskyddsläkaren i respektive sjukvårdsregion ta beslut om karantän för friska personer. Om en mindre ingripande åtgärd, t.ex. förhållningsregler, kan få samma effekt ska den väljas istället."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
+    "bot": [
+      "Eftersom covid-19 numera är klassad som samhällsfarlig, kan smittskyddsläkaren i respektive sjukvårdsregion ta beslut om karantän för friska personer. Om en mindre ingripande åtgärd, t.ex. förhållningsregler, kan få samma effekt ska den väljas istället."
+    ]
   },
   {
     "intent": {
@@ -997,6 +1930,44 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             }
           ]
+        },
+        "INFECTING_ACTIVITY": {
+          "name": "INFECTING_ACTIVITY",
+          "enums": [
+            {
+              "name": "INFECTING_ACTIVITY",
+              "alts": [
+                "hålla i handen",
+                "kyssar",
+                "kyssa",
+                "puss",
+                "pussa",
+                "kyss",
+                "pussar",
+                "kram",
+                "kramar",
+                "kramas",
+                "pussas",
+                "kyssas",
+                "hostar"
+              ]
+            }
+          ]
+        },
+        "OCCUPATION": {
+          "name": "OCCUPATION",
+          "enums": [
+            {
+              "name": "OCCUPATION",
+              "alts": [
+                "jobbet",
+                "skolan",
+                "dagis",
+                "förskolan",
+                "arbetet"
+              ]
+            }
+          ]
         }
       },
       "examples": [
@@ -1004,22 +1975,22 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "kan jag vaccinera mig mot coronaviruset?",
         "när kommer vaccin mot corona?",
         "finns det vaccin mot corona?",
+        "finns det vaccin mot corona?",
+        "finns det vaccin?",
+        "kan jag vaccinera mig mot coronaviruset?",
+        "när kommer vaccin mot corona?",
+        "finns det vaccin mot corona?",
+        "finns det vaccin mot corona?",
+        "finns det vaccin?",
+        "kan jag vaccinera mig mot coronaviruset?",
+        "när kommer vaccin mot corona?",
+        "finns det vaccin mot corona?",
         "finns det vaccin mot corona?"
       ]
     },
-    "bot": {
-      "say": [
-        "Det finns inget vaccin och i nuläget finns det inget specifikt läkemedel mot covid-19. Internationella studier av olika typer av läkemedelsbehandlingar pågår och forskning sker kring utveckling av ett vaccin."
-      ],
-      "set": {
-        "classifiedIntentName": "question: finns det vaccin?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Det finns inget vaccin och i nuläget finns det inget specifikt läkemedel mot covid-19. Internationella studier av olika typer av läkemedelsbehandlingar pågår och forskning sker kring utveckling av ett vaccin."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
+    "bot": [
+      "Det finns inget vaccin och i nuläget finns det inget specifikt läkemedel mot covid-19. Internationella studier av olika typer av läkemedelsbehandlingar pågår och forskning sker kring utveckling av ett vaccin."
+    ]
   },
   {
     "intent": {
@@ -1041,28 +2012,67 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             }
           ]
+        },
+        "INFECTING_ACTIVITY": {
+          "name": "INFECTING_ACTIVITY",
+          "enums": [
+            {
+              "name": "INFECTING_ACTIVITY",
+              "alts": [
+                "hålla i handen",
+                "kyssar",
+                "kyssa",
+                "puss",
+                "pussa",
+                "kyss",
+                "pussar",
+                "kram",
+                "kramar",
+                "kramas",
+                "pussas",
+                "kyssas",
+                "hostar"
+              ]
+            }
+          ]
+        },
+        "OCCUPATION": {
+          "name": "OCCUPATION",
+          "enums": [
+            {
+              "name": "OCCUPATION",
+              "alts": [
+                "jobbet",
+                "skolan",
+                "dagis",
+                "förskolan",
+                "arbetet"
+              ]
+            }
+          ]
         }
       },
       "examples": [
         "vad är coronavirus",
         "vad är corona",
         "vad är ett coronavirus",
-        "förklara vad corona är"
+        "förklara vad corona är",
+        "vad betyder corona",
+        "vad är coronavirus",
+        "vad är corona",
+        "vad är ett coronavirus",
+        "förklara vad corona är",
+        "vad betyder corona",
+        "vad är coronavirus",
+        "vad är corona",
+        "vad är ett coronavirus",
+        "förklara vad corona är",
+        "vad betyder corona"
       ]
     },
-    "bot": {
-      "say": [
-        "Det finns ett stort antal virus som tillhör coronavirusfamiljen, men endast sju av dessa kan smitta och ge upphov till sjukdom hos människor. I slutet av 2019 upptäcktes ett nytt coronavirus i Kina som kan smitta människor, detta nya virus ger upphov till sjukdomen covid-19."
-      ],
-      "set": {
-        "classifiedIntentName": "question: vad är coronavirus",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Det finns ett stort antal virus som tillhör coronavirusfamiljen, men endast sju av dessa kan smitta och ge upphov till sjukdom hos människor. I slutet av 2019 upptäcktes ett nytt coronavirus i Kina som kan smitta människor, detta nya virus ger upphov till sjukdomen covid-19."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
+    "bot": [
+      "Det finns ett stort antal virus som tillhör coronavirusfamiljen, men endast sju av dessa kan smitta och ge upphov till sjukdom hos människor. I slutet av 2019 upptäcktes ett nytt coronavirus i Kina som kan smitta människor, detta nya virus ger upphov till sjukdomen covid-19."
+    ]
   },
   {
     "intent": {
@@ -1084,27 +2094,61 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             }
           ]
+        },
+        "INFECTING_ACTIVITY": {
+          "name": "INFECTING_ACTIVITY",
+          "enums": [
+            {
+              "name": "INFECTING_ACTIVITY",
+              "alts": [
+                "hålla i handen",
+                "kyssar",
+                "kyssa",
+                "puss",
+                "pussa",
+                "kyss",
+                "pussar",
+                "kram",
+                "kramar",
+                "kramas",
+                "pussas",
+                "kyssas",
+                "hostar"
+              ]
+            }
+          ]
+        },
+        "OCCUPATION": {
+          "name": "OCCUPATION",
+          "enums": [
+            {
+              "name": "OCCUPATION",
+              "alts": [
+                "jobbet",
+                "skolan",
+                "dagis",
+                "förskolan",
+                "arbetet"
+              ]
+            }
+          ]
         }
       },
       "examples": [
         "vad är covid-19",
         "vad är covid",
+        "kan du förklara vad covid-19 är",
+        "vad är covid-19",
+        "vad är covid",
+        "kan du förklara vad covid-19 är",
+        "vad är covid-19",
+        "vad är covid",
         "kan du förklara vad covid-19 är"
       ]
     },
-    "bot": {
-      "say": [
-        "Covid-19 står för coronavirus disease 2019, och är det officiella namnet på sjukdomen som orsakas av det nya coronaviruset."
-      ],
-      "set": {
-        "classifiedIntentName": "question: vad är covid-19",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Covid-19 står för coronavirus disease 2019, och är det officiella namnet på sjukdomen som orsakas av det nya coronaviruset."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
+    "bot": [
+      "Covid-19 står för coronavirus disease 2019, och är det officiella namnet på sjukdomen som orsakas av det nya coronaviruset."
+    ]
   },
   {
     "intent": {
@@ -1126,6 +2170,44 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             }
           ]
+        },
+        "INFECTING_ACTIVITY": {
+          "name": "INFECTING_ACTIVITY",
+          "enums": [
+            {
+              "name": "INFECTING_ACTIVITY",
+              "alts": [
+                "hålla i handen",
+                "kyssar",
+                "kyssa",
+                "puss",
+                "pussa",
+                "kyss",
+                "pussar",
+                "kram",
+                "kramar",
+                "kramas",
+                "pussas",
+                "kyssas",
+                "hostar"
+              ]
+            }
+          ]
+        },
+        "OCCUPATION": {
+          "name": "OCCUPATION",
+          "enums": [
+            {
+              "name": "OCCUPATION",
+              "alts": [
+                "jobbet",
+                "skolan",
+                "dagis",
+                "förskolan",
+                "arbetet"
+              ]
+            }
+          ]
         }
       },
       "examples": [
@@ -1134,22 +2216,24 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "vad skiljer covid från influensa",
         "är influensa samma sak som corona",
         "corona och influensa är det samma sak",
+        "är corona och influensa olika",
+        "är corona influensa",
+        "vad skiljer corona från influensa",
+        "vad skiljer covid från influensa",
+        "är influensa samma sak som corona",
+        "corona och influensa är det samma sak",
+        "är corona och influensa olika",
+        "är corona influensa",
+        "vad skiljer corona från influensa",
+        "vad skiljer covid från influensa",
+        "är influensa samma sak som corona",
+        "corona och influensa är det samma sak",
         "är corona och influensa olika"
       ]
     },
-    "bot": {
-      "say": [
-        "Coronaviruset är helt nytt vilket gör det svårt att jämföra med influensan som är återkommande. De är liknande i symptom men covid-19 sprider sig otroligt mycket snabbare då ingen har utvecklat immunitet ännu."
-      ],
-      "set": {
-        "classifiedIntentName": "question: är corona influensa",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Coronaviruset är helt nytt vilket gör det svårt att jämföra med influensan som är återkommande. De är liknande i symptom men covid-19 sprider sig otroligt mycket snabbare då ingen har utvecklat immunitet ännu."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
+    "bot": [
+      "Coronaviruset är helt nytt vilket gör det svårt att jämföra med influensan som är återkommande. De är liknande i symptom men covid-19 sprider sig otroligt mycket snabbare då ingen har utvecklat immunitet ännu."
+    ]
   },
   {
     "intent": {
@@ -1171,6 +2255,44 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             }
           ]
+        },
+        "INFECTING_ACTIVITY": {
+          "name": "INFECTING_ACTIVITY",
+          "enums": [
+            {
+              "name": "INFECTING_ACTIVITY",
+              "alts": [
+                "hålla i handen",
+                "kyssar",
+                "kyssa",
+                "puss",
+                "pussa",
+                "kyss",
+                "pussar",
+                "kram",
+                "kramar",
+                "kramas",
+                "pussas",
+                "kyssas",
+                "hostar"
+              ]
+            }
+          ]
+        },
+        "OCCUPATION": {
+          "name": "OCCUPATION",
+          "enums": [
+            {
+              "name": "OCCUPATION",
+              "alts": [
+                "jobbet",
+                "skolan",
+                "dagis",
+                "förskolan",
+                "arbetet"
+              ]
+            }
+          ]
         }
       },
       "examples": [
@@ -1180,22 +2302,26 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "kan jag skydda mig med munskydd",
         "är det bra att ha munskydd",
         "borde jag ha munskydd",
+        "borde jag ha skydd för munnen",
+        "funkar munskydd",
+        "skyddar munskydd mot corona",
+        "hjälper munskydd",
+        "kan jag skydda mig med munskydd",
+        "är det bra att ha munskydd",
+        "borde jag ha munskydd",
+        "borde jag ha skydd för munnen",
+        "funkar munskydd",
+        "skyddar munskydd mot corona",
+        "hjälper munskydd",
+        "kan jag skydda mig med munskydd",
+        "är det bra att ha munskydd",
+        "borde jag ha munskydd",
         "borde jag ha skydd för munnen"
       ]
     },
-    "bot": {
-      "say": [
-        "Nej, munskydd skyddar inte den som är frisk mot covid-19. Däremot kan den som är sjuk till viss del skydda sin omgivning från att viruset sprids vid till exempel hosta och nysningar."
-      ],
-      "set": {
-        "classifiedIntentName": "question: funkar munskydd",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Nej, munskydd skyddar inte den som är frisk mot covid-19. Däremot kan den som är sjuk till viss del skydda sin omgivning från att viruset sprids vid till exempel hosta och nysningar."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
+    "bot": [
+      "Nej, munskydd skyddar inte den som är frisk mot covid-19. Däremot kan den som är sjuk till viss del skydda sin omgivning från att viruset sprids vid till exempel hosta och nysningar."
+    ]
   },
   {
     "intent": {
@@ -1217,6 +2343,44 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             }
           ]
+        },
+        "INFECTING_ACTIVITY": {
+          "name": "INFECTING_ACTIVITY",
+          "enums": [
+            {
+              "name": "INFECTING_ACTIVITY",
+              "alts": [
+                "hålla i handen",
+                "kyssar",
+                "kyssa",
+                "puss",
+                "pussa",
+                "kyss",
+                "pussar",
+                "kram",
+                "kramar",
+                "kramas",
+                "pussas",
+                "kyssas",
+                "hostar"
+              ]
+            }
+          ]
+        },
+        "OCCUPATION": {
+          "name": "OCCUPATION",
+          "enums": [
+            {
+              "name": "OCCUPATION",
+              "alts": [
+                "jobbet",
+                "skolan",
+                "dagis",
+                "förskolan",
+                "arbetet"
+              ]
+            }
+          ]
         }
       },
       "examples": [
@@ -1225,22 +2389,24 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "finns det något läkemedel mot corona",
         "kan man bli botad",
         "finns det vaccin än",
+        "Kan man vaccinera sig mot corona",
+        "finns det botemedel",
+        "finns det något coronavaccin",
+        "finns det något läkemedel mot corona",
+        "kan man bli botad",
+        "finns det vaccin än",
+        "Kan man vaccinera sig mot corona",
+        "finns det botemedel",
+        "finns det något coronavaccin",
+        "finns det något läkemedel mot corona",
+        "kan man bli botad",
+        "finns det vaccin än",
         "Kan man vaccinera sig mot corona"
       ]
     },
-    "bot": {
-      "say": [
-        "I nuläget finns det inget vaccin eller speciellt läkemedel mot covid-19. Internationella studier av olika typer av läkemedelsbehandlingar pågår och forskning sker kring utveckling av ett vaccin."
-      ],
-      "set": {
-        "classifiedIntentName": "question: finns det botemedel",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "I nuläget finns det inget vaccin eller speciellt läkemedel mot covid-19. Internationella studier av olika typer av läkemedelsbehandlingar pågår och forskning sker kring utveckling av ett vaccin."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
+    "bot": [
+      "I nuläget finns det inget vaccin eller speciellt läkemedel mot covid-19. Internationella studier av olika typer av läkemedelsbehandlingar pågår och forskning sker kring utveckling av ett vaccin."
+    ]
   },
   {
     "intent": {
@@ -1262,6 +2428,44 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             }
           ]
+        },
+        "INFECTING_ACTIVITY": {
+          "name": "INFECTING_ACTIVITY",
+          "enums": [
+            {
+              "name": "INFECTING_ACTIVITY",
+              "alts": [
+                "hålla i handen",
+                "kyssar",
+                "kyssa",
+                "puss",
+                "pussa",
+                "kyss",
+                "pussar",
+                "kram",
+                "kramar",
+                "kramas",
+                "pussas",
+                "kyssas",
+                "hostar"
+              ]
+            }
+          ]
+        },
+        "OCCUPATION": {
+          "name": "OCCUPATION",
+          "enums": [
+            {
+              "name": "OCCUPATION",
+              "alts": [
+                "jobbet",
+                "skolan",
+                "dagis",
+                "förskolan",
+                "arbetet"
+              ]
+            }
+          ]
         }
       },
       "examples": [
@@ -1269,22 +2473,22 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "hur pass många blir friska",
         "hur stor är chansen att klara sig",
         "hur många tillfrisknar från coronavirus",
+        "hur många blir friska",
+        "kommer alla bli friska från corona",
+        "hur pass många blir friska",
+        "hur stor är chansen att klara sig",
+        "hur många tillfrisknar från coronavirus",
+        "hur många blir friska",
+        "kommer alla bli friska från corona",
+        "hur pass många blir friska",
+        "hur stor är chansen att klara sig",
+        "hur många tillfrisknar från coronavirus",
         "hur många blir friska"
       ]
     },
-    "bot": {
-      "say": [
-        "Majoriteten av de som smittas blir friska förutom en mycket liten andel personer som kan bli allvarligt sjuka, varav de flesta tillhör någon riskgrupp."
-      ],
-      "set": {
-        "classifiedIntentName": "question: kommer alla bli friska från corona",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Majoriteten av de som smittas blir friska förutom en mycket liten andel personer som kan bli allvarligt sjuka, varav de flesta tillhör någon riskgrupp."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
+    "bot": [
+      "Majoriteten av de som smittas blir friska förutom en mycket liten andel personer som kan bli allvarligt sjuka, varav de flesta tillhör någon riskgrupp."
+    ]
   },
   {
     "intent": {
@@ -1306,6 +2510,44 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             }
           ]
+        },
+        "INFECTING_ACTIVITY": {
+          "name": "INFECTING_ACTIVITY",
+          "enums": [
+            {
+              "name": "INFECTING_ACTIVITY",
+              "alts": [
+                "hålla i handen",
+                "kyssar",
+                "kyssa",
+                "puss",
+                "pussa",
+                "kyss",
+                "pussar",
+                "kram",
+                "kramar",
+                "kramas",
+                "pussas",
+                "kyssas",
+                "hostar"
+              ]
+            }
+          ]
+        },
+        "OCCUPATION": {
+          "name": "OCCUPATION",
+          "enums": [
+            {
+              "name": "OCCUPATION",
+              "alts": [
+                "jobbet",
+                "skolan",
+                "dagis",
+                "förskolan",
+                "arbetet"
+              ]
+            }
+          ]
         }
       },
       "examples": [
@@ -1313,22 +2555,22 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "måste jag städa extra noga",
         "vad ska jag göra med mina sopor",
         "kan mina sopor vara infekterade",
+        "hur städar jag om jag tror att det finns corona i hemmet",
+        "ska jag städa på något särskilt sätt",
+        "måste jag städa extra noga",
+        "vad ska jag göra med mina sopor",
+        "kan mina sopor vara infekterade",
+        "hur städar jag om jag tror att det finns corona i hemmet",
+        "ska jag städa på något särskilt sätt",
+        "måste jag städa extra noga",
+        "vad ska jag göra med mina sopor",
+        "kan mina sopor vara infekterade",
         "hur städar jag om jag tror att det finns corona i hemmet"
       ]
     },
-    "bot": {
-      "say": [
-        "I ett hushåll där någon smittats av det nya coronaviruset räcker det att man städar så som man gör i normala fall. Det är viktigt att tvätta händerna noga när man har städat eller hanterat sopor."
-      ],
-      "set": {
-        "classifiedIntentName": "question: ska jag städa på något särskilt sätt",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "I ett hushåll där någon smittats av det nya coronaviruset räcker det att man städar så som man gör i normala fall. Det är viktigt att tvätta händerna noga när man har städat eller hanterat sopor."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
+    "bot": [
+      "I ett hushåll där någon smittats av det nya coronaviruset räcker det att man städar så som man gör i normala fall. Det är viktigt att tvätta händerna noga när man har städat eller hanterat sopor."
+    ]
   },
   {
     "intent": {
@@ -1350,6 +2592,44 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             }
           ]
+        },
+        "INFECTING_ACTIVITY": {
+          "name": "INFECTING_ACTIVITY",
+          "enums": [
+            {
+              "name": "INFECTING_ACTIVITY",
+              "alts": [
+                "hålla i handen",
+                "kyssar",
+                "kyssa",
+                "puss",
+                "pussa",
+                "kyss",
+                "pussar",
+                "kram",
+                "kramar",
+                "kramas",
+                "pussas",
+                "kyssas",
+                "hostar"
+              ]
+            }
+          ]
+        },
+        "OCCUPATION": {
+          "name": "OCCUPATION",
+          "enums": [
+            {
+              "name": "OCCUPATION",
+              "alts": [
+                "jobbet",
+                "skolan",
+                "dagis",
+                "förskolan",
+                "arbetet"
+              ]
+            }
+          ]
         }
       },
       "examples": [
@@ -1357,22 +2637,22 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "kommer skolorna att stängas",
         "hur länge kommer skolorna att vara öppna",
         "hur kommer det sig att skolorna i sverige inte stängs",
+        "varför är skolorna öppna",
+        "varför stängs inte skolorna",
+        "kommer skolorna att stängas",
+        "hur länge kommer skolorna att vara öppna",
+        "hur kommer det sig att skolorna i sverige inte stängs",
+        "varför är skolorna öppna",
+        "varför stängs inte skolorna",
+        "kommer skolorna att stängas",
+        "hur länge kommer skolorna att vara öppna",
+        "hur kommer det sig att skolorna i sverige inte stängs",
         "varför är skolorna öppna"
       ]
     },
-    "bot": {
-      "say": [
-        "Det finns inga vetenskapliga studier som visar att stängning av skolor får någon större betydelse. Det finns heller inte några uppgifter som pekar på någon större spridning av covid-19 i skolor någonstans i världen. Stängda skolor skulle tvinga många inom hälso- och sjukvården att stanna hemma med sina barn, och känsliga grupper som mor- och farföräldrar skulle hos vissa familjer behöva ta hand om barnen."
-      ],
-      "set": {
-        "classifiedIntentName": "question: varför stängs inte skolorna",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Det finns inga vetenskapliga studier som visar att stängning av skolor får någon större betydelse. Det finns heller inte några uppgifter som pekar på någon större spridning av covid-19 i skolor någonstans i världen. Stängda skolor skulle tvinga många inom hälso- och sjukvården att stanna hemma med sina barn, och känsliga grupper som mor- och farföräldrar skulle hos vissa familjer behöva ta hand om barnen."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
+    "bot": [
+      "Det finns inga vetenskapliga studier som visar att stängning av skolor får någon större betydelse. Det finns heller inte några uppgifter som pekar på någon större spridning av covid-19 i skolor någonstans i världen. Stängda skolor skulle tvinga många inom hälso- och sjukvården att stanna hemma med sina barn, och känsliga grupper som mor- och farföräldrar skulle hos vissa familjer behöva ta hand om barnen."
+    ]
   },
   {
     "intent": {
@@ -1394,6 +2674,44 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             }
           ]
+        },
+        "INFECTING_ACTIVITY": {
+          "name": "INFECTING_ACTIVITY",
+          "enums": [
+            {
+              "name": "INFECTING_ACTIVITY",
+              "alts": [
+                "hålla i handen",
+                "kyssar",
+                "kyssa",
+                "puss",
+                "pussa",
+                "kyss",
+                "pussar",
+                "kram",
+                "kramar",
+                "kramas",
+                "pussas",
+                "kyssas",
+                "hostar"
+              ]
+            }
+          ]
+        },
+        "OCCUPATION": {
+          "name": "OCCUPATION",
+          "enums": [
+            {
+              "name": "OCCUPATION",
+              "alts": [
+                "jobbet",
+                "skolan",
+                "dagis",
+                "förskolan",
+                "arbetet"
+              ]
+            }
+          ]
         }
       },
       "examples": [
@@ -1401,22 +2719,22 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "kan corona leva utanför kroppen",
         "kan viruset leva på ytor",
         "kan coronavirus överleva på ett handtag",
+        "hur snabbt dör corona utanför kroppen",
+        "hur länge överlever corona",
+        "kan corona leva utanför kroppen",
+        "kan viruset leva på ytor",
+        "kan coronavirus överleva på ett handtag",
+        "hur snabbt dör corona utanför kroppen",
+        "hur länge överlever corona",
+        "kan corona leva utanför kroppen",
+        "kan viruset leva på ytor",
+        "kan coronavirus överleva på ett handtag",
         "hur snabbt dör corona utanför kroppen"
       ]
     },
-    "bot": {
-      "say": [
-        "Det är ännu inte klarlagt hur länge viruset kan överleva utanför kroppen. Forskningsstudier som utförts på närbesläktade coronavirus visar att de kan överleva flera dagar på ytor och föremål men för detta krävs särskilda förhållanden, så som rätt temperatur, solljus och luftfuktighet."
-      ],
-      "set": {
-        "classifiedIntentName": "question: hur länge överlever corona",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Det är ännu inte klarlagt hur länge viruset kan överleva utanför kroppen. Forskningsstudier som utförts på närbesläktade coronavirus visar att de kan överleva flera dagar på ytor och föremål men för detta krävs särskilda förhållanden, så som rätt temperatur, solljus och luftfuktighet."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
+    "bot": [
+      "Det är ännu inte klarlagt hur länge viruset kan överleva utanför kroppen. Forskningsstudier som utförts på närbesläktade coronavirus visar att de kan överleva flera dagar på ytor och föremål men för detta krävs särskilda förhållanden, så som rätt temperatur, solljus och luftfuktighet."
+    ]
   },
   {
     "intent": {
@@ -1438,6 +2756,44 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             }
           ]
+        },
+        "INFECTING_ACTIVITY": {
+          "name": "INFECTING_ACTIVITY",
+          "enums": [
+            {
+              "name": "INFECTING_ACTIVITY",
+              "alts": [
+                "hålla i handen",
+                "kyssar",
+                "kyssa",
+                "puss",
+                "pussa",
+                "kyss",
+                "pussar",
+                "kram",
+                "kramar",
+                "kramas",
+                "pussas",
+                "kyssas",
+                "hostar"
+              ]
+            }
+          ]
+        },
+        "OCCUPATION": {
+          "name": "OCCUPATION",
+          "enums": [
+            {
+              "name": "OCCUPATION",
+              "alts": [
+                "jobbet",
+                "skolan",
+                "dagis",
+                "förskolan",
+                "arbetet"
+              ]
+            }
+          ]
         }
       },
       "examples": [
@@ -1445,22 +2801,22 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "kan det vara corona på min post",
         "hur desinfierar jag min post",
         "kan det finnas corona på mina brev",
+        "kan jag bli smittad av min post",
+        "kan paket vara smittade med corona",
+        "kan det vara corona på min post",
+        "hur desinfierar jag min post",
+        "kan det finnas corona på mina brev",
+        "kan jag bli smittad av min post",
+        "kan paket vara smittade med corona",
+        "kan det vara corona på min post",
+        "hur desinfierar jag min post",
+        "kan det finnas corona på mina brev",
         "kan jag bli smittad av min post"
       ]
     },
-    "bot": {
-      "say": [
-        "Kunskap från liknande tidigare utbrott visar att denna typ av virus smittar från sjuka människor, och inte genom paket och postförsändelser."
-      ],
-      "set": {
-        "classifiedIntentName": "question: kan paket vara smittade med corona",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Kunskap från liknande tidigare utbrott visar att denna typ av virus smittar från sjuka människor, och inte genom paket och postförsändelser."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
+    "bot": [
+      "Kunskap från liknande tidigare utbrott visar att denna typ av virus smittar från sjuka människor, och inte genom paket och postförsändelser."
+    ]
   },
   {
     "intent": {
@@ -1482,6 +2838,44 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             }
           ]
+        },
+        "INFECTING_ACTIVITY": {
+          "name": "INFECTING_ACTIVITY",
+          "enums": [
+            {
+              "name": "INFECTING_ACTIVITY",
+              "alts": [
+                "hålla i handen",
+                "kyssar",
+                "kyssa",
+                "puss",
+                "pussa",
+                "kyss",
+                "pussar",
+                "kram",
+                "kramar",
+                "kramas",
+                "pussas",
+                "kyssas",
+                "hostar"
+              ]
+            }
+          ]
+        },
+        "OCCUPATION": {
+          "name": "OCCUPATION",
+          "enums": [
+            {
+              "name": "OCCUPATION",
+              "alts": [
+                "jobbet",
+                "skolan",
+                "dagis",
+                "förskolan",
+                "arbetet"
+              ]
+            }
+          ]
         }
       },
       "examples": [
@@ -1489,22 +2883,22 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "jag jag få smittan av djur",
         "kan jag smitta mina husdjur",
         "smittar corona mellan människor och husdjur",
+        "hur skyddar jag mina husdjur",
+        "kan jag smittas av mitt husdjur",
+        "jag jag få smittan av djur",
+        "kan jag smitta mina husdjur",
+        "smittar corona mellan människor och husdjur",
+        "hur skyddar jag mina husdjur",
+        "kan jag smittas av mitt husdjur",
+        "jag jag få smittan av djur",
+        "kan jag smitta mina husdjur",
+        "smittar corona mellan människor och husdjur",
         "hur skyddar jag mina husdjur"
       ]
     },
-    "bot": {
-      "say": [
-        "Det är troligt att en djurkälla från en djurmarknad i Kina orsakade några av de första rapporterade mänskliga infektionerna. Det finns inga uppgifter idag om att covid-19 kan smitta från människa till djur."
-      ],
-      "set": {
-        "classifiedIntentName": "question: kan jag smittas av mitt husdjur",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Det är troligt att en djurkälla från en djurmarknad i Kina orsakade några av de första rapporterade mänskliga infektionerna. Det finns inga uppgifter idag om att covid-19 kan smitta från människa till djur."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
+    "bot": [
+      "Det är troligt att en djurkälla från en djurmarknad i Kina orsakade några av de första rapporterade mänskliga infektionerna. Det finns inga uppgifter idag om att covid-19 kan smitta från människa till djur."
+    ]
   },
   {
     "intent": {
@@ -1526,6 +2920,44 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             }
           ]
+        },
+        "INFECTING_ACTIVITY": {
+          "name": "INFECTING_ACTIVITY",
+          "enums": [
+            {
+              "name": "INFECTING_ACTIVITY",
+              "alts": [
+                "hålla i handen",
+                "kyssar",
+                "kyssa",
+                "puss",
+                "pussa",
+                "kyss",
+                "pussar",
+                "kram",
+                "kramar",
+                "kramas",
+                "pussas",
+                "kyssas",
+                "hostar"
+              ]
+            }
+          ]
+        },
+        "OCCUPATION": {
+          "name": "OCCUPATION",
+          "enums": [
+            {
+              "name": "OCCUPATION",
+              "alts": [
+                "jobbet",
+                "skolan",
+                "dagis",
+                "förskolan",
+                "arbetet"
+              ]
+            }
+          ]
         }
       },
       "examples": [
@@ -1533,22 +2965,22 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "i vilka länder kan jag få corona",
         "finns det några säkra länder",
         "är alla länder drabbade",
+        "vilka länder har blivit smittade",
+        "vilka länder är smittade",
+        "i vilka länder kan jag få corona",
+        "finns det några säkra länder",
+        "är alla länder drabbade",
+        "vilka länder har blivit smittade",
+        "vilka länder är smittade",
+        "i vilka länder kan jag få corona",
+        "finns det några säkra länder",
+        "är alla länder drabbade",
         "vilka länder har blivit smittade"
       ]
     },
-    "bot": {
-      "say": [
-        "Covid-19 är nu en pandemi, vilket innebär att den finns eller kommer finnas i alla världsdelar. Sannolikt kommer covid-19 att drabba alla världens länder."
-      ],
-      "set": {
-        "classifiedIntentName": "question: vilka länder är smittade",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Covid-19 är nu en pandemi, vilket innebär att den finns eller kommer finnas i alla världsdelar. Sannolikt kommer covid-19 att drabba alla världens länder."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
+    "bot": [
+      "Covid-19 är nu en pandemi, vilket innebär att den finns eller kommer finnas i alla världsdelar. Sannolikt kommer covid-19 att drabba alla världens länder."
+    ]
   },
   {
     "intent": {
@@ -1570,6 +3002,44 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             }
           ]
+        },
+        "INFECTING_ACTIVITY": {
+          "name": "INFECTING_ACTIVITY",
+          "enums": [
+            {
+              "name": "INFECTING_ACTIVITY",
+              "alts": [
+                "hålla i handen",
+                "kyssar",
+                "kyssa",
+                "puss",
+                "pussa",
+                "kyss",
+                "pussar",
+                "kram",
+                "kramar",
+                "kramas",
+                "pussas",
+                "kyssas",
+                "hostar"
+              ]
+            }
+          ]
+        },
+        "OCCUPATION": {
+          "name": "OCCUPATION",
+          "enums": [
+            {
+              "name": "OCCUPATION",
+              "alts": [
+                "jobbet",
+                "skolan",
+                "dagis",
+                "förskolan",
+                "arbetet"
+              ]
+            }
+          ]
         }
       },
       "examples": [
@@ -1577,22 +3047,22 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "vad innebär samhällsspridning",
         "vad betyder samhällsspridning",
         "vad betyder spridning i samhället",
+        "har vi samhällsspridning i sverige",
+        "vad innebär det att vi har en samhällsspridning av corona i Sverige?",
+        "vad innebär samhällsspridning",
+        "vad betyder samhällsspridning",
+        "vad betyder spridning i samhället",
+        "har vi samhällsspridning i sverige",
+        "vad innebär det att vi har en samhällsspridning av corona i Sverige?",
+        "vad innebär samhällsspridning",
+        "vad betyder samhällsspridning",
+        "vad betyder spridning i samhället",
         "har vi samhällsspridning i sverige"
       ]
     },
-    "bot": {
-      "say": [
-        "I Region Stockholm og i Västra Götalandsregionen ser vi nu tecken på samhällsspridning. Det innebär att du ska försöka låta bli att träffa andra människor, och inte gå till jobbet eller skolan - även om du bara känner dig lite sjuk. Stanna hemma så länge du känner dig sjuk så du inte riskerar att smitta andra."
-      ],
-      "set": {
-        "classifiedIntentName": "question: vad innebär det att vi har en samhällsspridning av corona i Sverige?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "I Region Stockholm og i Västra Götalandsregionen ser vi nu tecken på samhällsspridning. Det innebär att du ska försöka låta bli att träffa andra människor, och inte gå till jobbet eller skolan - även om du bara känner dig lite sjuk. Stanna hemma så länge du känner dig sjuk så du inte riskerar att smitta andra."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
+    "bot": [
+      "I Region Stockholm og i Västra Götalandsregionen ser vi nu tecken på samhällsspridning. Det innebär att du ska försöka låta bli att träffa andra människor, och inte gå till jobbet eller skolan - även om du bara känner dig lite sjuk. Stanna hemma så länge du känner dig sjuk så du inte riskerar att smitta andra."
+    ]
   },
   {
     "intent": {
@@ -1614,6 +3084,44 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             }
           ]
+        },
+        "INFECTING_ACTIVITY": {
+          "name": "INFECTING_ACTIVITY",
+          "enums": [
+            {
+              "name": "INFECTING_ACTIVITY",
+              "alts": [
+                "hålla i handen",
+                "kyssar",
+                "kyssa",
+                "puss",
+                "pussa",
+                "kyss",
+                "pussar",
+                "kram",
+                "kramar",
+                "kramas",
+                "pussas",
+                "kyssas",
+                "hostar"
+              ]
+            }
+          ]
+        },
+        "OCCUPATION": {
+          "name": "OCCUPATION",
+          "enums": [
+            {
+              "name": "OCCUPATION",
+              "alts": [
+                "jobbet",
+                "skolan",
+                "dagis",
+                "förskolan",
+                "arbetet"
+              ]
+            }
+          ]
         }
       },
       "examples": [
@@ -1621,22 +3129,22 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "vad betyder smittspårning",
         "vad betyder det att vara smittspårad",
         "hur smittspårar man",
+        "vad är smittspårning av corona",
+        "vad är smittspårning",
+        "vad betyder smittspårning",
+        "vad betyder det att vara smittspårad",
+        "hur smittspårar man",
+        "vad är smittspårning av corona",
+        "vad är smittspårning",
+        "vad betyder smittspårning",
+        "vad betyder det att vara smittspårad",
+        "hur smittspårar man",
         "vad är smittspårning av corona"
       ]
     },
-    "bot": {
-      "say": [
-        "Smittspårning kan ha en avgörande betydelse för att förhindra smittspridning och minska risken för större utbrott. Den behandlande läkaren ska ta reda på hur en smittad person har blivit smittad, och vem eller vilka andra som kan vara smittade eller har blivit utsatta för smitta."
-      ],
-      "set": {
-        "classifiedIntentName": "question: vad är smittspårning",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Smittspårning kan ha en avgörande betydelse för att förhindra smittspridning och minska risken för större utbrott. Den behandlande läkaren ska ta reda på hur en smittad person har blivit smittad, och vem eller vilka andra som kan vara smittade eller har blivit utsatta för smitta."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
+    "bot": [
+      "Smittspårning kan ha en avgörande betydelse för att förhindra smittspridning och minska risken för större utbrott. Den behandlande läkaren ska ta reda på hur en smittad person har blivit smittad, och vem eller vilka andra som kan vara smittade eller har blivit utsatta för smitta."
+    ]
   },
   {
     "intent": {
@@ -1658,6 +3166,44 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             }
           ]
+        },
+        "INFECTING_ACTIVITY": {
+          "name": "INFECTING_ACTIVITY",
+          "enums": [
+            {
+              "name": "INFECTING_ACTIVITY",
+              "alts": [
+                "hålla i handen",
+                "kyssar",
+                "kyssa",
+                "puss",
+                "pussa",
+                "kyss",
+                "pussar",
+                "kram",
+                "kramar",
+                "kramas",
+                "pussas",
+                "kyssas",
+                "hostar"
+              ]
+            }
+          ]
+        },
+        "OCCUPATION": {
+          "name": "OCCUPATION",
+          "enums": [
+            {
+              "name": "OCCUPATION",
+              "alts": [
+                "jobbet",
+                "skolan",
+                "dagis",
+                "förskolan",
+                "arbetet"
+              ]
+            }
+          ]
         }
       },
       "examples": [
@@ -1665,22 +3211,22 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "varför är det 500 personer",
         "hur kommer det sig att det är just 500",
         "vad händer efter 500",
+        "vad är problemet med fler än 500 personer",
+        "vad är det för särskilt med 500 personer",
+        "varför är det 500 personer",
+        "hur kommer det sig att det är just 500",
+        "vad händer efter 500",
+        "vad är problemet med fler än 500 personer",
+        "vad är det för särskilt med 500 personer",
+        "varför är det 500 personer",
+        "hur kommer det sig att det är just 500",
+        "vad händer efter 500",
         "vad är problemet med fler än 500 personer"
       ]
     },
-    "bot": {
-      "say": [
-        "Större evenemang riskerar att öka smittspridningen eftersom de lockar till sig åskådare från olika delar av landet. Folkhälsomyndigheten har därför bedömt att gränsen bör gå vid 500 personer. Norge valde samma gräns."
-      ],
-      "set": {
-        "classifiedIntentName": "question: vad är det för särskilt med 500 personer",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Större evenemang riskerar att öka smittspridningen eftersom de lockar till sig åskådare från olika delar av landet. Folkhälsomyndigheten har därför bedömt att gränsen bör gå vid 500 personer. Norge valde samma gräns."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
+    "bot": [
+      "Större evenemang riskerar att öka smittspridningen eftersom de lockar till sig åskådare från olika delar av landet. Folkhälsomyndigheten har därför bedömt att gränsen bör gå vid 500 personer. Norge valde samma gräns."
+    ]
   },
   {
     "intent": {
@@ -1702,6 +3248,44 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             }
           ]
+        },
+        "INFECTING_ACTIVITY": {
+          "name": "INFECTING_ACTIVITY",
+          "enums": [
+            {
+              "name": "INFECTING_ACTIVITY",
+              "alts": [
+                "hålla i handen",
+                "kyssar",
+                "kyssa",
+                "puss",
+                "pussa",
+                "kyss",
+                "pussar",
+                "kram",
+                "kramar",
+                "kramas",
+                "pussas",
+                "kyssas",
+                "hostar"
+              ]
+            }
+          ]
+        },
+        "OCCUPATION": {
+          "name": "OCCUPATION",
+          "enums": [
+            {
+              "name": "OCCUPATION",
+              "alts": [
+                "jobbet",
+                "skolan",
+                "dagis",
+                "förskolan",
+                "arbetet"
+              ]
+            }
+          ]
         }
       },
       "examples": [
@@ -1709,22 +3293,22 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "kan flygplatserna påverka smittspridningen",
         "kollas alla på flygplatsen",
         "blir alla kontrollerade på flygplatser",
+        "är det hälsokoll på flygplatsen",
+        "kan flygkontroller minska spridningen",
+        "kan flygplatserna påverka smittspridningen",
+        "kollas alla på flygplatsen",
+        "blir alla kontrollerade på flygplatser",
+        "är det hälsokoll på flygplatsen",
+        "kan flygkontroller minska spridningen",
+        "kan flygplatserna påverka smittspridningen",
+        "kollas alla på flygplatsen",
+        "blir alla kontrollerade på flygplatser",
         "är det hälsokoll på flygplatsen"
       ]
     },
-    "bot": {
-      "say": [
-        "Folkhälsomyndigheten baserar sina rekommendationer om hälsokontroller bland annat på information från WHO och ECDC. Erfarenhet från SARS-epidemin visar att hälsokontroller på flygplatser inte är ett effektivt sätt att begränsa smittspridningen. Det är även resurskrävande, och fångar enbart upp smittade personer som redan har symtom."
-      ],
-      "set": {
-        "classifiedIntentName": "question: kan flygkontroller minska spridningen",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Folkhälsomyndigheten baserar sina rekommendationer om hälsokontroller bland annat på information från WHO och ECDC. Erfarenhet från SARS-epidemin visar att hälsokontroller på flygplatser inte är ett effektivt sätt att begränsa smittspridningen. Det är även resurskrävande, och fångar enbart upp smittade personer som redan har symtom."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
+    "bot": [
+      "Folkhälsomyndigheten baserar sina rekommendationer om hälsokontroller bland annat på information från WHO och ECDC. Erfarenhet från SARS-epidemin visar att hälsokontroller på flygplatser inte är ett effektivt sätt att begränsa smittspridningen. Det är även resurskrävande, och fångar enbart upp smittade personer som redan har symtom."
+    ]
   },
   {
     "intent": {
@@ -1746,6 +3330,44 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             }
           ]
+        },
+        "INFECTING_ACTIVITY": {
+          "name": "INFECTING_ACTIVITY",
+          "enums": [
+            {
+              "name": "INFECTING_ACTIVITY",
+              "alts": [
+                "hålla i handen",
+                "kyssar",
+                "kyssa",
+                "puss",
+                "pussa",
+                "kyss",
+                "pussar",
+                "kram",
+                "kramar",
+                "kramas",
+                "pussas",
+                "kyssas",
+                "hostar"
+              ]
+            }
+          ]
+        },
+        "OCCUPATION": {
+          "name": "OCCUPATION",
+          "enums": [
+            {
+              "name": "OCCUPATION",
+              "alts": [
+                "jobbet",
+                "skolan",
+                "dagis",
+                "förskolan",
+                "arbetet"
+              ]
+            }
+          ]
         }
       },
       "examples": [
@@ -1753,22 +3375,22 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "kan man bli tvingad att sitta i karantän",
         "måste jag vara i karantän",
         "vad innebär karantän",
+        "vad innebär att sitta i karantän",
+        "vem bestämmer vem som ska sättas i karantän",
+        "kan man bli tvingad att sitta i karantän",
+        "måste jag vara i karantän",
+        "vad innebär karantän",
+        "vad innebär att sitta i karantän",
+        "vem bestämmer vem som ska sättas i karantän",
+        "kan man bli tvingad att sitta i karantän",
+        "måste jag vara i karantän",
+        "vad innebär karantän",
         "vad innebär att sitta i karantän"
       ]
     },
-    "bot": {
-      "say": [
-        "Eftersom det nya coronaviruset är klassat som samhällsfarligt kan friska personer sättas i karantän. Beslutet tas av smittskyddsläkaren i respektive sjukvårdsregion, och det är noga reglerad i smittskyddslagen. Karantän kan innebära att placeras i hemmet, en avgränsad del av en byggnad eller ett område."
-      ],
-      "set": {
-        "classifiedIntentName": "question: vem bestämmer vem som ska sättas i karantän",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Eftersom det nya coronaviruset är klassat som samhällsfarligt kan friska personer sättas i karantän. Beslutet tas av smittskyddsläkaren i respektive sjukvårdsregion, och det är noga reglerad i smittskyddslagen. Karantän kan innebära att placeras i hemmet, en avgränsad del av en byggnad eller ett område."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
+    "bot": [
+      "Eftersom det nya coronaviruset är klassat som samhällsfarligt kan friska personer sättas i karantän. Beslutet tas av smittskyddsläkaren i respektive sjukvårdsregion, och det är noga reglerad i smittskyddslagen. Karantän kan innebära att placeras i hemmet, en avgränsad del av en byggnad eller ett område."
+    ]
   },
   {
     "intent": {
@@ -1790,28 +3412,64 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             }
           ]
+        },
+        "INFECTING_ACTIVITY": {
+          "name": "INFECTING_ACTIVITY",
+          "enums": [
+            {
+              "name": "INFECTING_ACTIVITY",
+              "alts": [
+                "hålla i handen",
+                "kyssar",
+                "kyssa",
+                "puss",
+                "pussa",
+                "kyss",
+                "pussar",
+                "kram",
+                "kramar",
+                "kramas",
+                "pussas",
+                "kyssas",
+                "hostar"
+              ]
+            }
+          ]
+        },
+        "OCCUPATION": {
+          "name": "OCCUPATION",
+          "enums": [
+            {
+              "name": "OCCUPATION",
+              "alts": [
+                "jobbet",
+                "skolan",
+                "dagis",
+                "förskolan",
+                "arbetet"
+              ]
+            }
+          ]
         }
       },
       "examples": [
         "vad är Folkhälsomyndigheten",
         "vilken roll har Folkhälsomyndigheten",
         "vilket ansvar har Folkhälsomyndigheten",
+        "vad gör Folkhälsomyndigheten",
+        "vad är Folkhälsomyndigheten",
+        "vilken roll har Folkhälsomyndigheten",
+        "vilket ansvar har Folkhälsomyndigheten",
+        "vad gör Folkhälsomyndigheten",
+        "vad är Folkhälsomyndigheten",
+        "vilken roll har Folkhälsomyndigheten",
+        "vilket ansvar har Folkhälsomyndigheten",
         "vad gör Folkhälsomyndigheten"
       ]
     },
-    "bot": {
-      "say": [
-        "Folkhälsomyndigheten (FHM) ska ta fram och förmedla vetenskapligt grundad kunskap som förebygger ohälsa och sjukdomar, och som ger samhället stöd i arbetet mot hälsohot. FHM följer händelseutvecklingen av covid-19 noga, och gör riskbedömningar samt bedömer hur utbrottet utvecklas. Sjukvård, regionala smittskyddsenheter och andra aktörer får information om det aktuella läget, och FHM tar ställning till vilka åtgärdar som är relevanta att genomföra."
-      ],
-      "set": {
-        "classifiedIntentName": "question: vad är Folkhälsomyndigheten",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Folkhälsomyndigheten (FHM) ska ta fram och förmedla vetenskapligt grundad kunskap som förebygger ohälsa och sjukdomar, och som ger samhället stöd i arbetet mot hälsohot. FHM följer händelseutvecklingen av covid-19 noga, och gör riskbedömningar samt bedömer hur utbrottet utvecklas. Sjukvård, regionala smittskyddsenheter och andra aktörer får information om det aktuella läget, och FHM tar ställning till vilka åtgärdar som är relevanta att genomföra."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
+    "bot": [
+      "Folkhälsomyndigheten (FHM) ska ta fram och förmedla vetenskapligt grundad kunskap som förebygger ohälsa och sjukdomar, och som ger samhället stöd i arbetet mot hälsohot. FHM följer händelseutvecklingen av covid-19 noga, och gör riskbedömningar samt bedömer hur utbrottet utvecklas. Sjukvård, regionala smittskyddsenheter och andra aktörer får information om det aktuella läget, och FHM tar ställning till vilka åtgärdar som är relevanta att genomföra."
+    ]
   },
   {
     "intent": {
@@ -1833,28 +3491,64 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             }
           ]
+        },
+        "INFECTING_ACTIVITY": {
+          "name": "INFECTING_ACTIVITY",
+          "enums": [
+            {
+              "name": "INFECTING_ACTIVITY",
+              "alts": [
+                "hålla i handen",
+                "kyssar",
+                "kyssa",
+                "puss",
+                "pussa",
+                "kyss",
+                "pussar",
+                "kram",
+                "kramar",
+                "kramas",
+                "pussas",
+                "kyssas",
+                "hostar"
+              ]
+            }
+          ]
+        },
+        "OCCUPATION": {
+          "name": "OCCUPATION",
+          "enums": [
+            {
+              "name": "OCCUPATION",
+              "alts": [
+                "jobbet",
+                "skolan",
+                "dagis",
+                "förskolan",
+                "arbetet"
+              ]
+            }
+          ]
         }
       },
       "examples": [
         "vad betyder pandemi",
         "vad innebär en pandemi",
         "vad innebär pandemi",
+        "vad händer vid en pandemi",
+        "vad betyder pandemi",
+        "vad innebär en pandemi",
+        "vad innebär pandemi",
+        "vad händer vid en pandemi",
+        "vad betyder pandemi",
+        "vad innebär en pandemi",
+        "vad innebär pandemi",
         "vad händer vid en pandemi"
       ]
     },
-    "bot": {
-      "say": [
-        "En pandemi innebär en omfattande spridning till alla världens kontinenter av en helt ny typ av smittsam sjukdom. Vid en pandemi kommer sjukdomen med stor sannolikhet påverka stora delar av vårt samhälle och världens befolkning. Det är WHO som deklarerar om en smittspridning bedöms vara en pandemi, och detta gjordes den 11:e mars 2020."
-      ],
-      "set": {
-        "classifiedIntentName": "question: vad betyder pandemi",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "En pandemi innebär en omfattande spridning till alla världens kontinenter av en helt ny typ av smittsam sjukdom. Vid en pandemi kommer sjukdomen med stor sannolikhet påverka stora delar av vårt samhälle och världens befolkning. Det är WHO som deklarerar om en smittspridning bedöms vara en pandemi, och detta gjordes den 11:e mars 2020."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
+    "bot": [
+      "En pandemi innebär en omfattande spridning till alla världens kontinenter av en helt ny typ av smittsam sjukdom. Vid en pandemi kommer sjukdomen med stor sannolikhet påverka stora delar av vårt samhälle och världens befolkning. Det är WHO som deklarerar om en smittspridning bedöms vara en pandemi, och detta gjordes den 11:e mars 2020."
+    ]
   },
   {
     "intent": {
@@ -1876,6 +3570,44 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             }
           ]
+        },
+        "INFECTING_ACTIVITY": {
+          "name": "INFECTING_ACTIVITY",
+          "enums": [
+            {
+              "name": "INFECTING_ACTIVITY",
+              "alts": [
+                "hålla i handen",
+                "kyssar",
+                "kyssa",
+                "puss",
+                "pussa",
+                "kyss",
+                "pussar",
+                "kram",
+                "kramar",
+                "kramas",
+                "pussas",
+                "kyssas",
+                "hostar"
+              ]
+            }
+          ]
+        },
+        "OCCUPATION": {
+          "name": "OCCUPATION",
+          "enums": [
+            {
+              "name": "OCCUPATION",
+              "alts": [
+                "jobbet",
+                "skolan",
+                "dagis",
+                "förskolan",
+                "arbetet"
+              ]
+            }
+          ]
         }
       },
       "examples": [
@@ -1883,22 +3615,22 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "vad innebär samhällsfarlig sjukdom",
         "vad är en samhällsfarlig sjukdom",
         "vad är allmänfarlig",
+        "är corona samhällsfarlig",
+        "vad betyder det att corona är allmänfarlig",
+        "vad innebär samhällsfarlig sjukdom",
+        "vad är en samhällsfarlig sjukdom",
+        "vad är allmänfarlig",
+        "är corona samhällsfarlig",
+        "vad betyder det att corona är allmänfarlig",
+        "vad innebär samhällsfarlig sjukdom",
+        "vad är en samhällsfarlig sjukdom",
+        "vad är allmänfarlig",
         "är corona samhällsfarlig"
       ]
     },
-    "bot": {
-      "say": [
-        "Att klassa smittan som allmänfarlig och samhällsfarlig stärker den svenska beredskapen vid samhällsspridning av covid-19, eftersom det gör det möjligt att vidta de förebyggande åtgärder som är relevanta för att hindra en spridning av smitta i samhället. För allmänfarlig och samhällsfarlig smitta finns möjligheter att besluta om åtgärder som exempelvis karantän, isolering, hälsoundersökningar vid inresa och avspärrningar av områden."
-      ],
-      "set": {
-        "classifiedIntentName": "question: vad betyder det att corona är allmänfarlig",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Att klassa smittan som allmänfarlig och samhällsfarlig stärker den svenska beredskapen vid samhällsspridning av covid-19, eftersom det gör det möjligt att vidta de förebyggande åtgärder som är relevanta för att hindra en spridning av smitta i samhället. För allmänfarlig och samhällsfarlig smitta finns möjligheter att besluta om åtgärder som exempelvis karantän, isolering, hälsoundersökningar vid inresa och avspärrningar av områden."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
+    "bot": [
+      "Att klassa smittan som allmänfarlig och samhällsfarlig stärker den svenska beredskapen vid samhällsspridning av covid-19, eftersom det gör det möjligt att vidta de förebyggande åtgärder som är relevanta för att hindra en spridning av smitta i samhället. För allmänfarlig och samhällsfarlig smitta finns möjligheter att besluta om åtgärder som exempelvis karantän, isolering, hälsoundersökningar vid inresa och avspärrningar av områden."
+    ]
   },
   {
     "intent": {
@@ -1920,6 +3652,44 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             }
           ]
+        },
+        "INFECTING_ACTIVITY": {
+          "name": "INFECTING_ACTIVITY",
+          "enums": [
+            {
+              "name": "INFECTING_ACTIVITY",
+              "alts": [
+                "hålla i handen",
+                "kyssar",
+                "kyssa",
+                "puss",
+                "pussa",
+                "kyss",
+                "pussar",
+                "kram",
+                "kramar",
+                "kramas",
+                "pussas",
+                "kyssas",
+                "hostar"
+              ]
+            }
+          ]
+        },
+        "OCCUPATION": {
+          "name": "OCCUPATION",
+          "enums": [
+            {
+              "name": "OCCUPATION",
+              "alts": [
+                "jobbet",
+                "skolan",
+                "dagis",
+                "förskolan",
+                "arbetet"
+              ]
+            }
+          ]
         }
       },
       "examples": [
@@ -1928,22 +3698,24 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "hur smittar droppsmitta",
         "vad är luftburen smitta?",
         "vad är droppsmitta?",
+        "hur smittar luftburen smitta?",
+        "vad betyder droppsmitta",
+        "vad innebär droppsmitta",
+        "hur smittar droppsmitta",
+        "vad är luftburen smitta?",
+        "vad är droppsmitta?",
+        "hur smittar luftburen smitta?",
+        "vad betyder droppsmitta",
+        "vad innebär droppsmitta",
+        "hur smittar droppsmitta",
+        "vad är luftburen smitta?",
+        "vad är droppsmitta?",
         "hur smittar luftburen smitta?"
       ]
     },
-    "bot": {
-      "say": [
-        "Vid droppsmitta sprids smittan via droppar i luften, t.ex. när någon antingen hostar, nyser eller kräks. Dessa droppar når som regel inte längre än någon meter. Luftburen smitta rör sig om små, intorkade droppar som håller sig kvar i luften, färdas långa sträckor och smittar den som andas in dem."
-      ],
-      "set": {
-        "classifiedIntentName": "question: vad betyder droppsmitta",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Vid droppsmitta sprids smittan via droppar i luften, t.ex. när någon antingen hostar, nyser eller kräks. Dessa droppar når som regel inte längre än någon meter. Luftburen smitta rör sig om små, intorkade droppar som håller sig kvar i luften, färdas långa sträckor och smittar den som andas in dem."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
+    "bot": [
+      "Vid droppsmitta sprids smittan via droppar i luften, t.ex. när någon antingen hostar, nyser eller kräks. Dessa droppar når som regel inte längre än någon meter. Luftburen smitta rör sig om små, intorkade droppar som håller sig kvar i luften, färdas långa sträckor och smittar den som andas in dem."
+    ]
   },
   {
     "intent": {
@@ -1965,28 +3737,64 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             }
           ]
+        },
+        "INFECTING_ACTIVITY": {
+          "name": "INFECTING_ACTIVITY",
+          "enums": [
+            {
+              "name": "INFECTING_ACTIVITY",
+              "alts": [
+                "hålla i handen",
+                "kyssar",
+                "kyssa",
+                "puss",
+                "pussa",
+                "kyss",
+                "pussar",
+                "kram",
+                "kramar",
+                "kramas",
+                "pussas",
+                "kyssas",
+                "hostar"
+              ]
+            }
+          ]
+        },
+        "OCCUPATION": {
+          "name": "OCCUPATION",
+          "enums": [
+            {
+              "name": "OCCUPATION",
+              "alts": [
+                "jobbet",
+                "skolan",
+                "dagis",
+                "förskolan",
+                "arbetet"
+              ]
+            }
+          ]
         }
       },
       "examples": [
         "vad är direktkontakt?",
         "vad är indirekt kontaktsmitta?",
         "hur smittar man genom direktkontakt?",
+        "hur smittar viruset via indirekt kontakt?",
+        "vad är direktkontakt?",
+        "vad är indirekt kontaktsmitta?",
+        "hur smittar man genom direktkontakt?",
+        "hur smittar viruset via indirekt kontakt?",
+        "vad är direktkontakt?",
+        "vad är indirekt kontaktsmitta?",
+        "hur smittar man genom direktkontakt?",
         "hur smittar viruset via indirekt kontakt?"
       ]
     },
-    "bot": {
-      "say": [
-        "Direkt kontaktsmitta kan ske vid direkt fysisk kontakt mellan en smittbärare och en annan person. Vid indirekt kontaktsmitta överförs smittämnet istället via mellanled från en person till en annan. Kontaktsmitta är den vanligaste smittvägen i vården."
-      ],
-      "set": {
-        "classifiedIntentName": "question: vad är direktkontakt?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Direkt kontaktsmitta kan ske vid direkt fysisk kontakt mellan en smittbärare och en annan person. Vid indirekt kontaktsmitta överförs smittämnet istället via mellanled från en person till en annan. Kontaktsmitta är den vanligaste smittvägen i vården."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
+    "bot": [
+      "Direkt kontaktsmitta kan ske vid direkt fysisk kontakt mellan en smittbärare och en annan person. Vid indirekt kontaktsmitta överförs smittämnet istället via mellanled från en person till en annan. Kontaktsmitta är den vanligaste smittvägen i vården."
+    ]
   },
   {
     "intent": {
@@ -2008,6 +3816,44 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             }
           ]
+        },
+        "INFECTING_ACTIVITY": {
+          "name": "INFECTING_ACTIVITY",
+          "enums": [
+            {
+              "name": "INFECTING_ACTIVITY",
+              "alts": [
+                "hålla i handen",
+                "kyssar",
+                "kyssa",
+                "puss",
+                "pussa",
+                "kyss",
+                "pussar",
+                "kram",
+                "kramar",
+                "kramas",
+                "pussas",
+                "kyssas",
+                "hostar"
+              ]
+            }
+          ]
+        },
+        "OCCUPATION": {
+          "name": "OCCUPATION",
+          "enums": [
+            {
+              "name": "OCCUPATION",
+              "alts": [
+                "jobbet",
+                "skolan",
+                "dagis",
+                "förskolan",
+                "arbetet"
+              ]
+            }
+          ]
         }
       },
       "examples": [
@@ -2015,22 +3861,22 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "vad innebär andningsskydd",
         "vad är andningsskydd mot corona",
         "vad är skydd för andning",
+        "vem bär andningsskydd",
+        "hur använder jag ett andningsskydd",
+        "vad innebär andningsskydd",
+        "vad är andningsskydd mot corona",
+        "vad är skydd för andning",
+        "vem bär andningsskydd",
+        "hur använder jag ett andningsskydd",
+        "vad innebär andningsskydd",
+        "vad är andningsskydd mot corona",
+        "vad är skydd för andning",
         "vem bär andningsskydd"
       ]
     },
-    "bot": {
-      "say": [
-        "Andningsskydd används inom sjukvården där det finns hög smittrisk. Ofta har de inbyggda filter som filtrerar bort smittämnen och andra partiklar från luften man andas in. För att andningsskyddet ska ge avsett skydd måste det anpassas till den som ska använda det plus att personen behöver träning i hur det ska användas."
-      ],
-      "set": {
-        "classifiedIntentName": "question: hur använder jag ett andningsskydd",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Andningsskydd används inom sjukvården där det finns hög smittrisk. Ofta har de inbyggda filter som filtrerar bort smittämnen och andra partiklar från luften man andas in. För att andningsskyddet ska ge avsett skydd måste det anpassas till den som ska använda det plus att personen behöver träning i hur det ska användas."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
+    "bot": [
+      "Andningsskydd används inom sjukvården där det finns hög smittrisk. Ofta har de inbyggda filter som filtrerar bort smittämnen och andra partiklar från luften man andas in. För att andningsskyddet ska ge avsett skydd måste det anpassas till den som ska använda det plus att personen behöver träning i hur det ska användas."
+    ]
   },
   {
     "intent": {
@@ -2052,6 +3898,44 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             }
           ]
+        },
+        "INFECTING_ACTIVITY": {
+          "name": "INFECTING_ACTIVITY",
+          "enums": [
+            {
+              "name": "INFECTING_ACTIVITY",
+              "alts": [
+                "hålla i handen",
+                "kyssar",
+                "kyssa",
+                "puss",
+                "pussa",
+                "kyss",
+                "pussar",
+                "kram",
+                "kramar",
+                "kramas",
+                "pussas",
+                "kyssas",
+                "hostar"
+              ]
+            }
+          ]
+        },
+        "OCCUPATION": {
+          "name": "OCCUPATION",
+          "enums": [
+            {
+              "name": "OCCUPATION",
+              "alts": [
+                "jobbet",
+                "skolan",
+                "dagis",
+                "förskolan",
+                "arbetet"
+              ]
+            }
+          ]
         }
       },
       "examples": [
@@ -2059,22 +3943,22 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "varför ändrades provsvaret",
         "kan provsvaret för corona ändras",
         "hur är det möjligt att olika coronaprov ger olika resultat",
+        "kan jag få olika besked från två  olika coronatest",
+        "hur kan provsvaret för corona ändras",
+        "varför ändrades provsvaret",
+        "kan provsvaret för corona ändras",
+        "hur är det möjligt att olika coronaprov ger olika resultat",
+        "kan jag få olika besked från två  olika coronatest",
+        "hur kan provsvaret för corona ändras",
+        "varför ändrades provsvaret",
+        "kan provsvaret för corona ändras",
+        "hur är det möjligt att olika coronaprov ger olika resultat",
         "kan jag få olika besked från två  olika coronatest"
       ]
     },
-    "bot": {
-      "say": [
-        "Om patienten blir provtagen innan sjukdomen brutit ut kan detta hända. Negativa provsvar under inkubationstiden utesluter alltså inte att man är smittad. Om fortsatt misstanke om covid-19 kvarstår bör provtagning upprepas när eventuella symtom utvecklats."
-      ],
-      "set": {
-        "classifiedIntentName": "question: hur kan provsvaret för corona ändras",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Om patienten blir provtagen innan sjukdomen brutit ut kan detta hända. Negativa provsvar under inkubationstiden utesluter alltså inte att man är smittad. Om fortsatt misstanke om covid-19 kvarstår bör provtagning upprepas när eventuella symtom utvecklats."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
+    "bot": [
+      "Om patienten blir provtagen innan sjukdomen brutit ut kan detta hända. Negativa provsvar under inkubationstiden utesluter alltså inte att man är smittad. Om fortsatt misstanke om covid-19 kvarstår bör provtagning upprepas när eventuella symtom utvecklats."
+    ]
   },
   {
     "intent": {
@@ -2096,28 +3980,64 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             }
           ]
+        },
+        "INFECTING_ACTIVITY": {
+          "name": "INFECTING_ACTIVITY",
+          "enums": [
+            {
+              "name": "INFECTING_ACTIVITY",
+              "alts": [
+                "hålla i handen",
+                "kyssar",
+                "kyssa",
+                "puss",
+                "pussa",
+                "kyss",
+                "pussar",
+                "kram",
+                "kramar",
+                "kramas",
+                "pussas",
+                "kyssas",
+                "hostar"
+              ]
+            }
+          ]
+        },
+        "OCCUPATION": {
+          "name": "OCCUPATION",
+          "enums": [
+            {
+              "name": "OCCUPATION",
+              "alts": [
+                "jobbet",
+                "skolan",
+                "dagis",
+                "förskolan",
+                "arbetet"
+              ]
+            }
+          ]
         }
       },
       "examples": [
         "hur länge kan man smitta andra?",
         "när smittar man?",
         "hur länge smittar en person med coronaviruset?",
+        "hur lång tid smittar corona?",
+        "hur länge kan man smitta andra?",
+        "när smittar man?",
+        "hur länge smittar en person med coronaviruset?",
+        "hur lång tid smittar corona?",
+        "hur länge kan man smitta andra?",
+        "när smittar man?",
+        "hur länge smittar en person med coronaviruset?",
         "hur lång tid smittar corona?"
       ]
     },
-    "bot": {
-      "say": [
-        "Enligt Folkhälsomyndigheten drivs smittspridningen av personer med symtom på sjukdom, men en del som är sjuka får bara milda symtom. Man kan därför bli smittad av någon som inte känner sig sjuk, men som har t. ex. mild hosta. Om man varit sjuk men inte vet om man haft coronavirus, så ska man vara hemma tills man är frisk och sedan ytterligare minst två dagar. "
-      ],
-      "set": {
-        "classifiedIntentName": "question: hur länge kan man smitta andra?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Enligt Folkhälsomyndigheten drivs smittspridningen av personer med symtom på sjukdom, men en del som är sjuka får bara milda symtom. Man kan därför bli smittad av någon som inte känner sig sjuk, men som har t. ex. mild hosta. Om man varit sjuk men inte vet om man haft coronavirus, så ska man vara hemma tills man är frisk och sedan ytterligare minst två dagar. "
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
+    "bot": [
+      "Enligt Folkhälsomyndigheten drivs smittspridningen av personer med symtom på sjukdom, men en del som är sjuka får bara milda symtom. Man kan därför bli smittad av någon som inte känner sig sjuk, men som har t. ex. mild hosta. Om man varit sjuk men inte vet om man haft coronavirus, så ska man vara hemma tills man är frisk och sedan ytterligare minst två dagar. "
+    ]
   },
   {
     "intent": {
@@ -2139,6 +4059,44 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             }
           ]
+        },
+        "INFECTING_ACTIVITY": {
+          "name": "INFECTING_ACTIVITY",
+          "enums": [
+            {
+              "name": "INFECTING_ACTIVITY",
+              "alts": [
+                "hålla i handen",
+                "kyssar",
+                "kyssa",
+                "puss",
+                "pussa",
+                "kyss",
+                "pussar",
+                "kram",
+                "kramar",
+                "kramas",
+                "pussas",
+                "kyssas",
+                "hostar"
+              ]
+            }
+          ]
+        },
+        "OCCUPATION": {
+          "name": "OCCUPATION",
+          "enums": [
+            {
+              "name": "OCCUPATION",
+              "alts": [
+                "jobbet",
+                "skolan",
+                "dagis",
+                "förskolan",
+                "arbetet"
+              ]
+            }
+          ]
         }
       },
       "examples": [
@@ -2146,22 +4104,22 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "vad är syftet med social distansering?",
         "hur fungerar social distansering?",
         "vad är målet med social distansering?",
+        "vad gäller vid social distansering?",
+        "vad är social distansiering?",
+        "vad är syftet med social distansering?",
+        "hur fungerar social distansering?",
+        "vad är målet med social distansering?",
+        "vad gäller vid social distansering?",
+        "vad är social distansiering?",
+        "vad är syftet med social distansering?",
+        "hur fungerar social distansering?",
+        "vad är målet med social distansering?",
         "vad gäller vid social distansering?"
       ]
     },
-    "bot": {
-      "say": [
-        "Social distansering syftar till att förhindra sjuka människor från att komma i nära kontakt med friska människor för att minska möjligheterna till överföring av sjukdomar. Just nu är målet med social distansering att bromsa utbrottet för att minska risken för infektion bland högrisk-grupper samt minska belastningen på sjukvårdssystem och arbetstagare."
-      ],
-      "set": {
-        "classifiedIntentName": "question: vad är social distansiering?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Social distansering syftar till att förhindra sjuka människor från att komma i nära kontakt med friska människor för att minska möjligheterna till överföring av sjukdomar. Just nu är målet med social distansering att bromsa utbrottet för att minska risken för infektion bland högrisk-grupper samt minska belastningen på sjukvårdssystem och arbetstagare."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
+    "bot": [
+      "Social distansering syftar till att förhindra sjuka människor från att komma i nära kontakt med friska människor för att minska möjligheterna till överföring av sjukdomar. Just nu är målet med social distansering att bromsa utbrottet för att minska risken för infektion bland högrisk-grupper samt minska belastningen på sjukvårdssystem och arbetstagare."
+    ]
   },
   {
     "intent": {
@@ -2183,28 +4141,64 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             }
           ]
+        },
+        "INFECTING_ACTIVITY": {
+          "name": "INFECTING_ACTIVITY",
+          "enums": [
+            {
+              "name": "INFECTING_ACTIVITY",
+              "alts": [
+                "hålla i handen",
+                "kyssar",
+                "kyssa",
+                "puss",
+                "pussa",
+                "kyss",
+                "pussar",
+                "kram",
+                "kramar",
+                "kramas",
+                "pussas",
+                "kyssas",
+                "hostar"
+              ]
+            }
+          ]
+        },
+        "OCCUPATION": {
+          "name": "OCCUPATION",
+          "enums": [
+            {
+              "name": "OCCUPATION",
+              "alts": [
+                "jobbet",
+                "skolan",
+                "dagis",
+                "förskolan",
+                "arbetet"
+              ]
+            }
+          ]
         }
       },
       "examples": [
         "hur gör man social distansering?",
         "vad kan man göra för social distansering?",
         "hur göra social distansering?",
+        "hur göra social distansering?",
+        "hur gör man social distansering?",
+        "vad kan man göra för social distansering?",
+        "hur göra social distansering?",
+        "hur göra social distansering?",
+        "hur gör man social distansering?",
+        "vad kan man göra för social distansering?",
+        "hur göra social distansering?",
         "hur göra social distansering?"
       ]
     },
-    "bot": {
-      "say": [
-        "Undvik offentliga, folktäta platser som t.ex. shopping-centrum, bio eller arenor. Håll avstånd (ungefär 2 meter, eller 6 fot) från andra om möjligt."
-      ],
-      "set": {
-        "classifiedIntentName": "question: hur gör man social distansering?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Undvik offentliga, folktäta platser som t.ex. shopping-centrum, bio eller arenor. Håll avstånd (ungefär 2 meter, eller 6 fot) från andra om möjligt."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
+    "bot": [
+      "Undvik offentliga, folktäta platser som t.ex. shopping-centrum, bio eller arenor. Håll avstånd (ungefär 2 meter, eller 6 fot) från andra om möjligt."
+    ]
   },
   {
     "intent": {
@@ -2226,6 +4220,44 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             }
           ]
+        },
+        "INFECTING_ACTIVITY": {
+          "name": "INFECTING_ACTIVITY",
+          "enums": [
+            {
+              "name": "INFECTING_ACTIVITY",
+              "alts": [
+                "hålla i handen",
+                "kyssar",
+                "kyssa",
+                "puss",
+                "pussa",
+                "kyss",
+                "pussar",
+                "kram",
+                "kramar",
+                "kramas",
+                "pussas",
+                "kyssas",
+                "hostar"
+              ]
+            }
+          ]
+        },
+        "OCCUPATION": {
+          "name": "OCCUPATION",
+          "enums": [
+            {
+              "name": "OCCUPATION",
+              "alts": [
+                "jobbet",
+                "skolan",
+                "dagis",
+                "förskolan",
+                "arbetet"
+              ]
+            }
+          ]
         }
       },
       "examples": [
@@ -2233,22 +4265,22 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "vad kan jag göra för att förhindra virusspridning?",
         "hur stoppar jag virusspridning?",
         "hur förebygger jag virusspridning?",
+        "hur förebygger jag virusspridning?",
+        "hur förhindrar jag spridning av virus?",
+        "vad kan jag göra för att förhindra virusspridning?",
+        "hur stoppar jag virusspridning?",
+        "hur förebygger jag virusspridning?",
+        "hur förebygger jag virusspridning?",
+        "hur förhindrar jag spridning av virus?",
+        "vad kan jag göra för att förhindra virusspridning?",
+        "hur stoppar jag virusspridning?",
+        "hur förebygger jag virusspridning?",
         "hur förebygger jag virusspridning?"
       ]
     },
-    "bot": {
-      "say": [
-        "Tvätta händerna regelbundet och ordentligt med tvål och vatten minst 20 sekunder. Använd alcogel om tvål och vatten inte finns tillgängligt. Vidrör varken ögon, näsa eller mun med otvättade händer. Rengör och desinfektera ytor och saker som människor vanligtvis rör. Hosta och nys i böjd armbåge eller näsduk. Se alltid till att slänga näsduken i soporna."
-      ],
-      "set": {
-        "classifiedIntentName": "question: hur förhindrar jag spridning av virus?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Tvätta händerna regelbundet och ordentligt med tvål och vatten minst 20 sekunder. Använd alcogel om tvål och vatten inte finns tillgängligt. Vidrör varken ögon, näsa eller mun med otvättade händer. Rengör och desinfektera ytor och saker som människor vanligtvis rör. Hosta och nys i böjd armbåge eller näsduk. Se alltid till att slänga näsduken i soporna."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
+    "bot": [
+      "Tvätta händerna regelbundet och ordentligt med tvål och vatten minst 20 sekunder. Använd alcogel om tvål och vatten inte finns tillgängligt. Vidrör varken ögon, näsa eller mun med otvättade händer. Rengör och desinfektera ytor och saker som människor vanligtvis rör. Hosta och nys i böjd armbåge eller näsduk. Se alltid till att slänga näsduken i soporna."
+    ]
   },
   {
     "intent": {
@@ -2270,6 +4302,44 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             }
           ]
+        },
+        "INFECTING_ACTIVITY": {
+          "name": "INFECTING_ACTIVITY",
+          "enums": [
+            {
+              "name": "INFECTING_ACTIVITY",
+              "alts": [
+                "hålla i handen",
+                "kyssar",
+                "kyssa",
+                "puss",
+                "pussa",
+                "kyss",
+                "pussar",
+                "kram",
+                "kramar",
+                "kramas",
+                "pussas",
+                "kyssas",
+                "hostar"
+              ]
+            }
+          ]
+        },
+        "OCCUPATION": {
+          "name": "OCCUPATION",
+          "enums": [
+            {
+              "name": "OCCUPATION",
+              "alts": [
+                "jobbet",
+                "skolan",
+                "dagis",
+                "förskolan",
+                "arbetet"
+              ]
+            }
+          ]
         }
       },
       "examples": [
@@ -2278,22 +4348,24 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "kommer spridningen av corona avta till sommaren?",
         "kan spridningen av corona minska när vädret blir varmare?",
         "sprids corona långsammare i varmt väder?",
+        "sprids corona långsammare i varmt väder?",
+        "kommer corona sluta spridas till sommaren?",
+        "kommer virusutbrottet avstanna när det blir varmt?",
+        "kommer spridningen av corona avta till sommaren?",
+        "kan spridningen av corona minska när vädret blir varmare?",
+        "sprids corona långsammare i varmt väder?",
+        "sprids corona långsammare i varmt väder?",
+        "kommer corona sluta spridas till sommaren?",
+        "kommer virusutbrottet avstanna när det blir varmt?",
+        "kommer spridningen av corona avta till sommaren?",
+        "kan spridningen av corona minska när vädret blir varmare?",
+        "sprids corona långsammare i varmt väder?",
         "sprids corona långsammare i varmt väder?"
       ]
     },
-    "bot": {
-      "say": [
-        "För närvarande är det inte känt om spridningen av Covid-19 kommer att minska när vädret blir varmare. Utredningar gällande överförbarhet, svårighetsgrad och andra funktioner förknippade med Covid-19 pågår just nu. "
-      ],
-      "set": {
-        "classifiedIntentName": "question: kommer corona sluta spridas till sommaren?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "För närvarande är det inte känt om spridningen av Covid-19 kommer att minska när vädret blir varmare. Utredningar gällande överförbarhet, svårighetsgrad och andra funktioner förknippade med Covid-19 pågår just nu. "
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
+    "bot": [
+      "För närvarande är det inte känt om spridningen av Covid-19 kommer att minska när vädret blir varmare. Utredningar gällande överförbarhet, svårighetsgrad och andra funktioner förknippade med Covid-19 pågår just nu. "
+    ]
   },
   {
     "intent": {
@@ -2315,6 +4387,44 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             }
           ]
+        },
+        "INFECTING_ACTIVITY": {
+          "name": "INFECTING_ACTIVITY",
+          "enums": [
+            {
+              "name": "INFECTING_ACTIVITY",
+              "alts": [
+                "hålla i handen",
+                "kyssar",
+                "kyssa",
+                "puss",
+                "pussa",
+                "kyss",
+                "pussar",
+                "kram",
+                "kramar",
+                "kramas",
+                "pussas",
+                "kyssas",
+                "hostar"
+              ]
+            }
+          ]
+        },
+        "OCCUPATION": {
+          "name": "OCCUPATION",
+          "enums": [
+            {
+              "name": "OCCUPATION",
+              "alts": [
+                "jobbet",
+                "skolan",
+                "dagis",
+                "förskolan",
+                "arbetet"
+              ]
+            }
+          ]
         }
       },
       "examples": [
@@ -2324,22 +4434,26 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "varför har vi inreseförbud?",
         "när börjar inreseförbudet?",
         "när slutar inreseförbudet?",
+        "när slutar inreseförbudet?",
+        "vad är inreseförbudet?",
+        "vad händer vid inreseförbudet?",
+        "när är inreseförbudet?",
+        "varför har vi inreseförbud?",
+        "när börjar inreseförbudet?",
+        "när slutar inreseförbudet?",
+        "när slutar inreseförbudet?",
+        "vad är inreseförbudet?",
+        "vad händer vid inreseförbudet?",
+        "när är inreseförbudet?",
+        "varför har vi inreseförbud?",
+        "när börjar inreseförbudet?",
+        "när slutar inreseförbudet?",
         "när slutar inreseförbudet?"
       ]
     },
-    "bot": {
-      "say": [
-        "Från och med den 19 mars och 30 dagar framåt kommer icke nödvändiga resor till Sverige från länder utanför Europa att stoppas. Detta efter beslut från den svenska regeringen i ett försök att minska spridningen av Covid-19. Vid behov kan beslutet komma att förlängas."
-      ],
-      "set": {
-        "classifiedIntentName": "question: vad är inreseförbudet?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Från och med den 19 mars och 30 dagar framåt kommer icke nödvändiga resor till Sverige från länder utanför Europa att stoppas. Detta efter beslut från den svenska regeringen i ett försök att minska spridningen av Covid-19. Vid behov kan beslutet komma att förlängas."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
+    "bot": [
+      "Från och med den 19 mars och 30 dagar framåt kommer icke nödvändiga resor till Sverige från länder utanför Europa att stoppas. Detta efter beslut från den svenska regeringen i ett försök att minska spridningen av Covid-19. Vid behov kan beslutet komma att förlängas."
+    ]
   },
   {
     "intent": {
@@ -2361,6 +4475,44 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             }
           ]
+        },
+        "INFECTING_ACTIVITY": {
+          "name": "INFECTING_ACTIVITY",
+          "enums": [
+            {
+              "name": "INFECTING_ACTIVITY",
+              "alts": [
+                "hålla i handen",
+                "kyssar",
+                "kyssa",
+                "puss",
+                "pussa",
+                "kyss",
+                "pussar",
+                "kram",
+                "kramar",
+                "kramas",
+                "pussas",
+                "kyssas",
+                "hostar"
+              ]
+            }
+          ]
+        },
+        "OCCUPATION": {
+          "name": "OCCUPATION",
+          "enums": [
+            {
+              "name": "OCCUPATION",
+              "alts": [
+                "jobbet",
+                "skolan",
+                "dagis",
+                "förskolan",
+                "arbetet"
+              ]
+            }
+          ]
         }
       },
       "examples": [
@@ -2368,26 +4520,26 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "vem rörs inte av inreseförbudet?",
         "vilka undantag gäller för inreseförbudet?",
         "görs det undantag för inreseförbudet?",
+        "vem görs undantag för gällande inreseförbudet?",
+        "vem rörs av inreseförbudet?",
+        "vem rörs inte av inreseförbudet?",
+        "vilka undantag gäller för inreseförbudet?",
+        "görs det undantag för inreseförbudet?",
+        "vem görs undantag för gällande inreseförbudet?",
+        "vem rörs av inreseförbudet?",
+        "vem rörs inte av inreseförbudet?",
+        "vilka undantag gäller för inreseförbudet?",
+        "görs det undantag för inreseförbudet?",
         "vem görs undantag för gällande inreseförbudet?"
       ]
     },
-    "bot": {
-      "say": [
-        "Inreseförbudet gäller för alla utländska medborgare som försöker resa in i Sverige från ett land som inte ingår i Schengensamarbetet samt Schweiz. Undantag görs för svenska medborgare och andra personer som är bosatta med eget hem i Sverige samt diplomater och personer som är i behov av internationellt skydd. Även personer som utför nödvändiga funktioner i Sverige, t.ex hälso- och sjukvårdspersonal som transporterar varor till Sverige undantas från inreseförbudet. "
-      ],
-      "set": {
-        "classifiedIntentName": "question: vem rörs av inreseförbudet?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Inreseförbudet gäller för alla utländska medborgare som försöker resa in i Sverige från ett land som inte ingår i Schengensamarbetet samt Schweiz. Undantag görs för svenska medborgare och andra personer som är bosatta med eget hem i Sverige samt diplomater och personer som är i behov av internationellt skydd. Även personer som utför nödvändiga funktioner i Sverige, t.ex hälso- och sjukvårdspersonal som transporterar varor till Sverige undantas från inreseförbudet. "
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
+    "bot": [
+      "Inreseförbudet gäller för alla utländska medborgare som försöker resa in i Sverige från ett land som inte ingår i Schengensamarbetet samt Schweiz. Undantag görs för svenska medborgare och andra personer som är bosatta med eget hem i Sverige samt diplomater och personer som är i behov av internationellt skydd. Även personer som utför nödvändiga funktioner i Sverige, t.ex hälso- och sjukvårdspersonal som transporterar varor till Sverige undantas från inreseförbudet. "
+    ]
   },
   {
     "intent": {
-      "name": "question: kan man testa sig hemma för corona?",
+      "name": "question: kan man testa sig hemma för CORONA?",
       "entities": {
         "CORONA": {
           "name": "CORONA",
@@ -2405,29 +4557,64 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             }
           ]
+        },
+        "INFECTING_ACTIVITY": {
+          "name": "INFECTING_ACTIVITY",
+          "enums": [
+            {
+              "name": "INFECTING_ACTIVITY",
+              "alts": [
+                "hålla i handen",
+                "kyssar",
+                "kyssa",
+                "puss",
+                "pussa",
+                "kyss",
+                "pussar",
+                "kram",
+                "kramar",
+                "kramas",
+                "pussas",
+                "kyssas",
+                "hostar"
+              ]
+            }
+          ]
+        },
+        "OCCUPATION": {
+          "name": "OCCUPATION",
+          "enums": [
+            {
+              "name": "OCCUPATION",
+              "alts": [
+                "jobbet",
+                "skolan",
+                "dagis",
+                "förskolan",
+                "arbetet"
+              ]
+            }
+          ]
         }
       },
       "examples": [
-        "kan man testa sig hemma för corona?",
-        "kan man testa sig hemma för covid?",
+        "kan man testa sig hemma för _CORONA?",
+        "går det att testa sig hemma?",
+        "är självtester pålitliga?",
+        "kan man lita på självtester?",
+        "kan man testa sig hemma för CORONA?",
+        "går det att testa sig hemma?",
+        "är självtester pålitliga?",
+        "kan man lita på självtester?",
+        "kan man testa sig hemma för CORONA?",
         "går det att testa sig hemma?",
         "är självtester pålitliga?",
         "kan man lita på självtester?"
       ]
     },
-    "bot": {
-      "say": [
-        "Just nu finns det tillverkare som marknadsför självtester för covid-19. I nuläget är det dock inte klart hur exakta eller känsliga dessa tester är. Folkhälsomyndigheten rekommenderar därför att dessa självtester inte används och hänvisar istället till sjukvårdens egna tester för en mer exakt och pålitlig sjukdomsbild."
-      ],
-      "set": {
-        "classifiedIntentName": "question: kan man testa sig hemma för corona?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Just nu finns det tillverkare som marknadsför självtester för covid-19. I nuläget är det dock inte klart hur exakta eller känsliga dessa tester är. Folkhälsomyndigheten rekommenderar därför att dessa självtester inte används och hänvisar istället till sjukvårdens egna tester för en mer exakt och pålitlig sjukdomsbild."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
+    "bot": [
+      "Just nu finns det tillverkare som marknadsför självtester för covid-19. I nuläget är det dock inte klart hur exakta eller känsliga dessa tester är. Folkhälsomyndigheten rekommenderar därför att dessa självtester inte används och hänvisar istället till sjukvårdens egna tester för en mer exakt och pålitlig sjukdomsbild."
+    ]
   },
   {
     "intent": {
@@ -2449,6 +4636,44 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             }
           ]
+        },
+        "INFECTING_ACTIVITY": {
+          "name": "INFECTING_ACTIVITY",
+          "enums": [
+            {
+              "name": "INFECTING_ACTIVITY",
+              "alts": [
+                "hålla i handen",
+                "kyssar",
+                "kyssa",
+                "puss",
+                "pussa",
+                "kyss",
+                "pussar",
+                "kram",
+                "kramar",
+                "kramas",
+                "pussas",
+                "kyssas",
+                "hostar"
+              ]
+            }
+          ]
+        },
+        "OCCUPATION": {
+          "name": "OCCUPATION",
+          "enums": [
+            {
+              "name": "OCCUPATION",
+              "alts": [
+                "jobbet",
+                "skolan",
+                "dagis",
+                "förskolan",
+                "arbetet"
+              ]
+            }
+          ]
         }
       },
       "examples": [
@@ -2457,22 +4682,24 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "kommer all undervisning nu bedrivas på distans?",
         "bedrivs undervisning på distans?",
         "Varför ska  undervisningen för gymnasieelever och studenter ske på distans?",
+        "erbjuder skolorna undervisning på distans?",
+        "behöver man läsa via distans nu?",
+        "varför behöver skolorna läsa på distans?",
+        "kommer all undervisning nu bedrivas på distans?",
+        "bedrivs undervisning på distans?",
+        "Varför ska  undervisningen för gymnasieelever och studenter ske på distans?",
+        "erbjuder skolorna undervisning på distans?",
+        "behöver man läsa via distans nu?",
+        "varför behöver skolorna läsa på distans?",
+        "kommer all undervisning nu bedrivas på distans?",
+        "bedrivs undervisning på distans?",
+        "Varför ska  undervisningen för gymnasieelever och studenter ske på distans?",
         "erbjuder skolorna undervisning på distans?"
       ]
     },
-    "bot": {
-      "say": [
-        "För att bromsa spridningen av covid-19 rekommenderar Folkhälsomyndigheten från den 17 mars 2020 att undervisningen i gymnasieskolor, universitet, högskolor, yrkeshögskolor och komvux ska ske på distans."
-      ],
-      "set": {
-        "classifiedIntentName": "question: behöver man läsa via distans nu?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "För att bromsa spridningen av covid-19 rekommenderar Folkhälsomyndigheten från den 17 mars 2020 att undervisningen i gymnasieskolor, universitet, högskolor, yrkeshögskolor och komvux ska ske på distans."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
+    "bot": [
+      "För att bromsa spridningen av covid-19 rekommenderar Folkhälsomyndigheten från den 17 mars 2020 att undervisningen i gymnasieskolor, universitet, högskolor, yrkeshögskolor och komvux ska ske på distans."
+    ]
   },
   {
     "intent": {
@@ -2494,6 +4721,44 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             }
           ]
+        },
+        "INFECTING_ACTIVITY": {
+          "name": "INFECTING_ACTIVITY",
+          "enums": [
+            {
+              "name": "INFECTING_ACTIVITY",
+              "alts": [
+                "hålla i handen",
+                "kyssar",
+                "kyssa",
+                "puss",
+                "pussa",
+                "kyss",
+                "pussar",
+                "kram",
+                "kramar",
+                "kramas",
+                "pussas",
+                "kyssas",
+                "hostar"
+              ]
+            }
+          ]
+        },
+        "OCCUPATION": {
+          "name": "OCCUPATION",
+          "enums": [
+            {
+              "name": "OCCUPATION",
+              "alts": [
+                "jobbet",
+                "skolan",
+                "dagis",
+                "förskolan",
+                "arbetet"
+              ]
+            }
+          ]
         }
       },
       "examples": [
@@ -2503,22 +4768,26 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "kommer distansundervisning ske för elever i grundskolan?",
         "är det aktuellt för elever i grundskolan att läsa på distans?",
         "varför bedrivs inte undervisning på distans för elever i grundskolan?",
+        "vad gäller för grundskoleelever?",
+        "vad gäller angående undervisning i grundskolor?",
+        "behöver elever i grundskolan läsa på distans?",
+        "behöver elever i grundskolan stanna hemifrån?",
+        "kommer distansundervisning ske för elever i grundskolan?",
+        "är det aktuellt för elever i grundskolan att läsa på distans?",
+        "varför bedrivs inte undervisning på distans för elever i grundskolan?",
+        "vad gäller för grundskoleelever?",
+        "vad gäller angående undervisning i grundskolor?",
+        "behöver elever i grundskolan läsa på distans?",
+        "behöver elever i grundskolan stanna hemifrån?",
+        "kommer distansundervisning ske för elever i grundskolan?",
+        "är det aktuellt för elever i grundskolan att läsa på distans?",
+        "varför bedrivs inte undervisning på distans för elever i grundskolan?",
         "vad gäller för grundskoleelever?"
       ]
     },
-    "bot": {
-      "say": [
-        "Nej. Folkhälsomyndigheten rekommendationer gällande distansundervisning gäller endast från gymnasiet och uppåt. Detta för att gymnasieskolor, universitet och högskolor samlar elever och studenter från upptagningsområden som är mycket större än grundskolans. Gymnasieelever och studenter är inte heller i behov av omsorg, till skillnad från barn i grundskolan."
-      ],
-      "set": {
-        "classifiedIntentName": "question: vad gäller angående undervisning i grundskolor?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Nej. Folkhälsomyndigheten rekommendationer gällande distansundervisning gäller endast från gymnasiet och uppåt. Detta för att gymnasieskolor, universitet och högskolor samlar elever och studenter från upptagningsområden som är mycket större än grundskolans. Gymnasieelever och studenter är inte heller i behov av omsorg, till skillnad från barn i grundskolan."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
+    "bot": [
+      "Nej. Folkhälsomyndigheten rekommendationer gällande distansundervisning gäller endast från gymnasiet och uppåt. Detta för att gymnasieskolor, universitet och högskolor samlar elever och studenter från upptagningsområden som är mycket större än grundskolans. Gymnasieelever och studenter är inte heller i behov av omsorg, till skillnad från barn i grundskolan."
+    ]
   },
   {
     "intent": {
@@ -2540,6 +4809,44 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             }
           ]
+        },
+        "INFECTING_ACTIVITY": {
+          "name": "INFECTING_ACTIVITY",
+          "enums": [
+            {
+              "name": "INFECTING_ACTIVITY",
+              "alts": [
+                "hålla i handen",
+                "kyssar",
+                "kyssa",
+                "puss",
+                "pussa",
+                "kyss",
+                "pussar",
+                "kram",
+                "kramar",
+                "kramas",
+                "pussas",
+                "kyssas",
+                "hostar"
+              ]
+            }
+          ]
+        },
+        "OCCUPATION": {
+          "name": "OCCUPATION",
+          "enums": [
+            {
+              "name": "OCCUPATION",
+              "alts": [
+                "jobbet",
+                "skolan",
+                "dagis",
+                "förskolan",
+                "arbetet"
+              ]
+            }
+          ]
         }
       },
       "examples": [
@@ -2549,22 +4856,26 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "vad bör äldre undvika?",
         "kan äldre gå på promenad utomhus?",
         "vad ska äldre göra i nuläget?",
+        "jag är 70 år, vad gör jag nu?",
+        "hur ska man bete sig om man är över 70 år?",
+        "hur ska äldre bete sig?",
+        "vad  bör äldre göra under pågående smittspridning?",
+        "vad bör äldre undvika?",
+        "kan äldre gå på promenad utomhus?",
+        "vad ska äldre göra i nuläget?",
+        "jag är 70 år, vad gör jag nu?",
+        "hur ska man bete sig om man är över 70 år?",
+        "hur ska äldre bete sig?",
+        "vad  bör äldre göra under pågående smittspridning?",
+        "vad bör äldre undvika?",
+        "kan äldre gå på promenad utomhus?",
+        "vad ska äldre göra i nuläget?",
         "jag är 70 år, vad gör jag nu?"
       ]
     },
-    "bot": {
-      "say": [
-        "Folkhälsomyndigheten uppmanar personer som är 70 år och äldre att hålla sig hemma och begränsa närmare kontakt med andra de kommande veckorna. Äldre bör även undvika folksamlingar i exempelvis kollektivtrafik, affärer eller offentliga lokaler. Promenader utomhus är ok, bara inte i grupp. Be om hjälp för att göra ärenden som exempelvis handla mat ."
-      ],
-      "set": {
-        "classifiedIntentName": "question: hur ska man bete sig om man är över 70 år?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Folkhälsomyndigheten uppmanar personer som är 70 år och äldre att hålla sig hemma och begränsa närmare kontakt med andra de kommande veckorna. Äldre bör även undvika folksamlingar i exempelvis kollektivtrafik, affärer eller offentliga lokaler. Promenader utomhus är ok, bara inte i grupp. Be om hjälp för att göra ärenden som exempelvis handla mat ."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
+    "bot": [
+      "Folkhälsomyndigheten uppmanar personer som är 70 år och äldre att hålla sig hemma och begränsa närmare kontakt med andra de kommande veckorna. Äldre bör även undvika folksamlingar i exempelvis kollektivtrafik, affärer eller offentliga lokaler. Promenader utomhus är ok, bara inte i grupp. Be om hjälp för att göra ärenden som exempelvis handla mat ."
+    ]
   },
   {
     "intent": {
@@ -2586,6 +4897,44 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             }
           ]
+        },
+        "INFECTING_ACTIVITY": {
+          "name": "INFECTING_ACTIVITY",
+          "enums": [
+            {
+              "name": "INFECTING_ACTIVITY",
+              "alts": [
+                "hålla i handen",
+                "kyssar",
+                "kyssa",
+                "puss",
+                "pussa",
+                "kyss",
+                "pussar",
+                "kram",
+                "kramar",
+                "kramas",
+                "pussas",
+                "kyssas",
+                "hostar"
+              ]
+            }
+          ]
+        },
+        "OCCUPATION": {
+          "name": "OCCUPATION",
+          "enums": [
+            {
+              "name": "OCCUPATION",
+              "alts": [
+                "jobbet",
+                "skolan",
+                "dagis",
+                "förskolan",
+                "arbetet"
+              ]
+            }
+          ]
         }
       },
       "examples": [
@@ -2594,22 +4943,24 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "hur kan man ta hand om äldre?",
         "hur håller man äldre borta från viruset?",
         "kan jag ha närkontakt med äldre?",
+        "hur skyddar jag äldre från smitta?",
+        "hur skyddar vi de äldre?",
+        "hur skyddar vi de som är 70 år eller äldre?",
+        "hur kan man ta hand om äldre?",
+        "hur håller man äldre borta från viruset?",
+        "kan jag ha närkontakt med äldre?",
+        "hur skyddar jag äldre från smitta?",
+        "hur skyddar vi de äldre?",
+        "hur skyddar vi de som är 70 år eller äldre?",
+        "hur kan man ta hand om äldre?",
+        "hur håller man äldre borta från viruset?",
+        "kan jag ha närkontakt med äldre?",
         "hur skyddar jag äldre från smitta?"
       ]
     },
-    "bot": {
-      "say": [
-        "Det är viktigt att skydda de äldre från smitta. Ha därför ingen närkontakt med personer som är 70 år och äldre om det inte är helt nödvändigt. Stanna hemma när du känner dig sjuk, även om du bara är lite förkyld. Covid-19 kan ge lindriga symtom som liknar en förkylning, så det är viktigt att vara vaksam."
-      ],
-      "set": {
-        "classifiedIntentName": "question: hur skyddar vi de äldre?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Det är viktigt att skydda de äldre från smitta. Ha därför ingen närkontakt med personer som är 70 år och äldre om det inte är helt nödvändigt. Stanna hemma när du känner dig sjuk, även om du bara är lite förkyld. Covid-19 kan ge lindriga symtom som liknar en förkylning, så det är viktigt att vara vaksam."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
+    "bot": [
+      "Det är viktigt att skydda de äldre från smitta. Ha därför ingen närkontakt med personer som är 70 år och äldre om det inte är helt nödvändigt. Stanna hemma när du känner dig sjuk, även om du bara är lite förkyld. Covid-19 kan ge lindriga symtom som liknar en förkylning, så det är viktigt att vara vaksam."
+    ]
   },
   {
     "intent": {
@@ -2631,6 +4982,44 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             }
           ]
+        },
+        "INFECTING_ACTIVITY": {
+          "name": "INFECTING_ACTIVITY",
+          "enums": [
+            {
+              "name": "INFECTING_ACTIVITY",
+              "alts": [
+                "hålla i handen",
+                "kyssar",
+                "kyssa",
+                "puss",
+                "pussa",
+                "kyss",
+                "pussar",
+                "kram",
+                "kramar",
+                "kramas",
+                "pussas",
+                "kyssas",
+                "hostar"
+              ]
+            }
+          ]
+        },
+        "OCCUPATION": {
+          "name": "OCCUPATION",
+          "enums": [
+            {
+              "name": "OCCUPATION",
+              "alts": [
+                "jobbet",
+                "skolan",
+                "dagis",
+                "förskolan",
+                "arbetet"
+              ]
+            }
+          ]
         }
       },
       "examples": [
@@ -2638,22 +5027,22 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "vilka personer kan testa sig för corona?",
         "kan jag testa mig för corona?",
         "när kan man testa sig för corona?",
+        "ska man stanna hemma när man uppvisar symptom på corona?",
+        "vem kan testas för corona?",
+        "vilka personer kan testa sig för corona?",
+        "kan jag testa mig för corona?",
+        "när kan man testa sig för corona?",
+        "ska man stanna hemma när man uppvisar symptom på corona?",
+        "vem kan testas för corona?",
+        "vilka personer kan testa sig för corona?",
+        "kan jag testa mig för corona?",
+        "när kan man testa sig för corona?",
         "ska man stanna hemma när man uppvisar symptom på corona?"
       ]
     },
-    "bot": {
-      "say": [
-        "Personer som är i behov av vård på sjukhus, alternativt personal inom sjukvård och äldreomsorg med misstänkt smitta av det nya coronaviruset. Alla som är sjuka i förkylning eller influensaliknande symtom ska vara hemma för att inte riskera att sprida smitta vidare till andra."
-      ],
-      "set": {
-        "classifiedIntentName": "question: vem kan testas för corona?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Personer som är i behov av vård på sjukhus, alternativt personal inom sjukvård och äldreomsorg med misstänkt smitta av det nya coronaviruset. Alla som är sjuka i förkylning eller influensaliknande symtom ska vara hemma för att inte riskera att sprida smitta vidare till andra."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
+    "bot": [
+      "Personer som är i behov av vård på sjukhus, alternativt personal inom sjukvård och äldreomsorg med misstänkt smitta av det nya coronaviruset. Alla som är sjuka i förkylning eller influensaliknande symtom ska vara hemma för att inte riskera att sprida smitta vidare till andra."
+    ]
   },
   {
     "intent": {
@@ -2675,6 +5064,44 @@ export const simpleQuestionAnswers : UserTurn[] = [
               ]
             }
           ]
+        },
+        "INFECTING_ACTIVITY": {
+          "name": "INFECTING_ACTIVITY",
+          "enums": [
+            {
+              "name": "INFECTING_ACTIVITY",
+              "alts": [
+                "hålla i handen",
+                "kyssar",
+                "kyssa",
+                "puss",
+                "pussa",
+                "kyss",
+                "pussar",
+                "kram",
+                "kramar",
+                "kramas",
+                "pussas",
+                "kyssas",
+                "hostar"
+              ]
+            }
+          ]
+        },
+        "OCCUPATION": {
+          "name": "OCCUPATION",
+          "enums": [
+            {
+              "name": "OCCUPATION",
+              "alts": [
+                "jobbet",
+                "skolan",
+                "dagis",
+                "förskolan",
+                "arbetet"
+              ]
+            }
+          ]
         }
       },
       "examples": [
@@ -2682,21 +5109,386 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "måste man stanna hemma om någon i hushållet är sjuk?",
         "om någon i hushållet är sjuk utan symptom, måste resten av hushållet stanna hemma då?",
         "kan man gå till skolan även om någon i familjen är sjuk?",
+        "kan man gå till jobbet även fast någon i hushållet är sjuk?",
+        "måste alla i familjen stanna hemma om en är sjuk?",
+        "måste man stanna hemma om någon i hushållet är sjuk?",
+        "om någon i hushållet är sjuk utan symptom, måste resten av hushållet stanna hemma då?",
+        "kan man gå till skolan även om någon i familjen är sjuk?",
+        "kan man gå till jobbet även fast någon i hushållet är sjuk?",
+        "måste alla i familjen stanna hemma om en är sjuk?",
+        "måste man stanna hemma om någon i hushållet är sjuk?",
+        "om någon i hushållet är sjuk utan symptom, måste resten av hushållet stanna hemma då?",
+        "kan man gå till skolan även om någon i familjen är sjuk?",
         "kan man gå till jobbet även fast någon i hushållet är sjuk?"
       ]
     },
-    "bot": {
-      "say": [
-        "Så länge andra familjemedlemmar inte har symtom kan de göra som vanligt. Det är dock väldigt viktigt att vara uppmärksam på symptom och stanna hemma vid första tecken på sjukdom."
-      ],
-      "set": {
-        "classifiedIntentName": "question: måste alla i familjen stanna hemma om en är sjuk?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Så länge andra familjemedlemmar inte har symtom kan de göra som vanligt. Det är dock väldigt viktigt att vara uppmärksam på symptom och stanna hemma vid första tecken på sjukdom."
-        ]
+    "bot": [
+      "Så länge andra familjemedlemmar inte har symtom kan de göra som vanligt. Det är dock väldigt viktigt att vara uppmärksam på symptom och stanna hemma vid första tecken på sjukdom."
+    ]
+  },
+  {
+    "intent": {
+      "name": "question: Kan du prata engelska?",
+      "entities": {
+        "CORONA": {
+          "name": "CORONA",
+          "enums": [
+            {
+              "name": "CORONA",
+              "alts": [
+                "covid",
+                "covid19",
+                "covid-19",
+                "corona viruset",
+                "coronavirus",
+                "covid 19",
+                "corona"
+              ]
+            }
+          ]
+        },
+        "INFECTING_ACTIVITY": {
+          "name": "INFECTING_ACTIVITY",
+          "enums": [
+            {
+              "name": "INFECTING_ACTIVITY",
+              "alts": [
+                "hålla i handen",
+                "kyssar",
+                "kyssa",
+                "puss",
+                "pussa",
+                "kyss",
+                "pussar",
+                "kram",
+                "kramar",
+                "kramas",
+                "pussas",
+                "kyssas",
+                "hostar"
+              ]
+            }
+          ]
+        },
+        "OCCUPATION": {
+          "name": "OCCUPATION",
+          "enums": [
+            {
+              "name": "OCCUPATION",
+              "alts": [
+                "jobbet",
+                "skolan",
+                "dagis",
+                "förskolan",
+                "arbetet"
+              ]
+            }
+          ]
+        }
       },
-      "goto": "VERIFY_ANSWER"
-    }
+      "examples": [
+        "Kan du prata engelska?",
+        "Finns du på engelska?",
+        "Kan du prata engelska?",
+        "Finns du på engelska?",
+        "Kan du prata engelska?",
+        "Finns du på engelska?"
+      ]
+    },
+    "bot": [
+      "Än så länge pratar jag bara svenska, men det kan mycket väl hända att jag lär mig fler språk i framtiden."
+    ]
+  },
+  {
+    "intent": {
+      "name": "question: Jag får inte luft",
+      "entities": {
+        "CORONA": {
+          "name": "CORONA",
+          "enums": [
+            {
+              "name": "CORONA",
+              "alts": [
+                "covid",
+                "covid19",
+                "covid-19",
+                "corona viruset",
+                "coronavirus",
+                "covid 19",
+                "corona"
+              ]
+            }
+          ]
+        },
+        "INFECTING_ACTIVITY": {
+          "name": "INFECTING_ACTIVITY",
+          "enums": [
+            {
+              "name": "INFECTING_ACTIVITY",
+              "alts": [
+                "hålla i handen",
+                "kyssar",
+                "kyssa",
+                "puss",
+                "pussa",
+                "kyss",
+                "pussar",
+                "kram",
+                "kramar",
+                "kramas",
+                "pussas",
+                "kyssas",
+                "hostar"
+              ]
+            }
+          ]
+        },
+        "OCCUPATION": {
+          "name": "OCCUPATION",
+          "enums": [
+            {
+              "name": "OCCUPATION",
+              "alts": [
+                "jobbet",
+                "skolan",
+                "dagis",
+                "förskolan",
+                "arbetet"
+              ]
+            }
+          ]
+        }
+      },
+      "examples": [
+        "Jag får inte luft",
+        "Jag har problem med andningen",
+        "Jag får inte luft",
+        "Jag har problem med andningen",
+        "Jag får inte luft",
+        "Jag har problem med andningen"
+      ]
+    },
+    "bot": [
+      "Om du har mycket svårt att andas ska du ringa 112."
+    ]
+  },
+  {
+    "intent": {
+      "name": "question: Vad är senaste nytt?",
+      "entities": {
+        "CORONA": {
+          "name": "CORONA",
+          "enums": [
+            {
+              "name": "CORONA",
+              "alts": [
+                "covid",
+                "covid19",
+                "covid-19",
+                "corona viruset",
+                "coronavirus",
+                "covid 19",
+                "corona"
+              ]
+            }
+          ]
+        },
+        "INFECTING_ACTIVITY": {
+          "name": "INFECTING_ACTIVITY",
+          "enums": [
+            {
+              "name": "INFECTING_ACTIVITY",
+              "alts": [
+                "hålla i handen",
+                "kyssar",
+                "kyssa",
+                "puss",
+                "pussa",
+                "kyss",
+                "pussar",
+                "kram",
+                "kramar",
+                "kramas",
+                "pussas",
+                "kyssas",
+                "hostar"
+              ]
+            }
+          ]
+        },
+        "OCCUPATION": {
+          "name": "OCCUPATION",
+          "enums": [
+            {
+              "name": "OCCUPATION",
+              "alts": [
+                "jobbet",
+                "skolan",
+                "dagis",
+                "förskolan",
+                "arbetet"
+              ]
+            }
+          ]
+        }
+      },
+      "examples": [
+        "Vad är senaste nytt?",
+        "Vad är nytt?",
+        "Vad är senaste nytt?",
+        "Vad är nytt?",
+        "Vad är senaste nytt?",
+        "Vad är nytt?"
+      ]
+    },
+    "bot": [
+      "Eftersom frågan inte täcks av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+    ]
+  },
+  {
+    "intent": {
+      "name": "question: Vad är ditt namn?",
+      "entities": {
+        "CORONA": {
+          "name": "CORONA",
+          "enums": [
+            {
+              "name": "CORONA",
+              "alts": [
+                "covid",
+                "covid19",
+                "covid-19",
+                "corona viruset",
+                "coronavirus",
+                "covid 19",
+                "corona"
+              ]
+            }
+          ]
+        },
+        "INFECTING_ACTIVITY": {
+          "name": "INFECTING_ACTIVITY",
+          "enums": [
+            {
+              "name": "INFECTING_ACTIVITY",
+              "alts": [
+                "hålla i handen",
+                "kyssar",
+                "kyssa",
+                "puss",
+                "pussa",
+                "kyss",
+                "pussar",
+                "kram",
+                "kramar",
+                "kramas",
+                "pussas",
+                "kyssas",
+                "hostar"
+              ]
+            }
+          ]
+        },
+        "OCCUPATION": {
+          "name": "OCCUPATION",
+          "enums": [
+            {
+              "name": "OCCUPATION",
+              "alts": [
+                "jobbet",
+                "skolan",
+                "dagis",
+                "förskolan",
+                "arbetet"
+              ]
+            }
+          ]
+        }
+      },
+      "examples": [
+        "Vad är ditt namn?",
+        "Vem är du?",
+        "Vad är ditt namn?",
+        "Vem är du?",
+        "Vad är ditt namn?",
+        "Vem är du?"
+      ]
+    },
+    "bot": [
+      "Mitt namn är Coronaguiden och jag kan svara på frågor om det nya coronaviruset."
+    ]
+  },
+  {
+    "intent": {
+      "name": "question: Hur lång tid kan det ta innan symptom visar sig?",
+      "entities": {
+        "CORONA": {
+          "name": "CORONA",
+          "enums": [
+            {
+              "name": "CORONA",
+              "alts": [
+                "covid",
+                "covid19",
+                "covid-19",
+                "corona viruset",
+                "coronavirus",
+                "covid 19",
+                "corona"
+              ]
+            }
+          ]
+        },
+        "INFECTING_ACTIVITY": {
+          "name": "INFECTING_ACTIVITY",
+          "enums": [
+            {
+              "name": "INFECTING_ACTIVITY",
+              "alts": [
+                "hålla i handen",
+                "kyssar",
+                "kyssa",
+                "puss",
+                "pussa",
+                "kyss",
+                "pussar",
+                "kram",
+                "kramar",
+                "kramas",
+                "pussas",
+                "kyssas",
+                "hostar"
+              ]
+            }
+          ]
+        },
+        "OCCUPATION": {
+          "name": "OCCUPATION",
+          "enums": [
+            {
+              "name": "OCCUPATION",
+              "alts": [
+                "jobbet",
+                "skolan",
+                "dagis",
+                "förskolan",
+                "arbetet"
+              ]
+            }
+          ]
+        }
+      },
+      "examples": [
+        "Hur lång tid kan det ta innan symptom visar sig?",
+        "Hur lång tid efter att man har blivit smittad blir man sjuk?",
+        "Hur lång tid kan det ta innan symptom visar sig?",
+        "Hur lång tid efter att man har blivit smittad blir man sjuk?",
+        "Hur lång tid kan det ta innan symptom visar sig?",
+        "Hur lång tid efter att man har blivit smittad blir man sjuk?"
+      ]
+    },
+    "bot": [
+      "De flesta insjuknar ungefär 5 dagar efter smittotillfället, men inkubationstiden kan variera mellan 2 och 14 dagar."
+    ]
   }
 ]

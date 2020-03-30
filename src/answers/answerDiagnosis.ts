@@ -19,7 +19,7 @@ export const answerDiagnosis: BotTurn = {
           platform: "voximplant"
         },
         text:
-          "Region Stockholm har utvecklat en tjänst där du kan göra en självskattning för att se om du behöver kontakta vården eller kan egenvårda dig. Du hittar den på corona.sll.se."
+          "Det kan jag tyvärr inte svara på. Däremot har Region Stockholm utvecklat en tjänst där du kan göra en självskattning för att se om du behöver kontakta vården eller kan egenvårda dig. Du hittar den på corona.sll.se."
       },
       {
         text:

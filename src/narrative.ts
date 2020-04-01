@@ -22,9 +22,9 @@ const intro = {
       cond: {
         platform: "voximplant"
       },
-      text: "Jag är en chatt-bått som kan svara på frågor om det nya Coronaviruset"
+      text: "Jag är en chatt-bått som kan svara på frågor om det nya coronaviruset."
     },
-    "Jag kan svara på frågor om det nya Coronaviruset"
+    "Jag kan svara på frågor om det nya coronaviruset."
   ]
 }
 
@@ -70,7 +70,7 @@ const queryQuestions: BotTurn = {
     },
     {
       // On repetitive questions, or if we hotStarted
-      text: ["Har du någon mer fråga till mig?", "Undrar du något annat?"]
+      text: ["Har du någon mer fråga till mig?", "Undrar du något annat?", "Undrar du något mer?"]
     }
   ],
   user: [

@@ -114,13 +114,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "no"
+        "Enligt Folkhälsomyndigheten är de vanligaste symtomen feber och hosta, men även andningspåverkan, halsont, huvudvärk, muskel- och ledvärk är vanliga symtom. De flesta får lindriga besvär som går över av sig själva med egenvård i hemmet. En del blir allvarligt sjuka med exempelvis svårigheter att andas och lunginflammation."
       ],
       "set": {
         "classifiedIntentName": "question: Vad är symptomen av CORONA?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "no"
+          "Enligt Folkhälsomyndigheten är de vanligaste symtomen feber och hosta, men även andningspåverkan, halsont, huvudvärk, muskel- och ledvärk är vanliga symtom. De flesta får lindriga besvär som går över av sig själva med egenvård i hemmet. En del blir allvarligt sjuka med exempelvis svårigheter att andas och lunginflammation."
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -149,13 +149,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "no"
+        "Viruset smittar i första hand genom kontakt med droppar och sekret från luftvägarna. Smitta kan därför ske vid hostningar och nysningar, eller vid kontakt med personer. Det är fortfarande oklart om viruset kan smitta via droppar som landat på ytor eller föremål. Genom att tvätta händerna och undvika att röra vid ansiktet samt att undvika nära kontakt med sjuka människor minskar risken för smitta. "
       ],
       "set": {
         "classifiedIntentName": "question: Hur smittar CORONA?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "no"
+          "Viruset smittar i första hand genom kontakt med droppar och sekret från luftvägarna. Smitta kan därför ske vid hostningar och nysningar, eller vid kontakt med personer. Det är fortfarande oklart om viruset kan smitta via droppar som landat på ytor eller föremål. Genom att tvätta händerna och undvika att röra vid ansiktet samt att undvika nära kontakt med sjuka människor minskar risken för smitta. "
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -177,13 +177,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "no"
+        "Alla kan få coronavirus. Många får bara milda symptom, men vissa blir väldigt sjuka och behöver vård. Även de med milda symptom kan smitta, vilket kan bli farligt om de smittar människor i riskgrupper. Enligt Folkhälsomyndigheten visar studier att hög ålder är den främsta riskfaktorn för att bli väldigt sjuk. Personer med hög ålder i kombination med andra sjukdomar, såsom högt blodtryck, hjärt- kärlsjukdom, lungsjukdom, cancer eller diabetes är extra utsatta.  Just nu rekommenderas du som är över 70 år att försöka undvika platser med många människor, för att vara extra försiktig. Det kan exempelvis vara kollektivtrafiken, affärer eller apotek. Har du någon i din närhet som kan hjälpa dig med ärenden, så fråga dem. Men undvik nära kontakt med andra människor. Du kan också kontakta kommunen där du bor om du behöver hjälp."
       ],
       "set": {
         "classifiedIntentName": "question: Finns det några särskilda riskgrupper?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "no"
+          "Alla kan få coronavirus. Många får bara milda symptom, men vissa blir väldigt sjuka och behöver vård. Även de med milda symptom kan smitta, vilket kan bli farligt om de smittar människor i riskgrupper. Enligt Folkhälsomyndigheten visar studier att hög ålder är den främsta riskfaktorn för att bli väldigt sjuk. Personer med hög ålder i kombination med andra sjukdomar, såsom högt blodtryck, hjärt- kärlsjukdom, lungsjukdom, cancer eller diabetes är extra utsatta.  Just nu rekommenderas du som är över 70 år att försöka undvika platser med många människor, för att vara extra försiktig. Det kan exempelvis vara kollektivtrafiken, affärer eller apotek. Har du någon i din närhet som kan hjälpa dig med ärenden, så fråga dem. Men undvik nära kontakt med andra människor. Du kan också kontakta kommunen där du bor om du behöver hjälp."
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -204,13 +204,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "no"
+        "Undvik att röra vid ansiktet och ögonen, och undvik kontakt med sjuka människor. Tvätta händerna väldigt ofta med tvål och varmt vatten. Om du är ute där du inte har tvål och vatten så kan du använda handsprit. Genom att hosta och nysa i armvecket eller i en pappersnäsduk hindrar du smitta från att spridas i din omgivning eller från att förorena dina händer. Stanna hemma om du känner dig krasslig, även om det bara är väldigt lätta symtom. Även personer som inte känner sig så sjuka och bara har lite hosta eller feber kan smitta andra. Du kan smitta så länge du har symtom, och även några dagar efteråt, så stanna hemma i några dagar även om du känner dig frisk igen."
       ],
       "set": {
         "classifiedIntentName": "question: Hur skyddar du dig själv och andra?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "no"
+          "Undvik att röra vid ansiktet och ögonen, och undvik kontakt med sjuka människor. Tvätta händerna väldigt ofta med tvål och varmt vatten. Om du är ute där du inte har tvål och vatten så kan du använda handsprit. Genom att hosta och nysa i armvecket eller i en pappersnäsduk hindrar du smitta från att spridas i din omgivning eller från att förorena dina händer. Stanna hemma om du känner dig krasslig, även om det bara är väldigt lätta symtom. Även personer som inte känner sig så sjuka och bara har lite hosta eller feber kan smitta andra. Du kan smitta så länge du har symtom, och även några dagar efteråt, så stanna hemma i några dagar även om du känner dig frisk igen."
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -237,13 +237,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "no"
+        "Det är oklart hur länge man kommer att vara immun. Utifrån tidigare erfarenheter så är bedömningen att immuniteten varar så länge att man inte kommer att smittas fler gånger under en och samma säsong."
       ],
       "set": {
         "classifiedIntentName": "question: Kan man smittas flera gånger av CORONA?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "no"
+          "Det är oklart hur länge man kommer att vara immun. Utifrån tidigare erfarenheter så är bedömningen att immuniteten varar så länge att man inte kommer att smittas fler gånger under en och samma säsong."
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -267,13 +267,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "no"
+        "Känner du dig sjuk med symtom som snuva, hosta eller feber ska du låta bli att träffa andra människor. Det gäller även om du bara känner dig lite sjuk. Du ska inte gå till jobbet eller skolan, inte resa med buss, tåg, tunnelbana eller flyg och inte heller gå ut för att handla. Om du känner dig det minsta sjuk, stanna hemma. När du känner dig helt frisk, stanna hemma i minst två dagar till.  Folkhälsomyndigheten ger också rådet att du jobbar hemifrån i den mån det är möjligt, även om du är frisk. Syftet är att minska hastigheten i smittspridningen och att hålla nere antalet personer som behöver sjukhusvård. Många länder i världen uppmanar människor att hålla sig hemma även om de är friska för att sakta ner smittspridningen."
       ],
       "set": {
         "classifiedIntentName": "question: Vem ska stanna hemma?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "no"
+          "Känner du dig sjuk med symtom som snuva, hosta eller feber ska du låta bli att träffa andra människor. Det gäller även om du bara känner dig lite sjuk. Du ska inte gå till jobbet eller skolan, inte resa med buss, tåg, tunnelbana eller flyg och inte heller gå ut för att handla. Om du känner dig det minsta sjuk, stanna hemma. När du känner dig helt frisk, stanna hemma i minst två dagar till.  Folkhälsomyndigheten ger också rådet att du jobbar hemifrån i den mån det är möjligt, även om du är frisk. Syftet är att minska hastigheten i smittspridningen och att hålla nere antalet personer som behöver sjukhusvård. Många länder i världen uppmanar människor att hålla sig hemma även om de är friska för att sakta ner smittspridningen."
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -293,13 +293,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "no"
+        "Känner du dig sjuk med symtom som snuva, hosta eller feber ska du låta bli att träffa andra människor. Det gäller även om du bara känner dig lite sjuk. Du ska inte gå till jobbet eller skolan, inte resa med buss, tåg, tunnelbana eller flyg och inte heller gå ut för att handla. Om du känner dig det minsta sjuk, stanna hemma. När du känner dig helt frisk, stanna hemma i minst två dagar till.  Folkhälsomyndigheten ger också rådet att du jobbar hemifrån i den mån det är möjligt, även om du är frisk. Syftet är att minska hastigheten i smittspridningen och att hålla nere antalet personer som behöver sjukhusvård. Många länder i världen uppmanar människor att hålla sig hemma även om de är friska för att sakta ner smittspridningen."
       ],
       "set": {
         "classifiedIntentName": "question: är det okej att jag går till OCCUPATION",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "no"
+          "Känner du dig sjuk med symtom som snuva, hosta eller feber ska du låta bli att träffa andra människor. Det gäller även om du bara känner dig lite sjuk. Du ska inte gå till jobbet eller skolan, inte resa med buss, tåg, tunnelbana eller flyg och inte heller gå ut för att handla. Om du känner dig det minsta sjuk, stanna hemma. När du känner dig helt frisk, stanna hemma i minst två dagar till.  Folkhälsomyndigheten ger också rådet att du jobbar hemifrån i den mån det är möjligt, även om du är frisk. Syftet är att minska hastigheten i smittspridningen och att hålla nere antalet personer som behöver sjukhusvård. Många länder i världen uppmanar människor att hålla sig hemma även om de är friska för att sakta ner smittspridningen."
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -321,13 +321,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "no"
+        "Stanna hemma tills du är helt frisk och i minst två dygn till innan du går till jobbet, åker i kollektivtrafiken eller går och handlar. Om du har äldre släktingar, kan du som anhörig och närstående undvika att träffa dem, särskilt om du har varit sjuk. Det är för att skydda dem från virus."
       ],
       "set": {
         "classifiedIntentName": "question: Hur länge ska jag stanna hemma?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "no"
+          "Stanna hemma tills du är helt frisk och i minst två dygn till innan du går till jobbet, åker i kollektivtrafiken eller går och handlar. Om du har äldre släktingar, kan du som anhörig och närstående undvika att träffa dem, särskilt om du har varit sjuk. Det är för att skydda dem från virus."
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -348,13 +348,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "no"
+        "Enligt Vårdguiden blir de allra flesta som smittas lindrigt sjuka med luftvägssymtom som går över av sig själva, men vissa drabbas av allvarligare sjukdom som lunginflammation. De som blir allvarligt sjuka kan behöva läggas in på sjukhus och få hjälp med andningen. Därför är det viktigt att inte för många blir sjuka samtidigt."
       ],
       "set": {
         "classifiedIntentName": "question: Hur sjuk blir man av covid-19?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "no"
+          "Enligt Vårdguiden blir de allra flesta som smittas lindrigt sjuka med luftvägssymtom som går över av sig själva, men vissa drabbas av allvarligare sjukdom som lunginflammation. De som blir allvarligt sjuka kan behöva läggas in på sjukhus och få hjälp med andningen. Därför är det viktigt att inte för många blir sjuka samtidigt."
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -377,13 +377,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "no"
+        "Enligt Folkhälsomyndigheten blir flesta som fått lindriga symtom  friska efter två veckor. För de som blev allvarligt sjuka tog det mellan tre och sex veckor innan de var friska igen.   De som blev allvarligt sjuka hade andningssvårigheter, som snabb andning och låg syresättning av blodet. En del av dem behövde intensivvård, till exempel med respirator. Dessa allvarliga symtom kom vanligen en vecka efter insjuknandet."
       ],
       "set": {
         "classifiedIntentName": "question: Hur länge är man sjuk av covid-19?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "no"
+          "Enligt Folkhälsomyndigheten blir flesta som fått lindriga symtom  friska efter två veckor. För de som blev allvarligt sjuka tog det mellan tre och sex veckor innan de var friska igen.   De som blev allvarligt sjuka hade andningssvårigheter, som snabb andning och låg syresättning av blodet. En del av dem behövde intensivvård, till exempel med respirator. Dessa allvarliga symtom kom vanligen en vecka efter insjuknandet."
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -404,13 +404,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "no"
+        "Många har dött i sjukdomen, främst äldre och sjuka. WHO uppskattar idag att dödligheten är 1–2 % av de redan smittade men uppskattningarna är fortfarande osäkra. Det kan finnas fler fall än vad som har rapporterats vilket kan innebära att dödligheten kommer att sjunka. Det är mycket ovanligt att unga friska människor dör, men äldre och sjuka är en riskgrupp som dör mycket oftare. Enligt den Brittiska regeringens expertråd kan dödligheten bland människor över 80 år vara över 8%, medans den bland människor yngre än 50 år är mindre än 0.5%. Bland dem som behöver läggas in på sjukhus uppskattar expertrådet att det kan vara 12% som dör."
       ],
       "set": {
         "classifiedIntentName": "question: Hur stor är dödligheten till följd av covid-19?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "no"
+          "Många har dött i sjukdomen, främst äldre och sjuka. WHO uppskattar idag att dödligheten är 1–2 % av de redan smittade men uppskattningarna är fortfarande osäkra. Det kan finnas fler fall än vad som har rapporterats vilket kan innebära att dödligheten kommer att sjunka. Det är mycket ovanligt att unga friska människor dör, men äldre och sjuka är en riskgrupp som dör mycket oftare. Enligt den Brittiska regeringens expertråd kan dödligheten bland människor över 80 år vara över 8%, medans den bland människor yngre än 50 år är mindre än 0.5%. Bland dem som behöver läggas in på sjukhus uppskattar expertrådet att det kan vara 12% som dör."
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -431,13 +431,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "no"
+        "För närvarande finns det begränsad information om covid-19 och graviditet. Vi rekommenderar att gravida kvinnor vidtar samma försiktighetsåtgärder som med alla smittsamma sjukdomar."
       ],
       "set": {
         "classifiedIntentName": "question: Ingår gravida i riskgrupperna?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "no"
+          "För närvarande finns det begränsad information om covid-19 och graviditet. Vi rekommenderar att gravida kvinnor vidtar samma försiktighetsåtgärder som med alla smittsamma sjukdomar."
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -459,13 +459,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "no"
+        "Folkhälsomyndighetens bedömning av forskningen är att viruset smittar när man är sjuk och i samband med insjuknandet, och inte under inkubationstiden. De som har varit utsatta för smitta ska vara uppmärksamma på tidiga sjukdomstecken, eftersom du smittar så fort du har även milda symtom. "
       ],
       "set": {
         "classifiedIntentName": "question: Smittar covid-19 under inkubationstiden?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "no"
+          "Folkhälsomyndighetens bedömning av forskningen är att viruset smittar när man är sjuk och i samband med insjuknandet, och inte under inkubationstiden. De som har varit utsatta för smitta ska vara uppmärksamma på tidiga sjukdomstecken, eftersom du smittar så fort du har även milda symtom. "
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -486,13 +486,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "no"
+        "Enligt Folkhälsomyndigheten drivs smittspridningen av personer med symptom på sjukdom, men en del som är sjuka får bara milda symptom. Man kan därför bli smittad av någon som inte känner sig sjuk, men som har t. ex. mild hosta. "
       ],
       "set": {
         "classifiedIntentName": "question: Kan man bli smittad av en person som har covid-19 men som inte har några symtom?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "no"
+          "Enligt Folkhälsomyndigheten drivs smittspridningen av personer med symptom på sjukdom, men en del som är sjuka får bara milda symptom. Man kan därför bli smittad av någon som inte känner sig sjuk, men som har t. ex. mild hosta. "
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -513,13 +513,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "no"
+        "Regeringen beslutade den 11:e mars att stoppa alla allmänna sammankomster och offentliga tillställningar med fler än 500 personer. Syftet är att förhindra att ett stort antal människor från olika ställen kommer och samlas på en och samma plats. Även mindre arrangemang ska följa Folkhälsomyndighetens riskbedömning och ställas in om de inte kan göras säkra. Skälet till att många mindre evenemang ställs in är att arrangörer vill ta sitt ansvar i att minska smittspridningen."
       ],
       "set": {
         "classifiedIntentName": "question: Vad gäller för stora evenemang? regulations in Sweden",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "no"
+          "Regeringen beslutade den 11:e mars att stoppa alla allmänna sammankomster och offentliga tillställningar med fler än 500 personer. Syftet är att förhindra att ett stort antal människor från olika ställen kommer och samlas på en och samma plats. Även mindre arrangemang ska följa Folkhälsomyndighetens riskbedömning och ställas in om de inte kan göras säkra. Skälet till att många mindre evenemang ställs in är att arrangörer vill ta sitt ansvar i att minska smittspridningen."
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -540,13 +540,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "no"
+        "Den omfattande spridningen av det nya coronaviruset gör att situationen för resenärer och pendlare snabbt kan förändras. I Stockholm gäller reducerad trafik i kollektivtrafiken. Håll minst 1 meters avstånd till andra resenärer.  Folkhälsomyndighetens råd är därför att du jobbar hemifrån i den mån det är möjligt, i samråd med din arbetsgivare. Syftet är att minska hastigheten i smittspridningen och att hålla nere antalet personer som behöver sjukhusvård."
       ],
       "set": {
         "classifiedIntentName": "question: Vad gäller för kollektivtrafik, arbetsplatser och skolor?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "no"
+          "Den omfattande spridningen av det nya coronaviruset gör att situationen för resenärer och pendlare snabbt kan förändras. I Stockholm gäller reducerad trafik i kollektivtrafiken. Håll minst 1 meters avstånd till andra resenärer.  Folkhälsomyndighetens råd är därför att du jobbar hemifrån i den mån det är möjligt, i samråd med din arbetsgivare. Syftet är att minska hastigheten i smittspridningen och att hålla nere antalet personer som behöver sjukhusvård."
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -567,13 +567,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "no"
+        "Det är Utrikesdepartementet (UD) som utfärdar reseavrådan till andra länder. Sedan i början på mars avråder UD från icke nödvändiga resor till alla länder. Besök deras webbplats för att få den senaste informationen. Det är dessutom många länder som inte tar emot inresande just nu för att begränsa smittspridningen."
       ],
       "set": {
         "classifiedIntentName": "question: Vilka råd finns det för resa till andra länder?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "no"
+          "Det är Utrikesdepartementet (UD) som utfärdar reseavrådan till andra länder. Sedan i början på mars avråder UD från icke nödvändiga resor till alla länder. Besök deras webbplats för att få den senaste informationen. Det är dessutom många länder som inte tar emot inresande just nu för att begränsa smittspridningen."
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -591,13 +591,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "no"
+        "Om du inte har hosta, andningssvårigheter eller feber kan du leva precis som vanligt. Däremot är det jätteviktigt att stanna hemma om man känner sig sjuk."
       ],
       "set": {
         "classifiedIntentName": "question: Behöver jag vidta några åtgärder även om jag känner mig frisk efter resa från drabbade länder?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "no"
+          "Om du inte har hosta, andningssvårigheter eller feber kan du leva precis som vanligt. Däremot är det jätteviktigt att stanna hemma om man känner sig sjuk."
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -620,13 +620,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "no"
+        "Det är mycket viktigt att du stannar hemma om du känner dig sjuk. Klarar du dig inte med egenvård i hemmet ska du ringa 1177 för sjukvårdsrådgivning. Besök inte någon vårdinrättning, utan kontakta alltid 1177 Vårdguiden först."
       ],
       "set": {
         "classifiedIntentName": "question: Jag har nyligen varit i ett land där smittspridning pågår och nu har jag hosta och feber. Vad ska jag göra?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "no"
+          "Det är mycket viktigt att du stannar hemma om du känner dig sjuk. Klarar du dig inte med egenvård i hemmet ska du ringa 1177 för sjukvårdsrådgivning. Besök inte någon vårdinrättning, utan kontakta alltid 1177 Vårdguiden först."
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -646,13 +646,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "no"
+        "Den svenska beredskapen anses vara mycket bra. Hälso- och sjukvården samt landets smittskyddsenheter har sedan lång tid tillbaka en hög medvetenhet. Det finns rutiner för hur både misstänkta och bekräftade fall ska tas omhand på ett bra och säkert sätt. Privata aktörer är också medvetna om beredskap och krishantering, och det finns möjlighet till utökade provanalyser på andra laboratorier än Folkhälsomyndigheten vid behov."
       ],
       "set": {
         "classifiedIntentName": "question: Hur ser Sveriges beredskap ut?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "no"
+          "Den svenska beredskapen anses vara mycket bra. Hälso- och sjukvården samt landets smittskyddsenheter har sedan lång tid tillbaka en hög medvetenhet. Det finns rutiner för hur både misstänkta och bekräftade fall ska tas omhand på ett bra och säkert sätt. Privata aktörer är också medvetna om beredskap och krishantering, och det finns möjlighet till utökade provanalyser på andra laboratorier än Folkhälsomyndigheten vid behov."
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -675,13 +675,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "no"
+        "Erfarenheter från influensasäsonger med många smittade som behöver vård, visar att påfrestning på sjukvården då uppstår med behov av omprioriteringar och samarbeten inom och mellan regioner. Liknande situation kan uppstå om covid-19 får omfattande spridning i befolkningen. Sjukvårdens pandemiplanering kan då behöva användas."
       ],
       "set": {
         "classifiedIntentName": "question: Om många personer som blir smittade av CORONA skulle behöva sjukhusvård, hur kommer sjukvården att hantera det?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "no"
+          "Erfarenheter från influensasäsonger med många smittade som behöver vård, visar att påfrestning på sjukvården då uppstår med behov av omprioriteringar och samarbeten inom och mellan regioner. Liknande situation kan uppstå om covid-19 får omfattande spridning i befolkningen. Sjukvårdens pandemiplanering kan då behöva användas."
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -701,13 +701,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "no"
+        "Eftersom inget av de utbrott vi hittills sett av coronaviruset har haft koppling till skolor eller barn anses det osannolikt att friska barn skulle orsaka smittspridning."
       ],
       "set": {
         "classifiedIntentName": "question: Varför stänger ni inte av skolbarn som har varit i drabbade områden?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "no"
+          "Eftersom inget av de utbrott vi hittills sett av coronaviruset har haft koppling till skolor eller barn anses det osannolikt att friska barn skulle orsaka smittspridning."
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -727,13 +727,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "no"
+        "Eftersom covid-19 numera är klassad som samhällsfarlig, kan smittskyddsläkaren i respektive sjukvårdsregion ta beslut om karantän för friska personer. Om en mindre ingripande åtgärd, t.ex. förhållningsregler, kan få samma effekt ska den väljas istället."
       ],
       "set": {
         "classifiedIntentName": "question: kommer det bli karantän i sverige",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "no"
+          "Eftersom covid-19 numera är klassad som samhällsfarlig, kan smittskyddsläkaren i respektive sjukvårdsregion ta beslut om karantän för friska personer. Om en mindre ingripande åtgärd, t.ex. förhållningsregler, kan få samma effekt ska den väljas istället."
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -753,35 +753,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "no"
+        "Det finns inget vaccin och i nuläget finns det inget specifikt läkemedel mot covid-19. Internationella studier av olika typer av läkemedelsbehandlingar pågår och forskning sker kring utveckling av ett vaccin."
       ],
       "set": {
         "classifiedIntentName": "question: Kan man vaccinera",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "no"
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: vem står bakom denna bot",
-      "entities": {},
-      "examples": [
-        "vem står bakom denna bot"
-      ]
-    },
-    "bot": {
-      "say": [
-        "no"
-      ],
-      "set": {
-        "classifiedIntentName": "question: vem står bakom denna bot",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "no"
+          "Det finns inget vaccin och i nuläget finns det inget specifikt läkemedel mot covid-19. Internationella studier av olika typer av läkemedelsbehandlingar pågår och forskning sker kring utveckling av ett vaccin."
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -802,13 +780,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "no"
+        "Det finns ett stort antal virus som tillhör coronavirusfamiljen, men endast sju av dessa kan smitta och ge upphov till sjukdom hos människor. I slutet av 2019 upptäcktes ett nytt coronavirus i Kina som kan smitta människor, detta nya virus ger upphov till sjukdomen covid-19."
       ],
       "set": {
         "classifiedIntentName": "question: Vad är corona-viruset?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "no"
+          "Det finns ett stort antal virus som tillhör coronavirusfamiljen, men endast sju av dessa kan smitta och ge upphov till sjukdom hos människor. I slutet av 2019 upptäcktes ett nytt coronavirus i Kina som kan smitta människor, detta nya virus ger upphov till sjukdomen covid-19."
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -827,13 +805,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "no"
+        "Covid-19 står för coronavirus disease 2019, och är det officiella namnet på sjukdomen som orsakas av det nya coronaviruset."
       ],
       "set": {
         "classifiedIntentName": "question: Vad är covid-19?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "no"
+          "Covid-19 står för coronavirus disease 2019, och är det officiella namnet på sjukdomen som orsakas av det nya coronaviruset."
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -855,13 +833,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "no"
+        "Coronaviruset är helt nytt vilket gör det svårt att jämföra med influensan som är återkommande. De är liknande i symptom men covid-19 sprider sig otroligt mycket snabbare då ingen har utvecklat immunitet ännu."
       ],
       "set": {
         "classifiedIntentName": "question: vad skiljer covid-19 från säsongsinfluensa?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "no"
+          "Coronaviruset är helt nytt vilket gör det svårt att jämföra med influensan som är återkommande. De är liknande i symptom men covid-19 sprider sig otroligt mycket snabbare då ingen har utvecklat immunitet ännu."
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -884,13 +862,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "no"
+        "Nej, munskydd skyddar inte den som är frisk mot covid-19. Däremot kan den som är sjuk till viss del skydda sin omgivning från att viruset sprids vid till exempel hosta och nysningar."
       ],
       "set": {
         "classifiedIntentName": "question: Skyddar munskydd mot Covid-19?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "no"
+          "Nej, munskydd skyddar inte den som är frisk mot covid-19. Däremot kan den som är sjuk till viss del skydda sin omgivning från att viruset sprids vid till exempel hosta och nysningar."
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -912,13 +890,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "no"
+        "I nuläget finns det inget vaccin eller speciellt läkemedel mot covid-19. Internationella studier av olika typer av läkemedelsbehandlingar pågår och forskning sker kring utveckling av ett vaccin."
       ],
       "set": {
         "classifiedIntentName": "question: Finns det vaccin eller behandling mot covid-19?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "no"
+          "I nuläget finns det inget vaccin eller speciellt läkemedel mot covid-19. Internationella studier av olika typer av läkemedelsbehandlingar pågår och forskning sker kring utveckling av ett vaccin."
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -939,13 +917,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "no"
+        "Majoriteten av de som smittas blir friska förutom en mycket liten andel personer som kan bli allvarligt sjuka, varav de flesta tillhör någon riskgrupp."
       ],
       "set": {
         "classifiedIntentName": "question: Hur många blir friska från covid-19?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "no"
+          "Majoriteten av de som smittas blir friska förutom en mycket liten andel personer som kan bli allvarligt sjuka, varav de flesta tillhör någon riskgrupp."
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -966,13 +944,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "no"
+        "I ett hushåll där någon smittats av det nya coronaviruset räcker det att man städar så som man gör i normala fall. Det är viktigt att tvätta händerna noga när man har städat eller hanterat sopor."
       ],
       "set": {
         "classifiedIntentName": "question: Behöver jag städa eller hantera mina sopor på något särskilt sätt?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "no"
+          "I ett hushåll där någon smittats av det nya coronaviruset räcker det att man städar så som man gör i normala fall. Det är viktigt att tvätta händerna noga när man har städat eller hanterat sopor."
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -993,13 +971,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "no"
+        "Det finns inga vetenskapliga studier som visar att stängning av skolor får någon större betydelse. Det finns heller inte några uppgifter som pekar på någon större spridning av covid-19 i skolor någonstans i världen. Stängda skolor skulle tvinga många inom hälso- och sjukvården att stanna hemma med sina barn, och känsliga grupper som mor- och farföräldrar skulle hos vissa familjer behöva ta hand om barnen."
       ],
       "set": {
         "classifiedIntentName": "question: Varför stänger vi inte skolorna i Sverige?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "no"
+          "Det finns inga vetenskapliga studier som visar att stängning av skolor får någon större betydelse. Det finns heller inte några uppgifter som pekar på någon större spridning av covid-19 i skolor någonstans i världen. Stängda skolor skulle tvinga många inom hälso- och sjukvården att stanna hemma med sina barn, och känsliga grupper som mor- och farföräldrar skulle hos vissa familjer behöva ta hand om barnen."
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -1020,13 +998,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "no"
+        "Det är ännu inte klarlagt hur länge viruset kan överleva utanför kroppen. Forskningsstudier som utförts på närbesläktade coronavirus visar att de kan överleva flera dagar på ytor och föremål men för detta krävs särskilda förhållanden, så som rätt temperatur, solljus och luftfuktighet."
       ],
       "set": {
         "classifiedIntentName": "question: Hur länge kan viruset som orsakar covid-19 överleva utanför människokroppen?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "no"
+          "Det är ännu inte klarlagt hur länge viruset kan överleva utanför kroppen. Forskningsstudier som utförts på närbesläktade coronavirus visar att de kan överleva flera dagar på ytor och föremål men för detta krävs särskilda förhållanden, så som rätt temperatur, solljus och luftfuktighet."
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -1047,13 +1025,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "no"
+        "Kunskap från liknande tidigare utbrott visar att denna typ av virus smittar från sjuka människor, och inte genom paket och postförsändelser."
       ],
       "set": {
         "classifiedIntentName": "question: Kan viruset smitta till människa via post och paket?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "no"
+          "Kunskap från liknande tidigare utbrott visar att denna typ av virus smittar från sjuka människor, och inte genom paket och postförsändelser."
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -1074,13 +1052,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "no"
+        "Det är troligt att en djurkälla från en djurmarknad i Kina orsakade några av de första rapporterade mänskliga infektionerna. Det finns inga uppgifter idag om att covid-19 kan smitta från människa till djur."
       ],
       "set": {
         "classifiedIntentName": "question: Kan covid-19 smitta mellan djur och människa och kan mitt husdjur smittas av viruset?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "no"
+          "Det är troligt att en djurkälla från en djurmarknad i Kina orsakade några av de första rapporterade mänskliga infektionerna. Det finns inga uppgifter idag om att covid-19 kan smitta från människa till djur."
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -1101,13 +1079,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "no"
+        "Covid-19 är nu en pandemi, vilket innebär att den finns eller kommer finnas i alla världsdelar. Sannolikt kommer covid-19 att drabba alla världens länder."
       ],
       "set": {
         "classifiedIntentName": "question: I vilka länder pågår det smittspridning?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "no"
+          "Covid-19 är nu en pandemi, vilket innebär att den finns eller kommer finnas i alla världsdelar. Sannolikt kommer covid-19 att drabba alla världens länder."
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -1128,13 +1106,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "no"
+        "I Region Stockholm og i Västra Götalandsregionen ser vi nu tecken på samhällsspridning. Det innebär att du ska försöka låta bli att träffa andra människor, och inte gå till jobbet eller skolan - även om du bara känner dig lite sjuk. Stanna hemma så länge du känner dig sjuk så du inte riskerar att smitta andra."
       ],
       "set": {
         "classifiedIntentName": "question: Vad innebär det att vi har en samhällsspridning av covid-19 i Sverige?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "no"
+          "I Region Stockholm og i Västra Götalandsregionen ser vi nu tecken på samhällsspridning. Det innebär att du ska försöka låta bli att träffa andra människor, och inte gå till jobbet eller skolan - även om du bara känner dig lite sjuk. Stanna hemma så länge du känner dig sjuk så du inte riskerar att smitta andra."
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -1155,13 +1133,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "no"
+        "Smittspårning kan ha en avgörande betydelse för att förhindra smittspridning och minska risken för större utbrott. Den behandlande läkaren ska ta reda på hur en smittad person har blivit smittad, och vem eller vilka andra som kan vara smittade eller har blivit utsatta för smitta."
       ],
       "set": {
         "classifiedIntentName": "question: Vad innebär smittspårning av personer?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "no"
+          "Smittspårning kan ha en avgörande betydelse för att förhindra smittspridning och minska risken för större utbrott. Den behandlande läkaren ska ta reda på hur en smittad person har blivit smittad, och vem eller vilka andra som kan vara smittade eller har blivit utsatta för smitta."
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -1182,13 +1160,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "no"
+        "Större evenemang riskerar att öka smittspridningen eftersom de lockar till sig åskådare från olika delar av landet. Folkhälsomyndigheten har därför bedömt att gränsen bör gå vid 500 personer. Norge valde samma gräns."
       ],
       "set": {
         "classifiedIntentName": "question: Varför just 500 personer?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "no"
+          "Större evenemang riskerar att öka smittspridningen eftersom de lockar till sig åskådare från olika delar av landet. Folkhälsomyndigheten har därför bedömt att gränsen bör gå vid 500 personer. Norge valde samma gräns."
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -1209,13 +1187,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "no"
+        "Folkhälsomyndigheten baserar sina rekommendationer om hälsokontroller bland annat på information från WHO och ECDC. Erfarenhet från SARS-epidemin visar att hälsokontroller på flygplatser inte är ett effektivt sätt att begränsa smittspridningen. Det är även resurskrävande, och fångar enbart upp smittade personer som redan har symtom."
       ],
       "set": {
         "classifiedIntentName": "question: Skulle hälsokontroller av resenärer med flyg från länder där smittspridning pågår kunna begränsa smittspridningen i Sverige?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "no"
+          "Folkhälsomyndigheten baserar sina rekommendationer om hälsokontroller bland annat på information från WHO och ECDC. Erfarenhet från SARS-epidemin visar att hälsokontroller på flygplatser inte är ett effektivt sätt att begränsa smittspridningen. Det är även resurskrävande, och fångar enbart upp smittade personer som redan har symtom."
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -1236,13 +1214,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "no"
+        "Eftersom det nya coronaviruset är klassat som samhällsfarligt kan friska personer sättas i karantän. Beslutet tas av smittskyddsläkaren i respektive sjukvårdsregion, och det är noga reglerad i smittskyddslagen. Karantän kan innebära att placeras i hemmet, en avgränsad del av en byggnad eller ett område."
       ],
       "set": {
         "classifiedIntentName": "question: Vilka regler gäller för att sätta någon i karantän i Sverige?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "no"
+          "Eftersom det nya coronaviruset är klassat som samhällsfarligt kan friska personer sättas i karantän. Beslutet tas av smittskyddsläkaren i respektive sjukvårdsregion, och det är noga reglerad i smittskyddslagen. Karantän kan innebära att placeras i hemmet, en avgränsad del av en byggnad eller ett område."
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -1262,13 +1240,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "no"
+        "Folkhälsomyndigheten (FHM) ska ta fram och förmedla vetenskapligt grundad kunskap som förebygger ohälsa och sjukdomar, och som ger samhället stöd i arbetet mot hälsohot. FHM följer händelseutvecklingen av covid-19 noga, och gör riskbedömningar samt bedömer hur utbrottet utvecklas. Sjukvård, regionala smittskyddsenheter och andra aktörer får information om det aktuella läget, och FHM tar ställning till vilka åtgärdar som är relevanta att genomföra."
       ],
       "set": {
         "classifiedIntentName": "question: Vad gör Folkhälsomyndigheten?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "no"
+          "Folkhälsomyndigheten (FHM) ska ta fram och förmedla vetenskapligt grundad kunskap som förebygger ohälsa och sjukdomar, och som ger samhället stöd i arbetet mot hälsohot. FHM följer händelseutvecklingen av covid-19 noga, och gör riskbedömningar samt bedömer hur utbrottet utvecklas. Sjukvård, regionala smittskyddsenheter och andra aktörer får information om det aktuella läget, och FHM tar ställning till vilka åtgärdar som är relevanta att genomföra."
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -1288,13 +1266,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "no"
+        "En pandemi innebär en omfattande spridning till alla världens kontinenter av en helt ny typ av smittsam sjukdom. Vid en pandemi kommer sjukdomen med stor sannolikhet påverka stora delar av vårt samhälle och världens befolkning. Det är WHO som deklarerar om en smittspridning bedöms vara en pandemi, och detta gjordes den 11:e mars 2020."
       ],
       "set": {
         "classifiedIntentName": "question: Vad är en pandemi?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "no"
+          "En pandemi innebär en omfattande spridning till alla världens kontinenter av en helt ny typ av smittsam sjukdom. Vid en pandemi kommer sjukdomen med stor sannolikhet påverka stora delar av vårt samhälle och världens befolkning. Det är WHO som deklarerar om en smittspridning bedöms vara en pandemi, och detta gjordes den 11:e mars 2020."
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -1315,13 +1293,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "no"
+        "Att klassa smittan som allmänfarlig och samhällsfarlig stärker den svenska beredskapen vid samhällsspridning av covid-19, eftersom det gör det möjligt att vidta de förebyggande åtgärder som är relevanta för att hindra en spridning av smitta i samhället. För allmänfarlig och samhällsfarlig smitta finns möjligheter att besluta om åtgärder som exempelvis karantän, isolering, hälsoundersökningar vid inresa och avspärrningar av områden."
       ],
       "set": {
         "classifiedIntentName": "question: Vad innebär det att covid-19 klassas som allmänfarlig och samhällsfarlig sjukdom enligt smittskyddslagen?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "no"
+          "Att klassa smittan som allmänfarlig och samhällsfarlig stärker den svenska beredskapen vid samhällsspridning av covid-19, eftersom det gör det möjligt att vidta de förebyggande åtgärder som är relevanta för att hindra en spridning av smitta i samhället. För allmänfarlig och samhällsfarlig smitta finns möjligheter att besluta om åtgärder som exempelvis karantän, isolering, hälsoundersökningar vid inresa och avspärrningar av områden."
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -1343,13 +1321,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "no"
+        "Vid droppsmitta sprids smittan via droppar i luften, t.ex. när någon antingen hostar, nyser eller kräks. Dessa droppar når som regel inte längre än någon meter. Luftburen smitta rör sig om små, intorkade droppar som håller sig kvar i luften, färdas långa sträckor och smittar den som andas in dem."
       ],
       "set": {
         "classifiedIntentName": "question: vad skiljer en droppsmitta från en luftburen smitta?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "no"
+          "Vid droppsmitta sprids smittan via droppar i luften, t.ex. när någon antingen hostar, nyser eller kräks. Dessa droppar når som regel inte längre än någon meter. Luftburen smitta rör sig om små, intorkade droppar som håller sig kvar i luften, färdas långa sträckor och smittar den som andas in dem."
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -1369,13 +1347,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "no"
+        "Direkt kontaktsmitta kan ske vid direkt fysisk kontakt mellan en smittbärare och en annan person. Vid indirekt kontaktsmitta överförs smittämnet istället via mellanled från en person till en annan. Kontaktsmitta är den vanligaste smittvägen i vården."
       ],
       "set": {
         "classifiedIntentName": "question: vad är direkt och indirekt kontaktsmitta?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "no"
+          "Direkt kontaktsmitta kan ske vid direkt fysisk kontakt mellan en smittbärare och en annan person. Vid indirekt kontaktsmitta överförs smittämnet istället via mellanled från en person till en annan. Kontaktsmitta är den vanligaste smittvägen i vården."
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -1396,13 +1374,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "no"
+        "Andningsskydd används inom sjukvården där det finns hög smittrisk. Ofta har de inbyggda filter som filtrerar bort smittämnen och andra partiklar från luften man andas in. För att andningsskyddet ska ge avsett skydd måste det anpassas till den som ska använda det plus att personen behöver träning i hur det ska användas."
       ],
       "set": {
         "classifiedIntentName": "question: Vad är ett andningsskydd?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "no"
+          "Andningsskydd används inom sjukvården där det finns hög smittrisk. Ofta har de inbyggda filter som filtrerar bort smittämnen och andra partiklar från luften man andas in. För att andningsskyddet ska ge avsett skydd måste det anpassas till den som ska använda det plus att personen behöver träning i hur det ska användas."
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -1423,13 +1401,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "no"
+        "Om patienten blir provtagen innan sjukdomen brutit ut kan detta hända. Negativa provsvar under inkubationstiden utesluter alltså inte att man är smittad. Om fortsatt misstanke om covid-19 kvarstår bör provtagning upprepas när eventuella symtom utvecklats."
       ],
       "set": {
         "classifiedIntentName": "question: Hur kan ett provsvar som först blev negativt och visar att man är frisk         vid en andra provtagning ge ett positivt svar         att man är sjuk och bär på smittan?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "no"
+          "Om patienten blir provtagen innan sjukdomen brutit ut kan detta hända. Negativa provsvar under inkubationstiden utesluter alltså inte att man är smittad. Om fortsatt misstanke om covid-19 kvarstår bör provtagning upprepas när eventuella symtom utvecklats."
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -1449,13 +1427,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "no"
+        "Enligt Folkhälsomyndigheten drivs smittspridningen av personer med symtom på sjukdom, men en del som är sjuka får bara milda symtom. Man kan därför bli smittad av någon som inte känner sig sjuk, men som har t. ex. mild hosta. Om man varit sjuk men inte vet om man haft coronavirus, så ska man vara hemma tills man är frisk och sedan ytterligare minst två dagar. "
       ],
       "set": {
         "classifiedIntentName": "question: hur länge smittar det",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "no"
+          "Enligt Folkhälsomyndigheten drivs smittspridningen av personer med symtom på sjukdom, men en del som är sjuka får bara milda symtom. Man kan därför bli smittad av någon som inte känner sig sjuk, men som har t. ex. mild hosta. Om man varit sjuk men inte vet om man haft coronavirus, så ska man vara hemma tills man är frisk och sedan ytterligare minst två dagar. "
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -1476,13 +1454,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "no"
+        "Social distansering syftar till att förhindra sjuka människor från att komma i nära kontakt med friska människor för att minska möjligheterna till överföring av sjukdomar. Just nu är målet med social distansering att bromsa utbrottet för att minska risken för infektion bland högrisk-grupper samt minska belastningen på sjukvårdssystem och arbetstagare."
       ],
       "set": {
         "classifiedIntentName": "question: vad betyder social distansiering",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "no"
+          "Social distansering syftar till att förhindra sjuka människor från att komma i nära kontakt med friska människor för att minska möjligheterna till överföring av sjukdomar. Just nu är målet med social distansering att bromsa utbrottet för att minska risken för infektion bland högrisk-grupper samt minska belastningen på sjukvårdssystem och arbetstagare."
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -1501,13 +1479,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "no"
+        "Undvik offentliga, folktäta platser som t.ex. shopping-centrum, bio eller arenor. Håll avstånd (ungefär 2 meter, eller 6 fot) från andra om möjligt."
       ],
       "set": {
         "classifiedIntentName": "question: Hur kan jag utöva social distansering?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "no"
+          "Undvik offentliga, folktäta platser som t.ex. shopping-centrum, bio eller arenor. Håll avstånd (ungefär 2 meter, eller 6 fot) från andra om möjligt."
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -1527,13 +1505,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "no"
+        "Tvätta händerna regelbundet och ordentligt med tvål och vatten minst 20 sekunder. Använd alcogel om tvål och vatten inte finns tillgängligt. Vidrör varken ögon, näsa eller mun med otvättade händer. Rengör och desinfektera ytor och saker som människor vanligtvis rör. Hosta och nys i böjd armbåge eller näsduk. Se alltid till att slänga näsduken i soporna."
       ],
       "set": {
         "classifiedIntentName": "question: Vad mer kan jag göra för att förhindra spridning av viruset?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "no"
+          "Tvätta händerna regelbundet och ordentligt med tvål och vatten minst 20 sekunder. Använd alcogel om tvål och vatten inte finns tillgängligt. Vidrör varken ögon, näsa eller mun med otvättade händer. Rengör och desinfektera ytor och saker som människor vanligtvis rör. Hosta och nys i böjd armbåge eller näsduk. Se alltid till att slänga näsduken i soporna."
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -1554,13 +1532,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "no"
+        "För närvarande är det inte känt om spridningen av Covid-19 kommer att minska när vädret blir varmare. Utredningar gällande överförbarhet, svårighetsgrad och andra funktioner förknippade med Covid-19 pågår just nu. "
       ],
       "set": {
         "classifiedIntentName": "question: Kan varmare väder stoppa virusutbrottet?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "no"
+          "För närvarande är det inte känt om spridningen av Covid-19 kommer att minska när vädret blir varmare. Utredningar gällande överförbarhet, svårighetsgrad och andra funktioner förknippade med Covid-19 pågår just nu. "
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -1582,13 +1560,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "no"
+        "Från och med den 19 mars och 30 dagar framåt kommer icke nödvändiga resor till Sverige från länder utanför Europa att stoppas. Detta efter beslut från den svenska regeringen i ett försök att minska spridningen av Covid-19. Vid behov kan beslutet komma att förlängas."
       ],
       "set": {
         "classifiedIntentName": "question: Vad innebär inreseförbudet?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "no"
+          "Från och med den 19 mars och 30 dagar framåt kommer icke nödvändiga resor till Sverige från länder utanför Europa att stoppas. Detta efter beslut från den svenska regeringen i ett försök att minska spridningen av Covid-19. Vid behov kan beslutet komma att förlängas."
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -1609,13 +1587,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "no"
+        "Inreseförbudet gäller för alla utländska medborgare som försöker resa in i Sverige från ett land som inte ingår i Schengensamarbetet samt Schweiz. Undantag görs för svenska medborgare och andra personer som är bosatta med eget hem i Sverige samt diplomater och personer som är i behov av internationellt skydd. Även personer som utför nödvändiga funktioner i Sverige, t.ex hälso- och sjukvårdspersonal som transporterar varor till Sverige undantas från inreseförbudet. "
       ],
       "set": {
         "classifiedIntentName": "question: Vilka gäller inreseförbudet?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "no"
+          "Inreseförbudet gäller för alla utländska medborgare som försöker resa in i Sverige från ett land som inte ingår i Schengensamarbetet samt Schweiz. Undantag görs för svenska medborgare och andra personer som är bosatta med eget hem i Sverige samt diplomater och personer som är i behov av internationellt skydd. Även personer som utför nödvändiga funktioner i Sverige, t.ex hälso- och sjukvårdspersonal som transporterar varor till Sverige undantas från inreseförbudet. "
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -1637,13 +1615,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "no"
+        "Just nu finns det tillverkare som marknadsför självtester för covid-19. I nuläget är det dock inte klart hur exakta eller känsliga dessa tester är. Folkhälsomyndigheten rekommenderar därför att dessa självtester inte används och hänvisar istället till sjukvårdens egna tester för en mer exakt och pålitlig sjukdomsbild."
       ],
       "set": {
         "classifiedIntentName": "question: Finns det självtester för CORONA?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "no"
+          "Just nu finns det tillverkare som marknadsför självtester för covid-19. I nuläget är det dock inte klart hur exakta eller känsliga dessa tester är. Folkhälsomyndigheten rekommenderar därför att dessa självtester inte används och hänvisar istället till sjukvårdens egna tester för en mer exakt och pålitlig sjukdomsbild."
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -1665,13 +1643,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "no"
+        "För att bromsa spridningen av covid-19 rekommenderar Folkhälsomyndigheten från den 17 mars 2020 att undervisningen i gymnasieskolor, universitet, högskolor, yrkeshögskolor och komvux ska ske på distans."
       ],
       "set": {
         "classifiedIntentName": "question: Vad gäller angående att läsa på distans?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "no"
+          "För att bromsa spridningen av covid-19 rekommenderar Folkhälsomyndigheten från den 17 mars 2020 att undervisningen i gymnasieskolor, universitet, högskolor, yrkeshögskolor och komvux ska ske på distans."
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -1694,13 +1672,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "no"
+        "Nej. Folkhälsomyndigheten rekommendationer gällande distansundervisning gäller endast från gymnasiet och uppåt. Detta för att gymnasieskolor, universitet och högskolor samlar elever och studenter från upptagningsområden som är mycket större än grundskolans. Gymnasieelever och studenter är inte heller i behov av omsorg, till skillnad från barn i grundskolan."
       ],
       "set": {
         "classifiedIntentName": "question: Behöver elever i grundskolan också läsa på distans?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "no"
+          "Nej. Folkhälsomyndigheten rekommendationer gällande distansundervisning gäller endast från gymnasiet och uppåt. Detta för att gymnasieskolor, universitet och högskolor samlar elever och studenter från upptagningsområden som är mycket större än grundskolans. Gymnasieelever och studenter är inte heller i behov av omsorg, till skillnad från barn i grundskolan."
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -1723,13 +1701,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "no"
+        "Folkhälsomyndigheten uppmanar personer som är 70 år och äldre att hålla sig hemma och begränsa närmare kontakt med andra de kommande veckorna. Äldre bör även undvika folksamlingar i exempelvis kollektivtrafik, affärer eller offentliga lokaler. Promenader utomhus är ok, bara inte i grupp. Be om hjälp för att göra ärenden som exempelvis handla mat ."
       ],
       "set": {
         "classifiedIntentName": "question: Jag är 70 år, hur ska jag bete mig nu när det pågår smittspridning ute i samhället? ",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "no"
+          "Folkhälsomyndigheten uppmanar personer som är 70 år och äldre att hålla sig hemma och begränsa närmare kontakt med andra de kommande veckorna. Äldre bör även undvika folksamlingar i exempelvis kollektivtrafik, affärer eller offentliga lokaler. Promenader utomhus är ok, bara inte i grupp. Be om hjälp för att göra ärenden som exempelvis handla mat ."
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -1751,13 +1729,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "no"
+        "Det är viktigt att skydda de äldre från smitta. Ha därför ingen närkontakt med personer som är 70 år och äldre om det inte är helt nödvändigt. Stanna hemma när du känner dig sjuk, även om du bara är lite förkyld. Covid-19 kan ge lindriga symtom som liknar en förkylning, så det är viktigt att vara vaksam."
       ],
       "set": {
         "classifiedIntentName": "question: Nu när det pågår samhällsspridning av det nya coronaviruset, hur ska vi ta hand om och skydda personer som är 70 år och äldre?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "no"
+          "Det är viktigt att skydda de äldre från smitta. Ha därför ingen närkontakt med personer som är 70 år och äldre om det inte är helt nödvändigt. Stanna hemma när du känner dig sjuk, även om du bara är lite förkyld. Covid-19 kan ge lindriga symtom som liknar en förkylning, så det är viktigt att vara vaksam."
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -1778,13 +1756,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "no"
+        "Personer som är i behov av vård på sjukhus, alternativt personal inom sjukvård och äldreomsorg med misstänkt smitta av det nya coronaviruset. Alla som är sjuka i förkylning eller influensaliknande symtom ska vara hemma för att inte riskera att sprida smitta vidare till andra."
       ],
       "set": {
         "classifiedIntentName": "question: Vilka personer bör testas för det nya coronaviruset?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "no"
+          "Personer som är i behov av vård på sjukhus, alternativt personal inom sjukvård och äldreomsorg med misstänkt smitta av det nya coronaviruset. Alla som är sjuka i förkylning eller influensaliknande symtom ska vara hemma för att inte riskera att sprida smitta vidare till andra."
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -1805,130 +1783,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "no"
+        "Så länge andra familjemedlemmar inte har symtom kan de göra som vanligt. Det är dock väldigt viktigt att vara uppmärksam på symptom och stanna hemma vid första tecken på sjukdom."
       ],
       "set": {
         "classifiedIntentName": "question: Om en person i familjen är sjuk - måste alla stanna hemma då? ",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "no"
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: hur många är smittade",
-      "entities": {},
-      "examples": [
-        "hur många är smittade"
-      ]
-    },
-    "bot": {
-      "say": [
-        "yes"
-      ],
-      "set": {
-        "classifiedIntentName": "question: hur många är smittade",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "yes"
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: jag når inte 1177",
-      "entities": {},
-      "examples": [
-        "jag når inte 1177",
-        "jag kommer inte fram till 1177",
-        "1177 svarar inte"
-      ]
-    },
-    "bot": {
-      "say": [
-        "no"
-      ],
-      "set": {
-        "classifiedIntentName": "question: jag når inte 1177",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "no"
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Hur bör jag bete mig",
-      "entities": {},
-      "examples": [
-        "Hur bör jag bete mig"
-      ]
-    },
-    "bot": {
-      "say": [
-        "no"
-      ],
-      "set": {
-        "classifiedIntentName": "question: Hur bör jag bete mig",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "no"
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: får jag träffa vänner?",
-      "entities": {},
-      "examples": [
-        "får jag träffa vänner?"
-      ]
-    },
-    "bot": {
-      "say": [
-        "no"
-      ],
-      "set": {
-        "classifiedIntentName": "question: får jag träffa vänner?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "no"
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Har jag CORONA?",
-      "entities": {
-        "CORONA": CORONA
-      },
-      "examples": [
-        "Har jag _CORONA?",
-        "hur vet jag om jag har _CORONA?",
-        "hur vet man att man har _CORONA",
-        "när ska man söka vård"
-      ]
-    },
-    "bot": {
-      "say": [
-        "yes"
-      ],
-      "set": {
-        "classifiedIntentName": "question: Har jag CORONA?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "yes"
+          "Så länge andra familjemedlemmar inte har symtom kan de göra som vanligt. Det är dock väldigt viktigt att vara uppmärksam på symptom och stanna hemma vid första tecken på sjukdom."
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -1946,13 +1807,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "no"
+        "Än så länge pratar jag bara svenska, men det kan mycket väl hända att jag lär mig fler språk i framtiden."
       ],
       "set": {
         "classifiedIntentName": "question: Talar du engelska?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "no"
+          "Än så länge pratar jag bara svenska, men det kan mycket väl hända att jag lär mig fler språk i framtiden."
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -1970,13 +1831,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "no"
+        "Om du har mycket svårt att andas ska du ringa 112."
       ],
       "set": {
         "classifiedIntentName": "question: Jag kan inte andas",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "no"
+          "Om du har mycket svårt att andas ska du ringa 112."
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -1994,13 +1855,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "no"
+        "Eftersom frågan inte täcks av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
       ],
       "set": {
         "classifiedIntentName": "question: Vad är det senaste?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "no"
+          "Eftersom frågan inte täcks av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -2018,13 +1879,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "no"
+        "Mitt namn är Coronaguiden och jag kan svara på frågor om det nya coronaviruset."
       ],
       "set": {
         "classifiedIntentName": "question: Vad heter du?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "no"
+          "Mitt namn är Coronaguiden och jag kan svara på frågor om det nya coronaviruset."
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -2042,13 +1903,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "no"
+        "De flesta insjuknar ungefär 5 dagar efter smittotillfället, men inkubationstiden kan variera mellan 2 och 14 dagar."
       ],
       "set": {
         "classifiedIntentName": "question: Hur lång är inkubationstiden?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "no"
+          "De flesta insjuknar ungefär 5 dagar efter smittotillfället, men inkubationstiden kan variera mellan 2 och 14 dagar."
         ]
       },
       "goto": "VERIFY_ANSWER"

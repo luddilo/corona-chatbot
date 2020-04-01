@@ -20,7 +20,7 @@ export const yes: Intent = {
 }
 
 export const no: Intent = {
-  examples: ["nej", "nope", "no", "aldrig", "jag vill inte"]
+  examples: ["nej", "nope", "no", "aldrig", "jag vill inte", "nej det är bra så", "näpp"]
 }
 
 export const confirmRight: Intent = {
@@ -76,7 +76,8 @@ export const queryNeedCare: Intent = {
   examples: [
     "när behöver jag ringa vården",
     "behöver jag ringa vården",
-    "när behöver jag kontakta vården"
+    "när behöver jag kontakta vården",
+    "när ska jag söka vård"
   ]
 }
 

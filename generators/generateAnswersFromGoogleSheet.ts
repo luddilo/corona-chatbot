@@ -43,7 +43,7 @@ export const generateSimpleAnswers = async () => {
 
   const entityStr = entities.map(entity => `const ${entity.name} : Entity = ${JSON.stringify(entity, null, 2)}`)
 
-  const str = [importStr, ...entityStr, faqStr].join("\n")
+  const str = [importStr, ...entityStr, faqStr].join("\n\n")
 
   fs.writeFileSync("src/answers/generatedFAQ.ts", str)
 

@@ -1,4 +1,5 @@
 import { UserTurn, Entity } from "narratory"
+
 const CORONA : Entity = {
   "name": "CORONA",
   "enums": [
@@ -16,6 +17,7 @@ const CORONA : Entity = {
     }
   ]
 }
+
 const INFECTING_ACTIVITY : Entity = {
   "name": "INFECTING_ACTIVITY",
   "enums": [
@@ -39,6 +41,7 @@ const INFECTING_ACTIVITY : Entity = {
     }
   ]
 }
+
 const OCCUPATION : Entity = {
   "name": "OCCUPATION",
   "enums": [
@@ -54,6 +57,7 @@ const OCCUPATION : Entity = {
     }
   ]
 }
+
 const MEDICAL_CERTIFICATE : Entity = {
   "name": "MEDICAL_CERTIFICATE",
   "enums": [
@@ -67,6 +71,7 @@ const MEDICAL_CERTIFICATE : Entity = {
     }
   ]
 }
+
 const PRONOMEN : Entity = {
   "name": "PRONOMEN",
   "enums": [
@@ -81,6 +86,7 @@ const PRONOMEN : Entity = {
     }
   ]
 }
+
 const AUXILIARY : Entity = {
   "name": "AUXILIARY",
   "enums": [
@@ -96,6 +102,7 @@ const AUXILIARY : Entity = {
     }
   ]
 }
+
 export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {

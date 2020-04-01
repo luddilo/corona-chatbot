@@ -28,7 +28,7 @@ const intro = {
   ]
 }
 
-const querySymptoms: BridgeTurn = {
+const querySymptoms: BotTurn = {
   cond: {
     user_hotStarted: false
   },
@@ -36,16 +36,13 @@ const querySymptoms: BridgeTurn = {
     {
       cond: { platform: "voximplant" },
       text:
-        "Inledningsvis vill jag säga att om du känner dig sjuk så är det viktigt att du stannar hemma. Om du har problem med andning, ring 1 1 2."
+        "Inledningsvis vill jag säga att om du känner dig sjuk så är det viktigt att du stannar hemma. Om du har problem med andning, ring 1 1 2. Så"
     },
     {
       text:
         "Glöm inte att du måste stanna hemma om du känner dig sjuk. Om du har problem med andning, ring 112."
     }
-  ],
-  bot: {
-    say: "Så."
-  }
+  ]
 }
 
 const queryQuestions: BotTurn = {

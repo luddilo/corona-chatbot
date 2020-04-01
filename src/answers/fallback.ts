@@ -18,7 +18,7 @@ export const answerFallback = [
     repair: true
   },
   {
-    cond: { retryCount: 1 },
+    //cond: { retryCount: 1 },
     say: [
       {
         cond: { platform: "voximplant" },
@@ -31,6 +31,7 @@ export const answerFallback = [
     ],
     repair: true
   },
+  /* //removed while testing
   {
     cond: { platform: "voximplant" },
     say:
@@ -41,4 +42,5 @@ export const answerFallback = [
       "Vi verkar ha lite svårt att förstå varandra, så jag föreslår att du letar upp den information du söker på Folkhälsomyndighetens hemsida i stället.",
     goto: EXIT
   }
+  */
 ]

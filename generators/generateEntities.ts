@@ -17,7 +17,7 @@ export async function getEntities(): Promise<Entity[]> {
 
       arr.forEach((text, colNumber) => {
         if (colNumber === NAME_INDEX && text) {
-          entity.name = text
+          entity.name = text.split(" ").join("_")
         } else if (text) {
           entity.synonyms.push(text)
         }

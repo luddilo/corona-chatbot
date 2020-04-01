@@ -1,5 +1,7 @@
 import { Entity, UserTurn, EntityMap } from "narratory"
 
+export const entityDelimiter = "__E"
+
 export const getUserTurn = ({
   intentName,
   examples,
@@ -12,14 +14,22 @@ export const getUserTurn = ({
   entities: Entity[]
 }): UserTurn => {
   const _examples = []
-  let entityMap: EntityMap = {}
-  entities.forEach(entity => {
-    entityMap[entity.name] = entity
-    examples.forEach(example => {
+  let entityMap: any = {}
+  examples.forEach(example => {
+    let newExample = example
+    entities.forEach(entity => {
       const regex = new RegExp(`\\b${entity.name}\\b`)
-      const newExample = example.split(regex).join(`_${entity.name}`)
-      _examples.push(newExample)
+
+      const newExampleParts = newExample.split(regex)
+
+      if (newExampleParts.length > 1) { // We found an entity in the example
+        entityMap[entity.name] = entityDelimiter + entity.name + entityDelimiter
+        newExample = newExampleParts.join(`_${entity.name}`)
+      }
     })
+    if (!_examples.includes(newExample)) {
+      _examples.push(newExample)
+    }
   })
 
   return {

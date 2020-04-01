@@ -1,6 +1,6 @@
 import { UserTurn } from "narratory"
 import { getAnswerWithPrompts } from "./getAnswerWithPrompts"
-import { getUserTurn } from "./getUserTurn"
+import { getUserTurn, entityDelimiter } from "./getUserTurn"
 import { getFaq } from "./getFaq"
 import { getEntities } from "./generateEntities"
 import * as fs from "fs"
@@ -35,11 +35,15 @@ export const generateSimpleAnswers = async () => {
     })
   }
 
-  const str = `import { UserTurn } from "narratory"\nexport const simpleQuestionAnswers : UserTurn[] = ${JSON.stringify(
-    userTurns,
-    null,
-    2
-  )}`
+  const importStr = `import { UserTurn, Entity } from "narratory"`
+
+  const faqStr = `export const simpleQuestionAnswers : UserTurn[] = ${JSON.stringify(userTurns, null, 2)}`
+    .split(`"${entityDelimiter}`).join("")
+    .split(`${entityDelimiter}"`).join("")
+
+  const entityStr = entities.map(entity => `const ${entity.name} : Entity = ${JSON.stringify(entity, null, 2)}`)
+
+  const str = [importStr, ...entityStr, faqStr].join("\n")
 
   fs.writeFileSync("src/answers/generatedFAQ.ts", str)
 

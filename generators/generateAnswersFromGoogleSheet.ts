@@ -1,4 +1,5 @@
 import { UserTurn } from "narratory"
+import * as moment from "moment"
 import { getAnswerWithPrompts } from "./getAnswerWithPrompts"
 import { getUserTurn, entityDelimiter } from "./getUserTurn"
 import { getFaq } from "./getFaq"
@@ -37,13 +38,17 @@ export const generateSimpleAnswers = async () => {
 
   const importStr = `import { UserTurn, Entity } from "narratory"`
 
+  const timestampStr = `// Generated at ${moment().format("dddd, MMMM Do YYYY, h:mm:ss a")}`
+
   const faqStr = `export const simpleQuestionAnswers : UserTurn[] = ${JSON.stringify(userTurns, null, 2)}`
-    .split(`"${entityDelimiter}`).join("")
-    .split(`${entityDelimiter}"`).join("")
+    .split(`"${entityDelimiter}`)
+    .join("")
+    .split(`${entityDelimiter}"`)
+    .join("")
 
   const entityStr = entities.map(entity => `const ${entity.name} : Entity = ${JSON.stringify(entity, null, 2)}`)
 
-  const str = [importStr, ...entityStr, faqStr].join("\n\n")
+  const str = [importStr, timestampStr, ...entityStr, faqStr].join("\n\n")
 
   fs.writeFileSync("src/answers/generatedFAQ.ts", str)
 

@@ -27,6 +27,7 @@
   "dependencies": {
     "@types/node": "^12.12.21",
     "axios": "^0.19.2",
+    "moment": "^2.24.0",
     "narratory": "^0.10.1"
   },
   "devDependencies": {

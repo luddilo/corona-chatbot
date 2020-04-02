@@ -57,12 +57,12 @@ const queryQuestions: BotTurn = {
       text: [
         "Har du några frågor till mig om COVID-19?",
         "Undrar du någonting om COVID-19?",
-        "Undrar du någonting om det nya Corona-viruset?"
+        "Undrar du någonting om det nya coronaviruset?"
       ],
       ssml: [
         "Har du några frågor till mig?",
         "Undrar du någonting?",
-        "Undrar du någonting om det nya Corona-viruset?" // Since pronounciation of COVID-19 isn't great..
+        "Undrar du någonting om det nya coronaviruset?" // Since pronounciation of COVID-19 isn't great..
       ]
     },
     {

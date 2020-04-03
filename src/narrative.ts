@@ -10,7 +10,10 @@ const greeting: BotTurn = {
   cond: {
     user_hotStarted: false
   },
-  say: ["Hej", "Hallå", "Hej"]
+  say: {
+    text: ["Hej", "Hallå", "Hej"],
+    ssml: "Hej och välkommen till Coronaguiden."
+  }
 }
 
 const intro = {

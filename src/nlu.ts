@@ -1,4 +1,5 @@
 import { Entity, Intent, entities } from "narratory"
+import { CORONA } from "./answers/generatedFAQ"
 
 const symptom: Entity = {
   name: "Symptom",
@@ -66,9 +67,11 @@ export const queryHelp: Intent = {
 
 export const queryDiagnosis: Intent = {
   examples: [
-    "har jag corona",
-    "har jag covid 19",
-    "är jag smittad"
+    "har jag _CORONA",
+    "är jag smittad",
+    "hur vet jag om jag har _CORONA",
+    "har jag fått _CORONA",
+    "kan du säga om jag har _CORONA",
   ]
 }
 

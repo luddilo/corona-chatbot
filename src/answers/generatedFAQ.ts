@@ -1,8 +1,8 @@
 import { UserTurn, Entity } from "narratory"
 
-// Generated at Friday, April 3rd 2020, 11:03:01 am
+// Generated at Friday, April 3rd 2020, 1:43:49 pm
 
-const CORONA : Entity = {
+export const CORONA : Entity = {
   "name": "CORONA",
   "enums": [
     {
@@ -32,7 +32,7 @@ const CORONA : Entity = {
   ]
 }
 
-const INFECTING_ACTIVITY : Entity = {
+export const INFECTING_ACTIVITY : Entity = {
   "name": "INFECTING_ACTIVITY",
   "enums": [
     {
@@ -56,7 +56,7 @@ const INFECTING_ACTIVITY : Entity = {
   ]
 }
 
-const OCCUPATION : Entity = {
+export const OCCUPATION : Entity = {
   "name": "OCCUPATION",
   "enums": [
     {
@@ -72,7 +72,7 @@ const OCCUPATION : Entity = {
   ]
 }
 
-const MEDICAL_CERTIFICATE : Entity = {
+export const MEDICAL_CERTIFICATE : Entity = {
   "name": "MEDICAL_CERTIFICATE",
   "enums": [
     {
@@ -86,7 +86,7 @@ const MEDICAL_CERTIFICATE : Entity = {
   ]
 }
 
-const PERS_PRON : Entity = {
+export const PERS_PRON : Entity = {
   "name": "PERS_PRON",
   "enums": [
     {
@@ -105,7 +105,7 @@ const PERS_PRON : Entity = {
   ]
 }
 
-const REF_PRON : Entity = {
+export const REF_PRON : Entity = {
   "name": "REF_PRON",
   "enums": [
     {
@@ -120,7 +120,7 @@ const REF_PRON : Entity = {
   ]
 }
 
-const POS_PRON : Entity = {
+export const POS_PRON : Entity = {
   "name": "POS_PRON",
   "enums": [
     {
@@ -146,7 +146,7 @@ const POS_PRON : Entity = {
   ]
 }
 
-const AUX : Entity = {
+export const AUX : Entity = {
   "name": "AUX",
   "enums": [
     {
@@ -162,7 +162,7 @@ const AUX : Entity = {
   ]
 }
 
-const ACTIVITY : Entity = {
+export const ACTIVITY : Entity = {
   "name": "ACTIVITY",
   "enums": [
     {
@@ -190,51 +190,60 @@ const ACTIVITY : Entity = {
   ]
 }
 
+export const MITT_BARN : Entity = {
+  "name": "MITT_BARN",
+  "enums": [
+    {
+      "name": "MITT_BARN",
+      "alts": [
+        "min dotter",
+        "min son",
+        "mina söner",
+        "mina döttrar",
+        "min flicka ",
+        "min pojke",
+        "mina barn"
+      ]
+    }
+  ]
+}
+
+export const SKA : Entity = {
+  "name": "SKA",
+  "enums": [
+    {
+      "name": "SKA",
+      "alts": [
+        "bör",
+        "måste",
+        "borde "
+      ]
+    }
+  ]
+}
+
+export const FAMILYMEMBER : Entity = {
+  "name": "FAMILYMEMBER",
+  "enums": [
+    {
+      "name": "FAMILYMEMBER",
+      "alts": [
+        "man",
+        "fru",
+        "sambo",
+        "partner",
+        "fästmö",
+        "fästman",
+        "son",
+        "dotter",
+        "syster",
+        "bror"
+      ]
+    }
+  ]
+}
+
 export const simpleQuestionAnswers : UserTurn[] = [
-  {
-    "intent": {
-      "name": "question: ",
-      "entities": {},
-      "examples": [
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        ""
-      ],
-      "set": {
-        "classifiedIntentName": "question: ",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          ""
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: ",
-      "entities": {},
-      "examples": [
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        ""
-      ],
-      "set": {
-        "classifiedIntentName": "question: ",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          ""
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
   {
     "intent": {
       "name": "question: Vad är symtomen av CORONA?",
@@ -253,6 +262,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "hur vet _PERS_PRON om _PERS_PRON har _CORONA",
         "vilka är de vanligaste symptomen?",
         "hur vet jag om jag är sjuk?",
+        "_PERS_PRON undrar om symtomer",
+        "Vilka är de vanligaste symptomen?",
+        "Symptom?",
+        "har jag _CORONA?",
         ""
       ]
     },
@@ -265,6 +278,48 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "classifiedUtterance": "_user_text",
         "botResponse": [
           "De vanligaste symtomen för covid-19 är feber och hosta. Även andningsbesvär, snuva, halsont, huvudvärk, illamående, muskel- och ledvärk är vanliga symtom. En person som insjuknar i covid-19 behöver inte uppvisa samtliga symtom."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Hur smittar CORONA?",
+      "entities": {
+        "CORONA": CORONA,
+        "PERS_PRON": PERS_PRON,
+        "INFECTING_ACTIVITY": INFECTING_ACTIVITY
+      },
+      "examples": [
+        "Hur smittar _CORONA?",
+        "hur smittar det",
+        "är _PERS_PRON smittsam",
+        "hur kan _PERS_PRON undvika att smitta andra",
+        "hur vet _PERS_PRON om _PERS_PRON smittar",
+        "smittar det genom _INFECTING_ACTIVITY",
+        "smittar _CORONA genom _INFECTING_ACTIVITY",
+        "smittar det att _INFECTING_ACTIVITY",
+        "smittar det om _PERS_PRON får en _INFECTING_ACTIVITY",
+        "smittar det via _INFECTING_ACTIVITY",
+        "smittar _CORONA med _INFECTING_ACTIVITY",
+        "smittar _PERS_PRON ",
+        "Hur kan jag smitta andra",
+        "Hur smittas corona?",
+        "Hur smittar det?",
+        "Smittar _CORONA genom luften?",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Covid-19 smittar främst via droppar och sekret från luftvägarna, som sprids när någon hostar eller nyser. Viruset kan också spridas vid direkt kontakt mellan personer."
+      ],
+      "set": {
+        "classifiedIntentName": "question: Hur smittar CORONA?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Covid-19 smittar främst via droppar och sekret från luftvägarna, som sprids när någon hostar eller nyser. Viruset kan också spridas vid direkt kontakt mellan personer."
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -295,7 +350,8 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "hur minskar _PERS_PRON smittspridningen",
         "hur minskar _PERS_PRON spridningen av _CORONA",
         "vad _AUX _PERS_PRON göra för att minska smittspridningen",
-        "vad _AUX _PERS_PRON göra för att minska spridningen av _CORONA"
+        "vad _AUX _PERS_PRON göra för att minska spridningen av _CORONA",
+        ""
       ]
     },
     "bot": {
@@ -371,7 +427,9 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "_AUX _PERS_PRON stanna hemma om _PERS_PRON är snuvig",
         "_AUX _PERS_PRON stanna hemma om _PERS_PRON har feber",
         "_PERS_PRON känner _REF_PRON sjuk, _AUX _PERS_PRON stanna hemma",
-        "_PERS_PRON har hosta börja stanna hemma? "
+        "_PERS_PRON har hosta börja stanna hemma? ",
+        "_PERS_PRON har ont i halsen ska vara i karantän? ",
+        ""
       ]
     },
     "bot": {
@@ -667,7 +725,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
       "entities": {},
       "examples": [
         "Vad gäller för kollektivtrafik och allmänna färdmedel?",
-        "vilka regler gäller för kollektivtrafik  arbetsplatser och skolor?",
+        "vilka regler gäller för kollektivtrafik         arbetsplatser och skolor?",
         "hur många får det vara på tunnelbanan",
         "vad gäller för tunnelbanan",
         "vad gäller för kollektivtrafiken",
@@ -803,6 +861,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "om _PERS_PRON tror _PERS_PRON har _CORONA vad _AUX _PERS_PRON göra",
         "_PERS_PRON har corona vad _AUX _PERS_PRON göra",
         "_PERS_PRON misstänker att _PERS_PRON kanske har _CORONA vad gör _PERS_PRON nu",
+        "_PERS_PRON har varit i Italien ska _PERS_PRON vara i karantän?",
         ""
       ]
     },
@@ -834,6 +893,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "kan _PERS_PRON vaccinera _REF_PRON mot _CORONA",
         "när kommer vaccin mot _CORONA",
         "finns det vaccin mot _CORONA",
+        "hur går det med vaccinet?",
         ""
       ]
     },
@@ -987,6 +1047,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "kan _PERS_PRON fortfarande idrotta?",
         "_AUX _PERS_PRON sluta träna?",
         "_AUX _PERS_PRON undvika att träna?",
+        "Kan _PERS_PRON idrotta som vanligt?",
         ""
       ]
     },
@@ -1139,6 +1200,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "vad innebär _CORONA",
         "var kommer _CORONA ifrån?",
         "kan du förklara vad _CORONA är",
+        "what is _CORONA?",
         ""
       ]
     },
@@ -1345,6 +1407,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "kommer förskolorna stängas?",
         "varför stänger du inte grundskolorna i Sverige",
         "varför stänger vinter grundskolor?",
+        "ska MINA BARN stanna hemma från skolan?",
         ""
       ]
     },
@@ -1415,7 +1478,8 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "kan jag smitta mitt husdjur?",
         "Kan djur bli smittade av _CORONA",
         "Kan _POS_PRON husdjur ha _CORONA",
-        "Smittar _CORONA från människa till djur"
+        "Smittar _CORONA från människa till djur",
+        ""
       ]
     },
     "bot": {
@@ -1555,7 +1619,8 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "hur håller _PERS_PRON event för färre än 50 personer?",
         "Vad gäller för sammankomster i samhället?",
         "Vad gäller för sammankomster?",
-        "Vad gäller för event ?"
+        "Vad gäller för event ?",
+        ""
       ]
     },
     "bot": {
@@ -1900,7 +1965,9 @@ export const simpleQuestionAnswers : UserTurn[] = [
     "intent": {
       "name": "question: Om en person i familjen är sjuk - måste alla stanna hemma då? ",
       "entities": {
-        "PERS_PRON": PERS_PRON
+        "PERS_PRON": PERS_PRON,
+        "CORONA": CORONA,
+        "SKA": SKA
       },
       "examples": [
         "Om en person i familjen är sjuk - måste alla stanna hemma då? ",
@@ -1909,6 +1976,11 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "om någon i hushållet är sjuk utan symtom, måste resten av hushållet stanna hemma då?",
         "kan _PERS_PRON gå till skolan även om någon i familjen är sjuk?",
         "kan _PERS_PRON gå till jobbet även fast någon i hushållet är sjuk?",
+        "MITT BARN är sjuk i _CORONA ska _PERS_PRON stanna hemma? ",
+        "MITT BARN är sjuk ska jag stanna hemma?",
+        "Jag bor med någon som har _CORONA _SKA jag stanna hemma ",
+        "Ska min son vara hemma?",
+        "Ska min dotter vara hemma? ",
         ""
       ]
     },
@@ -1948,6 +2020,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "_AUX _PERS_PRON stanna hemma ifall _PERS_PRON tror _PERS_PRON är allergisk?",
         "_AUX _PERS_PRON stanna hemma ifall _PERS_PRON tror _PERS_PRON har pollen?",
         "_AUX _PERS_PRON stanna hemma ifall _PERS_PRON tror _PERS_PRON har pollenallergi?",
+        "Har _PERS_PRON pollenallergi eller corona?",
         ""
       ]
     },
@@ -1985,6 +2058,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "jag får panik av _CORONA, vad kan jag göra?",
         "jag är livrädd för _CORONA, kan jag få stöd?",
         "jag är livrädd för _CORONA, vad kan jag göra?",
+        "Hur ska jag hantera min oro?",
         ""
       ]
     },
@@ -2424,9 +2498,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": {
-      "name": "question: ",
+      "name": "question: Kan jag och några vänner gå ut och äta på restaurang?",
       "entities": {},
       "examples": [
+        "Kan jag och några vänner gå ut och äta på restaurang?",
         ""
       ]
     },
@@ -2435,7 +2510,384 @@ export const simpleQuestionAnswers : UserTurn[] = [
         ""
       ],
       "set": {
-        "classifiedIntentName": "question: ",
+        "classifiedIntentName": "question: Kan jag och några vänner gå ut och äta på restaurang?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          ""
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Kan jag beställa take-away på en restaurang?",
+      "entities": {},
+      "examples": [
+        "Kan jag beställa take-away på en restaurang?",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        ""
+      ],
+      "set": {
+        "classifiedIntentName": "question: Kan jag beställa take-away på en restaurang?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          ""
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Är det tillåtet att på en restaurang beställa över disk och sedan sätta sig och inventa servering, eller ska beställningen också ske vid bordet?",
+      "entities": {},
+      "examples": [
+        "Är det tillåtet att på en restaurang beställa över disk och sedan sätta sig och inventa servering, eller ska beställningen också ske vid bordet?",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        ""
+      ],
+      "set": {
+        "classifiedIntentName": "question: Är det tillåtet att på en restaurang beställa över disk och sedan sätta sig och inventa servering, eller ska beställningen också ske vid bordet?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          ""
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Kommer det vara tillåtet att fortsätta med buffé där man tar mat och sedan sätter sig?",
+      "entities": {},
+      "examples": [
+        "Kommer det vara tillåtet att fortsätta med buffé där man tar mat och sedan sätter sig?",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        ""
+      ],
+      "set": {
+        "classifiedIntentName": "question: Kommer det vara tillåtet att fortsätta med buffé där man tar mat och sedan sätter sig?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          ""
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Kan gäster på ett café beställa kaffe vid disken och sedan sätta sig vid valfritt bord? ",
+      "entities": {},
+      "examples": [
+        "Kan gäster på ett café beställa kaffe vid disken och sedan sätta sig vid valfritt bord? ",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        ""
+      ],
+      "set": {
+        "classifiedIntentName": "question: Kan gäster på ett café beställa kaffe vid disken och sedan sätta sig vid valfritt bord? ",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          ""
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Får gäster sitta och äta vid en bardisk?",
+      "entities": {},
+      "examples": [
+        "Får gäster sitta och äta vid en bardisk?",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        ""
+      ],
+      "set": {
+        "classifiedIntentName": "question: Får gäster sitta och äta vid en bardisk?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          ""
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Kommer gatukök att få fortsätta servera genom luckan?",
+      "entities": {},
+      "examples": [
+        "Kommer gatukök att få fortsätta servera genom luckan?",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        ""
+      ],
+      "set": {
+        "classifiedIntentName": "question: Kommer gatukök att få fortsätta servera genom luckan?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          ""
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Får jag stå i kö på snabbmatsrestaurangerna?",
+      "entities": {},
+      "examples": [
+        "Får jag stå i kö på snabbmatsrestaurangerna?",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        ""
+      ],
+      "set": {
+        "classifiedIntentName": "question: Får jag stå i kö på snabbmatsrestaurangerna?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          ""
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Kan nattklubbar fortfarande hålla öppet?",
+      "entities": {},
+      "examples": [
+        "Kan nattklubbar fortfarande hålla öppet?",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        ""
+      ],
+      "set": {
+        "classifiedIntentName": "question: Kan nattklubbar fortfarande hålla öppet?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          ""
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Kan jag fortsätta dricka alkohol på krogen?",
+      "entities": {},
+      "examples": [
+        "Kan jag fortsätta dricka alkohol på krogen?",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        ""
+      ],
+      "set": {
+        "classifiedIntentName": "question: Kan jag fortsätta dricka alkohol på krogen?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          ""
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Omfattas casinon av föreskriften?",
+      "entities": {},
+      "examples": [
+        "Omfattas casinon av föreskriften?",
+        "vad gäller på casinon?",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        ""
+      ],
+      "set": {
+        "classifiedIntentName": "question: Omfattas casinon av föreskriften?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          ""
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Riskerar personal på flygplatsen att smittas av CORONA? ",
+      "entities": {
+        "CORONA": CORONA
+      },
+      "examples": [
+        "Riskerar personal på flygplatsen att smittas av _CORONA? ",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        ""
+      ],
+      "set": {
+        "classifiedIntentName": "question: Riskerar personal på flygplatsen att smittas av CORONA? ",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          ""
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Behöver personal på flygplatsen ha skyddsutrustning mot CORONA? ",
+      "entities": {
+        "CORONA": CORONA
+      },
+      "examples": [
+        "Behöver personal på flygplatsen ha skyddsutrustning mot _CORONA? ",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        ""
+      ],
+      "set": {
+        "classifiedIntentName": "question: Behöver personal på flygplatsen ha skyddsutrustning mot CORONA? ",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          ""
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Kan sjuka passagerares eller friska medpassagerares bagage sprida CORONA?  ",
+      "entities": {
+        "CORONA": CORONA
+      },
+      "examples": [
+        "Kan sjuka passagerares eller friska medpassagerares bagage sprida _CORONA?  ",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        ""
+      ],
+      "set": {
+        "classifiedIntentName": "question: Kan sjuka passagerares eller friska medpassagerares bagage sprida CORONA?  ",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          ""
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Varför får ibland passagerare och flygpersonal fylla i och lämna sina kontaktuppgifter i så kallade Passenger Locator Cards (PLC)? ",
+      "entities": {},
+      "examples": [
+        "Varför får ibland passagerare och flygpersonal fylla i och lämna sina kontaktuppgifter i så kallade Passenger Locator Cards (PLC)? ",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        ""
+      ],
+      "set": {
+        "classifiedIntentName": "question: Varför får ibland passagerare och flygpersonal fylla i och lämna sina kontaktuppgifter i så kallade Passenger Locator Cards (PLC)? ",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          ""
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Om det i efterhand visar sig att en passagerare på ett flygplan har CORONA, kommer personal på flygplatsen eller medpassagerare informeras om det? ",
+      "entities": {
+        "CORONA": CORONA
+      },
+      "examples": [
+        "Om det i efterhand visar sig att en passagerare på ett flygplan har _CORONA, kommer personal på flygplatsen eller medpassagerare informeras om det? ",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        ""
+      ],
+      "set": {
+        "classifiedIntentName": "question: Om det i efterhand visar sig att en passagerare på ett flygplan har CORONA, kommer personal på flygplatsen eller medpassagerare informeras om det? ",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          ""
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Varför har vi inte hälsokontroller i Sverige på passagerare som kommer med flyg från andra länder?",
+      "entities": {},
+      "examples": [
+        "Varför har vi inte hälsokontroller i Sverige på passagerare som kommer med flyg från andra länder?",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        ""
+      ],
+      "set": {
+        "classifiedIntentName": "question: Varför har vi inte hälsokontroller i Sverige på passagerare som kommer med flyg från andra länder?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
           ""
@@ -2593,10 +3045,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": {
-      "name": "question: Mitt barn är sjukt. Kan jag få vab-ersättning?",
+      "name": "question: MITT BARN är sjukt. Kan jag få vab-ersättning?",
       "entities": {},
       "examples": [
-        "Mitt barn är sjukt. Kan jag få vab-ersättning?",
+        "MITT BARN är sjukt. Kan jag få vab-ersättning?",
         "kan jag få vab-ersättning om mitt barn är smittad av corona?",
         "vårt barn är sjukt. kan vi få vab-ersättning?",
         ""
@@ -2607,7 +3059,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Ja. Du kan få vab-ersättning om du måste vara hemma för att ditt barn är sjukt eller är smittbärare. Du kan också få ersättning om det finns en konkret misstanke från t.ex. läkare eller sjuksköterska om att ditt barn sprider smitta. "
       ],
       "set": {
-        "classifiedIntentName": "question: Mitt barn är sjukt. Kan jag få vab-ersättning?",
+        "classifiedIntentName": "question: MITT BARN är sjukt. Kan jag få vab-ersättning?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
           "Ja. Du kan få vab-ersättning om du måste vara hemma för att ditt barn är sjukt eller är smittbärare. Du kan också få ersättning om det finns en konkret misstanke från t.ex. läkare eller sjuksköterska om att ditt barn sprider smitta. "
@@ -2618,10 +3070,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": {
-      "name": "question: Jag vill inte att mitt barn ska bli smittat av andra barn. Kan jag få vab-ersättning om jag stannar hemma med mitt barn?",
+      "name": "question: Jag vill inte att MITT BARN ska bli smittat av andra barn. Kan jag få vab-ersättning om jag stannar hemma med MITT BARN?",
       "entities": {},
       "examples": [
-        "Jag vill inte att mitt barn ska bli smittat av andra barn. Kan jag få vab-ersättning om jag stannar hemma med mitt barn?",
+        "Jag vill inte att MITT BARN ska bli smittat av andra barn. Kan jag få vab-ersättning om jag stannar hemma med MITT BARN?",
         "kan jag få vab-ersättning om jag håller mitt barn hemma pga. rädsla för smitta?",
         "jag är rädd att mitt barn ska bli smittat corona. kan jag få vab-ersättning om vi stannar hemma?",
         "vi är rädda för att vårt barn ska bli smittat av corona. kan vi få vab-ersättning om någon av oss stannar hemma med vårt barn?",
@@ -2634,7 +3086,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Nej. Du kan inte få ersättning för vab om du håller ditt barn hemma i syfte att hen inte ska bli smittad av andra."
       ],
       "set": {
-        "classifiedIntentName": "question: Jag vill inte att mitt barn ska bli smittat av andra barn. Kan jag få vab-ersättning om jag stannar hemma med mitt barn?",
+        "classifiedIntentName": "question: Jag vill inte att MITT BARN ska bli smittat av andra barn. Kan jag få vab-ersättning om jag stannar hemma med MITT BARN?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
           "Nej. Du kan inte få ersättning för vab om du håller ditt barn hemma i syfte att hen inte ska bli smittad av andra."
@@ -2645,10 +3097,12 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": {
-      "name": "question: Jag är rädd att bli smittad av covid-19. Har jag rätt att stanna hemma från jobbet och få smittbärarpenning?",
-      "entities": {},
+      "name": "question: Jag är rädd att bli smittad av CORONA. Har jag rätt att stanna hemma från jobbet och få smittbärarpenning?",
+      "entities": {
+        "CORONA": CORONA
+      },
       "examples": [
-        "Jag är rädd att bli smittad av covid-19. Har jag rätt att stanna hemma från jobbet och få smittbärarpenning?",
+        "Jag är rädd att bli smittad av _CORONA. Har jag rätt att stanna hemma från jobbet och få smittbärarpenning?",
         "jag är rädd att gå till jobbet pga. corona. kan jag få smittbärarpenning om jag stannar hemma?",
         ""
       ]
@@ -2658,7 +3112,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Nej. För att få smittbärarpenning krävs ett läkarintyg som visar att du inte får arbeta på grund av att du är eller kan vara smittad av covid-19."
       ],
       "set": {
-        "classifiedIntentName": "question: Jag är rädd att bli smittad av covid-19. Har jag rätt att stanna hemma från jobbet och få smittbärarpenning?",
+        "classifiedIntentName": "question: Jag är rädd att bli smittad av CORONA. Har jag rätt att stanna hemma från jobbet och få smittbärarpenning?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
           "Nej. För att få smittbärarpenning krävs ett läkarintyg som visar att du inte får arbeta på grund av att du är eller kan vara smittad av covid-19."
@@ -2717,10 +3171,12 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": {
-      "name": "question: Jag har smittats av covid-19. Har jag rätt till smittbärarpenning?",
-      "entities": {},
+      "name": "question: Jag har smittats av CORONA. Har jag rätt till smittbärarpenning?",
+      "entities": {
+        "CORONA": CORONA
+      },
       "examples": [
-        "Jag har smittats av covid-19. Har jag rätt till smittbärarpenning?",
+        "Jag har smittats av _CORONA. Har jag rätt till smittbärarpenning?",
         "kan jag få smittbärarpenning om jag smittats av covid-19?",
         "min läkare har sagt åt mig att stanna hemma pga. covid-19. kan jag få smittbärarpenning?",
         ""
@@ -2731,7 +3187,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Ja. Du har rätt till smittbärarpenning om en läkare beslutat att du inte får arbeta eftersom du är – eller kan vara – smittad av covid-19."
       ],
       "set": {
-        "classifiedIntentName": "question: Jag har smittats av covid-19. Har jag rätt till smittbärarpenning?",
+        "classifiedIntentName": "question: Jag har smittats av CORONA. Har jag rätt till smittbärarpenning?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
           "Ja. Du har rätt till smittbärarpenning om en läkare beslutat att du inte får arbeta eftersom du är – eller kan vara – smittad av covid-19."
@@ -2862,10 +3318,12 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": {
-      "name": "question: Jag har smittats av covid-19. Kan jag få reseersättning för att jag är smittbärare?",
-      "entities": {},
+      "name": "question: Jag har smittats av CORONA. Kan jag få reseersättning för att jag är smittbärare?",
+      "entities": {
+        "CORONA": CORONA
+      },
       "examples": [
-        "Jag har smittats av covid-19. Kan jag få reseersättning för att jag är smittbärare?",
+        "Jag har smittats av _CORONA. Kan jag få reseersättning för att jag är smittbärare?",
         "kan jag få reseersättning om jag smittats av covid-19?",
         ""
       ]
@@ -2875,7 +3333,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Ja. Du kan få ersättning för resor du behöver göra till läkarundersökningar, kontroller eller behandlingar. Vid ansökan av ersättning behöver du skicka in kvitton på reskostnader samt att resorna gällde behandling av covid-19."
       ],
       "set": {
-        "classifiedIntentName": "question: Jag har smittats av covid-19. Kan jag få reseersättning för att jag är smittbärare?",
+        "classifiedIntentName": "question: Jag har smittats av CORONA. Kan jag få reseersättning för att jag är smittbärare?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
           "Ja. Du kan få ersättning för resor du behöver göra till läkarundersökningar, kontroller eller behandlingar. Vid ansökan av ersättning behöver du skicka in kvitton på reskostnader samt att resorna gällde behandling av covid-19."
@@ -3035,10 +3493,12 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": {
-      "name": "question: Jag har smittats av covid-19 och är arbetssökande. Har jag rätt till smittbärarpenning?",
-      "entities": {},
+      "name": "question: Jag har smittats av CORONA och är arbetssökande. Har jag rätt till smittbärarpenning?",
+      "entities": {
+        "CORONA": CORONA
+      },
       "examples": [
-        "Jag har smittats av covid-19 och är arbetssökande. Har jag rätt till smittbärarpenning?",
+        "Jag har smittats av _CORONA och är arbetssökande. Har jag rätt till smittbärarpenning?",
         "jag har fått covid-19 och kan inte söka jobb. har jag rätt till smittbärarpenning?",
         ""
       ]
@@ -3048,7 +3508,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Du kan ha rätt till smittbärarpenning om du inte kan söka arbete på grund av risken att smitta ner andra."
       ],
       "set": {
-        "classifiedIntentName": "question: Jag har smittats av covid-19 och är arbetssökande. Har jag rätt till smittbärarpenning?",
+        "classifiedIntentName": "question: Jag har smittats av CORONA och är arbetssökande. Har jag rätt till smittbärarpenning?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
           "Du kan ha rätt till smittbärarpenning om du inte kan söka arbete på grund av risken att smitta ner andra."
@@ -3108,10 +3568,12 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": {
-      "name": "question: Mitt barn har smittats av corona, har jag rätt till vab?",
-      "entities": {},
+      "name": "question: Mitt barn har smittats av CORONA, har jag rätt till vab?",
+      "entities": {
+        "CORONA": CORONA
+      },
       "examples": [
-        "Mitt barn har smittats av corona, har jag rätt till vab?",
+        "Mitt barn har smittats av _CORONA, har jag rätt till vab?",
         "har jag rätt till vab om mitt barn smittats av corona?",
         "vårt barn har smittats av corona, har vi rätt till vab?",
         ""
@@ -3122,7 +3584,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Ja. Du kan få vab-ersättning om du måste avstå från arbete för att ta hand om ditt smittsamma barn. Du kan dock inte få vab-ersättning om du redan får smittbärarpenning. Om din arbetsgivare uppmanar dig att stanna får du kontrollera vad som gäller på din arbetsplats. "
       ],
       "set": {
-        "classifiedIntentName": "question: Mitt barn har smittats av corona, har jag rätt till vab?",
+        "classifiedIntentName": "question: Mitt barn har smittats av CORONA, har jag rätt till vab?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
           "Ja. Du kan få vab-ersättning om du måste avstå från arbete för att ta hand om ditt smittsamma barn. Du kan dock inte få vab-ersättning om du redan får smittbärarpenning. Om din arbetsgivare uppmanar dig att stanna får du kontrollera vad som gäller på din arbetsplats. "
@@ -3183,10 +3645,12 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": {
-      "name": "question: Vårt barn har blivit smittad av corona. Kan vi båda vabba samtidigt och få ersättning för samma barn och tid?",
-      "entities": {},
+      "name": "question: Vårt barn har blivit smittad av CORONA. Kan vi båda vabba samtidigt och få ersättning för samma barn och tid?",
+      "entities": {
+        "CORONA": CORONA
+      },
       "examples": [
-        "Vårt barn har blivit smittad av corona. Kan vi båda vabba samtidigt och få ersättning för samma barn och tid?",
+        "Vårt barn har blivit smittad av _CORONA. Kan vi båda vabba samtidigt och få ersättning för samma barn och tid?",
         ""
       ]
     },
@@ -3195,32 +3659,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Nej. Båda föräldrarna kan inte få ersättning för samma barn och tid."
       ],
       "set": {
-        "classifiedIntentName": "question: Vårt barn har blivit smittad av corona. Kan vi båda vabba samtidigt och få ersättning för samma barn och tid?",
+        "classifiedIntentName": "question: Vårt barn har blivit smittad av CORONA. Kan vi båda vabba samtidigt och få ersättning för samma barn och tid?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
           "Nej. Båda föräldrarna kan inte få ersättning för samma barn och tid."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: ",
-      "entities": {},
-      "examples": [
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        ""
-      ],
-      "set": {
-        "classifiedIntentName": "question: ",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          ""
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -3858,28 +4300,6 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": {
-      "name": "question: ",
-      "entities": {},
-      "examples": [
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        ""
-      ],
-      "set": {
-        "classifiedIntentName": "question: ",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          ""
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
       "name": "question: Hur påverkar Corona polisens arbete",
       "entities": {},
       "examples": [
@@ -4119,28 +4539,6 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": {
-      "name": "question: ",
-      "entities": {},
-      "examples": [
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        ""
-      ],
-      "set": {
-        "classifiedIntentName": "question: ",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          ""
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
       "name": "question: vad betyder social distansiering",
       "entities": {},
       "examples": [
@@ -4334,28 +4732,6 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": {
-      "name": "question: ",
-      "entities": {},
-      "examples": [
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        ""
-      ],
-      "set": {
-        "classifiedIntentName": "question: ",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          ""
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
       "name": "question: Talar du engelska?",
       "entities": {},
       "examples": [
@@ -4453,28 +4829,6 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "classifiedUtterance": "_user_text",
         "botResponse": [
           "Mitt namn är Coronaguiden och jag kan svara på frågor om det nya coronaviruset."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: ",
-      "entities": {},
-      "examples": [
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        ""
-      ],
-      "set": {
-        "classifiedIntentName": "question: ",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          ""
         ]
       },
       "goto": "VERIFY_ANSWER"

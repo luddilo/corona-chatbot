@@ -17,32 +17,20 @@ const intro = {
   cond: {
     user_hotStarted: false
   },
-  say: [
-    {
-      cond: {
-        platform: "voximplant"
-      },
-      text: "Jag är en chatt-bått som kan svara på frågor om det nya coronaviruset."
-    },
-    "Jag kan svara på frågor om det nya coronaviruset."
-  ]
+  say: {
+    text: "Jag kan svara på frågor om det nya coronaviruset.",
+    ssml: "Jag är en chatt-bått som kan svara på frågor om det nya coronaviruset."
+  }
 }
 
 const querySymptoms: BotTurn = {
   cond: {
     user_hotStarted: false
   },
-  say: [
-    {
-      cond: { platform: "voximplant" },
-      text:
-        "Inledningsvis vill jag säga att om du känner dig sjuk så är det viktigt att du stannar hemma. Om du har problem med andning, ring 1 1 2. Så"
+  say: {
+      text: "Glöm inte att du måste stanna hemma om du känner dig sjuk. Om du har problem med andning, ring 112.",
+      ssml: "Inledningsvis vill jag säga att om du känner dig sjuk så är det viktigt att du stannar hemma. Om du har problem med andning, ring 1 1 2. Så"
     },
-    {
-      text:
-        "Glöm inte att du måste stanna hemma om du känner dig sjuk. Om du har problem med andning, ring 112."
-    }
-  ]
 }
 
 const queryQuestions: BotTurn = {

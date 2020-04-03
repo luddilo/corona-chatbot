@@ -46,7 +46,7 @@ export const generateSimpleAnswers = async () => {
     .split(`${entityDelimiter}"`)
     .join("")
 
-  const entityStr = entities.map(entity => `const ${entity.name} : Entity = ${JSON.stringify(entity, null, 2)}`)
+  const entityStr = entities.map(entity => `export const ${entity.name} : Entity = ${JSON.stringify(entity, null, 2)}`)
 
   const str = [importStr, timestampStr, ...entityStr, faqStr].join("\n\n")
 

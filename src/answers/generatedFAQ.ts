@@ -1,6 +1,6 @@
 import { UserTurn, Entity } from "narratory"
 
-// Generated at Friday, April 3rd 2020, 1:43:49 pm
+// Generated at Friday, April 3rd 2020, 6:28:34 pm
 
 export const CORONA : Entity = {
   "name": "CORONA",
@@ -26,7 +26,7 @@ export const CORONA : Entity = {
         "kod 19",
         "korean viruset",
         "kolumn virus",
-        "corona viruset"
+        "virus"
       ]
     }
   ]
@@ -50,7 +50,8 @@ export const INFECTING_ACTIVITY : Entity = {
         "kramas",
         "pussas",
         "kyssas",
-        "hostar"
+        "hostar",
+        "ta i hand"
       ]
     }
   ]
@@ -66,7 +67,11 @@ export const OCCUPATION : Entity = {
         "skolan",
         "dagis",
         "förskolan",
-        "arbetet"
+        "arbetet",
+        "fritids",
+        "kontoret",
+        "fsk",
+        "förskola"
       ]
     }
   ]
@@ -184,17 +189,19 @@ export const ACTIVITY : Entity = {
         "ta flyget",
         "flyga",
         "fika",
-        "jobba"
+        "jobba",
+        "gymmet",
+        "ärende"
       ]
     }
   ]
 }
 
-export const MITT_BARN : Entity = {
-  "name": "MITT_BARN",
+export const MY_CHILD : Entity = {
+  "name": "MY_CHILD",
   "enums": [
     {
-      "name": "MITT_BARN",
+      "name": "MY_CHILD",
       "alts": [
         "min dotter",
         "min son",
@@ -202,7 +209,9 @@ export const MITT_BARN : Entity = {
         "mina döttrar",
         "min flicka ",
         "min pojke",
-        "mina barn"
+        "mina barn",
+        "barnen",
+        "barnet"
       ]
     }
   ]
@@ -216,7 +225,9 @@ export const SKA : Entity = {
       "alts": [
         "bör",
         "måste",
-        "borde "
+        "borde ",
+        "skulle",
+        "behöver"
       ]
     }
   ]
@@ -237,7 +248,35 @@ export const FAMILYMEMBER : Entity = {
         "son",
         "dotter",
         "syster",
-        "bror"
+        "bror",
+        "tjej",
+        "kille ",
+        "lillasyster",
+        "lillebror",
+        "storasyster",
+        "storebror"
+      ]
+    }
+  ]
+}
+
+export const HELLO : Entity = {
+  "name": "HELLO",
+  "enums": [
+    {
+      "name": "HELLO",
+      "alts": [
+        "Hej ",
+        "hejsan",
+        "hej hej ",
+        "hej där ",
+        "hei",
+        "tjena",
+        "tjabba",
+        "hi ",
+        "goddag",
+        "hej botten",
+        "halloj"
       ]
     }
   ]
@@ -261,7 +300,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "vad är symtomen för _CORONA",
         "hur vet _PERS_PRON om _PERS_PRON har _CORONA",
         "vilka är de vanligaste symptomen?",
-        "hur vet jag om jag är sjuk?",
+        "hur vet _PERS_PRON om _PERS_PRON är sjuk?",
         "_PERS_PRON undrar om symtomer",
         "Vilka är de vanligaste symptomen?",
         "Symptom?",
@@ -370,6 +409,34 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": {
+      "name": "question: PERS_PRON undrar om PERS_PRON kan gå på en stor fest?",
+      "entities": {
+        "PERS_PRON": PERS_PRON
+      },
+      "examples": [
+        "_PERS_PRON undrar om _PERS_PRON kan gå på en stor fest?",
+        "Kan _PERS_PRON gå på bröllop i april?",
+        "Kan _PERS_PRON gå på bröllop i maj?",
+        "_PERS_PRON undrar om _PERS_PRON kan gå på konsert?",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Rekommendationen är att avstå från att delta i större sociala sammanhang."
+      ],
+      "set": {
+        "classifiedIntentName": "question: PERS_PRON undrar om PERS_PRON kan gå på en stor fest?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Rekommendationen är att avstå från att delta i större sociala sammanhang."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
       "name": "question: Kan PERS_PRON smittas flera gånger av CORONA?",
       "entities": {
         "CORONA": CORONA,
@@ -412,7 +479,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
       "entities": {
         "AUX": AUX,
         "PERS_PRON": PERS_PRON,
-        "REF_PRON": REF_PRON
+        "REF_PRON": REF_PRON,
+        "OCCUPATION": OCCUPATION,
+        "POS_PRON": POS_PRON,
+        "MY_CHILD": MY_CHILD
       },
       "examples": [
         "Vem _AUX stanna hemma?",
@@ -429,6 +499,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "_PERS_PRON känner _REF_PRON sjuk, _AUX _PERS_PRON stanna hemma",
         "_PERS_PRON har hosta börja stanna hemma? ",
         "_PERS_PRON har ont i halsen ska vara i karantän? ",
+        "Kan _POS_PRON _MY_CHILD gå till _OCCUPATION?",
         ""
       ]
     },
@@ -685,9 +756,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "question: Vad gäller för stora evenemang? ",
-      "entities": {
-        "PERS_PRON": PERS_PRON
-      },
+      "entities": {},
       "examples": [
         "Vad gäller för stora evenemang? ",
         "vad är reglerna för stora evenemang",
@@ -698,10 +767,6 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Kan jag gå på bröllop? ",
         "Får jag gå på ett bröllop?",
         "Vad gäller för större sammankomster?",
-        "Kan _PERS_PRON gå på bröllop i april?",
-        "Kan _PERS_PRON gå på bröllop i maj?",
-        "_PERS_PRON undrar om _PERS_PRON kan gå på konsert?",
-        "_PERS_PRON undrar om _PERS_PRON kan gå på en stor fest?",
         ""
       ]
     },
@@ -722,7 +787,9 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "question: Vad gäller för kollektivtrafik och allmänna färdmedel?",
-      "entities": {},
+      "entities": {
+        "PERS_PRON": PERS_PRON
+      },
       "examples": [
         "Vad gäller för kollektivtrafik och allmänna färdmedel?",
         "vilka regler gäller för kollektivtrafik         arbetsplatser och skolor?",
@@ -730,6 +797,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "vad gäller för tunnelbanan",
         "vad gäller för kollektivtrafiken",
         "hur många får det vara på en arbetsplats",
+        "Vad ska _PERS_PRON tänka på när _PERS_PRON åker buss tåg och taxi?",
         ""
       ]
     },
@@ -913,65 +981,6 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": {
-      "name": "question: Hur många är sjuka i Sverige?",
-      "entities": {
-        "CORONA": CORONA
-      },
-      "examples": [
-        "Hur många är sjuka i Sverige?",
-        "hur många har blivit smittade av _CORONA i sverige",
-        "hur många i Sverige har _CORONA",
-        "hur många har _CORONA i sverige",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Aktuell statistik över antalet bekräftade fall av covid-19 i Sverige finns här [länk till Antal fall av covid-19]"
-      ],
-      "set": {
-        "classifiedIntentName": "question: Hur många är sjuka i Sverige?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Aktuell statistik över antalet bekräftade fall av covid-19 i Sverige finns här [länk till Antal fall av covid-19]"
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Hur många har avlidit i Sverige av CORONA",
-      "entities": {
-        "CORONA": CORONA
-      },
-      "examples": [
-        "Hur många har avlidit i Sverige av _CORONA",
-        "hur många har dött i sverige av _CORONA",
-        "hur många i sverige har dött av _CORONA",
-        "hur många dör av _CORONA i sverige",
-        "hur många dog igår i Sverige på grund av _CORONA",
-        "hur många i Sverige dog denna månad på grund av _CORONA",
-        "hur många i Sverige dog denna vecka på grund av _CORONA",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Aktuell statistik över antalet personer som avlidit av covid-19 i Sverige finns här [länk till Antal fall av covid-19]"
-      ],
-      "set": {
-        "classifiedIntentName": "question: Hur många har avlidit i Sverige av CORONA",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Aktuell statistik över antalet personer som avlidit av covid-19 i Sverige finns här [länk till Antal fall av covid-19]"
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
       "name": "question: AUX PERS_PRON som symtomfri jobba hemma?",
       "entities": {
         "PERS_PRON": PERS_PRON,
@@ -981,6 +990,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "_AUX _PERS_PRON som symtomfri jobba hemma?",
         "_AUX _PERS_PRON jobba hemma även fast _PERS_PRON inte har några symtom?",
         "_AUX _PERS_PRON jobba hemma även fast _PERS_PRON inte uppvisar symtom?",
+        "Ska _PERS_PRON jobba hemma om _PERS_PRON är fullt frisk?",
         ""
       ]
     },
@@ -1201,6 +1211,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "var kommer _CORONA ifrån?",
         "kan du förklara vad _CORONA är",
         "what is _CORONA?",
+        "Vad är det för skillnad på _CORONA och Covid-19?",
         ""
       ]
     },
@@ -1233,6 +1244,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "_CORONA och influensa är det samma sak",
         "är _CORONA och influensa olika",
         "är _CORONA och influensa samma?",
+        "kan jag få _CORONA från influensa?",
         ""
       ]
     },
@@ -2021,6 +2033,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "_AUX _PERS_PRON stanna hemma ifall _PERS_PRON tror _PERS_PRON har pollen?",
         "_AUX _PERS_PRON stanna hemma ifall _PERS_PRON tror _PERS_PRON har pollenallergi?",
         "Har _PERS_PRON pollenallergi eller corona?",
+        "_PERS_PRON har ont i halsen ska _PERS_PRON vara i karantän?",
         ""
       ]
     },
@@ -2059,6 +2072,9 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "jag är livrädd för _CORONA, kan jag få stöd?",
         "jag är livrädd för _CORONA, vad kan jag göra?",
         "Hur ska jag hantera min oro?",
+        "Jag är orolig",
+        "Jag har ångest",
+        "Jag är rädd",
         ""
       ]
     },
@@ -2118,6 +2134,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Smittar _CORONA när jag betalar med kontanter",
         "Smittar _CORONA om jag betalar kontant",
         "smitttar _CORONA via sedlar och mynt?",
+        "Kan jag bli smittad då jag betalar med sedlar och mynt?",
         ""
       ]
     },
@@ -2237,6 +2254,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "vad händer om det blir avspärrning",
         "vad görs vid en avspärrning",
         "varför görs en avspärrning?",
+        "vad innebär avställning",
         ""
       ]
     },
@@ -2507,13 +2525,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        ""
+        "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
       ],
       "set": {
         "classifiedIntentName": "question: Kan jag och några vänner gå ut och äta på restaurang?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          ""
+          "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -2530,13 +2548,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        ""
+        "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
       ],
       "set": {
         "classifiedIntentName": "question: Kan jag beställa take-away på en restaurang?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          ""
+          "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -2553,13 +2571,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        ""
+        "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
       ],
       "set": {
         "classifiedIntentName": "question: Är det tillåtet att på en restaurang beställa över disk och sedan sätta sig och inventa servering, eller ska beställningen också ske vid bordet?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          ""
+          "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -2576,13 +2594,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        ""
+        "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
       ],
       "set": {
         "classifiedIntentName": "question: Kommer det vara tillåtet att fortsätta med buffé där man tar mat och sedan sätter sig?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          ""
+          "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -2599,13 +2617,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        ""
+        "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
       ],
       "set": {
         "classifiedIntentName": "question: Kan gäster på ett café beställa kaffe vid disken och sedan sätta sig vid valfritt bord? ",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          ""
+          "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -2622,13 +2640,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        ""
+        "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
       ],
       "set": {
         "classifiedIntentName": "question: Får gäster sitta och äta vid en bardisk?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          ""
+          "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -2645,13 +2663,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        ""
+        "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
       ],
       "set": {
         "classifiedIntentName": "question: Kommer gatukök att få fortsätta servera genom luckan?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          ""
+          "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -2668,13 +2686,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        ""
+        "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
       ],
       "set": {
         "classifiedIntentName": "question: Får jag stå i kö på snabbmatsrestaurangerna?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          ""
+          "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -2691,13 +2709,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        ""
+        "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
       ],
       "set": {
         "classifiedIntentName": "question: Kan nattklubbar fortfarande hålla öppet?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          ""
+          "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -2714,13 +2732,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        ""
+        "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
       ],
       "set": {
         "classifiedIntentName": "question: Kan jag fortsätta dricka alkohol på krogen?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          ""
+          "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -2738,13 +2756,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        ""
+        "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
       ],
       "set": {
         "classifiedIntentName": "question: Omfattas casinon av föreskriften?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          ""
+          "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -2763,13 +2781,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        ""
+        "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
       ],
       "set": {
         "classifiedIntentName": "question: Riskerar personal på flygplatsen att smittas av CORONA? ",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          ""
+          "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -2788,13 +2806,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        ""
+        "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
       ],
       "set": {
         "classifiedIntentName": "question: Behöver personal på flygplatsen ha skyddsutrustning mot CORONA? ",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          ""
+          "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -2813,13 +2831,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        ""
+        "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
       ],
       "set": {
         "classifiedIntentName": "question: Kan sjuka passagerares eller friska medpassagerares bagage sprida CORONA?  ",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          ""
+          "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -2836,13 +2854,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        ""
+        "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
       ],
       "set": {
         "classifiedIntentName": "question: Varför får ibland passagerare och flygpersonal fylla i och lämna sina kontaktuppgifter i så kallade Passenger Locator Cards (PLC)? ",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          ""
+          "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -2861,13 +2879,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        ""
+        "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
       ],
       "set": {
         "classifiedIntentName": "question: Om det i efterhand visar sig att en passagerare på ett flygplan har CORONA, kommer personal på flygplatsen eller medpassagerare informeras om det? ",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          ""
+          "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -2884,13 +2902,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        ""
+        "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
       ],
       "set": {
         "classifiedIntentName": "question: Varför har vi inte hälsokontroller i Sverige på passagerare som kommer med flyg från andra länder?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          ""
+          "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -2909,13 +2927,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "Nej. Från och med den 27 mars behöver du inte lämna in ett läkarintyg de första 21 dagarna när du är sjuk. Om du fortfarande är sjuk efter 21 dagar måste du lämna in ett läkarintyg när du ansöker om sjukpenning."
+        "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
       ],
       "set": {
         "classifiedIntentName": "question: Behöver jag lämna läkarintyg om jag stannar hemma från jobbet?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "Nej. Från och med den 27 mars behöver du inte lämna in ett läkarintyg de första 21 dagarna när du är sjuk. Om du fortfarande är sjuk efter 21 dagar måste du lämna in ett läkarintyg när du ansöker om sjukpenning."
+          "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -2933,13 +2951,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "Nej. Från och med den 27 mars behöver anställda inte lämna in ett läkarintyg de första 21 dagarna när du är sjuk. Om en anställd fortfarande är sjuk efter 21 dagar måste läkarintyg lämnas in vid ansökan om sjukpenning."
+        "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
       ],
       "set": {
         "classifiedIntentName": "question: Behöver mina anställda lämna läkarintyg om de stannar hemma från jobbet?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "Nej. Från och med den 27 mars behöver anställda inte lämna in ett läkarintyg de första 21 dagarna när du är sjuk. Om en anställd fortfarande är sjuk efter 21 dagar måste läkarintyg lämnas in vid ansökan om sjukpenning."
+          "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -2957,13 +2975,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "Regeringen har föreslagit att staten tillfälligt tar hela kostnaden för alla sjuklönekostnader."
+        "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
       ],
       "set": {
         "classifiedIntentName": "question: Vad gäller för sjuklönekostnader?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "Regeringen har föreslagit att staten tillfälligt tar hela kostnaden för alla sjuklönekostnader."
+          "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -2983,13 +3001,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "Regeringen har föreslagit att tillfälligt slopa karensavdraget med anledning av coronaviruset/covid-19. När beslutet är fattat innebär det att du kommer kunna ansöka om ersättningen retroaktivt. "
+        "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
       ],
       "set": {
         "classifiedIntentName": "question: Kommer karensavdraget att slopas?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "Regeringen har föreslagit att tillfälligt slopa karensavdraget med anledning av coronaviruset/covid-19. När beslutet är fattat innebär det att du kommer kunna ansöka om ersättningen retroaktivt. "
+          "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -3007,13 +3025,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "Regeringen har föreslagit att att du som egen företagare ska kunna söka ersättning för din egen karens."
+        "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
       ],
       "set": {
         "classifiedIntentName": "question: Kan jag som egenföretagare söka ersättning vid karens?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "Regeringen har föreslagit att att du som egen företagare ska kunna söka ersättning för din egen karens."
+          "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -3031,13 +3049,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "Regeringen har föreslagit att tillfälligt slopa karensdagen och kravet på läkarintyg ävenför dig som deltar i ett program hos Arbetsförmedlingen. Du ansöker om aktivitetsstöd, utvecklingsersättning och etableringsersättning precis som vanligt."
+        "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
       ],
       "set": {
         "classifiedIntentName": "question: Jag deltar i ett program hos Arbetsförmedlingen. Vad gäller för mig?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "Regeringen har föreslagit att tillfälligt slopa karensdagen och kravet på läkarintyg ävenför dig som deltar i ett program hos Arbetsförmedlingen. Du ansöker om aktivitetsstöd, utvecklingsersättning och etableringsersättning precis som vanligt."
+          "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -3056,13 +3074,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "Ja. Du kan få vab-ersättning om du måste vara hemma för att ditt barn är sjukt eller är smittbärare. Du kan också få ersättning om det finns en konkret misstanke från t.ex. läkare eller sjuksköterska om att ditt barn sprider smitta. "
+        "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
       ],
       "set": {
         "classifiedIntentName": "question: MITT BARN är sjukt. Kan jag få vab-ersättning?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "Ja. Du kan få vab-ersättning om du måste vara hemma för att ditt barn är sjukt eller är smittbärare. Du kan också få ersättning om det finns en konkret misstanke från t.ex. läkare eller sjuksköterska om att ditt barn sprider smitta. "
+          "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -3083,13 +3101,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "Nej. Du kan inte få ersättning för vab om du håller ditt barn hemma i syfte att hen inte ska bli smittad av andra."
+        "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
       ],
       "set": {
         "classifiedIntentName": "question: Jag vill inte att MITT BARN ska bli smittat av andra barn. Kan jag få vab-ersättning om jag stannar hemma med MITT BARN?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "Nej. Du kan inte få ersättning för vab om du håller ditt barn hemma i syfte att hen inte ska bli smittad av andra."
+          "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -3109,13 +3127,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "Nej. För att få smittbärarpenning krävs ett läkarintyg som visar att du inte får arbeta på grund av att du är eller kan vara smittad av covid-19."
+        "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
       ],
       "set": {
         "classifiedIntentName": "question: Jag är rädd att bli smittad av CORONA. Har jag rätt att stanna hemma från jobbet och få smittbärarpenning?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "Nej. För att få smittbärarpenning krävs ett läkarintyg som visar att du inte får arbeta på grund av att du är eller kan vara smittad av covid-19."
+          "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -3133,13 +3151,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "Just nu, nej. I dagsläget kan du inte få ersättning om förskolan eller skolan är stängd och ditt barn inte är sjukt eller sprider smitta. "
+        "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
       ],
       "set": {
         "classifiedIntentName": "question: Mitt barns skola har stängt. Kan jag få vab-ersättning?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "Just nu, nej. I dagsläget kan du inte få ersättning om förskolan eller skolan är stängd och ditt barn inte är sjukt eller sprider smitta. "
+          "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -3157,13 +3175,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "Nej. Från och med den 19 mars 2020 och tills vidare behöver du inte längre skicka in ett intyg när ditt barn har varit sjukt eller smittat i mer än sju dagar. Detta gäller oavsett orsaken till ditt barns sjukdom eller smitta. "
+        "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
       ],
       "set": {
         "classifiedIntentName": "question: Mitt barn har varit sjukt i mer än sju dagar. Behöver jag skicka in läkarintyg?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "Nej. Från och med den 19 mars 2020 och tills vidare behöver du inte längre skicka in ett intyg när ditt barn har varit sjukt eller smittat i mer än sju dagar. Detta gäller oavsett orsaken till ditt barns sjukdom eller smitta. "
+          "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -3184,13 +3202,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "Ja. Du har rätt till smittbärarpenning om en läkare beslutat att du inte får arbeta eftersom du är – eller kan vara – smittad av covid-19."
+        "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
       ],
       "set": {
         "classifiedIntentName": "question: Jag har smittats av CORONA. Har jag rätt till smittbärarpenning?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "Ja. Du har rätt till smittbärarpenning om en läkare beslutat att du inte får arbeta eftersom du är – eller kan vara – smittad av covid-19."
+          "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -3208,13 +3226,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "Om en läkare beslutat att du inte får arbeta eftersom du är – eller kan vara – smittad av en samhällsfarlig sjukdom, t.ex. covid-19, har du rätt till smittbärarpenning."
+        "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
       ],
       "set": {
         "classifiedIntentName": "question: Jag är sjuk. Har jag rätt till smittbärarpenning?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "Om en läkare beslutat att du inte får arbeta eftersom du är – eller kan vara – smittad av en samhällsfarlig sjukdom, t.ex. covid-19, har du rätt till smittbärarpenning."
+          "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -3232,13 +3250,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "Du kan ha rätt till sjukpenning om du inte kan arbeta för att du är sjuk. De första två veckorna du är sjuk betalar din arbetsgivare sjuklön till dig i stället för din vanliga lön. Om du fortfarande är sjuk efter de två veckorna kan du ansöka om sjukpenning från Försäkringskassan."
+        "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
       ],
       "set": {
         "classifiedIntentName": "question: Jag är sjuk. Har jag rätt till sjukpenning?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "Du kan ha rätt till sjukpenning om du inte kan arbeta för att du är sjuk. De första två veckorna du är sjuk betalar din arbetsgivare sjuklön till dig i stället för din vanliga lön. Om du fortfarande är sjuk efter de två veckorna kan du ansöka om sjukpenning från Försäkringskassan."
+          "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -3256,13 +3274,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "Nej. Högkostnadsskyddet beräknas per år, vilket betyder att alla åtgärder som görs under en sammanhängande period på tolv månader räknas in i ditt högkostnadsskydd."
+        "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
       ],
       "set": {
         "classifiedIntentName": "question: Kan jag förlänga min ersättningsperiod inom högkostnadsskyddet för tandvård på grund av covid-19?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "Nej. Högkostnadsskyddet beräknas per år, vilket betyder att alla åtgärder som görs under en sammanhängande period på tolv månader räknas in i ditt högkostnadsskydd."
+          "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -3279,13 +3297,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "Om du inte får arbeta på grund av att du är smittad eller kan vara smittad av en allmänfarlig sjukdom kan du få smittbärarpenning. Du kan också ha rätt till ersättning för resor som du behöver göra, till exempel i samband med läkarundersökningar."
+        "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
       ],
       "set": {
         "classifiedIntentName": "question: Vad är smittbärarpenning?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "Om du inte får arbeta på grund av att du är smittad eller kan vara smittad av en allmänfarlig sjukdom kan du få smittbärarpenning. Du kan också ha rätt till ersättning för resor som du behöver göra, till exempel i samband med läkarundersökningar."
+          "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -3304,13 +3322,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "Med smittbärarpenning får du knappt 80 procent av din lön, men högst 804 kronor per dag."
+        "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
       ],
       "set": {
         "classifiedIntentName": "question: Hur mycket får jag av smittbärarpenning?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "Med smittbärarpenning får du knappt 80 procent av din lön, men högst 804 kronor per dag."
+          "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -3330,13 +3348,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "Ja. Du kan få ersättning för resor du behöver göra till läkarundersökningar, kontroller eller behandlingar. Vid ansökan av ersättning behöver du skicka in kvitton på reskostnader samt att resorna gällde behandling av covid-19."
+        "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
       ],
       "set": {
         "classifiedIntentName": "question: Jag har smittats av CORONA. Kan jag få reseersättning för att jag är smittbärare?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "Ja. Du kan få ersättning för resor du behöver göra till läkarundersökningar, kontroller eller behandlingar. Vid ansökan av ersättning behöver du skicka in kvitton på reskostnader samt att resorna gällde behandling av covid-19."
+          "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -3354,13 +3372,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "Du ansöker om smittbärarpenning fram till det datum när du skickar in ansökan, eller när de 14 dagarna är över. Du kan inte ansöka framåt i tiden."
+        "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
       ],
       "set": {
         "classifiedIntentName": "question: Min läkare har beslutat att jag måste vara hemma i 14 dagar på grund av smitta. När kan jag ansöka om smittbärarpenning?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "Du ansöker om smittbärarpenning fram till det datum när du skickar in ansökan, eller när de 14 dagarna är över. Du kan inte ansöka framåt i tiden."
+          "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -3379,13 +3397,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "Nej. Du måste ha ett läkarintyg som visar att du inte får arbeta på grund av risk för smitta."
+        "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
       ],
       "set": {
         "classifiedIntentName": "question: Min arbetsplats har stängt ner för att förhindra smittspridning. Har jag rätt till smittbärarpenning?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "Nej. Du måste ha ett läkarintyg som visar att du inte får arbeta på grund av risk för smitta."
+          "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -3404,13 +3422,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "Nej. Du måste ha ett läkarintyg som visar att du inte får arbeta på grund av risk för smitta."
+        "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
       ],
       "set": {
         "classifiedIntentName": "question: Jag har kommit hem från ett riskområde. Min arbetsgivare uppmanar mig nu att stanna hemma från jobbet, trots att jag inte är smitttad. Har jag rätt till smittbärarpenning?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "Nej. Du måste ha ett läkarintyg som visar att du inte får arbeta på grund av risk för smitta."
+          "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -3429,13 +3447,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "Nej. Du måste ha ett läkarintyg som visar att du inte får arbeta på grund av risk för smitta."
+        "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
       ],
       "set": {
         "classifiedIntentName": "question: Jag har kommit hem från ett riskområde och stannar frivilligt hemma för att inte riskera spridning av coronaviruset. Har jag rätt till smittbärarpenning?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "Nej. Du måste ha ett läkarintyg som visar att du inte får arbeta på grund av risk för smitta."
+          "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -3454,13 +3472,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "Ja. Läkare kan skriva ett läkarintyg per telefon."
+        "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
       ],
       "set": {
         "classifiedIntentName": "question: Kan jag få ett läkarintyg via telefon?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "Ja. Läkare kan skriva ett läkarintyg per telefon."
+          "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -3479,13 +3497,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "Nej. du har rätt till smittbärarpenning från dag ett."
+        "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
       ],
       "set": {
         "classifiedIntentName": "question: Gäller karensdag vid smittbärarpenning?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "Nej. du har rätt till smittbärarpenning från dag ett."
+          "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -3505,13 +3523,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "Du kan ha rätt till smittbärarpenning om du inte kan söka arbete på grund av risken att smitta ner andra."
+        "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
       ],
       "set": {
         "classifiedIntentName": "question: Jag har smittats av CORONA och är arbetssökande. Har jag rätt till smittbärarpenning?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "Du kan ha rätt till smittbärarpenning om du inte kan söka arbete på grund av risken att smitta ner andra."
+          "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -3530,13 +3548,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "Om karensavdraget slopas innebär det att staten kommer betala ut ersättning för den första sjukdagen. Just nu håller riksdagen på att fatta beslut om detta."
+        "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
       ],
       "set": {
         "classifiedIntentName": "question: Vad innebär det att karensavdraget slopas? ",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "Om karensavdraget slopas innebär det att staten kommer betala ut ersättning för den första sjukdagen. Just nu håller riksdagen på att fatta beslut om detta."
+          "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -3554,13 +3572,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "Uppge de timmar du behövt avstå från arbete på grund av vab i din ansökan. När det gäller tiden \"du skulle ha arbetet\" uppger du din ordinerie arbetstid, det vill säga den arbetstid du hade innan du blev korttidspermitterad."
+        "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
       ],
       "set": {
         "classifiedIntentName": "question: Jag är permitterad och arbetar 50 procent men får 90 procent av min tidigare lön. Hur ska jag fylla i min vab-ansökan?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "Uppge de timmar du behövt avstå från arbete på grund av vab i din ansökan. När det gäller tiden \"du skulle ha arbetet\" uppger du din ordinerie arbetstid, det vill säga den arbetstid du hade innan du blev korttidspermitterad."
+          "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -3581,13 +3599,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "Ja. Du kan få vab-ersättning om du måste avstå från arbete för att ta hand om ditt smittsamma barn. Du kan dock inte få vab-ersättning om du redan får smittbärarpenning. Om din arbetsgivare uppmanar dig att stanna får du kontrollera vad som gäller på din arbetsplats. "
+        "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
       ],
       "set": {
         "classifiedIntentName": "question: Mitt barn har smittats av CORONA, har jag rätt till vab?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "Ja. Du kan få vab-ersättning om du måste avstå från arbete för att ta hand om ditt smittsamma barn. Du kan dock inte få vab-ersättning om du redan får smittbärarpenning. Om din arbetsgivare uppmanar dig att stanna får du kontrollera vad som gäller på din arbetsplats. "
+          "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -3606,13 +3624,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "Ja. Du kan få vab-ersättning om du måste avstå från ditt arbeta på grund av att du måste vårda ditt sjuka barn."
+        "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
       ],
       "set": {
         "classifiedIntentName": "question: Mitt jobb har uppmanat mig att stanna hemma på grund av smittorisken av corona. Nu har mitt barn blivit sjukt, har jag rätt till vab?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "Ja. Du kan få vab-ersättning om du måste avstå från ditt arbeta på grund av att du måste vårda ditt sjuka barn."
+          "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -3631,13 +3649,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "Du och den andra föräldern kan tillsammans å vab-ersättning för 120 dagar per barn och år."
+        "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
       ],
       "set": {
         "classifiedIntentName": "question: Hur många dagar kan jag vabba?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "Du och den andra föräldern kan tillsammans å vab-ersättning för 120 dagar per barn och år."
+          "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -3656,13 +3674,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "Nej. Båda föräldrarna kan inte få ersättning för samma barn och tid."
+        "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
       ],
       "set": {
         "classifiedIntentName": "question: Vårt barn har blivit smittad av CORONA. Kan vi båda vabba samtidigt och få ersättning för samma barn och tid?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "Nej. Båda föräldrarna kan inte få ersättning för samma barn och tid."
+          "Eftersom frågan inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget"
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -5292,6 +5310,88 @@ export const simpleQuestionAnswers : UserTurn[] = [
       ],
       "set": {
         "classifiedIntentName": "question: vem står bakom denna bot",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          ""
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: hur tvättar PERS_PRON händerna",
+      "entities": {
+        "PERS_PRON": PERS_PRON,
+        "POS_PRON": POS_PRON
+      },
+      "examples": [
+        "hur tvättar _PERS_PRON händerna",
+        "hur ska _PERS_PRON tvätta _POS_PRON händer",
+        "hur tvättar _PERS_PRON _POS_PRON händer",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        ""
+      ],
+      "set": {
+        "classifiedIntentName": "question: hur tvättar PERS_PRON händerna",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          ""
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: HELLO",
+      "entities": {
+        "HELLO": HELLO
+      },
+      "examples": [
+        "_HELLO",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        ""
+      ],
+      "set": {
+        "classifiedIntentName": "question: HELLO",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          ""
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Finns det ett slutdatum för CORONA? ",
+      "entities": {
+        "CORONA": CORONA
+      },
+      "examples": [
+        "Finns det ett slutdatum för _CORONA? ",
+        "När är _CORONA slut? ",
+        "När tar _CORONA slut? ",
+        "Hur länge ska _CORONA hålla på?",
+        "Hur länge ska vi hålla på såhär?",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        ""
+      ],
+      "set": {
+        "classifiedIntentName": "question: Finns det ett slutdatum för CORONA? ",
         "classifiedUtterance": "_user_text",
         "botResponse": [
           ""

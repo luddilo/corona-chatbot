@@ -18,7 +18,7 @@ export const generateSimpleAnswers = async () => {
     .filter((qa) => qa.answers.length > 0 && qa.formulations.length > 0)
     .map((qa) =>
       getUserTurn({
-        intentName: qa.category !== "bot" ? ("question: " + qa.formulations[0]) : qa.formulations[0],
+        intentName: qa.shouldVerify ? ("question: " + qa.formulations[0]) : qa.formulations[0],
         examples: qa.formulations,
         answers: qa.answers,
         entities: entities,

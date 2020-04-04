@@ -1,5 +1,5 @@
 import { Entity, Intent, entities } from "narratory"
-import { CORONA } from "./answers/generatedFAQ"
+import { CORONA, HEALTHCARE } from "./answers/generatedFAQ"
 
 const symptom: Entity = {
   name: "Symptom",
@@ -77,10 +77,12 @@ export const queryDiagnosis: Intent = {
 
 export const queryNeedCare: Intent = {
   examples: [
-    "när behöver jag ringa vården",
-    "behöver jag ringa vården",
-    "när behöver jag kontakta vården",
-    "när ska jag söka vård"
+    "när behöver jag ringa _HEALTHCARE",
+    "behöver jag ringa _HEALTHCARE",
+    "när behöver jag kontakta _HEALTHCARE",
+    "när ska jag söka _HEALTHCARE",
+    "hur vet jag när jag ska ta kontakt med _HEALTHCARE",
+    "behöver jag gå till _HEALTHCARE"
   ]
 }
 

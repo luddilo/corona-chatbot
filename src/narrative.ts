@@ -21,19 +21,9 @@ const intro = {
     user_hotStarted: false
   },
   say: {
-    text: "Jag är en chatbot som kan svara på frågor om det nya coronaviruset.",
-    ssml: "Jag är en chatt-bått som kan svara på frågor om det nya coronaviruset."
+    text: "Jag är en chatbot som kan svara på frågor om coronaviruset.",
+    ssml: "Jag är en chatt-bått som kan svara på frågor om coronaviruset."
   }
-}
-
-const querySymptoms: BotTurn = {
-  cond: {
-    user_hotStarted: false
-  },
-  say: {
-      text: "Glöm inte att du måste stanna hemma om du känner dig sjuk. Om du har andnöd - ring 112.",
-      ssml: "Inledningsvis vill jag säga att om du känner dig sjuk så är det viktigt att du stannar hemma. Om du har andnöd, ring 1 1 2. Så"
-    },
 }
 
 const queryQuestions: BotTurn = {
@@ -107,4 +97,4 @@ const goodbye: BotTurn[] = [
   }
 ]
 
-export default [greeting, intro, querySymptoms, queryQuestions, ...goodbye]
+export default [greeting, intro, queryQuestions, ...goodbye]

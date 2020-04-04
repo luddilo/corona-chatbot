@@ -24,6 +24,10 @@ export const answerFallback = [
         cond: { platform: "voximplant" },
         text: "Förlåt, men jag förstod inte nu heller. Försök igen, eller ring 113 13 för att prata med en människa."
       },
+      { 
+        cond: { platform: "facebook" },
+        text: "Förlåt, men jag förstod inte nu heller. Du får testa igen!"
+      },
       {
         text: "Förlåt, men jag förstod inte nu heller. Testa att trycka på någon av knapparna nedan.",
         content: listOptions

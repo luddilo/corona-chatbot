@@ -1,4 +1,4 @@
-import { UserTurn } from "narratory"
+import { UserTurn, Intent } from "narratory"
 import * as moment from "moment"
 import { getAnswerWithPrompts } from "./getAnswerWithPrompts"
 import { getUserTurn, entityDelimiter } from "./getUserTurn"
@@ -15,23 +15,27 @@ export const generateSimpleAnswers = async () => {
   console.log("Got entites from Google sheet")
 
   let userTurns: UserTurn[] = faq
-    .filter(qa => qa.answers.length > 0 && qa.formulations.length > 0)
-    .map(qa =>
+    .filter((qa) => qa.answers.length > 0 && qa.formulations.length > 0)
+    .map((qa) =>
       getUserTurn({
-        intentName: "question: " + qa.formulations[0],
+        intentName: qa.category !== "bot" ? ("question: " + qa.formulations[0]) : qa.formulations[0],
         examples: qa.formulations,
         answers: qa.answers,
-        entities: entities
+        entities: entities,
       })
     )
 
   const args = process.argv.slice(2)
 
   if (args.includes("--withPrompts")) {
-    userTurns = userTurns.map(userTurn => {
-      return {
-        ...userTurn,
-        bot: getAnswerWithPrompts(userTurn)
+    userTurns = userTurns.map((userTurn) => {
+      if ((userTurn.intent as Intent).name.startsWith("question:")) {
+        return {
+          ...userTurn,
+          bot: getAnswerWithPrompts(userTurn),
+        }
+      } else {
+        return userTurn
       }
     })
   }
@@ -46,7 +50,9 @@ export const generateSimpleAnswers = async () => {
     .split(`${entityDelimiter}"`)
     .join("")
 
-  const entityStr = entities.map(entity => `export const ${entity.name} : Entity = ${JSON.stringify(entity, null, 2)}`)
+  const entityStr = entities.map(
+    (entity) => `export const ${entity.name} : Entity = ${JSON.stringify(entity, null, 2)}`
+  )
 
   const str = [importStr, timestampStr, ...entityStr, faqStr].join("\n\n")
 

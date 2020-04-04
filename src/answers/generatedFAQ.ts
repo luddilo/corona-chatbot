@@ -1,6 +1,6 @@
 import { UserTurn, Entity } from "narratory"
 
-// Generated at Friday, April 3rd 2020, 1:43:49 pm
+// Generated at Saturday, April 4th 2020, 12:26:15 am
 
 export const CORONA : Entity = {
   "name": "CORONA",
@@ -24,9 +24,10 @@ export const CORONA : Entity = {
         "kollat",
         "krona",
         "kod 19",
-        "korean viruset",
+        "Korean viruset",
         "kolumn virus",
-        "corona viruset"
+        "virus",
+        "Covd-19"
       ]
     }
   ]
@@ -50,7 +51,8 @@ export const INFECTING_ACTIVITY : Entity = {
         "kramas",
         "pussas",
         "kyssas",
-        "hostar"
+        "hostar",
+        "ta i hand"
       ]
     }
   ]
@@ -66,7 +68,12 @@ export const OCCUPATION : Entity = {
         "skolan",
         "dagis",
         "förskolan",
-        "arbetet"
+        "arbetet",
+        "fritids",
+        "kontoret",
+        "fsk",
+        "förskola",
+        "föris"
       ]
     }
   ]
@@ -140,7 +147,9 @@ export const POS_PRON : Entity = {
         "era",
         "sin",
         "sitt ",
-        "sina"
+        "sina",
+        "deras",
+        "vårat"
       ]
     }
   ]
@@ -184,17 +193,19 @@ export const ACTIVITY : Entity = {
         "ta flyget",
         "flyga",
         "fika",
-        "jobba"
+        "jobba",
+        "gymmet",
+        "ärende"
       ]
     }
   ]
 }
 
-export const MITT_BARN : Entity = {
-  "name": "MITT_BARN",
+export const MY_CHILD : Entity = {
+  "name": "MY_CHILD",
   "enums": [
     {
-      "name": "MITT_BARN",
+      "name": "MY_CHILD",
       "alts": [
         "min dotter",
         "min son",
@@ -202,21 +213,28 @@ export const MITT_BARN : Entity = {
         "mina döttrar",
         "min flicka ",
         "min pojke",
-        "mina barn"
+        "mina barn",
+        "barnen",
+        "barnet",
+        "ungarna"
       ]
     }
   ]
 }
 
-export const SKA : Entity = {
-  "name": "SKA",
+export const CAN : Entity = {
+  "name": "CAN",
   "enums": [
     {
-      "name": "SKA",
+      "name": "CAN",
       "alts": [
         "bör",
         "måste",
-        "borde "
+        "borde ",
+        "skulle",
+        "behöver",
+        "ska",
+        "kan"
       ]
     }
   ]
@@ -237,7 +255,91 @@ export const FAMILYMEMBER : Entity = {
         "son",
         "dotter",
         "syster",
-        "bror"
+        "bror",
+        "tjej",
+        "kille ",
+        "lillasyster",
+        "lillebror",
+        "storasyster",
+        "storebror",
+        "make",
+        "maka",
+        "hustru"
+      ]
+    }
+  ]
+}
+
+export const HELLO : Entity = {
+  "name": "HELLO",
+  "enums": [
+    {
+      "name": "HELLO",
+      "alts": [
+        "Hej ",
+        "hejsan",
+        "hej hej ",
+        "hej där ",
+        "hei",
+        "tjena",
+        "tjabba",
+        "hi ",
+        "goddag",
+        "hej botten",
+        "halloj",
+        "hallå"
+      ]
+    }
+  ]
+}
+
+export const TACK : Entity = {
+  "name": "TACK",
+  "enums": [
+    {
+      "name": "TACK",
+      "alts": [
+        "tackar",
+        "tack så mycket",
+        "tack tack",
+        "tack till dig",
+        "tusen tack"
+      ]
+    }
+  ]
+}
+
+export const ELDERLY : Entity = {
+  "name": "ELDERLY",
+  "enums": [
+    {
+      "name": "ELDERLY",
+      "alts": [
+        "farmor",
+        "farmor",
+        "mormor",
+        "morfar",
+        "70åring",
+        "80åring",
+        "90åring",
+        "pensionär",
+        "äldre"
+      ]
+    }
+  ]
+}
+
+export const SMOKE : Entity = {
+  "name": "SMOKE",
+  "enums": [
+    {
+      "name": "SMOKE",
+      "alts": [
+        "rökare",
+        "rökning",
+        "röka",
+        "röker",
+        "storrökare"
       ]
     }
   ]
@@ -246,13 +348,13 @@ export const FAMILYMEMBER : Entity = {
 export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
-      "name": "question: Vad är symtomen av CORONA?",
+      "name": "Vaad är symtomen av CORONA?",
       "entities": {
         "CORONA": CORONA,
         "PERS_PRON": PERS_PRON
       },
       "examples": [
-        "Vad är symtomen av _CORONA?",
+        "Vaad är symtomen av _CORONA?",
         "vad är symtomen",
         "hur märker _PERS_PRON om _PERS_PRON har _CORONA",
         "hur mår _PERS_PRON om _PERS_PRON har _CORONA",
@@ -260,8 +362,8 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "vad är symtom för _CORONA",
         "vad är symtomen för _CORONA",
         "hur vet _PERS_PRON om _PERS_PRON har _CORONA",
-        "vilka är de vanligaste symptomen?",
-        "hur vet jag om jag är sjuk?",
+        "vilka är de vanligaste symtomen?",
+        "hur vet _PERS_PRON om _PERS_PRON är sjuk?",
         "_PERS_PRON undrar om symtomer",
         "Vilka är de vanligaste symptomen?",
         "Symptom?",
@@ -269,19 +371,9 @@ export const simpleQuestionAnswers : UserTurn[] = [
         ""
       ]
     },
-    "bot": {
-      "say": [
-        "De vanligaste symtomen för covid-19 är feber och hosta. Även andningsbesvär, snuva, halsont, huvudvärk, illamående, muskel- och ledvärk är vanliga symtom. En person som insjuknar i covid-19 behöver inte uppvisa samtliga symtom."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Vad är symtomen av CORONA?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "De vanligaste symtomen för covid-19 är feber och hosta. Även andningsbesvär, snuva, halsont, huvudvärk, illamående, muskel- och ledvärk är vanliga symtom. En person som insjuknar i covid-19 behöver inte uppvisa samtliga symtom."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
+    "bot": [
+      "De vanligaste symtomen för covid-19 är feber och hosta. Även andningsbesvär, snuva, halsont, huvudvärk, illamående, muskel- och ledvärk är vanliga symtom. En person som insjuknar i covid-19 behöver inte uppvisa samtliga symtom."
+    ]
   },
   {
     "intent": {
@@ -351,6 +443,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "hur minskar _PERS_PRON spridningen av _CORONA",
         "vad _AUX _PERS_PRON göra för att minska smittspridningen",
         "vad _AUX _PERS_PRON göra för att minska spridningen av _CORONA",
+        "hur kan man skydda sig mot _CORONA",
         ""
       ]
     },
@@ -412,7 +505,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
       "entities": {
         "AUX": AUX,
         "PERS_PRON": PERS_PRON,
-        "REF_PRON": REF_PRON
+        "REF_PRON": REF_PRON,
+        "OCCUPATION": OCCUPATION,
+        "POS_PRON": POS_PRON,
+        "MY_CHILD": MY_CHILD
       },
       "examples": [
         "Vem _AUX stanna hemma?",
@@ -429,6 +525,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "_PERS_PRON känner _REF_PRON sjuk, _AUX _PERS_PRON stanna hemma",
         "_PERS_PRON har hosta börja stanna hemma? ",
         "_PERS_PRON har ont i halsen ska vara i karantän? ",
+        "Kan _POS_PRON _MY_CHILD gå till _OCCUPATION?",
         ""
       ]
     },
@@ -685,9 +782,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "question: Vad gäller för stora evenemang? ",
-      "entities": {
-        "PERS_PRON": PERS_PRON
-      },
+      "entities": {},
       "examples": [
         "Vad gäller för stora evenemang? ",
         "vad är reglerna för stora evenemang",
@@ -698,10 +793,6 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Kan jag gå på bröllop? ",
         "Får jag gå på ett bröllop?",
         "Vad gäller för större sammankomster?",
-        "Kan _PERS_PRON gå på bröllop i april?",
-        "Kan _PERS_PRON gå på bröllop i maj?",
-        "_PERS_PRON undrar om _PERS_PRON kan gå på konsert?",
-        "_PERS_PRON undrar om _PERS_PRON kan gå på en stor fest?",
         ""
       ]
     },
@@ -722,7 +813,9 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "question: Vad gäller för kollektivtrafik och allmänna färdmedel?",
-      "entities": {},
+      "entities": {
+        "PERS_PRON": PERS_PRON
+      },
       "examples": [
         "Vad gäller för kollektivtrafik och allmänna färdmedel?",
         "vilka regler gäller för kollektivtrafik         arbetsplatser och skolor?",
@@ -730,6 +823,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "vad gäller för tunnelbanan",
         "vad gäller för kollektivtrafiken",
         "hur många får det vara på en arbetsplats",
+        "Vad ska _PERS_PRON tänka på när _PERS_PRON åker buss tåg och taxi?",
         ""
       ]
     },
@@ -862,6 +956,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "_PERS_PRON har corona vad _AUX _PERS_PRON göra",
         "_PERS_PRON misstänker att _PERS_PRON kanske har _CORONA vad gör _PERS_PRON nu",
         "_PERS_PRON har varit i Italien ska _PERS_PRON vara i karantän?",
+        "Ska _PERS_PRON vara i karantän om _PERS_PRON varit i Italien",
         ""
       ]
     },
@@ -913,65 +1008,6 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": {
-      "name": "question: Hur många är sjuka i Sverige?",
-      "entities": {
-        "CORONA": CORONA
-      },
-      "examples": [
-        "Hur många är sjuka i Sverige?",
-        "hur många har blivit smittade av _CORONA i sverige",
-        "hur många i Sverige har _CORONA",
-        "hur många har _CORONA i sverige",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Aktuell statistik över antalet bekräftade fall av covid-19 i Sverige finns här [länk till Antal fall av covid-19]"
-      ],
-      "set": {
-        "classifiedIntentName": "question: Hur många är sjuka i Sverige?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Aktuell statistik över antalet bekräftade fall av covid-19 i Sverige finns här [länk till Antal fall av covid-19]"
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Hur många har avlidit i Sverige av CORONA",
-      "entities": {
-        "CORONA": CORONA
-      },
-      "examples": [
-        "Hur många har avlidit i Sverige av _CORONA",
-        "hur många har dött i sverige av _CORONA",
-        "hur många i sverige har dött av _CORONA",
-        "hur många dör av _CORONA i sverige",
-        "hur många dog igår i Sverige på grund av _CORONA",
-        "hur många i Sverige dog denna månad på grund av _CORONA",
-        "hur många i Sverige dog denna vecka på grund av _CORONA",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Aktuell statistik över antalet personer som avlidit av covid-19 i Sverige finns här [länk till Antal fall av covid-19]"
-      ],
-      "set": {
-        "classifiedIntentName": "question: Hur många har avlidit i Sverige av CORONA",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Aktuell statistik över antalet personer som avlidit av covid-19 i Sverige finns här [länk till Antal fall av covid-19]"
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
       "name": "question: AUX PERS_PRON som symtomfri jobba hemma?",
       "entities": {
         "PERS_PRON": PERS_PRON,
@@ -981,6 +1017,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "_AUX _PERS_PRON som symtomfri jobba hemma?",
         "_AUX _PERS_PRON jobba hemma även fast _PERS_PRON inte har några symtom?",
         "_AUX _PERS_PRON jobba hemma även fast _PERS_PRON inte uppvisar symtom?",
+        "Ska _PERS_PRON jobba hemma om _PERS_PRON är fullt frisk?",
         ""
       ]
     },
@@ -1201,6 +1238,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "var kommer _CORONA ifrån?",
         "kan du förklara vad _CORONA är",
         "what is _CORONA?",
+        "Vad är det för skillnad på _CORONA och Covid-19?",
         ""
       ]
     },
@@ -1233,6 +1271,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "_CORONA och influensa är det samma sak",
         "är _CORONA och influensa olika",
         "är _CORONA och influensa samma?",
+        "kan jag få _CORONA från influensa?",
         ""
       ]
     },
@@ -1966,8 +2005,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
       "name": "question: Om en person i familjen är sjuk - måste alla stanna hemma då? ",
       "entities": {
         "PERS_PRON": PERS_PRON,
-        "CORONA": CORONA,
-        "SKA": SKA
+        "CORONA": CORONA
       },
       "examples": [
         "Om en person i familjen är sjuk - måste alla stanna hemma då? ",
@@ -1978,7 +2016,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "kan _PERS_PRON gå till jobbet även fast någon i hushållet är sjuk?",
         "MITT BARN är sjuk i _CORONA ska _PERS_PRON stanna hemma? ",
         "MITT BARN är sjuk ska jag stanna hemma?",
-        "Jag bor med någon som har _CORONA _SKA jag stanna hemma ",
+        "Jag bor med någon som har _CORONA SKA jag stanna hemma ",
         "Ska min son vara hemma?",
         "Ska min dotter vara hemma? ",
         ""
@@ -2021,6 +2059,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "_AUX _PERS_PRON stanna hemma ifall _PERS_PRON tror _PERS_PRON har pollen?",
         "_AUX _PERS_PRON stanna hemma ifall _PERS_PRON tror _PERS_PRON har pollenallergi?",
         "Har _PERS_PRON pollenallergi eller corona?",
+        "_PERS_PRON har ont i halsen ska _PERS_PRON vara i karantän?",
         ""
       ]
     },
@@ -2059,6 +2098,9 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "jag är livrädd för _CORONA, kan jag få stöd?",
         "jag är livrädd för _CORONA, vad kan jag göra?",
         "Hur ska jag hantera min oro?",
+        "Jag är orolig",
+        "Jag har ångest",
+        "Jag är rädd",
         ""
       ]
     },
@@ -2118,6 +2160,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Smittar _CORONA när jag betalar med kontanter",
         "Smittar _CORONA om jag betalar kontant",
         "smitttar _CORONA via sedlar och mynt?",
+        "Kan jag bli smittad då jag betalar med sedlar och mynt?",
         ""
       ]
     },
@@ -2237,6 +2280,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "vad händer om det blir avspärrning",
         "vad görs vid en avspärrning",
         "varför görs en avspärrning?",
+        "vad innebär avställning",
         ""
       ]
     },
@@ -2460,2841 +2504,6 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "classifiedUtterance": "_user_text",
         "botResponse": [
           "Ge ditt barn trygghet, var uppmärksam och lyssna om ditt barn vill prata om viruset och det som händer i vårt samhälle just nu. "
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Ger rökning ett svårare sjukdomsförlopp vid CORONA",
-      "entities": {
-        "CORONA": CORONA,
-        "PERS_PRON": PERS_PRON
-      },
-      "examples": [
-        "Ger rökning ett svårare sjukdomsförlopp vid _CORONA",
-        "blir _PERS_PRON sjukare om _PERS_PRON röker",
-        "blir _PERS_PRON sjukare ifall _PERS_PRON röker",
-        "gör rökning det värre",
-        "gör rökning CORANA värre",
-        "har _PERS_PRON större risk att dö ifall jag får _CORONA",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Vi vet sedan tidigare att tobaksrökning ökar risken för allvarliga symtom vid luftvägsinfektioner som till exempel influensa. Tillgängliga studier visar att personer som röker eller som har rökt är överrepresenterade bland de svåra fallen av covid-19. Kunskapsläget om samband mellan tobaksrökning och hur svårt sjuk man blir vid covid-19 är dock fortfarande oklart."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Ger rökning ett svårare sjukdomsförlopp vid CORONA",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Vi vet sedan tidigare att tobaksrökning ökar risken för allvarliga symtom vid luftvägsinfektioner som till exempel influensa. Tillgängliga studier visar att personer som röker eller som har rökt är överrepresenterade bland de svåra fallen av covid-19. Kunskapsläget om samband mellan tobaksrökning och hur svårt sjuk man blir vid covid-19 är dock fortfarande oklart."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Kan jag och några vänner gå ut och äta på restaurang?",
-      "entities": {},
-      "examples": [
-        "Kan jag och några vänner gå ut och äta på restaurang?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        ""
-      ],
-      "set": {
-        "classifiedIntentName": "question: Kan jag och några vänner gå ut och äta på restaurang?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          ""
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Kan jag beställa take-away på en restaurang?",
-      "entities": {},
-      "examples": [
-        "Kan jag beställa take-away på en restaurang?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        ""
-      ],
-      "set": {
-        "classifiedIntentName": "question: Kan jag beställa take-away på en restaurang?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          ""
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Är det tillåtet att på en restaurang beställa över disk och sedan sätta sig och inventa servering, eller ska beställningen också ske vid bordet?",
-      "entities": {},
-      "examples": [
-        "Är det tillåtet att på en restaurang beställa över disk och sedan sätta sig och inventa servering, eller ska beställningen också ske vid bordet?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        ""
-      ],
-      "set": {
-        "classifiedIntentName": "question: Är det tillåtet att på en restaurang beställa över disk och sedan sätta sig och inventa servering, eller ska beställningen också ske vid bordet?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          ""
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Kommer det vara tillåtet att fortsätta med buffé där man tar mat och sedan sätter sig?",
-      "entities": {},
-      "examples": [
-        "Kommer det vara tillåtet att fortsätta med buffé där man tar mat och sedan sätter sig?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        ""
-      ],
-      "set": {
-        "classifiedIntentName": "question: Kommer det vara tillåtet att fortsätta med buffé där man tar mat och sedan sätter sig?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          ""
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Kan gäster på ett café beställa kaffe vid disken och sedan sätta sig vid valfritt bord? ",
-      "entities": {},
-      "examples": [
-        "Kan gäster på ett café beställa kaffe vid disken och sedan sätta sig vid valfritt bord? ",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        ""
-      ],
-      "set": {
-        "classifiedIntentName": "question: Kan gäster på ett café beställa kaffe vid disken och sedan sätta sig vid valfritt bord? ",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          ""
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Får gäster sitta och äta vid en bardisk?",
-      "entities": {},
-      "examples": [
-        "Får gäster sitta och äta vid en bardisk?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        ""
-      ],
-      "set": {
-        "classifiedIntentName": "question: Får gäster sitta och äta vid en bardisk?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          ""
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Kommer gatukök att få fortsätta servera genom luckan?",
-      "entities": {},
-      "examples": [
-        "Kommer gatukök att få fortsätta servera genom luckan?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        ""
-      ],
-      "set": {
-        "classifiedIntentName": "question: Kommer gatukök att få fortsätta servera genom luckan?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          ""
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Får jag stå i kö på snabbmatsrestaurangerna?",
-      "entities": {},
-      "examples": [
-        "Får jag stå i kö på snabbmatsrestaurangerna?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        ""
-      ],
-      "set": {
-        "classifiedIntentName": "question: Får jag stå i kö på snabbmatsrestaurangerna?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          ""
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Kan nattklubbar fortfarande hålla öppet?",
-      "entities": {},
-      "examples": [
-        "Kan nattklubbar fortfarande hålla öppet?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        ""
-      ],
-      "set": {
-        "classifiedIntentName": "question: Kan nattklubbar fortfarande hålla öppet?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          ""
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Kan jag fortsätta dricka alkohol på krogen?",
-      "entities": {},
-      "examples": [
-        "Kan jag fortsätta dricka alkohol på krogen?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        ""
-      ],
-      "set": {
-        "classifiedIntentName": "question: Kan jag fortsätta dricka alkohol på krogen?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          ""
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Omfattas casinon av föreskriften?",
-      "entities": {},
-      "examples": [
-        "Omfattas casinon av föreskriften?",
-        "vad gäller på casinon?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        ""
-      ],
-      "set": {
-        "classifiedIntentName": "question: Omfattas casinon av föreskriften?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          ""
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Riskerar personal på flygplatsen att smittas av CORONA? ",
-      "entities": {
-        "CORONA": CORONA
-      },
-      "examples": [
-        "Riskerar personal på flygplatsen att smittas av _CORONA? ",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        ""
-      ],
-      "set": {
-        "classifiedIntentName": "question: Riskerar personal på flygplatsen att smittas av CORONA? ",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          ""
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Behöver personal på flygplatsen ha skyddsutrustning mot CORONA? ",
-      "entities": {
-        "CORONA": CORONA
-      },
-      "examples": [
-        "Behöver personal på flygplatsen ha skyddsutrustning mot _CORONA? ",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        ""
-      ],
-      "set": {
-        "classifiedIntentName": "question: Behöver personal på flygplatsen ha skyddsutrustning mot CORONA? ",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          ""
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Kan sjuka passagerares eller friska medpassagerares bagage sprida CORONA?  ",
-      "entities": {
-        "CORONA": CORONA
-      },
-      "examples": [
-        "Kan sjuka passagerares eller friska medpassagerares bagage sprida _CORONA?  ",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        ""
-      ],
-      "set": {
-        "classifiedIntentName": "question: Kan sjuka passagerares eller friska medpassagerares bagage sprida CORONA?  ",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          ""
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Varför får ibland passagerare och flygpersonal fylla i och lämna sina kontaktuppgifter i så kallade Passenger Locator Cards (PLC)? ",
-      "entities": {},
-      "examples": [
-        "Varför får ibland passagerare och flygpersonal fylla i och lämna sina kontaktuppgifter i så kallade Passenger Locator Cards (PLC)? ",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        ""
-      ],
-      "set": {
-        "classifiedIntentName": "question: Varför får ibland passagerare och flygpersonal fylla i och lämna sina kontaktuppgifter i så kallade Passenger Locator Cards (PLC)? ",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          ""
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Om det i efterhand visar sig att en passagerare på ett flygplan har CORONA, kommer personal på flygplatsen eller medpassagerare informeras om det? ",
-      "entities": {
-        "CORONA": CORONA
-      },
-      "examples": [
-        "Om det i efterhand visar sig att en passagerare på ett flygplan har _CORONA, kommer personal på flygplatsen eller medpassagerare informeras om det? ",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        ""
-      ],
-      "set": {
-        "classifiedIntentName": "question: Om det i efterhand visar sig att en passagerare på ett flygplan har CORONA, kommer personal på flygplatsen eller medpassagerare informeras om det? ",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          ""
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Varför har vi inte hälsokontroller i Sverige på passagerare som kommer med flyg från andra länder?",
-      "entities": {},
-      "examples": [
-        "Varför har vi inte hälsokontroller i Sverige på passagerare som kommer med flyg från andra länder?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        ""
-      ],
-      "set": {
-        "classifiedIntentName": "question: Varför har vi inte hälsokontroller i Sverige på passagerare som kommer med flyg från andra länder?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          ""
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Behöver jag lämna läkarintyg om jag stannar hemma från jobbet?",
-      "entities": {},
-      "examples": [
-        "Behöver jag lämna läkarintyg om jag stannar hemma från jobbet?",
-        "behöver jag lämna sjukintyg?",
-        "behöver man lämna sjukintyg?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Nej. Från och med den 27 mars behöver du inte lämna in ett läkarintyg de första 21 dagarna när du är sjuk. Om du fortfarande är sjuk efter 21 dagar måste du lämna in ett läkarintyg när du ansöker om sjukpenning."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Behöver jag lämna läkarintyg om jag stannar hemma från jobbet?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Nej. Från och med den 27 mars behöver du inte lämna in ett läkarintyg de första 21 dagarna när du är sjuk. Om du fortfarande är sjuk efter 21 dagar måste du lämna in ett läkarintyg när du ansöker om sjukpenning."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Behöver mina anställda lämna läkarintyg om de stannar hemma från jobbet?",
-      "entities": {},
-      "examples": [
-        "Behöver mina anställda lämna läkarintyg om de stannar hemma från jobbet?",
-        "behöver mina anställda lämna sjukintyg?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Nej. Från och med den 27 mars behöver anställda inte lämna in ett läkarintyg de första 21 dagarna när du är sjuk. Om en anställd fortfarande är sjuk efter 21 dagar måste läkarintyg lämnas in vid ansökan om sjukpenning."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Behöver mina anställda lämna läkarintyg om de stannar hemma från jobbet?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Nej. Från och med den 27 mars behöver anställda inte lämna in ett läkarintyg de första 21 dagarna när du är sjuk. Om en anställd fortfarande är sjuk efter 21 dagar måste läkarintyg lämnas in vid ansökan om sjukpenning."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Vad gäller för sjuklönekostnader?",
-      "entities": {},
-      "examples": [
-        "Vad gäller för sjuklönekostnader?",
-        "vem betalar sjuklön?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Regeringen har föreslagit att staten tillfälligt tar hela kostnaden för alla sjuklönekostnader."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Vad gäller för sjuklönekostnader?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Regeringen har föreslagit att staten tillfälligt tar hela kostnaden för alla sjuklönekostnader."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Kommer karensavdraget att slopas?",
-      "entities": {},
-      "examples": [
-        "Kommer karensavdraget att slopas?",
-        "vad händer med karensavdraget?",
-        "vad kommer hända med karensavdraget?",
-        "kommer karensavdraget dras av?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Regeringen har föreslagit att tillfälligt slopa karensavdraget med anledning av coronaviruset/covid-19. När beslutet är fattat innebär det att du kommer kunna ansöka om ersättningen retroaktivt. "
-      ],
-      "set": {
-        "classifiedIntentName": "question: Kommer karensavdraget att slopas?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Regeringen har föreslagit att tillfälligt slopa karensavdraget med anledning av coronaviruset/covid-19. När beslutet är fattat innebär det att du kommer kunna ansöka om ersättningen retroaktivt. "
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Kan jag som egenföretagare söka ersättning vid karens?",
-      "entities": {},
-      "examples": [
-        "Kan jag som egenföretagare söka ersättning vid karens?",
-        "kan jag få karensersättning om jag är egenföretagare?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Regeringen har föreslagit att att du som egen företagare ska kunna söka ersättning för din egen karens."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Kan jag som egenföretagare söka ersättning vid karens?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Regeringen har föreslagit att att du som egen företagare ska kunna söka ersättning för din egen karens."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Jag deltar i ett program hos Arbetsförmedlingen. Vad gäller för mig?",
-      "entities": {},
-      "examples": [
-        "Jag deltar i ett program hos Arbetsförmedlingen. Vad gäller för mig?",
-        "vad gäller om jag deltar i ett program hos arbetsförmedlingen?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Regeringen har föreslagit att tillfälligt slopa karensdagen och kravet på läkarintyg ävenför dig som deltar i ett program hos Arbetsförmedlingen. Du ansöker om aktivitetsstöd, utvecklingsersättning och etableringsersättning precis som vanligt."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Jag deltar i ett program hos Arbetsförmedlingen. Vad gäller för mig?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Regeringen har föreslagit att tillfälligt slopa karensdagen och kravet på läkarintyg ävenför dig som deltar i ett program hos Arbetsförmedlingen. Du ansöker om aktivitetsstöd, utvecklingsersättning och etableringsersättning precis som vanligt."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: MITT BARN är sjukt. Kan jag få vab-ersättning?",
-      "entities": {},
-      "examples": [
-        "MITT BARN är sjukt. Kan jag få vab-ersättning?",
-        "kan jag få vab-ersättning om mitt barn är smittad av corona?",
-        "vårt barn är sjukt. kan vi få vab-ersättning?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Ja. Du kan få vab-ersättning om du måste vara hemma för att ditt barn är sjukt eller är smittbärare. Du kan också få ersättning om det finns en konkret misstanke från t.ex. läkare eller sjuksköterska om att ditt barn sprider smitta. "
-      ],
-      "set": {
-        "classifiedIntentName": "question: MITT BARN är sjukt. Kan jag få vab-ersättning?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Ja. Du kan få vab-ersättning om du måste vara hemma för att ditt barn är sjukt eller är smittbärare. Du kan också få ersättning om det finns en konkret misstanke från t.ex. läkare eller sjuksköterska om att ditt barn sprider smitta. "
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Jag vill inte att MITT BARN ska bli smittat av andra barn. Kan jag få vab-ersättning om jag stannar hemma med MITT BARN?",
-      "entities": {},
-      "examples": [
-        "Jag vill inte att MITT BARN ska bli smittat av andra barn. Kan jag få vab-ersättning om jag stannar hemma med MITT BARN?",
-        "kan jag få vab-ersättning om jag håller mitt barn hemma pga. rädsla för smitta?",
-        "jag är rädd att mitt barn ska bli smittat corona. kan jag få vab-ersättning om vi stannar hemma?",
-        "vi är rädda för att vårt barn ska bli smittat av corona. kan vi få vab-ersättning om någon av oss stannar hemma med vårt barn?",
-        "vi är rädda för att vårt barn ska bli smittat av corona. kan vi få vab-ersättning om vi stannar hemma med vårt barn?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Nej. Du kan inte få ersättning för vab om du håller ditt barn hemma i syfte att hen inte ska bli smittad av andra."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Jag vill inte att MITT BARN ska bli smittat av andra barn. Kan jag få vab-ersättning om jag stannar hemma med MITT BARN?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Nej. Du kan inte få ersättning för vab om du håller ditt barn hemma i syfte att hen inte ska bli smittad av andra."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Jag är rädd att bli smittad av CORONA. Har jag rätt att stanna hemma från jobbet och få smittbärarpenning?",
-      "entities": {
-        "CORONA": CORONA
-      },
-      "examples": [
-        "Jag är rädd att bli smittad av _CORONA. Har jag rätt att stanna hemma från jobbet och få smittbärarpenning?",
-        "jag är rädd att gå till jobbet pga. corona. kan jag få smittbärarpenning om jag stannar hemma?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Nej. För att få smittbärarpenning krävs ett läkarintyg som visar att du inte får arbeta på grund av att du är eller kan vara smittad av covid-19."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Jag är rädd att bli smittad av CORONA. Har jag rätt att stanna hemma från jobbet och få smittbärarpenning?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Nej. För att få smittbärarpenning krävs ett läkarintyg som visar att du inte får arbeta på grund av att du är eller kan vara smittad av covid-19."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Mitt barns skola har stängt. Kan jag få vab-ersättning?",
-      "entities": {},
-      "examples": [
-        "Mitt barns skola har stängt. Kan jag få vab-ersättning?",
-        "kan jag få vab-ersättning om mitt barns skola har stängt?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Just nu, nej. I dagsläget kan du inte få ersättning om förskolan eller skolan är stängd och ditt barn inte är sjukt eller sprider smitta. "
-      ],
-      "set": {
-        "classifiedIntentName": "question: Mitt barns skola har stängt. Kan jag få vab-ersättning?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Just nu, nej. I dagsläget kan du inte få ersättning om förskolan eller skolan är stängd och ditt barn inte är sjukt eller sprider smitta. "
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Mitt barn har varit sjukt i mer än sju dagar. Behöver jag skicka in läkarintyg?",
-      "entities": {},
-      "examples": [
-        "Mitt barn har varit sjukt i mer än sju dagar. Behöver jag skicka in läkarintyg?",
-        "behöver jag skicka in sjukintyg ifall mitt barn har varit sjukt i mer än sju dagar?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Nej. Från och med den 19 mars 2020 och tills vidare behöver du inte längre skicka in ett intyg när ditt barn har varit sjukt eller smittat i mer än sju dagar. Detta gäller oavsett orsaken till ditt barns sjukdom eller smitta. "
-      ],
-      "set": {
-        "classifiedIntentName": "question: Mitt barn har varit sjukt i mer än sju dagar. Behöver jag skicka in läkarintyg?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Nej. Från och med den 19 mars 2020 och tills vidare behöver du inte längre skicka in ett intyg när ditt barn har varit sjukt eller smittat i mer än sju dagar. Detta gäller oavsett orsaken till ditt barns sjukdom eller smitta. "
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Jag har smittats av CORONA. Har jag rätt till smittbärarpenning?",
-      "entities": {
-        "CORONA": CORONA
-      },
-      "examples": [
-        "Jag har smittats av _CORONA. Har jag rätt till smittbärarpenning?",
-        "kan jag få smittbärarpenning om jag smittats av covid-19?",
-        "min läkare har sagt åt mig att stanna hemma pga. covid-19. kan jag få smittbärarpenning?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Ja. Du har rätt till smittbärarpenning om en läkare beslutat att du inte får arbeta eftersom du är – eller kan vara – smittad av covid-19."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Jag har smittats av CORONA. Har jag rätt till smittbärarpenning?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Ja. Du har rätt till smittbärarpenning om en läkare beslutat att du inte får arbeta eftersom du är – eller kan vara – smittad av covid-19."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Jag är sjuk. Har jag rätt till smittbärarpenning?",
-      "entities": {},
-      "examples": [
-        "Jag är sjuk. Har jag rätt till smittbärarpenning?",
-        "min läkare har sagt åt mig att stanna hemma pga. jag är sjuk. kan jag få smittbärarpenning?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Om en läkare beslutat att du inte får arbeta eftersom du är – eller kan vara – smittad av en samhällsfarlig sjukdom, t.ex. covid-19, har du rätt till smittbärarpenning."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Jag är sjuk. Har jag rätt till smittbärarpenning?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Om en läkare beslutat att du inte får arbeta eftersom du är – eller kan vara – smittad av en samhällsfarlig sjukdom, t.ex. covid-19, har du rätt till smittbärarpenning."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Jag är sjuk. Har jag rätt till sjukpenning?",
-      "entities": {},
-      "examples": [
-        "Jag är sjuk. Har jag rätt till sjukpenning?",
-        "har jag rätt till smittbärarpenning om jag är sjuk?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Du kan ha rätt till sjukpenning om du inte kan arbeta för att du är sjuk. De första två veckorna du är sjuk betalar din arbetsgivare sjuklön till dig i stället för din vanliga lön. Om du fortfarande är sjuk efter de två veckorna kan du ansöka om sjukpenning från Försäkringskassan."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Jag är sjuk. Har jag rätt till sjukpenning?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Du kan ha rätt till sjukpenning om du inte kan arbeta för att du är sjuk. De första två veckorna du är sjuk betalar din arbetsgivare sjuklön till dig i stället för din vanliga lön. Om du fortfarande är sjuk efter de två veckorna kan du ansöka om sjukpenning från Försäkringskassan."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Kan jag förlänga min ersättningsperiod inom högkostnadsskyddet för tandvård på grund av covid-19?",
-      "entities": {},
-      "examples": [
-        "Kan jag förlänga min ersättningsperiod inom högkostnadsskyddet för tandvård på grund av covid-19?",
-        "kan jag förlänga mitt högkostnadsskydd för tandvård på grund av covid-19?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Nej. Högkostnadsskyddet beräknas per år, vilket betyder att alla åtgärder som görs under en sammanhängande period på tolv månader räknas in i ditt högkostnadsskydd."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Kan jag förlänga min ersättningsperiod inom högkostnadsskyddet för tandvård på grund av covid-19?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Nej. Högkostnadsskyddet beräknas per år, vilket betyder att alla åtgärder som görs under en sammanhängande period på tolv månader räknas in i ditt högkostnadsskydd."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Vad är smittbärarpenning?",
-      "entities": {},
-      "examples": [
-        "Vad är smittbärarpenning?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Om du inte får arbeta på grund av att du är smittad eller kan vara smittad av en allmänfarlig sjukdom kan du få smittbärarpenning. Du kan också ha rätt till ersättning för resor som du behöver göra, till exempel i samband med läkarundersökningar."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Vad är smittbärarpenning?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Om du inte får arbeta på grund av att du är smittad eller kan vara smittad av en allmänfarlig sjukdom kan du få smittbärarpenning. Du kan också ha rätt till ersättning för resor som du behöver göra, till exempel i samband med läkarundersökningar."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Hur mycket får jag av smittbärarpenning?",
-      "entities": {},
-      "examples": [
-        "Hur mycket får jag av smittbärarpenning?",
-        "vad är ersättningen för smittbärarpenning?",
-        "hur mycket ger smittbärarpenning?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Med smittbärarpenning får du knappt 80 procent av din lön, men högst 804 kronor per dag."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Hur mycket får jag av smittbärarpenning?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Med smittbärarpenning får du knappt 80 procent av din lön, men högst 804 kronor per dag."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Jag har smittats av CORONA. Kan jag få reseersättning för att jag är smittbärare?",
-      "entities": {
-        "CORONA": CORONA
-      },
-      "examples": [
-        "Jag har smittats av _CORONA. Kan jag få reseersättning för att jag är smittbärare?",
-        "kan jag få reseersättning om jag smittats av covid-19?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Ja. Du kan få ersättning för resor du behöver göra till läkarundersökningar, kontroller eller behandlingar. Vid ansökan av ersättning behöver du skicka in kvitton på reskostnader samt att resorna gällde behandling av covid-19."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Jag har smittats av CORONA. Kan jag få reseersättning för att jag är smittbärare?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Ja. Du kan få ersättning för resor du behöver göra till läkarundersökningar, kontroller eller behandlingar. Vid ansökan av ersättning behöver du skicka in kvitton på reskostnader samt att resorna gällde behandling av covid-19."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Min läkare har beslutat att jag måste vara hemma i 14 dagar på grund av smitta. När kan jag ansöka om smittbärarpenning?",
-      "entities": {},
-      "examples": [
-        "Min läkare har beslutat att jag måste vara hemma i 14 dagar på grund av smitta. När kan jag ansöka om smittbärarpenning?",
-        "när kan jag ansöka om smittbärarpenning?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Du ansöker om smittbärarpenning fram till det datum när du skickar in ansökan, eller när de 14 dagarna är över. Du kan inte ansöka framåt i tiden."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Min läkare har beslutat att jag måste vara hemma i 14 dagar på grund av smitta. När kan jag ansöka om smittbärarpenning?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Du ansöker om smittbärarpenning fram till det datum när du skickar in ansökan, eller när de 14 dagarna är över. Du kan inte ansöka framåt i tiden."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Min arbetsplats har stängt ner för att förhindra smittspridning. Har jag rätt till smittbärarpenning?",
-      "entities": {},
-      "examples": [
-        "Min arbetsplats har stängt ner för att förhindra smittspridning. Har jag rätt till smittbärarpenning?",
-        "kan jag få smittbärarpenning ifall min arbetsplats stängt ner?",
-        "vår arbetsplats har stängt ner för att förhindra smittspridning. Har vi rätt till smittbärarpenning?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Nej. Du måste ha ett läkarintyg som visar att du inte får arbeta på grund av risk för smitta."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Min arbetsplats har stängt ner för att förhindra smittspridning. Har jag rätt till smittbärarpenning?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Nej. Du måste ha ett läkarintyg som visar att du inte får arbeta på grund av risk för smitta."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Jag har kommit hem från ett riskområde. Min arbetsgivare uppmanar mig nu att stanna hemma från jobbet, trots att jag inte är smitttad. Har jag rätt till smittbärarpenning?",
-      "entities": {},
-      "examples": [
-        "Jag har kommit hem från ett riskområde. Min arbetsgivare uppmanar mig nu att stanna hemma från jobbet, trots att jag inte är smitttad. Har jag rätt till smittbärarpenning?",
-        "min arbetsgivare uppmanar mig att stanna hemma trots att jag inte är smittad, kan jag få smittbärarpenning?",
-        "vi har kommit hem från ett riskområde och stannar frivilligt hemma för att inte riskera spridning av coronaviruset. Har vi rätt till smittbärarpenning?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Nej. Du måste ha ett läkarintyg som visar att du inte får arbeta på grund av risk för smitta."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Jag har kommit hem från ett riskområde. Min arbetsgivare uppmanar mig nu att stanna hemma från jobbet, trots att jag inte är smitttad. Har jag rätt till smittbärarpenning?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Nej. Du måste ha ett läkarintyg som visar att du inte får arbeta på grund av risk för smitta."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Jag har kommit hem från ett riskområde och stannar frivilligt hemma för att inte riskera spridning av coronaviruset. Har jag rätt till smittbärarpenning?",
-      "entities": {},
-      "examples": [
-        "Jag har kommit hem från ett riskområde och stannar frivilligt hemma för att inte riskera spridning av coronaviruset. Har jag rätt till smittbärarpenning?",
-        "min arbetsgivare uppmanar mig att stanna hemma trots att jag inte är smittad, kan jag få smittbärarpenning?",
-        "vi har kommit hem från ett riskområde och stannar frivilligt hemma för att inte riskera spridning av coronaviruset. Har vi rätt till smittbärarpenning?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Nej. Du måste ha ett läkarintyg som visar att du inte får arbeta på grund av risk för smitta."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Jag har kommit hem från ett riskområde och stannar frivilligt hemma för att inte riskera spridning av coronaviruset. Har jag rätt till smittbärarpenning?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Nej. Du måste ha ett läkarintyg som visar att du inte får arbeta på grund av risk för smitta."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Kan jag få ett läkarintyg via telefon?",
-      "entities": {},
-      "examples": [
-        "Kan jag få ett läkarintyg via telefon?",
-        "går det att få läkarintyg via telefon?",
-        "Kan man få läkarintyg via telefon?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Ja. Läkare kan skriva ett läkarintyg per telefon."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Kan jag få ett läkarintyg via telefon?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Ja. Läkare kan skriva ett läkarintyg per telefon."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Gäller karensdag vid smittbärarpenning?",
-      "entities": {},
-      "examples": [
-        "Gäller karensdag vid smittbärarpenning?",
-        "görs karensavdrag vid smittbärarpenning?",
-        "görs det avdrag på smittbärarpenning?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Nej. du har rätt till smittbärarpenning från dag ett."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Gäller karensdag vid smittbärarpenning?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Nej. du har rätt till smittbärarpenning från dag ett."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Jag har smittats av CORONA och är arbetssökande. Har jag rätt till smittbärarpenning?",
-      "entities": {
-        "CORONA": CORONA
-      },
-      "examples": [
-        "Jag har smittats av _CORONA och är arbetssökande. Har jag rätt till smittbärarpenning?",
-        "jag har fått covid-19 och kan inte söka jobb. har jag rätt till smittbärarpenning?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Du kan ha rätt till smittbärarpenning om du inte kan söka arbete på grund av risken att smitta ner andra."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Jag har smittats av CORONA och är arbetssökande. Har jag rätt till smittbärarpenning?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Du kan ha rätt till smittbärarpenning om du inte kan söka arbete på grund av risken att smitta ner andra."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Vad innebär det att karensavdraget slopas? ",
-      "entities": {},
-      "examples": [
-        "Vad innebär det att karensavdraget slopas? ",
-        "vad händer om karensavdraget försvinner?",
-        "vad händer om karensavdraget tas bort?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Om karensavdraget slopas innebär det att staten kommer betala ut ersättning för den första sjukdagen. Just nu håller riksdagen på att fatta beslut om detta."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Vad innebär det att karensavdraget slopas? ",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Om karensavdraget slopas innebär det att staten kommer betala ut ersättning för den första sjukdagen. Just nu håller riksdagen på att fatta beslut om detta."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Jag är permitterad och arbetar 50 procent men får 90 procent av min tidigare lön. Hur ska jag fylla i min vab-ansökan?",
-      "entities": {},
-      "examples": [
-        "Jag är permitterad och arbetar 50 procent men får 90 procent av min tidigare lön. Hur ska jag fylla i min vab-ansökan?",
-        "jag är permitterad. hur fyller jag i min vab-ansökan?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Uppge de timmar du behövt avstå från arbete på grund av vab i din ansökan. När det gäller tiden \"du skulle ha arbetet\" uppger du din ordinerie arbetstid, det vill säga den arbetstid du hade innan du blev korttidspermitterad."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Jag är permitterad och arbetar 50 procent men får 90 procent av min tidigare lön. Hur ska jag fylla i min vab-ansökan?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Uppge de timmar du behövt avstå från arbete på grund av vab i din ansökan. När det gäller tiden \"du skulle ha arbetet\" uppger du din ordinerie arbetstid, det vill säga den arbetstid du hade innan du blev korttidspermitterad."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Mitt barn har smittats av CORONA, har jag rätt till vab?",
-      "entities": {
-        "CORONA": CORONA
-      },
-      "examples": [
-        "Mitt barn har smittats av _CORONA, har jag rätt till vab?",
-        "har jag rätt till vab om mitt barn smittats av corona?",
-        "vårt barn har smittats av corona, har vi rätt till vab?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Ja. Du kan få vab-ersättning om du måste avstå från arbete för att ta hand om ditt smittsamma barn. Du kan dock inte få vab-ersättning om du redan får smittbärarpenning. Om din arbetsgivare uppmanar dig att stanna får du kontrollera vad som gäller på din arbetsplats. "
-      ],
-      "set": {
-        "classifiedIntentName": "question: Mitt barn har smittats av CORONA, har jag rätt till vab?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Ja. Du kan få vab-ersättning om du måste avstå från arbete för att ta hand om ditt smittsamma barn. Du kan dock inte få vab-ersättning om du redan får smittbärarpenning. Om din arbetsgivare uppmanar dig att stanna får du kontrollera vad som gäller på din arbetsplats. "
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Mitt jobb har uppmanat mig att stanna hemma på grund av smittorisken av corona. Nu har mitt barn blivit sjukt, har jag rätt till vab?",
-      "entities": {},
-      "examples": [
-        "Mitt jobb har uppmanat mig att stanna hemma på grund av smittorisken av corona. Nu har mitt barn blivit sjukt, har jag rätt till vab?",
-        "mitt barn har fått corona medan jag stannat hemma från jobbet, har jag rätt till vab?",
-        "våra jobb har uppmanat oss att stanna hemma på grund av smittorisken av corona. Nu har vårt barn blivit sjukt, har vi rätt till vab?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Ja. Du kan få vab-ersättning om du måste avstå från ditt arbeta på grund av att du måste vårda ditt sjuka barn."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Mitt jobb har uppmanat mig att stanna hemma på grund av smittorisken av corona. Nu har mitt barn blivit sjukt, har jag rätt till vab?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Ja. Du kan få vab-ersättning om du måste avstå från ditt arbeta på grund av att du måste vårda ditt sjuka barn."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Hur många dagar kan jag vabba?",
-      "entities": {},
-      "examples": [
-        "Hur många dagar kan jag vabba?",
-        "Hur många dagar kan vi vabba?",
-        "Hur många dagar kan man vabba?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Du och den andra föräldern kan tillsammans å vab-ersättning för 120 dagar per barn och år."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Hur många dagar kan jag vabba?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Du och den andra föräldern kan tillsammans å vab-ersättning för 120 dagar per barn och år."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Vårt barn har blivit smittad av CORONA. Kan vi båda vabba samtidigt och få ersättning för samma barn och tid?",
-      "entities": {
-        "CORONA": CORONA
-      },
-      "examples": [
-        "Vårt barn har blivit smittad av _CORONA. Kan vi båda vabba samtidigt och få ersättning för samma barn och tid?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Nej. Båda föräldrarna kan inte få ersättning för samma barn och tid."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Vårt barn har blivit smittad av CORONA. Kan vi båda vabba samtidigt och få ersättning för samma barn och tid?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Nej. Båda föräldrarna kan inte få ersättning för samma barn och tid."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Vem är ansvarig för Sveriges hantering av CORONA?",
-      "entities": {
-        "CORONA": CORONA
-      },
-      "examples": [
-        "Vem är ansvarig för Sveriges hantering av _CORONA?",
-        "hur hanteras _CORONA?",
-        "vem ansvarar för Sverige?",
-        "vem arbetar med _CORONA?",
-        "vem är ansvarig för _CORONA?",
-        "vilka jobbar med _CORONA?",
-        "vilka myndigheter tar hand om _CORONA?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "MSB, Socialstyrelsen samt Regeringskansliet (genom UD och Socialdepartementet) är de myndigheter som i störst utsträckning arbetar med covid-19. Därutöver har regionerna ansvar för att möta smittan genom de lokala vårdcentralerna samt respektive regions smittskyddsläkare."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Vem är ansvarig för Sveriges hantering av CORONA?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "MSB, Socialstyrelsen samt Regeringskansliet (genom UD och Socialdepartementet) är de myndigheter som i störst utsträckning arbetar med covid-19. Därutöver har regionerna ansvar för att möta smittan genom de lokala vårdcentralerna samt respektive regions smittskyddsläkare."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Vad gör MSB för att hantera CORONA?",
-      "entities": {
-        "CORONA": CORONA
-      },
-      "examples": [
-        "Vad gör MSB för att hantera _CORONA?",
-        "vad gör MSB?",
-        "hur jobbar MSB med _CORONA?",
-        "hur hanterar MSB _CORONA?",
-        "vad jobbar MSB med?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Just nu tar MSB fram nationella lägesbilder för samhällets säkerhet och håller regeringskansliet uppdaterade om hur utvecklingen av covid-19 kan påverka samhället. "
-      ],
-      "set": {
-        "classifiedIntentName": "question: Vad gör MSB för att hantera CORONA?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Just nu tar MSB fram nationella lägesbilder för samhällets säkerhet och håller regeringskansliet uppdaterade om hur utvecklingen av covid-19 kan påverka samhället. "
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Hur AUXILIARY verksamheter skötas under pandemin?",
-      "entities": {},
-      "examples": [
-        "Hur AUXILIARY verksamheter skötas under pandemin?",
-        "hur AUXILIARY verksamheter skötas just nu?",
-        "AUXILIARY PRONOMEN stänga ner min verksamhet?",
-        "vem har ansvar för hur en verksamhet sköts just nu?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Den som har ansvar för en verksamhet under normala förhållanden har vid en krissituationen ansvar för att den sköts som vanligt, med hänsyn till nationella riktlinjer. "
-      ],
-      "set": {
-        "classifiedIntentName": "question: Hur AUXILIARY verksamheter skötas under pandemin?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Den som har ansvar för en verksamhet under normala förhållanden har vid en krissituationen ansvar för att den sköts som vanligt, med hänsyn till nationella riktlinjer. "
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Kan en kommun vidta andra åtgärder än andra om det är stor smittspridning där?",
-      "entities": {},
-      "examples": [
-        "Kan en kommun vidta andra åtgärder än andra om det är stor smittspridning där?",
-        "kan en kommun stängas ner ifall det blir för stor smittspridning där?",
-        "vad händer om det blir stor smittspridning i en kommun?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Ja. Om det är stor smittspridning i en kommun kan den kommunen välja att vidta störra åtgärder än vad som sker i en mindre drabbad kommun."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Kan en kommun vidta andra åtgärder än andra om det är stor smittspridning där?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Ja. Om det är stor smittspridning i en kommun kan den kommunen välja att vidta störra åtgärder än vad som sker i en mindre drabbad kommun."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Hur ser det ut med beredskapslager?",
-      "entities": {},
-      "examples": [
-        "Hur ser det ut med beredskapslager?",
-        "finns det tillräckligt med medicin?",
-        "har PRONOMEN tillräckliga resurser?",
-        "finns det lager så att alla klarar sig?",
-        "vem ansvarar för att det finns tillräckliga resurser?",
-        "finns det beredskapslager?",
-        "hur ser Sveriges beredskapslager ut?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Regionerna är ansvariga för att tillräckliga resurser, t.ex. förbrukningsmaterial och medicinteknisk utrustning, finns tillgänlig för att kunna bedriva sin verksamhet och ge god vård enligt hälso- och sjukvårdslagen. Regionerna samt kommunerna ansvarar även för att de har läkemdel i tillräcklig mängd."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Hur ser det ut med beredskapslager?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Regionerna är ansvariga för att tillräckliga resurser, t.ex. förbrukningsmaterial och medicinteknisk utrustning, finns tillgänlig för att kunna bedriva sin verksamhet och ge god vård enligt hälso- och sjukvårdslagen. Regionerna samt kommunerna ansvarar även för att de har läkemdel i tillräcklig mängd."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: AUXILIARY PRONOMEN bunkra upp med mat?",
-      "entities": {},
-      "examples": [
-        "AUXILIARY PRONOMEN bunkra upp med mat?",
-        "AUXILIARY PRONOMEN köpa extra mat?",
-        "AUXILIARY PRONOMEN köpa extra toapapper?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Nej, inte mer än MSBs allmänna rekommendation som säger att man alltid bör vara reda på att kunna klara sig utan samhällets hjälp upp till en vecka."
-      ],
-      "set": {
-        "classifiedIntentName": "question: AUXILIARY PRONOMEN bunkra upp med mat?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Nej, inte mer än MSBs allmänna rekommendation som säger att man alltid bör vara reda på att kunna klara sig utan samhällets hjälp upp till en vecka."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: vad är MSBs rekommendation gällande inköp av mat?",
-      "entities": {},
-      "examples": [
-        "vad är MSBs rekommendation gällande inköp av mat?",
-        "vad är MSBs rekommendation gällande inköp av toapapper?",
-        "hur mycket mat rekommenderas att PRONOMEN har hemma?",
-        "hur mycket toapapper rekommenderas att PRONOMEN har hemma?",
-        "hur mycket mat AUXILIARY PRONOMEN ha hemma?",
-        "hur mycket borde AUXILIARY PRONOMEN ha hemma?",
-        "hur nödvändigt är det att bunkra upp med mat?",
-        "hur nödvändigt är det att bunkra upp med toapapper?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "MSBs allmänna rekommendation säger att man alltid bör vara reda på att kunna klara sig utan samhällets hjälp upp till en vecka."
-      ],
-      "set": {
-        "classifiedIntentName": "question: vad är MSBs rekommendation gällande inköp av mat?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "MSBs allmänna rekommendation säger att man alltid bör vara reda på att kunna klara sig utan samhällets hjälp upp till en vecka."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Kommer leveranser av mat och mediciner omfattas av inreseförbudet till Sverige?",
-      "entities": {},
-      "examples": [
-        "Kommer leveranser av mat och mediciner omfattas av inreseförbudet till Sverige?",
-        "gäller inreseförbudet leveranser av mat och mediciner?",
-        "gäller inreseförbudet leveranser av mat?",
-        "gäller inreseförbudet leveranser av mediciner?",
-        "kommer mat och mediciner fortfarande leveras till Sverige?",
-        "kommer mat fortfarande leveras till Sverige?",
-        "kommer mediciner fortfarande leveras till Sverige?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Nej, varutransporter kommer inte omfattas av inreseförbudet till Sverige."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Kommer leveranser av mat och mediciner omfattas av inreseförbudet till Sverige?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Nej, varutransporter kommer inte omfattas av inreseförbudet till Sverige."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: kommer mat och mediciner fortfarande leveras till Sverige?",
-      "entities": {},
-      "examples": [
-        "kommer mat och mediciner fortfarande leveras till Sverige?",
-        "kommer mat fortfarande leveras till Sverige?",
-        "kommer mediciner fortfarande leveras till Sverige?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Ja, mat och mediciner kommer fortfarande leveras till Sverige. "
-      ],
-      "set": {
-        "classifiedIntentName": "question: kommer mat och mediciner fortfarande leveras till Sverige?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Ja, mat och mediciner kommer fortfarande leveras till Sverige. "
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Kommer skolorna stängas?",
-      "entities": {},
-      "examples": [
-        "Kommer skolorna stängas?",
-        "när stängs grundskolorna?",
-        "finns det risk att grundskolorna stänger?",
-        "kan grundskolorna stängas?",
-        "kan skolan stängas?",
-        "när stängs skolorna?",
-        "finns det risk att skolorna stänger?",
-        "när stängs grundskolan?",
-        "finns det risk att grundskolan stänger?",
-        "kan grundskolan stängas?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "För närvarande finns inget regeringsbeslut om stängning av skolverksamhet med anledning av coronavirussjukdomen."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Kommer skolorna stängas?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "För närvarande finns inget regeringsbeslut om stängning av skolverksamhet med anledning av coronavirussjukdomen."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Vem har rätt till omsorg om skolorna stängs?",
-      "entities": {},
-      "examples": [
-        "Vem har rätt till omsorg om skolorna stängs?",
-        "vem har rätt till omsorg om skolan stängs?",
-        "vem har rätt till omsorg om förskolan stängs?",
-        "vem har rätt till omsorg om fritids stängs?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Om förskola, fritidshem eller annan pedagogisk verksamhet för barn skulle stängas kommer vårdnadshavare som deltar i samhällsviktig verksamhet, under vissa förutsättningar, erbjudas omsorg för barn så att samhällets funktionalitet kan upprätthållas. Endast vårdnadshavare som deltar i samhällsviktiga verksamheter kommer ha rätt till denna omsorg, samt barn och elever som behöver få särskilt stöd i sin utveckling av fysiska, psykiska eller andra skäl."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Vem har rätt till omsorg om skolorna stängs?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Om förskola, fritidshem eller annan pedagogisk verksamhet för barn skulle stängas kommer vårdnadshavare som deltar i samhällsviktig verksamhet, under vissa förutsättningar, erbjudas omsorg för barn så att samhällets funktionalitet kan upprätthållas. Endast vårdnadshavare som deltar i samhällsviktiga verksamheter kommer ha rätt till denna omsorg, samt barn och elever som behöver få särskilt stöd i sin utveckling av fysiska, psykiska eller andra skäl."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Vad betyder deltar i samhällsviktig verksamhet?",
-      "entities": {},
-      "examples": [
-        "Vad betyder deltar i samhällsviktig verksamhet?",
-        "vad menas med deltar i samhällsviktig verksamhet?",
-        "vad innebär det att delta i samhällsviktig verksamhet?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Att man är anställd inom verksamheten, alternativt arbetar i verksamheten utan att vara anställd där. Det kan också gälla ifall man är tjänstepliktig enligt lagen om skydd mot olyckor, eller att man är skyldig att delta i verksamheten."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Vad betyder deltar i samhällsviktig verksamhet?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Att man är anställd inom verksamheten, alternativt arbetar i verksamheten utan att vara anställd där. Det kan också gälla ifall man är tjänstepliktig enligt lagen om skydd mot olyckor, eller att man är skyldig att delta i verksamheten."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Vad är en samhällsviktig verksamhet?",
-      "entities": {},
-      "examples": [
-        "Vad är en samhällsviktig verksamhet?",
-        "definiera samhällsviktig verksamhet",
-        "förklara vad samhällsviktig verksamhet är",
-        "vilka verksamheter räknas som samhällsviktiga?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Om ett eventuellt bortfall eller svår störning av en verksamhet riskerar att leda till en allvarlig kris i samhället anses verksamheten som samhällsviktig. Det kan även gälla en verksamhet som behövs för att hantera den pågående krisen."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Vad är en samhällsviktig verksamhet?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Om ett eventuellt bortfall eller svår störning av en verksamhet riskerar att leda till en allvarlig kris i samhället anses verksamheten som samhällsviktig. Det kan även gälla en verksamhet som behövs för att hantera den pågående krisen."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Räcker det med att PRONOMEN som vårdnadshavare deltar i samhällsviktig verksamhet för att barnet ska ha rätt till omsorg?",
-      "entities": {},
-      "examples": [
-        "Räcker det med att PRONOMEN som vårdnadshavare deltar i samhällsviktig verksamhet för att barnet ska ha rätt till omsorg?",
-        "har mina barn rätt till omsorg om jag deltar i samhällsviktig verksamhet?",
-        "har mina barn rätt till omsorg om jag jobbar i samhällsviktig verksamhet?",
-        "har mina barn rätt till omsorg om jag jobbar med samhällsviktig verksamhet?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Nej. Det behövs också att din samhällsviktiga verksamhet anser att den behöver dig för att upprätthålla verksamheten på en acceptabel nivå, t.ex. om du har en nyckelkompetens eler nyckelroll inom verksamheten. "
-      ],
-      "set": {
-        "classifiedIntentName": "question: Räcker det med att PRONOMEN som vårdnadshavare deltar i samhällsviktig verksamhet för att barnet ska ha rätt till omsorg?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Nej. Det behövs också att din samhällsviktiga verksamhet anser att den behöver dig för att upprätthålla verksamheten på en acceptabel nivå, t.ex. om du har en nyckelkompetens eler nyckelroll inom verksamheten. "
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: När hålls pressträffarna?",
-      "entities": {},
-      "examples": [
-        "När hålls pressträffarna?",
-        "när är det pressträff?",
-        "är det pressträff idag?",
-        "är det pressträff på helger?",
-        "är det pressträff imorgon?",
-        "när sker pressträff?",
-        "när sker pressträffarna?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Pressträffarna hålls varje vardag klockan 14.00."
-      ],
-      "set": {
-        "classifiedIntentName": "question: När hålls pressträffarna?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Pressträffarna hålls varje vardag klockan 14.00."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Vilka myndigheter håller i pressträffarna?",
-      "entities": {},
-      "examples": [
-        "Vilka myndigheter håller i pressträffarna?",
-        "vem håller i pressträffarna?",
-        "vem håller i pressträffen?",
-        "vilka håller i pressträffarna?",
-        "vilka håller i pressträffen?",
-        "vem är med på pressträffen?",
-        "vilka är med på pressträffen?",
-        "vilka medverkar på pressträffen?",
-        "vem medverkar på pressträffen?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "MSB, Folkhälsomyndigheten och Socialstyrelsen, samt representanter från andra berörda myndigheter."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Vilka myndigheter håller i pressträffarna?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "MSB, Folkhälsomyndigheten och Socialstyrelsen, samt representanter från andra berörda myndigheter."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Vad görs för att sprida information om CORONA?",
-      "entities": {
-        "CORONA": CORONA
-      },
-      "examples": [
-        "Vad görs för att sprida information om _CORONA?",
-        "hur sprids information om _CORONA?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "MSB, Folkhälsomyndigheten och Socialstyrelsen genomför just nu en stor informationssatsning rörande covid-19. Målet är att så många som möjligt av Sveriges befolkning ska känna till vad de kan göra för att bromsa smittspridningen. Redan nu hålls regelbundna pressträffar varje vardag för att uppdatera om läget. En informationssatsning på både svenska och engelska har även startat i mindre omfattning på Facebook, Instagram, Spotify samt radio. "
-      ],
-      "set": {
-        "classifiedIntentName": "question: Vad görs för att sprida information om CORONA?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "MSB, Folkhälsomyndigheten och Socialstyrelsen genomför just nu en stor informationssatsning rörande covid-19. Målet är att så många som möjligt av Sveriges befolkning ska känna till vad de kan göra för att bromsa smittspridningen. Redan nu hålls regelbundna pressträffar varje vardag för att uppdatera om läget. En informationssatsning på både svenska och engelska har även startat i mindre omfattning på Facebook, Instagram, Spotify samt radio. "
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Hur ska de som varken pratar svenska eller engelska kunna ta till sig av informationen från myndigheterna?",
-      "entities": {},
-      "examples": [
-        "Hur ska de som varken pratar svenska eller engelska kunna ta till sig av informationen från myndigheterna?",
-        "Hur nås information till de som varken pratar svenska eller engelska?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "MSB, tillsammans med föreningar, trossamfund, frivilligorganisationer och andra myndigheter, jobbar just nu för att säkerställa att budskapet når ut även de till de som talar ett annat språk än svenska och engelska."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Hur ska de som varken pratar svenska eller engelska kunna ta till sig av informationen från myndigheterna?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "MSB, tillsammans med föreningar, trossamfund, frivilligorganisationer och andra myndigheter, jobbar just nu för att säkerställa att budskapet når ut även de till de som talar ett annat språk än svenska och engelska."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Vad finns det för stöd till äldre?",
-      "entities": {},
-      "examples": [
-        "Vad finns det för stöd till äldre?",
-        "vad finns det för stöd till riskgrupperna?",
-        "hur hjälps äldre?",
-        "hur hjälps riskgrupperna?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "MSB har tillsammans med SKR kommit överens med organisationer inom civilsamhället att stödja kommuner för att hjälpa personer över 70 år, eller som tillhör annan riskgrupp, med matinköp och upphämtning av mediciner. Åtgärderna innebär i ett första steg att stärka de frivilliga resursgrupper som finns i 155 kommuner idag. Målet är kunna erbjuda frivilligstöd till samtliga 290 kommuner."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Vad finns det för stöd till äldre?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "MSB har tillsammans med SKR kommit överens med organisationer inom civilsamhället att stödja kommuner för att hjälpa personer över 70 år, eller som tillhör annan riskgrupp, med matinköp och upphämtning av mediciner. Åtgärderna innebär i ett första steg att stärka de frivilliga resursgrupper som finns i 155 kommuner idag. Målet är kunna erbjuda frivilligstöd till samtliga 290 kommuner."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Jag är över 70, hur kan jag få hjälp?",
-      "entities": {},
-      "examples": [
-        "Jag är över 70, hur kan jag få hjälp?",
-        "jag är äldre, hur kan jag få hjälp?",
-        "vi är över 70, hur kan vi få hjälp?",
-        "vi är äldre, hur kan vi få hjälp?",
-        "jag tillhör riskgrupp, hur kan jag få hjälp?",
-        "vi tillhör riskgrupp, hur kan vi få hjälp?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "I de kommuner där frivilligstödet används anger kommunen ett sätt för hjälpsökande att be om hjälp. Frivilligorganisationerna kommer sedan kopplas ihop med den hjälpsökande och se till att personen får den hjälp den behöver."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Jag är över 70, hur kan jag få hjälp?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "I de kommuner där frivilligstödet används anger kommunen ett sätt för hjälpsökande att be om hjälp. Frivilligorganisationerna kommer sedan kopplas ihop med den hjälpsökande och se till att personen får den hjälp den behöver."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: I vilka kommuner finns det frivilliga resursgrupper?",
-      "entities": {},
-      "examples": [
-        "I vilka kommuner finns det frivilliga resursgrupper?",
-        "i vilka kommuner finns FRG?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Här kan du se i vilka kommuner det finns frivilligorganisationer [länk till lista på kommuner]"
-      ],
-      "set": {
-        "classifiedIntentName": "question: I vilka kommuner finns det frivilliga resursgrupper?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Här kan du se i vilka kommuner det finns frivilligorganisationer [länk till lista på kommuner]"
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Det finns ingen frivillig resursgrupp i min kommun, hur kan jag få hjälp?",
-      "entities": {},
-      "examples": [
-        "Det finns ingen frivillig resursgrupp i min kommun, hur kan jag få hjälp?",
-        "FRG finns inte i min kommun, hur kan jag få hjälp?",
-        "det finns ingen frivillig resursgrupp i min kommun, kan jag få hjälp ändå?",
-        "FRG finns inte i min kommun, kan jag få hjälp ändå?",
-        "kan jag få hjälp även fast det inte finns någon frivillig resursgrupp i min kommun?",
-        "kan jag få hjälp även fast FRG inte finns i min kommun?",
-        "det finns inget frivilligstöd i min kommun, hur kan jag få hjälp?",
-        "det finns inget frivilligstöd i min kommun, kan jag få hjälp ändå?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "I de kommuner där frivilligorganisationer inte finns kan äldre och personer i riskgrupper få hjälp av Röda Korset."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Det finns ingen frivillig resursgrupp i min kommun, hur kan jag få hjälp?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "I de kommuner där frivilligorganisationer inte finns kan äldre och personer i riskgrupper få hjälp av Röda Korset."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Hur länge gäller frivilligstödet?",
-      "entities": {},
-      "examples": [
-        "Hur länge gäller frivilligstödet?",
-        "hur länge kommer FRG hjälpa till?",
-        "hur länge kan jag få hjälp av FRG?",
-        "hur länge kan jag få hjälp av frivilligstödet?",
-        "hur länge kommer de frivilliga resursgrupperna hjälpa till?",
-        "hur länge kan jag få hjälp av de frivilliga resursgrupperna?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Äldre och personer i riskgrupper kommer få hjälp så länge hjälpen behövs."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Hur länge gäller frivilligstödet?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Äldre och personer i riskgrupper kommer få hjälp så länge hjälpen behövs."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Hur påverkar Corona polisens arbete",
-      "entities": {},
-      "examples": [
-        "Hur påverkar Corona polisens arbete",
-        "Vad gör polisen för att hjälpa under krisen",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        ""
-      ],
-      "set": {
-        "classifiedIntentName": "question: Hur påverkar Corona polisens arbete",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          ""
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Kommer bedragare att utnyttja corona krisen",
-      "entities": {},
-      "examples": [
-        "Kommer bedragare att utnyttja corona krisen",
-        "Finns det en ökning av bedrägerier kopplat till corona",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        ""
-      ],
-      "set": {
-        "classifiedIntentName": "question: Kommer bedragare att utnyttja corona krisen",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          ""
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Kan företagare råka ut för bedragare som utnyttjar situationen",
-      "entities": {},
-      "examples": [
-        "Kan företagare råka ut för bedragare som utnyttjar situationen",
-        "Ser polisen en ökning av bedrägerier mot företag just nu",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        ""
-      ],
-      "set": {
-        "classifiedIntentName": "question: Kan företagare råka ut för bedragare som utnyttjar situationen",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          ""
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Vilka råd ger polisen för att inte bli utsatt för bedrägerier",
-      "entities": {},
-      "examples": [
-        "Vilka råd ger polisen för att inte bli utsatt för bedrägerier",
-        "Vad kan jag göra för att undvika bedrägerier",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        ""
-      ],
-      "set": {
-        "classifiedIntentName": "question: Vilka råd ger polisen för att inte bli utsatt för bedrägerier",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          ""
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Äldre blir utsatta för bedrägerier, vad gör polisen för att reducera detta",
-      "entities": {},
-      "examples": [
-        "Äldre blir utsatta för bedrägerier, vad gör polisen för att reducera detta",
-        "Vad gör polisen för att minska bedrägerier mot äldre",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        ""
-      ],
-      "set": {
-        "classifiedIntentName": "question: Äldre blir utsatta för bedrägerier, vad gör polisen för att reducera detta",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          ""
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Gäller inreseförbudet alla eller finns det undantag",
-      "entities": {},
-      "examples": [
-        "Gäller inreseförbudet alla eller finns det undantag",
-        "Vem får resa in i Sverige nu",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        ""
-      ],
-      "set": {
-        "classifiedIntentName": "question: Gäller inreseförbudet alla eller finns det undantag",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          ""
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Vad innebär att polisen har en nationell särskild händelse kring corona viruset",
-      "entities": {},
-      "examples": [
-        "Vad innebär att polisen har en nationell särskild händelse kring corona viruset",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        ""
-      ],
-      "set": {
-        "classifiedIntentName": "question: Vad innebär att polisen har en nationell särskild händelse kring corona viruset",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          ""
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Får polisen ingripa mot större sammankomster",
-      "entities": {},
-      "examples": [
-        "Får polisen ingripa mot större sammankomster",
-        "Om många samlas på allmän plats, får då polisen ingripa",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        ""
-      ],
-      "set": {
-        "classifiedIntentName": "question: Får polisen ingripa mot större sammankomster",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          ""
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Vad kategoriseras som allmän plats",
-      "entities": {},
-      "examples": [
-        "Vad kategoriseras som allmän plats",
-        "Vad kategoriseras som offentlig plats",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        ""
-      ],
-      "set": {
-        "classifiedIntentName": "question: Vad kategoriseras som allmän plats",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          ""
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Gäller max 500 personer även för privata sammankomster",
-      "entities": {},
-      "examples": [
-        "Gäller max 500 personer även för privata sammankomster",
-        "Max 500 personer gäller för offentlig plats, vad gäller för andra evenemang och tillställningar",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        ""
-      ],
-      "set": {
-        "classifiedIntentName": "question: Gäller max 500 personer även för privata sammankomster",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          ""
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: vad betyder social distansiering",
-      "entities": {},
-      "examples": [
-        "vad betyder social distansiering",
-        "vad är social distansiering?",
-        "vad är syftet med social distansering?",
-        "hur fungerar social distansering?",
-        "vad är målet med social distansering?",
-        "vad gäller vid social distansering?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Social distansering syftar till att förhindra sjuka människor från att komma i nära kontakt med friska människor för att minska möjligheterna till överföring av sjukdomar. Just nu är målet med social distansering att bromsa utbrottet för att minska risken för infektion bland högrisk-grupper samt minska belastningen på sjukvårdssystem och arbetstagare."
-      ],
-      "set": {
-        "classifiedIntentName": "question: vad betyder social distansiering",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Social distansering syftar till att förhindra sjuka människor från att komma i nära kontakt med friska människor för att minska möjligheterna till överföring av sjukdomar. Just nu är målet med social distansering att bromsa utbrottet för att minska risken för infektion bland högrisk-grupper samt minska belastningen på sjukvårdssystem och arbetstagare."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Hur kan jag utöva social distansering?",
-      "entities": {},
-      "examples": [
-        "Hur kan jag utöva social distansering?",
-        "hur gör man social distansering?",
-        "vad kan man göra för social distansering?",
-        "hur göra social distansering?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Undvik offentliga, folktäta platser som t.ex. shopping-centrum, bio eller arenor. Håll avstånd (ungefär 2 meter, eller 6 fot) från andra om möjligt."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Hur kan jag utöva social distansering?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Undvik offentliga, folktäta platser som t.ex. shopping-centrum, bio eller arenor. Håll avstånd (ungefär 2 meter, eller 6 fot) från andra om möjligt."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Vad mer kan jag göra för att förhindra spridning av viruset?",
-      "entities": {},
-      "examples": [
-        "Vad mer kan jag göra för att förhindra spridning av viruset?",
-        "hur förhindrar jag spridning av virus?",
-        "vad kan jag göra för att förhindra virusspridning?",
-        "hur stoppar jag virusspridning?",
-        "hur förebygger jag virusspridning?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Tvätta händerna regelbundet och ordentligt med tvål och vatten minst 20 sekunder. Använd alcogel om tvål och vatten inte finns tillgängligt. Vidrör varken ögon, näsa eller mun med otvättade händer. Rengör och desinfektera ytor och saker som människor vanligtvis rör. Hosta och nys i böjd armbåge eller näsduk. Se alltid till att slänga näsduken i soporna."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Vad mer kan jag göra för att förhindra spridning av viruset?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Tvätta händerna regelbundet och ordentligt med tvål och vatten minst 20 sekunder. Använd alcogel om tvål och vatten inte finns tillgängligt. Vidrör varken ögon, näsa eller mun med otvättade händer. Rengör och desinfektera ytor och saker som människor vanligtvis rör. Hosta och nys i böjd armbåge eller näsduk. Se alltid till att slänga näsduken i soporna."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Kan varmare väder stoppa virusutbrottet?",
-      "entities": {},
-      "examples": [
-        "Kan varmare väder stoppa virusutbrottet?",
-        "kommer corona sluta spridas till sommaren?",
-        "kommer virusutbrottet avstanna när det blir varmt?",
-        "kommer spridningen av corona avta till sommaren?",
-        "kan spridningen av corona minska när vädret blir varmare?",
-        "sprids corona långsammare i varmt väder?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "För närvarande är det inte känt om spridningen av Covid-19 kommer att minska när vädret blir varmare. Utredningar gällande överförbarhet, svårighetsgrad och andra funktioner förknippade med Covid-19 pågår just nu. "
-      ],
-      "set": {
-        "classifiedIntentName": "question: Kan varmare väder stoppa virusutbrottet?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "För närvarande är det inte känt om spridningen av Covid-19 kommer att minska när vädret blir varmare. Utredningar gällande överförbarhet, svårighetsgrad och andra funktioner förknippade med Covid-19 pågår just nu. "
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Vad innebär inreseförbudet?",
-      "entities": {},
-      "examples": [
-        "Vad innebär inreseförbudet?",
-        "vad är inreseförbudet?",
-        "vad händer vid inreseförbudet?",
-        "när är inreseförbudet?",
-        "varför har vi inreseförbud?",
-        "när börjar inreseförbudet?",
-        "när slutar inreseförbudet?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Från och med den 19 mars och 30 dagar framåt kommer icke nödvändiga resor till Sverige från länder utanför Europa att stoppas. Detta efter beslut från den svenska regeringen i ett försök att minska spridningen av Covid-19. Vid behov kan beslutet komma att förlängas."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Vad innebär inreseförbudet?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Från och med den 19 mars och 30 dagar framåt kommer icke nödvändiga resor till Sverige från länder utanför Europa att stoppas. Detta efter beslut från den svenska regeringen i ett försök att minska spridningen av Covid-19. Vid behov kan beslutet komma att förlängas."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Vilka gäller inreseförbudet?",
-      "entities": {},
-      "examples": [
-        "Vilka gäller inreseförbudet?",
-        "vem rörs av inreseförbudet?",
-        "vem rörs inte av inreseförbudet?",
-        "vilka undantag gäller för inreseförbudet?",
-        "görs det undantag för inreseförbudet?",
-        "vem görs undantag för gällande inreseförbudet?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Inreseförbudet gäller för alla utländska medborgare som försöker resa in i Sverige från ett land som inte ingår i Schengensamarbetet samt Schweiz. Undantag görs för svenska medborgare och andra personer som är bosatta med eget hem i Sverige samt diplomater och personer som är i behov av internationellt skydd. Även personer som utför nödvändiga funktioner i Sverige, t.ex hälso- och sjukvårdspersonal som transporterar varor till Sverige undantas från inreseförbudet. "
-      ],
-      "set": {
-        "classifiedIntentName": "question: Vilka gäller inreseförbudet?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Inreseförbudet gäller för alla utländska medborgare som försöker resa in i Sverige från ett land som inte ingår i Schengensamarbetet samt Schweiz. Undantag görs för svenska medborgare och andra personer som är bosatta med eget hem i Sverige samt diplomater och personer som är i behov av internationellt skydd. Även personer som utför nödvändiga funktioner i Sverige, t.ex hälso- och sjukvårdspersonal som transporterar varor till Sverige undantas från inreseförbudet. "
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: vad är direkt och indirekt kontaktsmitta?",
-      "entities": {},
-      "examples": [
-        "vad är direkt och indirekt kontaktsmitta?",
-        "vad är direktkontakt?",
-        "vad är indirekt kontaktsmitta?",
-        "hur smittar man genom direktkontakt?",
-        "hur smittar viruset via indirekt kontakt?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Direkt kontaktsmitta kan ske vid direkt fysisk kontakt mellan en smittbärare och en annan person. Vid indirekt kontaktsmitta överförs smittämnet istället via mellanled från en person till en annan. Kontaktsmitta är den vanligaste smittvägen i vården."
-      ],
-      "set": {
-        "classifiedIntentName": "question: vad är direkt och indirekt kontaktsmitta?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Direkt kontaktsmitta kan ske vid direkt fysisk kontakt mellan en smittbärare och en annan person. Vid indirekt kontaktsmitta överförs smittämnet istället via mellanled från en person till en annan. Kontaktsmitta är den vanligaste smittvägen i vården."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Talar du engelska?",
-      "entities": {},
-      "examples": [
-        "Talar du engelska?",
-        "Kan du prata engelska?",
-        "Finns du på engelska?",
-        "Snackar du engelska?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Än så länge pratar jag bara svenska, men det kan mycket väl hända att jag lär mig fler språk i framtiden."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Talar du engelska?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Än så länge pratar jag bara svenska, men det kan mycket väl hända att jag lär mig fler språk i framtiden."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Jag kan inte andas",
-      "entities": {},
-      "examples": [
-        "Jag kan inte andas",
-        "Jag får inte luft",
-        "Jag har problem med andningen",
-        "Jag har andningsproblem",
-        "Det är svårt att andas",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Om du har mycket svårt att andas ska du ringa 112."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Jag kan inte andas",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Om du har mycket svårt att andas ska du ringa 112."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Vad är det senaste?",
-      "entities": {},
-      "examples": [
-        "Vad är det senaste?",
-        "Vad är senaste nytt?",
-        "Vad är nytt?",
-        "Några nyheter? ",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Eftersom frågan inte täcks av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Vad är det senaste?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Eftersom frågan inte täcks av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Vad heter du?",
-      "entities": {},
-      "examples": [
-        "Vad heter du?",
-        "Vad är ditt namn?",
-        "Vem är du?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Mitt namn är Coronaguiden och jag kan svara på frågor om det nya coronaviruset."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Vad heter du?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Mitt namn är Coronaguiden och jag kan svara på frågor om det nya coronaviruset."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Smittar CORONA under inkubationstiden?",
-      "entities": {
-        "CORONA": CORONA,
-        "PERS_PRON": PERS_PRON
-      },
-      "examples": [
-        "Smittar _CORONA under inkubationstiden?",
-        "smittar _CORONA hela tiden",
-        "smittar _CORONA direkt",
-        "blir _PERS_PRON smittsam direkt om _PERS_PRON har fått _CORONA",
-        "är _CORONA genast smittsamt",
-        "hur snabbt smittar _PERS_PRON om jag fått _CORONA",
-        "smittar _PERS_PRON under inkubationstiden",
-        "hur fort smittar _PERS_PRON om jag fått _CORONA",
-        "hur mycket smittar _CORONA",
-        "kan _CORONA smitta under inkubationstiden?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Folkhälsomyndighetens bedömning av forskningen är att viruset smittar när man är sjuk och i samband med insjuknandet, och inte under inkubationstiden. De som har varit utsatta för smitta ska vara uppmärksamma på tidiga sjukdomstecken, eftersom du smittar så fort du har även milda symtom. "
-      ],
-      "set": {
-        "classifiedIntentName": "question: Smittar CORONA under inkubationstiden?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Folkhälsomyndighetens bedömning av forskningen är att viruset smittar när man är sjuk och i samband med insjuknandet, och inte under inkubationstiden. De som har varit utsatta för smitta ska vara uppmärksamma på tidiga sjukdomstecken, eftersom du smittar så fort du har även milda symtom. "
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Hur ser Sveriges beredskap ut?",
-      "entities": {
-        "CORONA": CORONA
-      },
-      "examples": [
-        "Hur ser Sveriges beredskap ut?",
-        "har sverige beredskap",
-        "hur stor beredskap har sverige",
-        "hur är sveriges beredskap just nu",
-        "har sverige någon beredskap",
-        "är sverige redo",
-        "kan sverige hantera _CORONA",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Den svenska beredskapen anses vara mycket bra. Hälso- och sjukvården samt landets smittskyddsenheter har sedan lång tid tillbaka en hög medvetenhet. Det finns rutiner för hur både misstänkta och bekräftade fall ska tas omhand på ett bra och säkert sätt. Privata aktörer är också medvetna om beredskap och krishantering, och det finns möjlighet till utökade provanalyser på andra laboratorier än Folkhälsomyndigheten vid behov."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Hur ser Sveriges beredskap ut?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Den svenska beredskapen anses vara mycket bra. Hälso- och sjukvården samt landets smittskyddsenheter har sedan lång tid tillbaka en hög medvetenhet. Det finns rutiner för hur både misstänkta och bekräftade fall ska tas omhand på ett bra och säkert sätt. Privata aktörer är också medvetna om beredskap och krishantering, och det finns möjlighet till utökade provanalyser på andra laboratorier än Folkhälsomyndigheten vid behov."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Om många personer som blir smittade av CORONA skulle behöva sjukhusvård, hur kommer sjukvården att hantera det?",
-      "entities": {
-        "CORONA": CORONA
-      },
-      "examples": [
-        "Om många personer som blir smittade av _CORONA skulle behöva sjukhusvård, hur kommer sjukvården att hantera det?",
-        "kommer sjukhusen att klara det",
-        "hur många orkar sjukhusen ta emot",
-        "hur mycket klarar vården i sverige",
-        "kommer alla kunna få vård mot corona i sverige",
-        "får alla vård om många är smittade samtidigt",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Erfarenheter från influensasäsonger med många smittade som behöver vård, visar att påfrestning på sjukvården då uppstår med behov av omprioriteringar och samarbeten inom och mellan regioner. Liknande situation kan uppstå om covid-19 får omfattande spridning i befolkningen. Sjukvårdens pandemiplanering kan då behöva användas."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Om många personer som blir smittade av CORONA skulle behöva sjukhusvård, hur kommer sjukvården att hantera det?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Erfarenheter från influensasäsonger med många smittade som behöver vård, visar att påfrestning på sjukvården då uppstår med behov av omprioriteringar och samarbeten inom och mellan regioner. Liknande situation kan uppstå om covid-19 får omfattande spridning i befolkningen. Sjukvårdens pandemiplanering kan då behöva användas."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Varför stänger ni inte av skolbarn som har varit i drabbade områden?",
-      "entities": {},
-      "examples": [
-        "Varför stänger ni inte av skolbarn som har varit i drabbade områden?",
-        "varför blir inte barn avstängda",
-        "kan barn som varit i drabbade områden bli avstängda från skolan",
-        "kan barn som har en sjuk familjemedlem bli avstängda",
-        "kan ett barn bli avstängt",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Eftersom inget av de utbrott vi hittills sett av coronaviruset har haft koppling till skolor eller barn anses det osannolikt att friska barn skulle orsaka smittspridning."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Varför stänger ni inte av skolbarn som har varit i drabbade områden?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Eftersom inget av de utbrott vi hittills sett av coronaviruset har haft koppling till skolor eller barn anses det osannolikt att friska barn skulle orsaka smittspridning."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Kommer det bli karantän i Sverige",
-      "entities": {},
-      "examples": [
-        "Kommer det bli karantän i Sverige",
-        "kan sverige sättas i karantän?",
-        "blir det karantän i sverige?",
-        "riskerar sverige att sättas i karantän?",
-        "finns det risk att bli karantän i sverige?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Eftersom covid-19 numera är klassad som samhällsfarlig, kan smittskyddsläkaren i respektive sjukvårdsregion ta beslut om karantän för friska personer. Om en mindre ingripande åtgärd, t.ex. förhållningsregler, kan få samma effekt ska den väljas istället."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Kommer det bli karantän i Sverige",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Eftersom covid-19 numera är klassad som samhällsfarlig, kan smittskyddsläkaren i respektive sjukvårdsregion ta beslut om karantän för friska personer. Om en mindre ingripande åtgärd, t.ex. förhållningsregler, kan få samma effekt ska den väljas istället."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Vad är ett andningsskydd?",
-      "entities": {
-        "PERS_PRON": PERS_PRON,
-        "CORONA": CORONA
-      },
-      "examples": [
-        "Vad är ett andningsskydd?",
-        "hur använder _PERS_PRON ett andningsskydd",
-        "vad innebär andningsskydd",
-        "vad är andningsskydd mot _CORONA",
-        "vad är skydd för andning",
-        "vem bär andningsskydd",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Andningsskydd används inom sjukvården där det finns hög smittrisk. Ofta har de inbyggda filter som filtrerar bort smittämnen och andra partiklar från luften man andas in. För att andningsskyddet ska ge avsett skydd måste det anpassas till den som ska använda det plus att personen behöver träning i hur det ska användas."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Vad är ett andningsskydd?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Andningsskydd används inom sjukvården där det finns hög smittrisk. Ofta har de inbyggda filter som filtrerar bort smittämnen och andra partiklar från luften man andas in. För att andningsskyddet ska ge avsett skydd måste det anpassas till den som ska använda det plus att personen behöver träning i hur det ska användas."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Hur kan ett provsvar som först blev negativt och visar att man är frisk         vid en andra provtagning ge ett positivt svar         att man är sjuk och bär på smittan?",
-      "entities": {},
-      "examples": [
-        "Hur kan ett provsvar som först blev negativt och visar att man är frisk         vid en andra provtagning ge ett positivt svar         att man är sjuk och bär på smittan?",
-        "hur kan provsvaret för corona ändras",
-        "varför ändrades provsvaret",
-        "kan provsvaret för corona ändras",
-        "hur är det möjligt att olika coronaprov ger olika resultat",
-        "kan jag få olika besked från två  olika coronatest",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Om patienten blir provtagen innan sjukdomen brutit ut kan detta hända. Negativa provsvar under inkubationstiden utesluter alltså inte att man är smittad. Om fortsatt misstanke om covid-19 kvarstår bör provtagning upprepas när eventuella symtom utvecklats."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Hur kan ett provsvar som först blev negativt och visar att man är frisk         vid en andra provtagning ge ett positivt svar         att man är sjuk och bär på smittan?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Om patienten blir provtagen innan sjukdomen brutit ut kan detta hända. Negativa provsvar under inkubationstiden utesluter alltså inte att man är smittad. Om fortsatt misstanke om covid-19 kvarstår bör provtagning upprepas när eventuella symtom utvecklats."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: hur länge smittar CORONA",
-      "entities": {
-        "CORONA": CORONA,
-        "PERS_PRON": PERS_PRON
-      },
-      "examples": [
-        "hur länge smittar _CORONA",
-        "hur länge kan _PERS_PRON smitta andra?",
-        "när smittar _PERS_PRON?",
-        "hur länge smittar en person med _CORONA",
-        "hur lång tid smittar _CORONA?",
-        "hur länge smittar det",
-        "hur länge smittar _PERS_PRON",
-        "hur lång tid tar det innan _PERS_PRON slutar smitta?",
-        "när slutar _PERS_PRON smitta andra?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Enligt Folkhälsomyndigheten drivs smittspridningen av personer med symtom på sjukdom, men en del som är sjuka får bara milda symtom. Man kan därför bli smittad av någon som inte känner sig sjuk, men som har t. ex. mild hosta. Om man varit sjuk men inte vet om man haft coronavirus, så ska man vara hemma tills man är frisk och sedan ytterligare minst två dagar. "
-      ],
-      "set": {
-        "classifiedIntentName": "question: hur länge smittar CORONA",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Enligt Folkhälsomyndigheten drivs smittspridningen av personer med symtom på sjukdom, men en del som är sjuka får bara milda symtom. Man kan därför bli smittad av någon som inte känner sig sjuk, men som har t. ex. mild hosta. Om man varit sjuk men inte vet om man haft coronavirus, så ska man vara hemma tills man är frisk och sedan ytterligare minst två dagar. "
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Vad innebär isolering?",
-      "entities": {
-        "PERS_PRON": PERS_PRON,
-        "AUX": AUX
-      },
-      "examples": [
-        "Vad innebär isolering?",
-        "vad innebär att isolera sig?",
-        "vad är isolering",
-        "vad gör _PERS_PRON i isolering?",
-        "hur är _PERS_PRON i isolering",
-        "vad är en isolering",
-        "hur _AUX _PERS_PRON bete sig i isolering",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        ""
-      ],
-      "set": {
-        "classifiedIntentName": "question: Vad innebär isolering?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          ""
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Kan jag bli smittad av en person som inte har symptom",
-      "entities": {},
-      "examples": [
-        "Kan jag bli smittad av en person som inte har symptom",
-        "Kan jag bli smittad av en person som är symptomfri",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        ""
-      ],
-      "set": {
-        "classifiedIntentName": "question: Kan jag bli smittad av en person som inte har symptom",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          ""
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Hur vet jag när jag ska åka in till sjukhus",
-      "entities": {},
-      "examples": [
-        "Hur vet jag när jag ska åka in till sjukhus",
-        "Hur vet jag om jag har corona och ska åka in till sjukhus",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        ""
-      ],
-      "set": {
-        "classifiedIntentName": "question: Hur vet jag när jag ska åka in till sjukhus",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          ""
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Kommer intensivvårdsavdelningarna i Sverige klara alla coronasmittade",
-      "entities": {},
-      "examples": [
-        "Kommer intensivvårdsavdelningarna i Sverige klara alla coronasmittade",
-        "Klarar sjukvården i Stockholm att vårda alla coronasmittade",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        ""
-      ],
-      "set": {
-        "classifiedIntentName": "question: Kommer intensivvårdsavdelningarna i Sverige klara alla coronasmittade",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          ""
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Vad är smittskyddslagen?",
-      "entities": {},
-      "examples": [
-        "Vad är smittskyddslagen?",
-        "Vad betyder smittskyddslagen?",
-        "Vad innehåller smittskyddslagen?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        ""
-      ],
-      "set": {
-        "classifiedIntentName": "question: Vad är smittskyddslagen?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          ""
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: jag når inte 1177",
-      "entities": {},
-      "examples": [
-        "jag når inte 1177",
-        "jag kommer inte fram till 1177",
-        "1177 svarar inte",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        ""
-      ],
-      "set": {
-        "classifiedIntentName": "question: jag når inte 1177",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          ""
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Hur bör jag bete mig",
-      "entities": {},
-      "examples": [
-        "Hur bör jag bete mig",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        ""
-      ],
-      "set": {
-        "classifiedIntentName": "question: Hur bör jag bete mig",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          ""
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: får jag träffa vänner?",
-      "entities": {},
-      "examples": [
-        "får jag träffa vänner?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        ""
-      ],
-      "set": {
-        "classifiedIntentName": "question: får jag träffa vänner?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          ""
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: vem står bakom denna bot",
-      "entities": {},
-      "examples": [
-        "vem står bakom denna bot",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        ""
-      ],
-      "set": {
-        "classifiedIntentName": "question: vem står bakom denna bot",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          ""
         ]
       },
       "goto": "VERIFY_ANSWER"

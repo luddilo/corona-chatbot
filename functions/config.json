@@ -1,5 +1,6 @@
 {
-    "slackWebhook": "",
-    "googleSheetId": "",
-    "googleSheetLogsTabId": "1410167121"
+    "slackWebhook": "https://hooks.slack.com/services/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",
+    "googleSheetId": "1PAf9wmSxVnCBjIHft_-n0HOlRaq_LRlNMHeMPvYb2GU",
+    "googleSheetTabIdErrors": "1410167121",
+    "googleSheetTabIdStats": "163526749"
 }

@@ -8,17 +8,21 @@ const NUMBER_OF_TOP_ROWS_TO_SKIP = 0
 
 export async function getFaq() {
   try {
-    const qas: { formulations: string[]; answers: string[] }[] = []
+    const qas: { formulations: string[]; category: string, answers: string[] }[] = []
 
     const lines = await getLinesFromTsv({ url, skipRows: NUMBER_OF_TOP_ROWS_TO_SKIP })
     const headers = lines.splice(0, 1)[0]
 
     lines.forEach(arr => {
-      let qa = { formulations: [], answers: [], staticAnswer: true }
-
+      let qa : any = { formulations: [], answers: [], staticAnswer: true }
+      let skip = false
       arr.forEach((text, index) => {
         const header = headers[index]
-        if (header.toLowerCase() === "question formulations" || header.toLowerCase() === "q") {
+        if (index == 0 && text !== "OK") {
+          skip = true
+        } else if (header.toLowerCase() === "category") {
+          qa.category = text
+        } else if (header.toLowerCase() === "question formulations" || header.toLowerCase() === "q") {
           qa.formulations.push(text)
         } else if (header.toLowerCase() === "bot-answer") {
           qa.answers.push(text)
@@ -29,7 +33,7 @@ export async function getFaq() {
         }
       })
 
-      if (qa.formulations.length > 0 && qa.answers.length > 0 && qa.staticAnswer) {
+      if (!skip && qa.formulations.length > 0 && qa.answers.length > 0 && qa.staticAnswer) {
         qas.push(qa)
       }
     })

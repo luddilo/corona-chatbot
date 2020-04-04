@@ -1,6 +1,6 @@
 import { UserTurn, Entity } from "narratory"
 
-// Generated at Friday, April 3rd 2020, 6:28:34 pm
+// Generated at Saturday, April 4th 2020, 12:26:15 am
 
 export const CORONA : Entity = {
   "name": "CORONA",
@@ -24,9 +24,10 @@ export const CORONA : Entity = {
         "kollat",
         "krona",
         "kod 19",
-        "korean viruset",
+        "Korean viruset",
         "kolumn virus",
-        "virus"
+        "virus",
+        "Covd-19"
       ]
     }
   ]
@@ -71,7 +72,8 @@ export const OCCUPATION : Entity = {
         "fritids",
         "kontoret",
         "fsk",
-        "förskola"
+        "förskola",
+        "föris"
       ]
     }
   ]
@@ -145,7 +147,9 @@ export const POS_PRON : Entity = {
         "era",
         "sin",
         "sitt ",
-        "sina"
+        "sina",
+        "deras",
+        "vårat"
       ]
     }
   ]
@@ -211,23 +215,26 @@ export const MY_CHILD : Entity = {
         "min pojke",
         "mina barn",
         "barnen",
-        "barnet"
+        "barnet",
+        "ungarna"
       ]
     }
   ]
 }
 
-export const SKA : Entity = {
-  "name": "SKA",
+export const CAN : Entity = {
+  "name": "CAN",
   "enums": [
     {
-      "name": "SKA",
+      "name": "CAN",
       "alts": [
         "bör",
         "måste",
         "borde ",
         "skulle",
-        "behöver"
+        "behöver",
+        "ska",
+        "kan"
       ]
     }
   ]
@@ -254,7 +261,10 @@ export const FAMILYMEMBER : Entity = {
         "lillasyster",
         "lillebror",
         "storasyster",
-        "storebror"
+        "storebror",
+        "make",
+        "maka",
+        "hustru"
       ]
     }
   ]
@@ -276,7 +286,64 @@ export const HELLO : Entity = {
         "hi ",
         "goddag",
         "hej botten",
+<<<<<<< HEAD
         "halloj"
+=======
+        "halloj",
+        "hallå"
+      ]
+    }
+  ]
+}
+
+export const TACK : Entity = {
+  "name": "TACK",
+  "enums": [
+    {
+      "name": "TACK",
+      "alts": [
+        "tackar",
+        "tack så mycket",
+        "tack tack",
+        "tack till dig",
+        "tusen tack"
+      ]
+    }
+  ]
+}
+
+export const ELDERLY : Entity = {
+  "name": "ELDERLY",
+  "enums": [
+    {
+      "name": "ELDERLY",
+      "alts": [
+        "farmor",
+        "farmor",
+        "mormor",
+        "morfar",
+        "70åring",
+        "80åring",
+        "90åring",
+        "pensionär",
+        "äldre"
+      ]
+    }
+  ]
+}
+
+export const SMOKE : Entity = {
+  "name": "SMOKE",
+  "enums": [
+    {
+      "name": "SMOKE",
+      "alts": [
+        "rökare",
+        "rökning",
+        "röka",
+        "röker",
+        "storrökare"
+>>>>>>> f44cea0047b8825944dccad96aaf28be7f791f78
       ]
     }
   ]
@@ -285,13 +352,13 @@ export const HELLO : Entity = {
 export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
-      "name": "question: Vad är symtomen av CORONA?",
+      "name": "Vaad är symtomen av CORONA?",
       "entities": {
         "CORONA": CORONA,
         "PERS_PRON": PERS_PRON
       },
       "examples": [
-        "Vad är symtomen av _CORONA?",
+        "Vaad är symtomen av _CORONA?",
         "vad är symtomen",
         "hur märker _PERS_PRON om _PERS_PRON har _CORONA",
         "hur mår _PERS_PRON om _PERS_PRON har _CORONA",
@@ -299,7 +366,11 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "vad är symtom för _CORONA",
         "vad är symtomen för _CORONA",
         "hur vet _PERS_PRON om _PERS_PRON har _CORONA",
+<<<<<<< HEAD
         "vilka är de vanligaste symptomen?",
+=======
+        "vilka är de vanligaste symtomen?",
+>>>>>>> f44cea0047b8825944dccad96aaf28be7f791f78
         "hur vet _PERS_PRON om _PERS_PRON är sjuk?",
         "_PERS_PRON undrar om symtomer",
         "Vilka är de vanligaste symptomen?",
@@ -308,19 +379,9 @@ export const simpleQuestionAnswers : UserTurn[] = [
         ""
       ]
     },
-    "bot": {
-      "say": [
-        "De vanligaste symtomen för covid-19 är feber och hosta. Även andningsbesvär, snuva, halsont, huvudvärk, illamående, muskel- och ledvärk är vanliga symtom. En person som insjuknar i covid-19 behöver inte uppvisa samtliga symtom."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Vad är symtomen av CORONA?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "De vanligaste symtomen för covid-19 är feber och hosta. Även andningsbesvär, snuva, halsont, huvudvärk, illamående, muskel- och ledvärk är vanliga symtom. En person som insjuknar i covid-19 behöver inte uppvisa samtliga symtom."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
+    "bot": [
+      "De vanligaste symtomen för covid-19 är feber och hosta. Även andningsbesvär, snuva, halsont, huvudvärk, illamående, muskel- och ledvärk är vanliga symtom. En person som insjuknar i covid-19 behöver inte uppvisa samtliga symtom."
+    ]
   },
   {
     "intent": {
@@ -390,6 +451,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "hur minskar _PERS_PRON spridningen av _CORONA",
         "vad _AUX _PERS_PRON göra för att minska smittspridningen",
         "vad _AUX _PERS_PRON göra för att minska spridningen av _CORONA",
+        "hur kan man skydda sig mot _CORONA",
         ""
       ]
     },
@@ -930,6 +992,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "_PERS_PRON har corona vad _AUX _PERS_PRON göra",
         "_PERS_PRON misstänker att _PERS_PRON kanske har _CORONA vad gör _PERS_PRON nu",
         "_PERS_PRON har varit i Italien ska _PERS_PRON vara i karantän?",
+        "Ska _PERS_PRON vara i karantän om _PERS_PRON varit i Italien",
         ""
       ]
     },
@@ -1978,8 +2041,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
       "name": "question: Om en person i familjen är sjuk - måste alla stanna hemma då? ",
       "entities": {
         "PERS_PRON": PERS_PRON,
-        "CORONA": CORONA,
-        "SKA": SKA
+        "CORONA": CORONA
       },
       "examples": [
         "Om en person i familjen är sjuk - måste alla stanna hemma då? ",
@@ -1990,7 +2052,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "kan _PERS_PRON gå till jobbet även fast någon i hushållet är sjuk?",
         "MITT BARN är sjuk i _CORONA ska _PERS_PRON stanna hemma? ",
         "MITT BARN är sjuk ska jag stanna hemma?",
-        "Jag bor med någon som har _CORONA _SKA jag stanna hemma ",
+        "Jag bor med någon som har _CORONA SKA jag stanna hemma ",
         "Ska min son vara hemma?",
         "Ska min dotter vara hemma? ",
         ""
@@ -2482,6 +2544,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
       },
       "goto": "VERIFY_ANSWER"
     }
+<<<<<<< HEAD
   },
   {
     "intent": {
@@ -5399,5 +5462,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
       },
       "goto": "VERIFY_ANSWER"
     }
+=======
+>>>>>>> f44cea0047b8825944dccad96aaf28be7f791f78
   }
 ]

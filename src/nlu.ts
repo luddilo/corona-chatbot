@@ -61,7 +61,8 @@ export const queryHelp: Intent = {
     "jag behöver hjälp",
     "hur funkar detta",
     "hur gör jag",
-    "vad frågar jag"
+    "vad frågar jag",
+    "hjälp"
   ]
 }
 
@@ -75,6 +76,7 @@ export const queryDiagnosis: Intent = {
     "hur vet jag om jag har _corona",
     "har jag fått _corona",
     "kan du säga om jag har _corona",
+    "är jag sjuk"
   ]
 }
 
@@ -88,7 +90,8 @@ export const queryNeedCare: Intent = {
     "när behöver jag kontakta _healthcare",
     "när ska jag söka _healthcare",
     "hur vet jag när jag ska ta kontakt med _healthcare",
-    "behöver jag gå till _healthcare"
+    "behöver jag gå till _healthcare",
+    "jag vill söka _healthcare. hur gör jag"
   ]
 }
 

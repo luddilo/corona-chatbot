@@ -21,7 +21,7 @@ export const yes: Intent = {
 }
 
 export const no: Intent = {
-  examples: ["nej", "nope", "no", "aldrig", "jag vill inte", "nej det är bra så", "näpp"]
+  examples: ["nej", "nope", "no", "jag vill inte", "nej det är bra så", "näpp"]
 }
 
 export const confirmRight: Intent = {

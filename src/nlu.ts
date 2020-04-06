@@ -61,28 +61,37 @@ export const queryHelp: Intent = {
     "jag behöver hjälp",
     "hur funkar detta",
     "hur gör jag",
-    "vad frågar jag"
+    "vad frågar jag",
+    "hjälp"
   ]
 }
 
 export const queryDiagnosis: Intent = {
+  entities: {
+    corona: CORONA
+  },
   examples: [
-    "har jag _CORONA",
+    "har jag _corona",
     "är jag smittad",
-    "hur vet jag om jag har _CORONA",
-    "har jag fått _CORONA",
-    "kan du säga om jag har _CORONA",
+    "hur vet jag om jag har _corona",
+    "har jag fått _corona",
+    "kan du säga om jag har _corona",
+    "är jag sjuk"
   ]
 }
 
 export const queryNeedCare: Intent = {
+  entities: {
+    healthcare: HEALTHCARE
+  },
   examples: [
-    "när behöver jag ringa _HEALTHCARE",
-    "behöver jag ringa _HEALTHCARE",
-    "när behöver jag kontakta _HEALTHCARE",
-    "när ska jag söka _HEALTHCARE",
-    "hur vet jag när jag ska ta kontakt med _HEALTHCARE",
-    "behöver jag gå till _HEALTHCARE"
+    "när behöver jag ringa _healthcare",
+    "behöver jag ringa _healthcare",
+    "när behöver jag kontakta _healthcare",
+    "när ska jag söka _healthcare",
+    "hur vet jag när jag ska ta kontakt med _healthcare",
+    "behöver jag gå till _healthcare",
+    "jag vill söka _healthcare. hur gör jag"
   ]
 }
 

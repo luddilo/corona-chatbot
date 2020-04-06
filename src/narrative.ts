@@ -11,7 +11,7 @@ const greeting: BotTurn = {
     user_hotStarted: false
   },
   say: {
-    text: "Hej",
+    text: "Hej!",
     ssml: "Hej och välkommen till Coronaguiden."
   }
 }
@@ -21,8 +21,8 @@ const intro = {
     user_hotStarted: false
   },
   say: {
-    text: "Jag är en chatbot som kan svara på frågor om coronaviruset.",
-    ssml: "Jag är en chatt-bått som kan svara på frågor om coronaviruset."
+    text: "Jag är en chatbot som kan svara på allmänna frågor om coronaviruset och covid19. För personlig sjukvårdsrådgivning måste du ringa 1177.",
+    ssml: "Jag är en chatt-bått som kan svara på allmänna frågor om coronaviruset och covid19. För personlig sjukvårdsrådgivning måste du ringa 1177."
   }
 }
 
@@ -36,19 +36,22 @@ const queryQuestions: BotTurn = {
         hotStarted: false
       },
       text: [
-        "Har du några frågor till mig om COVID-19?",
-        "Undrar du någonting om COVID-19?",
-        "Undrar du någonting om det nya coronaviruset?"
-      ],
-      ssml: [
         "Har du några frågor till mig?",
-        "Undrar du någonting?",
-        "Undrar du någonting om det nya coronaviruset?" // Since pronounciation of COVID-19 isn't great..
-      ]
+        "Har du några frågor?",
+        "Har du någon fråga till mig?",
+        "Har du någon fråga?",
+        "Undrar du över något?",
+        "Finns det något du undrar över?",
+        "Undrar du någonting?"
+      ],
     },
     {
       // On repetitive questions, or if we hotStarted
-      text: ["Har du någon mer fråga till mig?", "Undrar du något annat?", "Undrar du något mer?"]
+      text: [
+        "Har du någon mer fråga?",
+        "Har du fler frågor?",
+        "Undrar du något annat?",
+        "Undrar du något mer?"]
     }
   ],
   user: [

@@ -43,18 +43,6 @@ export const exit: Intent = {
   examples: ["exit", "hejdå", "avsluta", "bye bye"]
 }
 
-export const hasSymptoms: Intent = {
-  entities: {
-    symptom
-  },
-  examples: [
-    "jag har _symptom",
-    "_symptom",
-    "lite _symptom",
-    "problem med _symptom",
-  ]
-}
-
 export const queryHelp: Intent = {
   examples: [
     "vad kan jag fråga",
@@ -92,6 +80,18 @@ export const queryNeedCare: Intent = {
     "hur vet jag när jag ska ta kontakt med _healthcare",
     "behöver jag gå till _healthcare",
     "jag vill söka _healthcare. hur gör jag"
+  ]
+}
+
+export const queryNews: Intent = {
+  examples: [
+    "vad är senaste nytt",
+    "vad är det senaste",
+    "vad är senaste nytt",	
+    "vad är nytt",
+    "några nyheter",
+    "vad har hänt idag",
+    "jag undrar hur läget ser ut just idag"
   ]
 }
 

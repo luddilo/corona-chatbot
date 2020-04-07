@@ -40,7 +40,6 @@ const queryQuestions: BotTurn = {
         "Vad är din fråga?",
         "Vad vill du fråga mig om?",
         "Vad undrar du över?",
-        "Vad "
       ],
     },
     {

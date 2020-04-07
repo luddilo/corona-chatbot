@@ -7,6 +7,7 @@ import { answerStayHome } from "./answers/answerStayhome"
 import { answerFamily } from "./answers/answerFamily"
 import { answerHelp } from "./answers/answerHelp"
 import { answerDiagnosis } from "./answers/answerDiagnosis"
+import { answerNews } from "./answers/answerNews"
 
 /*
     Questions and other user-driven initiatives
@@ -23,13 +24,11 @@ const exit: UserTurn = {
 const questions: UserTurn[] = [
   ...simpleQuestionAnswers,
   {
-    intent: nlu.hasSymptoms,
-    bot:
-      "Okej. Då är det viktigt att du stannar hemma för att förhindra spridning. Du kan också ringa 1177, och få rådgivning från en sjuksköterska."
-  },
-  {
     intent: nlu.queryDiagnosis,
     bot: answerDiagnosis
+  },
+  { intent: nlu.queryNews,
+    bot: answerNews
   },
   {
     intent: nlu.queryNeedCare,

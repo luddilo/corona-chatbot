@@ -1,6 +1,6 @@
 import { UserTurn, Entity } from "narratory"
 
-// Generated at Tuesday, April 7th 2020, 1:32:38 pm
+// Generated at Tuesday, April 7th 2020, 6:13:09 pm
 
 export const ACTIVITY : Entity = {
   "name": "ACTIVITY",
@@ -290,7 +290,8 @@ export const CORONA : Entity = {
         "viuset",
         "kolla",
         "krona virus",
-        "kvarna"
+        "kvarna",
+        "colada"
       ]
     }
   ]

@@ -21,8 +21,8 @@ const intro = {
     user_hotStarted: false
   },
   say: {
-    text: "Jag är en chatbot som kan svara på allmänna frågor om coronaviruset och covid19. För personlig sjukvårdsrådgivning måste du ringa 1177.",
-    ssml: "Jag är en chatt-bått som kan svara på allmänna frågor om coronaviruset och covid19. För personlig sjukvårdsrådgivning måste du ringa 1177."
+    text: "Jag är en chatbot som kan svara på allmänna frågor och ge dig senaste nytt om coronaviruset och covid19. För personlig sjukvårdsrådgivning måste du ringa 1177.",
+    ssml: "Jag är en chatt-bått som kan svara på allmänna frågor och ge dig senaste nytt om coronaviruset och covid19. För personlig sjukvårdsrådgivning måste du ringa 1177."
   }
 }
 
@@ -36,13 +36,11 @@ const queryQuestions: BotTurn = {
         hotStarted: false
       },
       text: [
-        "Har du några frågor till mig?",
-        "Har du några frågor?",
-        "Har du någon fråga till mig?",
-        "Har du någon fråga?",
-        "Undrar du över något?",
-        "Finns det något du undrar över?",
-        "Undrar du någonting?"
+        "Vad har du för fråga?",
+        "Vad är din fråga?",
+        "Vad vill du fråga mig om?",
+        "Vad undrar du över?",
+        "Vad "
       ],
     },
     {
@@ -51,7 +49,9 @@ const queryQuestions: BotTurn = {
         "Har du någon mer fråga?",
         "Har du fler frågor?",
         "Undrar du något annat?",
-        "Undrar du något mer?"]
+        "Undrar du något mer?",
+        "Är det något annat du undrar över?"
+      ]
     }
   ],
   user: [

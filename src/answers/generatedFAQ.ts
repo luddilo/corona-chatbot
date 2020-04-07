@@ -1,6 +1,6 @@
 import { UserTurn, Entity } from "narratory"
 
-// Generated at Sunday, April 5th 2020, 7:07:51 pm
+// Generated at Monday, April 6th 2020, 3:16:33 pm
 
 export const ACTIVITY : Entity = {
   "name": "ACTIVITY",
@@ -246,7 +246,9 @@ export const CO_SYM : Entity = {
         "snuva",
         "snuvig",
         "illemående ",
-        "mår illa"
+        "mår illa",
+        "trött",
+        "krasslig"
       ]
     }
   ]
@@ -328,7 +330,8 @@ export const DISEASE : Entity = {
         "högt blodtryck",
         "hjärtfel",
         "diabetes",
-        "hjärtproblem"
+        "hjärtproblem",
+        "hjärtsjukdom"
       ]
     }
   ]
@@ -1266,6 +1269,180 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": {
+      "name": "question: Vad är covid-19",
+      "entities": {
+        "CORONA": CORONA,
+        "MEAN": MEAN
+      },
+      "examples": [
+        "Vad är covid-19",
+        "förklara vad _CORONA är",
+        "vad _MEAN _CORONA",
+        "vad gör _CORONA",
+        "Berätta om _CORONA",
+        "var kommer _CORONA ifrån?",
+        "kan du förklara vad _CORONA är",
+        "what is _CORONA?",
+        "Vad är det för skillnad på _CORONA och Covid-19?",
+        "Vad är _CORONA?",
+        "Vad är det för virus",
+        "Är _CORONA ett virus?",
+        "Är _CORONA en bakterie",
+        "varifrån kommer _CORONA",
+        "hur skapades _CORONA",
+        "Hur kom _CORONA till",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Det finns ett stort antal virus som tillhör coronavirusfamiljen. De flesta finns hos djur och smittar inte människor. Bland dem som smittar människor ger vissa förkylning och andra allvarligare symptom. I slutet av 2019 upptäcktes i Kina ett nytt coronavirus som orsakar sjukdomen covid19. Det officiella namnet enligt WHO är SARS-CoV-2."
+      ],
+      "set": {
+        "classifiedIntentName": "question: Vad är covid-19",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Det finns ett stort antal virus som tillhör coronavirusfamiljen. De flesta finns hos djur och smittar inte människor. Bland dem som smittar människor ger vissa förkylning och andra allvarligare symptom. I slutet av 2019 upptäcktes i Kina ett nytt coronavirus som orsakar sjukdomen covid19. Det officiella namnet enligt WHO är SARS-CoV-2."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: är det okej att jag går till jobbet?",
+      "entities": {
+        "OCCUPATION": OCCUPATION,
+        "PERS_PRON": PERS_PRON,
+        "ACTIVITY": ACTIVITY,
+        "POS_PRON": POS_PRON
+      },
+      "examples": [
+        "är det okej att jag går till jobbet?",
+        "får _PERS_PRON gå till _OCCUPATION",
+        "kan _PERS_PRON gå till _OCCUPATION",
+        "är det okej att _ACTIVITY ",
+        "kan _PERS_PRON _ACTIVITY ",
+        "får _PERS_PRON _ACTIVITY",
+        "är det okej att _PERS_PRON går till _OCCUPATION?",
+        "Ska _PERS_PRON gå till _OCCUPATION?",
+        "Jag undrar om jag kan gå till jobbet om jag har ont i halsen",
+        "Kan _PERS_PRON gå till dagis med _POS_PRON barn",
+        "får _PERS_PRON _ACTIVITY?",
+        "Kan _PERS_PRON _ACTIVITY",
+        "kan _PERS_PRON _ACTIVITY utan risk",
+        "Kan _PERS_PRON _ACTIVITY som vanligt?",
+        "ska jag gå till _ACTIVITY",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Känner du dig sjuk med symptom som snuva, hosta, halsont eller feber ska du låta bli att träffa andra människor. Du ska inte gå till jobbet eller skolan. Detta gäller även om du bara känner dig lite sjuk eftersom det är viktigt att inte riskera att smitta andra. Du ska vara hemma tills du är helt frisk och sen minst två dagar till. Om du har möjlighet att arbeta hemifrån så ska du göra det även om du är frisk."
+      ],
+      "set": {
+        "classifiedIntentName": "question: är det okej att jag går till jobbet?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Känner du dig sjuk med symptom som snuva, hosta, halsont eller feber ska du låta bli att träffa andra människor. Du ska inte gå till jobbet eller skolan. Detta gäller även om du bara känner dig lite sjuk eftersom det är viktigt att inte riskera att smitta andra. Du ska vara hemma tills du är helt frisk och sen minst två dagar till. Om du har möjlighet att arbeta hemifrån så ska du göra det även om du är frisk."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Hur stor är dödligheten till följd av covid-19",
+      "entities": {
+        "CORONA": CORONA,
+        "PERS_PRON": PERS_PRON,
+        "CO_SYM": CO_SYM
+      },
+      "examples": [
+        "Hur stor är dödligheten till följd av covid-19",
+        "hur många dör av _CORONA",
+        "kan _PERS_PRON dö av _CORONA",
+        "hur många har dött av _CORONA ",
+        "är det många som dör av _CORONA ?",
+        "vad är risken att dö av _CORONA ?",
+        "dör _PERS_PRON om _PERS_PRON får _CORONA",
+        "hur dödligt är _CORONA?",
+        "kommer _PERS_PRON dö av _CORONA",
+        "är det farligt att få _CORONA",
+        "är det livsfarligt att få _CORONA",
+        "Hur stor är dödligheten till följd av _CORONA?",
+        "Dör _PERS_PRON av _CORONA",
+        "Vem dör av _CORONA",
+        "Dör _PERS_PRON av _CO_SYM",
+        "Dör _PERS_PRON om _PERS_PRON har _CO_SYM",
+        "Dör _PERS_PRON om _PERS_PRON får _CO_SYM",
+        "är det farligt",
+        "ja är det farligt"
+      ]
+    },
+    "bot": {
+      "say": [
+        "Det är inte helt säkert än hur stor dödligheten är, men forskarna tror att av 100 personer som får sjukdomen så dör ungefär 1 till 2 personer. De allra flesta som får covid19 blir friska efter ungefär två veckor. De som har blivit allvarligt sjuka och dött är framför allt äldre och personer med andra underliggande sjukdomar. "
+      ],
+      "set": {
+        "classifiedIntentName": "question: Hur stor är dödligheten till följd av covid-19",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Det är inte helt säkert än hur stor dödligheten är, men forskarna tror att av 100 personer som får sjukdomen så dör ungefär 1 till 2 personer. De allra flesta som får covid19 blir friska efter ungefär två veckor. De som har blivit allvarligt sjuka och dött är framför allt äldre och personer med andra underliggande sjukdomar. "
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Vad gäller besök på äldreboenden?",
+      "entities": {
+        "PERS_PRON": PERS_PRON,
+        "POS_PRON": POS_PRON,
+        "VISIT": VISIT,
+        "CAN": CAN,
+        "ELDERLY": ELDERLY,
+        "INFECTING_ACTIVITY": INFECTING_ACTIVITY,
+        "ACTIVITY": ACTIVITY,
+        "FAMILYMEMBER": FAMILYMEMBER
+      },
+      "examples": [
+        "Vad gäller besök på äldreboenden?",
+        "Får _PERS_PRON _VISIT _POS_PRON mamma på äldreboende?",
+        "Får _PERS_PRON _VISIT _POS_PRON pappa på äldreboende?",
+        "Får _PERS_PRON _VISIT _POS_PRON morfar på äldreboende?",
+        "Får _PERS_PRON _VISIT _POS_PRON farfar på äldreboende?",
+        "Får _PERS_PRON _VISIT äldreboende?",
+        "Vad gäller för äldreboenden?",
+        "_CAN jag _INFECTING_ACTIVITY med _POS_PRON _ELDERLY på äldreboende?",
+        "_CAN _PERS_PRON _INFECTING_ACTIVITY med _POS_PRON på ett äldreboende?",
+        "Hur är det med att _VISIT _ELDERLY på äldreboenden?",
+        "_CAN _PERS_PRON _VISIT _ELDERLY på äldreboende?",
+        "_CAN _PERS_PRON _VISIT _ELDERLY?",
+        "_CAN _PERS_PRON _ACTIVITY med _ELDERLY?",
+        "Jag är frisk och vill hälsa på _POS_PRON _ELDERLY, _CAN jag?",
+        "_CAN _ELDERLY _VISIT _POS_PRON friska _FAMILYMEMBER?",
+        "_CAN _ELDERLY _VISIT _POS_PRON _FAMILYMEMBER?",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Sedan 1 april är det besöksförbud på alla äldreboenden för att förhindra spridningen av covid19. Nu när covid19 sprids ute i samhället är det extra viktigt att skydda äldre från smitta. Ha inte närkontakt med personer som är över 70 år om det inte är helt nödvändigt. Stanna hellre hemma om du känner dig sjuk, även om du bara är lite förkyld. Covid19 kan ge lindriga symptom som liknar en förkylning, men vara dödlig för andra, så det är viktigt att vara vaksam."
+      ],
+      "set": {
+        "classifiedIntentName": "question: Vad gäller besök på äldreboenden?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Sedan 1 april är det besöksförbud på alla äldreboenden för att förhindra spridningen av covid19. Nu när covid19 sprids ute i samhället är det extra viktigt att skydda äldre från smitta. Ha inte närkontakt med personer som är över 70 år om det inte är helt nödvändigt. Stanna hellre hemma om du känner dig sjuk, även om du bara är lite förkyld. Covid19 kan ge lindriga symptom som liknar en förkylning, men vara dödlig för andra, så det är viktigt att vara vaksam."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
       "name": "question: Finns det några särskilda riskgrupper",
       "entities": {
         "INT_PRON": INT_PRON,
@@ -1289,8 +1466,8 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "finns det några _RISC",
         "_INT_PRON har _RISC",
         "vilka är _RISC",
-        "Jag har astma, är det farligare att få _CORONA då?",
-        "Jag har njursjukdom, är det farligare att få _CORONA då?",
+        "Jag har _DISEASE är det farligare att få _CORONA då?",
+        "Är _CORONA farligt om _PERS_PRON har _DISEASE?",
         "Är _PERS_PRON i _RISC"
       ]
     },
@@ -1337,7 +1514,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "vad _CAN _PERS_PRON göra för att minska spridningen av _CORONA",
         "hur _CAN _PERS_PRON skydda _REF_PRON mot _CORONA",
         "hur skyddar _PERS_PRON _REF_PRON själv och andra",
-        ""
+        "Hur bör jag bete mig"
       ]
     },
     "bot": {
@@ -1349,6 +1526,618 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "classifiedUtterance": "_user_text",
         "botResponse": [
           "Stanna hemma om du känner dig sjuk. Tvätta händerna ofta med tvål och varmt vatten. Hosta och nys i armvecket eller i en pappersnäsduk, undvik att röra vid ansiktet eller ögonen. Avstå från att delta i större sociala sammanhang, undvik onödiga resor och håll avstånd till andra människor i till exempel i butiker, kollektivtrafik och träningslokaler."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Hur sjuk blir jag av covid-19",
+      "entities": {
+        "CORONA": CORONA,
+        "PERS_PRON": PERS_PRON,
+        "CAN": CAN
+      },
+      "examples": [
+        "Hur sjuk blir jag av covid-19",
+        "blir _PERS_PRON jättesjuk av _CORONA",
+        "hur pass sjuk blir _PERS_PRON ",
+        "hur sjuk kan _PERS_PRON bli",
+        "blir _PERS_PRON alltid väldigt sjuk",
+        "vad händer om _PERS_PRON får _CORONA",
+        "_CAN _PERS_PRON läggas in på sjukhus om _PERS_PRON får _CORONA",
+        "hur sjuk blir _PERS_PRON om _PERS_PRON får _CORONA",
+        "Hur sjuk blir _PERS_PRON av _CORONA?",
+        "Hur illa är _CORONA",
+        "Hur farlig är _CORONA ",
+        "Hur farligt är _CORONA",
+        "Vad gör _CORONA",
+        "Hur känns _CORONA",
+        "Hur mår _PERS_PRON av _CORONA",
+        "Hur blir det om _PERS_PRON får _CORONA",
+        "Hur _PERS_PRON om _PERS_PRON får _CORONA",
+        "Hur _PERS_PRON om _PERS_PRON har _CORONA",
+        "är _CORONA farligt"
+      ]
+    },
+    "bot": {
+      "say": [
+        "De allra flesta som har smittats har blivit lindrigt sjuka med luftvägssymptom som går över av sig själva, medan vissa drabbats av allvarligare sjukdom som lunginflammation. "
+      ],
+      "set": {
+        "classifiedIntentName": "question: Hur sjuk blir jag av covid-19",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "De allra flesta som har smittats har blivit lindrigt sjuka med luftvägssymptom som går över av sig själva, medan vissa drabbats av allvarligare sjukdom som lunginflammation. "
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Kan covid-19 smitta mellan djur och människa och kan POS_PRON husdjur smittas av viruset?",
+      "entities": {
+        "POS_PRON": POS_PRON,
+        "PERS_PRON": PERS_PRON,
+        "PET": PET,
+        "CORONA": CORONA
+      },
+      "examples": [
+        "Kan covid-19 smitta mellan djur och människa och kan _POS_PRON husdjur smittas av viruset?",
+        "kan _PERS_PRON smittas av POS_PRONOMEN _PET",
+        "kan _PERS_PRON få _CORONA av _PET",
+        "kan _PERS_PRON smitta _POS_PRON _PET",
+        "smittar _CORONA mellan människor och _PET",
+        "hur skyddar _PERS_PRON _POS_PRON _PET",
+        "kan _PERS_PRON få _CORONA av _POS_PRON _PET?",
+        "smittar _POS_PRON _PET?",
+        "kan jag bli smittad av ett _PET?",
+        "kan jag smitta mitt _PET?",
+        "Kan djur bli smittade av _CORONA",
+        "Kan _POS_PRON _PET ha _CORONA",
+        "Smittar _CORONA från människa till _PET",
+        "Kan _CORONA smitta mellan _PET och människa och kan _POS_PRON _PET smittas av viruset?",
+        "kan min _PET ge mig _CORONA",
+        "riskerar _PET få _CORONA",
+        "Är det farligt för min _PET",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Det finns inga uppgifter idag om att covid19 kan smitta från människa till husdjur."
+      ],
+      "set": {
+        "classifiedIntentName": "question: Kan covid-19 smitta mellan djur och människa och kan POS_PRON husdjur smittas av viruset?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Det finns inga uppgifter idag om att covid19 kan smitta från människa till husdjur."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Kan jag bli smittad av en person som har covid-19 men som inte har några SYMPTOM",
+      "entities": {
+        "SYMPTOM": SYMPTOM,
+        "CORONA": CORONA,
+        "PERS_PRON": PERS_PRON,
+        "CAN": CAN,
+        "CO_SYM": CO_SYM
+      },
+      "examples": [
+        "Kan jag bli smittad av en person som har covid-19 men som inte har några _SYMPTOM",
+        "smittar _CORONA utan _SYMPTOM",
+        "kan _PERS_PRON bli smittad av en person utan _SYMPTOM",
+        "är _CORONA smittsamt fastän en person inte känner sig sjuk",
+        "_CAN det finnas _SYMPTOM för att det ska vara smittsamt",
+        "är _CORONA smittsamt om _PERS_PRON bara hostar lite",
+        "Kan _PERS_PRON bli smittad av en person som har _CORONA men som inte har några _SYMPTOM",
+        "Blir _PERS_PRON smittad om _PERS_PRON inte har _CO_SYM",
+        "Kan _PERS_PRON bli smittad utan _CO_SYM",
+        "är _PERS_PRON smittsam när _PERS_PRON är symptomfri?",
+        "_CAN PERS_PROM smittas av någon som är symptomfri?",
+        "kan _PERS_PRON ha _CORONA utan att ha _SYMPTOM",
+        "Kan man smitta utan att vara sjuk själv?",
+        "Jag känner mig frisk. Kan jag ändå smitta?",
+        "Måste _PERS_PRON ha _SYMPTOM för att smitta",
+        "Kan _PERS_PRON smitta utan _SYMPTOM",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Smittspridningen drivs av personer med symptom på sjukdom, men en del som är sjuka får bara milda symptom. Du kan därför bli smittad av någon som inte känner sig sjuk, men som har t.ex. mild hosta. Bedömningen idag är att smittspridning från personer helt utan symptom är mycket begränsad."
+      ],
+      "set": {
+        "classifiedIntentName": "question: Kan jag bli smittad av en person som har covid-19 men som inte har några SYMPTOM",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Smittspridningen drivs av personer med symptom på sjukdom, men en del som är sjuka får bara milda symptom. Du kan därför bli smittad av någon som inte känner sig sjuk, men som har t.ex. mild hosta. Bedömningen idag är att smittspridning från personer helt utan symptom är mycket begränsad."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: jag har nyligen varit i ett land där smittspridning pågår och nu har jag hosta och feber. Vad ska jag göra?",
+      "entities": {
+        "CAN": CAN,
+        "CORONA": CORONA,
+        "PERS_PRON": PERS_PRON,
+        "CO_SYM": CO_SYM
+      },
+      "examples": [
+        "jag har nyligen varit i ett land där smittspridning pågår och nu har jag hosta och feber. Vad ska jag göra?",
+        "_PERS_PRON tror _PERS_PRON har fått _CORONA vad _CAN _PERS_PRON göra",
+        "vad gör _PERS_PRON om _PERS_PRON tror att _PERS_PRON har fått _CORONA",
+        "hur gör _PERS_PRON om _PERS_PRON har fått _CORONA",
+        "vad _CAN _PERS_PRON göra om _PERS_PRON har fått _CORONA",
+        "om _PERS_PRON tror _PERS_PRON har _CORONA vad _CAN _PERS_PRON göra",
+        "_PERS_PRON har _CORONA vad _CAN _PERS_PRON göra",
+        "_PERS_PRON misstänker att _PERS_PRON kanske har _CORONA vad gör _PERS_PRON nu",
+        "_PERS_PRON har varit i Italien ska _PERS_PRON vara i karantän?",
+        "Ska _PERS_PRON vara i karantän om _PERS_PRON varit i Italien",
+        "_PERS_PRON har nyligen varit i ett land där smittspridning pågår och nu har _PERS_PRON hosta och feber. Vad ska _PERS_PRON göra?",
+        "_PERS_PRON var utomlands och har _CO_SYM",
+        "_PERS_PRON tror att _PERS_PRON fått _CORONA vad _CAN _PERS_PRON göra",
+        "om _PERS_PRON drabbas av _CORONA vad ska _PERS_PRON göra?",
+        "kommit hem från resa utomlands",
+        "utomlands",
+        "resa utomlands",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Känner du dig sjuk med symptom som snuva, hosta eller feber ska du låta bli att träffa andra människor. Du ska inte gå till jobbet eller skolan. Detta gäller även om du bara känner dig lite sjuk eftersom det är viktigt att inte riskera att smitta andra. De allra flesta som smittats blir lindrigt sjuka med luftvägssymptom som går över av sig själva, medan andra drabbas av hög feber och allvarligare sjukdom som lunginflammation. Om du känner dig mycket dålig ska du kontakta sjukvården."
+      ],
+      "set": {
+        "classifiedIntentName": "question: jag har nyligen varit i ett land där smittspridning pågår och nu har jag hosta och feber. Vad ska jag göra?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Känner du dig sjuk med symptom som snuva, hosta eller feber ska du låta bli att träffa andra människor. Du ska inte gå till jobbet eller skolan. Detta gäller även om du bara känner dig lite sjuk eftersom det är viktigt att inte riskera att smitta andra. De allra flesta som smittats blir lindrigt sjuka med luftvägssymptom som går över av sig själva, medan andra drabbas av hög feber och allvarligare sjukdom som lunginflammation. Om du känner dig mycket dålig ska du kontakta sjukvården."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: bör jag som symtomfri jobba hemma?",
+      "entities": {
+        "CAN": CAN,
+        "PERS_PRON": PERS_PRON,
+        "SYMPTOM": SYMPTOM,
+        "IF": IF
+      },
+      "examples": [
+        "bör jag som symtomfri jobba hemma?",
+        "_CAN _PERS_PRON jobba hemma även fast _PERS_PRON inte har några _SYMPTOM",
+        "_CAN _PERS_PRON jobba hemma även fast _PERS_PRON inte uppvisar _SYMPTOM",
+        "_CAN _PERS_PRON jobba hemma om _PERS_PRON är fullt frisk?",
+        "_CAN _PERS_PRON som symtomfri jobba hemma?",
+        "_CAN _PERS_PRON som symptomfri jobba hemma?",
+        "_CAN _PERS_PRON jobba hemma?",
+        "_CAN _PERS_PRON arbeta hemma",
+        "_CAN _PERS_PRON arbeta hemifrån",
+        "_CAN _PERS_PRON jobba hemifrån",
+        "_CAN _PERS_PRON jobba hemifrån _IF _PERS_PRON inte har _SYMPTOM",
+        "_CAN _PERS_PRON arbeta hemifrån _IF _PERS_PRON inte har _SYMPTOM",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "För att minska smittspridningen så är rådet till alla att jobba hemifrån om det är möjligt, även om du känner dig fullt frisk. "
+      ],
+      "set": {
+        "classifiedIntentName": "question: bör jag som symtomfri jobba hemma?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "För att minska smittspridningen så är rådet till alla att jobba hemifrån om det är möjligt, även om du känner dig fullt frisk. "
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Hur länge är jag sjuk av covid-19?",
+      "entities": {
+        "PERS_PRON": PERS_PRON,
+        "CORONA": CORONA,
+        "CO_SYM": CO_SYM
+      },
+      "examples": [
+        "Hur länge är jag sjuk av covid-19?",
+        "hur pass länge är _PERS_PRON sjuk",
+        "hur länge har _PERS_PRON _CORONA",
+        "hur lång tid kan _PERS_PRON ha _CORONA",
+        "hur lång tid tar det innan _CORONA går över",
+        "när går _CORONA över",
+        "hur länge varar _CORONA?",
+        "är _PERS_PRON sjuk jättelänge",
+        "är _PERS_PRON sjuk länge om _PERS_PRON får _CORONA",
+        "Hur länge är _PERS_PRON sjuk av _CORONA?",
+        "Hur länge är _PERS_PRON sjuk av _CORONA",
+        "Hur länge har _PERS_PRON _CO_SYM",
+        "Hur länge är _PERS_PRON _CO_SYM",
+        "Är _CORONA farligt?",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "De flesta personer som får lindriga sjukdomssymptom blir friska efter två veckor. För de som blir allvarligt sjuka tar det mellan tre och sex veckor innan de är friska igen."
+      ],
+      "set": {
+        "classifiedIntentName": "question: Hur länge är jag sjuk av covid-19?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "De flesta personer som får lindriga sjukdomssymptom blir friska efter två veckor. För de som blir allvarligt sjuka tar det mellan tre och sex veckor innan de är friska igen."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Skyddar munskydd mot covid-19",
+      "entities": {
+        "PROTECT": PROTECT,
+        "CORONA": CORONA,
+        "CAN": CAN,
+        "PERS_PRON": PERS_PRON,
+        "REF_PRON": REF_PRON
+      },
+      "examples": [
+        "Skyddar munskydd mot covid-19",
+        "_PROTECT munskydd",
+        "_PROTECT munskydd mot _CORONA",
+        "Funkar munskydd",
+        "_CAN _PERS_PRON _PROTECT _REF_PRON med munskydd",
+        "är det bra att ha munskydd",
+        "_CAN _PERS_PRON ha munskydd",
+        "_CAN _PERS_PRON ha skydd för munnen",
+        "Fungerar munskydd",
+        "Vad gäller för munskydd utanför vården?",
+        "_PROTECT det att använda mask",
+        "_PROTECT det att använda en mast",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Munskydd behövs inte i vanliga situationer ute i samhället, då är det bättre att hålla avstånd till andra människor och att vara noga med att tvätta händerna."
+      ],
+      "set": {
+        "classifiedIntentName": "question: Skyddar munskydd mot covid-19",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Munskydd behövs inte i vanliga situationer ute i samhället, då är det bättre att hålla avstånd till andra människor och att vara noga med att tvätta händerna."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Vad gäller vid resa inom Sverige?",
+      "entities": {
+        "PERS_PRON": PERS_PRON,
+        "CITY": CITY,
+        "CAN": CAN
+      },
+      "examples": [
+        "Vad gäller vid resa inom Sverige?",
+        "kan _PERS_PRON resa i sverige",
+        "kan _PERS_PRON resa inom sverige?",
+        "är det ok att resa i sverige?",
+        "kan jag resa till _PERS_PRON",
+        "kan jag resa med _PERS_PRON",
+        "Får _PERS_PRON åka till _CITY i påsk?",
+        "_CAN _PERS_PRON  åka till _CITY?",
+        "Får jag åka från Stockholm till Skåne i påsk?",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Om resan är nödvändig är det ok att resa inom Sverige. Känner du dig minsta sjuk ska du hålla dig hemma. Alla som tillhör en riskgrupp bör undvika att resa eller ta emot besök. Tänk efter om du måste resa eller om det kan vänta."
+      ],
+      "set": {
+        "classifiedIntentName": "question: Vad gäller vid resa inom Sverige?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Om resan är nödvändig är det ok att resa inom Sverige. Känner du dig minsta sjuk ska du hålla dig hemma. Alla som tillhör en riskgrupp bör undvika att resa eller ta emot besök. Tänk efter om du måste resa eller om det kan vänta."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Vad gäller för arbetsplatser och skolor?",
+      "entities": {
+        "OCCUPATION": OCCUPATION,
+        "PERS_PRON": PERS_PRON,
+        "CO_SYM": CO_SYM
+      },
+      "examples": [
+        "Vad gäller för arbetsplatser och skolor?",
+        "hur många får det vara på en _OCCUPATION",
+        "hur många får va på ett _OCCUPATION",
+        "vad gäller _OCCUPATION",
+        "kan _PERS_PRON gå till _OCCUPATION",
+        "får _PERS_PRON gå till _OCCUPATION",
+        "ska _PERS_PRON gå till _OCCUPATION",
+        "_PERS_PRON till _OCCUPATION",
+        "_CO_SYM på _OCCUPATION",
+        "kan jag jobba Om jag känner mig sjuk",
+        "Jag känner mig lite sjuk och har hosta Kan jag gå till jobbet ändå",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Arbetsplatser och skolor omfattas inte av förbudet mot allmänna sammankomster med fler än 50 personer men man kan tänka på att minimera aktiviteter som samlar många personer. Man ska jobba hemifrån om man kan. "
+      ],
+      "set": {
+        "classifiedIntentName": "question: Vad gäller för arbetsplatser och skolor?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Arbetsplatser och skolor omfattas inte av förbudet mot allmänna sammankomster med fler än 50 personer men man kan tänka på att minimera aktiviteter som samlar många personer. Man ska jobba hemifrån om man kan. "
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Kan jag vaccinera",
+      "entities": {
+        "CAN": CAN,
+        "CORONA": CORONA,
+        "PERS_PRON": PERS_PRON,
+        "REF_PRON": REF_PRON
+      },
+      "examples": [
+        "Kan jag vaccinera",
+        "finns det vaccin",
+        "_CAN _PERS_PRON vaccinera _REF_PRON mot _CORONA",
+        "när kommer vaccin mot _CORONA",
+        "finns det vaccin mot _CORONA",
+        "hur går det med vaccinet?",
+        "_CAN _PERS_PRON vaccinera",
+        "_CAN _PERS_PRON få vaccin mot _CORONA",
+        "_CAN _PERS_PRON få spruta mot _CORONA",
+        "Finns det spruta mot _CORONA",
+        "när kommer vaccinet",
+        "när kommer vaccin",
+        "när kommer medicin mot _CORONA",
+        "finns det en medicin mot _CORONA",
+        "_CAN _PERS_PRON vaccinera _REF_PRON",
+        "när finns medicin mot _CORONA",
+        "hur lång tid tar vaccinet",
+        "var finns medicin _CORONA"
+      ]
+    },
+    "bot": {
+      "say": [
+        "I nuläget finns det inget vaccin eller speciellt läkemedel mot covid19. Internationella studier av olika typer av läkemedelsbehandlingar pågår och forskning sker kring utveckling av ett vaccin."
+      ],
+      "set": {
+        "classifiedIntentName": "question: Kan jag vaccinera",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "I nuläget finns det inget vaccin eller speciellt läkemedel mot covid19. Internationella studier av olika typer av läkemedelsbehandlingar pågår och forskning sker kring utveckling av ett vaccin."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Ingår gravida i riskgrupperna?",
+      "entities": {
+        "PERS_PRON": PERS_PRON,
+        "CAN": CAN,
+        "CORONA": CORONA,
+        "CO_SYM": CO_SYM
+      },
+      "examples": [
+        "Ingår gravida i riskgrupperna?",
+        "är det större risk om _PERS_PRON är gravid",
+        "hur stor är risken om _PERS_PRON är gravid",
+        "hur _CAN _PERS_PRON göra om _PERS_PRON är gravid",
+        "är graviditet en riskgrupp",
+        "är gravida kvinnor i riskgruppen",
+        "är det farligt att få _CORONA om _PERS_PRON är gravid",
+        "_CAN _PERS_PRON vara orolig om _PERS_PRON är gravid",
+        "Vad gäller när _PERS_PRON är gravid? ",
+        "Är det risk om _PERS_PRON är gravid",
+        "Är gravid riskgrupp",
+        "Är gravid riskzon",
+        "är gravid risk",
+        "har gravid risk",
+        "får gravid _CORONA",
+        "är det farligt med _CO_SYM om _PERS_PRON är gravid",
+        "får _CORONA gravid",
+        "Rekommendationer för gravida",
+        "vad ska gravida göra"
+      ]
+    },
+    "bot": {
+      "say": [
+        "För närvarande finns det begränsad information om covid-19 och graviditet. Som med alla lunginflammationer kan risken för allvarlig sjukdom vara något större, särskilt i slutet av graviditeten. Det finns få rapporteringar av barn som blivit smittade under graviditet eller förlossning. "
+      ],
+      "set": {
+        "classifiedIntentName": "question: Ingår gravida i riskgrupperna?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "För närvarande finns det begränsad information om covid-19 och graviditet. Som med alla lunginflammationer kan risken för allvarlig sjukdom vara något större, särskilt i slutet av graviditeten. Det finns få rapporteringar av barn som blivit smittade under graviditet eller förlossning. "
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Vilka råd finns det för resa till andra länder?",
+      "entities": {
+        "PERS_PRON": PERS_PRON,
+        "CAN": CAN,
+        "REF_PRON": REF_PRON
+      },
+      "examples": [
+        "Vilka råd finns det för resa till andra länder?",
+        "får _PERS_PRON resa till andra länder",
+        "är det okej att resa utomlands",
+        "vad gäller om _PERS_PRON vill resa utomlands",
+        "är det ok att åka utomlands",
+        "_CAN _PERS_PRON ställa in _REF_PRON semester utomlands",
+        "kan _PERS_PRON åka utomlands",
+        "vad rekommenderas gällande utlandsresor",
+        "får _PERS_PRON åka utomlands",
+        "vad gäller om _PERS_PRON tänkt resa utomlands",
+        "får _PERS_PRON åka till andra länder",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Sedan 14 mars 2020 avråder UD från icke nödvändiga resor till alla länder. Du som resenär behöver göra en egen bedömning av ditt resande utifrån behovet av att resa och den information om smittspridningen som finns. Tänk också på att många länder inte tar emot inresande just nu för att begränsa smittspridningen."
+      ],
+      "set": {
+        "classifiedIntentName": "question: Vilka råd finns det för resa till andra länder?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Sedan 14 mars 2020 avråder UD från icke nödvändiga resor till alla länder. Du som resenär behöver göra en egen bedömning av ditt resande utifrån behovet av att resa och den information om smittspridningen som finns. Tänk också på att många länder inte tar emot inresande just nu för att begränsa smittspridningen."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: vad skiljer covid-19 från säsongsinfluensa?",
+      "entities": {
+        "CORONA": CORONA,
+        "FLU": FLU,
+        "CAN": CAN,
+        "PERS_PRON": PERS_PRON,
+        "INT_PRON": INT_PRON
+      },
+      "examples": [
+        "vad skiljer covid-19 från säsongsinfluensa?",
+        "är _CORONA _FLU",
+        "vad skiljer _CORONA från _FLU",
+        "är _FLU samma sak som _CORONA",
+        "är _CORONA samma sak som _FLU?",
+        "_CORONA och _FLU är det samma sak",
+        "är _CORONA och _FLU olika",
+        "är _CORONA och _FLU samma?",
+        "_CAN _PERS_PRON  få _CORONA från _FLU?",
+        "_INT_PRON skiljer _CORONA från säsongsinfluensa?",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Det är svårt att jämföra en helt ny sjukdom som covid19, med den återkommande säsongsinfluensan. Utifrån vad vi vet idag är att sjudomarna är liknande i symptom men covid19 sprider sig mycket snabbare eftersom ingen har utvecklat immunitet ännu."
+      ],
+      "set": {
+        "classifiedIntentName": "question: vad skiljer covid-19 från säsongsinfluensa?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Det är svårt att jämföra en helt ny sjukdom som covid19, med den återkommande säsongsinfluensan. Utifrån vad vi vet idag är att sjudomarna är liknande i symptom men covid19 sprider sig mycket snabbare eftersom ingen har utvecklat immunitet ännu."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Jag känner mig orolig för covid-19, hur ska jag hantera min oro?",
+      "entities": {
+        "CAN": CAN,
+        "CORONA": CORONA,
+        "PERS_PRON": PERS_PRON,
+        "PROTECT": PROTECT,
+        "SAD": SAD,
+        "INT_PRON": INT_PRON,
+        "POS_PRON": POS_PRON
+      },
+      "examples": [
+        "Jag känner mig orolig för covid-19, hur ska jag hantera min oro?",
+        "_PERS_PRON är _SAD för _CORONA, _CAN _PERS_PRON få _PROTECT? ",
+        "",
+        "_PERS_PRON är _SAD för _CORONA, _INT_PRON _CAN _PERS_PRON göra?",
+        "_PERS_PRON har _SAD på grund av _CORONA, _CAN _PERS_PRON få _PROTECT?",
+        "_PERS_PRON får _SAD av _CORONA, _CAN _PERS_PRON få _PROTECT?",
+        "Hur ska _PERS_PRON hantera _POS_PRON _SAD?",
+        "_PERS_PRON är _SAD",
+        "_PERS_PRON har _SAD",
+        "_PERS_PRON känner mig _SAD för _CORONA, hur ska _PERS_PRON hantera _POS_PRON _SAD?",
+        "_PERS_PRON vill inte dö",
+        "_PERS_PRON vill prata med någon",
+        "kommer världen gå under "
+      ]
+    },
+    "bot": {
+      "say": [
+        "Se först och främst till att använda dig av tillförlitliga källor för att hämta information om covid19. Begränsa tiden du tar del av nyheter och sociala medier. Försök behåll dina vanliga rutiner och prata gärna med andra om det som oroar dig, men prata också om andra saker än sjukdomar."
+      ],
+      "set": {
+        "classifiedIntentName": "question: Jag känner mig orolig för covid-19, hur ska jag hantera min oro?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Se först och främst till att använda dig av tillförlitliga källor för att hämta information om covid19. Begränsa tiden du tar del av nyheter och sociala medier. Försök behåll dina vanliga rutiner och prata gärna med andra om det som oroar dig, men prata också om andra saker än sjukdomar."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Smittar covid-19 via vatten och mat?",
+      "entities": {
+        "CORONA": CORONA,
+        "DRINK": DRINK,
+        "PERS_PRON": PERS_PRON
+      },
+      "examples": [
+        "Smittar covid-19 via vatten och mat?",
+        "Kan _PERS_PRON få _CORONA om _PERS_PRON dricker _DRINK?",
+        "Kan _PERS_PRON få _CORONA när _PERS_PRON dricker _DRINK?",
+        "Kan _PERS_PRON få _CORONA om _PERS_PRON äter mat?",
+        "Kan _PERS_PRON få _CORONA när _PERS_PRON äter mat?",
+        "Smittar _CORONA via _DRINK och mat?",
+        "Smittar _CORONA genom dryck?",
+        "Smittar _CORONA genom mat?",
+        "Kan _PERS_PRON få _CORONA av mat?",
+        "Kan PER_PRON få _CORONA av dricka?",
+        "Kan _PERS_PRON bli sjuk av _DRINK?",
+        "Kan _PERS_PRON få _CORONA av _DRINK?",
+        "Är det okej att gå till simhallen",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Det finns inga uppgifter om att personer smittats genom att ha ätit mat eller druckit vatten. Det är inte heller troligt att covid19 sprids via bassängvatten eller annat badvatten. Covid19 smittar i första hand mellan människor genom droppsmitta, det vill säga att smitta överförs till slemhinna i ögon, näsa eller mun från droppar som sprids i luften när en sjuk person hostar eller nyser."
+      ],
+      "set": {
+        "classifiedIntentName": "question: Smittar covid-19 via vatten och mat?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Det finns inga uppgifter om att personer smittats genom att ha ätit mat eller druckit vatten. Det är inte heller troligt att covid19 sprids via bassängvatten eller annat badvatten. Covid19 smittar i första hand mellan människor genom droppsmitta, det vill säga att smitta överförs till slemhinna i ögon, näsa eller mun från droppar som sprids i luften när en sjuk person hostar eller nyser."
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -1482,41 +2271,724 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": {
-      "name": "question: är det okej att jag går till jobbet?",
+      "name": "question: Hur många blir friska från covid-19",
       "entities": {
-        "OCCUPATION": OCCUPATION,
+        "CORONA": CORONA,
+        "REF_PRON": REF_PRON,
         "PERS_PRON": PERS_PRON,
-        "ACTIVITY": ACTIVITY,
-        "POS_PRON": POS_PRON
+        "INT_PRON": INT_PRON
       },
       "examples": [
-        "är det okej att jag går till jobbet?",
-        "får _PERS_PRON gå till _OCCUPATION",
-        "kan _PERS_PRON gå till _OCCUPATION",
-        "är det okej att _ACTIVITY ",
-        "kan _PERS_PRON _ACTIVITY ",
-        "får _PERS_PRON _ACTIVITY",
-        "är det okej att _PERS_PRON går till _OCCUPATION?",
-        "Ska _PERS_PRON gå till _OCCUPATION?",
-        "Jag undrar om jag kan gå till jobbet om jag har ont i halsen",
-        "Kan _PERS_PRON gå till dagis med _POS_PRON barn",
-        "får jag _ACTIVITY",
-        "Kan _PERS_PRON _ACTIVITY",
-        "kan man _ACTIVITY utan risk",
-        "Kan jag _ACTIVITY?",
-        "ska jag gå till _ACTIVITY",
+        "Hur många blir friska från covid-19",
+        "kommer alla bli friska från _CORONA?",
+        "hur pass många blir friska",
+        "hur stor är chansen att klara _REF_PRON",
+        "hur många tillfrisknar från _CORONA",
+        "hur många blir friska",
+        "hur många blir friska efter _CORONA",
+        "kan _PERS_PRON bli frisk efter _CORONA",
+        "blir _PERS_PRON frisk efter _CORONA",
+        "_INT_PRON är chansen för att bli frisk efter _CORONA",
+        "Hur många blir friska från _CORONA?",
+        "hur stor är chansen att _PERS_PRON klarar _REF_PRON",
         ""
       ]
     },
     "bot": {
       "say": [
-        "Känner du dig sjuk med symptom som snuva, hosta, halsont eller feber ska du låta bli att träffa andra människor. Du ska inte gå till jobbet eller skolan. Detta gäller även om du bara känner dig lite sjuk eftersom det är viktigt att inte riskera att smitta andra. Du ska vara hemma tills du är helt frisk och sen minst två dagar till. Om du har möjlighet att arbeta hemifrån så ska du göra det även om du är frisk."
+        "Majoriteten av de som drabbas av covid19 blir friska. Få personer löper risk att bli allvarligt sjuka."
       ],
       "set": {
-        "classifiedIntentName": "question: är det okej att jag går till jobbet?",
+        "classifiedIntentName": "question: Hur många blir friska från covid-19",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "Känner du dig sjuk med symptom som snuva, hosta, halsont eller feber ska du låta bli att träffa andra människor. Du ska inte gå till jobbet eller skolan. Detta gäller även om du bara känner dig lite sjuk eftersom det är viktigt att inte riskera att smitta andra. Du ska vara hemma tills du är helt frisk och sen minst två dagar till. Om du har möjlighet att arbeta hemifrån så ska du göra det även om du är frisk."
+          "Majoriteten av de som drabbas av covid19 blir friska. Få personer löper risk att bli allvarligt sjuka."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Finns det självtester för covid-19",
+      "entities": {
+        "CAN": CAN,
+        "CORONA": CORONA,
+        "PERS_PRON": PERS_PRON,
+        "REF_PRON": REF_PRON
+      },
+      "examples": [
+        "Finns det självtester för covid-19",
+        "_CAN _PERS_PRON testa _REF_PRON hemma för _CORONA?",
+        "går det att testa _REF_PRON hemma?",
+        "är självtester pålitliga?",
+        "_CAN _PERS_PRON lita på självtester?",
+        "_CAN _PERS_PRON testa _REF_PRON för _CORONA hemma?",
+        "_CAN _PERS_PRON testa om _PERS_PRON har _CORONA hemma?",
+        "_CAN _PERS_PRON testa _REF_PRON för _CORONA i hemmet?",
+        "_CAN _PERS_PRON testa om _PERS_PRON har _CORONA i hemmet?",
+        "går det att testa sig för _CORONA hemifrån?",
+        "Finns det självtester för _CORONA?",
+        "_CAN _PERS_PRON testa _CORONA hemma",
+        "_CAN _PERS_PRON göra test för _CORONA hemma",
+        "_CAN _PERS_PRON testa _REF_PRON i hemmet",
+        "_CAN _PERS_PRON testa _REF_PRON för _CORONA i hemmet",
+        "Vad är självskattningstest för covid-19?",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Det finns tillverkare som marknadsför självtester för covid19. Det är dock inte klart hur exakta eller känsliga dessa tester är. Det rekommenderas därför inte att använda dessa självtester."
+      ],
+      "set": {
+        "classifiedIntentName": "question: Finns det självtester för covid-19",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Det finns tillverkare som marknadsför självtester för covid19. Det är dock inte klart hur exakta eller känsliga dessa tester är. Det rekommenderas därför inte att använda dessa självtester."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Kan idrotts- och träningsaktiviteter fortsätta som vanligt?",
+      "entities": {
+        "CAN": CAN,
+        "PERS_PRON": PERS_PRON,
+        "WORKOUT": WORKOUT
+      },
+      "examples": [
+        "Kan idrotts- och träningsaktiviteter fortsätta som vanligt?",
+        "_CAN _PERS_PRON fortsätta _WORKOUT",
+        "_CAN _PERS_PRON _WORKOUT",
+        "_CAN _PERS_PRON fortfarande _WORKOUT?",
+        "_CAN _PERS_PRON sluta _WORKOUT?",
+        "_CAN _PERS_PRON undvika att _WORKOUT?",
+        "_CAN _PERS_PRON _WORKOUT som vanligt?",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Du kan fortsätta idrotta, men vissa försiktighetsåtgärder bör vidtas för att minska risken för spridning av covid19. Minska moment med närkontakt, torka av utrustning med desinfektionsmedel och idrotta utomhus om det är möjligt. "
+      ],
+      "set": {
+        "classifiedIntentName": "question: Kan idrotts- och träningsaktiviteter fortsätta som vanligt?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Du kan fortsätta idrotta, men vissa försiktighetsåtgärder bör vidtas för att minska risken för spridning av covid19. Minska moment med närkontakt, torka av utrustning med desinfektionsmedel och idrotta utomhus om det är möjligt. "
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Vilka personer bör testas för covid-19",
+      "entities": {
+        "CORONA": CORONA,
+        "INT_PRON": INT_PRON,
+        "CAN": CAN,
+        "PERS_PRON": PERS_PRON,
+        "REF_PRON": REF_PRON,
+        "SYMPTOM": SYMPTOM,
+        "IF": IF
+      },
+      "examples": [
+        "Vilka personer bör testas för covid-19",
+        "_INT_PRON kan testas för _CORONA?",
+        "_INT_PRON personer _CAN testa sig för _CORONA?",
+        "_CAN _PERS_PRON testa _REF_PRON för _CORONA",
+        "när _CAN _PERS_PRON testa _REF_PRON för _CORONA?",
+        "_CAN _PERS_PRON stanna hemma när _PERS_PRON uppvisar symtom på _CORONA?",
+        "_INT_PRON _CAN testas för _CORONA?",
+        "_CAN _PERS_PRON stanna hemma om _PERS_PRON uppvisar _SYMPTOM på _CORONA?",
+        "_CAN _PERS_PRON stanna hemma _IF _PERS_PRON uppvisar _SYMPTOM på _CORONA?",
+        "_CAN _PERS_PRON testa _REF_PRON för _CORONA?",
+        "_INT_PRON testas för _CORONA?",
+        "_INT_PRON personer _CAN testas för det _CORONA?",
+        "_INT_PRON personer _CAN testas för _CORONA",
+        "_CAN _PERS_PRON testa _REF_PRON?",
+        "hur testar man _CORONA",
+        "testar sjukvården _CORONA",
+        "Jag är personal inom äldreomsorgen. Jag är förkyld. Kan jag bli testad?",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "De som i första hand testas är personer som är i behov av vård på sjukhus och personal inom sjukvård och äldreomsorg med misstänkt smitta av coronaviruset. Det är viktigt att alla som är sjuka i förkylning eller influensaliknande symptom ska vara hemma för att inte riskera att sprida smittan."
+      ],
+      "set": {
+        "classifiedIntentName": "question: Vilka personer bör testas för covid-19",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "De som i första hand testas är personer som är i behov av vård på sjukhus och personal inom sjukvård och äldreomsorg med misstänkt smitta av coronaviruset. Det är viktigt att alla som är sjuka i förkylning eller influensaliknande symptom ska vara hemma för att inte riskera att sprida smittan."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Vad gäller för kollektivtrafik och allmänna färdmedel?",
+      "entities": {
+        "PUB_TRANS": PUB_TRANS,
+        "PERS_PRON": PERS_PRON
+      },
+      "examples": [
+        "Vad gäller för kollektivtrafik och allmänna färdmedel?",
+        "vilka regler gäller för _PUB_TRANS arbetsplatser och skolor?",
+        "hur många får det vara på _PUB_TRANS",
+        "vad gäller för _PUB_TRANS",
+        "Vad ska _PERS_PRON tänka på när _PERS_PRON åker _PUB_TRANS?",
+        "vad gäller i _PUB_TRANS",
+        "vad gör _PERS_PRON i _PUB_TRANS",
+        "vad gör _PERS_PRON på _PUB_TRANS",
+        "Kan _PERS_PRON åka kommunaltrafik?",
+        "är det farligt att åka _PUB_TRANS",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Kollektivtrafik omfattas inte av förbudet mot allmänna sammankomster med fler än 50 personer. Friska personer kan åka buss, tåg och liknande till jobbet och skolan. Håll avstånd till andra resenärer och tvätta alltid händerna efter en resa."
+      ],
+      "set": {
+        "classifiedIntentName": "question: Vad gäller för kollektivtrafik och allmänna färdmedel?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Kollektivtrafik omfattas inte av förbudet mot allmänna sammankomster med fler än 50 personer. Friska personer kan åka buss, tåg och liknande till jobbet och skolan. Håll avstånd till andra resenärer och tvätta alltid händerna efter en resa."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Ger rökning ett svårare sjukdomsförlopp vid covid-19?",
+      "entities": {
+        "PERS_PRON": PERS_PRON,
+        "CORONA": CORONA
+      },
+      "examples": [
+        "Ger rökning ett svårare sjukdomsförlopp vid covid-19?",
+        "blir _PERS_PRON sjukare om _PERS_PRON röker",
+        "blir _PERS_PRON sjukare ifall _PERS_PRON röker",
+        "gör rökning det värre",
+        "gör rökning CORANA värre",
+        "har _PERS_PRON större risk att dö ifall jag får _CORONA",
+        "hur påverkas rökare",
+        "rökare",
+        "är rökning dåligt",
+        "Ger rökning ett svårare sjukdomsförlopp vid _CORONA",
+        "är _CORONA farligare för rökare",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Vi vet sedan tidigare att tobaksrökning ökar risken för allvarliga symptom vid luftvägsinfektioner som till exempel influensa. Tillgängliga studier visar att personer som röker eller som har rökt är överrepresenterade bland de svåra fallen av covid19. Kunskapsläget om samband mellan tobaksrökning och hur svårt sjuk man blir vid covid19 är dock fortfarande oklart. Vill du ha hjälp att sluta röka finns stöd att få till exempel hos Sluta-Röka-Linjen, 020-84 00 00. "
+      ],
+      "set": {
+        "classifiedIntentName": "question: Ger rökning ett svårare sjukdomsförlopp vid covid-19?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Vi vet sedan tidigare att tobaksrökning ökar risken för allvarliga symptom vid luftvägsinfektioner som till exempel influensa. Tillgängliga studier visar att personer som röker eller som har rökt är överrepresenterade bland de svåra fallen av covid19. Kunskapsläget om samband mellan tobaksrökning och hur svårt sjuk man blir vid covid19 är dock fortfarande oklart. Vill du ha hjälp att sluta röka finns stöd att få till exempel hos Sluta-Röka-Linjen, 020-84 00 00. "
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Hur länge kan en avspärrning pågå?",
+      "entities": {
+        "PERS_PRON": PERS_PRON,
+        "END": END
+      },
+      "examples": [
+        "Hur länge kan en avspärrning pågå?",
+        "Hur länge kan det vara avspärrning?",
+        "Hur länge pågår en avspärrning?",
+        "Hur länge kan _PERS_PRON vara under avspärrning?",
+        "Hur länge kommer det vara avpärrning?",
+        "När tar avspärrningen _END?",
+        "När _END avspärrningen?",
+        "När kommer avspärrningen att _END?",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Avspärrning är endast en tillfällig åtgärd för att utreda upptäckta sjukdomsfall och smittspridning. Det kan alltså inte användas för att t.ex. hindra personer från att resa in eller ut ur ett större geografiskt område."
+      ],
+      "set": {
+        "classifiedIntentName": "question: Hur länge kan en avspärrning pågå?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Avspärrning är endast en tillfällig åtgärd för att utreda upptäckta sjukdomsfall och smittspridning. Det kan alltså inte användas för att t.ex. hindra personer från att resa in eller ut ur ett större geografiskt område."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Vad gäller privata sammankomster såsom studentskivor eller bröllop?",
+      "entities": {
+        "CAN": CAN,
+        "PERS_PRON": PERS_PRON,
+        "SMALL_EVENT": SMALL_EVENT,
+        "POS_PRON": POS_PRON
+      },
+      "examples": [
+        "Vad gäller privata sammankomster såsom studentskivor eller bröllop?",
+        "_CAN _PERS_PRON ha _SMALL_EVENT",
+        "_CAN _PERS_PRON ha _POS_PRON _SMALL_EVENT",
+        "_CAN _PERS_PRON åka på _SMALL_EVENT",
+        "_CAN _PERS_PRON gå på _SMALL_EVENT",
+        "Får _PERS_PRON ha _SMALL_EVENT",
+        "Får _PERS_PRON gå på _SMALL_EVENT",
+        "är det tillåtet med _SMALL_EVENT",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Är du arrangör: Gör en riskbedömning. Se till att informera personer att stanna hemma om de känner sig sjuka. Se även till att det finns tillgång till tvål och vatten, alternativt handsprit, under sammankomsten eller eventet. Är du besökare: Stanna hemma om du känner dig det minsta sjuk. "
+      ],
+      "set": {
+        "classifiedIntentName": "question: Vad gäller privata sammankomster såsom studentskivor eller bröllop?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Är du arrangör: Gör en riskbedömning. Se till att informera personer att stanna hemma om de känner sig sjuka. Se även till att det finns tillgång till tvål och vatten, alternativt handsprit, under sammankomsten eller eventet. Är du besökare: Stanna hemma om du känner dig det minsta sjuk. "
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Hur lång är inkubationstiden?",
+      "entities": {
+        "SYMPTOM": SYMPTOM,
+        "PERS_PRON": PERS_PRON,
+        "CORONA": CORONA,
+        "POS_PRON": POS_PRON
+      },
+      "examples": [
+        "Hur lång är inkubationstiden?",
+        "Hur lång tid kan det ta innan _SYMPTOM visar sig?",
+        "Hur lång tid efter att _PERS_PRON har blivit smittad blir _PERS_PRON sjuk?",
+        "Hur lång tid tar det innan _SYMPTOM för _CORONA visar sig?",
+        "Hur lång tid tar det att bli sjuk?",
+        "Vad är inkubationstiden?",
+        "När vet _POS_PRON om _POS_PRON blivit smittad?",
+        "Hur lång tid dröjer det tills _POS_PRON vet om _POS_PRON blivit smittad?",
+        "Hur lång tid tar det innan _POS_PRON får _SYMPTOM efter _POS_PRON smittats?",
+        "Hur lång är inkubationen för _CORONA?",
+        "Hur lång inkubationstid har _CORONA?",
+        "När vet _POS_PRON om _POS_PRON blivit smittad av _CORONA?",
+        "Hur lång tid tar det tills det märks att _POS_PRON fått _CORONA?",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "De flesta insjuknar ungefär 5 dagar efter smittotillfället, men inkubationstiden kan variera mellan 2 och 14 dagar."
+      ],
+      "set": {
+        "classifiedIntentName": "question: Hur lång är inkubationstiden?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "De flesta insjuknar ungefär 5 dagar efter smittotillfället, men inkubationstiden kan variera mellan 2 och 14 dagar."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Vad MEAN karantän?",
+      "entities": {
+        "MEAN": MEAN,
+        "PERS_PRON": PERS_PRON,
+        "CAN": CAN
+      },
+      "examples": [
+        "Vad _MEAN karantän?",
+        "Vad _MEAN att sitta i karantän?",
+        "Vad är karantän?",
+        "Vad gör _PERS_PRON i karantän?",
+        "Hur är _PERS_PRON i karantän?",
+        "Vad är en karantän?",
+        "Hur _CAN _PERS_PRON bete sig i karantän?",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Den som har eller misstänks ha covid19 kan efter beslut av en smittskyddsläkare hållas i karantän. Karantän innebär att du placeras i hemmet, en avgränsad del av en byggnad eller ett område. I karantän får du inte lämna byggnaden eller ta emot besök förutom av vårdpersonal eller socialtjänst."
+      ],
+      "set": {
+        "classifiedIntentName": "question: Vad MEAN karantän?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Den som har eller misstänks ha covid19 kan efter beslut av en smittskyddsläkare hållas i karantän. Karantän innebär att du placeras i hemmet, en avgränsad del av en byggnad eller ett område. I karantän får du inte lämna byggnaden eller ta emot besök förutom av vårdpersonal eller socialtjänst."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Kan jag och några vänner gå ut och äta på restaurang?",
+      "entities": {
+        "CAN": CAN,
+        "PERS_PRON": PERS_PRON
+      },
+      "examples": [
+        "Kan jag och några vänner gå ut och äta på restaurang?",
+        "_CAN _PERS_PRON äta ute",
+        "_CAN _PERS_PRON gå ut och käka",
+        "_CAN _PERS_PRON gå ut och äta på restaurang?",
+        "_CAN _PERS_PRON käka ute",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Du kan fortfarande äta på restaurang med vänner och familj men undvik att sitta tätt tillsammans och håll mer än en armslängds avstånd till andra gäster."
+      ],
+      "set": {
+        "classifiedIntentName": "question: Kan jag och några vänner gå ut och äta på restaurang?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Du kan fortfarande äta på restaurang med vänner och familj men undvik att sitta tätt tillsammans och håll mer än en armslängds avstånd till andra gäster."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Vilka källor har ni?",
+      "entities": {
+        "POS_PRON": POS_PRON,
+        "PERS_PRON": PERS_PRON
+      },
+      "examples": [
+        "Vilka källor har ni?",
+        "Vilka är _POS_PRON källor?",
+        "Varifrån hämtar _PERS_PRON _POS_PRON information?",
+        "Vad har _PERS_PRON för källor?",
+        "Var kommer informationen ifrån?",
+        "Vilka källor har _PERS_PRON?",
+        "vad är tillförlitliga källor",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Min primära källa i nuläget är Folkhälsomyndigheten, men mitt team jobbar på att lägga till fler källor för att jag ska kunna svara på fler av dina frågor."
+      ],
+      "set": {
+        "classifiedIntentName": "question: Vilka källor har ni?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Min primära källa i nuläget är Folkhälsomyndigheten, men mitt team jobbar på att lägga till fler källor för att jag ska kunna svara på fler av dina frågor."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Vad innebär de nya reglerna för restauranger och deras gäster?",
+      "entities": {
+        "INT_PRON": INT_PRON,
+        "RESTAURANT": RESTAURANT,
+        "CAN": CAN,
+        "PERS_PRON": PERS_PRON
+      },
+      "examples": [
+        "Vad innebär de nya reglerna för restauranger och deras gäster?",
+        "_INT_PRON gäller för _RESTAURANT",
+        "_CAN _PERS_PRON gå på _RESTAURANT",
+        "_CAN _PERS_PRON gå ut och äta",
+        "_CAN _PERS_PRON besöka _RESTAURANT",
+        "_CAN _PERS_PRON göra _RESTAURANT",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Resturanger och liknande får hålla öppet. Trängsel mellan människor i köer, vid bord, bufféer eller bardiskar får inte förekomma. Gäster ska kunna hålla avstånd till varandra samt äta och dricka sittandes vid bord, inte ståendes vid ståbord eller bardiskar. Personal ska helst bära ut beställningarna. Det är möjligt att gästerna får hämta och lämna egen mat och dryck om det finns tillräckligt med utrymme. Om du känner dig sjuk ska du inte gå till en resturang."
+      ],
+      "set": {
+        "classifiedIntentName": "question: Vad innebär de nya reglerna för restauranger och deras gäster?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Resturanger och liknande får hålla öppet. Trängsel mellan människor i köer, vid bord, bufféer eller bardiskar får inte förekomma. Gäster ska kunna hålla avstånd till varandra samt äta och dricka sittandes vid bord, inte ståendes vid ståbord eller bardiskar. Personal ska helst bära ut beställningarna. Det är möjligt att gästerna får hämta och lämna egen mat och dryck om det finns tillräckligt med utrymme. Om du känner dig sjuk ska du inte gå till en resturang."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Finns det vaccin eller behandling mot covid-19",
+      "entities": {
+        "TREATMENT": TREATMENT,
+        "CORONA": CORONA,
+        "PERS_PRON": PERS_PRON,
+        "CAN": CAN,
+        "REF_PRON": REF_PRON
+      },
+      "examples": [
+        "Finns det vaccin eller behandling mot covid-19",
+        "finns _TREATMENT",
+        "finns _CORONA _TREATMENT",
+        "finns _TREATMENT mot _CORONA",
+        "kan _PERS_PRON bli botad",
+        "finns det _TREATMENT än",
+        "_CAN _PERS_PRON vaccinera _REF_PRON mot _CORONA",
+        "finns det _TREATMENT eller _TREATMENT mot _CORONA?",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "I nuläget finns det inget vaccin eller speciellt läkemedel mot covid19. Internationella studier av olika typer av läkemedelsbehandlingar pågår och forskning sker kring utveckling av ett vaccin."
+      ],
+      "set": {
+        "classifiedIntentName": "question: Finns det vaccin eller behandling mot covid-19",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "I nuläget finns det inget vaccin eller speciellt läkemedel mot covid19. Internationella studier av olika typer av läkemedelsbehandlingar pågår och forskning sker kring utveckling av ett vaccin."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Varför stänger man inte för- och grundskolorna i Sverige?",
+      "entities": {
+        "SCHOOL": SCHOOL,
+        "PERS_PRON": PERS_PRON,
+        "CAN": CAN,
+        "MY_CHILD": MY_CHILD
+      },
+      "examples": [
+        "Varför stänger man inte för- och grundskolorna i Sverige?",
+        "varför stängs inte _SCHOOL",
+        "kommer _SCHOOL att stängas",
+        "hur länge kommer _SCHOOL att vara öppna",
+        "hur kommer det sig att _SCHOOL i sverige inte stängs",
+        "varför är _SCHOOL öppna",
+        "kommer _SCHOOL stängas",
+        "varför stänger _PERS_PRON inte _SCHOOL i Sverige",
+        "varför stänger vinter _SCHOOL?",
+        "_CAN _MY_CHILD stanna hemma från _SCHOOL?",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Det finns inga vetenskapliga studier ännu som visar att stängning av skolor får någon större betydelse. För många barn är skolan en viktig fast punkt i tillvaron, därför måste det finnas en plan för vart barnen ska ta vägen ifall skolorna stängs. Om barn och skolpersonal känner symptom av covid-19, så som hosta eller feber, är det mycket viktigt att stanna hemma."
+      ],
+      "set": {
+        "classifiedIntentName": "question: Varför stänger man inte för- och grundskolorna i Sverige?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Det finns inga vetenskapliga studier ännu som visar att stängning av skolor får någon större betydelse. För många barn är skolan en viktig fast punkt i tillvaron, därför måste det finnas en plan för vart barnen ska ta vägen ifall skolorna stängs. Om barn och skolpersonal känner symptom av covid-19, så som hosta eller feber, är det mycket viktigt att stanna hemma."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: I vilka länder pågår det smittspridning?",
+      "entities": {
+        "CORONA": CORONA,
+        "INT_PRON": INT_PRON,
+        "PERS_PRON": PERS_PRON
+      },
+      "examples": [
+        "I vilka länder pågår det smittspridning?",
+        "vilka länder är smittade",
+        "i _INT_PRON länder kan _PERS_PRON få _CORONA",
+        "finns det några säkra länder",
+        "är alla länder drabbade",
+        "_INT_PRON länder har blivit smittade",
+        "_INT_PRON länder har blivit drabbade",
+        "var finns _CORONA",
+        "_INT_PRON länder har _CORONA",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Covid19 har klassats som en pandemi. Det innebär att smittan redan finns eller kommer att finnas i alla världsdelar. Vi kan inte ge dig aktuell statistik för alla länder.  "
+      ],
+      "set": {
+        "classifiedIntentName": "question: I vilka länder pågår det smittspridning?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Covid19 har klassats som en pandemi. Det innebär att smittan redan finns eller kommer att finnas i alla världsdelar. Vi kan inte ge dig aktuell statistik för alla länder.  "
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Vad är en pandemi?",
+      "entities": {
+        "INT_PRON": INT_PRON,
+        "PANDEMIC": PANDEMIC
+      },
+      "examples": [
+        "Vad är en pandemi?",
+        "_INT_PRON betyder _PANDEMIC",
+        "_INT_PRON innebär en _PANDEMIC",
+        "_INT_PRON innebär _PANDEMIC",
+        "_INT_PRON händer vid en _PANDEMIC",
+        "_INT_PRON är _PANDEMIC",
+        "_INT_PRON e _PANDEMIC",
+        "_INT_PRON _PANDEMIC",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "En pandemi innebär en omfattande spridning till alla världens kontinenter av en helt ny typ av smittsam sjukdom. Vid en pandemi kommer sjukdomen med stor sannolikhet påverka stora delar av vårt samhälle och världens befolkning. Det är WHO som deklarerar om en smittspridning bedöms vara en pandemi, och detta gjordes den 11:e mars 2020."
+      ],
+      "set": {
+        "classifiedIntentName": "question: Vad är en pandemi?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "En pandemi innebär en omfattande spridning till alla världens kontinenter av en helt ny typ av smittsam sjukdom. Vid en pandemi kommer sjukdomen med stor sannolikhet påverka stora delar av vårt samhälle och världens befolkning. Det är WHO som deklarerar om en smittspridning bedöms vara en pandemi, och detta gjordes den 11:e mars 2020."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Nu när det pågår samhällsspridning av covid-19, hur ska jag ta hand om och skydda personer som är 70 år och äldre?",
+      "entities": {
+        "ELDERLY": ELDERLY,
+        "PERS_PRON": PERS_PRON,
+        "PROTECT": PROTECT,
+        "CAN": CAN,
+        "CORONA": CORONA,
+        "POS_PRON": POS_PRON,
+        "FAMILYMEMBER": FAMILYMEMBER
+      },
+      "examples": [
+        "Nu när det pågår samhällsspridning av covid-19, hur ska jag ta hand om och skydda personer som är 70 år och äldre?",
+        "hur _PROTECT _PERS_PRON _ELDERLY?",
+        "hur _PROTECT _PERS_PRON de som är 70 år eller äldre?",
+        "hur _CAN _PERS_PRON ta hand om äldre?",
+        "hur håller _PERS_PRON _ELDERLY borta från _CORONA?",
+        "_CAN _PERS_PRON ha närkontakt med _ELDERLY?",
+        "hur _PROTECT _PERS_PRON _ELDERLY från smitta?",
+        "_CAN _PERS_PRON träffa _POS_PRON föräldrar",
+        "_CAN _PERS_PRON träffa _POS_PRON _FAMILYMEMBER",
+        "Nu när det pågår samhällsspridning av _CORONA, hur _CAN _PERS_PRON ta hand om och _PROTECT personer ELDERY?",
+        "Nu när det pågår samhällsspridning av _CORONA, hur _CAN _PERS_PRON ta hand om och _PROTECT _ELDERLY och _ELDERLY?",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Sedan den 1 april råder det besöksförbud på landets samtliga äldreboenden, detta eftersom det är av allra största vikt att skydda de äldre från smitta. Ha ingen närkontakt med personer utanför äldreboenden som är 70 år och äldre om det inte är absolut nödvändigt. Stanna hemma när du känner dig sjuk, även om du bara är lite förkyld. "
+      ],
+      "set": {
+        "classifiedIntentName": "question: Nu när det pågår samhällsspridning av covid-19, hur ska jag ta hand om och skydda personer som är 70 år och äldre?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Sedan den 1 april råder det besöksförbud på landets samtliga äldreboenden, detta eftersom det är av allra största vikt att skydda de äldre från smitta. Ha ingen närkontakt med personer utanför äldreboenden som är 70 år och äldre om det inte är absolut nödvändigt. Stanna hemma när du känner dig sjuk, även om du bara är lite förkyld. "
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Kan man sätta en hel CITY i karantän?",
+      "entities": {
+        "CITY": CITY,
+        "POS_PRON": POS_PRON
+      },
+      "examples": [
+        "Kan man sätta en hel _CITY i karantän?",
+        "Kan en hel _CITY sättas i karantän?",
+        "Kan en _CITY sättas i karantän?",
+        "Kan _CITY sättas i karantän?",
+        "Kan _POS_PRON stad sättas i karantän?",
+        "Kommer _POS_PRON _CITY sättas i karantän?",
+        "Är _POS_PRON _CITY i karantän?",
+        "Är _CITY i karantän?",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Enskilda personer kan sättas i karantän i Sverige, men inte en hel stad. Däremot finns det möjlighet att spärra av ett begränsat område."
+      ],
+      "set": {
+        "classifiedIntentName": "question: Kan man sätta en hel CITY i karantän?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Enskilda personer kan sättas i karantän i Sverige, men inte en hel stad. Däremot finns det möjlighet att spärra av ett begränsat område."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: vad skiljer en droppsmitta från en luftburen smitta?",
+      "entities": {
+        "INT_PRON": INT_PRON,
+        "CORONA": CORONA,
+        "INFECTED": INFECTED
+      },
+      "examples": [
+        "vad skiljer en droppsmitta från en luftburen smitta?",
+        "_INT_PRON betyder droppsmitta",
+        "_INT_PRON innebär droppsmitta",
+        "hur smittar droppsmitta",
+        "_INT_PRON är luftburen smitta?",
+        "_INT_PRON är droppsmitta?",
+        "hur smittar luftburen smitta?",
+        "_INT_PRON är skillnaden på droppsmitta och luftburen smitta",
+        "_INT_PRON skiljer droppsmitta från luftburen smitta",
+        "_INT_PRON är skillnaden på luftburen smitta och droppsmitta",
+        "är _CORONA luftburet",
+        "Smittar _CORONA genom luften?",
+        "kan _CORONA smitta i luft",
+        "är _INFECTED luftburen",
+        "är _CORONA luftburen",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Covid19 smittar genom droppsmitta. Vid droppsmitta sprids viruset via droppar i luften, t.ex. när någon antingen hostar, nyser eller kräks. Dessa droppar når som regel inte längre än någon meter. Luftburen smitta rör sig i små, intorkade droppar som håller sig kvar i luften, färdas långa sträckor och smittar den som andas in dem. "
+      ],
+      "set": {
+        "classifiedIntentName": "question: vad skiljer en droppsmitta från en luftburen smitta?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Covid19 smittar genom droppsmitta. Vid droppsmitta sprids viruset via droppar i luften, t.ex. när någon antingen hostar, nyser eller kräks. Dessa droppar når som regel inte längre än någon meter. Luftburen smitta rör sig i små, intorkade droppar som håller sig kvar i luften, färdas långa sträckor och smittar den som andas in dem. "
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -1562,361 +3034,6 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": {
-      "name": "question: Vad är covid-19",
-      "entities": {
-        "CORONA": CORONA,
-        "MEAN": MEAN
-      },
-      "examples": [
-        "Vad är covid-19",
-        "förklara vad _CORONA är",
-        "vad _MEAN _CORONA",
-        "vad gör _CORONA",
-        "Berätta om _CORONA",
-        "var kommer _CORONA ifrån?",
-        "kan du förklara vad _CORONA är",
-        "what is _CORONA?",
-        "Vad är det för skillnad på _CORONA och Covid-19?",
-        "Vad är _CORONA?",
-        "Vad är det för virus",
-        "Är _CORONA ett virus?",
-        "Är _CORONA en bakterie",
-        "varifrån kommer _CORONA",
-        "hur skapades _CORONA",
-        "Hur kom _CORONA till",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Det finns ett stort antal virus som tillhör coronavirusfamiljen. De flesta finns hos djur och smittar inte människor. Bland dem som smittar människor ger vissa förkylning och andra allvarligare symptom. I slutet av 2019 upptäcktes i Kina ett nytt coronavirus som orsakar sjukdomen covid19. Det officiella namnet enligt WHO är SARS-CoV-2."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Vad är covid-19",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Det finns ett stort antal virus som tillhör coronavirusfamiljen. De flesta finns hos djur och smittar inte människor. Bland dem som smittar människor ger vissa förkylning och andra allvarligare symptom. I slutet av 2019 upptäcktes i Kina ett nytt coronavirus som orsakar sjukdomen covid19. Det officiella namnet enligt WHO är SARS-CoV-2."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Hur länge är jag sjuk av covid-19?",
-      "entities": {
-        "PERS_PRON": PERS_PRON,
-        "CORONA": CORONA,
-        "CO_SYM": CO_SYM
-      },
-      "examples": [
-        "Hur länge är jag sjuk av covid-19?",
-        "hur pass länge är _PERS_PRON sjuk",
-        "hur länge har _PERS_PRON _CORONA",
-        "hur lång tid kan _PERS_PRON ha _CORONA",
-        "hur lång tid tar det innan _CORONA går över",
-        "när går _CORONA över",
-        "hur länge varar _CORONA?",
-        "är _PERS_PRON sjuk jättelänge",
-        "är _PERS_PRON sjuk länge om _PERS_PRON får _CORONA",
-        "Hur länge är _PERS_PRON sjuk av _CORONA?",
-        "Hur länge är _PERS_PRON sjuk av _CORONA",
-        "Hur länge har _PERS_PRON _CO_SYM",
-        "Hur länge är _PERS_PRON _CO_SYM",
-        "Är _CORONA farligt?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "De flesta personer som får lindriga sjukdomssymptom blir friska efter två veckor. För de som blir allvarligt sjuka tar det mellan tre och sex veckor innan de är friska igen."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Hur länge är jag sjuk av covid-19?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "De flesta personer som får lindriga sjukdomssymptom blir friska efter två veckor. För de som blir allvarligt sjuka tar det mellan tre och sex veckor innan de är friska igen."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Hur stor är dödligheten till följd av covid-19",
-      "entities": {
-        "CORONA": CORONA,
-        "PERS_PRON": PERS_PRON,
-        "CO_SYM": CO_SYM
-      },
-      "examples": [
-        "Hur stor är dödligheten till följd av covid-19",
-        "hur många dör av _CORONA",
-        "kan _PERS_PRON dö av _CORONA",
-        "hur många har dött av _CORONA ",
-        "är det många som dör av _CORONA ?",
-        "vad är risken att dö av _CORONA ?",
-        "dör _PERS_PRON om _PERS_PRON får _CORONA",
-        "hur dödligt är _CORONA?",
-        "kommer _PERS_PRON dö av _CORONA",
-        "är det farligt att få _CORONA",
-        "är det livsfarligt att få _CORONA",
-        "Hur stor är dödligheten till följd av _CORONA?",
-        "Dör _PERS_PRON av _CORONA",
-        "Vem dör av _CORONA",
-        "Dör _PERS_PRON av _CO_SYM",
-        "Dör _PERS_PRON om _PERS_PRON har _CO_SYM",
-        "Dör _PERS_PRON om _PERS_PRON får _CO_SYM",
-        "är det farligt",
-        "ja är det farligt"
-      ]
-    },
-    "bot": {
-      "say": [
-        "Det är inte helt säkert än hur stor dödligheten är, men forskarna tror att av 100 personer som får sjukdomen så dör ungefär 1 till 2 personer. De allra flesta som får covid19 blir friska efter ungefär två veckor. De som har blivit allvarligt sjuka och dött är framför allt äldre och personer med andra underliggande sjukdomar. "
-      ],
-      "set": {
-        "classifiedIntentName": "question: Hur stor är dödligheten till följd av covid-19",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Det är inte helt säkert än hur stor dödligheten är, men forskarna tror att av 100 personer som får sjukdomen så dör ungefär 1 till 2 personer. De allra flesta som får covid19 blir friska efter ungefär två veckor. De som har blivit allvarligt sjuka och dött är framför allt äldre och personer med andra underliggande sjukdomar. "
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Ingår gravida i riskgrupperna?",
-      "entities": {
-        "PERS_PRON": PERS_PRON,
-        "CAN": CAN,
-        "CORONA": CORONA,
-        "CO_SYM": CO_SYM
-      },
-      "examples": [
-        "Ingår gravida i riskgrupperna?",
-        "är det större risk om _PERS_PRON är gravid",
-        "hur stor är risken om _PERS_PRON är gravid",
-        "hur _CAN _PERS_PRON göra om _PERS_PRON är gravid",
-        "är graviditet en riskgrupp",
-        "är gravida kvinnor i riskgruppen",
-        "är det farligt att få _CORONA om _PERS_PRON är gravid",
-        "_CAN _PERS_PRON vara orolig om _PERS_PRON är gravid",
-        "Vad gäller när _PERS_PRON är gravid? ",
-        "Är det risk om _PERS_PRON är gravid",
-        "Är gravid riskgrupp",
-        "Är gravid riskzon",
-        "är gravid risk",
-        "har gravid risk",
-        "får gravid _CORONA",
-        "är det farligt med _CO_SYM om _PERS_PRON är gravid",
-        "får _CORONA gravid",
-        "Rekommendationer för gravida",
-        "vad ska gravida göra"
-      ]
-    },
-    "bot": {
-      "say": [
-        "För närvarande finns det begränsad information om covid-19 och graviditet. Som med alla lunginflammationer kan risken för allvarlig sjukdom vara något större, särskilt i slutet av graviditeten. Det finns få rapporteringar av barn som blivit smittade under graviditet eller förlossning. "
-      ],
-      "set": {
-        "classifiedIntentName": "question: Ingår gravida i riskgrupperna?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "För närvarande finns det begränsad information om covid-19 och graviditet. Som med alla lunginflammationer kan risken för allvarlig sjukdom vara något större, särskilt i slutet av graviditeten. Det finns få rapporteringar av barn som blivit smittade under graviditet eller förlossning. "
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Kan jag bli smittad av en person som har covid-19 men som inte har några SYMPTOM",
-      "entities": {
-        "SYMPTOM": SYMPTOM,
-        "CORONA": CORONA,
-        "PERS_PRON": PERS_PRON,
-        "CAN": CAN,
-        "CO_SYM": CO_SYM
-      },
-      "examples": [
-        "Kan jag bli smittad av en person som har covid-19 men som inte har några _SYMPTOM",
-        "smittar _CORONA utan _SYMPTOM",
-        "kan _PERS_PRON bli smittad av en person utan _SYMPTOM",
-        "är _CORONA smittsamt fastän en person inte känner sig sjuk",
-        "_CAN det finnas _SYMPTOM för att det ska vara smittsamt",
-        "är _CORONA smittsamt om _PERS_PRON bara hostar lite",
-        "Kan _PERS_PRON bli smittad av en person som har _CORONA men som inte har några _SYMPTOM",
-        "Blir _PERS_PRON smittad om _PERS_PRON inte har _CO_SYM",
-        "Kan _PERS_PRON bli smittad utan _CO_SYM",
-        "är _PERS_PRON smittsam när _PERS_PRON är symptomfri?",
-        "_CAN PERS_PROM smittas av någon som är symptomfri?",
-        "kan _PERS_PRON ha _CORONA utan att ha _SYMPTOM",
-        "Kan man smitta utan att vara sjuk själv?",
-        "Jag känner mig frisk. Kan jag ändå smitta?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Smittspridningen drivs av personer med symptom på sjukdom, men en del som är sjuka får bara milda symptom. Du kan därför bli smittad av någon som inte känner sig sjuk, men som har t.ex. mild hosta. Bedömningen idag är att smittspridning från personer helt utan symptom är mycket begränsad."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Kan jag bli smittad av en person som har covid-19 men som inte har några SYMPTOM",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Smittspridningen drivs av personer med symptom på sjukdom, men en del som är sjuka får bara milda symptom. Du kan därför bli smittad av någon som inte känner sig sjuk, men som har t.ex. mild hosta. Bedömningen idag är att smittspridning från personer helt utan symptom är mycket begränsad."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Vad gäller för stora evenemang? ",
-      "entities": {
-        "BIG_EVENT": BIG_EVENT,
-        "INT_PRON": INT_PRON,
-        "PERS_PRON": PERS_PRON
-      },
-      "examples": [
-        "Vad gäller för stora evenemang? ",
-        "_INT_PRON är reglerna för _BIG_EVENT",
-        "_INT_PRON regler gäller för _BIG_EVENT",
-        "är alla _BIG_EVENT inställda",
-        "kommer alla _BIG_EVENT ställas in",
-        "Kan _PERS_PRON gå på _BIG_EVENT? ",
-        "Får _PERS_PRON gå på _BIG_EVENT?",
-        "Kan _PERS_PRON åka på _BIG_EVENT",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Det är inte tillåtet med allmänna sammankomster och offentliga tillställningar med fler än 50 personer. Syftet är att förhindra tillfällen då ett stort antal människor samlas på en och samma plats. Det gäller ej för skolor, kollektivtrafik, privata evenemang och besök i affärer. Alla uppmanas att vara uppmärksamma på symptom, även milda, och att stanna hemma om man känner sig sjuk."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Vad gäller för stora evenemang? ",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Det är inte tillåtet med allmänna sammankomster och offentliga tillställningar med fler än 50 personer. Syftet är att förhindra tillfällen då ett stort antal människor samlas på en och samma plats. Det gäller ej för skolor, kollektivtrafik, privata evenemang och besök i affärer. Alla uppmanas att vara uppmärksamma på symptom, även milda, och att stanna hemma om man känner sig sjuk."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Vad gäller för kollektivtrafik och allmänna färdmedel?",
-      "entities": {
-        "PUB_TRANS": PUB_TRANS,
-        "PERS_PRON": PERS_PRON
-      },
-      "examples": [
-        "Vad gäller för kollektivtrafik och allmänna färdmedel?",
-        "vilka regler gäller för _PUB_TRANS arbetsplatser och skolor?",
-        "hur många får det vara på _PUB_TRANS",
-        "vad gäller för _PUB_TRANS",
-        "Vad ska _PERS_PRON tänka på när _PERS_PRON åker _PUB_TRANS?",
-        "vad gäller i _PUB_TRANS",
-        "vad gör _PERS_PRON i _PUB_TRANS",
-        "vad gör _PERS_PRON på _PUB_TRANS",
-        "Kan _PERS_PRON åka kommunaltrafik?",
-        "är det farligt att åka _PUB_TRANS",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Kollektivtrafik omfattas inte av förbudet mot allmänna sammankomster med fler än 50 personer. Friska personer kan åka buss, tåg och liknande till jobbet och skolan. Håll avstånd till andra resenärer och tvätta alltid händerna efter en resa."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Vad gäller för kollektivtrafik och allmänna färdmedel?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Kollektivtrafik omfattas inte av förbudet mot allmänna sammankomster med fler än 50 personer. Friska personer kan åka buss, tåg och liknande till jobbet och skolan. Håll avstånd till andra resenärer och tvätta alltid händerna efter en resa."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Vad gäller för arbetsplatser och skolor?",
-      "entities": {
-        "OCCUPATION": OCCUPATION,
-        "PERS_PRON": PERS_PRON,
-        "CO_SYM": CO_SYM
-      },
-      "examples": [
-        "Vad gäller för arbetsplatser och skolor?",
-        "hur många får det vara på en _OCCUPATION",
-        "hur många får va på ett _OCCUPATION",
-        "vad gäller _OCCUPATION",
-        "kan _PERS_PRON gå till _OCCUPATION",
-        "får _PERS_PRON gå till _OCCUPATION",
-        "ska _PERS_PRON gå till _OCCUPATION",
-        "_PERS_PRON till _OCCUPATION",
-        "_CO_SYM på _OCCUPATION",
-        "kan jag jobba Om jag känner mig sjuk",
-        "Jag känner mig lite sjuk och har hosta Kan jag gå till jobbet ändå",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Arbetsplatser och skolor omfattas inte av förbudet mot allmänna sammankomster med fler än 50 personer men man kan tänka på att minimera aktiviteter som samlar många personer. Man ska jobba hemifrån om man kan. "
-      ],
-      "set": {
-        "classifiedIntentName": "question: Vad gäller för arbetsplatser och skolor?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Arbetsplatser och skolor omfattas inte av förbudet mot allmänna sammankomster med fler än 50 personer men man kan tänka på att minimera aktiviteter som samlar många personer. Man ska jobba hemifrån om man kan. "
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Vilka råd finns det för resa till andra länder?",
-      "entities": {
-        "PERS_PRON": PERS_PRON,
-        "CAN": CAN,
-        "REF_PRON": REF_PRON
-      },
-      "examples": [
-        "Vilka råd finns det för resa till andra länder?",
-        "får _PERS_PRON resa till andra länder",
-        "är det okej att resa utomlands",
-        "vad gäller om _PERS_PRON vill resa utomlands",
-        "är det ok att åka utomlands",
-        "_CAN _PERS_PRON ställa in _REF_PRON semester utomlands",
-        "kan _PERS_PRON åka utomlands",
-        "vad rekommenderas gällande utlandsresor",
-        "får _PERS_PRON åka utomlands",
-        "vad gäller om _PERS_PRON tänkt resa utomlands",
-        "får _PERS_PRON åka till andra länder",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Sedan 14 mars 2020 avråder UD från icke nödvändiga resor till alla länder. Du som resenär behöver göra en egen bedömning av ditt resande utifrån behovet av att resa och den information om smittspridningen som finns. Tänk också på att många länder inte tar emot inresande just nu för att begränsa smittspridningen."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Vilka råd finns det för resa till andra länder?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Sedan 14 mars 2020 avråder UD från icke nödvändiga resor till alla länder. Du som resenär behöver göra en egen bedömning av ditt resande utifrån behovet av att resa och den information om smittspridningen som finns. Tänk också på att många länder inte tar emot inresande just nu för att begränsa smittspridningen."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
       "name": "question: bör jag vidta några åtgärder även om jag känner mig frisk efter resa från drabbade länder?",
       "entities": {
         "CAN": CAN,
@@ -1949,315 +3066,6 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": {
-      "name": "question: jag har nyligen varit i ett land där smittspridning pågår och nu har jag hosta och feber. Vad ska jag göra?",
-      "entities": {
-        "CAN": CAN,
-        "CORONA": CORONA,
-        "PERS_PRON": PERS_PRON,
-        "CO_SYM": CO_SYM
-      },
-      "examples": [
-        "jag har nyligen varit i ett land där smittspridning pågår och nu har jag hosta och feber. Vad ska jag göra?",
-        "_PERS_PRON tror _PERS_PRON har fått _CORONA vad _CAN _PERS_PRON göra",
-        "vad gör _PERS_PRON om _PERS_PRON tror att _PERS_PRON har fått _CORONA",
-        "hur gör _PERS_PRON om _PERS_PRON har fått _CORONA",
-        "vad _CAN _PERS_PRON göra om _PERS_PRON har fått _CORONA",
-        "om _PERS_PRON tror _PERS_PRON har _CORONA vad _CAN _PERS_PRON göra",
-        "_PERS_PRON har _CORONA vad _CAN _PERS_PRON göra",
-        "_PERS_PRON misstänker att _PERS_PRON kanske har _CORONA vad gör _PERS_PRON nu",
-        "_PERS_PRON har varit i Italien ska _PERS_PRON vara i karantän?",
-        "Ska _PERS_PRON vara i karantän om _PERS_PRON varit i Italien",
-        "_PERS_PRON har nyligen varit i ett land där smittspridning pågår och nu har _PERS_PRON hosta och feber. Vad ska _PERS_PRON göra?",
-        "_PERS_PRON var utomlands och har _CO_SYM",
-        "_PERS_PRON tror att _PERS_PRON fått _CORONA vad _CAN _PERS_PRON göra",
-        "om _PERS_PRON drabbas av _CORONA vad ska _PERS_PRON göra?",
-        "kommit hem från resa utomlands",
-        "utomlands",
-        "resa utomlands",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Känner du dig sjuk med symptom som snuva, hosta eller feber ska du låta bli att träffa andra människor. Du ska inte gå till jobbet eller skolan. Detta gäller även om du bara känner dig lite sjuk eftersom det är viktigt att inte riskera att smitta andra. De allra flesta som smittats blir lindrigt sjuka med luftvägssymptom som går över av sig själva, medan andra drabbas av hög feber och allvarligare sjukdom som lunginflammation. Om du känner dig mycket dålig ska du kontakta sjukvården."
-      ],
-      "set": {
-        "classifiedIntentName": "question: jag har nyligen varit i ett land där smittspridning pågår och nu har jag hosta och feber. Vad ska jag göra?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Känner du dig sjuk med symptom som snuva, hosta eller feber ska du låta bli att träffa andra människor. Du ska inte gå till jobbet eller skolan. Detta gäller även om du bara känner dig lite sjuk eftersom det är viktigt att inte riskera att smitta andra. De allra flesta som smittats blir lindrigt sjuka med luftvägssymptom som går över av sig själva, medan andra drabbas av hög feber och allvarligare sjukdom som lunginflammation. Om du känner dig mycket dålig ska du kontakta sjukvården."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Kan jag vaccinera",
-      "entities": {
-        "CAN": CAN,
-        "CORONA": CORONA,
-        "PERS_PRON": PERS_PRON,
-        "REF_PRON": REF_PRON
-      },
-      "examples": [
-        "Kan jag vaccinera",
-        "finns det vaccin",
-        "_CAN _PERS_PRON vaccinera _REF_PRON mot _CORONA",
-        "när kommer vaccin mot _CORONA",
-        "finns det vaccin mot _CORONA",
-        "hur går det med vaccinet?",
-        "_CAN _PERS_PRON vaccinera",
-        "_CAN _PERS_PRON få vaccin mot _CORONA",
-        "_CAN _PERS_PRON få spruta mot _CORONA",
-        "Finns det spruta mot _CORONA",
-        "när kommer vaccinet",
-        "när kommer vaccin",
-        "när kommer medicin mot _CORONA",
-        "finns det en medicin mot _CORONA",
-        "_CAN _PERS_PRON vaccinera _REF_PRON",
-        "när finns medicin mot _CORONA",
-        "hur lång tid tar vaccinet",
-        "var finns medicin _CORONA"
-      ]
-    },
-    "bot": {
-      "say": [
-        "I nuläget finns det inget vaccin eller speciellt läkemedel mot covid19. Internationella studier av olika typer av läkemedelsbehandlingar pågår och forskning sker kring utveckling av ett vaccin."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Kan jag vaccinera",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "I nuläget finns det inget vaccin eller speciellt läkemedel mot covid19. Internationella studier av olika typer av läkemedelsbehandlingar pågår och forskning sker kring utveckling av ett vaccin."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "Hur många är sjuka i Sverige?",
-      "entities": {
-        "CORONA": CORONA
-      },
-      "examples": [
-        "Hur många är sjuka i Sverige?",
-        "hur många har blivit smittade av _CORONA i sverige",
-        "hur många i Sverige har _CORONA",
-        "hur många har _CORONA i sverige",
-        "hur många är smittade",
-        "hur många procent av sveriges befolkning är smittade",
-        "hur många har _CORONA",
-        "hur snabbt sprids smittan",
-        ""
-      ]
-    },
-    "bot": [
-      "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-    ]
-  },
-  {
-    "intent": {
-      "name": "Hur många har avlidit i Sverige av covid-19",
-      "entities": {
-        "CORONA": CORONA
-      },
-      "examples": [
-        "Hur många har avlidit i Sverige av covid-19",
-        "hur många har dött i sverige av _CORONA",
-        "hur många i sverige har dött av _CORONA",
-        "hur många dör av _CORONA i sverige",
-        "hur många dog igår i Sverige på grund av _CORONA",
-        "hur många i Sverige dog denna månad på grund av _CORONA",
-        "hur många i Sverige dog denna vecka på grund av _CORONA",
-        "Hur många har avlidit i Sverige av _CORONA",
-        "hur många har dött av _CORONA",
-        "hur många har dött i sverige",
-        ""
-      ]
-    },
-    "bot": [
-      "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-    ]
-  },
-  {
-    "intent": {
-      "name": "question: bör jag som symtomfri jobba hemma?",
-      "entities": {
-        "CAN": CAN,
-        "PERS_PRON": PERS_PRON,
-        "SYMPTOM": SYMPTOM,
-        "IF": IF
-      },
-      "examples": [
-        "bör jag som symtomfri jobba hemma?",
-        "_CAN _PERS_PRON jobba hemma även fast _PERS_PRON inte har några _SYMPTOM",
-        "_CAN _PERS_PRON jobba hemma även fast _PERS_PRON inte uppvisar _SYMPTOM",
-        "_CAN _PERS_PRON jobba hemma om _PERS_PRON är fullt frisk?",
-        "_CAN _PERS_PRON som symtomfri jobba hemma?",
-        "_CAN _PERS_PRON som symptomfri jobba hemma?",
-        "_CAN _PERS_PRON jobba hemma?",
-        "_CAN _PERS_PRON arbeta hemma",
-        "_CAN _PERS_PRON arbeta hemifrån",
-        "_CAN _PERS_PRON jobba hemifrån",
-        "_CAN _PERS_PRON jobba hemifrån _IF _PERS_PRON inte har _SYMPTOM",
-        "_CAN _PERS_PRON arbeta hemifrån _IF _PERS_PRON inte har _SYMPTOM",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "För att minska smittspridningen så är rådet till alla att jobba hemifrån om det är möjligt, även om du känner dig fullt frisk. "
-      ],
-      "set": {
-        "classifiedIntentName": "question: bör jag som symtomfri jobba hemma?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "För att minska smittspridningen så är rådet till alla att jobba hemifrån om det är möjligt, även om du känner dig fullt frisk. "
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Vad gäller privata sammankomster såsom studentskivor eller bröllop?",
-      "entities": {
-        "CAN": CAN,
-        "PERS_PRON": PERS_PRON,
-        "SMALL_EVENT": SMALL_EVENT,
-        "POS_PRON": POS_PRON
-      },
-      "examples": [
-        "Vad gäller privata sammankomster såsom studentskivor eller bröllop?",
-        "_CAN _PERS_PRON ha _SMALL_EVENT",
-        "_CAN _PERS_PRON ha _POS_PRON _SMALL_EVENT",
-        "_CAN _PERS_PRON åka på _SMALL_EVENT",
-        "_CAN _PERS_PRON gå på _SMALL_EVENT",
-        "Får _PERS_PRON ha _SMALL_EVENT",
-        "Får _PERS_PRON gå på _SMALL_EVENT",
-        "är det tillåtet med _SMALL_EVENT",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Är du arrangör: Gör en riskbedömning. Se till att informera personer att stanna hemma om de känner sig sjuka. Se även till att det finns tillgång till tvål och vatten, alternativt handsprit, under sammankomsten eller eventet. Är du besökare: Stanna hemma om du känner dig det minsta sjuk. "
-      ],
-      "set": {
-        "classifiedIntentName": "question: Vad gäller privata sammankomster såsom studentskivor eller bröllop?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Är du arrangör: Gör en riskbedömning. Se till att informera personer att stanna hemma om de känner sig sjuka. Se även till att det finns tillgång till tvål och vatten, alternativt handsprit, under sammankomsten eller eventet. Är du besökare: Stanna hemma om du känner dig det minsta sjuk. "
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Kan idrotts- och träningsaktiviteter fortsätta som vanligt?",
-      "entities": {
-        "CAN": CAN,
-        "PERS_PRON": PERS_PRON,
-        "WORKOUT": WORKOUT
-      },
-      "examples": [
-        "Kan idrotts- och träningsaktiviteter fortsätta som vanligt?",
-        "_CAN _PERS_PRON fortsätta _WORKOUT",
-        "_CAN _PERS_PRON _WORKOUT",
-        "_CAN _PERS_PRON fortfarande _WORKOUT?",
-        "_CAN _PERS_PRON sluta _WORKOUT?",
-        "_CAN _PERS_PRON undvika att _WORKOUT?",
-        "_CAN _PERS_PRON _WORKOUT som vanligt?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Du kan fortsätta idrotta, men vissa försiktighetsåtgärder bör vidtas för att minska risken för spridning av covid19. Minska moment med närkontakt, torka av utrustning med desinfektionsmedel och idrotta utomhus om det är möjligt. "
-      ],
-      "set": {
-        "classifiedIntentName": "question: Kan idrotts- och träningsaktiviteter fortsätta som vanligt?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Du kan fortsätta idrotta, men vissa försiktighetsåtgärder bör vidtas för att minska risken för spridning av covid19. Minska moment med närkontakt, torka av utrustning med desinfektionsmedel och idrotta utomhus om det är möjligt. "
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Vad innebär de nya reglerna för restauranger och deras gäster?",
-      "entities": {
-        "INT_PRON": INT_PRON,
-        "RESTAURANT": RESTAURANT,
-        "CAN": CAN,
-        "PERS_PRON": PERS_PRON
-      },
-      "examples": [
-        "Vad innebär de nya reglerna för restauranger och deras gäster?",
-        "_INT_PRON gäller för _RESTAURANT",
-        "_CAN _PERS_PRON gå på _RESTAURANT",
-        "_CAN _PERS_PRON gå ut och äta",
-        "_CAN _PERS_PRON besöka _RESTAURANT",
-        "_CAN _PERS_PRON göra _RESTAURANT",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Resturanger och liknande får hålla öppet. Trängsel mellan människor i köer, vid bord, bufféer eller bardiskar får inte förekomma. Gäster ska kunna hålla avstånd till varandra samt äta och dricka sittandes vid bord, inte ståendes vid ståbord eller bardiskar. Personal ska helst bära ut beställningarna. Det är möjligt att gästerna får hämta och lämna egen mat och dryck om det finns tillräckligt med utrymme. Om du känner dig sjuk ska du inte gå till en resturang."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Vad innebär de nya reglerna för restauranger och deras gäster?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Resturanger och liknande får hålla öppet. Trängsel mellan människor i köer, vid bord, bufféer eller bardiskar får inte förekomma. Gäster ska kunna hålla avstånd till varandra samt äta och dricka sittandes vid bord, inte ståendes vid ståbord eller bardiskar. Personal ska helst bära ut beställningarna. Det är möjligt att gästerna får hämta och lämna egen mat och dryck om det finns tillräckligt med utrymme. Om du känner dig sjuk ska du inte gå till en resturang."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Vad gäller vid resa inom Sverige?",
-      "entities": {
-        "PERS_PRON": PERS_PRON,
-        "CITY": CITY,
-        "CAN": CAN
-      },
-      "examples": [
-        "Vad gäller vid resa inom Sverige?",
-        "kan _PERS_PRON resa i sverige",
-        "kan _PERS_PRON resa inom sverige?",
-        "är det ok att resa i sverige?",
-        "kan jag resa till _PERS_PRON",
-        "kan jag resa med _PERS_PRON",
-        "Får _PERS_PRON åka till _CITY i påsk?",
-        "_CAN _PERS_PRON  åka till _CITY?",
-        "Får jag åka från Stockholm till Skåne i påsk?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Om resan är nödvändig är det ok att resa inom Sverige. Känner du dig minsta sjuk ska du hålla dig hemma. Alla som tillhör en riskgrupp bör undvika att resa eller ta emot besök. Tänk efter om du måste resa eller om det kan vänta."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Vad gäller vid resa inom Sverige?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Om resan är nödvändig är det ok att resa inom Sverige. Känner du dig minsta sjuk ska du hålla dig hemma. Alla som tillhör en riskgrupp bör undvika att resa eller ta emot besök. Tänk efter om du måste resa eller om det kan vänta."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
       "name": "question: Vad ska jag tänka på när jag åker tåg, buss och taxi?",
       "entities": {
         "IF": IF,
@@ -2280,41 +3088,6 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "classifiedUtterance": "_user_text",
         "botResponse": [
           "Stanna hemma om du känner dig sjuk. Tänk på att hålla avstånd till andra resenärer. Se till att tvätta händerna med tvål och varmt vatten, alternativt handsprit. Hosta och nys i armvecket eller i en pappersnäsduk, undvik att röra vid ansiktet eller ögonen."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Hur drabbas barn av covid-19",
-      "entities": {
-        "CORONA": CORONA,
-        "SYMPTOM": SYMPTOM,
-        "PERS_PRON": PERS_PRON,
-        "POS_PRON": POS_PRON
-      },
-      "examples": [
-        "Hur drabbas barn av covid-19",
-        "hur sjuka blir barn av _CORONA",
-        "vad är _SYMPTOM för barn med _CORONA",
-        "hur ser _PERS_PRON om _POS_PRON barn har _CORONA",
-        "Hur drabbas barn av _CORONA",
-        "Hur får barn _CORONA",
-        "hur sjuk blir barn av _CORONA",
-        "vilka _SYMPTOM får barn med _CORONA",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Symptomen för barn med covid19 är överlag mycket milda. Även om barn har milda symptom kan de, liksom vuxna med symptom, smitta andra. Det är därför viktigt att barn som är förkylda eller har feber inte träffar äldre eller personer med nedsatt försvar. "
-      ],
-      "set": {
-        "classifiedIntentName": "question: Hur drabbas barn av covid-19",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Symptomen för barn med covid19 är överlag mycket milda. Även om barn har milda symptom kan de, liksom vuxna med symptom, smitta andra. Det är därför viktigt att barn som är förkylda eller har feber inte träffar äldre eller personer med nedsatt försvar. "
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -2364,83 +3137,33 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": {
-      "name": "question: Hur sjuk blir jag av covid-19",
+      "name": "question: Hur länge kan covid-19 överleva utanför människokroppen?",
       "entities": {
         "CORONA": CORONA,
-        "PERS_PRON": PERS_PRON,
-        "CAN": CAN
+        "SURVIVE": SURVIVE,
+        "BODY": BODY
       },
       "examples": [
-        "Hur sjuk blir jag av covid-19",
-        "blir _PERS_PRON jättesjuk av _CORONA",
-        "hur pass sjuk blir _PERS_PRON ",
-        "hur sjuk kan _PERS_PRON bli",
-        "blir _PERS_PRON alltid väldigt sjuk",
-        "vad händer om _PERS_PRON får _CORONA",
-        "_CAN _PERS_PRON läggas in på sjukhus om _PERS_PRON får _CORONA",
-        "hur sjuk blir _PERS_PRON om _PERS_PRON får _CORONA",
-        "Hur sjuk blir _PERS_PRON av _CORONA?",
-        "Hur illa är _CORONA",
-        "Hur farlig är _CORONA ",
-        "Hur farligt är _CORONA",
-        "Vad gör _CORONA",
-        "Hur känns _CORONA",
-        "Hur mår _PERS_PRON av _CORONA",
-        "Hur blir det om _PERS_PRON får _CORONA",
-        "Hur _PERS_PRON om _PERS_PRON får _CORONA",
-        "Hur _PERS_PRON om _PERS_PRON har _CORONA",
-        "är _CORONA farligt"
-      ]
-    },
-    "bot": {
-      "say": [
-        "De allra flesta som har smittats har blivit lindrigt sjuka med luftvägssymptom som går över av sig själva, medan vissa drabbats av allvarligare sjukdom som lunginflammation. "
-      ],
-      "set": {
-        "classifiedIntentName": "question: Hur sjuk blir jag av covid-19",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "De allra flesta som har smittats har blivit lindrigt sjuka med luftvägssymptom som går över av sig själva, medan vissa drabbats av allvarligare sjukdom som lunginflammation. "
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Hur lång är inkubationstiden?",
-      "entities": {
-        "SYMPTOM": SYMPTOM,
-        "PERS_PRON": PERS_PRON,
-        "CORONA": CORONA,
-        "POS_PRON": POS_PRON
-      },
-      "examples": [
-        "Hur lång är inkubationstiden?",
-        "Hur lång tid kan det ta innan _SYMPTOM visar sig?",
-        "Hur lång tid efter att _PERS_PRON har blivit smittad blir _PERS_PRON sjuk?",
-        "Hur lång tid tar det innan _SYMPTOM för _CORONA visar sig?",
-        "Hur lång tid tar det att bli sjuk?",
-        "Vad är inkubationstiden?",
-        "När vet _POS_PRON om _POS_PRON blivit smittad?",
-        "Hur lång tid dröjer det tills _POS_PRON vet om _POS_PRON blivit smittad?",
-        "Hur lång tid tar det innan _POS_PRON får _SYMPTOM efter _POS_PRON smittats?",
-        "Hur lång är inkubationen för _CORONA?",
-        "Hur lång inkubationstid har _CORONA?",
-        "När vet _POS_PRON om _POS_PRON blivit smittad av _CORONA?",
-        "Hur lång tid tar det tills det märks att _POS_PRON fått _CORONA?",
+        "Hur länge kan covid-19 överleva utanför människokroppen?",
+        "hur länge _SURVIVE _CORONA",
+        "kan _CORONA _SURVIVE utanför _BODY",
+        "kan _CORONA _SURVIVE på ytor",
+        "kan _CORONA _SURVIVE på ett handtag",
+        "hur snabbt dör _CORONA utanför _BODY",
+        "Hur länge kan _CORONA _SURVIVE utanför _BODY?",
+        "hur länge _CORONA kan sitta på handtag",
         ""
       ]
     },
     "bot": {
       "say": [
-        "De flesta insjuknar ungefär 5 dagar efter smittotillfället, men inkubationstiden kan variera mellan 2 och 14 dagar."
+        "Det är ännu inte klarlagt hur länge viruset kan överleva utanför kroppen. Forskningsstudier som utförts på närbesläktade coronavirus visar att de kan överleva flera dagar på ytor och föremål. Därför är det viktigt att ha god handhygien."
       ],
       "set": {
-        "classifiedIntentName": "question: Hur lång är inkubationstiden?",
+        "classifiedIntentName": "question: Hur länge kan covid-19 överleva utanför människokroppen?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "De flesta insjuknar ungefär 5 dagar efter smittotillfället, men inkubationstiden kan variera mellan 2 och 14 dagar."
+          "Det är ännu inte klarlagt hur länge viruset kan överleva utanför kroppen. Forskningsstudier som utförts på närbesläktade coronavirus visar att de kan överleva flera dagar på ytor och föremål. Därför är det viktigt att ha god handhygien."
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -2448,114 +3171,103 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": {
-      "name": "question: Skyddar munskydd mot covid-19",
+      "name": "question: Vad gör Folkhälsomyndigheten?",
       "entities": {
-        "PROTECT": PROTECT,
-        "CORONA": CORONA,
-        "CAN": CAN,
-        "PERS_PRON": PERS_PRON,
-        "REF_PRON": REF_PRON
-      },
-      "examples": [
-        "Skyddar munskydd mot covid-19",
-        "_PROTECT munskydd",
-        "_PROTECT munskydd mot _CORONA",
-        "Funkar munskydd",
-        "_CAN _PERS_PRON _PROTECT _REF_PRON med munskydd",
-        "är det bra att ha munskydd",
-        "_CAN _PERS_PRON ha munskydd",
-        "_CAN _PERS_PRON ha skydd för munnen",
-        "Fungerar munskydd",
-        "Vad gäller för munskydd utanför vården?",
-        "_PROTECT det att använda mask",
-        "_PROTECT det att använda en mast",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Munskydd behövs inte i vanliga situationer ute i samhället, då är det bättre att hålla avstånd till andra människor och att vara noga med att tvätta händerna."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Skyddar munskydd mot covid-19",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Munskydd behövs inte i vanliga situationer ute i samhället, då är det bättre att hålla avstånd till andra människor och att vara noga med att tvätta händerna."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Finns det vaccin eller behandling mot covid-19",
-      "entities": {
-        "TREATMENT": TREATMENT,
-        "CORONA": CORONA,
-        "PERS_PRON": PERS_PRON,
-        "CAN": CAN,
-        "REF_PRON": REF_PRON
-      },
-      "examples": [
-        "Finns det vaccin eller behandling mot covid-19",
-        "finns _TREATMENT",
-        "finns _CORONA _TREATMENT",
-        "finns _TREATMENT mot _CORONA",
-        "kan _PERS_PRON bli botad",
-        "finns det _TREATMENT än",
-        "_CAN _PERS_PRON vaccinera _REF_PRON mot _CORONA",
-        "finns det _TREATMENT eller _TREATMENT mot _CORONA?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "I nuläget finns det inget vaccin eller speciellt läkemedel mot covid19. Internationella studier av olika typer av läkemedelsbehandlingar pågår och forskning sker kring utveckling av ett vaccin."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Finns det vaccin eller behandling mot covid-19",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "I nuläget finns det inget vaccin eller speciellt läkemedel mot covid19. Internationella studier av olika typer av läkemedelsbehandlingar pågår och forskning sker kring utveckling av ett vaccin."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Hur många blir friska från covid-19",
-      "entities": {
-        "CORONA": CORONA,
-        "REF_PRON": REF_PRON,
-        "PERS_PRON": PERS_PRON,
+        "FHM": FHM,
         "INT_PRON": INT_PRON
       },
       "examples": [
-        "Hur många blir friska från covid-19",
-        "kommer alla bli friska från _CORONA?",
-        "hur pass många blir friska",
-        "hur stor är chansen att klara _REF_PRON",
-        "hur många tillfrisknar från _CORONA",
-        "hur många blir friska",
-        "hur många blir friska efter _CORONA",
-        "kan _PERS_PRON bli frisk efter _CORONA",
-        "blir _PERS_PRON frisk efter _CORONA",
-        "_INT_PRON är chansen för att bli frisk efter _CORONA",
-        "Hur många blir friska från _CORONA?",
-        "hur stor är chansen att _PERS_PRON klarar _REF_PRON",
+        "Vad gör Folkhälsomyndigheten?",
+        "_INT_PRON är _FHM",
+        "_INT_PRON roll har _FHM",
+        "_INT_PRON ansvar har _FHM",
+        "_INT_PRON gör _FHM?",
+        "_INT_PRON är _FHM?",
+        "_INT_PRON är _FHM jobb?",
         ""
       ]
     },
     "bot": {
       "say": [
-        "Majoriteten av de som drabbas av covid19 blir friska. Få personer löper risk att bli allvarligt sjuka."
+        "Folkhälsomyndigheten tar fram och förmedlar vetenskapligt grundad kunskap som förebygger ohälsa och sjukdomar. Folkhälsomyndigheten följer händelseutvecklingen av covid19, och gör riskbedömningar samt bedömer hur utbrottet utvecklas. Folkhälsomyndigheten tar ställning till vilka åtgärdar som är relevanta att genomföra och informerar sjukvård, regionala smittsskyddsenheter samt andra aktörer."
       ],
       "set": {
-        "classifiedIntentName": "question: Hur många blir friska från covid-19",
+        "classifiedIntentName": "question: Vad gör Folkhälsomyndigheten?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "Majoriteten av de som drabbas av covid19 blir friska. Få personer löper risk att bli allvarligt sjuka."
+          "Folkhälsomyndigheten tar fram och förmedlar vetenskapligt grundad kunskap som förebygger ohälsa och sjukdomar. Folkhälsomyndigheten följer händelseutvecklingen av covid19, och gör riskbedömningar samt bedömer hur utbrottet utvecklas. Folkhälsomyndigheten tar ställning till vilka åtgärdar som är relevanta att genomföra och informerar sjukvård, regionala smittsskyddsenheter samt andra aktörer."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Vad gäller angående att läsa på distans?",
+      "entities": {
+        "CAN": CAN,
+        "DIG_SCHOOL": DIG_SCHOOL,
+        "PERS_PRON": PERS_PRON,
+        "SCHOOL": SCHOOL
+      },
+      "examples": [
+        "Vad gäller angående att läsa på distans?",
+        "_CAN _PERS_PRON _DIG_SCHOOL",
+        "varför behöver skolorna läsa på distans?",
+        "kommer all undervisning nu bedrivas på distans?",
+        "bedrivs _DIG_SCHOOL?",
+        "Varför ska  undervisningen för gymnasieelever och studenter ske på distans?",
+        "erbjuder _SCHOOL undervisning på distans?",
+        "varför är det _DIG_SCHOOL",
+        "måste _PERS_PRON _DIG_SCHOOL",
+        "ska _PERS_PRON _DIG_SCHOOL",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Gymnasieelever och studenter på universitetet är inte i behov av omsorg på samma sätt som barn. För att bromsa spridningen av covid19 rekommenderar Folkhälsomyndigheten därför från den 17 mars 2020 att undervisningen på gymnasieskolor, universitet, högskolor, yrkeshögskolor och komvux ska ske på distans."
+      ],
+      "set": {
+        "classifiedIntentName": "question: Vad gäller angående att läsa på distans?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Gymnasieelever och studenter på universitetet är inte i behov av omsorg på samma sätt som barn. För att bromsa spridningen av covid19 rekommenderar Folkhälsomyndigheten därför från den 17 mars 2020 att undervisningen på gymnasieskolor, universitet, högskolor, yrkeshögskolor och komvux ska ske på distans."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Hur drabbas barn av covid-19",
+      "entities": {
+        "CORONA": CORONA,
+        "SYMPTOM": SYMPTOM,
+        "PERS_PRON": PERS_PRON,
+        "POS_PRON": POS_PRON
+      },
+      "examples": [
+        "Hur drabbas barn av covid-19",
+        "hur sjuka blir barn av _CORONA",
+        "vad är _SYMPTOM för barn med _CORONA",
+        "hur ser _PERS_PRON om _POS_PRON barn har _CORONA",
+        "Hur drabbas barn av _CORONA",
+        "Hur får barn _CORONA",
+        "hur sjuk blir barn av _CORONA",
+        "vilka _SYMPTOM får barn med _CORONA",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Symptomen för barn med covid19 är överlag mycket milda. Även om barn har milda symptom kan de, liksom vuxna med symptom, smitta andra. Det är därför viktigt att barn som är förkylda eller har feber inte träffar äldre eller personer med nedsatt försvar. "
+      ],
+      "set": {
+        "classifiedIntentName": "question: Hur drabbas barn av covid-19",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Symptomen för barn med covid19 är överlag mycket milda. Även om barn har milda symptom kan de, liksom vuxna med symptom, smitta andra. Det är därför viktigt att barn som är förkylda eller har feber inte träffar äldre eller personer med nedsatt försvar. "
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -2597,36 +3309,30 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": {
-      "name": "question: Varför stänger man inte för- och grundskolorna i Sverige?",
+      "name": "question: Vad innebär det att vi har en samhällsspridning av CORONA i Sverige?",
       "entities": {
-        "SCHOOL": SCHOOL,
-        "PERS_PRON": PERS_PRON,
-        "CAN": CAN,
-        "MY_CHILD": MY_CHILD
+        "CORONA": CORONA
       },
       "examples": [
-        "Varför stänger man inte för- och grundskolorna i Sverige?",
-        "varför stängs inte _SCHOOL",
-        "kommer _SCHOOL att stängas",
-        "hur länge kommer _SCHOOL att vara öppna",
-        "hur kommer det sig att _SCHOOL i sverige inte stängs",
-        "varför är _SCHOOL öppna",
-        "kommer _SCHOOL stängas",
-        "varför stänger _PERS_PRON inte _SCHOOL i Sverige",
-        "varför stänger vinter _SCHOOL?",
-        "_CAN _MY_CHILD stanna hemma från _SCHOOL?",
+        "Vad innebär det att vi har en samhällsspridning av _CORONA i Sverige?",
+        "vad innebär samhällsspridning",
+        "vad betyder samhällsspridning",
+        "vad betyder spridning i samhället",
+        "har vi samhällsspridning i sverige",
+        "har vi samhällsspridning",
+        "är det samhällsspridning?",
         ""
       ]
     },
     "bot": {
       "say": [
-        "Det finns inga vetenskapliga studier ännu som visar att stängning av skolor får någon större betydelse. För många barn är skolan en viktig fast punkt i tillvaron, därför måste det finnas en plan för vart barnen ska ta vägen ifall skolorna stängs. Om barn och skolpersonal känner symptom av covid-19, så som hosta eller feber, är det mycket viktigt att stanna hemma."
+        "Samhällsspridning innebär att det finns ett flertal fall i Sverige där man kunnat spåra smittan till ett annat känt fall av covid-19, det vill säga att den som är sjuk har varit i kontakt med en annan person i landet som har konstaterats vara smittad. "
       ],
       "set": {
-        "classifiedIntentName": "question: Varför stänger man inte för- och grundskolorna i Sverige?",
+        "classifiedIntentName": "question: Vad innebär det att vi har en samhällsspridning av CORONA i Sverige?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "Det finns inga vetenskapliga studier ännu som visar att stängning av skolor får någon större betydelse. För många barn är skolan en viktig fast punkt i tillvaron, därför måste det finnas en plan för vart barnen ska ta vägen ifall skolorna stängs. Om barn och skolpersonal känner symptom av covid-19, så som hosta eller feber, är det mycket viktigt att stanna hemma."
+          "Samhällsspridning innebär att det finns ett flertal fall i Sverige där man kunnat spåra smittan till ett annat känt fall av covid-19, det vill säga att den som är sjuk har varit i kontakt med en annan person i landet som har konstaterats vara smittad. "
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -2634,33 +3340,244 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": {
-      "name": "question: Hur länge kan covid-19 överleva utanför människokroppen?",
+      "name": "question: Behöver elever i grundskolan läsa på distans?",
       "entities": {
-        "CORONA": CORONA,
-        "SURVIVE": SURVIVE,
-        "BODY": BODY
+        "INT_PRON": INT_PRON,
+        "SCHOOL": SCHOOL,
+        "DIG_SCHOOL": DIG_SCHOOL,
+        "PERS_PRON": PERS_PRON
       },
       "examples": [
-        "Hur länge kan covid-19 överleva utanför människokroppen?",
-        "hur länge _SURVIVE _CORONA",
-        "kan _CORONA _SURVIVE utanför _BODY",
-        "kan _CORONA _SURVIVE på ytor",
-        "kan _CORONA _SURVIVE på ett handtag",
-        "hur snabbt dör _CORONA utanför _BODY",
-        "Hur länge kan _CORONA _SURVIVE utanför _BODY?",
-        "hur länge _CORONA kan sitta på handtag",
+        "Behöver elever i grundskolan läsa på distans?",
+        "_INT_PRON gäller angående undervisning i _SCHOOL?",
+        "behöver elever i _SCHOOL _DIG_SCHOOL?",
+        "behöver elever i _SCHOOL stanna hemifrån?",
+        "kommer _DIG_SCHOOL ske för elever i _SCHOOL?",
+        "är det aktuellt för elever i _SCHOOL att _DIG_SCHOOL?",
+        "varför bedrivs inte _DIG_SCHOOL för elever i _SCHOOL?",
+        "_INT_PRON gäller för grundskoleelever?",
+        "Behöver elever i _SCHOOL också _DIG_SCHOOL?",
+        "Varför stänger _PERS_PRON inte _SCHOOL i Sverige?",
+        "behöver barn i _SCHOOL _DIG_SCHOOL?",
+        "behöver barn i _SCHOOL stanna hemifrån?",
+        "kommer _DIG_SCHOOL ske för barn i _SCHOOL?",
+        "är det aktuellt för barn i _SCHOOL att _DIG_SCHOOL?",
+        "varför bedrivs inte _DIG_SCHOOL för barn i _SCHOOL?",
+        "behöver barn på _SCHOOL stanna hemifrån?",
+        "kommer _DIG_SCHOOL ske för barn på _SCHOOL?",
+        "varför bedrivs inte _DIG_SCHOOL för barn på _SCHOOL?"
+      ]
+    },
+    "bot": {
+      "say": [
+        "Rekommendationerna om distansundervisning gäller endast från gymnasiet och uppåt. Detta för att gymnasieskolor, universitet och högskolor samlar elever och studenter från upptagningsområden som är mycket större än grundskolans. Gymnasieelever och studenter är inte heller i behov av omsorg, till skillnad från barn i grundskolan. Bedömningen från Folkhälsomyndigheten är att det inte är bra att stänga grund- och förskolor just nu. Det finns inga uppgifter om att det finns någon utbredd spridning på grund- och förskolor och det skulle få stora konsekvenser för samhället om de stängdes."
+      ],
+      "set": {
+        "classifiedIntentName": "question: Behöver elever i grundskolan läsa på distans?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Rekommendationerna om distansundervisning gäller endast från gymnasiet och uppåt. Detta för att gymnasieskolor, universitet och högskolor samlar elever och studenter från upptagningsområden som är mycket större än grundskolans. Gymnasieelever och studenter är inte heller i behov av omsorg, till skillnad från barn i grundskolan. Bedömningen från Folkhälsomyndigheten är att det inte är bra att stänga grund- och förskolor just nu. Det finns inga uppgifter om att det finns någon utbredd spridning på grund- och förskolor och det skulle få stora konsekvenser för samhället om de stängdes."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Vad innebär avspärrning?",
+      "entities": {
+        "MEAN": MEAN
+      },
+      "examples": [
+        "Vad innebär avspärrning?",
+        "Vad är avspärrning?",
+        "Vad händer vid avspärrning?",
+        "Vad händer om det blir avspärrning?",
+        "Vad görs vid en avspärrning?",
+        "Varför görs en avspärrning?",
+        "Vad _MEAN avspärrning?",
+        "Varför görs avspärrning?",
+        "Vad görs vid avspärrning?",
+        "vad innebär avställning",
         ""
       ]
     },
     "bot": {
       "say": [
-        "Det är ännu inte klarlagt hur länge viruset kan överleva utanför kroppen. Forskningsstudier som utförts på närbesläktade coronavirus visar att de kan överleva flera dagar på ytor och föremål. Därför är det viktigt att ha god handhygien."
+        "Vid avspärrning spärrar man av ett område på maximalt några kvarter. Det kan till exempel bli aktuellt om man upptäcker att någon eller några personer har insjuknat i en livshotande sjukdom inom ett avgränsat område. Avspärrningen ger möjlighet att hitta smittkällan och utreda om det finns fler inom området som kan ha smittats eller spridit smittan."
       ],
       "set": {
-        "classifiedIntentName": "question: Hur länge kan covid-19 överleva utanför människokroppen?",
+        "classifiedIntentName": "question: Vad innebär avspärrning?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "Det är ännu inte klarlagt hur länge viruset kan överleva utanför kroppen. Forskningsstudier som utförts på närbesläktade coronavirus visar att de kan överleva flera dagar på ytor och föremål. Därför är det viktigt att ha god handhygien."
+          "Vid avspärrning spärrar man av ett område på maximalt några kvarter. Det kan till exempel bli aktuellt om man upptäcker att någon eller några personer har insjuknat i en livshotande sjukdom inom ett avgränsat område. Avspärrningen ger möjlighet att hitta smittkällan och utreda om det finns fler inom området som kan ha smittats eller spridit smittan."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Varför ska undervisningen för gymnasieelever och studenter ske på distans?",
+      "entities": {
+        "DIG_SCHOOL": DIG_SCHOOL,
+        "PUPIL": PUPIL,
+        "CAN": CAN
+      },
+      "examples": [
+        "Varför ska undervisningen för gymnasieelever och studenter ske på distans?",
+        "Varför ska undervisningen för _PUPIL ske på _DIG_SCHOOL?",
+        "Varför _CAN undervisningen för _PUPIL ske på _DIG_SCHOOL?",
+        "Varför sker undervisningen för _PUPIL på _DIG_SCHOOL?",
+        "Varför är undervisningen för _PUPIL _DIG_SCHOOL?",
+        "Varför får _PUPIL _DIG_SCHOOL?",
+        "Varför är det _DIG_SCHOOL för _PUPIL?",
+        "Varför _CAN undervisning ske _DIG_SCHOOL för _PUPIL?",
+        "Varför _CAN undervisning vara _DIG_SCHOOL?",
+        "Varför _CAN _PUPIL bara ha _DIG_SCHOOL?",
+        "Varför _CAN _PUPIL inte gå till skolan?",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Gymnasieelever och studenter är inte i behov av omsorg, till skillnad från barn i grundskola. Både gymnasieskolor, universitet och högskolor har större upptagningsområden än grundskolans. Folkhälsomyndigheten rekommenderar att högre undervisning inte bedrivs i skolans lokaler, utan genom distansundervisning. Rekommendationen syftar till att bromsa takten i spridningen av covid-19 i samhället, och att därmed avlasta sjukvården och skydda de mest sårbara från att smittas."
+      ],
+      "set": {
+        "classifiedIntentName": "question: Varför ska undervisningen för gymnasieelever och studenter ske på distans?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Gymnasieelever och studenter är inte i behov av omsorg, till skillnad från barn i grundskola. Både gymnasieskolor, universitet och högskolor har större upptagningsområden än grundskolans. Folkhälsomyndigheten rekommenderar att högre undervisning inte bedrivs i skolans lokaler, utan genom distansundervisning. Rekommendationen syftar till att bromsa takten i spridningen av covid-19 i samhället, och att därmed avlasta sjukvården och skydda de mest sårbara från att smittas."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Vad innebär det att covid-19 klassas som allmänfarlig och samhällsfarlig sjukdom enligt smittskyddslagen?",
+      "entities": {
+        "CORONA": CORONA,
+        "INT_PRON": INT_PRON
+      },
+      "examples": [
+        "Vad innebär det att covid-19 klassas som allmänfarlig och samhällsfarlig sjukdom enligt smittskyddslagen?",
+        "_INT_PRON betyder det att _CORONA är allmänfarlig",
+        "_INT_PRON innebär samhällsfarlig sjukdom",
+        "_INT_PRON är en samhällsfarlig sjukdom",
+        "_INT_PRON är allmänfarlig",
+        "är _CORONA samhällsfarlig",
+        "_INT_PRON innebär det att _CORONA klassas som allmänfarlig och samhällsfarlig sjukdom enligt smittskyddslagen?",
+        "_INT_PRON sammhällsfarlig",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Att klassa en smitta som allmänfarlig och samhällsfarlig gör att det är möjligt att vidta förebyggande åtgärder som kan hindra smittspridning i samhället. När det bestäms att en smitta är allmänfarlig och samhällsfarlig så finns möjligheter att besluta om åtgärder som exempelvis karantän, isolering, hälsoundersökningar när man reser in i Sverige och att spärra av områden. Dessa åtgärder kan man inte göra annars."
+      ],
+      "set": {
+        "classifiedIntentName": "question: Vad innebär det att covid-19 klassas som allmänfarlig och samhällsfarlig sjukdom enligt smittskyddslagen?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Att klassa en smitta som allmänfarlig och samhällsfarlig gör att det är möjligt att vidta förebyggande åtgärder som kan hindra smittspridning i samhället. När det bestäms att en smitta är allmänfarlig och samhällsfarlig så finns möjligheter att besluta om åtgärder som exempelvis karantän, isolering, hälsoundersökningar när man reser in i Sverige och att spärra av områden. Dessa åtgärder kan man inte göra annars."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Kan jag beställa take-away på en restaurang?",
+      "entities": {
+        "CAN": CAN,
+        "PERS_PRON": PERS_PRON
+      },
+      "examples": [
+        "Kan jag beställa take-away på en restaurang?",
+        "_CAN _PERS_PRON beställa takeaway från restaurangen",
+        "Är takeaway okej?",
+        "_CAN _PERS_PRON beställa takeaway",
+        "_CAN _PERS_PRON beställa hem mat",
+        "Funkar takeaway?",
+        "Fungerar takeaway?",
+        "_CAN _PERS_PRON köpa hämtmat?",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Hämtmat kan köpas som vanligt så länge det inte uppstår trängsel bland de som väntar, hämtar eller betalar."
+      ],
+      "set": {
+        "classifiedIntentName": "question: Kan jag beställa take-away på en restaurang?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Hämtmat kan köpas som vanligt så länge det inte uppstår trängsel bland de som väntar, hämtar eller betalar."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: CAN jag stå i kö på snabbmatsrestaurangerna?",
+      "entities": {
+        "CAN": CAN,
+        "PERS_PRON": PERS_PRON
+      },
+      "examples": [
+        "_CAN jag stå i kö på snabbmatsrestaurangerna?",
+        "_CAN _PERS_PRON köa till en korvkiosk?",
+        "_CAN _PERS_PRON stå i kö",
+        "_CAN _PERS_PRON köa",
+        "_CAN _PERS_PRON stå i kö på snabbmatsrestaurangerna?",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Du kan stå i kö men det får inte vara trängsel. Du ska kunna stå med minst en armlängds avstånd mellan dig och personen framför dig."
+      ],
+      "set": {
+        "classifiedIntentName": "question: CAN jag stå i kö på snabbmatsrestaurangerna?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Du kan stå i kö men det får inte vara trängsel. Du ska kunna stå med minst en armlängds avstånd mellan dig och personen framför dig."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Vad gäller för stora evenemang? ",
+      "entities": {
+        "BIG_EVENT": BIG_EVENT,
+        "INT_PRON": INT_PRON,
+        "PERS_PRON": PERS_PRON
+      },
+      "examples": [
+        "Vad gäller för stora evenemang? ",
+        "_INT_PRON är reglerna för _BIG_EVENT",
+        "_INT_PRON regler gäller för _BIG_EVENT",
+        "är alla _BIG_EVENT inställda",
+        "kommer alla _BIG_EVENT ställas in",
+        "Kan _PERS_PRON gå på _BIG_EVENT? ",
+        "Får _PERS_PRON gå på _BIG_EVENT?",
+        "Kan _PERS_PRON åka på _BIG_EVENT",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Det är inte tillåtet med allmänna sammankomster och offentliga tillställningar med fler än 50 personer. Syftet är att förhindra tillfällen då ett stort antal människor samlas på en och samma plats. Det gäller ej för skolor, kollektivtrafik, privata evenemang och besök i affärer. Alla uppmanas att vara uppmärksamma på symptom, även milda, och att stanna hemma om man känner sig sjuk."
+      ],
+      "set": {
+        "classifiedIntentName": "question: Vad gäller för stora evenemang? ",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Det är inte tillåtet med allmänna sammankomster och offentliga tillställningar med fler än 50 personer. Syftet är att förhindra tillfällen då ett stort antal människor samlas på en och samma plats. Det gäller ej för skolor, kollektivtrafik, privata evenemang och besök i affärer. Alla uppmanas att vara uppmärksamma på symptom, även milda, och att stanna hemma om man känner sig sjuk."
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -2696,115 +3613,6 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "classifiedUtterance": "_user_text",
         "botResponse": [
           "Kunskap från liknande tidigare utbrott visar att denna typ av virus smittar mellan sjuka människor, inte genom paket och post. Men forskarna vet inte än hur länge covid19 kan överleva utanför kroppen. Forskningsstudier som utförts på andra coronavirus visar att de kan överleva flera dagar på ytor och föremål. Därför är det ändå viktigt att ha god handhygien."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Kan covid-19 smitta mellan djur och människa och kan POS_PRON husdjur smittas av viruset?",
-      "entities": {
-        "POS_PRON": POS_PRON,
-        "PERS_PRON": PERS_PRON,
-        "PET": PET,
-        "CORONA": CORONA
-      },
-      "examples": [
-        "Kan covid-19 smitta mellan djur och människa och kan _POS_PRON husdjur smittas av viruset?",
-        "kan _PERS_PRON smittas av POS_PRONOMEN _PET",
-        "kan _PERS_PRON få _CORONA av _PET",
-        "kan _PERS_PRON smitta _POS_PRON _PET",
-        "smittar _CORONA mellan människor och _PET",
-        "hur skyddar _PERS_PRON _POS_PRON _PET",
-        "kan _PERS_PRON få _CORONA av _POS_PRON _PET?",
-        "smittar _POS_PRON _PET?",
-        "kan jag bli smittad av ett _PET?",
-        "kan jag smitta mitt _PET?",
-        "Kan djur bli smittade av _CORONA",
-        "Kan _POS_PRON _PET ha _CORONA",
-        "Smittar _CORONA från människa till _PET",
-        "Kan _CORONA smitta mellan _PET och människa och kan _POS_PRON _PET smittas av viruset?",
-        "kan min _PET ge mig _CORONA",
-        "riskerar _PET få _CORONA",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Det finns inga uppgifter idag om att covid19 kan smitta från människa till husdjur."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Kan covid-19 smitta mellan djur och människa och kan POS_PRON husdjur smittas av viruset?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Det finns inga uppgifter idag om att covid19 kan smitta från människa till husdjur."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: I vilka länder pågår det smittspridning?",
-      "entities": {
-        "CORONA": CORONA,
-        "INT_PRON": INT_PRON,
-        "PERS_PRON": PERS_PRON
-      },
-      "examples": [
-        "I vilka länder pågår det smittspridning?",
-        "vilka länder är smittade",
-        "i _INT_PRON länder kan _PERS_PRON få _CORONA",
-        "finns det några säkra länder",
-        "är alla länder drabbade",
-        "_INT_PRON länder har blivit smittade",
-        "_INT_PRON länder har blivit drabbade",
-        "var finns _CORONA",
-        "_INT_PRON länder har _CORONA",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Covid19 har klassats som en pandemi. Det innebär att smittan redan finns eller kommer att finnas i alla världsdelar. Vi kan inte ge dig aktuell statistik för alla länder.  "
-      ],
-      "set": {
-        "classifiedIntentName": "question: I vilka länder pågår det smittspridning?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Covid19 har klassats som en pandemi. Det innebär att smittan redan finns eller kommer att finnas i alla världsdelar. Vi kan inte ge dig aktuell statistik för alla länder.  "
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Vad innebär det att vi har en samhällsspridning av CORONA i Sverige?",
-      "entities": {
-        "CORONA": CORONA
-      },
-      "examples": [
-        "Vad innebär det att vi har en samhällsspridning av _CORONA i Sverige?",
-        "vad innebär samhällsspridning",
-        "vad betyder samhällsspridning",
-        "vad betyder spridning i samhället",
-        "har vi samhällsspridning i sverige",
-        "har vi samhällsspridning",
-        "är det samhällsspridning?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Samhällsspridning innebär att det finns ett flertal fall i Sverige där man kunnat spåra smittan till ett annat känt fall av covid-19, det vill säga att den som är sjuk har varit i kontakt med en annan person i landet som har konstaterats vara smittad. "
-      ],
-      "set": {
-        "classifiedIntentName": "question: Vad innebär det att vi har en samhällsspridning av CORONA i Sverige?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Samhällsspridning innebär att det finns ett flertal fall i Sverige där man kunnat spåra smittan till ett annat känt fall av covid-19, det vill säga att den som är sjuk har varit i kontakt med en annan person i landet som har konstaterats vara smittad. "
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -2923,269 +3731,6 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": {
-      "name": "question: Vad gör Folkhälsomyndigheten?",
-      "entities": {
-        "FHM": FHM,
-        "INT_PRON": INT_PRON
-      },
-      "examples": [
-        "Vad gör Folkhälsomyndigheten?",
-        "_INT_PRON är _FHM",
-        "_INT_PRON roll har _FHM",
-        "_INT_PRON ansvar har _FHM",
-        "_INT_PRON gör _FHM?",
-        "_INT_PRON är _FHM?",
-        "_INT_PRON är _FHM jobb?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Folkhälsomyndigheten tar fram och förmedlar vetenskapligt grundad kunskap som förebygger ohälsa och sjukdomar. Folkhälsomyndigheten följer händelseutvecklingen av covid19, och gör riskbedömningar samt bedömer hur utbrottet utvecklas. Folkhälsomyndigheten tar ställning till vilka åtgärdar som är relevanta att genomföra och informerar sjukvård, regionala smittsskyddsenheter samt andra aktörer."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Vad gör Folkhälsomyndigheten?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Folkhälsomyndigheten tar fram och förmedlar vetenskapligt grundad kunskap som förebygger ohälsa och sjukdomar. Folkhälsomyndigheten följer händelseutvecklingen av covid19, och gör riskbedömningar samt bedömer hur utbrottet utvecklas. Folkhälsomyndigheten tar ställning till vilka åtgärdar som är relevanta att genomföra och informerar sjukvård, regionala smittsskyddsenheter samt andra aktörer."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Vad är en pandemi?",
-      "entities": {
-        "INT_PRON": INT_PRON,
-        "PANDEMIC": PANDEMIC
-      },
-      "examples": [
-        "Vad är en pandemi?",
-        "_INT_PRON betyder _PANDEMIC",
-        "_INT_PRON innebär en _PANDEMIC",
-        "_INT_PRON innebär _PANDEMIC",
-        "_INT_PRON händer vid en _PANDEMIC",
-        "_INT_PRON är _PANDEMIC",
-        "_INT_PRON e _PANDEMIC",
-        "_INT_PRON _PANDEMIC",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "En pandemi innebär en omfattande spridning till alla världens kontinenter av en helt ny typ av smittsam sjukdom. Vid en pandemi kommer sjukdomen med stor sannolikhet påverka stora delar av vårt samhälle och världens befolkning. Det är WHO som deklarerar om en smittspridning bedöms vara en pandemi, och detta gjordes den 11:e mars 2020."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Vad är en pandemi?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "En pandemi innebär en omfattande spridning till alla världens kontinenter av en helt ny typ av smittsam sjukdom. Vid en pandemi kommer sjukdomen med stor sannolikhet påverka stora delar av vårt samhälle och världens befolkning. Det är WHO som deklarerar om en smittspridning bedöms vara en pandemi, och detta gjordes den 11:e mars 2020."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: vad skiljer covid-19 från säsongsinfluensa?",
-      "entities": {
-        "CORONA": CORONA,
-        "FLU": FLU,
-        "CAN": CAN,
-        "PERS_PRON": PERS_PRON,
-        "INT_PRON": INT_PRON
-      },
-      "examples": [
-        "vad skiljer covid-19 från säsongsinfluensa?",
-        "är _CORONA _FLU",
-        "vad skiljer _CORONA från _FLU",
-        "är _FLU samma sak som _CORONA",
-        "är _CORONA samma sak som _FLU?",
-        "_CORONA och _FLU är det samma sak",
-        "är _CORONA och _FLU olika",
-        "är _CORONA och _FLU samma?",
-        "_CAN _PERS_PRON  få _CORONA från _FLU?",
-        "_INT_PRON skiljer _CORONA från säsongsinfluensa?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Det är svårt att jämföra en helt ny sjukdom som covid19, med den återkommande säsongsinfluensan. Utifrån vad vi vet idag är att sjudomarna är liknande i symptom men covid19 sprider sig mycket snabbare eftersom ingen har utvecklat immunitet ännu."
-      ],
-      "set": {
-        "classifiedIntentName": "question: vad skiljer covid-19 från säsongsinfluensa?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Det är svårt att jämföra en helt ny sjukdom som covid19, med den återkommande säsongsinfluensan. Utifrån vad vi vet idag är att sjudomarna är liknande i symptom men covid19 sprider sig mycket snabbare eftersom ingen har utvecklat immunitet ännu."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Ger rökning ett svårare sjukdomsförlopp vid covid-19?",
-      "entities": {
-        "PERS_PRON": PERS_PRON,
-        "CORONA": CORONA
-      },
-      "examples": [
-        "Ger rökning ett svårare sjukdomsförlopp vid covid-19?",
-        "blir _PERS_PRON sjukare om _PERS_PRON röker",
-        "blir _PERS_PRON sjukare ifall _PERS_PRON röker",
-        "gör rökning det värre",
-        "gör rökning CORANA värre",
-        "har _PERS_PRON större risk att dö ifall jag får _CORONA",
-        "hur påverkas rökare",
-        "rökare",
-        "är rökning dåligt",
-        "Ger rökning ett svårare sjukdomsförlopp vid _CORONA",
-        "är _CORONA farligare för rökare",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Vi vet sedan tidigare att tobaksrökning ökar risken för allvarliga symptom vid luftvägsinfektioner som till exempel influensa. Tillgängliga studier visar att personer som röker eller som har rökt är överrepresenterade bland de svåra fallen av covid19. Kunskapsläget om samband mellan tobaksrökning och hur svårt sjuk man blir vid covid19 är dock fortfarande oklart. Vill du ha hjälp att sluta röka finns stöd att få till exempel hos Sluta-Röka-Linjen, 020-84 00 00. "
-      ],
-      "set": {
-        "classifiedIntentName": "question: Ger rökning ett svårare sjukdomsförlopp vid covid-19?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Vi vet sedan tidigare att tobaksrökning ökar risken för allvarliga symptom vid luftvägsinfektioner som till exempel influensa. Tillgängliga studier visar att personer som röker eller som har rökt är överrepresenterade bland de svåra fallen av covid19. Kunskapsläget om samband mellan tobaksrökning och hur svårt sjuk man blir vid covid19 är dock fortfarande oklart. Vill du ha hjälp att sluta röka finns stöd att få till exempel hos Sluta-Röka-Linjen, 020-84 00 00. "
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Finns det självtester för covid-19",
-      "entities": {
-        "CAN": CAN,
-        "CORONA": CORONA,
-        "PERS_PRON": PERS_PRON,
-        "REF_PRON": REF_PRON
-      },
-      "examples": [
-        "Finns det självtester för covid-19",
-        "_CAN _PERS_PRON testa _REF_PRON hemma för _CORONA?",
-        "går det att testa _REF_PRON hemma?",
-        "är självtester pålitliga?",
-        "_CAN _PERS_PRON lita på självtester?",
-        "_CAN _PERS_PRON testa _REF_PRON för _CORONA hemma?",
-        "_CAN _PERS_PRON testa om _PERS_PRON har _CORONA hemma?",
-        "_CAN _PERS_PRON testa _REF_PRON för _CORONA i hemmet?",
-        "_CAN _PERS_PRON testa om _PERS_PRON har _CORONA i hemmet?",
-        "går det att testa sig för _CORONA hemifrån?",
-        "Finns det självtester för _CORONA?",
-        "_CAN _PERS_PRON testa _CORONA hemma",
-        "_CAN _PERS_PRON göra test för _CORONA hemma",
-        "_CAN _PERS_PRON testa _REF_PRON i hemmet",
-        "_CAN _PERS_PRON testa _REF_PRON för _CORONA i hemmet",
-        "Vad är självskattningstest för covid-19?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Det finns tillverkare som marknadsför självtester för covid19. Det är dock inte klart hur exakta eller känsliga dessa tester är. Det rekommenderas därför inte att använda dessa självtester."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Finns det självtester för covid-19",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Det finns tillverkare som marknadsför självtester för covid19. Det är dock inte klart hur exakta eller känsliga dessa tester är. Det rekommenderas därför inte att använda dessa självtester."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Vad gäller angående att läsa på distans?",
-      "entities": {
-        "CAN": CAN,
-        "DIG_SCHOOL": DIG_SCHOOL,
-        "PERS_PRON": PERS_PRON,
-        "SCHOOL": SCHOOL
-      },
-      "examples": [
-        "Vad gäller angående att läsa på distans?",
-        "_CAN _PERS_PRON _DIG_SCHOOL",
-        "varför behöver skolorna läsa på distans?",
-        "kommer all undervisning nu bedrivas på distans?",
-        "bedrivs _DIG_SCHOOL?",
-        "Varför ska  undervisningen för gymnasieelever och studenter ske på distans?",
-        "erbjuder _SCHOOL undervisning på distans?",
-        "varför är det _DIG_SCHOOL",
-        "måste _PERS_PRON _DIG_SCHOOL",
-        "ska _PERS_PRON _DIG_SCHOOL",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Gymnasieelever och studenter på universitetet är inte i behov av omsorg på samma sätt som barn. För att bromsa spridningen av covid19 rekommenderar Folkhälsomyndigheten därför från den 17 mars 2020 att undervisningen på gymnasieskolor, universitet, högskolor, yrkeshögskolor och komvux ska ske på distans."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Vad gäller angående att läsa på distans?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Gymnasieelever och studenter på universitetet är inte i behov av omsorg på samma sätt som barn. För att bromsa spridningen av covid19 rekommenderar Folkhälsomyndigheten därför från den 17 mars 2020 att undervisningen på gymnasieskolor, universitet, högskolor, yrkeshögskolor och komvux ska ske på distans."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Behöver elever i grundskolan läsa på distans?",
-      "entities": {
-        "INT_PRON": INT_PRON,
-        "SCHOOL": SCHOOL,
-        "DIG_SCHOOL": DIG_SCHOOL,
-        "PERS_PRON": PERS_PRON
-      },
-      "examples": [
-        "Behöver elever i grundskolan läsa på distans?",
-        "_INT_PRON gäller angående undervisning i _SCHOOL?",
-        "behöver elever i _SCHOOL _DIG_SCHOOL?",
-        "behöver elever i _SCHOOL stanna hemifrån?",
-        "kommer _DIG_SCHOOL ske för elever i _SCHOOL?",
-        "är det aktuellt för elever i _SCHOOL att _DIG_SCHOOL?",
-        "varför bedrivs inte _DIG_SCHOOL för elever i _SCHOOL?",
-        "_INT_PRON gäller för grundskoleelever?",
-        "Behöver elever i _SCHOOL också _DIG_SCHOOL?",
-        "Varför stänger _PERS_PRON inte _SCHOOL i Sverige?",
-        "behöver barn i _SCHOOL _DIG_SCHOOL?",
-        "behöver barn i _SCHOOL stanna hemifrån?",
-        "kommer _DIG_SCHOOL ske för barn i _SCHOOL?",
-        "är det aktuellt för barn i _SCHOOL att _DIG_SCHOOL?",
-        "varför bedrivs inte _DIG_SCHOOL för barn i _SCHOOL?",
-        "behöver barn på _SCHOOL stanna hemifrån?",
-        "kommer _DIG_SCHOOL ske för barn på _SCHOOL?",
-        "varför bedrivs inte _DIG_SCHOOL för barn på _SCHOOL?"
-      ]
-    },
-    "bot": {
-      "say": [
-        "Rekommendationerna om distansundervisning gäller endast från gymnasiet och uppåt. Detta för att gymnasieskolor, universitet och högskolor samlar elever och studenter från upptagningsområden som är mycket större än grundskolans. Gymnasieelever och studenter är inte heller i behov av omsorg, till skillnad från barn i grundskolan. Bedömningen från Folkhälsomyndigheten är att det inte är bra att stänga grund- och förskolor just nu. Det finns inga uppgifter om att det finns någon utbredd spridning på grund- och förskolor och det skulle få stora konsekvenser för samhället om de stängdes."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Behöver elever i grundskolan läsa på distans?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Rekommendationerna om distansundervisning gäller endast från gymnasiet och uppåt. Detta för att gymnasieskolor, universitet och högskolor samlar elever och studenter från upptagningsområden som är mycket större än grundskolans. Gymnasieelever och studenter är inte heller i behov av omsorg, till skillnad från barn i grundskolan. Bedömningen från Folkhälsomyndigheten är att det inte är bra att stänga grund- och förskolor just nu. Det finns inga uppgifter om att det finns någon utbredd spridning på grund- och förskolor och det skulle få stora konsekvenser för samhället om de stängdes."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
       "name": "question: Jag är 70 år, hur ska jag bete mig nu när det pågår samhällsspridning av covid-19 ute i samhället? ",
       "entities": {
         "CAN": CAN,
@@ -3225,94 +3770,6 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "classifiedUtterance": "_user_text",
         "botResponse": [
           "Personer som är 70 år och äldre uppmanas att, under en avgränsad tid, minska närmare kontakt med andra. Undvik folksamlingar i exempelvis kollektivtrafik, affärer, apotek eller offentliga lokaler och be om hjälp för att göra ärenden som exempelvis handla mat. För att slippa känna dig isolerad kan du prata i telefon med nära och kära eller hålla kontakt via sociala medier eller dator. "
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Nu när det pågår samhällsspridning av covid-19, hur ska jag ta hand om och skydda personer som är 70 år och äldre?",
-      "entities": {
-        "ELDERLY": ELDERLY,
-        "PERS_PRON": PERS_PRON,
-        "PROTECT": PROTECT,
-        "CAN": CAN,
-        "CORONA": CORONA,
-        "POS_PRON": POS_PRON,
-        "FAMILYMEMBER": FAMILYMEMBER
-      },
-      "examples": [
-        "Nu när det pågår samhällsspridning av covid-19, hur ska jag ta hand om och skydda personer som är 70 år och äldre?",
-        "hur _PROTECT _PERS_PRON _ELDERLY?",
-        "hur _PROTECT _PERS_PRON de som är 70 år eller äldre?",
-        "hur _CAN _PERS_PRON ta hand om äldre?",
-        "hur håller _PERS_PRON _ELDERLY borta från _CORONA?",
-        "_CAN _PERS_PRON ha närkontakt med _ELDERLY?",
-        "hur _PROTECT _PERS_PRON _ELDERLY från smitta?",
-        "_CAN _PERS_PRON träffa _POS_PRON föräldrar",
-        "_CAN _PERS_PRON träffa _POS_PRON _FAMILYMEMBER",
-        "Nu när det pågår samhällsspridning av _CORONA, hur _CAN _PERS_PRON ta hand om och _PROTECT personer ELDERY?",
-        "Nu när det pågår samhällsspridning av _CORONA, hur _CAN _PERS_PRON ta hand om och _PROTECT _ELDERLY och _ELDERLY?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Sedan den 1 april råder det besöksförbud på landets samtliga äldreboenden, detta eftersom det är av allra största vikt att skydda de äldre från smitta. Ha ingen närkontakt med personer utanför äldreboenden som är 70 år och äldre om det inte är absolut nödvändigt. Stanna hemma när du känner dig sjuk, även om du bara är lite förkyld. "
-      ],
-      "set": {
-        "classifiedIntentName": "question: Nu när det pågår samhällsspridning av covid-19, hur ska jag ta hand om och skydda personer som är 70 år och äldre?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Sedan den 1 april råder det besöksförbud på landets samtliga äldreboenden, detta eftersom det är av allra största vikt att skydda de äldre från smitta. Ha ingen närkontakt med personer utanför äldreboenden som är 70 år och äldre om det inte är absolut nödvändigt. Stanna hemma när du känner dig sjuk, även om du bara är lite förkyld. "
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Vilka personer bör testas för covid-19",
-      "entities": {
-        "CORONA": CORONA,
-        "INT_PRON": INT_PRON,
-        "CAN": CAN,
-        "PERS_PRON": PERS_PRON,
-        "REF_PRON": REF_PRON,
-        "SYMPTOM": SYMPTOM,
-        "IF": IF
-      },
-      "examples": [
-        "Vilka personer bör testas för covid-19",
-        "_INT_PRON kan testas för _CORONA?",
-        "_INT_PRON personer _CAN testa sig för _CORONA?",
-        "_CAN _PERS_PRON testa _REF_PRON för _CORONA",
-        "när _CAN _PERS_PRON testa _REF_PRON för _CORONA?",
-        "_CAN _PERS_PRON stanna hemma när _PERS_PRON uppvisar symtom på _CORONA?",
-        "_INT_PRON _CAN testas för _CORONA?",
-        "_CAN _PERS_PRON stanna hemma om _PERS_PRON uppvisar _SYMPTOM på _CORONA?",
-        "_CAN _PERS_PRON stanna hemma _IF _PERS_PRON uppvisar _SYMPTOM på _CORONA?",
-        "_CAN _PERS_PRON testa _REF_PRON för _CORONA?",
-        "_INT_PRON testas för _CORONA?",
-        "_INT_PRON personer _CAN testas för det _CORONA?",
-        "_INT_PRON personer _CAN testas för _CORONA",
-        "_CAN _PERS_PRON testa _REF_PRON?",
-        "hur testar man _CORONA",
-        "testar sjukvården _CORONA",
-        "Jag är personal inom äldreomsorgen. Jag är förkyld. Kan jag bli testad?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "De som i första hand testas är personer som är i behov av vård på sjukhus och personal inom sjukvård och äldreomsorg med misstänkt smitta av coronaviruset. Det är viktigt att alla som är sjuka i förkylning eller influensaliknande symptom ska vara hemma för att inte riskera att sprida smittan."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Vilka personer bör testas för covid-19",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "De som i första hand testas är personer som är i behov av vård på sjukhus och personal inom sjukvård och äldreomsorg med misstänkt smitta av coronaviruset. Det är viktigt att alla som är sjuka i förkylning eller influensaliknande symptom ska vara hemma för att inte riskera att sprida smittan."
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -3419,48 +3876,6 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": {
-      "name": "question: Jag känner mig orolig för covid-19, hur ska jag hantera min oro?",
-      "entities": {
-        "CAN": CAN,
-        "CORONA": CORONA,
-        "PERS_PRON": PERS_PRON,
-        "PROTECT": PROTECT,
-        "SAD": SAD,
-        "INT_PRON": INT_PRON,
-        "POS_PRON": POS_PRON
-      },
-      "examples": [
-        "Jag känner mig orolig för covid-19, hur ska jag hantera min oro?",
-        "_PERS_PRON är _SAD för _CORONA, _CAN _PERS_PRON få _PROTECT? ",
-        "",
-        "_PERS_PRON är _SAD för _CORONA, _INT_PRON _CAN _PERS_PRON göra?",
-        "_PERS_PRON har _SAD på grund av _CORONA, _CAN _PERS_PRON få _PROTECT?",
-        "_PERS_PRON får _SAD av _CORONA, _CAN _PERS_PRON få _PROTECT?",
-        "Hur ska _PERS_PRON hantera _POS_PRON _SAD?",
-        "_PERS_PRON är _SAD",
-        "_PERS_PRON har _SAD",
-        "_PERS_PRON känner mig _SAD för _CORONA, hur ska _PERS_PRON hantera _POS_PRON _SAD?",
-        "_PERS_PRON vill inte dö",
-        "_PERS_PRON vill prata med någon",
-        "kommer världen gå under "
-      ]
-    },
-    "bot": {
-      "say": [
-        "Se först och främst till att använda dig av tillförlitliga källor för att hämta information om covid19. Begränsa tiden du tar del av nyheter och sociala medier. Försök behåll dina vanliga rutiner och prata gärna med andra om det som oroar dig, men prata också om andra saker än sjukdomar."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Jag känner mig orolig för covid-19, hur ska jag hantera min oro?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Se först och främst till att använda dig av tillförlitliga källor för att hämta information om covid19. Begränsa tiden du tar del av nyheter och sociala medier. Försök behåll dina vanliga rutiner och prata gärna med andra om det som oroar dig, men prata också om andra saker än sjukdomar."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
       "name": "question: Kan vaccin mot pneumokocker ge skydd mot covid-19",
       "entities": {
         "PERS_PRON": PERS_PRON,
@@ -3532,215 +3947,6 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": {
-      "name": "question: Smittar covid-19 via vatten och mat?",
-      "entities": {
-        "CORONA": CORONA,
-        "DRINK": DRINK,
-        "PERS_PRON": PERS_PRON
-      },
-      "examples": [
-        "Smittar covid-19 via vatten och mat?",
-        "Kan _PERS_PRON få _CORONA om _PERS_PRON dricker _DRINK?",
-        "Kan _PERS_PRON få _CORONA när _PERS_PRON dricker _DRINK?",
-        "Kan _PERS_PRON få _CORONA om _PERS_PRON äter mat?",
-        "Kan _PERS_PRON få _CORONA när _PERS_PRON äter mat?",
-        "Smittar _CORONA via _DRINK och mat?",
-        "Smittar _CORONA genom dryck?",
-        "Smittar _CORONA genom mat?",
-        "Kan _PERS_PRON få _CORONA av mat?",
-        "Kan PER_PRON få _CORONA av dricka?",
-        "Kan _PERS_PRON bli sjuk av _DRINK?",
-        "Kan _PERS_PRON få _CORONA av _DRINK?",
-        "Är det okej att gå till simhallen",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Det finns inga uppgifter om att personer smittats genom att ha ätit mat eller druckit vatten. Det är inte heller troligt att covid19 sprids via bassängvatten eller annat badvatten. Covid19 smittar i första hand mellan människor genom droppsmitta, det vill säga att smitta överförs till slemhinna i ögon, näsa eller mun från droppar som sprids i luften när en sjuk person hostar eller nyser."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Smittar covid-19 via vatten och mat?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Det finns inga uppgifter om att personer smittats genom att ha ätit mat eller druckit vatten. Det är inte heller troligt att covid19 sprids via bassängvatten eller annat badvatten. Covid19 smittar i första hand mellan människor genom droppsmitta, det vill säga att smitta överförs till slemhinna i ögon, näsa eller mun från droppar som sprids i luften när en sjuk person hostar eller nyser."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Vad MEAN karantän?",
-      "entities": {
-        "MEAN": MEAN,
-        "PERS_PRON": PERS_PRON,
-        "CAN": CAN
-      },
-      "examples": [
-        "Vad _MEAN karantän?",
-        "Vad _MEAN att sitta i karantän?",
-        "Vad är karantän?",
-        "Vad gör _PERS_PRON i karantän?",
-        "Hur är _PERS_PRON i karantän?",
-        "Vad är en karantän?",
-        "Hur _CAN _PERS_PRON bete sig i karantän?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Den som har eller misstänks ha covid19 kan efter beslut av en smittskyddsläkare hållas i karantän. Karantän innebär att du placeras i hemmet, en avgränsad del av en byggnad eller ett område. I karantän får du inte lämna byggnaden eller ta emot besök förutom av vårdpersonal eller socialtjänst."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Vad MEAN karantän?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Den som har eller misstänks ha covid19 kan efter beslut av en smittskyddsläkare hållas i karantän. Karantän innebär att du placeras i hemmet, en avgränsad del av en byggnad eller ett område. I karantän får du inte lämna byggnaden eller ta emot besök förutom av vårdpersonal eller socialtjänst."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Kan man sätta en hel CITY i karantän?",
-      "entities": {
-        "CITY": CITY,
-        "POS_PRON": POS_PRON
-      },
-      "examples": [
-        "Kan man sätta en hel _CITY i karantän?",
-        "Kan en hel _CITY sättas i karantän?",
-        "Kan en _CITY sättas i karantän?",
-        "Kan _CITY sättas i karantän?",
-        "Kan _POS_PRON stad sättas i karantän?",
-        "Kommer _POS_PRON _CITY sättas i karantän?",
-        "Är _POS_PRON _CITY i karantän?",
-        "Är _CITY i karantän?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Enskilda personer kan sättas i karantän i Sverige, men inte en hel stad. Däremot finns det möjlighet att spärra av ett begränsat område."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Kan man sätta en hel CITY i karantän?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Enskilda personer kan sättas i karantän i Sverige, men inte en hel stad. Däremot finns det möjlighet att spärra av ett begränsat område."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Vad innebär avspärrning?",
-      "entities": {
-        "MEAN": MEAN
-      },
-      "examples": [
-        "Vad innebär avspärrning?",
-        "Vad är avspärrning?",
-        "Vad händer vid avspärrning?",
-        "Vad händer om det blir avspärrning?",
-        "Vad görs vid en avspärrning?",
-        "Varför görs en avspärrning?",
-        "Vad _MEAN avspärrning?",
-        "Varför görs avspärrning?",
-        "Vad görs vid avspärrning?",
-        "vad innebär avställning",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Vid avspärrning spärrar man av ett område på maximalt några kvarter. Det kan till exempel bli aktuellt om man upptäcker att någon eller några personer har insjuknat i en livshotande sjukdom inom ett avgränsat område. Avspärrningen ger möjlighet att hitta smittkällan och utreda om det finns fler inom området som kan ha smittats eller spridit smittan."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Vad innebär avspärrning?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Vid avspärrning spärrar man av ett område på maximalt några kvarter. Det kan till exempel bli aktuellt om man upptäcker att någon eller några personer har insjuknat i en livshotande sjukdom inom ett avgränsat område. Avspärrningen ger möjlighet att hitta smittkällan och utreda om det finns fler inom området som kan ha smittats eller spridit smittan."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Hur länge kan en avspärrning pågå?",
-      "entities": {
-        "PERS_PRON": PERS_PRON,
-        "END": END
-      },
-      "examples": [
-        "Hur länge kan en avspärrning pågå?",
-        "Hur länge kan det vara avspärrning?",
-        "Hur länge pågår en avspärrning?",
-        "Hur länge kan _PERS_PRON vara under avspärrning?",
-        "Hur länge kommer det vara avpärrning?",
-        "När tar avspärrningen _END?",
-        "När _END avspärrningen?",
-        "När kommer avspärrningen att _END?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Avspärrning är endast en tillfällig åtgärd för att utreda upptäckta sjukdomsfall och smittspridning. Det kan alltså inte användas för att t.ex. hindra personer från att resa in eller ut ur ett större geografiskt område."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Hur länge kan en avspärrning pågå?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Avspärrning är endast en tillfällig åtgärd för att utreda upptäckta sjukdomsfall och smittspridning. Det kan alltså inte användas för att t.ex. hindra personer från att resa in eller ut ur ett större geografiskt område."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Varför ska undervisningen för gymnasieelever och studenter ske på distans?",
-      "entities": {
-        "DIG_SCHOOL": DIG_SCHOOL,
-        "PUPIL": PUPIL,
-        "CAN": CAN
-      },
-      "examples": [
-        "Varför ska undervisningen för gymnasieelever och studenter ske på distans?",
-        "Varför ska undervisningen för _PUPIL ske på _DIG_SCHOOL?",
-        "Varför _CAN undervisningen för _PUPIL ske på _DIG_SCHOOL?",
-        "Varför sker undervisningen för _PUPIL på _DIG_SCHOOL?",
-        "Varför är undervisningen för _PUPIL _DIG_SCHOOL?",
-        "Varför får _PUPIL _DIG_SCHOOL?",
-        "Varför är det _DIG_SCHOOL för _PUPIL?",
-        "Varför _CAN undervisning ske _DIG_SCHOOL för _PUPIL?",
-        "Varför _CAN undervisning vara _DIG_SCHOOL?",
-        "Varför _CAN _PUPIL bara ha _DIG_SCHOOL?",
-        "Varför _CAN _PUPIL inte gå till skolan?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Gymnasieelever och studenter är inte i behov av omsorg, till skillnad från barn i grundskola. Både gymnasieskolor, universitet och högskolor har större upptagningsområden än grundskolans. Folkhälsomyndigheten rekommenderar att högre undervisning inte bedrivs i skolans lokaler, utan genom distansundervisning. Rekommendationen syftar till att bromsa takten i spridningen av covid-19 i samhället, och att därmed avlasta sjukvården och skydda de mest sårbara från att smittas."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Varför ska undervisningen för gymnasieelever och studenter ske på distans?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Gymnasieelever och studenter är inte i behov av omsorg, till skillnad från barn i grundskola. Både gymnasieskolor, universitet och högskolor har större upptagningsområden än grundskolans. Folkhälsomyndigheten rekommenderar att högre undervisning inte bedrivs i skolans lokaler, utan genom distansundervisning. Rekommendationen syftar till att bromsa takten i spridningen av covid-19 i samhället, och att därmed avlasta sjukvården och skydda de mest sårbara från att smittas."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
       "name": "question: Hur övervakas spridningen av covid-19?",
       "entities": {
         "CORONA": CORONA
@@ -3758,93 +3964,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "Behandlande läkare och laboratorier skickar löpande in data som Folkhälsomyndigheten analyserar varje dag. Andra sätt att samla information är att ta stickprov från patienter med influensasymptom och andra utvalda grupper i samhället samt att samla in kunskap från sökningar och samtal genom 1177. Varje vecka skickar Folkhälsomyndigheten även ut en veckorapport för covid19."
+        "Behandlande läkare och laboratorier skickar löpande in data som Folkhälsomyndigheten analyserar varje dag. Andra sätt att samla information är att ta stickprov från patienter med influensasymptom och andra utvalda grupper i samhället samt att samla in kunskap från sökningar och samtal genom 11 77. Varje vecka skickar Folkhälsomyndigheten även ut en veckorapport för covid19."
       ],
       "set": {
         "classifiedIntentName": "question: Hur övervakas spridningen av covid-19?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "Behandlande läkare och laboratorier skickar löpande in data som Folkhälsomyndigheten analyserar varje dag. Andra sätt att samla information är att ta stickprov från patienter med influensasymptom och andra utvalda grupper i samhället samt att samla in kunskap från sökningar och samtal genom 1177. Varje vecka skickar Folkhälsomyndigheten även ut en veckorapport för covid19."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Vad innebär det att covid-19 klassas som allmänfarlig och samhällsfarlig sjukdom enligt smittskyddslagen?",
-      "entities": {
-        "CORONA": CORONA,
-        "INT_PRON": INT_PRON
-      },
-      "examples": [
-        "Vad innebär det att covid-19 klassas som allmänfarlig och samhällsfarlig sjukdom enligt smittskyddslagen?",
-        "_INT_PRON betyder det att _CORONA är allmänfarlig",
-        "_INT_PRON innebär samhällsfarlig sjukdom",
-        "_INT_PRON är en samhällsfarlig sjukdom",
-        "_INT_PRON är allmänfarlig",
-        "är _CORONA samhällsfarlig",
-        "_INT_PRON innebär det att _CORONA klassas som allmänfarlig och samhällsfarlig sjukdom enligt smittskyddslagen?",
-        "_INT_PRON sammhällsfarlig",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Att klassa en smitta som allmänfarlig och samhällsfarlig gör att det är möjligt att vidta förebyggande åtgärder som kan hindra smittspridning i samhället. När det bestäms att en smitta är allmänfarlig och samhällsfarlig så finns möjligheter att besluta om åtgärder som exempelvis karantän, isolering, hälsoundersökningar när man reser in i Sverige och att spärra av områden. Dessa åtgärder kan man inte göra annars."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Vad innebär det att covid-19 klassas som allmänfarlig och samhällsfarlig sjukdom enligt smittskyddslagen?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Att klassa en smitta som allmänfarlig och samhällsfarlig gör att det är möjligt att vidta förebyggande åtgärder som kan hindra smittspridning i samhället. När det bestäms att en smitta är allmänfarlig och samhällsfarlig så finns möjligheter att besluta om åtgärder som exempelvis karantän, isolering, hälsoundersökningar när man reser in i Sverige och att spärra av områden. Dessa åtgärder kan man inte göra annars."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Vad gäller besök på äldreboenden?",
-      "entities": {
-        "PERS_PRON": PERS_PRON,
-        "POS_PRON": POS_PRON,
-        "VISIT": VISIT,
-        "CAN": CAN,
-        "ELDERLY": ELDERLY,
-        "INFECTING_ACTIVITY": INFECTING_ACTIVITY,
-        "ACTIVITY": ACTIVITY,
-        "FAMILYMEMBER": FAMILYMEMBER
-      },
-      "examples": [
-        "Vad gäller besök på äldreboenden?",
-        "Får _PERS_PRON _VISIT _POS_PRON mamma på äldreboende?",
-        "Får _PERS_PRON _VISIT _POS_PRON pappa på äldreboende?",
-        "Får _PERS_PRON _VISIT _POS_PRON morfar på äldreboende?",
-        "Får _PERS_PRON _VISIT _POS_PRON farfar på äldreboende?",
-        "Får _PERS_PRON _VISIT äldreboende?",
-        "Vad gäller för äldreboenden?",
-        "_CAN jag _INFECTING_ACTIVITY med _POS_PRON _ELDERLY på äldreboende?",
-        "_CAN _PERS_PRON _INFECTING_ACTIVITY med _POS_PRON på ett äldreboende?",
-        "Hur är det med att _VISIT _ELDERLY på äldreboenden?",
-        "_CAN _PERS_PRON _VISIT _ELDERLY på äldreboende?",
-        "_CAN _PERS_PRON _VISIT _ELDERLY?",
-        "_CAN _PERS_PRON _ACTIVITY med _ELDERLY?",
-        "Jag är frisk och vill hälsa på _POS_PRON _ELDERLY, _CAN jag?",
-        "_CAN _ELDERLY _VISIT _POS_PRON friska _FAMILYMEMBER?",
-        "_CAN _ELDERLY _VISIT _POS_PRON _FAMILYMEMBER?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Sedan 1 april är det besöksförbud på alla äldreboenden för att förhindra spridningen av covid19. Nu när covid19 sprids ute i samhället är det extra viktigt att skydda äldre från smitta. Ha inte närkontakt med personer som är över 70 år om det inte är helt nödvändigt. Stanna hellre hemma om du känner dig sjuk, även om du bara är lite förkyld. Covid19 kan ge lindriga symptom som liknar en förkylning, men vara dödlig för andra, så det är viktigt att vara vaksam."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Vad gäller besök på äldreboenden?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Sedan 1 april är det besöksförbud på alla äldreboenden för att förhindra spridningen av covid19. Nu när covid19 sprids ute i samhället är det extra viktigt att skydda äldre från smitta. Ha inte närkontakt med personer som är över 70 år om det inte är helt nödvändigt. Stanna hellre hemma om du känner dig sjuk, även om du bara är lite förkyld. Covid19 kan ge lindriga symptom som liknar en förkylning, men vara dödlig för andra, så det är viktigt att vara vaksam."
+          "Behandlande läkare och laboratorier skickar löpande in data som Folkhälsomyndigheten analyserar varje dag. Andra sätt att samla information är att ta stickprov från patienter med influensasymptom och andra utvalda grupper i samhället samt att samla in kunskap från sökningar och samtal genom 11 77. Varje vecka skickar Folkhälsomyndigheten även ut en veckorapport för covid19."
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -3917,110 +4043,6 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "classifiedUtterance": "_user_text",
         "botResponse": [
           "Det bästa du kan göra är att ge ditt barn trygghet, vara uppmärksam och lyssna om ditt barn vill prata om viruset och det som händer i vårt samhälle just nu. "
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: vad skiljer en droppsmitta från en luftburen smitta?",
-      "entities": {
-        "INT_PRON": INT_PRON,
-        "CORONA": CORONA,
-        "INFECTED": INFECTED
-      },
-      "examples": [
-        "vad skiljer en droppsmitta från en luftburen smitta?",
-        "_INT_PRON betyder droppsmitta",
-        "_INT_PRON innebär droppsmitta",
-        "hur smittar droppsmitta",
-        "_INT_PRON är luftburen smitta?",
-        "_INT_PRON är droppsmitta?",
-        "hur smittar luftburen smitta?",
-        "_INT_PRON är skillnaden på droppsmitta och luftburen smitta",
-        "_INT_PRON skiljer droppsmitta från luftburen smitta",
-        "_INT_PRON är skillnaden på luftburen smitta och droppsmitta",
-        "är _CORONA luftburet",
-        "Smittar _CORONA genom luften?",
-        "kan _CORONA smitta i luft",
-        "är _INFECTED luftburen",
-        "är _CORONA luftburen",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Covid19 smittar genom droppsmitta. Vid droppsmitta sprids viruset via droppar i luften, t.ex. när någon antingen hostar, nyser eller kräks. Dessa droppar når som regel inte längre än någon meter. Luftburen smitta rör sig i små, intorkade droppar som håller sig kvar i luften, färdas långa sträckor och smittar den som andas in dem. "
-      ],
-      "set": {
-        "classifiedIntentName": "question: vad skiljer en droppsmitta från en luftburen smitta?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Covid19 smittar genom droppsmitta. Vid droppsmitta sprids viruset via droppar i luften, t.ex. när någon antingen hostar, nyser eller kräks. Dessa droppar når som regel inte längre än någon meter. Luftburen smitta rör sig i små, intorkade droppar som håller sig kvar i luften, färdas långa sträckor och smittar den som andas in dem. "
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Kan jag och några vänner gå ut och äta på restaurang?",
-      "entities": {
-        "CAN": CAN,
-        "PERS_PRON": PERS_PRON
-      },
-      "examples": [
-        "Kan jag och några vänner gå ut och äta på restaurang?",
-        "_CAN _PERS_PRON äta ute",
-        "_CAN _PERS_PRON gå ut och käka",
-        "_CAN _PERS_PRON gå ut och äta på restaurang?",
-        "_CAN _PERS_PRON käka ute",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Det går bra, men undvik att sitta tätt tillsammans och håll mer än en armslängds avstånd till andra gäster."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Kan jag och några vänner gå ut och äta på restaurang?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Det går bra, men undvik att sitta tätt tillsammans och håll mer än en armslängds avstånd till andra gäster."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Kan jag beställa take-away på en restaurang?",
-      "entities": {
-        "CAN": CAN,
-        "PERS_PRON": PERS_PRON
-      },
-      "examples": [
-        "Kan jag beställa take-away på en restaurang?",
-        "_CAN _PERS_PRON beställa takeaway från restaurangen",
-        "Är takeaway okej?",
-        "_CAN _PERS_PRON beställa takeaway",
-        "_CAN _PERS_PRON beställa hem mat",
-        "Funkar takeaway?",
-        "Fungerar takeaway?",
-        "_CAN _PERS_PRON köpa hämtmat?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Hämtmat kan köpas som vanligt så länge det inte uppstår trängsel bland de som väntar, hämtar eller betalar."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Kan jag beställa take-away på en restaurang?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Hämtmat kan köpas som vanligt så länge det inte uppstår trängsel bland de som väntar, hämtar eller betalar."
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -4129,13 +4151,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": [
-        "Det går bra att låta gäster sitta och äta vid bardisken så länge det inte uppstår trängsel. "
+        "I smittskyddslagen och smittskyddsförordningen ingår ett 60-tal sjukdomar. Ungefär hälften av dessa kan orsaka långvarig sjukdom, svårt lidande eller vara livshotande. De sjukdomarna kallas för allmänfarliga. Alla allmänfarliga sjukdomar ska smittspåras. Det betyder att vårdpersonalen tillsammans med den som är smittad försöker hitta vilka fler som kan vara smittade. "
       ],
       "set": {
         "classifiedIntentName": "question: CAN gäster sitta och äta vid en bardisk?",
         "classifiedUtterance": "_user_text",
         "botResponse": [
-          "Det går bra att låta gäster sitta och äta vid bardisken så länge det inte uppstår trängsel. "
+          "I smittskyddslagen och smittskyddsförordningen ingår ett 60-tal sjukdomar. Ungefär hälften av dessa kan orsaka långvarig sjukdom, svårt lidande eller vara livshotande. De sjukdomarna kallas för allmänfarliga. Alla allmänfarliga sjukdomar ska smittspåras. Det betyder att vårdpersonalen tillsammans med den som är smittad försöker hitta vilka fler som kan vara smittade. "
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -4164,36 +4186,6 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "classifiedUtterance": "_user_text",
         "botResponse": [
           "Gatukök kan fortfarande hålla öppet och folk kan stå i kö så länge det inte blir trängsel. Kunderna ska kunna stå med minst en armslängds avstånd mellan varandra."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: CAN jag stå i kö på snabbmatsrestaurangerna?",
-      "entities": {
-        "CAN": CAN,
-        "PERS_PRON": PERS_PRON
-      },
-      "examples": [
-        "_CAN jag stå i kö på snabbmatsrestaurangerna?",
-        "_CAN _PERS_PRON köa till en korvkiosk?",
-        "_CAN _PERS_PRON stå i kö",
-        "_CAN _PERS_PRON köa",
-        "_CAN _PERS_PRON stå i kö på snabbmatsrestaurangerna?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Du kan stå i kö men det får inte vara trängsel. Du ska kunna stå med minst en armlängds avstånd mellan dig och personen framför dig."
-      ],
-      "set": {
-        "classifiedIntentName": "question: CAN jag stå i kö på snabbmatsrestaurangerna?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Du kan stå i kö men det får inte vara trängsel. Du ska kunna stå med minst en armlängds avstånd mellan dig och personen framför dig."
         ]
       },
       "goto": "VERIFY_ANSWER"
@@ -4474,16 +4466,1420 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": {
-      "name": "Finns det tester som visar om man har haft covid-19",
+      "name": "Can you speak ENGLISH?",
+      "entities": {
+        "ENGLISH": ENGLISH
+      },
+      "examples": [
+        "Can you speak _ENGLISH?",
+        "Do you speak _ENGLISH?",
+        "Speak _ENGLISH",
+        "_ENGLISH please",
+        "talar du _ENGLISH",
+        "pratar du _ENGLISH",
+        "kan du _ENGLISH",
+        "kan du tala engelska?",
+        "Talar du engelska?",
+        "kan du prata engelska?",
+        "finns du på engelska?",
+        "snackar du engelska?",
+        ""
+      ]
+    },
+    "bot": [
+      "I only speak Swedish at the moment but my team is working hard on adding new languages in the future."
+    ]
+  },
+  {
+    "intent": {
+      "name": "Hej",
+      "entities": {
+        "HELLO": HELLO
+      },
+      "examples": [
+        "Hej",
+        "_HELLO",
+        ""
+      ]
+    },
+    "bot": [
+      "Hej och välkommen! Hur kan jag hjälpa dig?"
+    ]
+  },
+  {
+    "intent": {
+      "name": "tackar",
+      "entities": {},
+      "examples": [
+        "tackar",
+        "tack så mycket",
+        "tack tack",
+        "tack till dig",
+        "tusen tack",
+        "tack",
+        "tack mannen",
+        "tack bror",
+        "tack bre",
+        ""
+      ]
+    },
+    "bot": [
+      ""
+    ]
+  },
+  {
+    "intent": {
+      "name": "Ok",
+      "entities": {},
+      "examples": [
+        "Ok",
+        "okej",
+        "okidoki",
+        "bra",
+        "jag förstår",
+        "Ja vad bra",
+        "vad bra",
+        ""
+      ]
+    },
+    "bot": [
+      "Undrar du någonting mer?"
+    ]
+  },
+  {
+    "intent": {
+      "name": "Jag kan inte andas",
+      "entities": {
+        "BREATH": BREATH,
+        "CANNOT": CANNOT,
+        "PERS_PRON": PERS_PRON,
+        "CAN": CAN,
+        "CORONA": CORONA
+      },
+      "examples": [
+        "Jag kan inte andas",
+        "_PERS_PRON _CANNOT _BREATH",
+        "_PERS_PRON har _BREATH vad ska _PERS_PRON göra?",
+        "_PERS_PRON har _BREATH",
+        "Det är _BREATH",
+        "_PERS_PRON _BREATH",
+        "_BREATH",
+        "Har _BREATH",
+        "_PERS_PRON _CANNOT _BREATH vad ska _PERS_PRON göra?",
+        "Vad ska man göra om man _BREATH?",
+        "Jag har _BREATH",
+        "Jag har _BREATH vad ska jag göra?",
+        "_PERS_PRON har _BREATH. Vad _CAN _PERS_PRON göra?",
+        "döende i _CORONA",
+        "håller på att dö",
+        "måste jag gå till sjukhus som jag känner om jag får andningsbesvär",
+        "måste jag in till sjukhuset om jag får andningsbesvär"
+      ]
+    },
+    "bot": [
+      "Om du har mycket svårt att andas ska du ringa 112."
+    ]
+  },
+  {
+    "intent": {
+      "name": "Vad heter du?",
+      "entities": {},
+      "examples": [
+        "Vad heter du?",
+        "Vad är ditt namn?",
+        "Vem är du?",
+        ""
+      ]
+    },
+    "bot": [
+      "Mitt namn är Coronaguiden och jag kan svara på frågor om coronaviruset och covid19."
+    ]
+  },
+  {
+    "intent": {
+      "name": "Nästan",
+      "entities": {},
+      "examples": [
+        "Nästan",
+        ""
+      ]
+    },
+    "bot": [
+      "Okej. Undrar du över något mer?"
+    ]
+  },
+  {
+    "intent": {
+      "name": "question: Hur många intensivvårdas idag?",
+      "entities": {},
+      "examples": [
+        "Hur många intensivvårdas idag?",
+        "Hur många är som intensivvård us Just idag",
+        "hur många ligger på intensivvården",
+        "hur många är allvarligt sjuka",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        ""
+      ],
+      "set": {
+        "classifiedIntentName": "question: Hur många intensivvårdas idag?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          ""
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: kan jag ringa dig",
+      "entities": {},
+      "examples": [
+        "kan jag ringa dig",
+        "kan jag ringa",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Du kan prata med mig genom att ringa 085 809 77 57"
+      ],
+      "set": {
+        "classifiedIntentName": "question: kan jag ringa dig",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Du kan prata med mig genom att ringa 085 809 77 57"
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Jag är en frisk 74-åring. Kan jag hälsa på mina friska barnbarn?",
+      "entities": {
+        "CAN": CAN,
+        "PERS_PRON": PERS_PRON,
+        "VISIT": VISIT,
+        "POS_PRON": POS_PRON
+      },
+      "examples": [
+        "Jag är en frisk 74-åring. Kan jag hälsa på mina friska barnbarn?",
+        "_CAN _PERS_PRON _VISIT barnbarn?",
+        "_CAN _PERS_PRON _VISIT _POS_PRON friska barnbarn?",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Uppmaningen från myndigheterna är för närvarande att avstå nära sociala kontakter för åldersgruppen 70 år och äldre, om det inte är absolut nödvändigt. Håll gärna kontakten med dina barnbarn via telefon eller dator."
+      ],
+      "set": {
+        "classifiedIntentName": "question: Jag är en frisk 74-åring. Kan jag hälsa på mina friska barnbarn?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Uppmaningen från myndigheterna är för närvarande att avstå nära sociala kontakter för åldersgruppen 70 år och äldre, om det inte är absolut nödvändigt. Håll gärna kontakten med dina barnbarn via telefon eller dator."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Om jag medicinerar mot högt blodtryck och därför har normalt blodtryck, är jag då fortfarande en riskgrupp?",
+      "entities": {},
+      "examples": [
+        "Om jag medicinerar mot högt blodtryck och därför har normalt blodtryck, är jag då fortfarande en riskgrupp?",
+        "Medicinerat högt blodtryck",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Det kan jag tyvärr inte svara på. Kontakta 1177 för medicinsk rådgivning"
+      ],
+      "set": {
+        "classifiedIntentName": "question: Om jag medicinerar mot högt blodtryck och därför har normalt blodtryck, är jag då fortfarande en riskgrupp?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Det kan jag tyvärr inte svara på. Kontakta 1177 för medicinsk rådgivning"
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Finns det tester som visar om man har haft covid-19",
       "entities": {},
       "examples": [
         "Finns det tester som visar om man har haft covid-19",
         ""
       ]
     },
+    "bot": {
+      "say": [
+        "För tillfället finns det inga pålitliga tester för att säkerställa om du har haft covid19. "
+      ],
+      "set": {
+        "classifiedIntentName": "question: Finns det tester som visar om man har haft covid-19",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "För tillfället finns det inga pålitliga tester för att säkerställa om du har haft covid19. "
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Försvinner luktsinnet och smaksinnet?",
+      "entities": {},
+      "examples": [
+        "Försvinner luktsinnet och smaksinnet?",
+        "Tappar man smaken?",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+      ],
+      "set": {
+        "classifiedIntentName": "question: Försvinner luktsinnet och smaksinnet?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Vart kan jag vända mig om jag behöver prata med någon? ",
+      "entities": {
+        "PERS_PRON": PERS_PRON
+      },
+      "examples": [
+        "Vart kan jag vända mig om jag behöver prata med någon? ",
+        "Har Röda korset en stödtelefon?",
+        "Jag har ingen att prata med. Kan jag ringa någonstans?",
+        "Vem ska _PERS_PRON prata med när _PERS_PRON är orolig?",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Om du känner dig orolig kan du ringa Röda Korsets stödtelefon på telefonnummer 0771 900 800. De som svarar har utbildning i psykologisk första hjälpen och finns tillgängliga vardagar mellan 12 till 4."
+      ],
+      "set": {
+        "classifiedIntentName": "question: Vart kan jag vända mig om jag behöver prata med någon? ",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Om du känner dig orolig kan du ringa Röda Korsets stödtelefon på telefonnummer 0771 900 800. De som svarar har utbildning i psykologisk första hjälpen och finns tillgängliga vardagar mellan 12 till 4."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Vilket nummer är det till BRIS?",
+      "entities": {},
+      "examples": [
+        "Vilket nummer är det till BRIS?",
+        "Vilket nummer har BRIS",
+        "Vad har BRIS för nummer?",
+        "Jag vill ha numret till BRIS",
+        "Hur ringer jag till BRIS?",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Du kan ringa BRIS på telefonnummer 116 111. Det är kostnadsfritt för barn och ungdomar upp till 18 år att ringa och du behöver inte säga vem du är."
+      ],
+      "set": {
+        "classifiedIntentName": "question: Vilket nummer är det till BRIS?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Du kan ringa BRIS på telefonnummer 116 111. Det är kostnadsfritt för barn och ungdomar upp till 18 år att ringa och du behöver inte säga vem du är."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Vilket nummer är det till äldrelinjen?",
+      "entities": {},
+      "examples": [
+        "Vilket nummer är det till äldrelinjen?",
+        "Vilket nummer har äldrelinjen?",
+        "Vad har äldrelinjen för nummer",
+        "Jag vill ha numret till äldrelinjen",
+        "Hur ringer jag till äldrelinjen",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Du kan ringa äldrelinjen på telefonnummer 020-22 22 33. De som svarar är volontärer som har erfarenhet av att ge stöd över telefon."
+      ],
+      "set": {
+        "classifiedIntentName": "question: Vilket nummer är det till äldrelinjen?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Du kan ringa äldrelinjen på telefonnummer 020-22 22 33. De som svarar är volontärer som har erfarenhet av att ge stöd över telefon."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Vilket nummer är det till kvinnofridslinjen?",
+      "entities": {},
+      "examples": [
+        "Vilket nummer är det till kvinnofridslinjen?",
+        "Vilket nummer har kvinnofridslinjen?",
+        "Vad har kvinnofridslinjen för nummer",
+        "Jag vill ha numret till kvinnofridslinjen",
+        "Hur ringer jag till kvinnofridslinjen?",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Du kan ringa kvinnofridslinjen på telefonnummer 020 50 50 50. Samtalet är kostnadsfritt och syns inte på telefonräkningen."
+      ],
+      "set": {
+        "classifiedIntentName": "question: Vilket nummer är det till kvinnofridslinjen?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Du kan ringa kvinnofridslinjen på telefonnummer 020 50 50 50. Samtalet är kostnadsfritt och syns inte på telefonräkningen."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Vilket nummer ska jag ringa för mer information?",
+      "entities": {
+        "PERS_PRON": PERS_PRON
+      },
+      "examples": [
+        "Vilket nummer ska jag ringa för mer information?",
+        "vart ska _PERS_PRON ringa om _PERS_PRON vill ha mer information?",
+        "vart kan _PERS_PRON ringa för medicinsk rådgivning?",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Om du vill ha medicinsk rådgivning kan du kontakta 1177."
+      ],
+      "set": {
+        "classifiedIntentName": "question: Vilket nummer ska jag ringa för mer information?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Om du vill ha medicinsk rådgivning kan du kontakta 1177."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "Vad är smittskyddslagen?",
+      "entities": {},
+      "examples": [
+        "Vad är smittskyddslagen?",
+        "Vad betyder smittskyddslagen?",
+        "Vad innehåller smittskyddslagen?",
+        ""
+      ]
+    },
+    "bot": [
+      "Smittskyddslagen motverkar spridning av allmänfarliga sjukdomar, som covid19. Detta görs genom smittspårning. "
+    ]
+  },
+  {
+    "intent": {
+      "name": "hur länge smittar CORONA",
+      "entities": {
+        "CORONA": CORONA,
+        "PERS_PRON": PERS_PRON
+      },
+      "examples": [
+        "hur länge smittar _CORONA",
+        "hur länge kan _PERS_PRON smitta andra?",
+        "när smittar _PERS_PRON?",
+        "hur länge smittar en person med _CORONA",
+        "hur lång tid smittar _CORONA?",
+        "hur länge smittar det",
+        "hur länge smittar _PERS_PRON",
+        "hur lång tid tar det innan _PERS_PRON slutar smitta?",
+        "när slutar _PERS_PRON smitta andra?",
+        "Smittar Corona innan symptom?",
+        ""
+      ]
+    },
     "bot": [
       "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
     ]
+  },
+  {
+    "intent": {
+      "name": "Vad innebär isolering?",
+      "entities": {
+        "PERS_PRON": PERS_PRON,
+        "CAN": CAN
+      },
+      "examples": [
+        "Vad innebär isolering?",
+        "vad innebär att isolera sig?",
+        "vad är isolering",
+        "vad gör _PERS_PRON i isolering?",
+        "hur är _PERS_PRON i isolering",
+        "vad är en isolering",
+        "hur _CAN _PERS_PRON bete sig i isolering",
+        ""
+      ]
+    },
+    "bot": [
+      "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+    ]
+  },
+  {
+    "intent": {
+      "name": "Kommer intensivvårdsavdelningarna i Sverige klara alla coronasmittade",
+      "entities": {
+        "CORONA": CORONA
+      },
+      "examples": [
+        "Kommer intensivvårdsavdelningarna i Sverige klara alla coronasmittade",
+        "Klarar sjukvården i Stockholm att vårda alla coronasmittade",
+        "Hur ser Sveriges beredskap ut?",
+        "har sverige beredskap",
+        "hur stor beredskap har sverige",
+        "hur är sveriges beredskap just nu",
+        "har sverige någon beredskap",
+        "är sverige redo",
+        "kan sverige hantera _CORONA",
+        ""
+      ]
+    },
+    "bot": [
+      "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+    ]
+  },
+  {
+    "intent": {
+      "name": "question: Jag blev just sparkad från jobbet. vad ska jag göra",
+      "entities": {},
+      "examples": [
+        "Jag blev just sparkad från jobbet. vad ska jag göra",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+      ],
+      "set": {
+        "classifiedIntentName": "question: Jag blev just sparkad från jobbet. vad ska jag göra",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "hur tvättar PERS_PRON händerna",
+      "entities": {
+        "PERS_PRON": PERS_PRON,
+        "POS_PRON": POS_PRON
+      },
+      "examples": [
+        "hur tvättar _PERS_PRON händerna",
+        "hur ska _PERS_PRON tvätta _POS_PRON händer",
+        "hur tvättar _PERS_PRON _POS_PRON händer",
+        ""
+      ]
+    },
+    "bot": [
+      "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+    ]
+  },
+  {
+    "intent": {
+      "name": "question: Är psoriasis en riskgrupp?",
+      "entities": {},
+      "examples": [
+        "Är psoriasis en riskgrupp?",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+      ],
+      "set": {
+        "classifiedIntentName": "question: Är psoriasis en riskgrupp?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: När vet man att man är frisk igen?",
+      "entities": {},
+      "examples": [
+        "När vet man att man är frisk igen?",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+      ],
+      "set": {
+        "classifiedIntentName": "question: När vet man att man är frisk igen?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Varför testar man inte mer?",
+      "entities": {},
+      "examples": [
+        "Varför testar man inte mer?",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+      ],
+      "set": {
+        "classifiedIntentName": "question: Varför testar man inte mer?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: kan jag ha några vänner på besök",
+      "entities": {
+        "PERS_PRON": PERS_PRON,
+        "POS_PRON": POS_PRON
+      },
+      "examples": [
+        "kan jag ha några vänner på besök",
+        "kan _PERS_PRON ha några vänner på besök",
+        "kan _POS_PRON vänner komma över",
+        "kan _PERS_PRON hänga med _POS_PRON vänner",
+        "kan _PERS_PRON och _POS_PRON vänner ses",
+        "kan _PERS_PRON gå till _POS_PRON vänner",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        ""
+      ],
+      "set": {
+        "classifiedIntentName": "question: kan jag ha några vänner på besök",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          ""
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "Smittar CORONA under inkubationstiden?",
+      "entities": {
+        "CORONA": CORONA,
+        "PERS_PRON": PERS_PRON
+      },
+      "examples": [
+        "Smittar _CORONA under inkubationstiden?",
+        "smittar _CORONA hela tiden",
+        "smittar _CORONA direkt",
+        "blir _PERS_PRON smittsam direkt om _PERS_PRON har fått _CORONA",
+        "är _CORONA genast smittsamt",
+        "hur snabbt smittar _PERS_PRON om jag fått _CORONA",
+        "smittar _PERS_PRON under inkubationstiden",
+        "hur fort smittar _PERS_PRON om jag fått _CORONA",
+        "hur mycket smittar _CORONA",
+        "kan _CORONA smitta under inkubationstiden?",
+        "kan man smitta andra fast man inte känner att man blir sjuk",
+        ""
+      ]
+    },
+    "bot": [
+      "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+    ]
+  },
+  {
+    "intent": {
+      "name": "question: Är covid-19 anmälningspliktig?",
+      "entities": {},
+      "examples": [
+        "Är covid-19 anmälningspliktig?",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+      ],
+      "set": {
+        "classifiedIntentName": "question: Är covid-19 anmälningspliktig?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Jag äter blodförtunnande. Är jag i riskgruppen?",
+      "entities": {},
+      "examples": [
+        "Jag äter blodförtunnande. Är jag i riskgruppen?",
+        "Är det farligt att äta blodförtunnande medicin?",
+        "Är jag i riskgrupp om jag äter blodförtunnande medicin?",
+        "Jag äter trombyl. Är det farligt att äta blodförtunnande medicin?",
+        "Trombyl, är det farligt nu?",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+      ],
+      "set": {
+        "classifiedIntentName": "question: Jag äter blodförtunnande. Är jag i riskgruppen?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Måste jag isolera mig från familjen?",
+      "entities": {},
+      "examples": [
+        "Måste jag isolera mig från familjen?",
+        "Är det ok att sova i samma rum som en som är sjuk?",
+        "Ska man vara i olika rum om vi är sjuka här hemma?",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+      ],
+      "set": {
+        "classifiedIntentName": "question: Måste jag isolera mig från familjen?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: kan jag ta studenten",
+      "entities": {},
+      "examples": [
+        "kan jag ta studenten",
+        "kommer jag kunna ta studenten",
+        "vad händer med studenten",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+      ],
+      "set": {
+        "classifiedIntentName": "question: kan jag ta studenten",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: hur stort avstånd ska man ha till folk?",
+      "entities": {},
+      "examples": [
+        "hur stort avstånd ska man ha till folk?",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+      ],
+      "set": {
+        "classifiedIntentName": "question: hur stort avstånd ska man ha till folk?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Ska jag ha handskar i affären",
+      "entities": {},
+      "examples": [
+        "Ska jag ha handskar i affären",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+      ],
+      "set": {
+        "classifiedIntentName": "question: Ska jag ha handskar i affären",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Varför sprids viruset så snabbt?",
+      "entities": {},
+      "examples": [
+        "Varför sprids viruset så snabbt?",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+      ],
+      "set": {
+        "classifiedIntentName": "question: Varför sprids viruset så snabbt?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Vad är nödvändig resa?",
+      "entities": {},
+      "examples": [
+        "Vad är nödvändig resa?",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+      ],
+      "set": {
+        "classifiedIntentName": "question: Vad är nödvändig resa?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Kan Ipren göra det värre för en person med Corona?",
+      "entities": {},
+      "examples": [
+        "Kan Ipren göra det värre för en person med Corona?",
+        "Är Ipren dåligt att ta?",
+        "Är ipren farligt för corona",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        ""
+      ],
+      "set": {
+        "classifiedIntentName": "question: Kan Ipren göra det värre för en person med Corona?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          ""
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Vad är 113 13?",
+      "entities": {},
+      "examples": [
+        "Vad är 113 13?",
+        "Vilket är det nationella informationsnumret?",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+      ],
+      "set": {
+        "classifiedIntentName": "question: Vad är 113 13?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Är corona som sars? ",
+      "entities": {},
+      "examples": [
+        "Är corona som sars? ",
+        "är sars relaterad till corona",
+        "Är corona som spanska sjukan?",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+      ],
+      "set": {
+        "classifiedIntentName": "question: Är corona som sars? ",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: kan jag själv tillverka handsprit?",
+      "entities": {},
+      "examples": [
+        "kan jag själv tillverka handsprit?",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+      ],
+      "set": {
+        "classifiedIntentName": "question: kan jag själv tillverka handsprit?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: vad är skillnaden på pandemi och epidemi?",
+      "entities": {},
+      "examples": [
+        "vad är skillnaden på pandemi och epidemi?",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+      ],
+      "set": {
+        "classifiedIntentName": "question: vad är skillnaden på pandemi och epidemi?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Kommer alla bli smittade av Corona",
+      "entities": {},
+      "examples": [
+        "Kommer alla bli smittade av Corona",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+      ],
+      "set": {
+        "classifiedIntentName": "question: Kommer alla bli smittade av Corona",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Vad betyder ARDS?",
+      "entities": {},
+      "examples": [
+        "Vad betyder ARDS?",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+      ],
+      "set": {
+        "classifiedIntentName": "question: Vad betyder ARDS?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Vad är John Hopkins?",
+      "entities": {},
+      "examples": [
+        "Vad är John Hopkins?",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+      ],
+      "set": {
+        "classifiedIntentName": "question: Vad är John Hopkins?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Är corona släkt med svininfluensa?",
+      "entities": {},
+      "examples": [
+        "Är corona släkt med svininfluensa?",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+      ],
+      "set": {
+        "classifiedIntentName": "question: Är corona släkt med svininfluensa?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "jag når inte 1177",
+      "entities": {},
+      "examples": [
+        "jag når inte 1177",
+        "jag kommer inte fram till 1177",
+        "1177 svarar inte",
+        ""
+      ]
+    },
+    "bot": [
+      "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+    ]
+  },
+  {
+    "intent": {
+      "name": "vem står bakom denna bot",
+      "entities": {},
+      "examples": [
+        "vem står bakom denna bot",
+        "Vem utvecklade dig",
+        ""
+      ]
+    },
+    "bot": [
+      "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+    ]
+  },
+  {
+    "intent": {
+      "name": "question: kan jag som arbetar i vården jobba fast att jag har en närstående i riskgruppen",
+      "entities": {},
+      "examples": [
+        "kan jag som arbetar i vården jobba fast att jag har en närstående i riskgruppen",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+      ],
+      "set": {
+        "classifiedIntentName": "question: kan jag som arbetar i vården jobba fast att jag har en närstående i riskgruppen",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Vilket är bäst – tvål eller handsprit?",
+      "entities": {},
+      "examples": [
+        "Vilket är bäst – tvål eller handsprit?",
+        "Är tvål bättre än handsprit?",
+        "Vad är bäst av tvål och handsprit?",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+      ],
+      "set": {
+        "classifiedIntentName": "question: Vilket är bäst – tvål eller handsprit?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Ska man äta Panodil eller Alvedon?",
+      "entities": {},
+      "examples": [
+        "Ska man äta Panodil eller Alvedon?",
+        "jag misstänker att jag har corona. vilken medicin ska jag ta?",
+        "Ska man äta paracetamol?",
+        "Ska man äta Alvedon eller Panodil?",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+      ],
+      "set": {
+        "classifiedIntentName": "question: Ska man äta Panodil eller Alvedon?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Jag undrar vad kan lindra mina symtom",
+      "entities": {},
+      "examples": [
+        "Jag undrar vad kan lindra mina symtom",
+        "Hur ska jag hantera mina symptom hemifrån?",
+        "Hur behandlar jag mina symptom hemma?",
+        "Hjälper det att dricka mycket vatten",
+        "vad kan jag göra för att bli frisk?",
+        "Vad är behandlingen",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+      ],
+      "set": {
+        "classifiedIntentName": "question: Jag undrar vad kan lindra mina symtom",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Är hosta farligt?",
+      "entities": {
+        "CO_SYM": CO_SYM
+      },
+      "examples": [
+        "Är hosta farligt?",
+        "Är _CO_SYM farligt?",
+        "Är det farligt att ha _CO_SYM?",
+        "Hur farligt är det att ha _CO_SYM?",
+        "Är det farligt att hosta?",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+      ],
+      "set": {
+        "classifiedIntentName": "question: Är hosta farligt?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Hur länge måste vi jobba hemifrån?",
+      "entities": {},
+      "examples": [
+        "Hur länge måste vi jobba hemifrån?",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+      ],
+      "set": {
+        "classifiedIntentName": "question: Hur länge måste vi jobba hemifrån?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Hur går provtagningen till?",
+      "entities": {},
+      "examples": [
+        "Hur går provtagningen till?",
+        "Vad är ett näsprov?",
+        "Hur går testet till?",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+      ],
+      "set": {
+        "classifiedIntentName": "question: Hur går provtagningen till?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Har Röda korset volontärer?",
+      "entities": {},
+      "examples": [
+        "Har Röda korset volontärer?",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+      ],
+      "set": {
+        "classifiedIntentName": "question: Har Röda korset volontärer?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Jag jobbar med äldre i hemtjänsten. Räcker två dygn då?",
+      "entities": {},
+      "examples": [
+        "Jag jobbar med äldre i hemtjänsten. Räcker två dygn då?",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+      ],
+      "set": {
+        "classifiedIntentName": "question: Jag jobbar med äldre i hemtjänsten. Räcker två dygn då?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Vad är det senaste?",
+      "entities": {},
+      "examples": [
+        "Vad är det senaste?",
+        "Vad är senaste nytt?",
+        "Vad är nytt?",
+        "Några nyheter? ",
+        "Vad har hänt idag?",
+        "jag undrar hur läget ser ut just idag",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+      ],
+      "set": {
+        "classifiedIntentName": "question: Vad är det senaste?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Vad är de senaste riktlinjerna från FHM",
+      "entities": {
+        "FHM": FHM
+      },
+      "examples": [
+        "Vad är de senaste riktlinjerna från _FHM",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+      ],
+      "set": {
+        "classifiedIntentName": "question: Vad är de senaste riktlinjerna från FHM",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Vilka celler infekterar Covid19?",
+      "entities": {},
+      "examples": [
+        "Vilka celler infekterar Covid19?",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+      ],
+      "set": {
+        "classifiedIntentName": "question: Vilka celler infekterar Covid19?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": [
+          "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+        ]
+      },
+      "goto": "VERIFY_ANSWER"
+    }
   },
   {
     "intent": {
@@ -5645,146 +7041,6 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": {
-      "name": "question: Talar du engelska?",
-      "entities": {},
-      "examples": [
-        "Talar du engelska?",
-        "kan du prata engelska?",
-        "finns du på engelska?",
-        "snackar du engelska?",
-        "kan du tala engelska?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Än så länge pratar jag bara svenska, men det kan mycket väl hända att jag lär mig fler språk i framtiden."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Talar du engelska?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Än så länge pratar jag bara svenska, men det kan mycket väl hända att jag lär mig fler språk i framtiden."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "Jag kan inte andas",
-      "entities": {
-        "BREATH": BREATH,
-        "CANNOT": CANNOT,
-        "PERS_PRON": PERS_PRON,
-        "CAN": CAN,
-        "CORONA": CORONA
-      },
-      "examples": [
-        "Jag kan inte andas",
-        "_PERS_PRON _CANNOT _BREATH",
-        "_PERS_PRON har _BREATH vad ska _PERS_PRON göra?",
-        "_PERS_PRON har _BREATH",
-        "Det är _BREATH",
-        "_PERS_PRON _BREATH",
-        "_BREATH",
-        "Har _BREATH",
-        "_PERS_PRON _CANNOT _BREATH vad ska _PERS_PRON göra?",
-        "Vad ska man göra om man _BREATH?",
-        "Jag har _BREATH",
-        "Jag har _BREATH vad ska jag göra?",
-        "_PERS_PRON har _BREATH. Vad _CAN _PERS_PRON göra?",
-        "döende i _CORONA",
-        "håller på att dö",
-        "måste jag gå till sjukhus som jag känner om jag får andningsbesvär",
-        "måste jag in till sjukhuset om jag får andningsbesvär"
-      ]
-    },
-    "bot": [
-      "Om du har mycket svårt att andas ska du ringa 112."
-    ]
-  },
-  {
-    "intent": {
-      "name": "Vad är det senaste?",
-      "entities": {},
-      "examples": [
-        "Vad är det senaste?",
-        "Vad är senaste nytt?",
-        "Vad är nytt?",
-        "Några nyheter? ",
-        "Vad har hänt idag?",
-        ""
-      ]
-    },
-    "bot": [
-      "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-    ]
-  },
-  {
-    "intent": {
-      "name": "Vad heter du?",
-      "entities": {},
-      "examples": [
-        "Vad heter du?",
-        "Vad är ditt namn?",
-        "Vem är du?",
-        ""
-      ]
-    },
-    "bot": [
-      "Mitt namn är Coronaguiden och jag kan svara på frågor om coronaviruset och covid19."
-    ]
-  },
-  {
-    "intent": {
-      "name": "Smittar CORONA under inkubationstiden?",
-      "entities": {
-        "CORONA": CORONA,
-        "PERS_PRON": PERS_PRON
-      },
-      "examples": [
-        "Smittar _CORONA under inkubationstiden?",
-        "smittar _CORONA hela tiden",
-        "smittar _CORONA direkt",
-        "blir _PERS_PRON smittsam direkt om _PERS_PRON har fått _CORONA",
-        "är _CORONA genast smittsamt",
-        "hur snabbt smittar _PERS_PRON om jag fått _CORONA",
-        "smittar _PERS_PRON under inkubationstiden",
-        "hur fort smittar _PERS_PRON om jag fått _CORONA",
-        "hur mycket smittar _CORONA",
-        "kan _CORONA smitta under inkubationstiden?",
-        "kan man smitta andra fast man inte känner att man blir sjuk",
-        ""
-      ]
-    },
-    "bot": [
-      "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-    ]
-  },
-  {
-    "intent": {
-      "name": "Hur ser Sveriges beredskap ut?",
-      "entities": {
-        "CORONA": CORONA
-      },
-      "examples": [
-        "Hur ser Sveriges beredskap ut?",
-        "har sverige beredskap",
-        "hur stor beredskap har sverige",
-        "hur är sveriges beredskap just nu",
-        "har sverige någon beredskap",
-        "är sverige redo",
-        "kan sverige hantera _CORONA",
-        ""
-      ]
-    },
-    "bot": [
-      "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-    ]
-  },
-  {
-    "intent": {
       "name": "Om många personer som blir smittade av CORONA skulle behöva sjukhusvård, hur kommer sjukvården att hantera det?",
       "entities": {
         "CORONA": CORONA
@@ -5875,1232 +7131,5 @@ export const simpleQuestionAnswers : UserTurn[] = [
     "bot": [
       "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
     ]
-  },
-  {
-    "intent": {
-      "name": "hur länge smittar CORONA",
-      "entities": {
-        "CORONA": CORONA,
-        "PERS_PRON": PERS_PRON
-      },
-      "examples": [
-        "hur länge smittar _CORONA",
-        "hur länge kan _PERS_PRON smitta andra?",
-        "när smittar _PERS_PRON?",
-        "hur länge smittar en person med _CORONA",
-        "hur lång tid smittar _CORONA?",
-        "hur länge smittar det",
-        "hur länge smittar _PERS_PRON",
-        "hur lång tid tar det innan _PERS_PRON slutar smitta?",
-        "när slutar _PERS_PRON smitta andra?",
-        "Smittar Corona innan symptom?",
-        ""
-      ]
-    },
-    "bot": [
-      "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-    ]
-  },
-  {
-    "intent": {
-      "name": "Vad innebär isolering?",
-      "entities": {
-        "PERS_PRON": PERS_PRON,
-        "CAN": CAN
-      },
-      "examples": [
-        "Vad innebär isolering?",
-        "vad innebär att isolera sig?",
-        "vad är isolering",
-        "vad gör _PERS_PRON i isolering?",
-        "hur är _PERS_PRON i isolering",
-        "vad är en isolering",
-        "hur _CAN _PERS_PRON bete sig i isolering",
-        ""
-      ]
-    },
-    "bot": [
-      "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-    ]
-  },
-  {
-    "intent": {
-      "name": "Finns det tester som visar om man har haft covid-19",
-      "entities": {},
-      "examples": [
-        "Finns det tester som visar om man har haft covid-19",
-        ""
-      ]
-    },
-    "bot": [
-      ""
-    ]
-  },
-  {
-    "intent": {
-      "name": "Kommer intensivvårdsavdelningarna i Sverige klara alla coronasmittade",
-      "entities": {},
-      "examples": [
-        "Kommer intensivvårdsavdelningarna i Sverige klara alla coronasmittade",
-        "Klarar sjukvården i Stockholm att vårda alla coronasmittade",
-        ""
-      ]
-    },
-    "bot": [
-      "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-    ]
-  },
-  {
-    "intent": {
-      "name": "Vad är smittskyddslagen?",
-      "entities": {},
-      "examples": [
-        "Vad är smittskyddslagen?",
-        "Vad betyder smittskyddslagen?",
-        "Vad innehåller smittskyddslagen?",
-        ""
-      ]
-    },
-    "bot": [
-      "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-    ]
-  },
-  {
-    "intent": {
-      "name": "jag når inte 1177",
-      "entities": {},
-      "examples": [
-        "jag når inte 1177",
-        "jag kommer inte fram till 1177",
-        "1177 svarar inte",
-        ""
-      ]
-    },
-    "bot": [
-      "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-    ]
-  },
-  {
-    "intent": {
-      "name": "Hur bör jag bete mig",
-      "entities": {},
-      "examples": [
-        "Hur bör jag bete mig",
-        ""
-      ]
-    },
-    "bot": [
-      "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-    ]
-  },
-  {
-    "intent": {
-      "name": "vem står bakom denna bot",
-      "entities": {},
-      "examples": [
-        "vem står bakom denna bot",
-        ""
-      ]
-    },
-    "bot": [
-      "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-    ]
-  },
-  {
-    "intent": {
-      "name": "hur tvättar PERS_PRON händerna",
-      "entities": {
-        "PERS_PRON": PERS_PRON,
-        "POS_PRON": POS_PRON
-      },
-      "examples": [
-        "hur tvättar _PERS_PRON händerna",
-        "hur ska _PERS_PRON tvätta _POS_PRON händer",
-        "hur tvättar _PERS_PRON _POS_PRON händer",
-        ""
-      ]
-    },
-    "bot": [
-      "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-    ]
-  },
-  {
-    "intent": {
-      "name": "Hej",
-      "entities": {
-        "HELLO": HELLO
-      },
-      "examples": [
-        "Hej",
-        "_HELLO",
-        ""
-      ]
-    },
-    "bot": [
-      "Hej och välkommen! Hur kan jag hjälpa dig?"
-    ]
-  },
-  {
-    "intent": {
-      "name": "Finns det ett slutdatum för CORONA? ",
-      "entities": {
-        "CORONA": CORONA
-      },
-      "examples": [
-        "Finns det ett slutdatum för _CORONA? ",
-        "När är _CORONA slut? ",
-        "När tar _CORONA slut? ",
-        "Hur länge ska _CORONA hålla på?",
-        "Hur länge ska vi hålla på såhär?",
-        "Finns det några prognoser när _CORONA är borta?",
-        ""
-      ]
-    },
-    "bot": [
-      "Folkhälsomyndighetens föreskrifter och allmänna råd har den 31 december 2020 som slutdatum. De kan upphävas före slutdatum, eller förlängas, om det behövs."
-    ]
-  },
-  {
-    "intent": {
-      "name": "tackar",
-      "entities": {},
-      "examples": [
-        "tackar",
-        "tack så mycket",
-        "tack tack",
-        "tack till dig",
-        "tusen tack",
-        "tack",
-        ""
-      ]
-    },
-    "bot": [
-      "Tack själv."
-    ]
-  },
-  {
-    "intent": {
-      "name": "Ok",
-      "entities": {},
-      "examples": [
-        "Ok",
-        "okej",
-        "okidoki",
-        "bra",
-        "jag förstår",
-        "Ja vad bra",
-        "vad bra",
-        ""
-      ]
-    },
-    "bot": [
-      "Undrar du någonting mer?"
-    ]
-  },
-  {
-    "intent": {
-      "name": "Can you speak ENGLISH?",
-      "entities": {
-        "ENGLISH": ENGLISH
-      },
-      "examples": [
-        "Can you speak _ENGLISH?",
-        "Do you speak _ENGLISH?",
-        "Speak _ENGLISH",
-        "_ENGLISH please",
-        "talar du _ENGLISH",
-        "pratar du _ENGLISH",
-        "kan du _ENGLISH",
-        "kan du tala engelska?",
-        ""
-      ]
-    },
-    "bot": [
-      "I only speak Swedish at the moment but my team is working hard on adding new languages in the future."
-    ]
-  },
-  {
-    "intent": {
-      "name": "question: Vilka källor har ni?",
-      "entities": {
-        "POS_PRON": POS_PRON,
-        "PERS_PRON": PERS_PRON
-      },
-      "examples": [
-        "Vilka källor har ni?",
-        "Vilka är _POS_PRON källor?",
-        "Varifrån hämtar _PERS_PRON _POS_PRON information?",
-        "Vad har _PERS_PRON för källor?",
-        "Var kommer informationen ifrån?",
-        "Vilka källor har _PERS_PRON?",
-        "vad är tillförlitliga källor",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Min primära källa i nuläget är Folkhälsomyndigheten, men mitt team jobbar på att lägga till fler källor för att jag ska kunna svara på fler av dina frågor."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Vilka källor har ni?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Min primära källa i nuläget är Folkhälsomyndigheten, men mitt team jobbar på att lägga till fler källor för att jag ska kunna svara på fler av dina frågor."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Är hosta farligt?",
-      "entities": {
-        "CO_SYM": CO_SYM
-      },
-      "examples": [
-        "Är hosta farligt?",
-        "Är _CO_SYM farligt?",
-        "Är det farligt att ha _CO_SYM?",
-        "Hur farligt är det att ha _CO_SYM?",
-        "Är det farligt att hosta?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Är hosta farligt?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Jag undrar vad kan lindra mina symtom",
-      "entities": {},
-      "examples": [
-        "Jag undrar vad kan lindra mina symtom",
-        "Hur ska jag hantera mina symptom hemifrån?",
-        "Hur behandlar jag mina symptom hemma?",
-        "Hjälper det att dricka mycket vatten",
-        "vad kan jag göra för att bli frisk?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Jag undrar vad kan lindra mina symtom",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Jag blev just sparkad från jobbet. vad ska jag göra",
-      "entities": {},
-      "examples": [
-        "Jag blev just sparkad från jobbet. vad ska jag göra",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Jag blev just sparkad från jobbet. vad ska jag göra",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Hur påverkar astma Corona?",
-      "entities": {},
-      "examples": [
-        "Hur påverkar astma Corona?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Hur påverkar astma Corona?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Nästan",
-      "entities": {},
-      "examples": [
-        "Nästan",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Okej. Undrar du över något mer?"
-      ],
-      "set": {
-        "classifiedIntentName": "question: Nästan",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Okej. Undrar du över något mer?"
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Jag hostar",
-      "entities": {},
-      "examples": [
-        "Jag hostar",
-        "Jag nyser är det Corona?",
-        "om jag har ont i halsen ont i huvudet och nyser",
-        "om jag bara har muskelvärk ont i huvudet",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Det kan vi tyvärr inte svara på. Kontakta 1177 för medicinsk rådgivning"
-      ],
-      "set": {
-        "classifiedIntentName": "question: Jag hostar",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Det kan vi tyvärr inte svara på. Kontakta 1177 för medicinsk rådgivning"
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Är corona som sars? ",
-      "entities": {},
-      "examples": [
-        "Är corona som sars? ",
-        "är sars relaterad till corona",
-        "Är corona som spanska sjukan?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Är corona som sars? ",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: När vet man att man är frisk igen?",
-      "entities": {},
-      "examples": [
-        "När vet man att man är frisk igen?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-      ],
-      "set": {
-        "classifiedIntentName": "question: När vet man att man är frisk igen?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: kan jag som arbetar i vården jobba fast att jag har en närstående i riskgruppen",
-      "entities": {},
-      "examples": [
-        "kan jag som arbetar i vården jobba fast att jag har en närstående i riskgruppen",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-      ],
-      "set": {
-        "classifiedIntentName": "question: kan jag som arbetar i vården jobba fast att jag har en närstående i riskgruppen",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Hur länge måste vi jobba hemifrån?",
-      "entities": {},
-      "examples": [
-        "Hur länge måste vi jobba hemifrån?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Hur länge måste vi jobba hemifrån?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: När är COVID-19-pandemin över?",
-      "entities": {},
-      "examples": [
-        "När är COVID-19-pandemin över?",
-        "När kommer det vara över",
-        "",
-        "Hur länge kommer Corona finnas"
-      ]
-    },
-    "bot": {
-      "say": [
-        "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-      ],
-      "set": {
-        "classifiedIntentName": "question: När är COVID-19-pandemin över?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Varför får man muskelvärk?",
-      "entities": {},
-      "examples": [
-        "Varför får man muskelvärk?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Varför får man muskelvärk?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Kommer alla bli smittade av Corona",
-      "entities": {},
-      "examples": [
-        "Kommer alla bli smittade av Corona",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Kommer alla bli smittade av Corona",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Varför testar man inte mer?",
-      "entities": {},
-      "examples": [
-        "Varför testar man inte mer?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Varför testar man inte mer?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Hur går testet till?",
-      "entities": {},
-      "examples": [
-        "Hur går testet till?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Hur går testet till?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: hur stort avstånd ska man ha till folk?",
-      "entities": {},
-      "examples": [
-        "hur stort avstånd ska man ha till folk?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-      ],
-      "set": {
-        "classifiedIntentName": "question: hur stort avstånd ska man ha till folk?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Vilket är bäst – tvål eller handsprit?",
-      "entities": {},
-      "examples": [
-        "Vilket är bäst – tvål eller handsprit?",
-        "Är tvål bättre än handsprit?",
-        "Vad är bäst av tvål och handsprit?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Vilket är bäst – tvål eller handsprit?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Jag är en frisk 74-åring. Kan jag hälsa på mina friska barnbarn?",
-      "entities": {
-        "CAN": CAN,
-        "PERS_PRON": PERS_PRON,
-        "VISIT": VISIT,
-        "POS_PRON": POS_PRON
-      },
-      "examples": [
-        "Jag är en frisk 74-åring. Kan jag hälsa på mina friska barnbarn?",
-        "_CAN _PERS_PRON _VISIT barnbarn?",
-        "_CAN _PERS_PRON _VISIT _POS_PRON friska barnbarn?",
-        "_VISIT barnbarn",
-        "barnbarn",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Uppmaningen från myndigheterna är för närvarande att avstå nära sociala kontakter för åldersgruppen 70 år och äldre, om det inte är absolut nödvändigt. Håll gärna kontakten med dina barnbarn via telefon eller dator."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Jag är en frisk 74-åring. Kan jag hälsa på mina friska barnbarn?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Uppmaningen från myndigheterna är för närvarande att avstå nära sociala kontakter för åldersgruppen 70 år och äldre, om det inte är absolut nödvändigt. Håll gärna kontakten med dina barnbarn via telefon eller dator."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Ska man äta Panodil eller Alvedon?",
-      "entities": {},
-      "examples": [
-        "Ska man äta Panodil eller Alvedon?",
-        "jag misstänker att jag har corona. vilken medicin ska jag ta?",
-        "Ska man äta paracetamol?",
-        "Ska man äta Alvedon eller Panodil?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Ska man äta Panodil eller Alvedon?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Vem utvecklade dig",
-      "entities": {},
-      "examples": [
-        "Vem utvecklade dig",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Vem utvecklade dig",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Vad är 113 13?",
-      "entities": {},
-      "examples": [
-        "Vad är 113 13?",
-        "Vilket är det nationella informationsnumret?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Vad är 113 13?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Är covid-19 anmälningspliktig?",
-      "entities": {},
-      "examples": [
-        "Är covid-19 anmälningspliktig?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Är covid-19 anmälningspliktig?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Hur går provtagningen till?",
-      "entities": {},
-      "examples": [
-        "Hur går provtagningen till?",
-        "Vad är ett näsprov?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Hur går provtagningen till?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Har Röda korset volontärer?",
-      "entities": {},
-      "examples": [
-        "Har Röda korset volontärer?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Har Röda korset volontärer?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Vart kan jag vända mig om jag behöver prata med någon? ",
-      "entities": {
-        "PERS_PRON": PERS_PRON
-      },
-      "examples": [
-        "Vart kan jag vända mig om jag behöver prata med någon? ",
-        "Vilket nummer är det till äldrelinjen?",
-        "Vad är kvinnofridslinjen?",
-        "Har BRIS en stödtelefon?",
-        "Har Röda korset en stödtelefon?",
-        "Jag har ingen att prata med. Kan jag ringa någonstans?",
-        "Vem ska _PERS_PRON prata med när _PERS_PRON är orolig?",
-        "Vilket nummer ska jag ringa för mer information?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Vart kan jag vända mig om jag behöver prata med någon? ",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Jag äter blodförtunnande. Är jag i riskgruppen?",
-      "entities": {},
-      "examples": [
-        "Jag äter blodförtunnande. Är jag i riskgruppen?",
-        "Är det farligt att äta blodförtunnande medicin?",
-        "Är jag i riskgrupp om jag äter blodförtunnande medicin?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Jag äter blodförtunnande. Är jag i riskgruppen?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: kan jag ringa dig",
-      "entities": {},
-      "examples": [
-        "kan jag ringa dig",
-        "kan jag ringa",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Du kan prata med mig genom att ringa 0 8 5 8 0 9 7 7 5 7"
-      ],
-      "set": {
-        "classifiedIntentName": "question: kan jag ringa dig",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Du kan prata med mig genom att ringa 0 8 5 8 0 9 7 7 5 7"
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Om jag medicinerar mot högt blodtryck och därför har normalt blodtryck, är jag då fortfarande en riskgrupp?",
-      "entities": {},
-      "examples": [
-        "Om jag medicinerar mot högt blodtryck och därför har normalt blodtryck, är jag då fortfarande en riskgrupp?",
-        "Medicinerat högt blodtryck",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Det kan vi tyvärr inte svara på. Kontakta 1177 för medicinsk rådgivning"
-      ],
-      "set": {
-        "classifiedIntentName": "question: Om jag medicinerar mot högt blodtryck och därför har normalt blodtryck, är jag då fortfarande en riskgrupp?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Det kan vi tyvärr inte svara på. Kontakta 1177 för medicinsk rådgivning"
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Måste jag isolera mig från familjen?",
-      "entities": {},
-      "examples": [
-        "Måste jag isolera mig från familjen?",
-        "Är det ok att sova i samma rum som en som är sjuk?",
-        "Ska man vara i olika rum om vi är sjuka här hemma?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Måste jag isolera mig från familjen?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: kan jag ta studenten",
-      "entities": {},
-      "examples": [
-        "kan jag ta studenten",
-        "kommer jag kunna ta studenten",
-        "vad händer med studenten",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-      ],
-      "set": {
-        "classifiedIntentName": "question: kan jag ta studenten",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Försvinner luktsinnet och smaksinnet?",
-      "entities": {},
-      "examples": [
-        "Försvinner luktsinnet och smaksinnet?",
-        "Tappar man smaken?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Försvinner luktsinnet och smaksinnet?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Ska jag ha handskar i affären",
-      "entities": {},
-      "examples": [
-        "Ska jag ha handskar i affären",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Ska jag ha handskar i affären",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Varför sprids viruset så snabbt?",
-      "entities": {},
-      "examples": [
-        "Varför sprids viruset så snabbt?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Varför sprids viruset så snabbt?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Vad är nödvändig resa?",
-      "entities": {},
-      "examples": [
-        "Vad är nödvändig resa?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Vad är nödvändig resa?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Hur vet jag när jag ska åka in till sjukhus        ",
-      "entities": {},
-      "examples": [
-        "Hur vet jag när jag ska åka in till sjukhus        ",
-        "Hur vet jag om jag har corona och ska åka in till sjukhus",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Hur vet jag när jag ska åka in till sjukhus        ",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: hur påverkas lungorna?",
-      "entities": {},
-      "examples": [
-        "hur påverkas lungorna?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-      ],
-      "set": {
-        "classifiedIntentName": "question: hur påverkas lungorna?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Kan jag bada bastu?",
-      "entities": {},
-      "examples": [
-        "Kan jag bada bastu?",
-        "Är det ok med bastu?",
-        "Är bastu ok?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Kan jag bada bastu?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Jag jobbar med äldre i hemtjänsten. Räcker två dygn då?",
-      "entities": {},
-      "examples": [
-        "Jag jobbar med äldre i hemtjänsten. Räcker två dygn då?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Jag jobbar med äldre i hemtjänsten. Räcker två dygn då?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Måste man ha symtom för att smitta",
-      "entities": {},
-      "examples": [
-        "Måste man ha symtom för att smitta",
-        "Kan man smitta utan symtom",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-      ],
-      "set": {
-        "classifiedIntentName": "question: Måste man ha symtom för att smitta",
-        "classifiedUtterance": "_user_text",
-        "botResponse": [
-          "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
-        ]
-      },
-      "goto": "VERIFY_ANSWER"
-    }
   }
 ]

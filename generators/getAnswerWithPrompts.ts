@@ -1,12 +1,15 @@
-import { UserTurn, Intent } from "narratory"
+import { UserTurn, Intent, BotTurn, RichSay } from "narratory"
 
-export const getAnswerWithPrompts = (userTurn: UserTurn) => {
+export const getAnswerWithPrompts = (userTurn: UserTurn) : BotTurn => {  
+  const richSay = (userTurn.bot as BotTurn).say as RichSay
+  const singleSay = Array.isArray(richSay) ? richSay[0] : richSay
+
   return {
-    say: userTurn.bot as string[],
+    say: singleSay,
     set: {
       classifiedIntentName: (userTurn.intent as Intent).name,
       classifiedUtterance: "_user_text",
-      botResponse: userTurn.bot
+      botResponse: singleSay.text
     },
     goto: "VERIFY_ANSWER"
   }

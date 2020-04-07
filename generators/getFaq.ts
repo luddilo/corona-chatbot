@@ -3,8 +3,7 @@ import { RichSay } from "narratory"
 
 // https://docs.google.com/spreadsheets/d/1PAf9wmSxVnCBjIHft_-n0HOlRaq_LRlNMHeMPvYb2GU/edit#gid=901191674
 const url =
-  //"https://docs.google.com/spreadsheets/d/e/2PACX-1vSz98tc6sPBHgaU1PIyDggLhfQ0G5tBc5PyEsgKfxV-u4ybAEtSp9o-qLylGh_cO9BiJXtKOiKTDa0M/pub?gid=901191674&single=true&output=tsv"
-  "https://docs.google.com/spreadsheets/d/e/2PACX-1vQmhiwOlSlURDChBMlFXSkoMh7xA5L03X39X1R4U8eF1LsIlFpLf4qt_4W1Grrmf1x-lKS3ejZcu69G/pub?gid=901191674&single=true&output=tsv"
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vSz98tc6sPBHgaU1PIyDggLhfQ0G5tBc5PyEsgKfxV-u4ybAEtSp9o-qLylGh_cO9BiJXtKOiKTDa0M/pub?gid=901191674&single=true&output=tsv"
 
 const NUMBER_OF_TOP_ROWS_TO_SKIP = 0
 

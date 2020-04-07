@@ -8,6 +8,7 @@ export const verifyAnswer: BotTurn = {
     text: "Förstod jag din fråga korrekt?",
     suggestions: ["Ja", "Nej"],
   },
+  expectShortAnswer: true,
   user: [
     { intent: confirmRight, bot: ["Okej. Tack ska du ha!", "Härligt. Tack för hjälpen!"] },
     {

@@ -26,7 +26,7 @@ export const no: Intent = {
 
 export const confirmRight: Intent = {
   name: "confirmRight",
-  examples: [...yes.examples, "korrekt", "det stämmer", "det är rätt", "rätt", "stämmer"]
+  examples: [...yes.examples, "jag", "korrekt", "det stämmer", "det är rätt", "rätt", "stämmer"]
 }
 
  

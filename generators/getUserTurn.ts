@@ -1,4 +1,4 @@
-import { Entity, UserTurn, EntityMap } from "narratory"
+import { Entity, UserTurn, RichSay, EntityMap } from "narratory"
 
 export const entityDelimiter = "__E"
 
@@ -10,7 +10,7 @@ export const getUserTurn = ({
 }: {
   intentName: string
   examples: string[]
-  answers: string[]
+  answers: RichSay[]
   entities: Entity[]
 }): UserTurn => {
   const _examples = []
@@ -38,6 +38,8 @@ export const getUserTurn = ({
       entities: entityMap,
       examples: _examples
     },
-    bot: answers
+    bot: {
+      say: answers
+    }
   }
 }

@@ -4,8 +4,8 @@ import * as nlu from "../nlu"
 
 const card = new Card({
     title: "Statistik",
-    description: "",
-    image: new Image("https://gdurl.com/0Glf9", "some alt"),
+    subtitle: "Uppdaterad den 8:e april",
+    image: new Image("https://gdurl.com/0Glf9", "Statistik"),
 })
 
 export const answerNews: Array<BotTurn | BridgeTurn> = [
@@ -42,7 +42,7 @@ export const answerNews: Array<BotTurn | BridgeTurn> = [
                             say: "Globalt är cirka 1,4 miljoner människor bekräftat smittade och 81000 döda, varav ungefär hälften i Europa.",
                             bot: {
                                 say: {
-                                    text: "I Sverige är kurvan plan och siffrorna ser ut såhär:",
+                                    text: "I Sverige är kurvan plan och siffrorna ser ut såhär",
                                     content: card
                                 }
                             }

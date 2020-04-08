@@ -22,7 +22,7 @@ const intro = {
   },
   say: {
     text: "Jag är en chatbot som kan svara på allmänna frågor och ge dig senaste nytt om coronaviruset. För personlig sjukvårdsrådgivning måste du ringa 1177.",
-    ssml: "Jag är en chatt-bått som kan svara på allmänna frågor och ge dig senaste nytt om coronaviruset. För personlig sjukvårdsrådgivning måste du ringa 1177."
+    ssml: "Jag är en chatt-bått som kan svara på allmänna frågor och ge dig senaste nytt om coronaviruset. För personlig sjukvårdsrådgivning måste du ringa 11 77."
   }
 }
 
@@ -36,8 +36,8 @@ const queryQuestions: BotTurn = {
         hotStarted: false
       },
       text: [
-        "Vad har du för fråga?",
-        "Vad vill du fråga mig om?",
+        "Vill du höra de senaste nyheterna eller har du kanske en fråga?",
+        "Vill du höra det senaste som hänt eller fråga mig något annat?",
         "Vad undrar du över?",
       ],
     },

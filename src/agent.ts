@@ -14,7 +14,7 @@ const agent: Agent = {
   userInitiatives,
   bridges: [bridge],
   narratoryKey: require("../narratory_credentials.json").narratoryKey,
-  googleCredentials: require("../google_credentials_test.json"), // Populate this file, or change the link to your existing credentials file. Check the README.md for how to create it.
+  googleCredentials: require("../google_credentials_prod.json"), // Populate this file, or change the link to your existing credentials file. Check the README.md for how to create it.
   logWebhook: config.logWebhook,
   logLevel: "ALL"
 }

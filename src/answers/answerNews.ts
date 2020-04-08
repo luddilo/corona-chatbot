@@ -5,7 +5,7 @@ import * as nlu from "../nlu"
 const card = new Card({
     title: "Statistik",
     subtitle: "Uppdaterad den 8:e april",
-    image: new Image("https://gdurl.com/0Glf9", "Statistik"),
+    image: new Image("https://i.ibb.co/XDb5KGZ/Corona-liggande-8april-1.png", "Statistik"),
 })
 
 export const answerNews: Array<BotTurn | BridgeTurn> = [
@@ -14,9 +14,10 @@ export const answerNews: Array<BotTurn | BridgeTurn> = [
             platform: "voximplant"
         },
         say: "På Folkhälsomyndighetens dagliga presskonferens onsdagen den 8 april nämnde stadsepidemolog Anders Tegnell bland annat att av de avlidna över 70 år i Stockholmsregionen, har ungefär 40% varit folkbokförda på ett äldreboende, vilket kan jämföras med 4% i resten av landet. Vad gäller diskussionen om de vårdanställda som testats positivt för coronaviruset trots att de har varit helt symptomfria, påpekade Tegnell att de det framför allt är de med symptom som smittar andra. Vill du ha de senaste siffrorna?",
+        expectShortAnswer: true,
         user: [
             {
-                intent: nlu.yes, bot: {
+                intent: [...nlu.yes.examples, "jag"] , bot: {
                     say: "Globalt är cirka 1,4 miljoner människor bekräftat smittade och 81000 döda, varav ungefär hälften i Europa. I Sverige har vi ungefär 8400 bekräftade fall av covid19, varav 678 har intensivvårdats, och vi är nu uppe i 687 rapporterade dödsfall."
                 }
             },
@@ -38,7 +39,7 @@ export const answerNews: Array<BotTurn | BridgeTurn> = [
                 },
                 user: [
                     {
-                        intent: nlu.yes, bot: {
+                        intent: [...nlu.yes.examples, "jag"], bot: {
                             say: "Globalt är cirka 1,4 miljoner människor bekräftat smittade och 81000 döda, varav ungefär hälften i Europa.",
                             bot: {
                                 say: {

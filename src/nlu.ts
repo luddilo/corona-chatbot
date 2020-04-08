@@ -5,58 +5,53 @@ const symptom: Entity = {
   name: "Symptom",
   enums: [
     {
-      name: "feber", alts: ["hög temperatur", "frossa"]
-    }, 
+      name: "feber",
+      alts: ["hög temperatur", "frossa"],
+    },
     {
-      name: "luftvägar", alts: ["problem med andning", "andningsproblem", "andningssvårigheter"]
-    }, 
+      name: "luftvägar",
+      alts: ["problem med andning", "andningsproblem", "andningssvårigheter"],
+    },
     {
-      name: "hosta", alts: ["hostig"]
-    }
-  ]
+      name: "hosta",
+      alts: ["hostig"],
+    },
+  ],
 }
 
 export const yes: Intent = {
-  examples: ["ja", "japp", "absolut", "okej", "jajamän", "alright", "yes"]
+  examples: ["ja", "japp", "absolut", "okej", "jajamän", "alright", "yes"],
 }
 
 export const no: Intent = {
-  examples: ["nej", "nope", "no", "jag vill inte", "nej det är bra så", "näpp"]
+  examples: ["nej", "nope", "no", "jag vill inte", "nej det är bra så", "näpp"],
 }
 
 export const confirmRight: Intent = {
   name: "confirmRight",
-  examples: [...yes.examples, "jag", "korrekt", "det stämmer", "det är rätt", "rätt", "stämmer"]
+  examples: [...yes.examples, "jag", "korrekt", "det stämmer", "det är rätt", "rätt", "stämmer"],
 }
 
- 
 export const confirmWrong: Intent = {
   name: "confirmWrong",
-  examples: [...no.examples, "ej korrekt", "det stämmer inte", "det är fel", "fel", "stämmer ej"]
+  examples: [...no.examples, "ej korrekt", "det stämmer inte", "det är fel", "fel", "stämmer ej"],
 }
 
 export const dontKnow: Intent = {
-  examples: ["jag minns inte", "jag kommer inte ihåg", "jag vet inte", "vet ej"]
+  examples: ["jag minns inte", "jag kommer inte ihåg", "jag vet inte", "vet ej"],
 }
 
 export const exit: Intent = {
-  examples: ["exit", "hejdå", "avsluta", "bye bye"]
+  examples: ["exit", "hejdå", "avsluta", "bye bye"],
 }
 
 export const queryHelp: Intent = {
-  examples: [
-    "vad kan jag fråga",
-    "jag behöver hjälp",
-    "hur funkar detta",
-    "hur gör jag",
-    "vad frågar jag",
-    "hjälp"
-  ]
+  examples: ["vad kan jag fråga", "jag behöver hjälp", "hur funkar detta", "hur gör jag", "vad frågar jag", "hjälp"],
 }
 
 export const queryDiagnosis: Intent = {
   entities: {
-    corona: CORONA
+    corona: CORONA,
   },
   examples: [
     "har jag _corona",
@@ -64,13 +59,13 @@ export const queryDiagnosis: Intent = {
     "hur vet jag om jag har _corona",
     "har jag fått _corona",
     "kan du säga om jag har _corona",
-    "är jag sjuk"
-  ]
+    "är jag sjuk",
+  ],
 }
 
 export const queryNeedCare: Intent = {
   entities: {
-    healthcare: HEALTHCARE
+    healthcare: HEALTHCARE,
   },
   examples: [
     "när behöver jag ringa _healthcare",
@@ -79,50 +74,43 @@ export const queryNeedCare: Intent = {
     "när ska jag söka _healthcare",
     "hur vet jag när jag ska ta kontakt med _healthcare",
     "behöver jag gå till _healthcare",
-    "jag vill söka _healthcare. hur gör jag"
-  ]
+    "jag vill söka _healthcare. hur gör jag",
+  ],
 }
 
 export const queryNews: Intent = {
   examples: [
     "vad är senaste nytt",
     "vad är det senaste",
-    "vad är senaste nytt",	
+    "vad är senaste nytt",
     "vad är nytt",
     "några nyheter",
     "vad har hänt idag",
-    "jag undrar hur läget ser ut just idag"
-  ]
+    "jag undrar hur läget ser ut just idag",
+  ],
 }
 
-export const queryHowToProtect : Intent = {
+export const queryHowToProtect: Intent = {
   examples: [
     "hur skyddar jag mig",
     "hur skyddar vi oss",
     "hur skyddar vi oss från corona",
     "hur skyddar vi oss från covid",
     "hur skyddar vi oss från viruset",
-  ]
+  ],
 }
 
-export const regionAnswer : Intent = {
+export const regionAnswer: Intent = {
   entities: {
     city: entities.geoCity,
-    state: entities.geoState
+    state: entities.geoState,
   },
-  examples: [
-    "_city",
-    "_state",
-    "jag bor i _city",
-    "i _city",
-    "jag bor i _state",
-    "i _state",
-  ]
+  examples: ["_city", "_state", "jag bor i _city", "i _city", "jag bor i _state", "i _state"],
 }
-export const queryRegionStatus : Intent = {
+export const queryRegionStatus: Intent = {
   entities: {
     city: entities.geoCity,
-    state: entities.geoState
+    state: entities.geoState,
   },
   examples: [
     "vad är status i min region",
@@ -133,47 +121,43 @@ export const queryRegionStatus : Intent = {
     "vad är status i _city",
     "vad är status i _state",
     "hur många är smittade i _city",
-    "hur många är smittade i _state"
-  ]
+    "hur många är smittade i _state",
+  ],
 }
 
-export const queryStayHome : Intent = {
+export const queryStayHome: Intent = {
   examples: [
     "Bör jag stanna hemma",
     "måste jag stanna hemma",
     "när måste jag vara hemma",
     "ska jag undvika att gå ut",
     "ska jag stanna hemma nu",
-  ]
+  ],
 }
 
 export const querySocializing: Intent = {
-  examples: [
-    "kan jag träffa vänner",
-    "får jag träffa min familj",
-    "kan jag hänga med mina kompisar"
-  ]
+  examples: ["kan jag träffa vänner", "får jag träffa min familj", "kan jag hänga med mina kompisar"],
 }
 
-const family : Entity = {
+const family: Entity = {
   name: "family",
   enums: [
     { name: "barn", alts: ["små barn", "bebis", "son", "dotter"] },
-    { name: "äldre", alts: ["farfar", "morfar", "farmor", "mormor", "gamla"]},
-    { name: "familj", alts: ["nära och kära", "kära", "närmaste"]}
-  ]
+    { name: "äldre", alts: ["farfar", "morfar", "farmor", "mormor", "gamla"] },
+    { name: "familj", alts: ["nära och kära", "kära", "närmaste"] },
+  ],
 }
 
 export const queryTakeCareOfFamily = {
   entities: {
-    family
+    family,
   },
   examples: [
     "hur ska jag ta hand om min _family",
     "hur ska jag ta hand om mina _family",
     "hur tar jag hand om _family",
-    "hur vårdar jag _family"
-  ]
+    "hur vårdar jag _family",
+  ],
 }
 /*
 
@@ -201,44 +185,36 @@ export const outOfMedicine: Intent = {
     "jag har inga kvar",
     "ingen medicin kvar",
     "behöver mer medicin",
-    "jag behöver fler tabletter"
-  ]
+    "jag behöver fler tabletter",
+  ],
 }
 
 export const tookAll: Intent = {
-  examples: [
-    "jag tog alla",
-    "jag tog alla som fanns",
-    "alla som fanns",
-    "alla piller",
-  ]
+  examples: ["jag tog alla", "jag tog alla som fanns", "alla som fanns", "alla piller"],
 }
 
 const medicine: Entity = {
   name: "medicineTerm",
-  enums: [{ name: "tabletter", alts: ["tablett", "piller"] }]
+  enums: [{ name: "tabletter", alts: ["tablett", "piller"] }],
 }
 
 export const quantifiedMedicine: Intent = {
   entities: {
     pillsTaken: entities.numberInteger,
-    medicine
+    medicine,
   },
-  examples: ["jag tog _pillsTaken _medicine", "_pillsTaken _medicine", "jag tog _pillsTaken"]
+  examples: ["jag tog _pillsTaken _medicine", "_pillsTaken _medicine", "jag tog _pillsTaken"],
 }
 
 export const quantifier: Intent = {
   entities: {
-    number: entities.numberInteger
+    number: entities.numberInteger,
   },
-  examples: [
-    "_number",
-    "_number stycken",
-  ]
+  examples: ["_number", "_number stycken"],
 }
 
 export const feelingGood: Intent = {
-  examples: ["Jag mår bra", "Ganska bra", "bra", "helt okej", "det är bra", "mår fint", "fint"]
+  examples: ["Jag mår bra", "Ganska bra", "bra", "helt okej", "det är bra", "mår fint", "fint"],
 }
 
 export const feelingBad: Intent = {
@@ -251,20 +227,18 @@ export const feelingBad: Intent = {
     "Kasst",
     "Jag mår illa",
     "jag mår skit",
-    "skit"
-  ]
+    "skit",
+  ],
 }
 
 const tvTerms: Entity = {
   name: "tvTerms",
-  enums: [
-    { name: "tv", alts: ["netflix", "via play", "hbo"]}
-  ]
+  enums: [{ name: "tv", alts: ["netflix", "via play", "hbo"] }],
 }
 export const watchedTv: Intent = {
   entities: {
     program: entities.any,
-    tvTerms
+    tvTerms,
   },
   examples: [
     "jag såg på _tvTerms",
@@ -274,27 +248,21 @@ export const watchedTv: Intent = {
     "jag tittade på _tvTerms",
     "jag såg på _program på _tvTerms",
     "jag tittade på _program på _tvTerms",
-  ]
+  ],
 }
 
 export const weatherDescriptors: Entity = {
   name: "weatherDescriptor",
   enums: [
     { name: "soligt", alts: ["sol", "solsken", "fint", "bra", "fantastiskt", "klart"] },
-    { name: "regnigt", alts: ["regn", "blött", "dåligt", "tråkigt", "ruskigt", "blåsigt", "storm" ] },
+    { name: "regnigt", alts: ["regn", "blött", "dåligt", "tråkigt", "ruskigt", "blåsigt", "storm"] },
     { name: "molnigt", alts: ["moln", "okej", "grått"] },
-  ]
+  ],
 }
 
 export const weatherReport: Intent = {
   entities: {
-    weather: weatherDescriptors
+    weather: weatherDescriptors,
   },
-  examples: [
-    "det är _weather",
-    "_weather och _weather",
-    "vädret är _weather",
-    "_weather",
-    "_weather och _weather"
-  ]
+  examples: ["det är _weather", "_weather och _weather", "vädret är _weather", "_weather", "_weather och _weather"],
 }

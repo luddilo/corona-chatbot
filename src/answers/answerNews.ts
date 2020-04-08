@@ -13,7 +13,7 @@ export const answerNews: Array<BotTurn | BridgeTurn> = [
         cond: {
             platform: "voximplant"
         },
-        say: "På Folkhälsomyndighetens dagliga presskonferens onsdagen den 8 april nämnde stadsepidemolog Anders Tegnell bland annat att av de avlidna över 70 år i Stockholmsregionen, har ungefär 40% varit folkbokförda på ett äldreboende, vilket kan jämföras med 4% i resten av landet. Vad gäller diskussionen om de vårdanställda som testats positivt för coronaviruset trots att de har varit helt symptomfria, påpekade Tegnell att de som smittar andra framför allt är de som har symptom. Vill du ha de senaste siffrorna?",
+        say: "På Folkhälsomyndighetens dagliga presskonferens onsdagen den 8 april nämnde stadsepidemolog Anders Tegnell bland annat att av de avlidna över 70 år i Stockholmsregionen, har ungefär 40% varit folkbokförda på ett äldreboende, vilket kan jämföras med 4% i resten av landet. Vad gäller diskussionen om de vårdanställda som testats positivt för coronaviruset trots att de har varit helt symptomfria, påpekade Tegnell att de det framför allt är de med symptom som smittar andra. Vill du ha de senaste siffrorna?",
         user: [
             {
                 intent: nlu.yes, bot: {
@@ -30,7 +30,7 @@ export const answerNews: Array<BotTurn | BridgeTurn> = [
     {
         say: "På Folkhälsomyndighetens dagliga presskonferens onsdagen den 8 april nämnde stadsepidemolog Anders Tegnell bland annat att av de avlidna över 70 år i Stockholmsregionen, har ungefär 40% varit folkbokförda på ett äldreboende, vilket kan jämföras med 4% i resten av landet.",
         bot: {
-            say: "Vad gäller diskussionen om de vårdanställda som testats positivt för coronaviruset trots att de har varit helt symptomfria, påpekade Tegnell att de som smittar andra framför allt är de som har symptom.",
+            say: "Vad gäller diskussionen om de vårdanställda som testats positivt för coronaviruset trots att de har varit helt symptomfria, påpekade Tegnell att det framför allt är de med symptom som smittar andra.",
             bot: {
                 say: {
                     text: "Vill du ha de senaste siffrorna?",

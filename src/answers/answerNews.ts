@@ -5,7 +5,7 @@ import * as nlu from "../nlu"
 const card = new Card({
     title: "Statistik",
     description: "",
-    image: new Image("https://gdurl.com/ntGx", "some alt"),
+    image: new Image("https://gdurl.com/0Glf9", "some alt"),
 })
 
 export const answerNews: Array<BotTurn | BridgeTurn> = [
@@ -13,11 +13,11 @@ export const answerNews: Array<BotTurn | BridgeTurn> = [
         cond: {
             platform: "voximplant"
         },
-        say: "På Folkhälsomyndighetens dagliga presskonferens tisdagen den 7 april påpekade stadsepidemilog Anders Tegnell att det är viktigt att vi försöker undvika sociala sammanhang under den kommande påskhelgen och han nämnde särskilt att de regler som gäller på verksamheter som barer och caféer för att undvika trängsel även gäller på uteserveringar. Vill du ha de senaste siffrorna?",
+        say: "På Folkhälsomyndighetens dagliga presskonferens onsdagen den 8 april nämnde stadsepidemolog Anders Tegnell bland annat att av de avlidna över 70 år i Stockholmsregionen, har ungefär 40% varit folkbokförda på ett äldreboende, vilket kan jämföras med 4% i resten av landet. Vad gäller diskussionen om de vårdanställda som testats positivt för coronaviruset trots att de har varit helt symptomfria, påpekade Tegnell att de som smittar andra framför allt är de som har symptom. Vill du ha de senaste siffrorna?",
         user: [
             {
                 intent: nlu.yes, bot: {
-                    say: "Globalt är 1,3 miljoner människor bekräftat smittade och 74000 döda, med en något minskad andel från Europa då smittan har börjat sakta ner i Italien och Spanien, samtidigt som den ökar kraftigt i USA. I Sverige har vi ungefär 7700 bekräftade fall av covid19, varav 640 har intensivvårdats, och vi är nu uppe i 591 rapporterade dödsfall."
+                    say: "Globalt är cirka 1,4 miljoner människor bekräftat smittade och 81000 döda, varav ungefär hälften i Europa. I Sverige har vi ungefär 8400 bekräftade fall av covid19, varav 678 har intensivvårdats, och vi är nu uppe i 687 rapporterade dödsfall."
                 }
             },
             {
@@ -28,30 +28,33 @@ export const answerNews: Array<BotTurn | BridgeTurn> = [
         ]
     },
     {
-        say: "På Folkhälsomyndighetens dagliga presskonferens tisdagen den 7 april påpekade stadsepidemilog Anders Tegnell att det är viktigt att vi försöker undvika sociala sammanhang under den kommande påskhelgen och han nämnde särskilt att de regler som gäller på verksamheter som barer och caféer för att undvika trängsel även gäller på uteserveringar.",
+        say: "På Folkhälsomyndighetens dagliga presskonferens onsdagen den 8 april nämnde stadsepidemolog Anders Tegnell bland annat att av de avlidna över 70 år i Stockholmsregionen, har ungefär 40% varit folkbokförda på ett äldreboende, vilket kan jämföras med 4% i resten av landet.",
         bot: {
-            say: {
-                text: "Vill du ha de senaste siffrorna?",
-                suggestions: ["Ja", "Nej"],
-            },
-            user: [
-                {
-                    intent: nlu.yes, bot: {
-                        say: "Globalt är 1,3 miljoner människor bekräftat smittade och 74000 döda, med en något minskad andel från Europa då smittan har börjat sakta ner i Italien och Spanien, samtidigt som den ökar kraftigt i USA.",
-                        bot: {
-                            say: {
-                                text: "I Sverige ser statistiken ut såhär:",
-                                content: card
+            say: "Vad gäller diskussionen om de vårdanställda som testats positivt för coronaviruset trots att de har varit helt symptomfria, påpekade Tegnell att de som smittar andra framför allt är de som har symptom.",
+            bot: {
+                say: {
+                    text: "Vill du ha de senaste siffrorna?",
+                    suggestions: ["Ja", "Nej"],
+                },
+                user: [
+                    {
+                        intent: nlu.yes, bot: {
+                            say: "Globalt är cirka 1,4 miljoner människor bekräftat smittade och 81000 döda, varav ungefär hälften i Europa.",
+                            bot: {
+                                say: {
+                                    text: "I Sverige är kurvan plan och siffrorna ser ut såhär:",
+                                    content: card
+                                }
                             }
                         }
+                    },
+                    {
+                        intent: nlu.no, bot: {
+                            say: "Okej."
+                        }
                     }
-                },
-                {
-                    intent: nlu.no, bot: {
-                        say: "Okej."
-                    }
-                }
-            ]
+                ]
+            }
         }
     }
 ]

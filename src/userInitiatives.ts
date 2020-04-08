@@ -27,12 +27,12 @@ const questions: UserTurn[] = [
     intent: nlu.queryDiagnosis,
     bot: answerDiagnosis
   },
-  { intent: nlu.queryNews,
-    bot: answerNews
-  },
   {
     intent: nlu.queryNeedCare,
     bot: answerDiagnosis
+  },
+  { intent: nlu.queryNews,
+    bot: answerNews
   },
   {
     intent: nlu.queryHowToProtect,
@@ -50,7 +50,6 @@ const questions: UserTurn[] = [
     intent: nlu.queryTakeCareOfFamily,
     bot: answerFamily
   },
-
   {
     intent: nlu.queryHelp,
     bot: answerHelp

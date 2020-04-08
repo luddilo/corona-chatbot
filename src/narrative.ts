@@ -1,4 +1,4 @@
-import { BotTurn, ANYTHING, EXIT, BridgeTurn } from "narratory"
+import { BotTurn, ANYTHING, EXIT } from "narratory"
 import * as nlu from "./nlu"
 import { answerFallback } from "./answers/fallback"
 
@@ -21,8 +21,8 @@ const intro = {
     user_hotStarted: false
   },
   say: {
-    text: "Jag är en chatbot som kan svara på allmänna frågor och ge dig senaste nytt om coronaviruset och covid19. För personlig sjukvårdsrådgivning måste du ringa 1177.",
-    ssml: "Jag är en chatt-bått som kan svara på allmänna frågor och ge dig senaste nytt om coronaviruset och covid19. För personlig sjukvårdsrådgivning måste du ringa 1177."
+    text: "Jag är en chatbot som kan svara på allmänna frågor och ge dig senaste nytt om coronaviruset. För personlig sjukvårdsrådgivning måste du ringa 1177.",
+    ssml: "Jag är en chatt-bått som kan svara på allmänna frågor och ge dig senaste nytt om coronaviruset. För personlig sjukvårdsrådgivning måste du ringa 1177."
   }
 }
 
@@ -37,7 +37,6 @@ const queryQuestions: BotTurn = {
       },
       text: [
         "Vad har du för fråga?",
-        "Vad är din fråga?",
         "Vad vill du fråga mig om?",
         "Vad undrar du över?",
       ],

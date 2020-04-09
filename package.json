@@ -9,7 +9,8 @@
     "start": "tsc && node node_modules/narratory/out/cmd/start.js",
     "build": "tsc && node node_modules/narratory/out/cmd/build.js",
     "chat": "node node_modules/narratory/out/cmd/chat.js",
-    "generate:faq": "tsc && node out/generators/generateFaq.js",
+    "generate": "tsc && node out/generators/index.js",
+    "generate:faq": "tsc && node out/generators/index.js",
     "watch": "tsc --watch"
   },
   "watch": {
@@ -28,7 +29,7 @@
     "@types/node": "^12.12.21",
     "axios": "^0.19.2",
     "moment": "^2.24.0",
-    "narratory": "^0.11.2"
+    "narratory": "file:../../narratory"
   },
   "devDependencies": {
     "concurrently": "^5.0.2",

@@ -7,7 +7,7 @@ import { answerStayHome } from "./answers/answerStayhome"
 import { answerFamily } from "./answers/answerFamily"
 import { answerHelp } from "./answers/answerHelp"
 import { answerDiagnosis } from "./answers/answerDiagnosis"
-import { answerNews } from "./answers/answerNews"
+import { presentNews } from "./answers/generatedNews"
 
 /*
     Questions and other user-driven initiatives
@@ -32,7 +32,7 @@ const questions: UserTurn[] = [
     bot: answerDiagnosis
   },
   { intent: nlu.queryNews,
-    bot: answerNews
+    bot: presentNews
   },
   {
     intent: nlu.queryHowToProtect,

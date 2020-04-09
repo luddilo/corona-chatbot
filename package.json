@@ -11,6 +11,7 @@
     "chat": "node node_modules/narratory/out/cmd/chat.js",
     "generate": "tsc && node out/generators/index.js",
     "generate:faq": "tsc && node out/generators/index.js",
+    "generate:fix": "node out/generators/index.js",
     "watch": "tsc --watch"
   },
   "watch": {

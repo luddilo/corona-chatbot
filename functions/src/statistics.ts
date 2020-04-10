@@ -23,11 +23,12 @@ const getLabelledData = (data: any, label: string) => {
   returnData[`${label}_total`] = data.comulative
   returnData[`${label}_yesterday`] = data.yesterday
   returnData[`${label}_day_before_yesterday`] = data.day_before_yesterday
-  returnData[`${label}_diff`] = Math.abs(data.yesterday - data.day_before_yesterday)
+  const diff = data.yesterday - data.day_before_yesterday
+  returnData[`${label}_diff`] = Math.abs(diff)
 
-  if (returnData[`${label}_diff`] === 0) {
+  if (diff === 0) {
     returnData[`${label}_diff_text`] = "samma som"
-  } else if (returnData[`${label}_diff`] > 0) {
+  } else if (diff > 0) {
     returnData[`${label}_diff_text`] = "fler än"
   } else {
     returnData[`${label}_diff_text`] = "färre än"
@@ -119,7 +120,6 @@ export const statistics = cloudFunction(async (req, res) => {
     const infected = aggrData.find((obj) => obj.name === "totalt_antal_fall")
     const intensiveCare = aggrData.find((obj) => obj.name === "antal_intensivvardade")
     const deceased = aggrData.find((obj) => obj.name === "antal_avlidna")
-    console.log(JSON.stringify(aggrData, null, 2), JSON.stringify(infected))
 
     returnData = {
       ...getLabelledData(infected, "infected"),

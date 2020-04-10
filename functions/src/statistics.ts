@@ -12,7 +12,7 @@ const hasLatestData = (timeStamp: number) => {
   return yesterday === thatDay
 }
 
-const getLabelledData = (data: any, label: string) => {
+const getNarratoryResponse = (data: any, label: string) => {
   let returnData: any = {}
 
   returnData[`${label}_total`] = data.cumulative
@@ -37,12 +37,12 @@ const sumArray = (arr: number[]) => {
   }, 0)
 }
 
-const getData = (label: string) => {
-  const yesterday = cachedResponse.features[0].attributes[label]
-  const day_before_yesterday = cachedResponse.features[1].attributes[label]
+const extractDataFromResponse = (label: string, response: any) => {
+  const yesterday = response.features[0].attributes[label]
+  const day_before_yesterday = response.features[1].attributes[label]
   const diff = yesterday - day_before_yesterday
 
-  const cumulative = sumArray(cachedResponse.features.map((feature: any) => feature.attributes[label]))
+  const cumulative = sumArray(response.features.map((feature: any) => feature.attributes[label]))
 
   return {
     name: label.toLowerCase(),
@@ -102,24 +102,24 @@ export const statistics = cloudFunction(async (req, res) => {
     "Östergötland",
   ]
 
-  const regionData = regions.map((_region) => getData(_region))
+  const regionData = regions.map((_region) => extractDataFromResponse(_region, cachedResponse))
 
-  const aggrData = categories.map((category) => getData(category))
+  const aggrData = categories.map((category) => extractDataFromResponse(category, cachedResponse))
 
   let returnData: any
 
   if (region) {
     const selectedRegionData: any = regionData.find((regionObj) => regionObj.name === region.toLowerCase())
-    returnData = getLabelledData(selectedRegionData, "infected")
+    returnData = getNarratoryResponse(selectedRegionData, "infected")
   } else {
     const infected = aggrData.find((obj) => obj.name === "totalt_antal_fall")
     const intensiveCare = aggrData.find((obj) => obj.name === "antal_intensivvardade")
     const deceased = aggrData.find((obj) => obj.name === "antal_avlidna")
 
     returnData = {
-      ...getLabelledData(infected, "infected"),
-      ...getLabelledData(intensiveCare, "intensive_care"),
-      ...getLabelledData(deceased, "deceased"),
+      ...getNarratoryResponse(infected, "infected"),
+      ...getNarratoryResponse(intensiveCare, "intensive_care"),
+      ...getNarratoryResponse(deceased, "deceased"),
     }
   }
   res.json({ set: returnData })

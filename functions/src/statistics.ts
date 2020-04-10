@@ -20,7 +20,7 @@ const hasLatestData = (timeStamp: number) => {
 const getLabelledData = (data: any, label: string) => {
   let returnData: any = {}
 
-  returnData[`${label}_total`] = data.comulative
+  returnData[`${label}_total`] = data.cumulative
   returnData[`${label}_yesterday`] = data.yesterday
   returnData[`${label}_day_before_yesterday`] = data.day_before_yesterday
   const diff = data.yesterday - data.day_before_yesterday
@@ -47,14 +47,14 @@ const getData = (label: string) => {
   const day_before_yesterday = cachedResponse.features[1].attributes[label]
   const diff = yesterday - day_before_yesterday
 
-  const comulative = sumArray(cachedResponse.features.map((feature: any) => feature.attributes[label]))
+  const cumulative = sumArray(cachedResponse.features.map((feature: any) => feature.attributes[label]))
 
   return {
     name: label.toLowerCase(),
     yesterday,
     day_before_yesterday,
     diff,
-    comulative,
+    cumulative,
   }
 }
 

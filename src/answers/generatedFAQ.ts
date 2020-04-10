@@ -1,6 +1,6 @@
 import { UserTurn, Entity } from "narratory"
 
-// Generated at Thursday, April 9th 2020, 3:06:00 pm
+// Generated at Friday, April 10th 2020, 11:29:43 am
 
 export const ACTIVITY : Entity = {
   "name": "ACTIVITY",
@@ -54,7 +54,9 @@ export const BIG_EVENT : Entity = {
         "stora evenemang",
         "större evenemang",
         "stor sammankomst",
-        "stor fest"
+        "stor fest",
+        "teater",
+        "bio"
       ]
     }
   ]
@@ -250,7 +252,8 @@ export const CO_SYM : Entity = {
         "illemående ",
         "mår illa",
         "trött",
-        "krasslig"
+        "krasslig",
+        "förkyld"
       ]
     }
   ]
@@ -1188,7 +1191,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "SYMPTOM": SYMPTOM,
         "PERS_PRON": PERS_PRON,
         "INT_PRON": INT_PRON,
-        "INFECTING_ACTIVITY": INFECTING_ACTIVITY
+        "INFECTING_ACTIVITY": INFECTING_ACTIVITY,
+        "CO_SYM": CO_SYM,
+        "INFECTED": INFECTED,
+        "MY_CHILD": MY_CHILD
       },
       "examples": [
         "Vad är symtom av covid-19?",
@@ -1208,18 +1214,44 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "_INT_PRON är _SYMPTOM från _CORONA",
         "_INT_PRON _SYMPTOM har _CORONA",
         "_INT_PRON _SYMPTOM får _PERS_PRON",
-        "_PERS_PRON _INFECTING_ACTIVITY är _PERS_PRON sjuk?"
+        "_PERS_PRON _INFECTING_ACTIVITY är _PERS_PRON sjuk?",
+        "är _CO_SYM _SYMPTOM",
+        "är _SYMPTOM _CO_SYM",
+        "",
+        "Är ont i ryggen symtom på _CORONA",
+        "_PERS_PRON har _CO_SYM är det _CORONA",
+        "Är _CO_SYM _SYMPTOM på _CORONA",
+        "_PERS_PRON har _CO_SYM kan _PERS_PRON ha _CORONA",
+        "om jag bara har muskelvärk ont i huvudet",
+        "Astma",
+        "_PERS_PRON har _CO_SYM. Kan _PERS_PRON ha _CORONA",
+        "Jag har förlorat luktsinnet. Tyder det på _CORONA",
+        "Är ett symptom förlorat luktsinne?",
+        "Är _CORONA farligt om man har KOL?",
+        "Försvinner luktsinnet och smaksinnet?",
+        "Tappar _PERS_PRON smaken?",
+        "Varför tappar _PERS_PRON smaken när _PERS_PRON är sjuk?",
+        "Är det vanligt att _PERS_PRON inte kan känna lukter när _PERS_PRON har _CORONA?",
+        "_PERS_PRON tycker inte att maten smakar något – _CORONA?",
+        "Är _PERS_PRON _INFECTED om _PERS_PRON inte kan känna lukt?",
+        "_MY_CHILD säger att _PERS_PRON inte känner lukt. Är det ett  _SYMPTOM?",
+        "Försvinner smaken när _PERS_PRON har _CORONA?",
+        "Kan _PERS_PRON inte lukta när _PERS_PRON har _CORONA?",
+        "Är det typiskt för _CORONA att inte känna smak och lukt?",
+        "Hur vanligt är det att tappa luktsinnet",
+        "Hur vet _PERS_PRON om _PERS_PRON har _CORONA",
+        "jar har host"
       ]
     },
     "bot": {
       "say": {
-        "text": "Symptomen för covid-19 är feber, hosta, snuva, halsont, huvudvärk, torrhosta, andningsbesvär, samt muskel och ledvärk. Andra symtom är nedsatt lukt och smak, diarré, illamående samt trötthet. Du kan vara smittad av covid-19 utan att ha tydliga symtom.",
+        "text": "Symtomen för covid-19 är feber, hosta, snuva, halsont, huvudvärk, torrhosta, andningsbesvär, samt muskel och ledvärk. Andra symtom är nedsatt lukt och smak, diarré, illamående samt trötthet. Du kan vara smittad av covid-19 utan att ha tydliga symtom.",
         "ssml": "Symptomen för covid19 är feber, hosta, snuva, halsont, huvudvärk, torrhosta, andningsbesvär, samt muskel och ledvärk. Andra symtom är nedsatt lukt och smak, diarré, illamående samt trötthet. Du kan vara smittad av covid19 utan att ha tydliga symtom."
       },
       "set": {
         "classifiedIntentName": "question: Vad är symtom av covid-19?",
         "classifiedUtterance": "_user_text",
-        "botResponse": "Symptomen för covid-19 är feber, hosta, snuva, halsont, huvudvärk, torrhosta, andningsbesvär, samt muskel och ledvärk. Andra symtom är nedsatt lukt och smak, diarré, illamående samt trötthet. Du kan vara smittad av covid-19 utan att ha tydliga symtom."
+        "botResponse": "Symtomen för covid-19 är feber, hosta, snuva, halsont, huvudvärk, torrhosta, andningsbesvär, samt muskel och ledvärk. Andra symtom är nedsatt lukt och smak, diarré, illamående samt trötthet. Du kan vara smittad av covid-19 utan att ha tydliga symtom."
       },
       "goto": "VERIFY_ANSWER"
     }
@@ -1231,7 +1263,8 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "INFECTED": INFECTED,
         "PERS_PRON": PERS_PRON,
         "INFECTING_ACTIVITY": INFECTING_ACTIVITY,
-        "CORONA": CORONA
+        "CORONA": CORONA,
+        "CAN": CAN
       },
       "examples": [
         "Hur smittar covid-19?",
@@ -1252,7 +1285,29 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Hur _INFECTED _CORONA",
         "Hur _INFECTED _PERS_PRON",
         "Hur blir _PERS_PRON _INFECTED",
-        "vad gör att man får _CORONA"
+        "vad gör att man får _CORONA",
+        "hur får _PERS_PRON _CORONA",
+        "varför får _PERS_PRON _CORONA",
+        "_CORONA _INFECTED",
+        "Kan _PERS_PRON smitta genom att kramas?",
+        "hur sprids _CORONA",
+        "det finns ju 58 år gammal kan man bli smittad",
+        "_CAN _PERS_PRON få _CORONA",
+        "_CAN _PERS_PRON bli smittad",
+        "Kan jag smitta genom att _INFECTING_ACTIVITY",
+        "Vilka drabbas?",
+        "kan _CORONA smitta om jag delar handduk",
+        "Hur smittas det",
+        "_CORONA",
+        "Vilken är den största riskfaktorn?",
+        "Den största riskfaktorn för att få _CORONA",
+        "jag vem smittas",
+        "jag undrar hur virus smittar",
+        "ja Hur smittar kommer",
+        "Hur får _PERS_PRON _CORONA",
+        "Kan _PERS_PRON bli smittad av _CORONA",
+        "smittar _CORONA",
+        ""
       ]
     },
     "bot": {
@@ -1294,7 +1349,11 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Hur kom _CORONA till",
         "förklara _CORONA",
         "definiera _CORONA",
-        "var kommer _CORONA från?"
+        "var kommer _CORONA från?",
+        "What is covi19",
+        "Var började Corona?",
+        "Corona",
+        ""
       ]
     },
     "bot": {
@@ -1338,17 +1397,21 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Får jag gå ut om jag har symtom?",
         "Vad ska jag göra om jag blir sjuk",
         "Ja ska jag göra om jag blir sjuk",
-        "Rekommendationer?"
+        "Rekommendationer?",
+        "Jag hostar lite grann men kan jag fortfarande gå till skolan",
+        "Hur länge ska _PERS_PRON vara i karantän om _PERS_PRON är sjuk?",
+        "ska man jobba om man hostar",
+        ""
       ]
     },
     "bot": {
       "say": {
-        "text": "Känner du dig sjuk med symptom som snuva, hosta, halsont eller feber ska du låta bli att träffa andra människor. Du ska inte gå till jobbet eller skolan. Detta gäller även om du bara känner dig lite sjuk eftersom det är viktigt att inte riskera att smitta andra. Du ska vara hemma tills du är helt frisk och sen minst två dagar till. Om du har möjlighet att arbeta hemifrån så ska du göra det även om du är frisk."
+        "text": "Känner du dig sjuk med symptom som snuva, hosta, halsont eller feber ska du låta bli att träffa andra människor. Du ska inte gå till jobbet eller skolan. Detta gäller även om du bara känner dig lite sjuk eftersom det är viktigt att inte riskera att smitta andra. Du ska vara hemma tills du är helt frisk och sen minst två dagar till. "
       },
       "set": {
         "classifiedIntentName": "question: är det okej att jag går till jobbet?",
         "classifiedUtterance": "_user_text",
-        "botResponse": "Känner du dig sjuk med symptom som snuva, hosta, halsont eller feber ska du låta bli att träffa andra människor. Du ska inte gå till jobbet eller skolan. Detta gäller även om du bara känner dig lite sjuk eftersom det är viktigt att inte riskera att smitta andra. Du ska vara hemma tills du är helt frisk och sen minst två dagar till. Om du har möjlighet att arbeta hemifrån så ska du göra det även om du är frisk."
+        "botResponse": "Känner du dig sjuk med symptom som snuva, hosta, halsont eller feber ska du låta bli att träffa andra människor. Du ska inte gå till jobbet eller skolan. Detta gäller även om du bara känner dig lite sjuk eftersom det är viktigt att inte riskera att smitta andra. Du ska vara hemma tills du är helt frisk och sen minst två dagar till. "
       },
       "goto": "VERIFY_ANSWER"
     }
@@ -1380,7 +1443,9 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Dör _PERS_PRON om _PERS_PRON har _CO_SYM",
         "Dör _PERS_PRON om _PERS_PRON får _CO_SYM",
         "är det farligt",
-        "ja är det farligt"
+        "ja är det farligt",
+        "Hur hög dödlighet har _CORONA",
+        ""
       ]
     },
     "bot": {
@@ -1431,12 +1496,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": {
-        "text": "Sedan 1 april är det besöksförbud på alla äldreboenden för att förhindra spridningen av covid19. Nu när covid19 sprids ute i samhället är det extra viktigt att skydda äldre från smitta. Ha inte närkontakt med personer som är över 70 år om det inte är helt nödvändigt. Stanna hellre hemma om du känner dig sjuk, även om du bara är lite förkyld. Covid19 kan ge lindriga symptom som liknar en förkylning, men vara dödlig för andra, så det är viktigt att vara vaksam."
+        "text": "Nu när covid-19 sprids ute i samhället är det extra viktigt att skydda äldre från smitta. Därför är det besöksförbud på alla äldreboenden sedan 1 april. Ha inte närkontakt med personer som är över 70 år om det inte är helt nödvändigt. Covid-19 kan ge lindriga symptom så se till att stanna hemma om du känner dig minsta sjuk.",
+        "ssml": "Nu när covid19 sprids ute i samhället är det extra viktigt att skydda äldre från smitta. Därför är det besöksförbud på alla äldreboenden sedan 1 april. Ha inte närkontakt med personer som är över 70 år om det inte är helt nödvändigt. Covid19 kan ge lindriga symptom så se till att stanna hemma om du känner dig minsta sjuk."
       },
       "set": {
         "classifiedIntentName": "question: Vad gäller besök på äldreboenden?",
         "classifiedUtterance": "_user_text",
-        "botResponse": "Sedan 1 april är det besöksförbud på alla äldreboenden för att förhindra spridningen av covid19. Nu när covid19 sprids ute i samhället är det extra viktigt att skydda äldre från smitta. Ha inte närkontakt med personer som är över 70 år om det inte är helt nödvändigt. Stanna hellre hemma om du känner dig sjuk, även om du bara är lite förkyld. Covid19 kan ge lindriga symptom som liknar en förkylning, men vara dödlig för andra, så det är viktigt att vara vaksam."
+        "botResponse": "Nu när covid-19 sprids ute i samhället är det extra viktigt att skydda äldre från smitta. Därför är det besöksförbud på alla äldreboenden sedan 1 april. Ha inte närkontakt med personer som är över 70 år om det inte är helt nödvändigt. Covid-19 kan ge lindriga symptom så se till att stanna hemma om du känner dig minsta sjuk."
       },
       "goto": "VERIFY_ANSWER"
     }
@@ -1468,18 +1534,41 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "vilka är _RISC",
         "Jag har _DISEASE är det farligare att få _CORONA då?",
         "Är _CORONA farligt om _PERS_PRON har _DISEASE?",
-        "Är _PERS_PRON i _RISC"
+        "Är _PERS_PRON i _RISC",
+        "Hur vet _PERS_PRON ifall _PERS_PRON är i _RISC",
+        "jag har _DISEASE vad händer då",
+        "är _DISEASE en _RISC",
+        "Jag saknar mjälte",
+        "Vilka är de främsta riskgrupperna?",
+        "jag har opererad mjälte",
+        "Hur påverkar _DISEASE _CORONA",
+        "Jag är allergiker, är jag i en riskgrupp?",
+        "Vad händer om man har _DISEASE",
+        "är _DISEASE en riskfaktor",
+        "Riskgrupp _DISEASE",
+        "Hur påverkar astma Corona?",
+        " Är _DISEASE en riskfaktor?",
+        "Är man riskgrupp om man har allergi?",
+        "Jag är allergisk",
+        "högt blodtryck",
+        "Är _CORONA farligare om _PERS_PRON har högt blodtryck",
+        "_PERS_PRON har högt blodtryck, är _CORONA farligare då?",
+        "Är jag i riskgrupp om jag har diabetes men är 40 år?",
+        "Vilka underliggande sjukdomar ökar risken att dö av covid19?",
+        "jag har astma, vad händer då?",
+        "vilka är de främsta riskgrupperna?",
+        ""
       ]
     },
     "bot": {
       "say": {
-        "text": "Personer över 70 år är den främsta riskgruppen. Personer med underliggande sjukdomar som högt blodtryck, hjärt- kärlsjukdom, lungsjukdom eller diabetes löper större risk att drabbas allvarligt av covid19. ",
+        "text": "Personer över 70 år är den främsta riskgruppen. Personer med underliggande sjukdomar som högt blodtryck, hjärt- kärlsjukdom, lungsjukdom eller diabetes löper större risk att drabbas allvarligt av covid-19. ",
         "ssml": "Personer över 70 år är den främsta riskgruppen. Personer med underliggande sjukdomar som högt blodtryck, hjärt och kärlsjukdom, lungsjukdom eller diabetes löper också större risk att drabbas allvarligt. "
       },
       "set": {
         "classifiedIntentName": "question: Finns det några särskilda riskgrupper",
         "classifiedUtterance": "_user_text",
-        "botResponse": "Personer över 70 år är den främsta riskgruppen. Personer med underliggande sjukdomar som högt blodtryck, hjärt- kärlsjukdom, lungsjukdom eller diabetes löper större risk att drabbas allvarligt av covid19. "
+        "botResponse": "Personer över 70 år är den främsta riskgruppen. Personer med underliggande sjukdomar som högt blodtryck, hjärt- kärlsjukdom, lungsjukdom eller diabetes löper större risk att drabbas allvarligt av covid-19. "
       },
       "goto": "VERIFY_ANSWER"
     }
@@ -1513,7 +1602,9 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "vad _CAN _PERS_PRON göra för att minska spridningen av _CORONA",
         "hur _CAN _PERS_PRON skydda _REF_PRON mot _CORONA",
         "hur skyddar _PERS_PRON _REF_PRON själv och andra",
-        "Hur bör jag bete mig"
+        "Hur bör jag bete mig",
+        "Ja, hur gör _PERS_PRON så att _PERS_PRON inte blir smittad av _CORONA",
+        ""
       ]
     },
     "bot": {
@@ -1555,7 +1646,11 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Hur blir det om _PERS_PRON får _CORONA",
         "Hur _PERS_PRON om _PERS_PRON får _CORONA",
         "Hur _PERS_PRON om _PERS_PRON har _CORONA",
-        "är _CORONA farligt"
+        "är _CORONA farligt",
+        "Vad ska _PERS_PRON göra om _PERS_PRON får _CORONA",
+        "Får man lunginflammation?",
+        "Vad händer i kroppen?",
+        ""
       ]
     },
     "bot": {
@@ -1908,7 +2003,9 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "_CAN _PERS_PRON vaccinera _REF_PRON",
         "när finns medicin mot _CORONA",
         "hur lång tid tar vaccinet",
-        "var finns medicin _CORONA"
+        "var finns medicin _CORONA",
+        "Hur botar man corona",
+        ""
       ]
     },
     "bot": {
@@ -1951,7 +2048,14 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "är det farligt med _CO_SYM om _PERS_PRON är gravid",
         "får _CORONA gravid",
         "Rekommendationer för gravida",
-        "vad ska gravida göra"
+        "vad ska gravida göra",
+        "född med _CORONA",
+        "föds med _CORONA",
+        "födas med _CORONA",
+        "Är _CORONA farligt för fostret?",
+        "Är _CORONA farligt för spädbarn?",
+        "Kan bebisar få Corona?",
+        ""
       ]
     },
     "bot": {
@@ -2069,12 +2173,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": {
-        "text": "Se först och främst till att använda dig av tillförlitliga källor för att hämta information om covid19. Begränsa tiden du tar del av nyheter och sociala medier. Försök behåll dina vanliga rutiner och prata gärna med andra om det som oroar dig, men prata också om andra saker än sjukdomar."
+        "text": "Om du känner dig orolig, se först och främst till att använda dig av tillförlitliga källor för att hämta information om covid-19. Begränsa tiden du tar del av nyheter och sociala medier. Försök behåll dina vanliga rutiner och prata gärna med andra om det som oroar dig, men prata också om andra saker än sjukdomar.",
+        "ssml": "Om du känner dig orolig, se först och främst till att använda dig av tillförlitliga källor för att hämta information om covid19. Begränsa tiden du tar del av nyheter och sociala medier. Försök behåll dina vanliga rutiner och prata gärna med andra om det som oroar dig, men prata också om andra saker än sjukdomar."
       },
       "set": {
         "classifiedIntentName": "question: Jag känner mig orolig för covid-19, hur ska jag hantera min oro?",
         "classifiedUtterance": "_user_text",
-        "botResponse": "Se först och främst till att använda dig av tillförlitliga källor för att hämta information om covid19. Begränsa tiden du tar del av nyheter och sociala medier. Försök behåll dina vanliga rutiner och prata gärna med andra om det som oroar dig, men prata också om andra saker än sjukdomar."
+        "botResponse": "Om du känner dig orolig, se först och främst till att använda dig av tillförlitliga källor för att hämta information om covid-19. Begränsa tiden du tar del av nyheter och sociala medier. Försök behåll dina vanliga rutiner och prata gärna med andra om det som oroar dig, men prata också om andra saker än sjukdomar."
       },
       "goto": "VERIFY_ANSWER"
     }
@@ -2175,7 +2280,8 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "hur länge är man _IMMUNE",
         "hur länge varar _IMMUNE",
         "hur länge har man _IMMUNE",
-        "Hur vet _PERS_PRON om _PERS_PRON är _IMMUNE"
+        "Hur vet _PERS_PRON om _PERS_PRON är _IMMUNE",
+        ""
       ]
     },
     "bot": {
@@ -2202,7 +2308,9 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "MY_CHILD": MY_CHILD,
         "OCCUPATION": OCCUPATION,
         "POS_PRON": POS_PRON,
-        "INT_PRON": INT_PRON
+        "INT_PRON": INT_PRON,
+        "CORONA": CORONA,
+        "FAMILYMEMBER": FAMILYMEMBER
       },
       "examples": [
         "Vem ska stanna hemma?",
@@ -2222,7 +2330,20 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Kan _POS_PRON _MY_CHILD gå till _OCCUPATION?",
         "_INT_PRON _CAN stanna hemma?",
         "_CAN _PERS_PRON vara hemma om _PERS_PRON har _CO_SYM",
-        "_PERS_PRON är sjuk"
+        "_PERS_PRON är sjuk",
+        "_PERS_PRON har _CO_SYM",
+        "_PERS_PRON är sjuk, vad _CAN _PERS_PRON göra",
+        "göra om _PERS_PRON har _CO_SYM",
+        "Jag är sjuk. Vad ska jag göra?",
+        "Jag _CO_SYM",
+        "Jag nyser är det _CORONA",
+        "om jag har ont i halsen ont i huvudet och nyser",
+        "_PERS_PRON _CO_SYM skall _PERS_PRON jobba",
+        "_POS_PRON _FAMILYMEMBER är _CO_SYM Kan _PERS_PRON träffa andra",
+        "_PERS_PRON är _CO_SYM Kan _PERS_PRON träffa andra",
+        "_PERS_PRON är _CO_SYM Kan _PERS_PRON ha gäster",
+        "_POS_PRON _FAMILYMEMBER är _CO_SYM Kan _PERS_PRON ha gäster",
+        ""
       ]
     },
     "bot": {
@@ -2705,17 +2826,20 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "_CAN _PERS_PRON vaccinera _REF_PRON mot _CORONA",
         "finns det _TREATMENT eller _TREATMENT mot _CORONA?",
         "hur kan _PERS_PRON behandla själv",
+        "Vad ska man göra för att bli frisk från _CORONA",
+        "Hur blir man frisk från _CORONA",
         ""
       ]
     },
     "bot": {
       "say": {
-        "text": "I nuläget finns det inget vaccin eller speciellt läkemedel mot covid19. Internationella studier av olika typer av läkemedelsbehandlingar pågår och forskning sker kring utveckling av ett vaccin."
+        "text": "Stanna hemma om du känner dig sjuk. I nuläget finns det inget vaccin eller speciellt läkemedel mot covid-19. Internationella studier av olika typer av läkemedelsbehandlingar pågår och forskning sker kring utveckling av ett vaccin. ",
+        "ssml": "I nuläget finns det inget vaccin eller speciellt läkemedel mot covid19. Internationella studier av olika typer av läkemedelsbehandlingar pågår och forskning sker kring utveckling av ett vaccin."
       },
       "set": {
         "classifiedIntentName": "question: Finns det vaccin eller behandling mot covid-19",
         "classifiedUtterance": "_user_text",
-        "botResponse": "I nuläget finns det inget vaccin eller speciellt läkemedel mot covid19. Internationella studier av olika typer av läkemedelsbehandlingar pågår och forskning sker kring utveckling av ett vaccin."
+        "botResponse": "Stanna hemma om du känner dig sjuk. I nuläget finns det inget vaccin eller speciellt läkemedel mot covid-19. Internationella studier av olika typer av läkemedelsbehandlingar pågår och forskning sker kring utveckling av ett vaccin. "
       },
       "goto": "VERIFY_ANSWER"
     }
@@ -3252,7 +3376,8 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "varför bedrivs inte _DIG_SCHOOL för barn i _SCHOOL?",
         "behöver barn på _SCHOOL stanna hemifrån?",
         "kommer _DIG_SCHOOL ske för barn på _SCHOOL?",
-        "varför bedrivs inte _DIG_SCHOOL för barn på _SCHOOL?"
+        "varför bedrivs inte _DIG_SCHOOL för barn på _SCHOOL?",
+        ""
       ]
     },
     "bot": {
@@ -3645,60 +3770,6 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": {
-      "name": "question: Om en person i familjen är sjuk - måste alla stanna hemma då? ",
-      "entities": {
-        "CAN": CAN,
-        "INFECTED": INFECTED,
-        "IF": IF,
-        "PERS_PRON": PERS_PRON,
-        "SYMPTOM": SYMPTOM,
-        "SCHOOL": SCHOOL,
-        "VISIT": VISIT,
-        "OCCUPATION": OCCUPATION,
-        "CORONA": CORONA,
-        "MY_CHILD": MY_CHILD,
-        "POS_PRON": POS_PRON,
-        "CLOSE_PERSON": CLOSE_PERSON,
-        "CO_SYM": CO_SYM,
-        "INT_PRON": INT_PRON,
-        "FAMILYMEMBER": FAMILYMEMBER
-      },
-      "examples": [
-        "Om en person i familjen är sjuk - måste alla stanna hemma då? ",
-        "_CAN alla i familjen stanna hemma om en är _INFECTED?",
-        "_CAN _PERS_PRON stanna hemma _IF någon i hushållet är sjuk?",
-        "om någon i hushållet är _INFECTED utan _SYMPTOM, måste resten av hushållet stanna hemma då?",
-        "_CAN _PERS_PRON _VISIT _SCHOOL även om någon i familjen är sjuk?",
-        "_CAN _PERS_PRON _VISIT _OCCUPATION även fast någon i hushållet är _INFECTED?",
-        "_MY_CHILD är sjuk i _CORONA ska _PERS_PRON stanna hemma? ",
-        "_POS_PRON kollega är _INFECTED kan _PERS_PRON gå till jobbet",
-        "_PERS_PRON bor med någon som har _CORONA _CAN _PERS_PRON stanna hemma ",
-        "_CAN _MY_CHILD vara hemma?",
-        "_PERS_PRON _CLOSE_PERSON är _INFECTED _CAN _PERS_PRON ",
-        "_PERS_PRON _CLOSE_PERSON har _CO_SYM _CAN _PERS_PRON ",
-        "_PERS_PRON _CLOSE_PERSON _CO_SYM _INT_PRON _CAN",
-        "_PERS_PRON _FAMILYMEMBER är _INFECTED _CAN _PERS_PRON göra",
-        "_POS_PRON _FAMILYMEMBER ÄR _INFECTED vad _CAN _PERS_PRON göra?",
-        "_PERS_PRON har _CLOSE_PERSON med _CORONA",
-        "Om en i familjen är sjuk, blir alla sjuka då?",
-        "min mamma är sjuk vad ska jag göra",
-        "Behöver min sambo stanna hemma om jag är sjuk?"
-      ]
-    },
-    "bot": {
-      "say": {
-        "text": "Så länge du inte har symptom kan du göra som vanligt. Det är dock väldigt viktigt att vara extra uppmärksam på symptom i familjer eller hushåll där någon är sjuk. "
-      },
-      "set": {
-        "classifiedIntentName": "question: Om en person i familjen är sjuk - måste alla stanna hemma då? ",
-        "classifiedUtterance": "_user_text",
-        "botResponse": "Så länge du inte har symptom kan du göra som vanligt. Det är dock väldigt viktigt att vara extra uppmärksam på symptom i familjer eller hushåll där någon är sjuk. "
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
       "name": "question: Hur vet jag om mina symtom beror på pollenallergi eller på covid-19? ",
       "entities": {
         "CORONA": CORONA,
@@ -3724,6 +3795,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Har _PERS_PRON pollenallergi eller corona?",
         "Hur vet _PERS_PRON om _POS_PRON _SYMPTOM beror på pollenallergi eller på _CORONA? ",
         "_INT_PRON är skillnaderna på _CORONA och pollenallergi?",
+        "Jag är allergisk",
         ""
       ]
     },
@@ -4374,6 +4446,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Du är bäst",
         "well done guys!",
         "👏👏👏👏👏👏",
+        "tack själv",
         ""
       ]
     },
@@ -4453,7 +4526,9 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "döende i _CORONA",
         "håller på att dö",
         "måste jag gå till sjukhus som jag känner om jag får andningsbesvär",
-        "måste jag in till sjukhuset om jag får andningsbesvär"
+        "måste jag in till sjukhuset om jag får andningsbesvär",
+        "Hur vet jag när jag ska åka in till sjukhus        Hur vet jag om jag har corona och ska åka in till sjukhus",
+        ""
       ]
     },
     "bot": {
@@ -5025,7 +5100,8 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Kommer HEALTCARE klara av alla som är _INFECTED?",
         "_CAN intensivvården klara alla som får _CORONA?",
         "Har _PERS_PRON tillräckligt med intensivvårdsplatser i Sverige?",
-        "intensivvårdplatser"
+        "intensivvårdplatser",
+        ""
       ]
     },
     "bot": {
@@ -5218,6 +5294,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "kan _PERS_PRON hänga med _POS_PRON vänner",
         "kan _PERS_PRON och _POS_PRON vänner ses",
         "kan _PERS_PRON gå till _POS_PRON vänner",
+        "Kan man träffa sina kusiner?",
         ""
       ]
     },
@@ -5422,7 +5499,18 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "CAN": CAN,
         "REF_PRON": REF_PRON,
         "CORONA": CORONA,
-        "MY_CHILD": MY_CHILD
+        "MY_CHILD": MY_CHILD,
+        "INFECTED": INFECTED,
+        "IF": IF,
+        "SYMPTOM": SYMPTOM,
+        "SCHOOL": SCHOOL,
+        "VISIT": VISIT,
+        "OCCUPATION": OCCUPATION,
+        "POS_PRON": POS_PRON,
+        "CLOSE_PERSON": CLOSE_PERSON,
+        "CO_SYM": CO_SYM,
+        "INT_PRON": INT_PRON,
+        "FAMILYMEMBER": FAMILYMEMBER
       },
       "examples": [
         "Måste jag isolera mig från familjen?",
@@ -5432,6 +5520,25 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "_CAN den som har _CORONA isolera _REF_PRON från övriga familjen?",
         "_CAN _PERS_PRON isolera _REF_PRON från _MY_CHILD?",
         "Om någon jag bor med varit sjuk, måste jag sitta i karantän?",
+        "Om en person i familjen är sjuk - måste alla stanna hemma då? ",
+        "_CAN alla i familjen stanna hemma om en är _INFECTED?",
+        "_CAN _PERS_PRON stanna hemma _IF någon i hushållet är sjuk?",
+        "om någon i hushållet är _INFECTED utan _SYMPTOM, måste resten av hushållet stanna hemma då?",
+        "_CAN _PERS_PRON _VISIT _SCHOOL även om någon i familjen är sjuk?",
+        "_CAN _PERS_PRON _VISIT _OCCUPATION även fast någon i hushållet är _INFECTED?",
+        "_MY_CHILD är sjuk i _CORONA ska _PERS_PRON stanna hemma? ",
+        "_POS_PRON kollega är _INFECTED kan _PERS_PRON gå till jobbet",
+        "_PERS_PRON bor med någon som har _CORONA _CAN _PERS_PRON stanna hemma ",
+        "_CAN _MY_CHILD vara hemma?",
+        "_PERS_PRON _CLOSE_PERSON är _INFECTED _CAN _PERS_PRON ",
+        "_PERS_PRON _CLOSE_PERSON har _CO_SYM _CAN _PERS_PRON ",
+        "_PERS_PRON _CLOSE_PERSON _CO_SYM _INT_PRON _CAN",
+        "_PERS_PRON _FAMILYMEMBER är _INFECTED _CAN _PERS_PRON göra",
+        "_POS_PRON _FAMILYMEMBER ÄR _INFECTED vad _CAN _PERS_PRON göra?",
+        "_PERS_PRON har _CLOSE_PERSON med _CORONA",
+        "Om en i familjen är sjuk, blir alla sjuka då?",
+        "min mamma är sjuk vad ska jag göra",
+        "Behöver min sambo stanna hemma om jag är sjuk?",
         ""
       ]
     },
@@ -5991,6 +6098,8 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Kan man få värk i bröstet av Corona?",
         "Ont i ryggen",
         "Nej om jag har ont i huvudet",
+        "Jag är trött ont i huvudet",
+        "_PERS_PRON har hosta. Kan jag ha _CORONA",
         ""
       ]
     },
@@ -6143,9 +6252,39 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "question: Kan jag bli smittad i skogen?",
-      "entities": {},
+      "entities": {
+        "PERS_PRON": PERS_PRON
+      },
       "examples": [
         "Kan jag bli smittad i skogen?",
+        "Kan jag bli smittad i naturen",
+        "finns viruset i skogen",
+        "blir man sjuk av friluttsliv",
+        "är det farligt att vara i naturen",
+        "är det farligt att vara i skogen",
+        "kan _PERS_PRON få corona av att vara i skogen",
+        "borde _PERS_PRON hålla sig borta från skogen",
+        ""
+      ]
+    },
+    "bot": {
+      "say": {
+        "text": "Riskerna för att bli smittad i naturen beror på hur troligt det är att du träffar andra människor där eller på vägen dit och hem. Det är bra att komma ut och röra på sig, men se till att du behåller avstånd till andra människor. Om du har sjukdomssymptom skall du dock alltid stanna hemma."
+      },
+      "set": {
+        "classifiedIntentName": "question: Kan jag bli smittad i skogen?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": "Riskerna för att bli smittad i naturen beror på hur troligt det är att du träffar andra människor där eller på vägen dit och hem. Det är bra att komma ut och röra på sig, men se till att du behåller avstånd till andra människor. Om du har sjukdomssymptom skall du dock alltid stanna hemma."
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Vem är Anders Tegnell",
+      "entities": {},
+      "examples": [
+        "Vem är Anders Tegnell",
         ""
       ]
     },
@@ -6154,7 +6293,98 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "text": "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
       },
       "set": {
-        "classifiedIntentName": "question: Kan jag bli smittad i skogen?",
+        "classifiedIntentName": "question: Vem är Anders Tegnell",
+        "classifiedUtterance": "_user_text",
+        "botResponse": "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Är man riskgrupp om man har allergi?",
+      "entities": {},
+      "examples": [
+        "Är man riskgrupp om man har allergi?",
+        "",
+        "Jag är allergiker, är jag i en riskgrupp?"
+      ]
+    },
+    "bot": {
+      "say": {
+        "text": "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+      },
+      "set": {
+        "classifiedIntentName": "question: Är man riskgrupp om man har allergi?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Vem ska gå till apoteket när jag är isolerad?",
+      "entities": {
+        "PERS_PRON": PERS_PRON
+      },
+      "examples": [
+        "Vem ska gå till apoteket när jag är isolerad?",
+        "_PERS_PRON kan inte gå till apoteket",
+        ""
+      ]
+    },
+    "bot": {
+      "say": {
+        "text": "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+      },
+      "set": {
+        "classifiedIntentName": "question: Vem ska gå till apoteket när jag är isolerad?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Får jag gå på teater?",
+      "entities": {
+        "BIG_EVENT": BIG_EVENT
+      },
+      "examples": [
+        "Får jag gå på teater?",
+        "får jag gå på _BIG_EVENT",
+        ""
+      ]
+    },
+    "bot": {
+      "say": {
+        "text": "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+      },
+      "set": {
+        "classifiedIntentName": "question: Får jag gå på teater?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
+      "name": "question: Varför är uteserveringarna öppna?",
+      "entities": {},
+      "examples": [
+        "Varför är uteserveringarna öppna?",
+        ""
+      ]
+    },
+    "bot": {
+      "say": {
+        "text": "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+      },
+      "set": {
+        "classifiedIntentName": "question: Varför är uteserveringarna öppna?",
         "classifiedUtterance": "_user_text",
         "botResponse": "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
       },
@@ -6992,6 +7222,29 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": {
+      "name": "question: Behöver man sitta i karantän om man varit utomlands?",
+      "entities": {},
+      "examples": [
+        "Behöver man sitta i karantän om man varit utomlands?",
+        "Utland",
+        "utlandsresa",
+        ""
+      ]
+    },
+    "bot": {
+      "say": {
+        "text": "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+      },
+      "set": {
+        "classifiedIntentName": "question: Behöver man sitta i karantän om man varit utomlands?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan vi tyvärr inte svara på den i nuläget."
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
       "name": "question: Vad är John Hopkins?",
       "entities": {},
       "examples": [
@@ -7406,6 +7659,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
       "entities": {},
       "examples": [
         "Kan jag ha haft covid-19 i december?",
+        "Kommer man som jobbar inom exempelvis skola få testa sig? Bra att veta om man haft det.",
         ""
       ]
     },
@@ -7490,6 +7744,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
       "entities": {},
       "examples": [
         "Vad betyder epidemiologi",
+        "Vad är en epidemiolog",
         ""
       ]
     },
@@ -7900,13 +8155,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": {
-        "text": "hoppas du fick svar på det du undrade om. Välkommen tillbaka om du har fler frågor!",
+        "text": "Hoppas du fick svar på det du undrade om. Välkommen tillbaka om du har fler frågor!",
         "ssml": "Sofie"
       },
       "set": {
         "classifiedIntentName": "question: Hej då roboten.",
         "classifiedUtterance": "_user_text",
-        "botResponse": "hoppas du fick svar på det du undrade om. Välkommen tillbaka om du har fler frågor!"
+        "botResponse": "Hoppas du fick svar på det du undrade om. Välkommen tillbaka om du har fler frågor!"
       },
       "goto": "VERIFY_ANSWER"
     }

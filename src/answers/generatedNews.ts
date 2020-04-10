@@ -1,6 +1,6 @@
 import { BotTurn, BridgeTurn } from "narratory"
 
-// Generated at Thursday, April 9th 2020, 3:06:01 pm
+// Generated at Friday, April 10th 2020, 11:29:40 am
 
 export const presentNews : BridgeTurn[] = [
   {
@@ -18,8 +18,8 @@ export const presentNews : BridgeTurn[] = [
         "say": {
           "text": "Vill du ha de senaste siffrorna?",
           "suggestions": [
-            "Yes",
-            "No"
+            "Ja",
+            "Nej"
           ]
         },
         "expectShortAnswer": true,
@@ -69,8 +69,8 @@ export const presentNews : BridgeTurn[] = [
         "say": {
           "text": "Vill du ha de senaste siffrorna?",
           "suggestions": [
-            "Yes",
-            "No"
+            "Ja",
+            "Nej"
           ]
         },
         "expectShortAnswer": true,
@@ -123,7 +123,7 @@ export const textStats : BridgeTurn = {
         "title": "Statistik",
         "image": {
           "type": "image",
-          "url": "https://ibb.co/Y2NT2fn",
+          "url": "https://i.ibb.co/rkQfk58/Statistik-FHM-9april.png",
           "alt": "Statistik"
         }
       }

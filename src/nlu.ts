@@ -1,20 +1,92 @@
 import { Entity, Intent, entities } from "narratory"
 import { CORONA, HEALTHCARE } from "./answers/generatedFAQ"
 
-const symptom: Entity = {
-  name: "Symptom",
+const region: Entity = {
+  name: "Region",
   enums: [
     {
-      name: "feber",
-      alts: ["hög temperatur", "frossa"],
+      name: "blekinge",
+      alts: ["blekinge län", "karlskrona"],
     },
     {
-      name: "luftvägar",
-      alts: ["problem med andning", "andningsproblem", "andningssvårigheter"],
+      name: "dalarna",
+      alts: ["dalarnas län", "falun"],
     },
     {
-      name: "hosta",
-      alts: ["hostig"],
+      name: "gotland",
+      alts: ["gotlands län", "visby"],
+    },
+    {
+      name: "gävleborg",
+      alts: ["gävleborgs län", "gävle"],
+    },
+    {
+      name: "halland",
+      alts: ["hallands län", "halmstad"],
+    },
+    {
+      name: "jämtland",
+      alts: ["jämtlands län", "östersund"],
+    },
+    {
+      name: "jönköping",
+      alts: ["jönköpings län"],
+    },
+    {
+      name: "kalmar",
+      alts: ["kalmar län"],
+    },
+    {
+      name: "kronoberg",
+      alts: ["kronobergs län", "växjö"],
+    },
+    {
+      name: "norrbotten",
+      alts: ["norrbottens län"],
+    },
+    {
+      name: "skåne",
+      alts: ["skåne län", "malmö", "helsingborg", "lund"],
+    },
+    {
+      name: "stockholm",
+      alts: ["stockholms län", "upplands väsby", "sollentuna", "södertälje"],
+    },
+    {
+      name: "södermanland",
+      alts: ["södermanlands län", "sörmland", "eskilstuna"],
+    },
+    {
+      name: "uppsala",
+      alts: ["uppsala län"],
+    },
+    {
+      name: "värmland",
+      alts: ["värmlands län", "karlstad"],
+    },
+    {
+      name: "västerbotten",
+      alts: ["västerbottens län", "umeå"],
+    },
+    {
+      name: "västernorrland",
+      alts: ["västernorrlands län"],
+    },
+    {
+      name: "västmanland",
+      alts: ["västmanlands län", "västerås"],
+    },
+    {
+      name: "västa götaland",
+      alts: ["västa götalands län", "göteborg", "borås"],
+    },
+    {
+      name: "örebro",
+      alts: ["örebro län"],
+    },
+    {
+      name: "östergötland",
+      alts: ["östergötlands län", "linköping", "norrköping"],
     },
   ],
 }
@@ -90,29 +162,26 @@ export const queryNews: Intent = {
   ],
 }
 
-export const queryHowToProtect: Intent = {
-  examples: [
-    "hur skyddar jag mig",
-    "hur skyddar vi oss",
-    "hur skyddar vi oss från corona",
-    "hur skyddar vi oss från covid",
-    "hur skyddar vi oss från viruset",
-  ],
-}
-
-export const regionAnswer: Intent = {
+export const queryInfectedLocation: Intent = {
   entities: {
-    city: entities.geoCity,
-    state: entities.geoState,
-  },
-  examples: ["_city", "_state", "jag bor i _city", "i _city", "jag bor i _state", "i _state"],
-}
-export const queryRegionStatus: Intent = {
-  entities: {
-    city: entities.geoCity,
-    state: entities.geoState,
+    corona: CORONA,
+    country: entities.geoCountry,
+    myRegion: region
   },
   examples: [
+    "hur många är sjuka i _country",
+    "hur många har blivit smittade av _corona i _country",
+    "hur många i _country har _corona",
+    "hur många har _corona i _country",
+    "hur många är smittade",
+    "hur många procent av _country befolkning är smittade",
+    "hur många har _corona",
+    "hur snabbt sprids smittan",
+    "hur många har infekteras av _corona",
+    "hur många är smittade i _country",
+    "hur många i _country är smittade",
+    "hur många är smittade med _corona i _country?",
+    "hur många har infekteras av _corona",
     "vad är status i min region",
     "är det hög risk i min region",
     "är det hög risk där jag bor",
@@ -122,6 +191,52 @@ export const queryRegionStatus: Intent = {
     "vad är status i _state",
     "hur många är smittade i _city",
     "hur många är smittade i _state",
+  ]
+}
+
+/* WIP
+
+export const queryIntensiveCareLocation: Intent = {
+  entities: {
+    corona: CORONA,
+    country: entities.geoCountry,
+    state: entities.geoState,
+    city: entities.geoCity
+
+  },
+  examples: [
+    "hur många intensivvårdas idag?",
+    "hur många är som intensivvård us Just idag
+hur många ligger på intensivvården
+hur många är allvarligt sjuka
+
+  ]
+
+export const queryDeadLocation: Intent = {
+  entities: {
+    corona: CORONA,
+    country: entities.geoCountry,
+    state: entities.geoState,
+    city: entities.geoCity
+
+  },
+  */
+
+export const regionAnswer: Intent = {
+  entities: {
+    city: entities.geoCity,
+    state: entities.geoState,
+  },
+  examples: ["_city", "_state", "jag bor i _city", "i _city", "jag bor i _state", "i _state"],
+}
+
+export const queryHowToProtect: Intent = {
+  examples: [
+    "hur skyddar jag mig",
+    "hur skyddar vi oss",
+    "hur skyddar vi oss från corona",
+    "hur skyddar vi oss från covid",
+    "hur skyddar vi oss från viruset",
   ],
 }
 

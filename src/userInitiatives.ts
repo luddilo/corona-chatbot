@@ -7,6 +7,7 @@ import { answerStayHome } from "./answers/answerStayhome"
 import { answerFamily } from "./answers/answerFamily"
 import { answerHelp } from "./answers/answerHelp"
 import { answerDiagnosis } from "./answers/answerDiagnosis"
+//import { answerInfectedLocation } from "./answers/answerStatistics"
 import { presentNews } from "./answers/generatedNews"
 
 /*
@@ -34,13 +35,14 @@ const questions: UserTurn[] = [
   { intent: nlu.queryNews,
     bot: presentNews
   },
+  /*
+  { intent: nlu.queryInfectedLocation,
+    bot: answerInfectedLocation
+  },
+  */
   {
     intent: nlu.queryHowToProtect,
     bot: answerProtect
-  },
-  {
-    intent: nlu.queryRegionStatus,
-    bot: answerRegion
   },
   {
     intent: nlu.queryStayHome,

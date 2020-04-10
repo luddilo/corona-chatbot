@@ -1,14 +1,11 @@
-import { BotTurn, ANYTHING, BridgeTurn } from "narratory"
-import * as nlu from "../nlu"
-
-//just copied from answerInfected for now
+import { BotTurn, BridgeTurn } from "narratory"
 
 export const answerDead: Array<BridgeTurn | BotTurn> = [
     {
         cond: {
             region: true
         }, 
-        say: "Tyvärr har jag ingen regional data över dödsfall, men i hela Sverige har sammanlagt _deceased dött av covid19 ",
+        say: "Tyvärr har jag ingen regional data över dödsfall, men i hela Sverige har sammanlagt _deceased personer dött av covid19.",
     },
     {
         cond: {

@@ -232,7 +232,8 @@ export const queryDead: Intent = {
     "hur många dör av _corona i _country",
     "hur många har dött i _region",
     "vad är dödstalet i _region",
-    "hur många dog av _corona _day"
+    "hur många dog av _corona _day",
+    "hur många dog _day"
   ]
 }
 

@@ -11,9 +11,9 @@ export const answerIntensiveCare: Array<BridgeTurn | BotTurn> = [
         cond: {
             day: "idag"
         },
-        say: "Jag kan tyvärr inte svara hur många som intensivvårdas just nu, men sedan utbrottet har vi i Sverige sammanlagt haft _intensive_care patienter i intensivvård till följd av covid19"
+        say: "Jag kan tyvärr inte svara hur många som intensivvårdas just nu, men i Sverige har vi sammanlagt haft _intensive_care patienter i intensivvård till följd av covid19"
     },
     {
-        say: "Sedan utbrottet har vi i Sverige sammanlagt haft _intensive_care patienter i intensivvård till följd av covid19."
+        say: "I Sverige har vi sammanlagt haft _intensive_care patienter i intensivvård till följd av covid19."
     }
 ]

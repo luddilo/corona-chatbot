@@ -48,14 +48,13 @@ const questions: UserTurn[] = [
   {
     intent: nlu.queryIntensiveCare, bot: {
       url: "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/statistics",
-      params: ["region"],
       bot: answerIntensiveCare
     }
   },
   {
     intent: nlu.queryDead, bot: {
       url: "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/statistics",
-      params: ["region", "country"],
+      params: ["country"],
       bot: answerDead
     }
   },

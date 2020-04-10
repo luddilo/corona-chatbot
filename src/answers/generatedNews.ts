@@ -1,25 +1,25 @@
 import { BotTurn, BridgeTurn } from "narratory"
 
-// Generated at Thursday, April 9th 2020, 10:41:22 am
+// Generated at Friday, April 10th 2020, 11:29:40 am
 
 export const presentNews : BridgeTurn[] = [
   {
     "say": {
-      "text": "På Folkhälsomyndighetens senaste presskonferens nämnde stads epidemolog Anders Täg nell bland annat att 40% av de avlidna över 70 år i Stockholm har varit folkbokförda på ett äldreboende. För resten av landet är samma siffra bara 4%. "
+      "text": "På Folkhälsomyndighetens senaste presskonferens ville stattseppidämolog Anders Täggh hnel klargöra att trots att kurvan är plan, så ökar det totala antalet fall, och trycket på vården kommer inte att minska i första taget. <break time=\\\"1s\\\"/> Täggh hnel påpekade även att trängsel på restauranger och i butiker inte bara är verksamhetens ansvar, utan vi har alla ett personligt ansvar."
     },
     "cond": {
       "platform": "voximplant"
     },
     "bot": {
       "say": {
-        "text": "Vad gäller diskussionen om de vårdanställda som testats positivt för coronaviruset trots att de har varit helt symptomfria, påpekade Täg nell att de det framför allt är de med symptom som smittar andra. <break time=\\\"1s\\\"/> "
+        "text": "Resultat har kommit från förra veckans undersökning som gjordes på slumpvis utvalda personer i Stockholm, och av dessa var det då 2,5% som bar på viruset. Samma undersökning ska göras i hela Sverige, och användas för att räkna ut hur många som är immuna. <break time=\\\"1s\\\"/> "
       },
       "bot": {
         "say": {
           "text": "Vill du ha de senaste siffrorna?",
           "suggestions": [
-            "Yes",
-            "No"
+            "Ja",
+            "Nej"
           ]
         },
         "expectShortAnswer": true,
@@ -59,18 +59,18 @@ export const presentNews : BridgeTurn[] = [
   },
   {
     "say": {
-      "text": "På Folkhälsomyndighetens dagliga presskonferens den 8 april nämnde stadsepidemolog Anders Tegnell bland annat att av de avlidna över 70 år i Stockholmsregionen, har ungefär 40% varit folkbokförda på ett äldreboende, vilket kan jämföras med 4% i resten av landet."
+      "text": "På Folkhälsomyndighetens dagliga presskonferens onsdagen den 9 april ville stadsepidemolog Anders Tegnell klargöra att trots att kurvan är plan så ökar det totala antalet fall och trycket på vården kommer inte att minska i första taget. Tegnell påpekade även att trängsel på restauranger och i butiker inte bara är verksamhetens ansvar utan vi har alla ett personligt ansvar."
     },
     "bot": {
       "say": {
-        "text": "Vad gäller diskussionen om de vårdanställda som testats positivt för coronaviruset trots att de har varit helt symptomfria, påpekade Tegnell att det framför allt är de med symptom som smittar andra"
+        "text": "Resultat har kommit från förra veckans undersökning som gjordes på slumpvis utvalda personer i Stockholm och av dessa var det då 2,5% som bar på viruset. Samma undersökning ska göras i hela Sverige och användas för att räkna ut hur många som är immuna."
       },
       "bot": {
         "say": {
           "text": "Vill du ha de senaste siffrorna?",
           "suggestions": [
-            "Yes",
-            "No"
+            "Ja",
+            "Nej"
           ]
         },
         "expectShortAnswer": true,
@@ -112,18 +112,18 @@ export const presentNews : BridgeTurn[] = [
 
 export const textStats : BridgeTurn = {
   "say": {
-    "text": "Globalt är cirka 1,4 miljoner människor bekräftat smittade och 81000 döda, varav ungefär hälften i Europa."
+    "text": "Globalt är cirka 1,48 miljoner människor bekräftat smittade och 88000 döda."
   },
   "label": "SHARE_STATS_TEXT",
   "bot": {
     "say": {
-      "text": "I Sverige är kurvan plan och siffrorna ser ut såhär",
+      "text": "I Sverige är kurvan fortsatt stabil siffrorna ser ut såhär",
       "content": {
         "type": "card",
         "title": "Statistik",
         "image": {
           "type": "image",
-          "url": "https://i.ibb.co/XDb5KGZ/Corona-liggande-8april-1.png",
+          "url": "https://i.ibb.co/rkQfk58/Statistik-FHM-9april.png",
           "alt": "Statistik"
         }
       }
@@ -133,7 +133,7 @@ export const textStats : BridgeTurn = {
 
 export const voiceStats : BotTurn = {
   "say": {
-    "text": "Globalt är cirka 1,4 miljoner människor bekräftat smittade och 81000 döda, varav ungefär hälften i Europa. I Sverige har vi ungefär 8400 bekräftade fall av covid19, varav 678 har intensivvårdats. Vi är nu uppe i 687 rapporterade dödsfall."
+    "text": "Globalt är cirka en komma fyrtioåtta miljoner människor bekräftat smittade och åttioåttatusen döda. I Sverige har vi ungefär 9100 bekräftade fall av covid19. Vi är nu uppe i 793 rapporterade dödsfall."
   },
   "label": "SHARE_STATS_VOICE"
 }

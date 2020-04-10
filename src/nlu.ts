@@ -182,15 +182,7 @@ export const queryInfectedLocation: Intent = {
     "hur många i _country är smittade",
     "hur många är smittade med _corona i _country?",
     "hur många har infekteras av _corona",
-    "vad är status i min region",
-    "är det hög risk i min region",
-    "är det hög risk där jag bor",
-    "är det hög risk i _city",
-    "är det hög risk i _state",
-    "vad är status i _city",
-    "vad är status i _state",
-    "hur många är smittade i _city",
-    "hur många är smittade i _state",
+    "hur många är smittade i _region",
   ]
 }
 

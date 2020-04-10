@@ -42,7 +42,7 @@ const recursivelyCreateBridgeTurns = ({
         },
       ]
       turn.expectShortAnswer = true
-      turn.say.suggestions = ["Yes", "No"]
+      turn.say.suggestions = ["Ja", "Nej"]
       turn.user = userTurns
     }
   }

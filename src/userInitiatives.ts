@@ -7,7 +7,9 @@ import { answerStayHome } from "./answers/answerStayhome"
 import { answerFamily } from "./answers/answerFamily"
 import { answerHelp } from "./answers/answerHelp"
 import { answerDiagnosis } from "./answers/answerDiagnosis"
-import { answerInfectedLocation } from "./answers/answerStatistics"
+import { answerInfected } from "./answers/answerInfected"
+import { answerIntensiveCare } from "./answers/answerIntensiveCare"
+import { answerDead } from "./answers/answerDead"
 import { presentNews } from "./answers/generatedNews"
 
 /*
@@ -37,10 +39,24 @@ const questions: UserTurn[] = [
     bot: presentNews
   },
   {
-    intent: nlu.queryInfectedLocation, bot: {
+    intent: nlu.queryInfected, bot: {
+      url: "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/statistics",
+      params: ["region", "country"],
+      bot: answerInfected
+    }
+  },
+  {
+    intent: nlu.queryIntensiveCare, bot: {
       url: "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/statistics",
       params: ["region"],
-      bot: answerInfectedLocation
+      bot: answerIntensiveCare
+    }
+  },
+  {
+    intent: nlu.queryDead, bot: {
+      url: "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/statistics",
+      params: ["region", "country"],
+      bot: answerDead
     }
   },
   {

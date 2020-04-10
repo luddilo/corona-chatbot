@@ -90,6 +90,21 @@ const region: Entity = {
     },
   ],
 }
+const day: Entity = {
+  name: "Day",
+  enums: [
+    {
+      name: "idag",
+      alts: ["just nu", "för tillfället"]
+    },
+    {
+      name: "igår",
+    },
+    {
+      name: "i förrgår",
+    },
+  ]
+}
 
 export const yes: Intent = {
   examples: ["ja", "japp", "absolut", "okej", "jajamän", "alright", "yes"],
@@ -162,57 +177,64 @@ export const queryNews: Intent = {
   ],
 }
 
-export const queryInfectedLocation: Intent = {
+export const queryInfected: Intent = {
   entities: {
     corona: CORONA,
     country: entities.geoCountry,
-    myRegion: region
+    region: region
   },
   examples: [
     "hur många är sjuka i _country",
+    "hur många är sjuka i _region",
     "hur många har blivit smittade av _corona i _country",
     "hur många i _country har _corona",
+    "hur många i _region har _corona",
     "hur många har _corona i _country",
-    "hur många är smittade",
     "hur många procent av _country befolkning är smittade",
     "hur många har _corona",
     "hur snabbt sprids smittan",
     "hur många har infekteras av _corona",
     "hur många är smittade i _country",
     "hur många i _country är smittade",
+    "hur många i _region är smittade",
     "hur många är smittade med _corona i _country?",
-    "hur många har infekteras av _corona",
+    "hur många har infekterats av _corona",
     "hur många är smittade i _region",
   ]
 }
 
-/* WIP
-
-export const queryIntensiveCareLocation: Intent = {
+export const queryIntensiveCare: Intent = {
   entities: {
     corona: CORONA,
-    country: entities.geoCountry,
-    state: entities.geoState,
-    city: entities.geoCity
-
+    region: region,
+    day: day
   },
   examples: [
-    "hur många intensivvårdas idag?",
-    "hur många är som intensivvård us Just idag
-hur många ligger på intensivvården
-hur många är allvarligt sjuka
-
+    "hur många intensivvårdas _day",
+    "hur många ligger på iva _day i _region",
+    "hur många har behandlats på iva",
+    "hur många ligger på intensivvården",
+    "hur många är allvarligt sjuka"
   ]
+}
 
-export const queryDeadLocation: Intent = {
+export const queryDead: Intent = {
   entities: {
     corona: CORONA,
     country: entities.geoCountry,
-    state: entities.geoState,
-    city: entities.geoCity
-
+    region: region,
+    day: day
   },
-  */
+  examples: [
+    "hur många har avlidit i _country av _corona",
+    "hur många har dött i _country av _corona",
+    "hur många i _country har dött av _corona",
+    "hur många dör av _corona i _country",
+    "hur många har dött i _region",
+    "vad är dödstalet i _region",
+    "hur många dog av _corona _day"
+  ]
+}
 
 export const regionAnswer: Intent = {
   entities: {

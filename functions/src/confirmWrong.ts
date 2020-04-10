@@ -1,6 +1,6 @@
 import { cloudFunction } from "narratory-cloud"
-import { notifySlack } from "./util/notifySlack"
-import { addErrorToGoogleSheet } from "./util/addToGoogleSheet"
+import { notifySlack } from "./helpers/notifySlack"
+import { addErrorToGoogleSheet } from "./helpers/addToGoogleSheet"
 const config = require("../config.json")
 
 export const confirmWrong = cloudFunction(async (req, res) => {

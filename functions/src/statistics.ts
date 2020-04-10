@@ -9,12 +9,7 @@ let cachedResponse: any
 const hasLatestData = (timeStamp: number) => {
   var yesterday = new Date().setHours(-24, 0, 0, 0)
   var thatDay = new Date(timeStamp).setHours(0, 0, 0, 0)
-
-  if (yesterday === thatDay) {
-    return true
-  } else {
-    return false
-  }
+  return yesterday === thatDay
 }
 
 const getLabelledData = (data: any, label: string) => {

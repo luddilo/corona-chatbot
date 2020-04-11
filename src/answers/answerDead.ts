@@ -5,7 +5,7 @@ export const answerDead: Array<BridgeTurn | BotTurn> = [
         cond: {
             region: true
         }, 
-        say: "Tyvärr har jag ingen regional data över dödsfall, men i hela Sverige har sammanlagt _deceased personer dött av covid19.",
+        say: "I _region har _deceased personer dött av covid19.",
     },
     {
         cond: {
@@ -27,6 +27,6 @@ export const answerDead: Array<BridgeTurn | BotTurn> = [
         say: "_country har _deceased rapporterade dödsfall."
     },
     {
-        say: "Tyvärr har jag ingen global siffra ännu, men Sverige har _deceased rapporterade dödsfall."
+        say: "Tyvärr har jag ingen global siffra i nuläget, men Sverige har _deceased rapporterade dödsfall."
     }
 ]

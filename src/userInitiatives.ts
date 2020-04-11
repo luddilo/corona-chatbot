@@ -2,9 +2,6 @@ import { UserTurn, EXIT } from "narratory"
 import * as nlu from "./nlu"
 import { simpleQuestionAnswers } from "./answers/generatedFAQ"
 import { answerProtect } from "./answers/answerProtect"
-import { answerRegion } from "./answers/answerRegion"
-import { answerStayHome } from "./answers/answerStayhome"
-import { answerFamily } from "./answers/answerFamily"
 import { answerHelp } from "./answers/answerHelp"
 import { answerDiagnosis } from "./answers/answerDiagnosis"
 import { answerInfected } from "./answers/answerInfected"
@@ -62,14 +59,6 @@ const questions: UserTurn[] = [
   {
     intent: nlu.queryHowToProtect,
     bot: answerProtect
-  },
-  {
-    intent: nlu.queryStayHome,
-    bot: answerStayHome
-  },
-  {
-    intent: nlu.queryTakeCareOfFamily,
-    bot: answerFamily
   },
   {
     intent: nlu.queryHelp,

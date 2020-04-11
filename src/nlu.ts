@@ -100,9 +100,6 @@ const day: Entity = {
     {
       name: "igår",
     },
-    {
-      name: "i förrgår",
-    },
   ]
 }
 
@@ -162,6 +159,7 @@ export const queryNeedCare: Intent = {
     "hur vet jag när jag ska ta kontakt med _healthcare",
     "behöver jag gå till _healthcare",
     "jag vill söka _healthcare. hur gör jag",
+    "vad är ett självskattningstest"
   ],
 }
 
@@ -174,6 +172,10 @@ export const queryNews: Intent = {
     "några nyheter",
     "vad har hänt idag",
     "jag undrar hur läget ser ut just idag",
+    "jag vill ha nyheterna",
+    "nyheterna",
+    "senaste",
+    "senaste nytt"
   ],
 }
 
@@ -181,7 +183,7 @@ export const queryInfected: Intent = {
   entities: {
     corona: CORONA,
     country: entities.geoCountry,
-    region: region
+    region: region,
   },
   examples: [
     "hur många är sjuka i _country",
@@ -200,6 +202,12 @@ export const queryInfected: Intent = {
     "hur många är smittade med _corona i _country?",
     "hur många har infekterats av _corona",
     "hur många är smittade i _region",
+    "hur ser smittan ut i _country",
+    "hur ser smittan ut i _region",
+    "hur många har rapporterats smittade",
+    "hur många fall har det varit",
+    "hur många har blivit sjuka totalt",
+    "totalt antal fall",
   ]
 }
 
@@ -214,7 +222,11 @@ export const queryIntensiveCare: Intent = {
     "hur många ligger på iva _day i _region",
     "hur många har behandlats på iva",
     "hur många ligger på intensivvården",
-    "hur många är allvarligt sjuka"
+    "hur många är allvarligt sjuka",
+    "hur många patienter får intensivvård i _region",
+    "hur många har fått intentsivvård i _region",
+    "hur många har intensivvårdats",
+    "hur många har intensvivvårdats i _region"
   ]
 }
 
@@ -233,7 +245,15 @@ export const queryDead: Intent = {
     "hur många har dött i _region",
     "vad är dödstalet i _region",
     "hur många dog av _corona _day",
-    "hur många dog _day"
+    "hur många dog _day",
+    "hur många dödsfall har _country",
+    "hur många dog i _country _day",
+    "hur många har dött av _corona",
+    "hur många har dött i _country",
+    "hur många har dött _day",
+    "hur många har dött",
+    "hur många dödsfall",
+    "hur många dödsfall har det varit"
   ]
 }
 
@@ -253,146 +273,4 @@ export const queryHowToProtect: Intent = {
     "hur skyddar vi oss från covid",
     "hur skyddar vi oss från viruset",
   ],
-}
-
-export const queryStayHome: Intent = {
-  examples: [
-    "Bör jag stanna hemma",
-    "måste jag stanna hemma",
-    "när måste jag vara hemma",
-    "ska jag undvika att gå ut",
-    "ska jag stanna hemma nu",
-  ],
-}
-
-export const querySocializing: Intent = {
-  examples: ["kan jag träffa vänner", "får jag träffa min familj", "kan jag hänga med mina kompisar"],
-}
-
-const family: Entity = {
-  name: "family",
-  enums: [
-    { name: "barn", alts: ["små barn", "bebis", "son", "dotter"] },
-    { name: "äldre", alts: ["farfar", "morfar", "farmor", "mormor", "gamla"] },
-    { name: "familj", alts: ["nära och kära", "kära", "närmaste"] },
-  ],
-}
-
-export const queryTakeCareOfFamily = {
-  entities: {
-    family,
-  },
-  examples: [
-    "hur ska jag ta hand om min _family",
-    "hur ska jag ta hand om mina _family",
-    "hur tar jag hand om _family",
-    "hur vårdar jag _family",
-  ],
-}
-/*
-
-  intent: nlu.queryHowToProtect,
-      bot: ""
-    },
-    {
-      intent: nlu.queryRegionStatus,
-      bot: ""
-    },
-    {
-      intent: nlu.queryStayHome,
-      bot: ""
-    },
-    {
-      intent: nlu.queryTakeCareOfFamily
-*/
-
-export const outOfMedicine: Intent = {
-  examples: [
-    "medicinen är slut",
-    "min medicin är slut",
-    "dom är slut",
-    "tabletterna är slut",
-    "jag har inga kvar",
-    "ingen medicin kvar",
-    "behöver mer medicin",
-    "jag behöver fler tabletter",
-  ],
-}
-
-export const tookAll: Intent = {
-  examples: ["jag tog alla", "jag tog alla som fanns", "alla som fanns", "alla piller"],
-}
-
-const medicine: Entity = {
-  name: "medicineTerm",
-  enums: [{ name: "tabletter", alts: ["tablett", "piller"] }],
-}
-
-export const quantifiedMedicine: Intent = {
-  entities: {
-    pillsTaken: entities.numberInteger,
-    medicine,
-  },
-  examples: ["jag tog _pillsTaken _medicine", "_pillsTaken _medicine", "jag tog _pillsTaken"],
-}
-
-export const quantifier: Intent = {
-  entities: {
-    number: entities.numberInteger,
-  },
-  examples: ["_number", "_number stycken"],
-}
-
-export const feelingGood: Intent = {
-  examples: ["Jag mår bra", "Ganska bra", "bra", "helt okej", "det är bra", "mår fint", "fint"],
-}
-
-export const feelingBad: Intent = {
-  examples: [
-    "Jag mår dåligt",
-    "Inte så bra",
-    "Ganska dåligt",
-    "Jag har en dålig känsla",
-    "Dåligt",
-    "Kasst",
-    "Jag mår illa",
-    "jag mår skit",
-    "skit",
-  ],
-}
-
-const tvTerms: Entity = {
-  name: "tvTerms",
-  enums: [{ name: "tv", alts: ["netflix", "via play", "hbo"] }],
-}
-export const watchedTv: Intent = {
-  entities: {
-    program: entities.any,
-    tvTerms,
-  },
-  examples: [
-    "jag såg på _tvTerms",
-    "jag såg på _program",
-    "programmet hette _program",
-    "jag tittade på _program",
-    "jag tittade på _tvTerms",
-    "jag såg på _program på _tvTerms",
-    "jag tittade på _program på _tvTerms",
-  ],
-}
-
-export const weatherDescriptors: Entity = {
-  name: "weatherDescriptor",
-  enums: [
-    { name: "soligt", alts: ["sol", "solsken", "fint", "bra", "fantastiskt", "klart"] },
-    { name: "regnigt", alts: ["regn", "blött", "dåligt", "tråkigt", "ruskigt", "blåsigt", "storm"] },
-    { name: "molnigt", alts: ["moln", "okej", "grått"] },
-  ],
-}
-
-export const weatherReport: Intent = {
-  entities: {
-    weather: weatherDescriptors,
-  },
-  examples: ["det är _weather", "_weather och _weather", "vädret är _weather", "_weather", "_weather och _weather"],
 }

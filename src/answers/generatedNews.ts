@@ -1,18 +1,18 @@
 import { BotTurn, BridgeTurn } from "narratory"
 
-// Generated at Friday, April 10th 2020, 2:55:25 pm
+// Generated at Saturday, April 11th 2020, 3:00:34 pm
 
 export const presentNews : BridgeTurn[] = [
   {
     "say": {
-      "text": "På den senaste pressträffen nämnde Folkhälsomyndighetens Karin Tegmark Wihsehll ännu en undersökning som kan ge en ledtråd över hur samhällsspridningen ser ut. <break time=\\\"1s\\\"/> Av de personer som sökte sig till öppenvården för luftvägssymtom under vecka 13, var det 7% som hade covid19, en siffra som hade fördubblats till veckan därpå.<break time=\\\"1s\\\"/>"
+      "text": "Idag, lördag den 11 april, uppger Folkhälsomyndigheten att 17 nya dödsfall rapporterats det senaste dygnet -  Sedan igår har även 98 nya smittade bekräftats runt om i landet. "
     },
     "cond": {
       "platform": "voximplant"
     },
     "bot": {
       "say": {
-        "text": "Att de insatser som gjorts hittills har fått önskad effekt, kan man se på att den årliga nedgången av t.ex. vanlig influensa och vinterkräksjuka har varit tvärare än någonsin, och det är fortsatt viktigt att stanna hemma vid minsta lilla sjukdomssymtom.<break time=\\\"1s\\\"/>"
+        "text": "Eftersom det är helg kan det ske en viss eftersläpning i antalet rapporterade fall. "
       },
       "bot": {
         "say": {
@@ -59,11 +59,11 @@ export const presentNews : BridgeTurn[] = [
   },
   {
     "say": {
-      "text": "På dagens pressträff fredagen den 10 april, nämnde Folkhälsomyndighetens Karin Tegmark-Wisell ännu en undersökning som kan ge en ledtråd över hur samhällsspridningen ser ut. Av de personer som sökte sig till öppenvården för luftvägssymtom under vecka 13 var det 7% som hade covid19, en siffra som hade fördubblats till veckan därpå."
+      "text": "Idag, lördag den 11 april, uppger Folkhälsomyndigheten att 17 nya dödsfall rapporterats det senaste dygnet. Sedan igår har även 98 nya smittade bekräftats runt om i landet. "
     },
     "bot": {
       "say": {
-        "text": "Att de insatser som gjorts hittills har fått önskad effekt kan man se på att den årliga nedgången av t.ex. vanlig influensa och vinterkräksjuka har varit tvärare än någonsin och det är fortsatt viktigt att stanna hemma vid minsta lilla sjukdomssymtom."
+        "text": "Eftersom det är helg kan det ske en viss eftersläpning i antalet rapporterade fall. "
       },
       "bot": {
         "say": {
@@ -112,7 +112,7 @@ export const presentNews : BridgeTurn[] = [
 
 export const textStats : BridgeTurn = {
   "say": {
-    "text": "Globalt är cirka 1,56 miljoner människor bekräftat smittade och 95000 döda."
+    "text": "Globalt är cirka 1,7 miljoner människor bekräftat smittade och drygt 100 000 döda."
   },
   "label": "SHARE_STATS_TEXT",
   "bot": {
@@ -123,7 +123,7 @@ export const textStats : BridgeTurn = {
         "title": "Statistik",
         "image": {
           "type": "image",
-          "url": "https://kinti.se/coronaguiden/Statistik_FHM_1400.png",
+          "url": "https://i.ibb.co/ysngtcT/11-april.png",
           "alt": "Statistik"
         }
       }
@@ -133,7 +133,7 @@ export const textStats : BridgeTurn = {
 
 export const voiceStats : BotTurn = {
   "say": {
-    "text": "Globalt är cirka 1,56 miljoner människor bekräftat smittade, och 95000 döda.<break time=\\\"1s\\\"/> I Sverige har vi ungefär 9700 bekräftade fall av covid19, och vi är uppe i 870 rapporterade dödsfall."
+    "text": "Globalt är cirka en komma sju miljoner människor bekräftat smittade, och drygt hundratusen döda.<break time=\\\"1s\\\"/> I Sverige har vi ungefär tiotusen bekräftade fall av covid19, och vi är uppe i 887 rapporterade dödsfall."
   },
   "label": "SHARE_STATS_VOICE"
 }

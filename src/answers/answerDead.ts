@@ -18,7 +18,7 @@ export const answerDead: Array<BridgeTurn | BotTurn> = [
         cond: {
             country: "sverige"
         },
-        say: "Sverige har __deceased rapporterade dödsfall, varav _deceased_yesterday nya rapporterades in igår."
+        say: "Sverige har _deceased rapporterade dödsfall, varav _deceased_yesterday nya rapporterades in igår."
     },
     {
         cond: {

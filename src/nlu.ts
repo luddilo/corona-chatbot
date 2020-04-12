@@ -6,11 +6,11 @@ const region: Entity = {
   enums: [
     {
       name: "blekinge",
-      alts: ["blekinge län", "karlskrona"],
+      alts: ["blekinge län", "karlskrona", "karlshamn", "ronneby", "sölvesborg", "olofström"],
     },
     {
       name: "dalarna",
-      alts: ["dalarnas län", "falun"],
+      alts: ["dalarnas län", "falun", "mora", "borlänge", "ludvika", "avesta"],
     },
     {
       name: "gotland",
@@ -18,75 +18,75 @@ const region: Entity = {
     },
     {
       name: "gävleborg",
-      alts: ["gävleborgs län", "gävle"],
+      alts: ["gävleborgs län", "gävle", "sandviken", "bollnäs", "söderhamn", "hudiksvall"],
     },
     {
       name: "halland",
-      alts: ["hallands län", "halmstad"],
+      alts: ["hallands län", "halmstad", "varberg", "kungsbacka", "falkenberg"],
     },
     {
       name: "jämtland",
-      alts: ["jämtlands län", "östersund"],
+      alts: ["jämtlands län", "östersund", "sveg", "åre", "krokom", "strömsund"],
     },
     {
       name: "jönköping",
-      alts: ["jönköpings län"],
+      alts: ["jönköpings län", "värnamo", "vetlanda", "nässjö", "tranås"],
     },
     {
       name: "kalmar",
-      alts: ["kalmar län"],
+      alts: ["kalmar län", "oskarshamn", "vimmerby", "västervik", "nybro"],
     },
     {
       name: "kronoberg",
-      alts: ["kronobergs län", "växjö"],
+      alts: ["kronobergs län", "växjö", "ljungby", "älmhult", "alvesta", "markaryd"],
     },
     {
       name: "norrbotten",
-      alts: ["norrbottens län"],
+      alts: ["norrbottens län", "luleå", "piteå", "kiruna", "boden", "gällivare"],
     },
     {
       name: "skåne",
-      alts: ["skåne län", "malmö", "helsingborg", "lund"],
+      alts: ["skåne län", "malmö", "helsingborg", "lund", "kristianstad", "landskrona", "trelleborg", "ängelholm"],
     },
     {
       name: "stockholm",
-      alts: ["stockholms län", "upplands väsby", "sollentuna", "södertälje"],
+      alts: ["stockholms län", "upplands väsby", "sollentuna", "södertälje", "lidingö", "tumba", "åkersberga", "vallentuna", "märsta", "gustavsberg", "norrtälje"],
     },
     {
       name: "södermanland",
-      alts: ["södermanlands län", "sörmland", "eskilstuna"],
+      alts: ["södermanlands län", "sörmland", "eskilstuna", "katrineholm"],
     },
     {
       name: "uppsala",
-      alts: ["uppsala län"],
+      alts: ["uppsala län", "enköping", "bålsta"],
     },
     {
       name: "värmland",
-      alts: ["värmlands län", "karlstad"],
+      alts: ["värmlands län", "karlstad", "arvika", "kristinehamn"],
     },
     {
       name: "västerbotten",
-      alts: ["västerbottens län", "umeå"],
+      alts: ["västerbottens län", "umeå", "skellefteå", "lycksele"],
     },
     {
       name: "västernorrland",
-      alts: ["västernorrlands län"],
+      alts: ["västernorrlands län", "sundsvall", "timrå", "ånge", "härnösand", "kramfors", "sollefteå", "örnsköldsvik"],
     },
     {
       name: "västmanland",
-      alts: ["västmanlands län", "västerås"],
+      alts: ["västmanlands län", "västerås", "arboga", "sala", "fagersta"],
     },
     {
       name: "västra götaland",
-      alts: ["västra götalands län", "göteborg", "borås"],
+      alts: ["västra götalands län", "göteborg", "borås", "trollhättan", "uddevalla", "lidköping", "skövde", "mariestad", "åmål"],
     },
     {
       name: "örebro",
-      alts: ["örebro län"],
+      alts: ["örebro län", "karlskoga", "kumla", "lindesberg", "hallsberg"],
     },
     {
       name: "östergötland",
-      alts: ["östergötlands län", "linköping", "norrköping"],
+      alts: ["östergötlands län", "linköping", "norrköping", "motala", "mjölby", "finspång"],
     },
   ],
 }
@@ -149,6 +149,7 @@ export const queryDiagnosis: Intent = {
 
 export const queryNeedCare: Intent = {
   entities: {
+    corona: CORONA,
     healthcare: HEALTHCARE,
   },
   examples: [
@@ -159,7 +160,8 @@ export const queryNeedCare: Intent = {
     "hur vet jag när jag ska ta kontakt med _healthcare",
     "behöver jag gå till _healthcare",
     "jag vill söka _healthcare. hur gör jag",
-    "vad är ett självskattningstest"
+    "vad är ett självskattningstest",
+    "vad är självskattningstest för _corona"
   ],
 }
 
@@ -208,6 +210,15 @@ export const queryInfected: Intent = {
     "hur många fall har det varit",
     "hur många har blivit sjuka totalt",
     "totalt antal fall",
+    "hur ser situationen ut i _country",
+    "jag vill veta antal människor i _country",
+    "_corona i _country",
+    "hur många har smittats i _country",
+    "hur många smittade finns det i _country",
+    "hur många har infekterats av _corona i _country",
+    "hur är läget i _country",
+    "hur går det för _country",
+    "finns _corona i _country"
   ]
 }
 
@@ -253,7 +264,12 @@ export const queryDead: Intent = {
     "hur många har dött _day",
     "hur många har dött",
     "hur många dödsfall",
-    "hur många dödsfall har det varit"
+    "hur många dödsfall har det varit",
+    "hur många har dött i _corona",
+    "hur många har dött av _corona i _country",
+    "hur många har avlidit i _region av _corona",
+    "har du siffror på antal döda och dödlighet",
+    "hur många är döda"
   ]
 }
 

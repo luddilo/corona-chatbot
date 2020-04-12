@@ -5,13 +5,13 @@ export const answerInfected: Array<BridgeTurn | BotTurn> = [
         cond: {
             region: true
         }, 
-        say: "_region har totalt _infected bekräftade fall av covid19, varav _infected_yesterday nya fall rapporerades igår.",
+        say: "_region har totalt _infected bekräftade fall av covid19, vilket motsvarar _infected_per_100000_ppl per 100000 invånare. _infected_yesterday nya fall rapporerades igår.",
     },
     {
         cond: {
             country: "sverige"
         },
-        say: "Sverige har totalt _infected bekräftade fall av covid19, varav _infected_yesterday nya fall rapporerades igår."
+        say: "Sverige har totalt _infected bekräftade fall av covid19, vilket motsvarar _infected_per_100000_ppl per 100000 invånare. _infected_yesterday nya fall rapporerades igår."
     },
     {
         cond: {

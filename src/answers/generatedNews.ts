@@ -1,18 +1,18 @@
 import { BotTurn, BridgeTurn } from "narratory"
 
-// Generated at Saturday, April 11th 2020, 3:00:34 pm
+// Generated at Saturday, April 11th 2020, 3:11:56 pm
 
 export const presentNews : BridgeTurn[] = [
   {
     "say": {
-      "text": "Idag, lördag den 11 april, uppger Folkhälsomyndigheten att 17 nya dödsfall rapporterats det senaste dygnet -  Sedan igår har även 98 nya smittade bekräftats runt om i landet. "
+      "text": "Idag, lördag den 11 april, uppger Folkhälsomyndigheten att 17 nya dödsfall rapporterats det senaste dygnet <break time=\\\"500ms\\\"/> Sedan igår har även 98 nya smittade bekräftats runt om i landet. <break time=\\\"1s\\\">"
     },
     "cond": {
       "platform": "voximplant"
     },
     "bot": {
       "say": {
-        "text": "Eftersom det är helg kan det ske en viss eftersläpning i antalet rapporterade fall. "
+        "text": "Eftersom det är helg, kan det ske en viss eftersläpning i antalet rapporterade fall. <break time=\\\"1s\\\">"
       },
       "bot": {
         "say": {

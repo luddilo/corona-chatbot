@@ -77,8 +77,8 @@ const region: Entity = {
       alts: ["västmanlands län", "västerås"],
     },
     {
-      name: "västa götaland",
-      alts: ["västa götalands län", "göteborg", "borås"],
+      name: "västra götaland",
+      alts: ["västra götalands län", "göteborg", "borås"],
     },
     {
       name: "örebro",

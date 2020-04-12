@@ -54,15 +54,15 @@ const region: Entity = {
     },
     {
       name: "södermanland",
-      alts: ["södermanlands län", "sörmland", "eskilstuna", "katrineholm"],
+      alts: ["södermanlands län", "sörmland", "eskilstuna", "katrineholm", "nyköping", "strängnäs", "oxelösund", "torshälla"],
     },
     {
       name: "uppsala",
-      alts: ["uppsala län", "enköping", "bålsta"],
+      alts: ["uppsala län", "enköping", "bålsta", "sävja", "knivsta"],
     },
     {
       name: "värmland",
-      alts: ["värmlands län", "karlstad", "arvika", "kristinehamn"],
+      alts: ["värmlands län", "karlstad", "arvika", "kristinehamn", "skoghall", "säffle"],
     },
     {
       name: "västerbotten",

@@ -1,6 +1,6 @@
 import { UserTurn, Entity } from "narratory"
 
-// Generated at Sunday, April 12th 2020, 4:00:13 pm
+// Generated at Monday, April 13th 2020, 9:53:16 am
 
 export const ACTIVITY : Entity = {
   "name": "ACTIVITY",
@@ -810,7 +810,8 @@ export const INFECTED : Entity = {
         "smita",
         "smitar",
         "smittsam",
-        "smittning"
+        "smittning",
+        "sjuk"
       ]
     }
   ]
@@ -1011,8 +1012,7 @@ export const MEDICAL_CERTIFICATE : Entity = {
       "alts": [
         "sjukintyg",
         "läkarintyg",
-        "intyg",
-        "info"
+        "intyg"
       ]
     }
   ]
@@ -1339,7 +1339,8 @@ export const NEWS : Entity = {
       "alts": [
         "allt",
         "senastre",
-        "nuyheterna"
+        "nuyheterna",
+        "info"
       ]
     }
   ]
@@ -1596,6 +1597,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "smittar _CORONA",
         "Kan det smitta via samlag?",
         "Smittar _CORONA via sex?",
+        "Kan det smitta via sex",
         "Smittar _CORONA via samlag",
         "vad är direkt och indirekt kontaktsmitta?",
         "vad är direktkontakt?",
@@ -2435,7 +2437,6 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "är _CORONA och _FLU samma?",
         "_CAN _PERS_PRON  få _CORONA från _FLU?",
         "_INT_PRON skiljer _CORONA från säsongsinfluensa?",
-        "varför är corona farligt",
         ""
       ]
     },
@@ -3368,42 +3369,6 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "classifiedIntentName": "question: vad skiljer en droppsmitta från en luftburen smitta?",
         "classifiedUtterance": "_user_text",
         "botResponse": "Covid19 smittar genom droppsmitta. Vid droppsmitta sprids viruset via droppar i luften, t.ex. när någon antingen hostar, nyser eller kräks. Dessa droppar når som regel inte längre än någon meter. Luftburen smitta rör sig i små, intorkade droppar som håller sig kvar i luften, färdas långa sträckor och smittar den som andas in dem. "
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: Hur länge ska jag stanna hemma?",
-      "entities": {
-        "CAN": CAN,
-        "PERS_PRON": PERS_PRON,
-        "CO_SYM": CO_SYM,
-        "IF": IF
-      },
-      "examples": [
-        "Hur länge ska jag stanna hemma?",
-        "hur många dagar _CAN _PERS_PRON stanna hemma",
-        "hur många dagar _CAN _PERS_PRON vara i karantän",
-        "_CAN _PERS_PRON vara hemma en hel vecka",
-        "hur vet _PERS_PRON hur länge _PERS_PRON _CAN stanna hemma",
-        "hur långt _CAN _PERS_PRON vara hemma",
-        "hur länge _CAN _PERS_PRON vara hemma",
-        "hur länge _CAN _PERS_PRON karantän",
-        "Hur länge _CAN _PERS_PRON stanna hemma?",
-        "Hur många dar _CAN _PERS_PRON vara hemma",
-        "Hur länge ska _PERS_PRON vara hemma _IF _CO_SYM",
-        ""
-      ]
-    },
-    "bot": {
-      "say": {
-        "text": "Stanna hemma tills du är helt frisk och i minst två dygn till innan du går till jobbet, åker i kollektivtrafiken eller går och handlar. Om du har äldre släktingar bör du som anhörig och närstående undvika att träffa dem, särskilt om du har varit sjuk. Det är för att skydda dem från virus."
-      },
-      "set": {
-        "classifiedIntentName": "question: Hur länge ska jag stanna hemma?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": "Stanna hemma tills du är helt frisk och i minst två dygn till innan du går till jobbet, åker i kollektivtrafiken eller går och handlar. Om du har äldre släktingar bör du som anhörig och närstående undvika att träffa dem, särskilt om du har varit sjuk. Det är för att skydda dem från virus."
       },
       "goto": "VERIFY_ANSWER"
     }
@@ -5329,6 +5294,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "_CAN _PERS_PRON dö om _PERS_PRON är _INFECTED?",
         "_PERS_PRON har _CORONA, _CAN _PERS_PRON dö?",
         "Bör jag vara rädd för Corona",
+        "varför är corona farligt",
         ""
       ]
     },
@@ -5744,7 +5710,9 @@ export const simpleQuestionAnswers : UserTurn[] = [
     "intent": {
       "name": "question: Jag har varit snuvig i 14 dagar. Bör jag ringa läkare?",
       "entities": {
-        "CORONA": CORONA
+        "CORONA": CORONA,
+        "CO_SYM": CO_SYM,
+        "PERS_PRON": PERS_PRON
       },
       "examples": [
         "Jag har varit snuvig i 14 dagar. Bör jag ringa läkare?",
@@ -5756,18 +5724,21 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "jar har host",
         "Jag har ont i huvudet",
         "Mitt spädbarn är gnälligt, har det _CORONA",
+        "Vill veta. Om _PERS_PRON har _CO_SYM och _CO_SYM... kan det vara _CORONA?",
+        "_PERS_PRON har _CO_SYM och _CO_SYM",
+        "_PERS_PRON har fCO_SYM och _CO_SYM. Kan det vara _CORONA",
         ""
       ]
     },
     "bot": {
       "say": {
-        "text": "Jag kan tyvärr inte hjälpa dig med personlig rådgivning. Du kan kontakta 1177 för hjälp att bedöma dina symptom.",
-        "ssml": "Jag kan tyvärr inte hjälpa dig med personlig rådgivning. Du kan kontakta 11 77 för hjälp att bedöma dina symptom."
+        "text": "Jag kan tyvärr inte hjälpa dig med personlig rådgivning. Se till att stanna hemma om du känner dig sjuk. Du kan kontakta 1177 för hjälp att bedöma dina symptom.",
+        "ssml": "Jag kan tyvärr inte hjälpa dig med personlig rådgivning. Se till att stanna hemma om du känner dig sjuk. Du kan kontakta 11 77 för hjälp att bedöma dina symptom."
       },
       "set": {
         "classifiedIntentName": "question: Jag har varit snuvig i 14 dagar. Bör jag ringa läkare?",
         "classifiedUtterance": "_user_text",
-        "botResponse": "Jag kan tyvärr inte hjälpa dig med personlig rådgivning. Du kan kontakta 1177 för hjälp att bedöma dina symptom."
+        "botResponse": "Jag kan tyvärr inte hjälpa dig med personlig rådgivning. Se till att stanna hemma om du känner dig sjuk. Du kan kontakta 1177 för hjälp att bedöma dina symptom."
       },
       "goto": "VERIFY_ANSWER"
     }
@@ -5827,12 +5798,12 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": {
-        "text": "Arbetsmiljöverket har information gällande corona och din arbetsmiljö."
+        "text": "Arbetsmiljöverket har information gällande covid-19 och din arbetsmiljö."
       },
       "set": {
         "classifiedIntentName": "question: Jag undrar om riskerna med Corona på min arbetsplats",
         "classifiedUtterance": "_user_text",
-        "botResponse": "Arbetsmiljöverket har information gällande corona och din arbetsmiljö."
+        "botResponse": "Arbetsmiljöverket har information gällande covid-19 och din arbetsmiljö."
       },
       "goto": "VERIFY_ANSWER"
     }
@@ -5925,13 +5896,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": {
-        "text": "Om en i hushållet har covid-19 är det viktigt att hålla avstånd och vara väldigt noga med handhygienen. Den som är sjuk ska stanna hemma, och övriga medlemmar i hushållet måste vara uppmärksamma på symptom.",
-        "ssml": "Om en i familjen har covid19 är det viktigt att hålla avstånd och vara väldigt noga med handhygienen. Den som är sjuk ska stanna hemma, och övriga familjemedlemmar måste vara uppmärksamma på symptom."
+        "text": "Om en i hushållet har covid-19 är det viktigt att hålla avstånd och vara väldigt noga med handhygienen. Den som är sjuk ska stanna hemma, och övriga medlemmar i hushållet måste vara uppmärksamma på symptom. Är du osäker på hur du ska agera, ring 1177.",
+        "ssml": "Om en i familjen har covid19 är det viktigt att hålla avstånd och vara väldigt noga med handhygienen. Den som är sjuk ska stanna hemma, och övriga familjemedlemmar måste vara uppmärksamma på symptom. Är du osäker på hur du ska agera, ring 11 77."
       },
       "set": {
         "classifiedIntentName": "question: Måste jag isolera mig från familjen?",
         "classifiedUtterance": "_user_text",
-        "botResponse": "Om en i hushållet har covid-19 är det viktigt att hålla avstånd och vara väldigt noga med handhygienen. Den som är sjuk ska stanna hemma, och övriga medlemmar i hushållet måste vara uppmärksamma på symptom."
+        "botResponse": "Om en i hushållet har covid-19 är det viktigt att hålla avstånd och vara väldigt noga med handhygienen. Den som är sjuk ska stanna hemma, och övriga medlemmar i hushållet måste vara uppmärksamma på symptom. Är du osäker på hur du ska agera, ring 1177."
       },
       "goto": "VERIFY_ANSWER"
     }
@@ -6345,7 +6316,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "När förväntas peak vara nådd i Sverige?",
         "hur länge kommer pandemin att pågå?",
         "hur länge kommer _CORONA att pågå",
-        "Hur långe kommer det vara restriktioner?",
+        "Har det värsta passerat nu?",
         "Hur länge kommer det vara restriktioner?",
         "när är karantänen över?",
         ""
@@ -6852,6 +6823,11 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "till vilken grad smittar _CORONA",
         "i vilken utsträckning smittar _CORONA",
         "är _CORONA väldigt smittsamt",
+        "är det lätt att få coronavirus?",
+        "är det lätt att få _CORONA",
+        "är det lätt att bli smittad av _CORONA",
+        "smittar _CORONA enkelt",
+        "hur enkelt är det för _PERS_PRON att få _CORONA",
         ""
       ]
     },
@@ -7318,7 +7294,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "question: Kan Ipren göra det värre för en person med Corona?",
-      "entities": {},
+      "entities": {
+        "CAN": CAN,
+        "PERS_PRON": PERS_PRON
+      },
       "examples": [
         "Kan Ipren göra det värre för en person med Corona?",
         "Är Ipren dåligt att ta?",
@@ -7326,6 +7305,9 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "hjälper alvedon mot corona?",
         "Paracetamol",
         "Panodil?",
+        "_CAN _PERS_PRON äta paracetamol?",
+        "Värktabletter",
+        "_CAN _PERS_PRON äta Ipren?",
         ""
       ]
     },
@@ -7363,13 +7345,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": {
-        "text": "Just nu spekuleras det kring om smittspridningen av covid-19 kommer minska till sommaren. Folkhälsomyndigheten har hittills inte kunnat bekräfta om varmare eller kallare väder har en påverkan på virusutbrottet.",
-        "ssml": "Just nu spekuleras det kring om smittspridningen av covid19 kommer minska till sommaren. Folkhälsomyndigheten har hittills inte kunnat bekräfta om varmare eller kallare väder har en påverkan på virusutbrottet."
+        "text": "Folkhälsomyndigheten har hittills inte kunnat bekräfta om varmare eller kallare väder har en påverkan på virusutbrottet.",
+        "ssml": "Folkhälsomyndigheten har hittills inte kunnat bekräfta om varmare eller kallare väder har en påverkan på virusutbrottet."
       },
       "set": {
         "classifiedIntentName": "question: Kan varmare väder stoppa virusutbrottet?",
         "classifiedUtterance": "_user_text",
-        "botResponse": "Just nu spekuleras det kring om smittspridningen av covid-19 kommer minska till sommaren. Folkhälsomyndigheten har hittills inte kunnat bekräfta om varmare eller kallare väder har en påverkan på virusutbrottet."
+        "botResponse": "Folkhälsomyndigheten har hittills inte kunnat bekräfta om varmare eller kallare väder har en påverkan på virusutbrottet."
       },
       "goto": "VERIFY_ANSWER"
     }
@@ -7453,12 +7435,12 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": {
-        "text": "Om du känner dig frisk behöver du inte stanna hemma, även om du bor med någon som är förkyld. Se dock till att alltid hålla en armlängds avstånd till dina medmänniskor och var uppmärksam på symptom."
+        "text": "Om du känner dig frisk behöver du inte stanna hemma, även om du bor med någon som är sjuk. Se dock till att alltid hålla en armlängds avstånd till dina medmänniskor och var uppmärksam på symptom."
       },
       "set": {
         "classifiedIntentName": "question: En i mitt kollektiv var sjuk förra veckan. Kan jag resa?",
         "classifiedUtterance": "_user_text",
-        "botResponse": "Om du känner dig frisk behöver du inte stanna hemma, även om du bor med någon som är förkyld. Se dock till att alltid hålla en armlängds avstånd till dina medmänniskor och var uppmärksam på symptom."
+        "botResponse": "Om du känner dig frisk behöver du inte stanna hemma, även om du bor med någon som är sjuk. Se dock till att alltid hålla en armlängds avstånd till dina medmänniskor och var uppmärksam på symptom."
       },
       "goto": "VERIFY_ANSWER"
     }
@@ -7597,13 +7579,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": {
-        "text": "Om en diabetiker drabbas av Covid-19 kan det bli svårare att hålla blodsockret på en bra nivå. I kombination med hög ålder och andra underliggande sjukdomar ökar risken för att sjukdomen slå hårdare.",
-        "ssml": "Om en diabetiker drabbas av Covid19 kan det bli svårare att hålla blodsockret på en bra nivå. I kombination med hög ålder och andra underliggande sjukdomar ökar risken för att sjukdomen slå hårdare."
+        "text": "Om en diabetiker drabbas av Covid-19 kan det bli svårare att hålla blodsockret på en bra nivå. I kombination med hög ålder och andra underliggande sjukdomar riskerar sjukdomen slår hårdare.",
+        "ssml": "Om en diabetiker drabbas av Covid19 kan det bli svårare att hålla blodsockret på en bra nivå. I kombination med hög ålder och andra underliggande sjukdomar riskerar sjukdomen slår hårdare."
       },
       "set": {
         "classifiedIntentName": "question: Varför är det farligt med diabetes?",
         "classifiedUtterance": "_user_text",
-        "botResponse": "Om en diabetiker drabbas av Covid-19 kan det bli svårare att hålla blodsockret på en bra nivå. I kombination med hög ålder och andra underliggande sjukdomar ökar risken för att sjukdomen slå hårdare."
+        "botResponse": "Om en diabetiker drabbas av Covid-19 kan det bli svårare att hålla blodsockret på en bra nivå. I kombination med hög ålder och andra underliggande sjukdomar riskerar sjukdomen slår hårdare."
       },
       "goto": "VERIFY_ANSWER"
     }
@@ -7660,13 +7642,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": {
-        "text": "ARDS är förkortningen för \"Acute Respiratory Distress Syndrome\". På svenska blir det \"akut respiratoriskt stressyndrom\". ARDS innebär att lungorna kollapsar till följd av exempelvis lunginflammation, trauma eller blodförgiftning",
+        "text": "ARDS är förkortningen för \"Acute Respiratory Distress Syndrome\". På svenska blir det \"akut respiratoriskt stressyndrom\". ARDS innebär att lungorna kollapsar till följd av exempelvis lunginflammation, trauma eller blodförgiftning.",
         "ssml": "ARDS är förkortningen för Acute Respiratory Distress Syndrome - På svenska blir det - akut - resspiratoriskt - stresssyndrååm. ARDS innebär att lungorna kollapsar till följd av exempelvis lunginflammation, trauma eller blodförgiftning"
       },
       "set": {
         "classifiedIntentName": "question: Vad betyder ARDS?",
         "classifiedUtterance": "_user_text",
-        "botResponse": "ARDS är förkortningen för \"Acute Respiratory Distress Syndrome\". På svenska blir det \"akut respiratoriskt stressyndrom\". ARDS innebär att lungorna kollapsar till följd av exempelvis lunginflammation, trauma eller blodförgiftning"
+        "botResponse": "ARDS är förkortningen för \"Acute Respiratory Distress Syndrome\". På svenska blir det \"akut respiratoriskt stressyndrom\". ARDS innebär att lungorna kollapsar till följd av exempelvis lunginflammation, trauma eller blodförgiftning."
       },
       "goto": "VERIFY_ANSWER"
     }
@@ -7966,16 +7948,16 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Om _PERS_PRON misstänker att _PERS_PRON har _CORONA. vilken medicin _CAN _PERS_PRON äta?",
         "Ska man äta Panodil eller Alvedon?",
         "jag misstänker att jag har corona. vilken medicin ska jag ta?",
-        "Ska man äta paracetamol?",
+        "_CAN _PERS_PRON äta paracetamol?",
         "Ska man äta Alvedon eller Panodil?",
+        "",
         "Är hosta farligt?",
         "Är _CO_SYM farligt?",
         "Är det farligt att ha _CO_SYM?",
         "Hur farligt är det att ha _CO_SYM?",
         "Är det farligt att hosta?",
         "Värktabletter",
-        "Ska _PERS_PRON äta Ipren?",
-        ""
+        "Ska _PERS_PRON äta Ipren?"
       ]
     },
     "bot": {
@@ -8017,36 +7999,6 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "classifiedIntentName": "question: kan jag som arbetar i vården jobba fast att jag har en närstående i riskgruppen",
         "classifiedUtterance": "_user_text",
         "botResponse": "Jag kan tyvärr inte hjälpa dig med personlig rådgivning. Du kan kontakta 1177 om du känner dig osäker över hur du ska agera, alternativt tala med din arbetsgivare."
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
-      "name": "question: är det lätt att få coronavirus?",
-      "entities": {
-        "CORONA": CORONA,
-        "PERS_PRON": PERS_PRON
-      },
-      "examples": [
-        "är det lätt att få coronavirus?",
-        "är det lätt att få _CORONA",
-        "är det lätt att bli smittad av _CORONA",
-        "hur lätt smittar _CORONA",
-        "smittar _CORONA enkelt",
-        "hur enkelt är det för _PERS_PRON att få _CORONA",
-        ""
-      ]
-    },
-    "bot": {
-      "say": {
-        "text": "Eftersom covid-19 smittar både via direkt-, och indirekt kontakt finns det stor risk att smittas om du är i kontakt med andra människor. Var därför noga med att hålla avstånd till andra och stanna hemma om du känner dig sjuk.",
-        "ssml": "Eftersom covid19 smittar både via direkt och indirekt kontakt finns det stor risk att smittas om du är i kontakt med andra människor. Var därför noga med att hålla avstånd till andra och stanna hemma om du känner dig sjuk."
-      },
-      "set": {
-        "classifiedIntentName": "question: är det lätt att få coronavirus?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": "Eftersom covid-19 smittar både via direkt-, och indirekt kontakt finns det stor risk att smittas om du är i kontakt med andra människor. Var därför noga med att hålla avstånd till andra och stanna hemma om du känner dig sjuk."
       },
       "goto": "VERIFY_ANSWER"
     }
@@ -8181,12 +8133,12 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": {
-        "text": "Inför provtagningen tar vårdpersonalen på sig andningsskydd, vätsketät rock, ett visir och ett par handskar. Denna skyddsutrustning tas på i ett ytterrum innan patienten provtas. Personalen testar patienten genom att föra en odlingspinne högt upp i näsan. Patienten får svar efter ungefär ett dygn."
+        "text": "Inför provtagningen tar vårdpersonalen på sig andningsskydd, vätsketät rock, ett visir och ett par handskar. Skyddsutrustningen tas på i ett ytterrum innan patienten provtas. Personalen testar patienten genom att föra en odlingspinne högt upp i näsan. Patienten får svar efter ungefär ett dygn."
       },
       "set": {
         "classifiedIntentName": "question: Hur går provtagningen till?",
         "classifiedUtterance": "_user_text",
-        "botResponse": "Inför provtagningen tar vårdpersonalen på sig andningsskydd, vätsketät rock, ett visir och ett par handskar. Denna skyddsutrustning tas på i ett ytterrum innan patienten provtas. Personalen testar patienten genom att föra en odlingspinne högt upp i näsan. Patienten får svar efter ungefär ett dygn."
+        "botResponse": "Inför provtagningen tar vårdpersonalen på sig andningsskydd, vätsketät rock, ett visir och ett par handskar. Skyddsutrustningen tas på i ett ytterrum innan patienten provtas. Personalen testar patienten genom att föra en odlingspinne högt upp i näsan. Patienten får svar efter ungefär ett dygn."
       },
       "goto": "VERIFY_ANSWER"
     }
@@ -8539,6 +8491,34 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": {
+      "name": "question: Är corona släkt med svininfluensa?",
+      "entities": {
+        "CORONA": CORONA
+      },
+      "examples": [
+        "Är corona släkt med svininfluensa?",
+        "är _CORONA släkt med svininfluensa",
+        "är svininfluensa släkt med _CORONA",
+        "är svininfluensa samma som _CORONA",
+        "är _CORONA samma som svininfluensa",
+        "är _CORONA lika som svininfluensa",
+        ""
+      ]
+    },
+    "bot": {
+      "say": {
+        "text": "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan jag tyvärr inte svara på den i nuläget."
+      },
+      "set": {
+        "classifiedIntentName": "question: Är corona släkt med svininfluensa?",
+        "classifiedUtterance": "_user_text",
+        "botResponse": "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan jag tyvärr inte svara på den i nuläget."
+      },
+      "goto": "VERIFY_ANSWER"
+    }
+  },
+  {
+    "intent": {
       "name": "Hur byggde ni det här",
       "entities": {},
       "examples": [
@@ -8606,6 +8586,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "gonatt",
         "natt",
         "natti",
+        "sov gott",
         ""
       ]
     },
@@ -8613,6 +8594,23 @@ export const simpleQuestionAnswers : UserTurn[] = [
       "say": [
         {
           "text": "Godnatt!"
+        }
+      ]
+    }
+  },
+  {
+    "intent": {
+      "name": "Vilken är den bästa låten att lyssna på under Corona",
+      "entities": {},
+      "examples": [
+        "Vilken är den bästa låten att lyssna på under Corona",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        {
+          "text": "Jag rekommenderar \"Fight The Virus\" med Alvin Oon. \"Corona Virus Alert\" med Bobi Wine och Nubian Li är också bra!"
         }
       ]
     }
@@ -8731,6 +8729,142 @@ export const simpleQuestionAnswers : UserTurn[] = [
       "examples": [
         "Vilka orter i Sverige är mest drabbade?",
         "Vilka städer i Sverige är värst drabbade?",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        {
+          "text": "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan jag tyvärr inte svara på den i nuläget."
+        }
+      ]
+    }
+  },
+  {
+    "intent": {
+      "name": "vilket land är mest drabbat",
+      "entities": {},
+      "examples": [
+        "vilket land är mest drabbat",
+        "vilket land har flest sjuka",
+        "vilket land är farligast",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        {
+          "text": "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan jag tyvärr inte svara på den i nuläget."
+        }
+      ]
+    }
+  },
+  {
+    "intent": {
+      "name": "vilket land är minst drabbat",
+      "entities": {
+        "CORONA": CORONA
+      },
+      "examples": [
+        "vilket land är minst drabbat",
+        "vilken land har minst sjuka",
+        "vilket land är säkrast",
+        "var är smittan minst",
+        "var är smittan minst utbredd",
+        "var smittas minst just nu",
+        "vart är smittspridningen minst",
+        "vilket land sköter _CORONA bäst",
+        "vilket land sköter det här bäst",
+        "vilket land sköter detta",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        {
+          "text": "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan jag tyvärr inte svara på den i nuläget."
+        }
+      ]
+    }
+  },
+  {
+    "intent": {
+      "name": "Var är smittan värst?",
+      "entities": {},
+      "examples": [
+        "Var är smittan värst?",
+        "var är smittan värst utbredd",
+        "var smittas flest just nu?",
+        "vart är smittspridningen störst",
+        ""
+      ]
+    },
+    "bot": {
+      "say": [
+        {
+          "text": "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan jag tyvärr inte svara på den i nuläget."
+        }
+      ]
+    }
+  },
+  {
+    "intent": {
+      "name": "hur ser smittan ut i Barcelona",
+      "entities": {
+        "INTCITY": INTCITY,
+        "CORONA": CORONA
+      },
+      "examples": [
+        "hur ser smittan ut i Barcelona",
+        "hur ser smittan ut i _INTCITY",
+        "Hur är läget i _INTCITY ",
+        "hur manga är smettada i _INTCITY",
+        "Hur ser situationen ut i _INTCITY",
+        "Hur många avsnitt är det i _INTCITY just nu",
+        "Jag vill veta antal människor smittade i _INTCITY",
+        "",
+        "Hur går det för _INTCITY",
+        "Är det över i _INTCITY",
+        "Finns _CORONA i _INTCITY",
+        "Hur ser situationen ut i _INTCITY ",
+        "Hur många är smittade i _INTCITY",
+        "hur många har blivit smittade av _CORONA i _INTCITY",
+        "hur många i _INTCITY har _CORONA",
+        "hur många har _CORONA i _INTCITY",
+        "Hur många i _INTCITY är smittade",
+        "Hur många är smittade med _CORONA i _INTCITY",
+        "Hur många är sjuka i _INTCITY",
+        "_CORONA i _INTCITY",
+        "hur många har smittats i _INTCITY",
+        "Hur många smittad finns i _INTCITY",
+        "Hur många har infekterats av _CORONA i _INTCITY",
+        "Bör man vara rädd för att åka till _INTCITY"
+      ]
+    },
+    "bot": {
+      "say": [
+        {
+          "text": "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan jag tyvärr inte svara på den i nuläget."
+        }
+      ]
+    }
+  },
+  {
+    "intent": {
+      "name": "Hur många har avlidit i Barcelona av covid-19?",
+      "entities": {
+        "INTCITY": INTCITY,
+        "CORONA": CORONA
+      },
+      "examples": [
+        "Hur många har avlidit i Barcelona av covid-19?",
+        "Hur många har avlidit i _INTCITY av covid-19?",
+        "hur många i _INTCITY har dött av _CORONA",
+        "hur många dör av _CORONA i _INTCITY",
+        "hur många har dött i _INTCITY",
+        "Hur många har dött av _CORONA i _INTCITY",
+        "hur många har dött i _INTCITY av _CORONA",
+        "Hur många har dött i _INTCITY nu?",
         ""
       ]
     },

@@ -1,91 +1,91 @@
 import { Entity, Intent, entities } from "narratory"
 import { CORONA, HEALTHCARE } from "./answers/generatedFAQ"
 
-const region: Entity = {
+const REGION: Entity = {
   name: "Region",
   enums: [
     {
-      name: "blekinge",
+      name: "Blekinge",
       alts: ["blekinge län", "karlskrona", "karlshamn", "ronneby", "sölvesborg", "olofström"],
     },
     {
-      name: "dalarna",
+      name: "Dalarna",
       alts: ["dalarnas län", "falun", "mora", "borlänge", "ludvika", "avesta"],
     },
     {
-      name: "gotland",
+      name: "Gotland",
       alts: ["gotlands län", "visby"],
     },
     {
-      name: "gävleborg",
+      name: "Gävleborg",
       alts: ["gävleborgs län", "gävle", "sandviken", "bollnäs", "söderhamn", "hudiksvall"],
     },
     {
-      name: "halland",
+      name: "Halland",
       alts: ["hallands län", "halmstad", "varberg", "kungsbacka", "falkenberg"],
     },
     {
-      name: "jämtland",
+      name: "Jämtland",
       alts: ["jämtlands län", "östersund", "sveg", "åre", "krokom", "strömsund"],
     },
     {
-      name: "jönköping",
+      name: "Jönköping",
       alts: ["jönköpings län", "värnamo", "vetlanda", "nässjö", "tranås"],
     },
     {
-      name: "kalmar",
+      name: "Kalmar",
       alts: ["kalmar län", "oskarshamn", "vimmerby", "västervik", "nybro"],
     },
     {
-      name: "kronoberg",
+      name: "Kronoberg",
       alts: ["kronobergs län", "växjö", "ljungby", "älmhult", "alvesta", "markaryd"],
     },
     {
-      name: "norrbotten",
+      name: "Norrbotten",
       alts: ["norrbottens län", "luleå", "piteå", "kiruna", "boden", "gällivare"],
     },
     {
-      name: "skåne",
+      name: "Skåne",
       alts: ["skåne län", "malmö", "helsingborg", "lund", "kristianstad", "landskrona", "trelleborg", "ängelholm"],
     },
     {
-      name: "stockholm",
+      name: "Stockholm",
       alts: ["stockholms län", "upplands väsby", "sollentuna", "södertälje", "lidingö", "tumba", "åkersberga", "vallentuna", "märsta", "gustavsberg", "norrtälje"],
     },
     {
-      name: "södermanland",
+      name: "Södermanland",
       alts: ["södermanlands län", "sörmland", "eskilstuna", "katrineholm", "nyköping", "strängnäs", "oxelösund", "torshälla"],
     },
     {
-      name: "uppsala",
+      name: "Uppsala",
       alts: ["uppsala län", "enköping", "bålsta", "sävja", "knivsta"],
     },
     {
-      name: "värmland",
+      name: "Värmland",
       alts: ["värmlands län", "karlstad", "arvika", "kristinehamn", "skoghall", "säffle"],
     },
     {
-      name: "västerbotten",
+      name: "Västerbotten",
       alts: ["västerbottens län", "umeå", "skellefteå", "lycksele", "holmsund", "vännäs"],
     },
     {
-      name: "västernorrland",
+      name: "Västernorrland",
       alts: ["västernorrlands län", "sundsvall", "timrå", "härnösand", "sollefteå", "örnsköldsvik"],
     },
     {
-      name: "västmanland",
+      name: "Västmanland",
       alts: ["västmanlands län", "västerås", "köping", "sala", "arboga", "sala", "fagersta", "hallstahammar"],
     },
     {
-      name: "västra götaland",
+      name: "Västra götaland",
       alts: ["västra götalands län", "göteborg", "borås", "trollhättan", "uddevalla", "skövde", "lerum", "alingsås", "kungälv", "vänersborg"],
     },
     {
-      name: "örebro",
+      name: "Örebro",
       alts: ["örebro län", "karlskoga", "kumla", "lindesberg", "hallsberg"],
     },
     {
-      name: "östergötland",
+      name: "Östergötland",
       alts: ["östergötlands län", "linköping", "norrköping", "motala", "mjölby", "finspång"],
     },
   ],
@@ -186,7 +186,7 @@ export const queryInfected: Intent = {
   entities: {
     corona: CORONA,
     country: entities.geoCountry,
-    region: region,
+    region: REGION,
   },
   examples: [
     "hur många är sjuka i _country",
@@ -226,7 +226,7 @@ export const queryInfected: Intent = {
 export const queryIntensiveCare: Intent = {
   entities: {
     corona: CORONA,
-    region: region,
+    region: REGION,
     day: day
   },
   examples: [
@@ -246,7 +246,7 @@ export const queryDead: Intent = {
   entities: {
     corona: CORONA,
     country: entities.geoCountry,
-    region: region,
+    region: REGION,
     day: day
   },
   examples: [
@@ -271,6 +271,22 @@ export const queryDead: Intent = {
     "hur många har avlidit i _region av _corona",
     "har du siffror på antal döda och dödlighet",
     "hur många är döda"
+  ]
+}
+
+export const queryRanking: Intent = {
+  entities: {
+    country: entities.geoCountry
+  },
+  examples: [
+    "vilka orter i _country är mest drabbade",
+    "vilka städer i _country är värst drabbade",
+    "var är smittan värst",
+    "var är smittan värst utbredd",
+    "var smittas flest just nu",
+    "vart är smittspridningen störst",
+    "var i _country är flest smittade",
+    "var är flest smittade"
   ]
 }
 

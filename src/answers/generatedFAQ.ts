@@ -1,6 +1,6 @@
 import { UserTurn, Entity } from "narratory"
 
-// Generated at Monday, April 13th 2020, 9:53:16 am
+// Generated at Monday, April 13th 2020, 10:30:23 am
 
 export const ACTIVITY : Entity = {
   "name": "ACTIVITY",
@@ -1727,10 +1727,6 @@ export const simpleQuestionAnswers : UserTurn[] = [
       },
       "examples": [
         "Hur stor är dödligheten till följd av covid-19",
-        "hur många dör av _CORONA",
-        "",
-        "hur många har dött av _CORONA ",
-        "är det många som dör av _CORONA ?",
         "vad är risken att dö av _CORONA ?",
         "dör _PERS_PRON om _PERS_PRON får _CORONA",
         "hur dödligt är _CORONA?",
@@ -1744,8 +1740,8 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Dör _PERS_PRON om _PERS_PRON har _CO_SYM",
         "Dör _PERS_PRON om _PERS_PRON får _CO_SYM",
         "är det farligt",
-        "ja är det farligt",
-        "Hur hög dödlighet har _CORONA"
+        "Hur hög dödlighet har _CORONA",
+        ""
       ]
     },
     "bot": {
@@ -8724,24 +8720,6 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": {
-      "name": "Vilka orter i Sverige är mest drabbade?",
-      "entities": {},
-      "examples": [
-        "Vilka orter i Sverige är mest drabbade?",
-        "Vilka städer i Sverige är värst drabbade?",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        {
-          "text": "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan jag tyvärr inte svara på den i nuläget."
-        }
-      ]
-    }
-  },
-  {
-    "intent": {
       "name": "vilket land är mest drabbat",
       "entities": {},
       "examples": [
@@ -8767,7 +8745,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
       },
       "examples": [
         "vilket land är minst drabbat",
-        "vilken land har minst sjuka",
+        "vilket land har minst sjuka",
         "vilket land är säkrast",
         "var är smittan minst",
         "var är smittan minst utbredd",
@@ -8775,27 +8753,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "vart är smittspridningen minst",
         "vilket land sköter _CORONA bäst",
         "vilket land sköter det här bäst",
-        "vilket land sköter detta",
-        ""
-      ]
-    },
-    "bot": {
-      "say": [
-        {
-          "text": "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan jag tyvärr inte svara på den i nuläget."
-        }
-      ]
-    }
-  },
-  {
-    "intent": {
-      "name": "Var är smittan värst?",
-      "entities": {},
-      "examples": [
-        "Var är smittan värst?",
-        "var är smittan värst utbredd",
-        "var smittas flest just nu?",
-        "vart är smittspridningen störst",
+        "vilket land sköter detta bäst",
         ""
       ]
     },
@@ -8818,11 +8776,9 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "hur ser smittan ut i Barcelona",
         "hur ser smittan ut i _INTCITY",
         "Hur är läget i _INTCITY ",
-        "hur manga är smettada i _INTCITY",
-        "Hur ser situationen ut i _INTCITY",
-        "Hur många avsnitt är det i _INTCITY just nu",
-        "Jag vill veta antal människor smittade i _INTCITY",
         "",
+        "Hur ser situationen ut i _INTCITY",
+        "Jag vill veta antal människor smittade i _INTCITY",
         "Hur går det för _INTCITY",
         "Är det över i _INTCITY",
         "Finns _CORONA i _INTCITY",

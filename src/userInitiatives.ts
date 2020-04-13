@@ -7,6 +7,7 @@ import { answerDiagnosis } from "./answers/answerDiagnosis"
 import { answerInfected } from "./answers/answerInfected"
 import { answerIntensiveCare } from "./answers/answerIntensiveCare"
 import { answerDead } from "./answers/answerDead"
+import { answerRanking } from "./answers/answerRanking"
 import { presentNews } from "./answers/generatedNews"
 
 /*
@@ -54,6 +55,16 @@ const questions: UserTurn[] = [
       url: "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/statistics",
       params: ["region", "country"],
       bot: answerDead
+    }
+  },
+  {
+    intent: nlu.queryRanking, bot: {
+      set: {
+        type: "RANKING"
+      },
+      url: "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/statistics",
+      params: ["type"],
+      bot: answerRanking
     }
   },
   {

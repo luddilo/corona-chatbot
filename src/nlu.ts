@@ -66,19 +66,19 @@ const region: Entity = {
     },
     {
       name: "västerbotten",
-      alts: ["västerbottens län", "umeå", "skellefteå", "lycksele"],
+      alts: ["västerbottens län", "umeå", "skellefteå", "lycksele", "holmsund", "vännäs"],
     },
     {
       name: "västernorrland",
-      alts: ["västernorrlands län", "sundsvall", "timrå", "ånge", "härnösand", "kramfors", "sollefteå", "örnsköldsvik"],
+      alts: ["västernorrlands län", "sundsvall", "timrå", "härnösand", "sollefteå", "örnsköldsvik"],
     },
     {
       name: "västmanland",
-      alts: ["västmanlands län", "västerås", "arboga", "sala", "fagersta"],
+      alts: ["västmanlands län", "västerås", "köping", "sala", "arboga", "sala", "fagersta", "hallstahammar"],
     },
     {
       name: "västra götaland",
-      alts: ["västra götalands län", "göteborg", "borås", "trollhättan", "uddevalla", "lidköping", "skövde", "mariestad", "åmål"],
+      alts: ["västra götalands län", "göteborg", "borås", "trollhättan", "uddevalla", "skövde", "lerum", "alingsås", "kungälv", "vänersborg"],
     },
     {
       name: "örebro",
@@ -161,7 +161,8 @@ export const queryNeedCare: Intent = {
     "behöver jag gå till _healthcare",
     "jag vill söka _healthcare. hur gör jag",
     "vad är ett självskattningstest",
-    "vad är självskattningstest för _corona"
+    "vad är självskattningstest för _corona",
+    "behöver jag söka _healthcare"
   ],
 }
 

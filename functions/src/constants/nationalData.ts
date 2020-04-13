@@ -8,6 +8,8 @@ export const categories = [
   "Kumulativa_intensivvardade",
 ]
 
+
+
 export const regions = [
   "Blekinge",
   "Dalarna",
@@ -31,3 +33,5 @@ export const regions = [
   "Örebro",
   "Östergötland",
 ]
+
+

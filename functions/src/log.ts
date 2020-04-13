@@ -1,7 +1,7 @@
 import { cloudFunction } from "narratory-cloud"
 import { LogTurn } from "narratory"
-import { notifySlack } from "./helpers/notifySlack"
-import { addErrorToGoogleSheet, addLogToGoogleSheet } from "./helpers/addToGoogleSheet"
+import { notifySlack } from "./api/notifySlack"
+import { addErrorToGoogleSheet, addLogToGoogleSheet } from "./api/addToGoogleSheet"
 const config = require("../config.json")
 
 export const log = cloudFunction(async (req, res) => {

@@ -1,18 +1,18 @@
 import { BotTurn, BridgeTurn } from "narratory"
 
-// Generated at Monday, April 13th 2020, 10:30:18 am
+// Generated at Monday, April 13th 2020, 3:09:49 pm
 
 export const presentNews : BridgeTurn[] = [
   {
     "say": {
-      "text": "Idag, söndag den 12 april, visar preliminära siffror att över 80 procent av de som intensivårdas på sjukhus överlever. .<break time=\\\"500ms\\\"/>David Konrad, överläkare på Iva Karolinska Universitetssjukhuset, säger att situationen ser betydligt bättre ut än anat. .<break time=\\\"1s\\\"/>"
+      "text": "Idag, måndagen den 13 april, höll Folkhälsomyndigheten återigen en pressträff om Coronaläget efter helgens uppehåll. <break time=\\\"500ms\\\"/> Siffrorna har dock inte förändrats särskilt mycket, då en stor efterrapportering är att vänta.<break time=\\\"1s\\\"/> "
     },
     "cond": {
       "platform": "voximplant"
     },
     "bot": {
       "say": {
-        "text": "Biltrafiken fortsätter att minska i landet. <break time=\\\"500ms\\\"/>Under påskafton var det närmare 40 procent mindre trafik i Stockholms och Göteborgsområdet jämfört med en vanlig lördag. .<break time=\\\"1s\\\"/>"
+        "text": "Flera kommuner har beslutat att ställa in årets studentfiranden eftersom nuvarande regler vad gäller folksamlingar kommer att ligga kvar åtminstone fram till juni.<break time=\\\"1s\\\"/> "
       },
       "bot": {
         "say": {
@@ -59,11 +59,11 @@ export const presentNews : BridgeTurn[] = [
   },
   {
     "say": {
-      "text": "Idag, söndag den 12 april, visar preliminära siffror att över 80 procent av de som intensivvårdas på sjukhus överlever. David Konrad, överläkare på Iva Karolinska Universitetssjukhuset, säger att situationen ser betydligt bättre ut än anat."
+      "text": "Idag, måndagen den 13 april, höll Folkhälsomyndigheten återigen en pressträff om Coronaläget efter helgens uppehåll. Siffrorna har dock inte förändrats särskilt mycket då en stor efterrapportering är att vänta."
     },
     "bot": {
       "say": {
-        "text": "Biltrafiken fortsätter att minska. Under påskafton var det närmare 40 procent mindre trafik i Stockholms- och Göteborgsområdet jämfört med en vanlig lördag. "
+        "text": "Flera kommuner har beslutat att ställa in årets studentfiranden eftersom nuvarande regler vad gäller folksamlingar kommer att ligga kvar åtminstone fram till juni."
       },
       "bot": {
         "say": {
@@ -112,7 +112,7 @@ export const presentNews : BridgeTurn[] = [
 
 export const textStats : BridgeTurn = {
   "say": {
-    "text": "Globalt är nästan 1,8 miljoner människor bekräftat smittade och runt 110 000 döda."
+    "text": "Globalt är cirka 1,8 miljoner människor bekräftat smittade och runt 114 000 döda."
   },
   "label": "SHARE_STATS_TEXT",
   "bot": {
@@ -123,7 +123,7 @@ export const textStats : BridgeTurn = {
         "title": "Statistik",
         "image": {
           "type": "image",
-          "url": "https://kinti.se/coronaguiden/Statistik_FHM_12april.png",
+          "url": "https://kinti.se/coronaguiden/Statistik_FHM_13april.png",
           "alt": "Statistik"
         }
       }
@@ -133,7 +133,7 @@ export const textStats : BridgeTurn = {
 
 export const voiceStats : BotTurn = {
   "say": {
-    "text": "Globalt är nästan en komma åtta miljoner människor bekräftat smittade, och runt hundratiotusen döda.<break time=\\\"1s\\\"/> I Sverige har vi drygt tiotusen bekräftade fall av covid19, och vi är uppe i 899 rapporterade dödsfall."
+    "text": "Globalt är cirka en komma åtta miljoner människor bekräftat smittade, och runt hundrafjortontusen döda.<break time=\\\"500ms\\\"/> I Sverige har vi nästan elvatusen bekräftade fall av covid19, och vi är uppe i 919 rapporterade dödsfall."
   },
   "label": "SHARE_STATS_VOICE"
 }

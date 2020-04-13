@@ -1,6 +1,6 @@
 import { UserTurn, Entity } from "narratory"
 
-// Generated at Monday, April 13th 2020, 10:30:23 am
+// Generated at Monday, April 13th 2020, 3:09:49 pm
 
 export const ACTIVITY : Entity = {
   "name": "ACTIVITY",
@@ -8792,9 +8792,8 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Hur många är sjuka i _INTCITY",
         "_CORONA i _INTCITY",
         "hur många har smittats i _INTCITY",
-        "Hur många smittad finns i _INTCITY",
-        "Hur många har infekterats av _CORONA i _INTCITY",
-        "Bör man vara rädd för att åka till _INTCITY"
+        "Hur många smittade finns i _INTCITY",
+        "Hur många har infekterats av _CORONA i _INTCITY"
       ]
     },
     "bot": {

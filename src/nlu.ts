@@ -1,94 +1,106 @@
 import { Entity, Intent, entities } from "narratory"
 import { CORONA, HEALTHCARE } from "./answers/generatedFAQ"
 
-const region: Entity = {
+const REGION: Entity = {
   name: "Region",
   enums: [
     {
-      name: "blekinge",
-      alts: ["blekinge län", "karlskrona"],
+      name: "Blekinge",
+      alts: ["blekinge län", "karlskrona", "karlshamn", "ronneby", "sölvesborg", "olofström"],
     },
     {
-      name: "dalarna",
-      alts: ["dalarnas län", "falun"],
+      name: "Dalarna",
+      alts: ["dalarnas län", "falun", "mora", "borlänge", "ludvika", "avesta"],
     },
     {
-      name: "gotland",
+      name: "Gotland",
       alts: ["gotlands län", "visby"],
     },
     {
-      name: "gävleborg",
-      alts: ["gävleborgs län", "gävle"],
+      name: "Gävleborg",
+      alts: ["gävleborgs län", "gävle", "sandviken", "bollnäs", "söderhamn", "hudiksvall"],
     },
     {
-      name: "halland",
-      alts: ["hallands län", "halmstad"],
+      name: "Halland",
+      alts: ["hallands län", "halmstad", "varberg", "kungsbacka", "falkenberg"],
     },
     {
-      name: "jämtland",
-      alts: ["jämtlands län", "östersund"],
+      name: "Jämtland",
+      alts: ["jämtlands län", "östersund", "sveg", "åre", "krokom", "strömsund"],
     },
     {
-      name: "jönköping",
-      alts: ["jönköpings län"],
+      name: "Jönköping",
+      alts: ["jönköpings län", "värnamo", "vetlanda", "nässjö", "tranås"],
     },
     {
-      name: "kalmar",
-      alts: ["kalmar län"],
+      name: "Kalmar",
+      alts: ["kalmar län", "oskarshamn", "vimmerby", "västervik", "nybro"],
     },
     {
-      name: "kronoberg",
-      alts: ["kronobergs län", "växjö"],
+      name: "Kronoberg",
+      alts: ["kronobergs län", "växjö", "ljungby", "älmhult", "alvesta", "markaryd"],
     },
     {
-      name: "norrbotten",
-      alts: ["norrbottens län"],
+      name: "Norrbotten",
+      alts: ["norrbottens län", "luleå", "piteå", "kiruna", "boden", "gällivare"],
     },
     {
-      name: "skåne",
-      alts: ["skåne län", "malmö", "helsingborg", "lund"],
+      name: "Skåne",
+      alts: ["skåne län", "malmö", "helsingborg", "lund", "kristianstad", "landskrona", "trelleborg", "ängelholm"],
     },
     {
-      name: "stockholm",
-      alts: ["stockholms län", "upplands väsby", "sollentuna", "södertälje"],
+      name: "Stockholm",
+      alts: ["stockholms län", "upplands väsby", "sollentuna", "södertälje", "lidingö", "tumba", "åkersberga", "vallentuna", "märsta", "gustavsberg", "norrtälje"],
     },
     {
-      name: "södermanland",
-      alts: ["södermanlands län", "sörmland", "eskilstuna"],
+      name: "Södermanland",
+      alts: ["södermanlands län", "sörmland", "eskilstuna", "katrineholm", "nyköping", "strängnäs", "oxelösund", "torshälla"],
     },
     {
-      name: "uppsala",
-      alts: ["uppsala län"],
+      name: "Uppsala",
+      alts: ["uppsala län", "enköping", "bålsta", "sävja", "knivsta"],
     },
     {
-      name: "värmland",
-      alts: ["värmlands län", "karlstad"],
+      name: "Värmland",
+      alts: ["värmlands län", "karlstad", "arvika", "kristinehamn", "skoghall", "säffle"],
     },
     {
-      name: "västerbotten",
-      alts: ["västerbottens län", "umeå"],
+      name: "Västerbotten",
+      alts: ["västerbottens län", "umeå", "skellefteå", "lycksele", "holmsund", "vännäs"],
     },
     {
-      name: "västernorrland",
-      alts: ["västernorrlands län"],
+      name: "Västernorrland",
+      alts: ["västernorrlands län", "sundsvall", "timrå", "härnösand", "sollefteå", "örnsköldsvik"],
     },
     {
-      name: "västmanland",
-      alts: ["västmanlands län", "västerås"],
+      name: "Västmanland",
+      alts: ["västmanlands län", "västerås", "köping", "sala", "arboga", "sala", "fagersta", "hallstahammar"],
     },
     {
-      name: "västa götaland",
-      alts: ["västa götalands län", "göteborg", "borås"],
+      name: "Västra götaland",
+      alts: ["västra götalands län", "göteborg", "borås", "trollhättan", "uddevalla", "skövde", "lerum", "alingsås", "kungälv", "vänersborg"],
     },
     {
-      name: "örebro",
-      alts: ["örebro län"],
+      name: "Örebro",
+      alts: ["örebro län", "karlskoga", "kumla", "lindesberg", "hallsberg"],
     },
     {
-      name: "östergötland",
-      alts: ["östergötlands län", "linköping", "norrköping"],
+      name: "Östergötland",
+      alts: ["östergötlands län", "linköping", "norrköping", "motala", "mjölby", "finspång"],
     },
   ],
+}
+const day: Entity = {
+  name: "Day",
+  enums: [
+    {
+      name: "idag",
+      alts: ["just nu", "för tillfället"]
+    },
+    {
+      name: "igår",
+    },
+  ]
 }
 
 export const yes: Intent = {
@@ -137,6 +149,7 @@ export const queryDiagnosis: Intent = {
 
 export const queryNeedCare: Intent = {
   entities: {
+    corona: CORONA,
     healthcare: HEALTHCARE,
   },
   examples: [
@@ -147,6 +160,9 @@ export const queryNeedCare: Intent = {
     "hur vet jag när jag ska ta kontakt med _healthcare",
     "behöver jag gå till _healthcare",
     "jag vill söka _healthcare. hur gör jag",
+    "vad är ett självskattningstest",
+    "vad är självskattningstest för _corona",
+    "behöver jag söka _healthcare"
   ],
 }
 
@@ -159,60 +175,121 @@ export const queryNews: Intent = {
     "några nyheter",
     "vad har hänt idag",
     "jag undrar hur läget ser ut just idag",
+    "jag vill ha nyheterna",
+    "nyheterna",
+    "senaste",
+    "senaste nytt"
   ],
 }
 
-export const queryInfectedLocation: Intent = {
+export const queryInfected: Intent = {
   entities: {
     corona: CORONA,
     country: entities.geoCountry,
-    myRegion: region
+    region: REGION,
   },
   examples: [
     "hur många är sjuka i _country",
+    "hur många är sjuka i _region",
     "hur många har blivit smittade av _corona i _country",
     "hur många i _country har _corona",
+    "hur många i _region har _corona",
     "hur många har _corona i _country",
-    "hur många är smittade",
     "hur många procent av _country befolkning är smittade",
     "hur många har _corona",
     "hur snabbt sprids smittan",
     "hur många har infekteras av _corona",
     "hur många är smittade i _country",
     "hur många i _country är smittade",
+    "hur många i _region är smittade",
     "hur många är smittade med _corona i _country?",
-    "hur många har infekteras av _corona",
+    "hur många har infekterats av _corona",
     "hur många är smittade i _region",
+    "hur ser smittan ut i _country",
+    "hur ser smittan ut i _region",
+    "hur många har rapporterats smittade",
+    "hur många fall har det varit",
+    "hur många har blivit sjuka totalt",
+    "totalt antal fall",
+    "hur ser situationen ut i _country",
+    "jag vill veta antal människor i _country",
+    "_corona i _country",
+    "hur många har smittats i _country",
+    "hur många smittade finns det i _country",
+    "hur många har infekterats av _corona i _country",
+    "hur är läget i _country",
+    "hur går det för _country",
+    "finns _corona i _country"
   ]
 }
 
-/* WIP
-
-export const queryIntensiveCareLocation: Intent = {
+export const queryIntensiveCare: Intent = {
   entities: {
     corona: CORONA,
-    country: entities.geoCountry,
-    state: entities.geoState,
-    city: entities.geoCity
-
+    region: REGION,
+    day: day
   },
   examples: [
-    "hur många intensivvårdas idag?",
-    "hur många är som intensivvård us Just idag
-hur många ligger på intensivvården
-hur många är allvarligt sjuka
-
+    "hur många intensivvårdas _day",
+    "hur många ligger på iva _day i _region",
+    "hur många har behandlats på iva",
+    "hur många ligger på intensivvården",
+    "hur många är allvarligt sjuka",
+    "hur många patienter får intensivvård i _region",
+    "hur många har fått intentsivvård i _region",
+    "hur många har intensivvårdats",
+    "hur många har intensvivvårdats i _region"
   ]
+}
 
-export const queryDeadLocation: Intent = {
+export const queryDead: Intent = {
   entities: {
     corona: CORONA,
     country: entities.geoCountry,
-    state: entities.geoState,
-    city: entities.geoCity
-
+    region: REGION,
+    day: day
   },
-  */
+  examples: [
+    "hur många har avlidit i _country av _corona",
+    "hur många har dött i _country av _corona",
+    "hur många i _country har dött av _corona",
+    "hur många dör av _corona i _country",
+    "hur många har dött i _region",
+    "vad är dödstalet i _region",
+    "hur många dog av _corona _day",
+    "hur många dog _day",
+    "hur många dödsfall har _country",
+    "hur många dog i _country _day",
+    "hur många har dött av _corona",
+    "hur många har dött i _country",
+    "hur många har dött _day",
+    "hur många har dött",
+    "hur många dödsfall",
+    "hur många dödsfall har det varit",
+    "hur många har dött i _corona",
+    "hur många har dött av _corona i _country",
+    "hur många har avlidit i _region av _corona",
+    "har du siffror på antal döda och dödlighet",
+    "hur många är döda",
+    "hur många har dött av _corona i _region"
+  ]
+}
+
+export const queryRanking: Intent = {
+  entities: {
+    country: entities.geoCountry
+  },
+  examples: [
+    "vilka orter i _country är mest drabbade",
+    "vilka städer i _country är värst drabbade",
+    "var är smittan värst",
+    "var är smittan värst utbredd",
+    "var smittas flest just nu",
+    "vart är smittspridningen störst",
+    "var i _country är flest smittade",
+    "var är flest smittade"
+  ]
+}
 
 export const regionAnswer: Intent = {
   entities: {
@@ -230,146 +307,4 @@ export const queryHowToProtect: Intent = {
     "hur skyddar vi oss från covid",
     "hur skyddar vi oss från viruset",
   ],
-}
-
-export const queryStayHome: Intent = {
-  examples: [
-    "Bör jag stanna hemma",
-    "måste jag stanna hemma",
-    "när måste jag vara hemma",
-    "ska jag undvika att gå ut",
-    "ska jag stanna hemma nu",
-  ],
-}
-
-export const querySocializing: Intent = {
-  examples: ["kan jag träffa vänner", "får jag träffa min familj", "kan jag hänga med mina kompisar"],
-}
-
-const family: Entity = {
-  name: "family",
-  enums: [
-    { name: "barn", alts: ["små barn", "bebis", "son", "dotter"] },
-    { name: "äldre", alts: ["farfar", "morfar", "farmor", "mormor", "gamla"] },
-    { name: "familj", alts: ["nära och kära", "kära", "närmaste"] },
-  ],
-}
-
-export const queryTakeCareOfFamily = {
-  entities: {
-    family,
-  },
-  examples: [
-    "hur ska jag ta hand om min _family",
-    "hur ska jag ta hand om mina _family",
-    "hur tar jag hand om _family",
-    "hur vårdar jag _family",
-  ],
-}
-/*
-
-  intent: nlu.queryHowToProtect,
-      bot: ""
-    },
-    {
-      intent: nlu.queryRegionStatus,
-      bot: ""
-    },
-    {
-      intent: nlu.queryStayHome,
-      bot: ""
-    },
-    {
-      intent: nlu.queryTakeCareOfFamily
-*/
-
-export const outOfMedicine: Intent = {
-  examples: [
-    "medicinen är slut",
-    "min medicin är slut",
-    "dom är slut",
-    "tabletterna är slut",
-    "jag har inga kvar",
-    "ingen medicin kvar",
-    "behöver mer medicin",
-    "jag behöver fler tabletter",
-  ],
-}
-
-export const tookAll: Intent = {
-  examples: ["jag tog alla", "jag tog alla som fanns", "alla som fanns", "alla piller"],
-}
-
-const medicine: Entity = {
-  name: "medicineTerm",
-  enums: [{ name: "tabletter", alts: ["tablett", "piller"] }],
-}
-
-export const quantifiedMedicine: Intent = {
-  entities: {
-    pillsTaken: entities.numberInteger,
-    medicine,
-  },
-  examples: ["jag tog _pillsTaken _medicine", "_pillsTaken _medicine", "jag tog _pillsTaken"],
-}
-
-export const quantifier: Intent = {
-  entities: {
-    number: entities.numberInteger,
-  },
-  examples: ["_number", "_number stycken"],
-}
-
-export const feelingGood: Intent = {
-  examples: ["Jag mår bra", "Ganska bra", "bra", "helt okej", "det är bra", "mår fint", "fint"],
-}
-
-export const feelingBad: Intent = {
-  examples: [
-    "Jag mår dåligt",
-    "Inte så bra",
-    "Ganska dåligt",
-    "Jag har en dålig känsla",
-    "Dåligt",
-    "Kasst",
-    "Jag mår illa",
-    "jag mår skit",
-    "skit",
-  ],
-}
-
-const tvTerms: Entity = {
-  name: "tvTerms",
-  enums: [{ name: "tv", alts: ["netflix", "via play", "hbo"] }],
-}
-export const watchedTv: Intent = {
-  entities: {
-    program: entities.any,
-    tvTerms,
-  },
-  examples: [
-    "jag såg på _tvTerms",
-    "jag såg på _program",
-    "programmet hette _program",
-    "jag tittade på _program",
-    "jag tittade på _tvTerms",
-    "jag såg på _program på _tvTerms",
-    "jag tittade på _program på _tvTerms",
-  ],
-}
-
-export const weatherDescriptors: Entity = {
-  name: "weatherDescriptor",
-  enums: [
-    { name: "soligt", alts: ["sol", "solsken", "fint", "bra", "fantastiskt", "klart"] },
-    { name: "regnigt", alts: ["regn", "blött", "dåligt", "tråkigt", "ruskigt", "blåsigt", "storm"] },
-    { name: "molnigt", alts: ["moln", "okej", "grått"] },
-  ],
-}
-
-export const weatherReport: Intent = {
-  entities: {
-    weather: weatherDescriptors,
-  },
-  examples: ["det är _weather", "_weather och _weather", "vädret är _weather", "_weather", "_weather och _weather"],
 }

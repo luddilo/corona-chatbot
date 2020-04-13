@@ -1,5 +1,6 @@
 import { countryNames } from "../constants/countryNames"
 import { fetchInternationalData } from "../api/fetchInternationalData"
+import { replaceZeroWithDescriptor } from "./util"
 
 export const getStatsInternational = async (country: string) => {
   const { allCountryData } = await fetchInternationalData()
@@ -14,11 +15,12 @@ export const getStatsInternational = async (country: string) => {
     (countryData: any) => countryData.country.toLowerCase() === translatedCountry.en.trim().toLowerCase()
   )
   if (countryData) {
+    
     return {
-      infected: countryData.infected,
-      deceased: countryData.deceased,
-      tested: countryData.tested,
-      recovered: countryData.recovered,
+      infected: replaceZeroWithDescriptor(countryData.infected),
+      deceased: replaceZeroWithDescriptor(countryData.deceased),
+      tested: replaceZeroWithDescriptor(countryData.tested),
+      recovered: replaceZeroWithDescriptor(countryData.recovered),
     }
   } else {
     return null

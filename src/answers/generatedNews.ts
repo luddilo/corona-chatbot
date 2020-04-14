@@ -1,11 +1,11 @@
 import { BotTurn, BridgeTurn } from "narratory"
 
-// Generated at Monday, April 13th 2020, 3:09:49 pm
+// Generated at Tuesday, April 14th 2020, 9:09:04 am
 
 export const presentNews : BridgeTurn[] = [
   {
     "say": {
-      "text": "Idag, måndagen den 13 april, höll Folkhälsomyndigheten återigen en pressträff om Coronaläget efter helgens uppehåll. <break time=\\\"500ms\\\"/> Siffrorna har dock inte förändrats särskilt mycket, då en stor efterrapportering är att vänta.<break time=\\\"1s\\\"/> "
+      "text": "Måndagen den 13 april höll Folkhälsomyndigheten återigen en pressträff om Coronaläget efter helgens uppehåll. <break time=\\\"500ms\\\"/> Siffrorna har dock inte förändrats särskilt mycket, då en stor efterrapportering är att vänta.<break time=\\\"1s\\\"/> "
     },
     "cond": {
       "platform": "voximplant"
@@ -59,7 +59,7 @@ export const presentNews : BridgeTurn[] = [
   },
   {
     "say": {
-      "text": "Idag, måndagen den 13 april, höll Folkhälsomyndigheten återigen en pressträff om Coronaläget efter helgens uppehåll. Siffrorna har dock inte förändrats särskilt mycket då en stor efterrapportering är att vänta."
+      "text": "Måndagen den 13 april höll Folkhälsomyndigheten återigen en pressträff om Coronaläget efter helgens uppehåll. Siffrorna har dock inte förändrats särskilt mycket då en stor efterrapportering är att vänta."
     },
     "bot": {
       "say": {

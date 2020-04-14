@@ -219,7 +219,8 @@ export const queryInfected: Intent = {
     "hur många har infekterats av _corona i _country",
     "hur är läget i _country",
     "hur går det för _country",
-    "finns _corona i _country"
+    "finns _corona i _country",
+    "hur många är smittade på _country"
   ]
 }
 

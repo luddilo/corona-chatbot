@@ -1,6 +1,6 @@
 import { UserTurn, Entity } from "narratory"
 
-// Generated at Tuesday, April 14th 2020, 9:09:05 am
+// Generated at Tuesday, April 14th 2020, 2:52:39 pm
 
 export const ACTIVITY : Entity = {
   "name": "ACTIVITY",

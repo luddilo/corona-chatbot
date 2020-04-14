@@ -1,18 +1,18 @@
 import { BotTurn, BridgeTurn } from "narratory"
 
-// Generated at Tuesday, April 14th 2020, 9:09:04 am
+// Generated at Tuesday, April 14th 2020, 2:52:36 pm
 
 export const presentNews : BridgeTurn[] = [
   {
     "say": {
-      "text": "Måndagen den 13 april höll Folkhälsomyndigheten återigen en pressträff om Coronaläget efter helgens uppehåll. <break time=\\\"500ms\\\"/> Siffrorna har dock inte förändrats särskilt mycket, då en stor efterrapportering är att vänta.<break time=\\\"1s\\\"/> "
+      "text": "Tisdagen den 14 april bekräftade Folkhälsomyndigheten att det bland anmälda fall finns en överrepresentation av personer som är födda i andra länder. <break time=\\\"500ms\\\"/> Fokus framöver behöver därför läggas på att information når ut till just dessa. <break time=\\\"1s\\\"/> "
     },
     "cond": {
       "platform": "voximplant"
     },
     "bot": {
       "say": {
-        "text": "Flera kommuner har beslutat att ställa in årets studentfiranden eftersom nuvarande regler vad gäller folksamlingar kommer att ligga kvar åtminstone fram till juni.<break time=\\\"1s\\\"/> "
+        "text": "Många svenskar har följt rekommendationerna och stannat hemma under påsken. <break time=\\\"500ms\\\"/> Enligt Telia har långväga resor minskat drastiskt under helgen. <break time=\\\"1s\\\"/> "
       },
       "bot": {
         "say": {
@@ -59,11 +59,11 @@ export const presentNews : BridgeTurn[] = [
   },
   {
     "say": {
-      "text": "Måndagen den 13 april höll Folkhälsomyndigheten återigen en pressträff om Coronaläget efter helgens uppehåll. Siffrorna har dock inte förändrats särskilt mycket då en stor efterrapportering är att vänta."
+      "text": "Tisdagen den 14 april bekräftade Folkhälsomyndigheten att det bland anmälda fall finns en överrepresentation av personer som är födda i andra länder. Fokus framöver behöver därför läggas på att information når ut till just dessa."
     },
     "bot": {
       "say": {
-        "text": "Flera kommuner har beslutat att ställa in årets studentfiranden eftersom nuvarande regler vad gäller folksamlingar kommer att ligga kvar åtminstone fram till juni."
+        "text": "Många svenskar har följt rekommendationerna och stannat hemma under påsken. Enligt Telia har långväga resor minskat drastiskt under helgen."
       },
       "bot": {
         "say": {
@@ -112,7 +112,7 @@ export const presentNews : BridgeTurn[] = [
 
 export const textStats : BridgeTurn = {
   "say": {
-    "text": "Globalt är cirka 1,8 miljoner människor bekräftat smittade och runt 114 000 döda."
+    "text": "Globalt är cirka 1,9 miljoner människor bekräftat smittade och runt 120 000 döda."
   },
   "label": "SHARE_STATS_TEXT",
   "bot": {
@@ -123,7 +123,7 @@ export const textStats : BridgeTurn = {
         "title": "Statistik",
         "image": {
           "type": "image",
-          "url": "https://kinti.se/coronaguiden/Statistik_FHM_13april.png",
+          "url": "https://kinti.se/coronaguiden/Statistik_FHM_14april.png",
           "alt": "Statistik"
         }
       }
@@ -133,7 +133,7 @@ export const textStats : BridgeTurn = {
 
 export const voiceStats : BotTurn = {
   "say": {
-    "text": "Globalt är cirka en komma åtta miljoner människor bekräftat smittade, och runt hundrafjortontusen döda.<break time=\\\"500ms\\\"/> I Sverige har vi nästan elvatusen bekräftade fall av covid19, och vi är uppe i 919 rapporterade dödsfall."
+    "text": "Globalt är drygt en komma nio miljoner människor bekräftat smittade, och runt hundratjugotusen döda.<break time=\\\"500ms\\\"/> I Sverige har vi drygt elvatusen bekräftade fall av covid19, och vi är uppe i 1033 rapporterade dödsfall."
   },
   "label": "SHARE_STATS_VOICE"
 }

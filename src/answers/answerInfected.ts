@@ -14,6 +14,11 @@ export const infectedYesterday: BotTurn[] = [
     }
 ]
 
+export const rememberDifference: BotTurn = {
+    say: "Kom ihåg att olika länder inte är jämförbara eftersom testerna utförs på olika sätt.",
+    goto: "VERIFY_ANSWER"
+}
+
 export const answerInfected: Array<BridgeTurn | BotTurn> = [
     {
         cond: {
@@ -71,8 +76,19 @@ export const answerInfected: Array<BridgeTurn | BotTurn> = [
             },
             {
                 cond: { country: true },
-                say: "_country har totalt _infected bekräftade fall av covid19. Kom ihåg att olika länder inte är jämförbara eftersom testerna utförs på olika sätt.",
-                goto: "VERIFY_ANSWER"
+                bot: [
+                    {
+                        cond: {
+                            recovered: true
+                        },
+                        say: "_country har totalt _infected bekräftade fall av covid19, av vilka _recovered har tillfrisknat.",
+                        bot: rememberDifference
+                    },
+                    {
+                        say: "_country har totalt _infected bekräftade fall av covid19.",
+                        bot: rememberDifference
+                    }
+                ]
             },
             {
                 say: "Tyvärr har jag ingen global siffra i nuläget, men Sverige har totalt _infected bekräftade fall av covid19.",

@@ -202,7 +202,7 @@ export const queryInfected: Intent = {
     "hur många är smittade i _country",
     "hur många i _country är smittade",
     "hur många i _region är smittade",
-    "hur många är smittade med _corona i _country?",
+    "hur många är smittade med _corona i _country",
     "hur många har infekterats av _corona",
     "hur många är smittade i _region",
     "hur ser smittan ut i _country",
@@ -220,7 +220,13 @@ export const queryInfected: Intent = {
     "hur är läget i _country",
     "hur går det för _country",
     "finns _corona i _country",
-    "hur många är smittade på _country"
+    "hur många är smittade på _country",
+    "hur många är smittade med _corona i _region",
+    "hur många är smittade med _corona",
+    "hur är läget i _region",
+    "hur går det för _region",
+    "finns _corona i _region",
+    "hur många har _corona i _region",
   ]
 }
 
@@ -272,7 +278,9 @@ export const queryDead: Intent = {
     "hur många har avlidit i _region av _corona",
     "har du siffror på antal döda och dödlighet",
     "hur många är döda",
-    "hur många har dött av _corona i _region"
+    "hur många har dött av _corona i _region",
+    "hur många har dött i _corona i _region",
+    "hur många har dött i _corona i _country"
   ]
 }
 

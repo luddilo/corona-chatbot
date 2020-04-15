@@ -1,6 +1,6 @@
 import { UserTurn, Entity } from "narratory"
 
-// Generated at Monday, April 13th 2020, 3:09:49 pm
+// Generated at Tuesday, April 14th 2020, 2:52:39 pm
 
 export const ACTIVITY : Entity = {
   "name": "ACTIVITY",
@@ -8597,9 +8597,17 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "Vilken är den bästa låten att lyssna på under Corona",
-      "entities": {},
+      "entities": {
+        "PERS_PRON": PERS_PRON
+      },
       "examples": [
         "Vilken är den bästa låten att lyssna på under Corona",
+        "rekommendera en bra låt",
+        "_PERS_PRON vill höra en bra låt",
+        "vad för låt rekommenderar du",
+        "har du någon favorit låt",
+        "har du någon bra låt",
+        "säg en bra låt",
         ""
       ]
     },
@@ -8820,6 +8828,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Hur många har dött av _CORONA i _INTCITY",
         "hur många har dött i _INTCITY av _CORONA",
         "Hur många har dött i _INTCITY nu?",
+        "hur många har dött i _CORONA i _INTCITY",
         ""
       ]
     },

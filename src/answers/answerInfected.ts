@@ -1,25 +1,23 @@
 import { BotTurn, BridgeTurn } from "narratory"
 
-export const fixVariables: BotTurn[] = [
+export const infectedYesterday: BotTurn[] = [
     {
         cond: {
-            infected: 0
+            infected_yesterday: true,
         },
-        say: "",
-        set: {
-            infected: "inga"
-        }
+        say: "_infected_yesterday nya fall rapporerades igår.",
+        goto: "VERIFY_ANSWER"
     },
     {
-        cond: {
-            infected_yesterday: 0
-        },
         say: "",
-        set: {
-            infected_yesterday: "inga"
-        }
+        goto: "VERIFY_ANSWER"
     }
 ]
+
+export const rememberDifference: BotTurn = {
+    say: "Kom ihåg att olika länder inte är jämförbara eftersom testerna utförs på olika sätt.",
+    goto: "VERIFY_ANSWER"
+}
 
 export const answerInfected: Array<BridgeTurn | BotTurn> = [
     {
@@ -38,7 +36,7 @@ export const answerInfected: Array<BridgeTurn | BotTurn> = [
                 cond: {
                     country: true
                 },
-                say: "Tyvärr saknar jag data för antal bekräftade fall i _country",
+                say: "Tyvärr saknar jag data för antal bekräftade fall i _country.",
                 goto: "VERIFY_ANSWER"
             }
         ]
@@ -52,10 +50,12 @@ export const answerInfected: Array<BridgeTurn | BotTurn> = [
                 cond: {
                     region: true
                 },
-                say: "_region_label har totalt _infected bekräftade fall av covid19, vilket motsvarar _infected_per_100000_ppl per 100000 invånare."
+                say: "_region_label har totalt _infected bekräftade fall av covid19, vilket motsvarar _infected_per_100000_ppl per 100000 invånare.",
+                bot: infectedYesterday
             },
             {
-                say: "Sverige har totalt _infected bekräftade fall av covid19, vilket motsvarar _infected_per_100000_ppl per 100000 invånare."
+                say: "Sverige har totalt _infected bekräftade fall av covid19, vilket motsvarar _infected_per_100000_ppl per 100000 invånare.",
+                bot: infectedYesterday
             }
         ]
     },
@@ -66,31 +66,37 @@ export const answerInfected: Array<BridgeTurn | BotTurn> = [
             {
                 cond:
                     { region: true },
-                say: "_region_label har totalt _infected bekräftade fall av covid19"
+                say: "_region_label har totalt _infected bekräftade fall av covid19",
+                bot: infectedYesterday
             },
             {
                 cond: { country: "sverige" },
-                say: "Sverige har totalt _infected bekräftade fall av covid19"
+                say: "_country Sverige har totalt _infected bekräftade fall av covid19",
+                bot: infectedYesterday
             },
             {
                 cond: { country: true },
-                say: "_country har totalt _infected bekräftade fall av covid19. Kom ihåg att olika länder inte är jämförbara eftersom testerna utförs på olika sätt."
+                bot: [
+                    {
+                        cond: {
+                            recovered: true
+                        },
+                        say: "_country har totalt _infected bekräftade fall av covid19, av vilka _recovered har tillfrisknat.",
+                        bot: rememberDifference
+                    },
+                    {
+                        say: "_country har totalt _infected bekräftade fall av covid19.",
+                        bot: rememberDifference
+                    }
+                ]
             },
             {
-                say: "Tyvärr har jag ingen global siffra i nuläget, men Sverige har totalt _infected bekräftade fall av covid19."
+                say: "Tyvärr har jag ingen global siffra i nuläget, men Sverige har totalt _infected bekräftade fall av covid19.",
+                goto: "VERIFY_ANSWER"
             }
         ]
     }
 ]
-
-export const infectedYesterday: BotTurn = {
-    cond: {
-        infected_yesterday: true,
-    },
-    say: "_infected_yesterday nya fall rapporerades igår."
-}
-
-export const infectedArray = [fixVariables, answerInfected, infectedYesterday]
 
 
 

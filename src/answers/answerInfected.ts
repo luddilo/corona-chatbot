@@ -3,6 +3,13 @@ import { BotTurn, BridgeTurn } from "narratory"
 export const infectedYesterday: BotTurn[] = [
     {
         cond: {
+            infected_yesterday: "inga",
+        },
+        say: "Inga nya fall rapporterades igår.",
+        goto: "VERIFY_ANSWER"
+    },
+    {
+        cond: {
             infected_yesterday: true,
         },
         say: "_infected_yesterday nya fall rapporerades igår.",

@@ -36,8 +36,8 @@ const queryQuestions: BotTurn = {
         hotStarted: false
       },
       text: [
-        "Vill du höra de senaste nyheterna eller har du kanske en fråga?",
-        "Vill du höra det senaste som hänt eller fråga mig något annat?",
+        "Vad har du för fråga till mig?",
+        "Vad vill du veta idag?",
         "Vad undrar du över?",
       ],
     },

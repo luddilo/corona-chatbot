@@ -1,5 +1,6 @@
 import Axios from "axios"
 import { regions, categories } from "../constants/nationalData"
+import { capitalize } from "../helpers/util"
 
 const urlSwedenPerDate =
   "https://services5.arcgis.com/fsYDFeRKu1hELJJs/arcgis/rest/services/FOHM_Covid_19_FME_1/FeatureServer/1/query?f=json&where=1%3D1&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=*&orderByFields=Statistikdatum%20desc&outSR=102100&resultOffset=0&resultRecordCount=2000&cacheHint=true"
@@ -10,12 +11,11 @@ const urlSwedenPerRegion =
 let cachedResponse: any
 
 const sumArray = (arr: number[]) => {
-    return arr.reduce(function (acc, val) {
-      return acc + val
-    }, 0)
-  }
+  return arr.reduce(function (acc, val) {
+    return acc + val
+  }, 0)
+}
 
-  
 const hasLatestData = (timeStamp: number) => {
   var yesterday = new Date().setHours(-24, 0, 0, 0)
   var thatDay = new Date(timeStamp).setHours(0, 0, 0, 0)
@@ -83,7 +83,9 @@ export const fetchNationalData = async () => {
     throw Error("No response from API and no data cached")
   }
   return {
-    regionTimeSeriesData: regions.map((_region) => extractDataFromDateResponse(_region, cachedResponse.perDate)),
+    regionTimeSeriesData: regions.map((_region) =>
+      extractDataFromDateResponse(capitalize(_region).replace(" ", "_"), cachedResponse.perDate)
+    ),
     aggrTimeSeriesData: categories.map((category) => extractDataFromDateResponse(category, cachedResponse.perDate)),
     regionData: regions.map((_region) => extractDataFromRegionResponse(_region, cachedResponse.perRegion)),
   }

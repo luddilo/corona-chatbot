@@ -21,6 +21,7 @@
     "firebase-admin": "^8.6.0",
     "firebase-functions": "^3.3.0",
     "google-spreadsheet": "^3.0.10",
+    "moment": "^2.24.0",
     "narratory": "^0.11.0",
     "narratory-cloud": "^0.2.18"
   },

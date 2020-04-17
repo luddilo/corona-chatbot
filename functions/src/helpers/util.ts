@@ -1,5 +1,9 @@
-export const replaceZeroWithDescriptor = (num: number, descriptor: string = "inga") => {
-  return num == 0 ? descriptor : num
+export const replaceZeroWithDescriptor = (num: number | string, descriptor: string = "inga") => {
+  if (typeof num === "number") {
+    return num == 0 ? descriptor : num
+  } else {
+    return "okänt antal"
+  }
 }
 
 const capitalizeWord = (str: string) => {

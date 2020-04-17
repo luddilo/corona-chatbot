@@ -20,6 +20,9 @@ export const getLinesFromTsv = async ({ url, skipRows }: { url: string; skipRows
         tarr.push(data[j].replace("\n", ""))
       }
       lines.push(tarr)
+    } else {
+      //console.log(data)
+      console.log("row" + i + ": ", data.length, numberOfCols, (numberOfCols - data.length) + "missing")
     }
   }
   

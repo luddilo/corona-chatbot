@@ -1,11 +1,9 @@
 import { getLinesFromTsv } from "./getLines"
 import { RichSay } from "narratory"
+const { GoogleSpreadsheet } = require("google-spreadsheet")
+const googleCredentials = require("../../functions/google_credentials.json")
 
 // https://docs.google.com/spreadsheets/d/1PAf9wmSxVnCBjIHft_-n0HOlRaq_LRlNMHeMPvYb2GU/edit#gid=901191674
-const url =
-  "https://docs.google.com/spreadsheets/d/e/2PACX-1vSz98tc6sPBHgaU1PIyDggLhfQ0G5tBc5PyEsgKfxV-u4ybAEtSp9o-qLylGh_cO9BiJXtKOiKTDa0M/pub?gid=901191674&single=true&output=tsv"
-
-const NUMBER_OF_TOP_ROWS_TO_SKIP = 0
 
 interface QA {
   formulations: string[]
@@ -17,47 +15,50 @@ interface QA {
 
 export async function getFaq() {
   try {
-    const qas: QA[] = []
+    const googleSheetId = "1PAf9wmSxVnCBjIHft_-n0HOlRaq_LRlNMHeMPvYb2GU"
+    const googleSheetTabId = "901191674"
+    const doc = new GoogleSpreadsheet(googleSheetId)
 
-    const lines = await getLinesFromTsv({ url, skipRows: NUMBER_OF_TOP_ROWS_TO_SKIP })
-    const headers = lines.splice(0, 1)[0]
+    await doc.useServiceAccountAuth(googleCredentials)
 
-    lines.forEach((row) => {
+    await doc.loadInfo() 
+
+    const sheet = doc.sheetsById[googleSheetTabId]
+
+    const lines = await sheet.getRows()
+
+    const filtered = lines.filter((row) => {
+      return row["OK (for bot)"].toLowerCase() === "ok" && row["Dynamic answer"].toLowerCase() !== "yes"
+    })
+
+    const qas = []
+
+    filtered.forEach((row) => {
       let qa: QA = { formulations: [], category: "", answers: [], shouldVerify: true, staticAnswer: true }
-      let skip = false
-      let answer : RichSay = { text: null }
-      row.forEach((text: string, index) => {
-        const header = headers[index]
-        if (index == 0 && text !== "OK") {
-          skip = true
-        } else if (header.toLowerCase() === "skip verification") {
-          if (text.toLowerCase() === "yes") {
-            qa.shouldVerify = false
-          }
-        } else if (header.toLowerCase() === "") {
-        } else if (header.toLowerCase() === "category") {
-          qa.category = text
-        } else if (header.toLowerCase() === "question formulations" || header.toLowerCase() === "q") {
-          qa.formulations.push(text)
-        } else if (header.toLowerCase() === "bot-answer") {
-          answer.text = text
-        } else if (header.toLowerCase() === "voice-answer" && text) {
-          answer.ssml = text
-        } else if (header.toLowerCase() === "dynamic answer") {
-          if (text.toLowerCase() === "yes") {
-            qa.staticAnswer = false
-          }
-        }
-      })
+      let answer: RichSay = { text: null }
 
-      if (!skip && qa.formulations.length > 0 && answer.text && qa.staticAnswer) {
-        qa.answers.push(answer)
-        qas.push(qa)
+      for (let i = 0; i < 100; i++) {
+        const label = `Q${i}`
+        if (label in row && row[label]) {
+          qa.formulations.push(row[label])
+        }
       }
+
+      qa.category = row.category
+      
+      answer.text = row["Bot-answer"]
+      if (row["Voice-answer"]) {
+        answer.ssml = row["Voice-answer"]
+      }
+      qa.answers.push(answer)
+
+      if (row["Skip verification"].toLowerCase() === "yes") {
+        qa.shouldVerify = false
+      }
+      qas.push(qa)
     })
     return qas
   } catch (err) {
-    console.log(err)
-    return null
+    throw err
   }
 }

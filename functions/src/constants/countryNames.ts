@@ -185,7 +185,6 @@ export const countryNames = [
   { en: "United Kingdom ", sv: "Storbritannien" },
   { en: "United States", sv: "USA" },
   { en: "United States", sv: "Amerikas förenta stater" },
-  { en: "United States", sv: "USA" },
   { en: "Uruguay  ", sv: "Uruguay" },
   { en: "Uzbekistan  ", sv: "Uzbekistan" },
   { en: "Vanuatu  ", sv: "Vanuatu" },

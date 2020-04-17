@@ -5,12 +5,15 @@ import { getUserTurn, entityDelimiter } from "./getUserTurn"
 import { getFaq } from "./getFaq"
 import { getEntities } from "./getEntities"
 import * as fs from "fs"
+import { simpleQuestionAnswers } from "../src/answers/generatedFAQ"
 
 export const generateFaq = async () => {
   console.log("Generating src/answers/generatedFAQ.ts")
+  const previousFAQCount = simpleQuestionAnswers.length
+
   const faq = await getFaq()
   console.log("Got faq from Google sheet")
-
+    
   const entities = await getEntities()
   console.log("Got entites from Google sheet")
 
@@ -27,7 +30,7 @@ export const generateFaq = async () => {
 
   const args = process.argv.slice(2)
 
-  if (args.includes("--withPrompts") || true) {
+  if (args.includes("--withPrompts") || true) { // Always verify, for now
     userTurns = userTurns.map((userTurn) => {
       if ((userTurn.intent as Intent).name.startsWith("question:")) {
         return {
@@ -58,5 +61,5 @@ export const generateFaq = async () => {
 
   fs.writeFileSync("src/answers/generatedFAQ.ts", str)
 
-  console.log("Printed file")
+  console.log(`Printed file with ${userTurns.length} intents (previously ${previousFAQCount}) and ${entities.length} entities`)
 }

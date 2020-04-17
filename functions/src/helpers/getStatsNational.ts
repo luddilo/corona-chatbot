@@ -1,5 +1,5 @@
 import { fetchNationalData } from "../api/fetchNationalData"
-import { replaceZeroWithDescriptor } from "./util"
+import { replaceZeroWithDescriptor, capitalize } from "./util"
 
 const getTimeSeriesData = (data: any, label: string) => {
   let returnData: any = {}
@@ -26,17 +26,25 @@ export const getStatsNational = async (region: string | null) => {
   let returnData: any
 
   if (region) {
-    const selectedTimeSeriesData: any = regionTimeSeriesData.find((regionObj) => regionObj.name === region)
+    const selectedTimeSeriesData: any = regionTimeSeriesData.find(
+      (regionObj) => regionObj.name.toLowerCase() === region.toLowerCase().replace(" ", "_")
+    )
 
-    const selectedRegionData = regionData.find((regionObj) => regionObj && regionObj.region === region)
+    const selectedRegionData = regionData.find(
+      (regionObj) => regionObj && regionObj.region.toLowerCase() === region.toLowerCase()
+    )
+
+    if (!selectedRegionData || !selectedTimeSeriesData) {
+      throw Error("Couldn't find data for region " + region)
+    }
 
     returnData = {
       ...getTimeSeriesData(selectedTimeSeriesData, "infected"),
-      region_label: selectedRegionData!.region + " län",
-      region: selectedRegionData?.region,
+      region_label: capitalize(selectedRegionData.region) + " län",
+      region: capitalize(selectedRegionData.region),
       intensive_care: replaceZeroWithDescriptor(selectedRegionData?.intensive_care),
       deceased: replaceZeroWithDescriptor(selectedRegionData?.deceased),
-      infected_per_100000_ppl: Math.round(selectedRegionData!.infected_per_100000_ppl),
+      infected_per_100000_ppl: Math.round(selectedRegionData.infected_per_100000_ppl),
     }
   } else {
     const infected = aggrTimeSeriesData.find((obj) => obj.name === "Totalt_antal_fall")

@@ -88,6 +88,13 @@ const REGION: Entity = {
       name: "Östergötland",
       alts: ["östergötlands län", "linköping", "norrköping", "motala", "mjölby", "finspång"],
     },
+    {
+      name: "Norrland",
+    },
+    {
+      name: "min region",
+      alts: ["min kommun", "mitt län", "där jag bor"]
+    }
   ],
 }
 const day: Entity = {
@@ -228,7 +235,10 @@ export const queryInfected: Intent = {
     "finns _corona i _region",
     "hur många har _corona i _region",
     "är det över i _country",
-    "hur många procent av _region är smittade"
+    "hur många procent av _region är smittade",
+    "hur är risken i _region",
+    "vad är situationen globalt"
+
   ]
 }
 
@@ -247,7 +257,11 @@ export const queryIntensiveCare: Intent = {
     "hur många patienter får intensivvård i _region",
     "hur många har fått intentsivvård i _region",
     "hur många har intensivvårdats",
-    "hur många har intensvivvårdats i _region"
+    "hur många har intensvivvårdats i _region",
+    "hur många vårdas på sjukhus i _region",
+    "hur många vårdas på sjukhus",
+    "hur många vårdas för _corona",
+    "hur många vårdas för _corona i _region"
   ]
 }
 
@@ -282,7 +296,9 @@ export const queryDead: Intent = {
     "hur många är döda",
     "hur många har dött av _corona i _region",
     "hur många har dött i _corona i _region",
-    "hur många har dött i _corona i _country"
+    "hur många har dött i _corona i _country",
+    "hur många är döda i _country",
+    "hur många är döda i _region"
   ]
 }
 
@@ -304,10 +320,13 @@ export const queryRanking: Intent = {
 
 export const regionAnswer: Intent = {
   entities: {
-    city: entities.geoCity,
-    state: entities.geoState,
+    region: REGION
   },
-  examples: ["_city", "_state", "jag bor i _city", "i _city", "jag bor i _state", "i _state"],
+  examples: [
+    "_region", 
+    "jag bor i _region", 
+    "i _region",
+  ]
 }
 
 export const queryHowToProtect: Intent = {

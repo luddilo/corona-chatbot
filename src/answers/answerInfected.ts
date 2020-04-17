@@ -1,4 +1,5 @@
-import { BotTurn, BridgeTurn } from "narratory"
+import { BotTurn, BridgeTurn, UserTurn } from "narratory"
+import * as nlu from "../nlu"
 
 export const infectedYesterday: BotTurn[] = [
     {
@@ -36,8 +37,34 @@ export const answerInfected: Array<BridgeTurn | BotTurn> = [
                 cond: {
                     region: true
                 },
-                say: "Tyvärr saknar jag data för antal bekräftade fall i _region_label.",
-                goto: "VERIFY_ANSWER"
+                bot: [
+                    {
+                        cond: {
+                            region: "Norrland"
+                        },
+                        say: "Jag har tyvärr bara statistik per län och inte för hela _region.",
+                        goto: "VERIFY_ANSWER"
+                    },
+                    {
+                        cond: {
+                            region: "min region"
+                        },
+                        say: "I vilket län bor du?",
+                        user: [
+                            {
+                                intent: nlu.regionAnswer, bot: {
+                                    url: "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/statistics",
+                                    params: ["region", "country"],
+                                    repair: "PARENT"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        say: "Tyvärr saknar jag data för antal bekräftade fall i _region_label.",
+                        goto: "VERIFY_ANSWER"
+                    }
+                ],
             },
             {
                 cond: {
@@ -57,11 +84,11 @@ export const answerInfected: Array<BridgeTurn | BotTurn> = [
                 cond: {
                     region: true
                 },
-                say: "_region_label har totalt _infected bekräftade fall av covid19, vilket motsvarar _infected_per_100000_ppl per 100000 invånare.",
+                say: "_region_label har totalt _infected bekräftade fall av covid19, vilket motsvarar _infected_per_100000_ppl per 100 000 invånare.",
                 bot: infectedYesterday
             },
             {
-                say: "Sverige har totalt _infected bekräftade fall av covid19, vilket motsvarar _infected_per_100000_ppl per 100000 invånare.",
+                say: "Sverige har totalt _infected bekräftade fall av covid19, vilket motsvarar _infected_per_100000_ppl per 100 000 invånare.",
                 bot: infectedYesterday
             }
         ]

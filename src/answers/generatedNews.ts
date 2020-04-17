@@ -1,18 +1,18 @@
 import { BotTurn, BridgeTurn } from "narratory"
 
-// Generated at Tuesday, April 14th 2020, 2:52:36 pm
+// Generated at Thursday, April 16th 2020, 2:57:05 pm
 
 export const presentNews : BridgeTurn[] = [
   {
     "say": {
-      "text": "Tisdagen den 14 april bekräftade Folkhälsomyndigheten att det bland anmälda fall finns en överrepresentation av personer som är födda i andra länder. <break time=\\\"500ms\\\"/> Fokus framöver behöver därför läggas på att information når ut till just dessa. <break time=\\\"1s\\\"/> "
+      "text": "Torsdagen den 16 april meddelade Folkhälsomyndigheten att matchspel för barn och ungdomsidrotten kommer att få genomföras så länge enbart friska och symptomfria personer deltar. <break time=\\\"500ms\\\"/> Tillgång till att tvätta händer måste finnas på plats och trängsel får ej uppstå. <break time=\\\"1s\\\"/>"
     },
     "cond": {
       "platform": "voximplant"
     },
     "bot": {
       "say": {
-        "text": "Många svenskar har följt rekommendationerna och stannat hemma under påsken. <break time=\\\"500ms\\\"/> Enligt Telia har långväga resor minskat drastiskt under helgen. <break time=\\\"1s\\\"/> "
+        "text": "En tredjedel av alla anmälda fall i Stockholm kommer från äldreboenden. Detta är en miljö som behöver skyddas bättre framöver.<break time=\\\"1s\\\"/>"
       },
       "bot": {
         "say": {
@@ -59,11 +59,11 @@ export const presentNews : BridgeTurn[] = [
   },
   {
     "say": {
-      "text": "Tisdagen den 14 april bekräftade Folkhälsomyndigheten att det bland anmälda fall finns en överrepresentation av personer som är födda i andra länder. Fokus framöver behöver därför läggas på att information når ut till just dessa."
+      "text": "Torsdagen den 16 april meddelade Folkhälsomyndigheten att matchspel för barn och ungdomsidrotten kommer att få genomföras så länge enbart friska och symptomfria personer deltar. Tillgång till att tvätta händer måste finnas på plats och trängsel får ej uppstå."
     },
     "bot": {
       "say": {
-        "text": "Många svenskar har följt rekommendationerna och stannat hemma under påsken. Enligt Telia har långväga resor minskat drastiskt under helgen."
+        "text": "En tredjedel av alla anmälda fall i Stockholm kommer från äldreboenden. Detta är en miljö som behöver skyddas bättre framöver."
       },
       "bot": {
         "say": {
@@ -112,7 +112,7 @@ export const presentNews : BridgeTurn[] = [
 
 export const textStats : BridgeTurn = {
   "say": {
-    "text": "Globalt är cirka 1,9 miljoner människor bekräftat smittade och runt 120 000 döda."
+    "text": "Globalt är drygt 2 miljoner människor bekräftat smittade och 136 000 döda."
   },
   "label": "SHARE_STATS_TEXT",
   "bot": {
@@ -123,7 +123,7 @@ export const textStats : BridgeTurn = {
         "title": "Statistik",
         "image": {
           "type": "image",
-          "url": "https://kinti.se/coronaguiden/Statistik_FHM_14april.png",
+          "url": "http://kinti.se/coronaguiden/Statistik_FHM_16april.png",
           "alt": "Statistik"
         }
       }
@@ -133,7 +133,7 @@ export const textStats : BridgeTurn = {
 
 export const voiceStats : BotTurn = {
   "say": {
-    "text": "Globalt är drygt en komma nio miljoner människor bekräftat smittade, och runt hundratjugotusen döda.<break time=\\\"500ms\\\"/> I Sverige har vi drygt elvatusen bekräftade fall av covid19, och vi är uppe i 1033 rapporterade dödsfall."
+    "text": "Globalt är drygt två miljoner människor bekräftat smittade, och hundratrettiosextusen döda.<break time=\\\"500ms\\\"/> I Sverige har vi drygt tolvtusen bekräftade fall av covid19, och vi är uppe i 1333 rapporterade dödsfall."
   },
   "label": "SHARE_STATS_VOICE"
 }

@@ -1,5 +1,9 @@
 import { getLinesFromTsv } from "./getLines"
 import { RichSay } from "narratory"
+<<<<<<< HEAD
+=======
+import * as XLSX from "xlsx"
+>>>>>>> 74d68d499d2c7ed87d4d4a7f322922f5796b98b7
 const { GoogleSpreadsheet } = require("google-spreadsheet")
 const googleCredentials = require("../../functions/google_credentials.json")
 

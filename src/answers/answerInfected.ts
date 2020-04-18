@@ -46,21 +46,6 @@ export const answerInfected: Array<BridgeTurn | BotTurn> = [
                         goto: "VERIFY_ANSWER"
                     },
                     {
-                        cond: {
-                            region: "min region"
-                        },
-                        say: "I vilket län bor du?",
-                        user: [
-                            {
-                                intent: nlu.regionAnswer, bot: {
-                                    url: "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/statistics",
-                                    params: ["region", "country"],
-                                    repair: "PARENT"
-                                }
-                            }
-                        ]
-                    },
-                    {
                         say: "Tyvärr saknar jag data för antal bekräftade fall i _region_label.",
                         goto: "VERIFY_ANSWER"
                     }
@@ -105,7 +90,7 @@ export const answerInfected: Array<BridgeTurn | BotTurn> = [
             },
             {
                 cond: { country: "sverige" },
-                say: "_country Sverige har totalt _infected bekräftade fall av covid19",
+                say: "Sverige har totalt _infected bekräftade fall av covid19",
                 bot: infectedYesterday
             },
             {

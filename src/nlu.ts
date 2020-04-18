@@ -26,7 +26,7 @@ const REGION: Entity = {
     },
     {
       name: "Jämtland",
-      alts: ["jämtlands län", "östersund", "sveg", "åre", "krokom", "strömsund"],
+      alts: ["jämtlands län", "östersund", "sveg", "åre", "krokom", "strömsund", "härjedalen"],
     },
     {
       name: "Jönköping",

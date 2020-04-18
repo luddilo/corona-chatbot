@@ -1,14 +1,32 @@
 import { BotTurn, BridgeTurn } from "narratory"
 import * as nlu from "../nlu"
 
-const resetLocation: BotTurn = {
-    say: "",
-    set: {
-        country: null,
-        region: null
+const resetLocation: BotTurn[] = [
+    {
+        cond: {
+            region: true
+        },
+        say: "",
+        set: {
+            region: null
+        },
+        goto: "VERIFY_ANSWER"
     },
-    goto: "VERIFY_ANSWER"
-}
+    {
+        cond: {
+            country: true
+        },
+        say: "",
+        set: {
+            country: null
+        },
+        goto: "VERIFY_ANSWER"
+    },
+    {
+        say: "",
+        goto: "VERIFY_ANSWER"
+    }   
+]
 
 const infectedYesterday: Array<BridgeTurn | BotTurn> = [
     {
@@ -120,7 +138,7 @@ export const answerInfected: Array<BridgeTurn | BotTurn> = [
                     },
                     {
                         cond: { country: "sverige" },
-                        say: "Sverige HÄR? har totalt _infected bekräftade fall av covid19",
+                        say: "Sverige har totalt _infected bekräftade fall av covid19",
                         bot: infectedYesterday
                     },
                     {

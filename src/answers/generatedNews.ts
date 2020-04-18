@@ -1,18 +1,18 @@
 import { BotTurn, BridgeTurn } from "narratory"
 
-// Generated at Saturday, April 18th 2020, 1:21:18 pm
+// Generated at Saturday, April 18th 2020, 3:04:59 pm
 
 export const presentNews : BridgeTurn[] = [
   {
     "say": {
-      "text": "Fredagen den 17 april meddelade Folkhälsomyndigheten att den ökade kapaciteten av provtagning främst gäller sjukvård, omsorg och institutionsboenden.  <break time=\\\"500ms\\\"/> Detta för att lindra de negativa effekter som kan uppstå vid bortfall av personer med samhällsviktiga jobb. <break time=\\\"1s\\\"/>"
+      "text": "Lördagen den 18 april rapporterar Ekot att majoriteten av de som gått bort till följd av covid19 i Sverige varit personer mellan åttio till nittio år. <break time=\\\"1s\\\"/>"
     },
     "cond": {
       "platform": "voximplant"
     },
     "bot": {
       "say": {
-        "text": "Det är viktigt att fortsätta följa rekommendationerna. <break time=\\\"500ms\\\"/> Var noga med att händerna, stanna hemma, hålla avstånd och skydda de som är i riskgrupp. <break time=\\\"1s\\\"/>"
+        "text": "Det rapporteras vidare att trehundrafyrtiotvå av de avlidna varit över nittio år. <break time=\\\"500ms\\\"/> Endast tjugotre personer under femtio år har avlidit av covid19. <break time=\\\"500ms\\\"/> Ingen under tjugo år har avlidit. <break time=\\\"1s\\\"/>"
       },
       "bot": {
         "say": {
@@ -59,11 +59,11 @@ export const presentNews : BridgeTurn[] = [
   },
   {
     "say": {
-      "text": "Fredagen den 17 april meddelade Folkhälsomyndigheten att den ökade kapaciteten av provtagning främst gäller sjukvård, omsorg och institutionsboenden. Detta för att lindra de negativa effekter som kan uppstå vid bortfall av personer med samhällsviktiga jobb."
+      "text": "Lördagen den 18 april rapporterar Ekot att majoriteten av de som gått bort till följd av covid-19 i Sverige varit personer mellan 80 till 90 år."
     },
     "bot": {
       "say": {
-        "text": "Det är viktigt att fortsätta följa rekommendationerna. Var noga med att tvätta händerna, stanna hemma, hålla avstånd och skydda de som är i riskgrupp. "
+        "text": "Det rapporteras vidare att 342 av de avlidna varit över 90 år. Endast 23 personer under 50 år har avlidit av covid-19. Ingen under 20 år har avlidit. "
       },
       "bot": {
         "say": {
@@ -112,7 +112,7 @@ export const presentNews : BridgeTurn[] = [
 
 export const textStats : BridgeTurn = {
   "say": {
-    "text": "Globalt är nästan 2,2 miljoner människor bekräftat smittade och 147 000 döda."
+    "text": "Globalt är drygt 2,2 miljoner människor bekräftat smittade och 155 000 döda."
   },
   "label": "SHARE_STATS_TEXT",
   "bot": {
@@ -123,7 +123,7 @@ export const textStats : BridgeTurn = {
         "title": "Statistik",
         "image": {
           "type": "image",
-          "url": "https://kinti.se/coronaguiden/Statistik_FHM_17april.png",
+          "url": "https://c.robin.se/storage/stats/total.png",
           "alt": "Statistik"
         }
       }
@@ -133,7 +133,7 @@ export const textStats : BridgeTurn = {
 
 export const voiceStats : BotTurn = {
   "say": {
-    "text": "Globalt är nästan två komma två miljoner människor bekräftat smittade, och hundrafyrtiosjutusen döda.<break time=\\\"500ms\\\"/> I Sverige har vi drygt trettontusen bekräftade fall av covid19, och  vi är uppe i 1400 rapporterade dödsfall."
+    "text": "Globalt är drygt två komma två miljoner människor bekräftat smittade, och hundrafemtiofemtusen döda.<break time=\\\"500ms\\\"/> I Sverige har vi nästan fjortontusen bekräftade fall av covid19, och  vi är uppe i ettusenfemhundraelva rapporterade dödsfall."
   },
   "label": "SHARE_STATS_VOICE"
 }

@@ -1,6 +1,6 @@
 import { UserTurn, Entity } from "narratory"
 
-// Generated at Saturday, April 18th 2020, 1:21:21 pm
+// Generated at Saturday, April 18th 2020, 3:05:02 pm
 
 export const ACTIVITY : Entity = {
   "name": "ACTIVITY",
@@ -8081,7 +8081,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
     "bot": {
       "say": {
         "text": "Bakterier är små encelliga organismer som lever nästan överallt. Virus däremot består av arvsmassa som skyddas av ett proteinhölje. Det kan bara leva och föröka sig levande vävnad hos ett värddjur eller en människa. Coronavirusets proteinhölje är känsligt för tvål, det är därför det är bra att tvätta händerna ofta. Många virus kan också förebyggas med vaccin.",
-        "ssml": "Bakterier är små encelliga organismer som finns nästan överallt. Virus däremot <break time=\"500ms\"/> består av arvsmassa som skyddas av ett proteinhölje. Det kan bara växa i levande vävnad <break time=\"500ms\"/> Coronavirusets proteinhölje är extra känsligt för tvål, det är därför det är bra att tvätta händerna ofta. Virus kan också förebyggas med vaccin."
+        "ssml": "Bakterier är små eencelliga organismer som finns nästan överallt. Virus däremot <break time=\"200ms\"/> består av arvsmassa som skyddas av ett protein hölllje. Det kan bara växa i levande vävnad. Coronavirusets protein höllje är extra känsligt för tvål, det är därför det är bra att tvätta händerna ofta. Virus kan också förebyggas med vaccin."
       },
       "set": {
         "classifiedIntentName": "question: Vad är det för skillnad på virus och bakterier?",
@@ -8363,7 +8363,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
     "bot": {
       "say": {
         "text": "Det finns många olika Coronavirus. Forskarna känner till sju som kan smitta människor och de flesta ger vanliga förkylningar. Men tre, inklusive det nyupptäckta viruset, kan orsaka betydligt farligare luftvägssjukdomar, som covid-19. ",
-        "ssml": "Det finns många olika Coronavirus. <break time=\"500ms\"/> Sju olika coronavirus kan orsaka sjukdom hos människor, oftast vanlig förkylning. <break time=\"500ms\"/> Det nya coronaviruset orsakar betydligt allvarligare luftvägssjukdomar, som covid19."
+        "ssml": "Det finns många olika Cårånavirus. <break time=\"500ms\"/> Sjuu olika cårånavirus kan orsaka sjukdom hos människor, oftast vanlig förkylning. <break time=\"500ms\"/> Det nya cårånaviruset orsakar betydligt allvarligare luftvägssjukdomar, som covid19."
       },
       "set": {
         "classifiedIntentName": "question: Vad är coronavirus?",

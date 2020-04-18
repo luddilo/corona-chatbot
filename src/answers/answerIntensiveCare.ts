@@ -1,14 +1,32 @@
 import { BotTurn, BridgeTurn } from "narratory"
 import * as nlu from "../nlu"
 
-const resetLocation: BotTurn = {
-    say: "",
-    set: {
-        country: null,
-        region: null
+const resetLocation: BotTurn[] = [
+    {
+        cond: {
+            region: true
+        },
+        say: "",
+        set: {
+            region: null
+        },
+        goto: "VERIFY_ANSWER"
     },
-    goto: "VERIFY_ANSWER"
-}
+    {
+        cond: {
+            country: true
+        },
+        say: "",
+        set: {
+            country: null
+        },
+        goto: "VERIFY_ANSWER"
+    },
+    {
+        say: "",
+        goto: "VERIFY_ANSWER"
+    }   
+]
 
 export const answerIntensiveCare: Array<BridgeTurn | BotTurn> = [
     {

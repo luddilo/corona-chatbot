@@ -1,7 +1,7 @@
-import { BotTurn, BridgeTurn, UserTurn } from "narratory"
+import { BotTurn, BridgeTurn } from "narratory"
 import * as nlu from "../nlu"
 
-export const resetLocation: BotTurn = {
+const resetLocation: BotTurn = {
     say: "",
     set: {
         country: null,
@@ -10,7 +10,7 @@ export const resetLocation: BotTurn = {
     goto: "VERIFY_ANSWER"
 }
 
-export const infectedYesterday: Array<BridgeTurn | BotTurn> = [
+const infectedYesterday: Array<BridgeTurn | BotTurn> = [
     {
         cond: {
             infected_yesterday: "inga",
@@ -31,14 +31,14 @@ export const infectedYesterday: Array<BridgeTurn | BotTurn> = [
     }
 ]
 
-export const rememberDifference: BridgeTurn = {
+const rememberDifference: BridgeTurn = {
     say: "Kom ihåg att olika länder inte är jämförbara eftersom testerna utförs på olika sätt.",
     bot: resetLocation
 }
 
 export const answerInfected: Array<BridgeTurn | BotTurn> = [
     {
-        label: "TRY_AGAIN",
+        label: "INFECTED_AGAIN",
         bot: [
             {
                 cond: {
@@ -52,22 +52,25 @@ export const answerInfected: Array<BridgeTurn | BotTurn> = [
                         bot: [
                             {
                                 cond: {
-                                    region: "Norrland"
+                                    region: "norrland"
                                 },
-                                say: "Jag har tyvärr bara statistik per län och inte för hela _region.",
+                                say: "Jag har tyvärr bara statistik per län och inte för hela Norrland.",
                                 bot: resetLocation
                             },
                             {
                                 cond: {
                                     region: "min region"
                                 },
-                                say: "I vilket län bor du?",
+                                say: {
+                                    text: "I vilket län/region bor du?",
+                                    ssml: "I vilken region bor du?"
+                                },
                                 user: [
                                     {
                                         intent: nlu.regionAnswer, bot: {
                                             url: "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/statistics",
                                             params: ["region"],
-                                            goto: "TRY_AGAIN"
+                                            goto: "INFECTED_AGAIN"
                                         }
                                     }
                                 ]
@@ -117,7 +120,7 @@ export const answerInfected: Array<BridgeTurn | BotTurn> = [
                     },
                     {
                         cond: { country: "sverige" },
-                        say: "Sverige har totalt _infected bekräftade fall av covid19",
+                        say: "Sverige HÄR? har totalt _infected bekräftade fall av covid19",
                         bot: infectedYesterday
                     },
                     {

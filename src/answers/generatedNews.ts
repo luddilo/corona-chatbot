@@ -1,16 +1,18 @@
 import { BotTurn, BridgeTurn } from "narratory"
 
+// Generated at Saturday, April 18th 2020, 1:21:18 pm
+
 export const presentNews : BridgeTurn[] = [
   {
     "say": {
-      "text": "Torsdagen den 16 april meddelade Folkhälsomyndigheten att matchspel för barn och ungdomsidrotten kommer att få genomföras så länge enbart friska och symptomfria personer deltar. <break time=\\\"500ms\\\"/> Tillgång till att tvätta händer måste finnas på plats och trängsel får ej uppstå. <break time=\\\"1s\\\"/>"
+      "text": "Fredagen den 17 april meddelade Folkhälsomyndigheten att den ökade kapaciteten av provtagning främst gäller sjukvård, omsorg och institutionsboenden.  <break time=\\\"500ms\\\"/> Detta för att lindra de negativa effekter som kan uppstå vid bortfall av personer med samhällsviktiga jobb. <break time=\\\"1s\\\"/>"
     },
     "cond": {
       "platform": "voximplant"
     },
     "bot": {
       "say": {
-        "text": "En tredjedel av alla anmälda fall i Stockholm kommer från äldreboenden. Detta är en miljö som behöver skyddas bättre framöver.<break time=\\\"1s\\\"/>"
+        "text": "Det är viktigt att fortsätta följa rekommendationerna. <break time=\\\"500ms\\\"/> Var noga med att händerna, stanna hemma, hålla avstånd och skydda de som är i riskgrupp. <break time=\\\"1s\\\"/>"
       },
       "bot": {
         "say": {
@@ -57,11 +59,11 @@ export const presentNews : BridgeTurn[] = [
   },
   {
     "say": {
-      "text": "Torsdagen den 16 april meddelade Folkhälsomyndigheten att matchspel för barn och ungdomsidrotten kommer att få genomföras så länge enbart friska och symptomfria personer deltar. Tillgång till att tvätta händer måste finnas på plats och trängsel får ej uppstå."
+      "text": "Fredagen den 17 april meddelade Folkhälsomyndigheten att den ökade kapaciteten av provtagning främst gäller sjukvård, omsorg och institutionsboenden. Detta för att lindra de negativa effekter som kan uppstå vid bortfall av personer med samhällsviktiga jobb."
     },
     "bot": {
       "say": {
-        "text": "En tredjedel av alla anmälda fall i Stockholm kommer från äldreboenden. Detta är en miljö som behöver skyddas bättre framöver."
+        "text": "Det är viktigt att fortsätta följa rekommendationerna. Var noga med att tvätta händerna, stanna hemma, hålla avstånd och skydda de som är i riskgrupp. "
       },
       "bot": {
         "say": {
@@ -110,7 +112,7 @@ export const presentNews : BridgeTurn[] = [
 
 export const textStats : BridgeTurn = {
   "say": {
-    "text": "Globalt är drygt 2 miljoner människor bekräftat smittade och 136 000 döda."
+    "text": "Globalt är nästan 2,2 miljoner människor bekräftat smittade och 147 000 döda."
   },
   "label": "SHARE_STATS_TEXT",
   "bot": {
@@ -121,7 +123,7 @@ export const textStats : BridgeTurn = {
         "title": "Statistik",
         "image": {
           "type": "image",
-          "url": "http://kinti.se/coronaguiden/Statistik_FHM_16april.png",
+          "url": "https://kinti.se/coronaguiden/Statistik_FHM_17april.png",
           "alt": "Statistik"
         }
       }
@@ -131,7 +133,7 @@ export const textStats : BridgeTurn = {
 
 export const voiceStats : BotTurn = {
   "say": {
-    "text": "Globalt är drygt två miljoner människor bekräftat smittade, och hundratrettiosextusen döda.<break time=\\\"500ms\\\"/> I Sverige har vi drygt tolvtusen bekräftade fall av covid19, och vi är uppe i 1333 rapporterade dödsfall."
+    "text": "Globalt är nästan två komma två miljoner människor bekräftat smittade, och hundrafyrtiosjutusen döda.<break time=\\\"500ms\\\"/> I Sverige har vi drygt trettontusen bekräftade fall av covid19, och  vi är uppe i 1400 rapporterade dödsfall."
   },
   "label": "SHARE_STATS_VOICE"
 }

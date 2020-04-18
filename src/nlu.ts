@@ -89,7 +89,7 @@ const REGION: Entity = {
       alts: ["östergötlands län", "linköping", "norrköping", "motala", "mjölby", "finspång"],
     },
     {
-      name: "Norrland",
+      name: "norrland",
     },
     {
       name: "min region",

@@ -53,7 +53,7 @@ export const getStatsNational = async (region: string | null) => {
 
     returnData = {
       ...getTimeSeriesData(selectedTimeSeriesData, "infected"),
-      region_label: capitalize(selectedRegionData.region) + " län",
+      region_label: "region " + capitalize(selectedRegionData.region),
       region: capitalize(selectedRegionData.region),
       intensive_care: replaceZeroWithDescriptor(selectedRegionData?.intensive_care),
       deceased: replaceZeroWithDescriptor(selectedRegionData?.deceased),

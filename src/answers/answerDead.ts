@@ -67,7 +67,10 @@ export const answerDead: Array<BridgeTurn | BotTurn> = [
                 bot: [
                     {
                         cond: {
-                            deceased: null
+                            OR: {
+                                deceased: null,
+                                country: "frankrike"
+                            }
                         },
                         say: "Tyvärr saknar jag data för antal rapporterade dödsfall i _country.",
                         goto: "VERIFY_ANSWER"
@@ -85,7 +88,7 @@ export const answerDead: Array<BridgeTurn | BotTurn> = [
                                 goto: "VERIFY_ANSWER"
                             },
                             {
-                                say: "_country har _deceased rapporterade dödsfall, varav _deceased_yesterday rapporterades igår.",
+                                say: "_country har _deceased rapporterade dödsfall, varav _deceased_yesterday nya rapporterades igår.",
                                 goto: "VERIFY_ANSWER"
                             }
                         ]

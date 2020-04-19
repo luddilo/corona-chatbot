@@ -1,6 +1,6 @@
 import { UserTurn, Entity } from "narratory"
 
-// Generated at Sunday, April 19th 2020, 10:19:44 am
+// Generated at Sunday, April 19th 2020, 3:06:00 pm
 
 export const ACTIVITY : Entity = {
   "name": "ACTIVITY",
@@ -8080,13 +8080,13 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": {
-        "text": "Bakterier är små encelliga organismer som lever nästan överallt. Virus däremot består av arvsmassa som skyddas av ett proteinhölje. Det kan bara leva och föröka sig levande vävnad hos ett värddjur eller en människa. Coronavirusets proteinhölje är känsligt för tvål, det är därför det är bra att tvätta händerna ofta. Många virus kan också förebyggas med vaccin.",
-        "ssml": "Bakterier är små eencelliga organismer som finns nästan överallt. Virus däremot <break time=\"200ms\"/> består av arvsmassa som skyddas av ett protein hölllje. Det kan bara växa i levande vävnad. Coronavirusets protein höllje är extra känsligt för tvål, det är därför det är bra att tvätta händerna ofta. Virus kan också förebyggas med vaccin."
+        "text": "Bakterier är små encelliga organismer som lever nästan överallt. Virus däremot kan bara leva och föröka sig levande vävnad hos ett värddjur eller en människa. Virusets arvsmassa skyddas av ett proteinhölje. Coronavirusets proteinhölje är känsligt för tvål, det är därför det är bra att tvätta händerna ofta. Många virus kan också förebyggas med vaccin.",
+        "ssml": "Bakterier är små eencelliga organismer som finns nästan överallt. Virus däremot <break time=\"200ms\"/> kan bara växa i levande vävnad. Viruset skyddas av ett protein hölllje. <break time=\"200ms\"/> Coronavirusets protein höllje är extra känsligt för tvål, det är därför det är bra att tvätta händerna ofta. <break time=\"200ms\"/> Virus kan också förebyggas med vaccin."
       },
       "set": {
         "classifiedIntentName": "question: Vad är det för skillnad på virus och bakterier?",
         "classifiedUtterance": "_user_text",
-        "botResponse": "Bakterier är små encelliga organismer som lever nästan överallt. Virus däremot består av arvsmassa som skyddas av ett proteinhölje. Det kan bara leva och föröka sig levande vävnad hos ett värddjur eller en människa. Coronavirusets proteinhölje är känsligt för tvål, det är därför det är bra att tvätta händerna ofta. Många virus kan också förebyggas med vaccin."
+        "botResponse": "Bakterier är små encelliga organismer som lever nästan överallt. Virus däremot kan bara leva och föröka sig levande vävnad hos ett värddjur eller en människa. Virusets arvsmassa skyddas av ett proteinhölje. Coronavirusets proteinhölje är känsligt för tvål, det är därför det är bra att tvätta händerna ofta. Många virus kan också förebyggas med vaccin."
       },
       "goto": "VERIFY_ANSWER"
     }

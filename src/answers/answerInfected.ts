@@ -89,7 +89,7 @@ export const answerInfected: Array<BridgeTurn | BotTurn> = [
                 bot: [
                     {
                         cond: {
-                            infected: null
+                            infected: "okänt antal"
                         },
                         say: "Tyvärr saknar jag data för antal bekräftade fall i _country.",
                         goto: "VERIFY_ANSWER"

@@ -16,3 +16,9 @@ export const capitalize = (str: string) => {
     .map((word) => capitalizeWord(word))
     .join(" ")
 }
+
+export const sumArray = (arr: number[]) => {
+  return arr.reduce(function (acc, val) {
+    return acc + val
+  }, 0)
+}

@@ -1,5 +1,5 @@
 import { fetchNationalData } from "../api/fetchNationalData"
-import { replaceZeroWithDescriptor, capitalize } from "./util"
+import { replaceZeroWithDescriptor, capitalize, sumArray } from "./util"
 
 const getTimeSeriesData = (data: any, label: string) => {
   let returnData: any = {}
@@ -27,14 +27,27 @@ export const getStatsNational = async (region: string | null) => {
 
   if (region) {
     const selectedTimeSeriesData: any = regionTimeSeriesData.find(
-      (regionObj) => regionObj.name.toLowerCase() === region.toLowerCase().replace(" ", "_")
+      (regionObj) =>
+        regionObj.name.toLowerCase() === region.toLowerCase().replace(" ", "_") ||
+        regionObj.extraLabels
+          .map((extraLabel) => extraLabel.toLowerCase())
+          .includes(region.toLowerCase().replace(" ", "_")) ||
+        regionObj.extraLabels
+          .map((extraLabel) => extraLabel.toLowerCase())
+          .includes(region.toLowerCase())
     )
 
     const selectedRegionData = regionData.find(
-      (regionObj) => regionObj && regionObj.region.toLowerCase() === region.toLowerCase()
+      (regionObj) =>
+        regionObj &&
+        (regionObj.region.toLowerCase() === region.toLowerCase() ||
+          regionObj.extraLabels.map((extraLabel) => extraLabel.toLowerCase()).includes(region.toLowerCase()))
     )
 
     if (!selectedRegionData || !selectedTimeSeriesData) {
+      console.log(!!selectedRegionData)
+      console.log(!!selectedTimeSeriesData)
+
       throw Error("Couldn't find data for region " + region)
     }
 

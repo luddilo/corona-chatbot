@@ -4,11 +4,11 @@ import * as nlu from "../nlu"
 const resetLocation: BotTurn[] = [
     {
         cond: {
-            region: true
+            region: true,
         },
         say: "",
         set: {
-            region: null
+            region: null,
         },
         goto: "VERIFY_ANSWER"
     },
@@ -18,27 +18,29 @@ const resetLocation: BotTurn[] = [
         },
         say: "",
         set: {
-            country: null
+            country: null,
         },
         goto: "VERIFY_ANSWER"
     },
     {
         say: "",
         goto: "VERIFY_ANSWER"
-    }   
+    }
 ]
 
-export const answerDead: Array<BridgeTurn | BotTurn> = [
+export const answerDead1: Array<BridgeTurn | BotTurn> = [
     {
         label: "DEAD_AGAIN",
         bot: [
             {
                 cond: {
-                    deceased: null
+                    region: true
                 },
                 bot: [
                     {
-                        cond: { region: true },
+                        cond: {
+                            deceased: null
+                        },
                         bot: [
                             {
                                 cond: {
@@ -73,19 +75,6 @@ export const answerDead: Array<BridgeTurn | BotTurn> = [
                         ]
                     },
                     {
-                        cond: { country: true },
-                        say: "Tyvärr saknar jag data för antal rapporterade dödsfall i _country.",
-                        bot: resetLocation
-                    }
-
-                ]
-            },
-            {
-                cond: {
-                    region: true
-                },
-                bot: [
-                    {
                         cond: {
                             deceased: 1
                         },
@@ -105,6 +94,13 @@ export const answerDead: Array<BridgeTurn | BotTurn> = [
                 bot: [
                     {
                         cond: {
+                            deceased: null
+                        },
+                        say: "Tyvärr saknar jag data för antal rapporterade dödsfall i _country.",
+                        bot: resetLocation
+                    },
+                    {
+                        cond: {
                             deceased_yesterday: true
                         },
                         bot: [
@@ -121,11 +117,14 @@ export const answerDead: Array<BridgeTurn | BotTurn> = [
                             }
                         ]
                     },
-                    {
-                        say: "_country har _deceased rapporterade dödsfall.",
-                        bot: resetLocation
-                    }
                 ]
+            },
+            {
+                cond: {
+                    deceased: null
+                },
+                say: "Tyvärr saknar jag data för antal rapporterade dödsfall.",
+                bot: resetLocation
             },
             {
                 say: "Tyvärr har jag ingen global siffra i nuläget, men Sverige har _deceased rapporterade dödsfall.",

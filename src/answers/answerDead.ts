@@ -28,7 +28,7 @@ const resetLocation: BotTurn[] = [
     }
 ]
 
-export const answerDead1: Array<BridgeTurn | BotTurn> = [
+export const answerDead: Array<BridgeTurn | BotTurn> = [
     {
         label: "DEAD_AGAIN",
         bot: [

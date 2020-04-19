@@ -46,7 +46,7 @@ const questions: UserTurn[] = [
   {
     intent: nlu.queryIntensiveCare, bot: {
       url: "https://europe-west1-healthadvisor-nnbwwd.cloudfunctions.net/statistics",
-      params: ["region"],
+      params: ["region", "country"],
       bot: answerIntensiveCare
     }
   },

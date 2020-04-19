@@ -30,20 +30,8 @@ export const getStatsInternational = async (country: string) => {
       deceased: replaceZeroWithDescriptor(countryData.deceased),
       tested: replaceZeroWithDescriptor(countryData.tested),
       recovered: replaceZeroWithDescriptor(countryData.recovered),
-      infected_yesterday: null,
-      infected_day_before_yesterday: null,
-      infected_diff: null,
-      infected_diff_text: null,
-      deceased_yesterday: null,
-      deceased_day_before_yesterday: null,
-      deceased_diff: null,
-      deceased_diff_text: null,
-      intensive_care_yesterday: null,
-      intensive_care_day_before_yesterday: null,
-      intensive_care_diff: null,
-      intensive_care_diff_text: null,
     }
   } else {
-    return null
+    throw Error("No country data found")
   }
 }

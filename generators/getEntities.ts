@@ -12,7 +12,7 @@ export async function getEntities(): Promise<Entity[]> {
 
     const lines = await getLinesFromTsv({ url, skipRows: 1 })
 
-    lines.forEach(arr => {
+    lines.forEach((arr) => {
       const entity = { name: null, synonyms: [] }
 
       arr.forEach((text, colNumber) => {
@@ -27,10 +27,10 @@ export async function getEntities(): Promise<Entity[]> {
         entities.push(entity)
       }
     })
-    return entities.map(entity => {
+    return entities.map((entity) => {
       return {
         name: entity.name,
-        enums: [{ name: entity.name, alts: entity.synonyms }]
+        enums: [{ name: entity.synonyms.splice(0, 1)[0], alts: entity.synonyms }],
       }
     })
   } catch (err) {

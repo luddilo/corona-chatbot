@@ -9,6 +9,7 @@
     "start": "tsc && node node_modules/narratory/out/cmd/start.js",
     "build": "tsc && node node_modules/narratory/out/cmd/build.js",
     "chat": "node node_modules/narratory/out/cmd/chat.js",
+    "validate": "tsc && node node_modules/narratory/out/cmd/validate.js",
     "generate": "tsc && node out/generators/index.js",
     "generate:faq": "tsc && node out/generators/index.js",
     "generate:fix": "node out/generators/index.js",
@@ -31,7 +32,7 @@
     "axios": "^0.19.2",
     "google-spreadsheet": "^3.0.11",
     "moment": "^2.24.0",
-    "narratory": "^0.11.3"
+    "narratory": "^0.11.4"
   },
   "devDependencies": {
     "concurrently": "^5.0.2",

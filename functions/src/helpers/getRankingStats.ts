@@ -9,9 +9,9 @@ export const getRankingStats = async () => {
   )[0]
 
   return {
-    region_most_cases: regionWithMostCases.region + " län",
+    region_most_cases: "region " + regionWithMostCases.region,
     infected: regionWithMostCases.infected,
-    region_most_cases_per_capita: regionWithMostCasesPerCapita.region  + " län",
+    region_most_cases_per_capita: "region " + regionWithMostCasesPerCapita.region,
     infected_per_100000_ppl: Math.round(regionWithMostCasesPerCapita.infected_per_100000_ppl)
   }
 }

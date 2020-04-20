@@ -240,7 +240,8 @@ export const queryInfected: Intent = {
     "vad är situationen globalt",
     "är risken hög i _region",
     "är _region hög risk",
-    "hur är läget _region"
+    "hur är läget _region",
+    "hur snabbt sprider sig _corona"
 
   ]
 }

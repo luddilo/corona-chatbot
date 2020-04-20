@@ -13,7 +13,7 @@ const infectedYesterday: Array<BridgeTurn | BotTurn> = [
         cond: {
             infected_yesterday: true,
         },
-        say: "_infected_yesterday nya fall rapporerades igår.",
+        say: "_infected_yesterday nya fall rapporterades igår.",
         goto: "VERIFY_ANSWER"
     },
     {

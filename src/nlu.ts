@@ -248,6 +248,7 @@ export const queryInfected: Intent = {
 export const queryIntensiveCare: Intent = {
   entities: {
     corona: CORONA,
+    country: entities.geoCountry,
     region: REGION,
     day: day
   },
@@ -264,7 +265,12 @@ export const queryIntensiveCare: Intent = {
     "hur många vårdas på sjukhus i _region",
     "hur många vårdas på sjukhus",
     "hur många vårdas för _corona",
-    "hur många vårdas för _corona i _region"
+    "hur många vårdas för _corona i _region",
+    "hur många patienter får intensivvård i _country",
+    "hur många har fått intentsivvård i _country",
+    "hur många har intensvivvårdats i _country",
+    "hur många vårdas på sjukhus i _country",
+    "hur många vårdas för _corona i _country"
   ]
 }
 

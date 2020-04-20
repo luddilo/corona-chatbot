@@ -1,18 +1,18 @@
 import { BotTurn, BridgeTurn } from "narratory"
 
-// Generated at Sunday, April 19th 2020, 10:19:40 am
+// Generated at Sunday, April 19th 2020, 3:05:56 pm
 
 export const presentNews : BridgeTurn[] = [
   {
     "say": {
-      "text": "Lördagen den 18 april rapporterar Ekot att majoriteten av de som gått bort till följd av covid19 i Sverige varit personer mellan åttio till nittio år. <break time=\\\"1s\\\"/>"
+      "text": "Söndagen den 19 april rapporterar Ekot att trafiken på landets stödtelefoner har ökat. <break time=\"500ms\"/> Äldrelinjen tar nu emot upp till hundra samtal om dagen rörande närstående, ensamhet och osäkerhet kring ekonomin.  <break time=\\\"1s\\\"/>"
     },
     "cond": {
       "platform": "voximplant"
     },
     "bot": {
       "say": {
-        "text": "Det rapporteras vidare att trehundrafyrtiotvå av de avlidna varit över nittio år. <break time=\\\"500ms\\\"/> Endast tjugotre personer under femtio år har avlidit av covid19. <break time=\\\"500ms\\\"/> Ingen under tjugo år har avlidit. <break time=\\\"1s\\\"/>"
+        "text": "Covid19 fortsätter att slå hårt mot turismen uppe i fjällen. STF stänger nu alla sina fjällstationer. <break time=\\\"500ms\\\"/> Detta ungefär en och en halv vecka tidigare än planerat. <break time=\\\"1s\\\"/>"
       },
       "bot": {
         "say": {
@@ -59,11 +59,11 @@ export const presentNews : BridgeTurn[] = [
   },
   {
     "say": {
-      "text": "Lördagen den 18 april rapporterar Ekot att majoriteten av de som gått bort till följd av covid-19 i Sverige varit personer mellan 80 till 90 år."
+      "text": "Söndagen den 19 april rapporterar Ekot att trafiken på landets stödtelefoner har ökat. Äldrelinjen tar nu emot upp till hundra samtal om dagen rörande närstående, ensamhet och osäkerhet kring ekonomin. "
     },
     "bot": {
       "say": {
-        "text": "Det rapporteras vidare att 342 av de avlidna varit över 90 år. Endast 23 personer under 50 år har avlidit av covid-19. Ingen under 20 år har avlidit. "
+        "text": "Covid-19 fortsätter att slå hårt mot turismen uppe i fjällen. STF stänger nu alla sina fjällstationer, ungefär en och en halv vecka tidigare än planerat."
       },
       "bot": {
         "say": {
@@ -112,7 +112,7 @@ export const presentNews : BridgeTurn[] = [
 
 export const textStats : BridgeTurn = {
   "say": {
-    "text": "Globalt är drygt 2,2 miljoner människor bekräftat smittade och 155 000 döda."
+    "text": "Globalt är runt 2,3 miljoner människor bekräftat smittade och drygt 160 000 döda."
   },
   "label": "SHARE_STATS_TEXT",
   "bot": {
@@ -133,7 +133,7 @@ export const textStats : BridgeTurn = {
 
 export const voiceStats : BotTurn = {
   "say": {
-    "text": "Globalt är drygt två komma två miljoner människor bekräftat smittade, och hundrafemtiofemtusen döda.<break time=\\\"500ms\\\"/> I Sverige har vi nästan fjortontusen bekräftade fall av covid19, och  vi är uppe i ettusenfemhundraelva rapporterade dödsfall."
+    "text": "Globalt är runt två komma tre miljoner människor bekräftat smittade, och hundrasextiotusen döda.<break time=\\\"500ms\\\"/> I Sverige har vi drygt fjortontusen bekräftade fall av covid19, och vi är uppe i ettusenfemhundrafyrtio rapporterade dödsfall."
   },
   "label": "SHARE_STATS_VOICE"
 }

@@ -1,18 +1,18 @@
 import { BotTurn, BridgeTurn } from "narratory"
 
-// Generated at Monday, April 20th 2020, 3:00:21 pm
+// Generated at Wednesday, April 22nd 2020, 3:00:04 pm
 
 export const presentNews : BridgeTurn[] = [
   {
     "say": {
-      "text": "På Folkhälsomyndighetens dagliga pressträff, måndagen den 20 april, framhölls vikten av att vi fortsätter att följa deras restriktioner. <break time=\\\"500ms\\\"/>Detta efter en del oroande rapporter från runt om i landet att det har börjat bli trångt i utelivet igen.<break time=\\\"1s\\\"/>"
+      "text": "På Folkhälsomyndighetens dagliga pressträff, onsdagen den 22 april, bekräftades att kurvan är fortsatt plan, men att man ser en ökning utanför Stockholm, bland annat i Uppsala och Jönköping. ||Detta tros dock bero på att mer vårdpersonal testas. ||"
     },
     "cond": {
       "platform": "voximplant"
     },
     "bot": {
       "say": {
-        "text": "Enligt en undersökning från MSB är fler människor oroliga för ekonomin och den ökade arbetslösheten, än för att sjukvårdens kapacitet inte ska vara tillräcklig.<break time=\\\"1s\\\"/>"
+        "text": "Den modell av smittspridningen som presenterades på gårdagens pressträff har dragits tillbaka då den innehöll felaktigheter. ||En ny version förväntas komma på torsdag. ||"
       },
       "bot": {
         "say": {
@@ -59,11 +59,11 @@ export const presentNews : BridgeTurn[] = [
   },
   {
     "say": {
-      "text": "På Folkhälsomyndighetens dagliga pressträff, måndagen den 20 april, framhölls vikten av att vi fortsätter att följa deras restriktioner. Detta efter en del oroande rapporter från runt om i landet att det har börjat bli trångt i utelivet igen."
+      "text": "På Folkhälsomyndighetens dagliga pressträff, onsdagen den 22 april, bekräftades att kurvan är fortsatt plan men att man ser en ökning utanför Stockholm, bland annat i Uppsala och Jönköping. Detta kan dock bero på att mer vårdpersonal testas. "
     },
     "bot": {
       "say": {
-        "text": "Enligt en undersökning från MSB är fler människor oroliga för ekonomin och den ökade arbetslösheten än för att sjukvårdens kapacitet inte ska vara tillräcklig."
+        "text": "Den modell av smittspridningen som presenterades på gårdagens pressträff har dragits tillbaka då den innehöll felaktigheter. En ny version förväntas komma på torsdag."
       },
       "bot": {
         "say": {
@@ -112,7 +112,7 @@ export const presentNews : BridgeTurn[] = [
 
 export const textStats : BridgeTurn = {
   "say": {
-    "text": "Globalt är runt 2,4 miljoner människor bekräftat smittade och drygt 165 000 döda."
+    "text": "Globalt är runt 2,5 miljoner människor bekräftat smittade och 178 000 döda."
   },
   "label": "SHARE_STATS_TEXT",
   "bot": {
@@ -133,7 +133,7 @@ export const textStats : BridgeTurn = {
 
 export const voiceStats : BotTurn = {
   "say": {
-    "text": "Globalt är runt 2,4 miljoner människor bekräftat smittade, och hundrasextiofemtusen döda.<break time=\\\"500ms\\\"/> I Sverige har vi knappt fjortontusenåttahundra bekräftade fall av covid19, och vi är uppe i ettusen femhundraåttio rapporterade dödsfall."
+    "text": "Globalt är runt två och en halv miljoner människor bekräftat smittade, och 178000 döda.|| I Sverige har vi drygt 16000 bekräftade fall av covid19, och vi är uppe i ettusen niohundratrettiosju rapporterade dödsfall."
   },
   "label": "SHARE_STATS_VOICE"
 }

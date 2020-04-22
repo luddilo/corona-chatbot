@@ -1,14 +1,13 @@
 import { UserTurn, Entity } from "narratory"
 
-// Generated at Monday, April 20th 2020, 3:00:25 pm
+// Generated at Wednesday, April 22nd 2020, 3:00:09 pm
 
 export const ACTIVITY : Entity = {
   "name": "ACTIVITY",
   "enums": [
     {
-      "name": "ACTIVITY",
+      "name": "gå ut",
       "alts": [
-        "gå ut",
         "handla",
         "gå och handla",
         "åka buss",
@@ -46,9 +45,8 @@ export const GROUP_ACTIVITY : Entity = {
   "name": "GROUP_ACTIVITY",
   "enums": [
     {
-      "name": "GROUP_ACTIVITY",
+      "name": "gymmet",
       "alts": [
-        "gymmet",
         "gå på bio",
         "gå på teater",
         "bio",
@@ -66,9 +64,8 @@ export const TRAVEL : Entity = {
   "name": "TRAVEL",
   "enums": [
     {
-      "name": "TRAVEL",
+      "name": "resa",
       "alts": [
-        "resa",
         "flyga",
         "åka bil",
         "ta flyget",
@@ -86,9 +83,8 @@ export const JOB : Entity = {
   "name": "JOB",
   "enums": [
     {
-      "name": "JOB",
+      "name": "gå till jobbet",
       "alts": [
-        "gå till jobbet",
         "jobba",
         "arbete",
         "gå till arbetet",
@@ -117,9 +113,8 @@ export const ANTI : Entity = {
   "name": "ANTI",
   "enums": [
     {
-      "name": "ANTI",
+      "name": "anitkroppar",
       "alts": [
-        "anitkroppar",
         "antikropp"
       ]
     }
@@ -130,9 +125,8 @@ export const BIG_EVENT : Entity = {
   "name": "BIG_EVENT",
   "enums": [
     {
-      "name": "BIG_EVENT",
+      "name": "event",
       "alts": [
-        "event",
         "evenemang",
         "konsert",
         "festival",
@@ -156,9 +150,8 @@ export const BEGIN : Entity = {
   "name": "BEGIN",
   "enums": [
     {
-      "name": "BEGIN",
+      "name": "startade",
       "alts": [
-        "startade",
         "började",
         "grundades",
         "utbröt",
@@ -172,9 +165,8 @@ export const BODY : Entity = {
   "name": "BODY",
   "enums": [
     {
-      "name": "BODY",
+      "name": "kropp ",
       "alts": [
-        "kropp ",
         "kroppen",
         "människokroppen",
         "människan",
@@ -192,9 +184,8 @@ export const BREATH : Entity = {
   "name": "BREATH",
   "enums": [
     {
-      "name": "BREATH",
+      "name": "andas",
       "alts": [
-        "andas",
         "få luft",
         "luft",
         "får luft",
@@ -217,9 +208,8 @@ export const CAN : Entity = {
   "name": "CAN",
   "enums": [
     {
-      "name": "CAN",
+      "name": "bör",
       "alts": [
-        "bör",
         "måste",
         "borde ",
         "skulle",
@@ -237,9 +227,8 @@ export const CANNOT : Entity = {
   "name": "CANNOT",
   "enums": [
     {
-      "name": "CANNOT",
+      "name": "kan inte",
       "alts": [
-        "kan inte",
         "får inte"
       ]
     }
@@ -250,9 +239,8 @@ export const CASH : Entity = {
   "name": "CASH",
   "enums": [
     {
-      "name": "CASH",
+      "name": "pengar",
       "alts": [
-        "pengar",
         "mynt",
         "sedlar",
         "kontanter",
@@ -274,9 +262,8 @@ export const CITY : Entity = {
   "name": "CITY",
   "enums": [
     {
-      "name": "CITY",
+      "name": "stad",
       "alts": [
-        "stad",
         "städer",
         "city"
       ]
@@ -288,9 +275,8 @@ export const SWECITY : Entity = {
   "name": "SWECITY",
   "enums": [
     {
-      "name": "SWECITY",
+      "name": "Alingsås",
       "alts": [
-        "Alingsås",
         "Arboga",
         "Arvika",
         "Akersund",
@@ -462,9 +448,8 @@ export const CLOSE_CONTACT : Entity = {
   "name": "CLOSE_CONTACT",
   "enums": [
     {
-      "name": "CLOSE_CONTACT",
+      "name": "närkontakt",
       "alts": [
-        "närkontakt",
         "vara nära",
         "i närheten"
       ]
@@ -476,9 +461,8 @@ export const CLOSE_PERSON : Entity = {
   "name": "CLOSE_PERSON",
   "enums": [
     {
-      "name": "CLOSE_PERSON",
+      "name": "kollega",
       "alts": [
-        "kollega",
         "arbetskamrat",
         "kompis",
         "jobbkompis",
@@ -508,9 +492,8 @@ export const CO_SYM : Entity = {
   "name": "CO_SYM",
   "enums": [
     {
-      "name": "CO_SYM",
+      "name": "hosta",
       "alts": [
-        "hosta",
         "feber",
         "halsont",
         "huvudvärk",
@@ -543,9 +526,8 @@ export const CORONA : Entity = {
   "name": "CORONA",
   "enums": [
     {
-      "name": "CORONA",
+      "name": "covid",
       "alts": [
-        "covid",
         "covid19",
         "covid-19",
         "corona viruset",
@@ -590,9 +572,8 @@ export const COUNTY : Entity = {
   "name": "COUNTY",
   "enums": [
     {
-      "name": "COUNTY",
+      "name": "blekinge",
       "alts": [
-        "blekinge",
         "dalarna",
         "gotland",
         "gävleborg",
@@ -622,9 +603,8 @@ export const DIG_SCHOOL : Entity = {
   "name": "DIG_SCHOOL",
   "enums": [
     {
-      "name": "DIG_SCHOOL",
+      "name": "distansundervisning",
       "alts": [
-        "distansundervisning",
         "onlineundervisning",
         "onlineskola",
         "distansskola",
@@ -645,9 +625,8 @@ export const DISEASE : Entity = {
   "name": "DISEASE",
   "enums": [
     {
-      "name": "DISEASE",
+      "name": "kol",
       "alts": [
-        "kol",
         "högt blodtryck",
         "hjärtfel",
         "diabetes",
@@ -663,9 +642,8 @@ export const ASTMA : Entity = {
   "name": "ASTMA",
   "enums": [
     {
-      "name": "ASTMA",
+      "name": "astma",
       "alts": [
-        "astma",
         "allergisk luftvägssjukdom",
         "andnöd",
         "förkylningsastma",
@@ -681,9 +659,8 @@ export const AFFECT : Entity = {
   "name": "AFFECT",
   "enums": [
     {
-      "name": "AFFECT",
+      "name": "drabbas",
       "alts": [
-        "drabbas",
         "lider",
         "drabba",
         "lida",
@@ -697,9 +674,8 @@ export const DRINK : Entity = {
   "name": "DRINK",
   "enums": [
     {
-      "name": "DRINK",
+      "name": "mjölk",
       "alts": [
-        "mjölk",
         "vatten",
         "läsk",
         "dricka",
@@ -720,9 +696,8 @@ export const ELDERLY : Entity = {
   "name": "ELDERLY",
   "enums": [
     {
-      "name": "ELDERLY",
+      "name": "farmor",
       "alts": [
-        "farmor",
         "farfar",
         "mormor",
         "morfar",
@@ -756,9 +731,8 @@ export const END : Entity = {
   "name": "END",
   "enums": [
     {
-      "name": "END",
+      "name": "gå över",
       "alts": [
-        "gå över",
         "gå bort",
         "slutar",
         "upphör",
@@ -780,9 +754,8 @@ export const ENGLISH : Entity = {
   "name": "ENGLISH",
   "enums": [
     {
-      "name": "ENGLISH",
+      "name": "english",
       "alts": [
-        "english",
         "engelska",
         "englska"
       ]
@@ -794,9 +767,8 @@ export const FAMILYMEMBER : Entity = {
   "name": "FAMILYMEMBER",
   "enums": [
     {
-      "name": "FAMILYMEMBER",
+      "name": "make",
       "alts": [
-        "make",
         "fru",
         "sambo",
         "partner",
@@ -827,9 +799,8 @@ export const FHM : Entity = {
   "name": "FHM",
   "enums": [
     {
-      "name": "FHM",
+      "name": "Folkhälsomyndigheten",
       "alts": [
-        "Folkhälsomyndigheten",
         "FHM",
         "Folkhäsomyndigheten",
         "Folkhelsomyndigheten",
@@ -855,9 +826,8 @@ export const FLU : Entity = {
   "name": "FLU",
   "enums": [
     {
-      "name": "FLU",
+      "name": "influensa",
       "alts": [
-        "influensa",
         "säsongsinfluensa",
         "vanlig influensa",
         "influensan",
@@ -872,9 +842,8 @@ export const HEALTHCARE : Entity = {
   "name": "HEALTHCARE",
   "enums": [
     {
-      "name": "HEALTHCARE",
+      "name": "vården",
       "alts": [
-        "vården",
         "sjukhus",
         "sjukvården",
         "vårdcentralen",
@@ -894,9 +863,8 @@ export const HELLO : Entity = {
   "name": "HELLO",
   "enums": [
     {
-      "name": "HELLO",
+      "name": "Hej ",
       "alts": [
-        "Hej ",
         "hejsan",
         "hej hej ",
         "hej där ",
@@ -918,9 +886,8 @@ export const IF : Entity = {
   "name": "IF",
   "enums": [
     {
-      "name": "IF",
+      "name": "ifall",
       "alts": [
-        "ifall",
         "när ",
         "om",
         "fastän",
@@ -934,9 +901,8 @@ export const IMMUNE : Entity = {
   "name": "IMMUNE",
   "enums": [
     {
-      "name": "IMMUNE",
+      "name": "immun",
       "alts": [
-        "immun",
         "immunitet",
         "immuniteten",
         "imun",
@@ -952,9 +918,8 @@ export const INFECTED : Entity = {
   "name": "INFECTED",
   "enums": [
     {
-      "name": "INFECTED",
+      "name": "smittats",
       "alts": [
-        "smittats",
         "smittad",
         "smittas",
         "är smittad",
@@ -977,9 +942,8 @@ export const INFECTING_ACTIVITY : Entity = {
   "name": "INFECTING_ACTIVITY",
   "enums": [
     {
-      "name": "INFECTING_ACTIVITY",
+      "name": "hålla i handen",
       "alts": [
-        "hålla i handen",
         "kyssar",
         "kyssa",
         "puss",
@@ -1015,9 +979,8 @@ export const INT_PRON : Entity = {
   "name": "INT_PRON",
   "enums": [
     {
-      "name": "INT_PRON",
+      "name": "vem",
       "alts": [
-        "vem",
         "vilka",
         "vilken",
         "vilket",
@@ -1031,9 +994,8 @@ export const INTCITY : Entity = {
   "name": "INTCITY",
   "enums": [
     {
-      "name": "INTCITY",
+      "name": "Istanbul",
       "alts": [
-        "Istanbul",
         "Moskva",
         "London",
         "Berlin",
@@ -1086,9 +1048,8 @@ export const INTCOUNTRY : Entity = {
   "name": "INTCOUNTRY",
   "enums": [
     {
-      "name": "INTCOUNTRY",
+      "name": "Kina",
       "alts": [
-        "Kina",
         "Indien",
         "USA",
         "Amerika",
@@ -1146,9 +1107,8 @@ export const MEAN : Entity = {
   "name": "MEAN",
   "enums": [
     {
-      "name": "MEAN",
+      "name": "innebär",
       "alts": [
-        "innebär",
         "menas",
         "betyder",
         "menas med",
@@ -1165,9 +1125,8 @@ export const MEDICATION : Entity = {
   "name": "MEDICATION",
   "enums": [
     {
-      "name": "MEDICATION",
+      "name": "panodil",
       "alts": [
-        "panodil",
         "ipren",
         "alvedon"
       ]
@@ -1179,9 +1138,8 @@ export const MEDICAL_CERTIFICATE : Entity = {
   "name": "MEDICAL_CERTIFICATE",
   "enums": [
     {
-      "name": "MEDICAL_CERTIFICATE",
+      "name": "sjukintyg",
       "alts": [
-        "sjukintyg",
         "läkarintyg",
         "intyg"
       ]
@@ -1193,9 +1151,8 @@ export const MY_CHILD : Entity = {
   "name": "MY_CHILD",
   "enums": [
     {
-      "name": "MY_CHILD",
+      "name": "min dotter",
       "alts": [
-        "min dotter",
         "min son",
         "mina söner",
         "mina döttrar",
@@ -1204,7 +1161,8 @@ export const MY_CHILD : Entity = {
         "mina barn",
         "barnen",
         "barnet",
-        "ungarna"
+        "ungarna",
+        "barn"
       ]
     }
   ]
@@ -1214,9 +1172,8 @@ export const PRESCHOOL : Entity = {
   "name": "PRESCHOOL",
   "enums": [
     {
-      "name": "PRESCHOOL",
+      "name": "dagis",
       "alts": [
-        "dagis",
         "förskolan",
         "fsk",
         "förskola",
@@ -1243,9 +1200,8 @@ export const PANDEMIC : Entity = {
   "name": "PANDEMIC",
   "enums": [
     {
-      "name": "PANDEMIC",
+      "name": "pandemi",
       "alts": [
-        "pandemi",
         "pandami",
         "pandemy",
         "pandemik",
@@ -1262,9 +1218,8 @@ export const PERS_PRON : Entity = {
   "name": "PERS_PRON",
   "enums": [
     {
-      "name": "PERS_PRON",
+      "name": "jag",
       "alts": [
-        "jag",
         "man",
         "en",
         "vi",
@@ -1285,9 +1240,8 @@ export const PET : Entity = {
   "name": "PET",
   "enums": [
     {
-      "name": "PET",
+      "name": "husdjur",
       "alts": [
-        "husdjur",
         "djur",
         "hund",
         "katt",
@@ -1309,9 +1263,8 @@ export const POS_PRON : Entity = {
   "name": "POS_PRON",
   "enums": [
     {
-      "name": "POS_PRON",
+      "name": "min",
       "alts": [
-        "min",
         "mitt ",
         "mina",
         "vår",
@@ -1337,9 +1290,8 @@ export const POSTBOX : Entity = {
   "name": "POSTBOX",
   "enums": [
     {
-      "name": "POSTBOX",
+      "name": "post",
       "alts": [
-        "post",
         "paket",
         "leverans",
         "box",
@@ -1354,9 +1306,8 @@ export const PROTECT : Entity = {
   "name": "PROTECT",
   "enums": [
     {
-      "name": "PROTECT",
+      "name": "hjälpa",
       "alts": [
-        "hjälpa",
         "hjälper",
         "skydda",
         "skyddar",
@@ -1374,9 +1325,8 @@ export const PUB_TRANS : Entity = {
   "name": "PUB_TRANS",
   "enums": [
     {
-      "name": "PUB_TRANS",
+      "name": "buss",
       "alts": [
-        "buss",
         "tåg",
         "tunnelbana",
         "tunnelbanan",
@@ -1402,9 +1352,8 @@ export const PUPIL : Entity = {
   "name": "PUPIL",
   "enums": [
     {
-      "name": "PUPIL",
+      "name": "elev",
       "alts": [
-        "elev",
         "elever",
         "student",
         "studenter",
@@ -1424,9 +1373,8 @@ export const REF_PRON : Entity = {
   "name": "REF_PRON",
   "enums": [
     {
-      "name": "REF_PRON",
+      "name": "mig",
       "alts": [
-        "mig",
         "sig",
         "oss",
         "dig"
@@ -1439,9 +1387,8 @@ export const RESTAURANT : Entity = {
   "name": "RESTAURANT",
   "enums": [
     {
-      "name": "RESTAURANT",
+      "name": "resturang",
       "alts": [
-        "resturang",
         "restaurang",
         "krog",
         "krogen",
@@ -1465,9 +1412,8 @@ export const RISC : Entity = {
   "name": "RISC",
   "enums": [
     {
-      "name": "RISC",
+      "name": "riskgrupp",
       "alts": [
-        "riskgrupp",
         "liksom Eriksson",
         "riskgruppen",
         "riskzon",
@@ -1495,9 +1441,8 @@ export const SAD : Entity = {
   "name": "SAD",
   "enums": [
     {
-      "name": "SAD",
+      "name": "rädd",
       "alts": [
-        "rädd",
         "ångest",
         "livrädd",
         "panik",
@@ -1518,9 +1463,8 @@ export const NEWS : Entity = {
   "name": "NEWS",
   "enums": [
     {
-      "name": "NEWS",
+      "name": "allt",
       "alts": [
-        "allt",
         "senastre",
         "nuyheterna",
         "info"
@@ -1533,9 +1477,8 @@ export const SELF_TEST : Entity = {
   "name": "SELF_TEST",
   "enums": [
     {
-      "name": "SELF_TEST",
+      "name": "självskattningstest",
       "alts": [
-        "självskattningstest",
         "hemtest",
         "självtest",
         "självtester",
@@ -1554,9 +1497,8 @@ export const SCHOOL : Entity = {
   "name": "SCHOOL",
   "enums": [
     {
-      "name": "SCHOOL",
+      "name": "skolan",
       "alts": [
-        "skolan",
         "skola",
         "skolor",
         "skolorna",
@@ -1582,9 +1524,8 @@ export const UPPERSCHOOL : Entity = {
   "name": "UPPERSCHOOL",
   "enums": [
     {
-      "name": "UPPERSCHOOL",
+      "name": "folkhögskola",
       "alts": [
-        "folkhögskola",
         "universitet",
         "gymnasium",
         "gymnasiet",
@@ -1599,9 +1540,8 @@ export const SMALL_EVENT : Entity = {
   "name": "SMALL_EVENT",
   "enums": [
     {
-      "name": "SMALL_EVENT",
+      "name": "bröllop",
       "alts": [
-        "bröllop",
         "dop",
         "begravning",
         "student",
@@ -1614,7 +1554,8 @@ export const SMALL_EVENT : Entity = {
         "kalas",
         "fest",
         "födelsedagsfirande",
-        "party"
+        "party",
+        "utspring"
       ]
     }
   ]
@@ -1624,9 +1565,8 @@ export const SMOKE : Entity = {
   "name": "SMOKE",
   "enums": [
     {
-      "name": "SMOKE",
+      "name": "rökare",
       "alts": [
-        "rökare",
         "rökning",
         "röka",
         "röker",
@@ -1640,9 +1580,8 @@ export const STORE : Entity = {
   "name": "STORE",
   "enums": [
     {
-      "name": "STORE",
+      "name": "butik",
       "alts": [
-        "butik",
         "affär",
         "galleria",
         "gallerior",
@@ -1660,9 +1599,8 @@ export const SURVIVE : Entity = {
   "name": "SURVIVE",
   "enums": [
     {
-      "name": "SURVIVE",
+      "name": "överleva",
       "alts": [
-        "överleva",
         "leva",
         "lever",
         "överlever"
@@ -1675,9 +1613,8 @@ export const SYMPTOM : Entity = {
   "name": "SYMPTOM",
   "enums": [
     {
-      "name": "SYMPTOM",
+      "name": "symptom",
       "alts": [
-        "symptom",
         "symtom",
         "syntom",
         "synton",
@@ -1701,9 +1638,8 @@ export const TREATMENT : Entity = {
   "name": "TREATMENT",
   "enums": [
     {
-      "name": "TREATMENT",
+      "name": "läkemedel",
       "alts": [
-        "läkemedel",
         "botemedel",
         "medicin",
         "vaccin",
@@ -1718,9 +1654,8 @@ export const THANKS : Entity = {
   "name": "THANKS",
   "enums": [
     {
-      "name": "THANKS",
+      "name": "tack",
       "alts": [
-        "tack",
         "tackar",
         "tacktack",
         "tackkkk",
@@ -1750,9 +1685,8 @@ export const VISIT : Entity = {
   "name": "VISIT",
   "enums": [
     {
-      "name": "VISIT",
+      "name": "besöka",
       "alts": [
-        "besöka",
         "hälsa på",
         "träffa",
         "åka till",
@@ -1774,9 +1708,8 @@ export const WORKOUT : Entity = {
   "name": "WORKOUT",
   "enums": [
     {
-      "name": "WORKOUT",
+      "name": "träna",
       "alts": [
-        "träna",
         "idrotta",
         "gå och träna",
         "gymma",
@@ -1795,9 +1728,8 @@ export const NUMBERS : Entity = {
   "name": "NUMBERS",
   "enums": [
     {
-      "name": "NUMBERS",
+      "name": "siffrorna",
       "alts": [
-        "siffrorna",
         "siffror",
         "statistiken",
         "statistik",
@@ -1812,9 +1744,8 @@ export const VIRUS : Entity = {
   "name": "VIRUS",
   "enums": [
     {
-      "name": "VIRUS",
+      "name": "virus",
       "alts": [
-        "virus",
         "bakterie",
         "bacill",
         "smittämne"
@@ -1827,9 +1758,8 @@ export const TEST : Entity = {
   "name": "TEST",
   "enums": [
     {
-      "name": "TEST",
+      "name": "testa",
       "alts": [
-        "testa",
         "göra testet",
         "testa sig ",
         "testa mig",
@@ -1847,9 +1777,8 @@ export const HOME : Entity = {
   "name": "HOME",
   "enums": [
     {
-      "name": "HOME",
+      "name": "hemma",
       "alts": [
-        "hemma",
         "hemmet",
         "hemifrån"
       ]
@@ -1861,9 +1790,8 @@ export const TRUST : Entity = {
   "name": "TRUST",
   "enums": [
     {
-      "name": "TRUST",
+      "name": "pålitlig",
       "alts": [
-        "pålitlig",
         "pålitliga",
         "sant",
         "bra",
@@ -1878,9 +1806,8 @@ export const SAFE : Entity = {
   "name": "SAFE",
   "enums": [
     {
-      "name": "SAFE",
+      "name": "säkert",
       "alts": [
-        "säkert",
         "riskfritt",
         "tryggt",
         "OK",
@@ -1895,9 +1822,8 @@ export const ACCEPT : Entity = {
   "name": "ACCEPT",
   "enums": [
     {
-      "name": "ACCEPT",
+      "name": "okidoki",
       "alts": [
-        "okidoki",
         "oki",
         "bra",
         "jag förstår",
@@ -1919,9 +1845,8 @@ export const QUARANTINE : Entity = {
   "name": "QUARANTINE",
   "enums": [
     {
-      "name": "QUARANTINE",
+      "name": "stanna hemma",
       "alts": [
-        "stanna hemma",
         "karantän",
         "isolera",
         "isolering",
@@ -1940,9 +1865,8 @@ export const FORBIDDEN : Entity = {
   "name": "FORBIDDEN",
   "enums": [
     {
-      "name": "FORBIDDEN",
+      "name": "förbjudet",
       "alts": [
-        "förbjudet",
         "förbjuda",
         "förbjudit",
         "inte tillåtet",
@@ -1965,9 +1889,8 @@ export const ALLOWED : Entity = {
   "name": "ALLOWED",
   "enums": [
     {
-      "name": "ALLOWED",
+      "name": "tillåtet",
       "alts": [
-        "tillåtet",
         "okej",
         "ok",
         "godkänt",
@@ -1982,9 +1905,8 @@ export const DIE : Entity = {
   "name": "DIE",
   "enums": [
     {
-      "name": "DIE",
+      "name": "dö",
       "alts": [
-        "dö",
         "dör",
         "avlida",
         "sluta leva",
@@ -2011,9 +1933,8 @@ export const ELDERLY_CARE : Entity = {
   "name": "ELDERLY_CARE",
   "enums": [
     {
-      "name": "ELDERLY_CARE",
+      "name": "äldreboende",
       "alts": [
-        "äldreboende",
         "äldrehem",
         "seniorshem",
         "pensionärshem",
@@ -2030,9 +1951,8 @@ export const WELL : Entity = {
   "name": "WELL",
   "enums": [
     {
-      "name": "WELL",
+      "name": "frisk",
       "alts": [
-        "frisk",
         "friska ",
         "inte sjuk",
         "inga symptom",
@@ -2054,9 +1974,8 @@ export const TIMESPAN : Entity = {
   "name": "TIMESPAN",
   "enums": [
     {
-      "name": "TIMESPAN",
+      "name": "pass länge",
       "alts": [
-        "pass länge",
         "länge",
         "lång tid",
         "under lång tid",
@@ -2076,9 +1995,8 @@ export const BYE : Entity = {
   "name": "BYE",
   "enums": [
     {
-      "name": "BYE",
+      "name": "hejdå",
       "alts": [
-        "hejdå",
         "hejhej",
         "Hej då",
         "nej tack det var allt",
@@ -2107,9 +2025,8 @@ export const GOODNIGHT : Entity = {
   "name": "GOODNIGHT",
   "enums": [
     {
-      "name": "GOODNIGHT",
+      "name": "gonatt",
       "alts": [
-        "gonatt",
         "natt",
         "natti",
         "sov gott",
@@ -2123,9 +2040,8 @@ export const IMMUNE_DEFENSE : Entity = {
   "name": "IMMUNE_DEFENSE",
   "enums": [
     {
-      "name": "IMMUNE_DEFENSE",
+      "name": "immunsystem",
       "alts": [
-        "immunsystem",
         "immunförsvar"
       ]
     }
@@ -2136,9 +2052,8 @@ export const BAD : Entity = {
   "name": "BAD",
   "enums": [
     {
-      "name": "BAD",
+      "name": "dåligt",
       "alts": [
-        "dåligt",
         "kasst",
         "svag",
         "svagt",
@@ -2163,9 +2078,8 @@ export const CARE : Entity = {
   "name": "CARE",
   "enums": [
     {
-      "name": "CARE",
+      "name": "vårda ",
       "alts": [
-        "vårda ",
         "ta hand om",
         "sköta",
         "ge vård",
@@ -2185,9 +2099,8 @@ export const READY : Entity = {
   "name": "READY",
   "enums": [
     {
-      "name": "READY",
+      "name": "beredskap",
       "alts": [
-        "beredskap",
         "beredd",
         "beredda",
         "redo"
@@ -2200,9 +2113,8 @@ export const IVA : Entity = {
   "name": "IVA",
   "enums": [
     {
-      "name": "IVA",
+      "name": "intensivvårdsplatser",
       "alts": [
-        "intensivvårdsplatser",
         "IVA",
         "intensivplatser",
         "intensivvården"
@@ -2332,7 +2244,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
     "bot": {
       "say": {
         "text": "Det är möjligt att personer med med nedsatt immunförsvar har ökad risk för att drabbas allvarligare av covid-19. Om du har en sjukdom som generellt innebär ökad risk för allvarlig sjukdom vid luftvägsinfektioner bör du rådgöra med behandlande läkare kring vad du kan göra för att minska risken kopplad till covid-19. Detta gäller även om du är yngre än 70 år",
-        "ssml": "Det är möjligt att personer med med nedsatt immunförsvar har ökad risk för att drabbas allvarligare av covid19. <break=\"500ms\"/> Om du har en sjukdom som generellt innebär ökad risk för allvarlig sjukdom vid luftvägsinfektioner bör du rådgöra <break=\"500ms\"/> med behandlande läkare <break=\"500ms\"/> kring vad du kan göra för att minska risken kopplad till covid19. Detta gäller även om du är yngre än 70 år"
+        "ssml": "Det är möjligt att personer med med nedsatt immunförsvar har ökad risk för att drabbas allvarligare av covid19. <break time=\"500ms\"/> Om du har en sjukdom som generellt innebär ökad risk för allvarlig sjukdom vid luftvägsinfektioner bör du rådgöra <break time=\"500ms\"/> med behandlande läkare <break time=\"500ms\"/> kring vad du kan göra för att minska risken kopplad till covid19. Detta gäller även om du är yngre än 70 år"
       },
       "set": {
         "classifiedIntentName": "question: Är jag i riskgrupp om jag har försämrad immunförsvar",
@@ -2345,15 +2257,24 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "Om WHO och Folkhälsomyndigheten lämnar olika besked. Vem ska man lita på?",
-      "entities": {},
+      "entities": {
+        "CAN": CAN,
+        "FHM": FHM,
+        "PERS_PRON": PERS_PRON
+      },
       "examples": [
-        "Om WHO och Folkhälsomyndigheten lämnar olika besked. Vem ska man lita på?"
+        "Om WHO och Folkhälsomyndigheten lämnar olika besked. Vem ska man lita på?",
+        "Hur _CAN _PERS_PRON tänka om WHO och _FHM lämnar olika besked?",
+        "Är det WHO eller _FHM som bestämmer riktlinjer?",
+        "_CAN _PERS_PRON lyssna på WHO eller _FHM?",
+        "Säger _FHM och WHO samma sak?"
       ]
     },
     "bot": {
       "say": [
         {
-          "text": "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan jag tyvärr inte svara på den i nuläget."
+          "text": "Folkhälsomyndigheten följer utvecklingen i Sverige och arbetar systematiskt med att förebygga smitt­spridning i samhället. Svenska myndigheter följer Folkhälsomyndighetens rekommendationer. ",
+          "ssml": "Folkhälsomyndigheten följer utvecklingen i Sverige och arbetar systematiskt med att förebygga smitt­spridning i samhället || Svenska myndigheter följer Folkhälsomyndighetens rekommendationer. "
         }
       ]
     }
@@ -2361,15 +2282,24 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "hur undviker jag att bli smittad?",
-      "entities": {},
+      "entities": {
+        "INFECTED": INFECTED,
+        "PERS_PRON": PERS_PRON,
+        "REF_PRON": REF_PRON
+      },
       "examples": [
-        "hur undviker jag att bli smittad?"
+        "hur undviker jag att bli smittad?",
+        "Hur undviker _PERS_PRON att bli _INFECTED?",
+        "Hur gör _PERS_PRON för att inte bli _INFECTED?",
+        "_PERS_PRON vill inte bli _INFECTED",
+        "Hur håller _PERS_PRON _REF_PRON frisk?"
       ]
     },
     "bot": {
       "say": [
         {
-          "text": "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan jag tyvärr inte svara på den i nuläget."
+          "text": "Folkhälsomyndigheten ger följande råd: \nTvätta händerna ofta. Använd tvål och vatten och tvätta i minst 20 sekunder.\nHåll avstånd till andra, det gäller både inomhus och utomhus.\nRes bara om det är nödvändigt och håll avstånd till andra om du åker kollektivtrafik. Försök undvika resor i rusningstid.\nUndvik sociala sammankomster som till exempel fester, begravningar, bröllop och dop.\nHåll avstånd till andra när du är till exempel på gym, på idrottsplatser och i simhall. Undvik att byta om i allmänna omklädningsrum.\n\n",
+          "ssml": "Folkhälsomyndigheten ger följande råd || \nTvätta händerna oftah | Använd tvål och vatten och tvätta i minst 20 sekunder.||\nHåll avstånd till andra, det gäller både inomhus och utomhus.||\nRes bara om det är nödvändigt || och håll avstånd till andra om du åker kollektivtrafik | Försök undvika resor i rusningstid.||\nUndvik sociala sammankomster som till exempel fester, begravningar, bröllop och dop.||\nHåll avstånd till andra | när du är till exempel på gym, på idrottsplatser och i simhall | Undvik att byta om i allmänna omklädningsrum."
         }
       ]
     }
@@ -2462,15 +2392,24 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "Vad händer om man hamnar på intensiven",
-      "entities": {},
+      "entities": {
+        "PERS_PRON": PERS_PRON,
+        "IVA": IVA,
+        "CORONA": CORONA
+      },
       "examples": [
-        "Vad händer om man hamnar på intensiven"
+        "Vad händer om man hamnar på intensiven",
+        "Vad händer om _PERS_PRON hamnar på _IVA?",
+        "Hur funkar det på _IVA?",
+        "Hur behandlas _CORONA på _IVA?",
+        "Väd händer med patienterna som kommer till _IVA?"
       ]
     },
     "bot": {
       "say": [
         {
-          "text": "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan jag tyvärr inte svara på den i nuläget."
+          "text": "De som blir allvarligt sjuka i covid-19 får andningssvårigheter och låg syresättning av blodet. Om en patient intensivvårdas på grund av covid-19 är det vanligt att det behövs respiratorbehandling. ",
+          "ssml": "De som blir allvarligt sjuka i covid19 får andningssvårigheter och låg syresättning av blodet || Om en patient intensivvårdas på grund av covid19 | är det vanligt att det behövs respiratorbehandling. "
         }
       ]
     }
@@ -2478,15 +2417,24 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "Kan jag åka till min sommarstuga på västkusten?",
-      "entities": {},
+      "entities": {
+        "CAN": CAN,
+        "PERS_PRON": PERS_PRON,
+        "POS_PRON": POS_PRON
+      },
       "examples": [
-        "Kan jag åka till min sommarstuga på västkusten?"
+        "Kan jag åka till min sommarstuga på västkusten?",
+        "_CAN _PERS_PRON åka till _POS_PRON sommarstuga på västkusten?",
+        "_PERS_PRON vill åka till sommarstugan på västkusten, är det okej?",
+        "_CAN _PERS_PRON sticka till sommarhuset?",
+        "Är det okej att åka till sommarstugan?"
       ]
     },
     "bot": {
       "say": [
         {
-          "text": "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan jag tyvärr inte svara på den i nuläget."
+          "text": "Folkhälsomyndigheten rekommenderar alla att tänka igenom sina resor. Är resan verkligen nödvändig?\n",
+          "ssml": "Folkhälsomyndigheten rekommenderar alla att tänka igenom sina resor | Är resan verkligen nödvändig?"
         }
       ]
     }
@@ -2514,15 +2462,22 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "Vad gör socialstyrelsen?",
-      "entities": {},
+      "entities": {
+        "PERS_PRON": PERS_PRON
+      },
       "examples": [
-        "Vad gör socialstyrelsen?"
+        "Vad gör socialstyrelsen?",
+        "Vad gör _PERS_PRON på Socialstyrelsen?",
+        "Hur jobbar Socialstyrelsen?",
+        "Hur tänker _PERS_PRON på Socialstyrelsen?",
+        "_PERS_PRON undrar vad socialstyrelsen är"
       ]
     },
     "bot": {
       "say": [
         {
-          "text": "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan jag tyvärr inte svara på den i nuläget."
+          "text": "Socialstyrelsen är Sveriges kunskapsmyndighet för vård och omsorg. Myndigheten har beredskap för att möta allvarliga händelser och vid behov samordna delar av hälso- och sjukvården. \n\n",
+          "ssml": "Socialstyrelsen är Sveriges kunskapsmyndigheth för vård och omsorg. || Myndigheten har beredskap för att möta allvarliga händelser och vid behov samordna delar av hälso- och sjukvården. \n"
         }
       ]
     }
@@ -2611,26 +2566,6 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": {
-      "name": "question: Hur många äldreboenden i Sverige har fått in smittan?",
-      "entities": {},
-      "examples": [
-        "Hur många äldreboenden i Sverige har fått in smittan?"
-      ]
-    },
-    "bot": {
-      "say": {
-        "text": "Antikroppstester utvecklas just nu."
-      },
-      "set": {
-        "classifiedIntentName": "question: Hur många äldreboenden i Sverige har fått in smittan?",
-        "classifiedUtterance": "_user_text",
-        "botResponse": "Antikroppstester utvecklas just nu."
-      },
-      "goto": "VERIFY_ANSWER"
-    }
-  },
-  {
-    "intent": {
       "name": "question: Finns det statistik vilka åldrar de avlidna personerna haft?",
       "entities": {},
       "examples": [
@@ -2692,15 +2627,24 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "Hur många äldreboenden i Sverige har fått in smittan?",
-      "entities": {},
+      "entities": {
+        "CORONA": CORONA,
+        "ELDERLY_CARE": ELDERLY_CARE,
+        "INFECTED": INFECTED
+      },
       "examples": [
-        "Hur många äldreboenden i Sverige har fått in smittan?"
+        "Hur många äldreboenden i Sverige har fått in smittan?",
+        "Hur många _ELDERLY_CARE har _CORONA",
+        "Hur många ELDERY_CARE i Sverige har fått _CORONA?",
+        "Är det många _ELDERLY_CARE i Sverige som är _INFECTED?",
+        "_CORONA på ELDERY_CARE"
       ]
     },
     "bot": {
       "say": [
         {
-          "text": "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan jag tyvärr inte svara på den i nuläget."
+          "text": "I dag finns smittan på äldreboenden i princip över hela Sverige. Statistiken visar allt från enstaka fall till stora utbrott med flera dödsfall. Folkhälsomyndigheten studerar nu hur smittan har tagit sig in i den svenska äldreomsorgen.",
+          "ssml": "Idag finns smittan på äldreboenden i princip över hela Sverige || Statistiken visar allt från enstaka fall till stora utbrott med flera dödsfall. || Folkhälsomyndigheten studerar nu hur smittan har tagit sig in i den svenska äldreomsorgen. "
         }
       ]
     }
@@ -2752,7 +2696,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
       "say": [
         {
           "text": "Norge har inreseförbud. Undantag görs för: godstrafik, arbetspendlare och \nEES-medborgare som är bosatta i Norge, arbetar eller ska börja arbeta i Norge.\nUndantag gäller också följande EES-medborgare: den som är egenföretagare och har etablerat eller ska etablera verksamhet i Norge, den som är tjänsteleverantör och har påbörjat eller ska påbörja arbetsuppdrag i Norge, och den som måste resa genom Norge för att ta sig hem.",
-          "ssml": "Norge har inreseförbud <break time =\"300 ms\"/>  Undantag görs för <break time =\"400 ms\"/> godstrafik, arbets pendlare och E E s medborgare som är bosatta i Norge, arbetar eller ska börja arbeta i Norge <break time =\"400 ms\"/> Undantag gäller också följande E E S medborgare <break time =\"400 ms\"/>  den som är egenföretagare och har etablerat eller ska etablera verksamhet i Norge <break time =\"400 ms\"/> den som är tjänste leverantör och har påbörjat eller ska påbörja arbetsuppdrag i Norge <break time =\"400 ms\"/> och den som måste resa genom Norge för att ta sig hem."
+          "ssml": "Norge har inrese förbud. Undantag görs för | godstrafik, arbetspendlare och E E s medborgare som är bosatta i Norge, arbetar eller ska börja arbeta i Norge || Undantag gäller också följande E E S medborgare ||  den som är egenföretagare och har etablerat eller ska etablera verksamhet i Norge || den som är tjänste leverantör och har påbörjat eller ska påbörja arbetsuppdrag i Norge || och den som måste resa genom Norge för att ta sig hem."
         }
       ]
     }
@@ -2777,7 +2721,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
       "say": [
         {
           "text": "Det tillfälliga inreseförbudet till EU via Sverige är förlängt till och med 15 maj.",
-          "ssml": "Det tillfälliga inrese förbudet till E U via Sverige <break time =\"200 ms\"/> är förlängt till och med 15 maj."
+          "ssml": "Det tillfälliga inrese förbudet till E U via Sverige | är förlängt till och med 15 maj."
         }
       ]
     }
@@ -2862,7 +2806,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
       "say": [
         {
           "text": "Smittämnen fastnar lätt på dina händer. Tvätta därför alltid händerna när du kommer hem, eller när du kommer till ditt arbete, efter att ha varit ute. Tvätta händerna när du ska hantera mat och före måltid. Tvätta alltid händerna efter toalettbesök. Tvätta händerna med tvål och vatten och tvätta minst 20 sekunder.",
-          "ssml": "Smittämnen fastnar lätt på dina händer <break time =\"400 ms\"/> Tvätta därför alltid händerna när du kommer hem,  eller när du kommer till ditt arbete, efter att ha varit uthe. <break time =\"400 ms\"/> Tvätta händerna när du ska hantera mat och före måltid. <break time =\"400 ms\"/> Tvätta alltid händerna efter toalettbesök. <break time =\"400 ms\"/> Använd tvål och vatten och tvätta minst 20 sekunder."
+          "ssml": "Smittämnen fastnar lätt på dina händer. || Tvätta därför alltid händerna när du kommer hem,  eller när du kommer till ditt arbete, efter att ha varit uthe. || Tvätta händerna när du ska hantera mat och före måltid. || Tvätta alltid händerna efter toalettbesök. || Använd tvål och vatten och tvätta minst 20 sekunder."
         }
       ]
     }
@@ -2885,7 +2829,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
       "say": [
         {
           "text": "Malariamedicinen klorokin har lyfts fram som medicin mot det nya coronaviruset, men enligt överläkare vid Giftinformationscentralen kan preparatet ge mycket svåra biverkningar. Det finns heller inga kontrollerade studier som visar att medicinen har effekt.",
-          "ssml": "Malariamedicin har lyfts fram som medicin mot det nya coronaviruset, men enligt överläkare vid Giftinformationscentralen kan preparatet ge mycket svåra biverkningar <break time=\"500ms\"/> Det finns heller inga kontrollerade studier som visar att medicinen har effekt "
+          "ssml": "Malariamedicin har lyfts fram som medicin mot det nya coronaviruset, men enligt överläkare vid Giftinformationscentralen kan preparatet ge mycket svåra biverkningar. || Det finns heller inga kontrollerade studier som visar att medicinen har effekt "
         }
       ]
     }
@@ -2908,7 +2852,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
     "bot": {
       "say": {
         "text": "I flera länder råder det brist på material som används vid tester. Enligt Folkhälsomyndigheten ska resurserna användas för att skydda sjukvårdspersonal och människor i riskgrupper.",
-        "ssml": "I flera länder råder det brist på matrial som används vid tester <break time=\"500ms\"/> Enligt Folkhälsomyndigheten ska resurserna användas för att skydda sjukvårdspersonal <break time=\"500ms\"/> och människor i riskgrupper."
+        "ssml": "I flera länder råder det brist på matrial som används vid tester. || Enligt Folkhälsomyndigheten ska resurserna användas för att skydda sjukvårdspersonal | och människor i riskgrupper."
       },
       "set": {
         "classifiedIntentName": "question: När kommer tester göras för allmänheten?",
@@ -2921,16 +2865,28 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "när kommer jag kunna träffa min mamma på äldreboende?",
-      "entities": {},
+      "entities": {
+        "CAN": CAN,
+        "FAMILYMEMBER": FAMILYMEMBER,
+        "PERS_PRON": PERS_PRON,
+        "POS_PRON": POS_PRON,
+        "ELDERLY_CARE": ELDERLY_CARE,
+        "ELDERLY": ELDERLY
+      },
       "examples": [
         "när kommer jag kunna träffa min mamma på äldreboende?",
-        "när beräknas äldreboenden öppna för besök igen?"
+        "när beräknas äldreboenden öppna för besök igen?",
+        "När _CAN _PERS_PRON träffa _POS_PRON _FAMILYMEMBER på _ELDERLY_CARE?",
+        "När öppnar _ELDERLY_CARE igen?",
+        "När kan jag hälsa på _ELDERLY?",
+        "_POS_PRON _ELDERLY bor i _ELDERLY_CARE, när kan vi ses igen?"
       ]
     },
     "bot": {
       "say": [
         {
-          "text": "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan jag tyvärr inte svara på den i nuläget."
+          "text": "Regeringen har fattat beslut om besöksförbud på alla äldreboenden. Förbudet gäller till och med 30 juni 2020. ",
+          "ssml": "Regeringen har fattat beslut om besöksförbud på alla äldreboenden. | Förbudet gäller till och med 30 juni 2020. "
         }
       ]
     }
@@ -2939,17 +2895,22 @@ export const simpleQuestionAnswers : UserTurn[] = [
     "intent": {
       "name": "Varför dör fler män än kvinnor av corona?",
       "entities": {
-        "CORONA": CORONA
+        "CORONA": CORONA,
+        "DIE": DIE
       },
       "examples": [
         "Varför dör fler män än kvinnor av corona?",
-        "Ja, jag vill veta varför fler män dör av _CORONA än kvinnor"
+        "Ja, jag vill veta varför fler män dör av _CORONA än kvinnor",
+        "Varför är det fler män än kvinnor som _DIE av _CORONA?",
+        "Varför är det fler män i _CORONA statistiken?",
+        "Varför _DIE det fler män än kvinnor?"
       ]
     },
     "bot": {
       "say": [
         {
-          "text": "Jag förstod din fråga, men eftersom den inte besvaras av någon av våra källor kan jag tyvärr inte svara på den i nuläget."
+          "text": "Statistik från flera länder visar att män drabbas hårdare än kvinnor av covid-19.  Man vet inte om den här skillnaden beror på livsstilsfaktorer eller skillnader i mäns och kvinnors biologiska förutsättningar. ",
+          "ssml": "Statistik från flera länder visar att män drabbas hårdare än kvinnor av covid19 ||  Man vet inte om den här skillnaden beror på livsstilsfaktorer eller skillnader i mäns och kvinnors biologiska förutsättningar. "
         }
       ]
     }
@@ -2989,17 +2950,30 @@ export const simpleQuestionAnswers : UserTurn[] = [
   {
     "intent": {
       "name": "Är övervikt en riskfaktor?",
-      "entities": {},
+      "entities": {
+        "PERS_PRON": PERS_PRON,
+        "RISC": RISC,
+        "CORONA": CORONA,
+        "FAMILYMEMBER": FAMILYMEMBER,
+        "POS_PRON": POS_PRON
+      },
       "examples": [
         "Är övervikt en riskfaktor?",
-        "Övervikt?"
+        "Är det farligt med övervikt?",
+        "_PERS_PRON är överviktig, är _PERS_PRON i _RISC?",
+        "Övervikt?",
+        "Är det _RISC att vara för tjock?",
+        "Är övervikt _RISC?",
+        "_POS_PRON _FAMILYMEMBER är överviktig. Är _PERS_PRON _RISC för _CORONA?",
+        "Varför är övervikt _RISC?",
+        "Varför är fetma _RISC?"
       ]
     },
     "bot": {
       "say": [
         {
-          "text": "Enligt Socialstyrelsen är kraftig övervikt och fetma en riskfaktor för allvarlig sjukdomsutveckling vid covid-19.\n",
-          "ssml": "Enligt Socialstyrelsen är kraftig övervikt och fetma <break time =\"200 ms\"/> en riskfaktor för allvarlig sjukdoms utveckling vid covid19."
+          "text": "Enligt Socialstyrelsen är kraftig övervikt och fetma en riskfaktor för allvarlig sjukdomsutveckling vid covid-19. Kraftig övervikt påverkar andningsfunktionen.\n",
+          "ssml": "Enligt Socialstyrelsen är kraftig övervikt och fetma | en riskfaktor för allvarlig sjukdomsuth veckling vid covid19 | Kraftig övervikt påverkar andningsfunktionen."
         }
       ]
     }
@@ -5610,7 +5584,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
     "bot": {
       "say": {
         "text": "Du kan i nuläget inte själv bestämma om du vill testa dig. De som i första hand testas är personer som är i behov av vård på sjukhus och personal inom sjukvård och äldreomsorg med misstänkt smitta av coronaviruset. Det är viktigt att alla som är sjuka i förkylning eller influensaliknande symptom stannar hemma för att inte riskera att sprida smittan.",
-        "ssml": "Du kan i nuläget inte själv bestämma om du vill testa dig. <break=\"500ms\"/> De som i första hand testas är personer som är i behov av vård på sjukhus <break=\"500ms\"/> och personal inom sjukvård och äldreomsorg med misstänkt smitta av coronaviruset. <break=\"500ms\"/> Det är viktigt att alla som är sjuka i förkylning eller influensaliknande symptom stannar hemma för att inte riskera att sprida smittan."
+        "ssml": "Du kan i nuläget inte själv bestämma om du vill testa dig. <break time=\"500ms\"/> De som i första hand testas är personer som är i behov av vård på sjukhus <break time=\"500ms\"/> och personal inom sjukvård och äldreomsorg med misstänkt smitta av coronaviruset. <break time=\"500ms\"/> Det är viktigt att alla som är sjuka i förkylning eller influensaliknande symptom stannar hemma för att inte riskera att sprida smittan."
       },
       "set": {
         "classifiedIntentName": "question: Kan jag testa mig på vårdcentralen?",
@@ -5719,7 +5693,8 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "När upptäcktes _CORONA?",
         "När kom _CORONA?",
         "Hur länge har _CORONA funnits?",
-        "Är _CORONA ett gammalt virus?"
+        "Är _CORONA ett gammalt virus?",
+        "Hur gammalt är _CORONA?"
       ]
     },
     "bot": {
@@ -6785,7 +6760,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
     "bot": {
       "say": {
         "text": "Du kan ringa äldrelinjen på telefonnummer 020-22 22 33. De som svarar är volontärer som har erfarenhet av att ge stöd över telefon.",
-        "ssml": "Du kan ringa äldrelinjen på telefonnummer 020 tjugotvå tjugotvå trettitre. <break=\"500ms\"/> De som svarar är volontärer som har erfarenhet av att ge stöd över telefon."
+        "ssml": "Du kan ringa äldrelinjen på telefonnummer 020 tjugotvå tjugotvå trettitre. <break time=\"500ms\"/> De som svarar är volontärer som har erfarenhet av att ge stöd över telefon."
       },
       "set": {
         "classifiedIntentName": "question: Vilket nummer är det till äldrelinjen?",
@@ -6810,7 +6785,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
     "bot": {
       "say": {
         "text": "Du kan ringa BRIS på telefonnummer 116 111. Det är kostnadsfritt för barn och ungdomar upp till 18 år att ringa och du behöver inte säga vem du är.",
-        "ssml": "Du kan ringa BRIS på telefonnummer 116 hundraelva. <break=\"500ms\"/> Det är kostnadsfritt för barn och ungdomar upp till 18 år att ringa och du behöver inte säga vem du är."
+        "ssml": "Du kan ringa BRIS på telefonnummer 116 hundraelva. <break time=\"500ms\"/> Det är kostnadsfritt för barn och ungdomar upp till 18 år att ringa och du behöver inte säga vem du är."
       },
       "set": {
         "classifiedIntentName": "question: Vilket nummer är det till BRIS?",
@@ -6836,7 +6811,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
     "bot": {
       "say": {
         "text": "Du kan ringa kvinnofridslinjen på telefonnummer 020 50 50 50. Samtalet är kostnadsfritt och syns inte på telefonräkningen.",
-        "ssml": "Du kan ringa kvinnofridslinjen på telefonnummer 020 50 50 50. <break=\"500ms\"/> Samtalet är kostnadsfritt och syns inte på telefonräkningen."
+        "ssml": "Du kan ringa kvinnofridslinjen på telefonnummer 020 50 50 50. <break time=\"500ms\"/> Samtalet är kostnadsfritt och syns inte på telefonräkningen."
       },
       "set": {
         "classifiedIntentName": "question: Vilket nummer är det till kvinnofridslinjen?",
@@ -7364,7 +7339,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Ger _CORONA torr eller skrällig _CO_SYM?",
         "_CAN _PERS_PRON få skällig eller torr hosta av _CORONA?",
         "Är skrällig _CO_SYM typiskt för _CORONA?",
-        "Vilken typ av _CO_SYM _CAN _PERS_PRON av _CORONA?"
+        "Vilken typ av _CO_SYM _CAN _PERS_PRON av _CORONA?",
+        "_CAN _PERS_PRON torrhosta?",
+        "Ger _CORONA torrhosta?",
+        "Ger _CORONA slemmig hosta?"
       ]
     },
     "bot": {
@@ -7583,12 +7561,12 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": {
-        "text": "Handsprit hjälper mot bakterier och vissa virus, men inte mot alla. Det bästa är att tvätta händerna ofta <break=\"300ms\"/> och ordentligt <break=\"300ms\"/> med tvål och vatten."
+        "text": "Handsprit hjälper mot bakterier och vissa virus, men inte mot alla. Det bästa är att tvätta händerna ofta <break time=\"300ms\"/> och ordentligt <break time=\"300ms\"/> med tvål och vatten."
       },
       "set": {
         "classifiedIntentName": "question: Vilket är bäst – tvål eller handsprit?",
         "classifiedUtterance": "_user_text",
-        "botResponse": "Handsprit hjälper mot bakterier och vissa virus, men inte mot alla. Det bästa är att tvätta händerna ofta <break=\"300ms\"/> och ordentligt <break=\"300ms\"/> med tvål och vatten."
+        "botResponse": "Handsprit hjälper mot bakterier och vissa virus, men inte mot alla. Det bästa är att tvätta händerna ofta <break time=\"300ms\"/> och ordentligt <break time=\"300ms\"/> med tvål och vatten."
       },
       "goto": "VERIFY_ANSWER"
     }
@@ -8500,7 +8478,9 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "får _PERS_PRON åka utomlands",
         "vad gäller om _PERS_PRON tänkt resa utomlands",
         "får _PERS_PRON åka till andra länder",
-        "När _CAN _PERS_PRON resa utomlands?"
+        "När _CAN _PERS_PRON resa utomlands?",
+        "_CAN _PERS_PRON tura?",
+        "Är det okej att tura? "
       ]
     },
     "bot": {
@@ -8564,7 +8544,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
     "bot": {
       "say": {
         "text": "Stanna hemma om du känner dig sjuk. Tänk på att hålla avstånd till andra resenärer. Se till att tvätta händerna med tvål och varmt vatten, alternativt handsprit. Hosta och nys i armvecket eller i en pappersnäsduk, undvik att röra vid ansiktet eller ögonen.",
-        "ssml": "Stanna hemma om du känner dig sjuk. Tänk på att hålla avstånd till andra. Tvätta händerna ofta med tvål och varmt vatten eller handsprit. Hosta och nys i armvecket eller i en pappersnäsduk om du behöver. <break=\"500ms\"/> Undvik att röra vid ansiktet eller ögonen. "
+        "ssml": "Stanna hemma om du känner dig sjuk. Tänk på att hålla avstånd till andra. Tvätta händerna ofta med tvål och varmt vatten eller handsprit. Hosta och nys i armvecket eller i en pappersnäsduk om du behöver. <break time=\"500ms\"/> Undvik att röra vid ansiktet eller ögonen. "
       },
       "set": {
         "classifiedIntentName": "question: Vad ska jag tänka på när jag åker tåg, buss och taxi?",
@@ -8888,7 +8868,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
     "bot": {
       "say": [
         {
-          "text": "Hotell, vandrarhem och campingplatser måste tänka på att begränsa antalet gäster som vistas samtidigt i en lokal. De bör också erbjuda alternativa lösningar till köer samt se till att personal och besökare har möjlighet att tvätta händerna ofta med tvål och vatten. <break=\"500ms\"/> Om verksamheten har restaurang, bar, café eller liknande omfattas de av de nya reglerna för restauranger och krogar."
+          "text": "Hotell, vandrarhem och campingplatser måste tänka på att begränsa antalet gäster som vistas samtidigt i en lokal. De bör också erbjuda alternativa lösningar till köer samt se till att personal och besökare har möjlighet att tvätta händerna ofta med tvål och vatten. <break time=\"500ms\"/> Om verksamheten har restaurang, bar, café eller liknande omfattas de av de nya reglerna för restauranger och krogar."
         }
       ]
     }
@@ -8987,7 +8967,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
     "bot": {
       "say": {
         "text": "Normalt har Sverige 526 intensivvårdsplatser. Socialstyrelsen samordnar och utökar just nu intensivvårdsplatserna i landet.",
-        "ssml": "Normalt har Sverige 526 intensivvårds <break=\"200ms\"/> platser. Socialstyrelsen samordnar och utökar just nu intensivvårds <break=\"200ms\"/> platserna i landet."
+        "ssml": "Normalt har Sverige 526 intensivvårds <break time=\"200ms\"/> platser. Socialstyrelsen samordnar och utökar just nu intensivvårds <break time=\"200ms\"/> platserna i landet."
       },
       "set": {
         "classifiedIntentName": "question: Kommer intensivvårdsavdelningarna i Sverige klara alla coronasmittade",
@@ -10224,7 +10204,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
   },
   {
     "intent": {
-      "name": "question: Vad är det för skillnad på virus och bakterier?",
+      "name": "question: Skillnad på virus och bakterier?",
       "entities": {
         "VIRUS": VIRUS,
         "CORONA": CORONA,
@@ -10232,7 +10212,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "PERS_PRON": PERS_PRON
       },
       "examples": [
-        "Vad är det för skillnad på virus och bakterier?",
+        "Skillnad på virus och bakterier?",
         "Vad är det för skillnad på _VIRUS och _VIRUS?",
         "Förklara skillnaden mellan _VIRUS och _VIRUS",
         "Är _CORONA bakterie eller _VIRUS?",
@@ -10240,7 +10220,8 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Vad är bakterier",
         "Vad är virus",
         "Vad gör virus",
-        "Vad gör bakterier"
+        "Vad gör bakterier",
+        "Är _VIRUS samma som _VIRUS?"
       ]
     },
     "bot": {
@@ -10249,7 +10230,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "ssml": "Bakterier är små eencelliga organismer som finns nästan överallt. Virus däremot <break time=\"200ms\"/> kan bara växa i levande vävnad. Viruset skyddas av ett protein hölllje. <break time=\"200ms\"/> Coronavirusets protein höllje är extra känsligt för tvål, det är därför det är bra att tvätta händerna ofta. <break time=\"200ms\"/> Virus kan också förebyggas med vaccin."
       },
       "set": {
-        "classifiedIntentName": "question: Vad är det för skillnad på virus och bakterier?",
+        "classifiedIntentName": "question: Skillnad på virus och bakterier?",
         "classifiedUtterance": "_user_text",
         "botResponse": "Bakterier är små encelliga organismer som lever nästan överallt. Virus däremot kan bara leva och föröka sig levande vävnad hos ett värddjur eller en människa. Virusets arvsmassa skyddas av ett proteinhölje. Coronavirusets proteinhölje är känsligt för tvål, det är därför det är bra att tvätta händerna ofta. Många virus kan också förebyggas med vaccin."
       },

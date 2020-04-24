@@ -8,7 +8,7 @@ import { answerInfected} from "./answers/answerInfected"
 import { answerIntensiveCare } from "./answers/answerIntensiveCare"
 import { answerDead } from "./answers/answerDead"
 import { answerRanking } from "./answers/answerRanking"
-import { presentNews } from "./answers/generatedNews"
+//import { presentNews } from "./answers/generatedNews"
 
 /*
     Questions and other user-driven initiatives
@@ -34,7 +34,8 @@ const questions: UserTurn[] = [
   },
   {
     intent: nlu.queryNews,
-    bot: presentNews
+    bot: "Just nu har jag en paus i min nyhetsbevakning, men det kan hända att jag tar upp tråden igen senare."
+    //bot: presentNews
   },
   {
     intent: nlu.queryInfected, bot: {

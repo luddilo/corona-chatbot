@@ -1,6 +1,6 @@
 import { UserTurn, Entity } from "narratory"
 
-// Generated at Wednesday, April 22nd 2020, 3:00:09 pm
+// Generated at Friday, April 24th 2020, 3:01:31 pm
 
 export const ACTIVITY : Entity = {
   "name": "ACTIVITY",
@@ -4358,7 +4358,8 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Har _PERS_PRON restriktioner i Sverige?",
         "Vilka restriktioner gäller i Sverige?",
         "Vad har _PERS_PRON för restriktioner i Sverige?",
-        "Hur ser restriktionerna ut nu?"
+        "Hur ser restriktionerna ut nu?",
+        "_PERS_PRON gå på middag med en annan familj på lördag"
       ]
     },
     "bot": {
@@ -6296,7 +6297,8 @@ export const simpleQuestionAnswers : UserTurn[] = [
       "entities": {
         "CORONA": CORONA,
         "IF": IF,
-        "PERS_PRON": PERS_PRON
+        "PERS_PRON": PERS_PRON,
+        "MEAN": MEAN
       },
       "examples": [
         "Vad betyder ARDS?",
@@ -6306,18 +6308,20 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Vad händer vid ARDS?",
         "_IF _PERS_PRON får ARDS, vad händer?",
         "Vad betyder arsd",
-        "ARSD"
+        "ARSD",
+        "Vad _MEAN chocklunga?",
+        "_MEAN chocklunga samma som ARDS?"
       ]
     },
     "bot": {
       "say": {
-        "text": "ARDS är förkortningen för \"Acute Respiratory Distress Syndrome\". På svenska blir det \"akut respiratoriskt stressyndrom\". ARDS innebär att lungorna kollapsar till följd av exempelvis lunginflammation, trauma eller blodförgiftning.",
-        "ssml": "ARDS är förkortningen för Acute Respiratory Distress Syndrome <break time=\"500ms\"/> På svenska blir det <break time=\"500ms\"/> akut <break time=\"500ms\"/> resspiratoriskt <break time=\"500ms\"/> stresssyndrååm. ARDS innebär att lungorna kollapsar till följd av exempelvis lunginflammation, trauma eller blodförgiftning"
+        "text": "ARDS är förkortningen för \"Acute Respiratory Distress Syndrome\". På svenska blir det \"akut respiratoriskt stressyndrom\", också kallat chocklunga. ARDS innebär att lungorna kollapsar till följd av exempelvis lunginflammation, trauma eller blodförgiftning.",
+        "ssml": "ARDS är förkortningen för Acute Respiratory Distress Syndrome || På svenska blir det  akut , resspiratoriskt , stresssyndrååm | också kallat chocklunga || ARDS innebär att lungorna kollapsar till följd av exempelvis lunginflammation, trauma eller blodförgiftning"
       },
       "set": {
         "classifiedIntentName": "question: Vad betyder ARDS?",
         "classifiedUtterance": "_user_text",
-        "botResponse": "ARDS är förkortningen för \"Acute Respiratory Distress Syndrome\". På svenska blir det \"akut respiratoriskt stressyndrom\". ARDS innebär att lungorna kollapsar till följd av exempelvis lunginflammation, trauma eller blodförgiftning."
+        "botResponse": "ARDS är förkortningen för \"Acute Respiratory Distress Syndrome\". På svenska blir det \"akut respiratoriskt stressyndrom\", också kallat chocklunga. ARDS innebär att lungorna kollapsar till följd av exempelvis lunginflammation, trauma eller blodförgiftning."
       },
       "goto": "VERIFY_ANSWER"
     }
@@ -9440,7 +9444,8 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "INFECTED": INFECTED,
         "INT_PRON": INT_PRON,
         "MY_CHILD": MY_CHILD,
-        "CO_SYM": CO_SYM
+        "CO_SYM": CO_SYM,
+        "CAN": CAN
       },
       "examples": [
         "Vad är symtom av covid-19?",
@@ -9469,7 +9474,7 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "Är _CO_SYM _SYMPTOM på _CORONA",
         "_PERS_PRON har _CO_SYM kan _PERS_PRON ha _CORONA",
         "om jag bara har _CO_SYM _CO_SYM",
-        "Vilka är de vanligaste _SYMPTOM",
+        "Vilka är de vanligaste _SYMPTOM på _CORONA?",
         "Försvinner luktsinnet och smaksinnet?",
         "_PERS_PRON har _CO_SYM. Kan _PERS_PRON ha _CORONA",
         "_PERS_PRON har _CO_SYM. Tyder det på _CORONA",
@@ -9490,7 +9495,10 @@ export const simpleQuestionAnswers : UserTurn[] = [
         "vilka _SYMPTOM har _CORONA",
         "Kan _PERS_PRON få _CO_SYM",
         "Kan _PERS_PRON inte lukta när _PERS_PRON har _CORONA",
-        "_INT_PRON får _PERS_PRON för _SYMPTOM"
+        "_INT_PRON får _PERS_PRON för _SYMPTOM",
+        "Blir _PERS_PRON _CO_SYM?",
+        "_CAN _PERS_PRON bli _CO_SYM av _CORONA?",
+        "Vad är _SYMPTOM på _CORONA?"
       ]
     },
     "bot": {

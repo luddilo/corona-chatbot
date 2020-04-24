@@ -21,8 +21,8 @@ const intro = {
     user_hotStarted: false
   },
   say: {
-    text: "Jag är en chatbot som kan svara på allmänna frågor och ge dig senaste nytt om coronaviruset. För personlig sjukvårdsrådgivning måste du ringa 1177.",
-    ssml: "Jag är en chatt-bått som kan svara på allmänna frågor och ge dig senaste nytt om coronaviruset. För personlig sjukvårdsrådgivning måste du ringa 11 77."
+    text: "Jag är en chatbot som kan svara på allmänna frågor om coronaviruset. För personlig sjukvårdsrådgivning måste du ringa 1177.",
+    ssml: "Jag är en chatt-bått som kan svara på allmänna frågor om coronaviruset. För personlig sjukvårdsrådgivning måste du ringa 11 77."
   }
 }
 

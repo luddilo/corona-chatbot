@@ -1,18 +1,18 @@
 import { BotTurn, BridgeTurn } from "narratory"
 
-// Generated at Wednesday, April 22nd 2020, 3:00:04 pm
+// Generated at Friday, April 24th 2020, 3:01:28 pm
 
 export const presentNews : BridgeTurn[] = [
   {
     "say": {
-      "text": "På Folkhälsomyndighetens dagliga pressträff, onsdagen den 22 april, bekräftades att kurvan är fortsatt plan, men att man ser en ökning utanför Stockholm, bland annat i Uppsala och Jönköping. ||Detta tros dock bero på att mer vårdpersonal testas. ||"
+      "text": "På Folkhälsomyndighetens dagliga pressträff, torsdagen den 23 april, meddelades att det har rapporterats ovanligt många fall det senaste dygnet, särskilt i Stockholm.||"
     },
     "cond": {
       "platform": "voximplant"
     },
     "bot": {
       "say": {
-        "text": "Den modell av smittspridningen som presenterades på gårdagens pressträff har dragits tillbaka då den innehöll felaktigheter. ||En ny version förväntas komma på torsdag. ||"
+        "text": "Faran är långt ifrån öfver, och trycket på vården är fortsatt högt. ||För att skydda våra äldre och sköra, måste vi vara noga med att stanna hemma vid minsta symptom, och hålla avstånd när vi går ut.||"
       },
       "bot": {
         "say": {
@@ -59,11 +59,11 @@ export const presentNews : BridgeTurn[] = [
   },
   {
     "say": {
-      "text": "På Folkhälsomyndighetens dagliga pressträff, onsdagen den 22 april, bekräftades att kurvan är fortsatt plan men att man ser en ökning utanför Stockholm, bland annat i Uppsala och Jönköping. Detta kan dock bero på att mer vårdpersonal testas. "
+      "text": "På Folkhälsomyndighetens dagliga pressträff, torsdagen den 23 april, meddelades att det har rapporterats ovanligt många fall det senaste dygnet, särskilt i Stockholm."
     },
     "bot": {
       "say": {
-        "text": "Den modell av smittspridningen som presenterades på gårdagens pressträff har dragits tillbaka då den innehöll felaktigheter. En ny version förväntas komma på torsdag."
+        "text": "Faran är långt ifrån över och trycket på vården är fortsatt högt, så för att skydda våra äldre och sköra måste vi vara noga med att stanna hemma vid minsta symptom och hålla avstånd när vi går ut."
       },
       "bot": {
         "say": {
@@ -112,7 +112,7 @@ export const presentNews : BridgeTurn[] = [
 
 export const textStats : BridgeTurn = {
   "say": {
-    "text": "Globalt är runt 2,5 miljoner människor bekräftat smittade och 178 000 döda."
+    "text": "Globalt är runt 2,6 miljoner människor bekräftat smittade och 180 000 döda."
   },
   "label": "SHARE_STATS_TEXT",
   "bot": {
@@ -133,7 +133,7 @@ export const textStats : BridgeTurn = {
 
 export const voiceStats : BotTurn = {
   "say": {
-    "text": "Globalt är runt två och en halv miljoner människor bekräftat smittade, och 178000 döda.|| I Sverige har vi drygt 16000 bekräftade fall av covid19, och vi är uppe i ettusen niohundratrettiosju rapporterade dödsfall."
+    "text": "Globalt är runt 2,6 miljoner människor bekräftat smittade, och 180000 döda.|| I Sverige har vi knappt 16800 bekräftade fall av covid19, och vi är uppe i tvåtusen tjugoett rapporterade dödsfall."
   },
   "label": "SHARE_STATS_VOICE"
 }

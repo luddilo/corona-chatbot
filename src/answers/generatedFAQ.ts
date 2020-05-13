@@ -1,6 +1,6 @@
 import { UserTurn, Entity } from "narratory"
 
-// Generated at Friday, April 24th 2020, 3:01:31 pm
+// Generated at Wednesday, May 13th 2020, 3:15:28 pm
 
 export const ACTIVITY : Entity = {
   "name": "ACTIVITY",
@@ -2243,13 +2243,12 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": {
-        "text": "Det är möjligt att personer med med nedsatt immunförsvar har ökad risk för att drabbas allvarligare av covid-19. Om du har en sjukdom som generellt innebär ökad risk för allvarlig sjukdom vid luftvägsinfektioner bör du rådgöra med behandlande läkare kring vad du kan göra för att minska risken kopplad till covid-19. Detta gäller även om du är yngre än 70 år",
-        "ssml": "Det är möjligt att personer med med nedsatt immunförsvar har ökad risk för att drabbas allvarligare av covid19. <break time=\"500ms\"/> Om du har en sjukdom som generellt innebär ökad risk för allvarlig sjukdom vid luftvägsinfektioner bör du rådgöra <break time=\"500ms\"/> med behandlande läkare <break time=\"500ms\"/> kring vad du kan göra för att minska risken kopplad till covid19. Detta gäller även om du är yngre än 70 år"
+        "text": "Det är möjligt att personer med med nedsatt immunförsvar har ökad risk för att drabbas allvarligare av covid19. Om du har en sjukdom som generellt innebär ökad risk för allvarlig sjukdom vid luftvägsinfektioner bör du rådgöra med behandlande läkare kring vad du kan göra för att minska risken kopplad till covid-19. Detta gäller även om du är yngre än 70 år."
       },
       "set": {
         "classifiedIntentName": "question: Är jag i riskgrupp om jag har försämrad immunförsvar",
         "classifiedUtterance": "_user_text",
-        "botResponse": "Det är möjligt att personer med med nedsatt immunförsvar har ökad risk för att drabbas allvarligare av covid-19. Om du har en sjukdom som generellt innebär ökad risk för allvarlig sjukdom vid luftvägsinfektioner bör du rådgöra med behandlande läkare kring vad du kan göra för att minska risken kopplad till covid-19. Detta gäller även om du är yngre än 70 år"
+        "botResponse": "Det är möjligt att personer med med nedsatt immunförsvar har ökad risk för att drabbas allvarligare av covid19. Om du har en sjukdom som generellt innebär ökad risk för allvarlig sjukdom vid luftvägsinfektioner bör du rådgöra med behandlande läkare kring vad du kan göra för att minska risken kopplad till covid-19. Detta gäller även om du är yngre än 70 år."
       },
       "goto": "VERIFY_ANSWER"
     }
@@ -4711,13 +4710,12 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": {
-        "text": "Personer över 70 år är den främsta riskgruppen. Personer med underliggande sjukdomar som högt blodtryck, hjärt- kärlsjukdom, lungsjukdom eller diabetes löper större risk att drabbas allvarligt av covid-19. ",
-        "ssml": "Personer över 70 år är den främsta riskgruppen. Personer med underliggande sjukdomar som högt blodtryck, hjärt och kärlsjukdom, lungsjukdom eller diabetes löper också större risk att drabbas allvarligt. "
+        "text": "Personer över 70 år är den främsta riskgruppen. Personer med underliggande sjukdomar som högt blodtryck, hjärt- kärlsjukdom, lungsjukdom, fetma eller diabetes löper också större risk att drabbas allvarligt av covid19. "
       },
       "set": {
         "classifiedIntentName": "question: Finns det några särskilda riskgrupper",
         "classifiedUtterance": "_user_text",
-        "botResponse": "Personer över 70 år är den främsta riskgruppen. Personer med underliggande sjukdomar som högt blodtryck, hjärt- kärlsjukdom, lungsjukdom eller diabetes löper större risk att drabbas allvarligt av covid-19. "
+        "botResponse": "Personer över 70 år är den främsta riskgruppen. Personer med underliggande sjukdomar som högt blodtryck, hjärt- kärlsjukdom, lungsjukdom, fetma eller diabetes löper också större risk att drabbas allvarligt av covid19. "
       },
       "goto": "VERIFY_ANSWER"
     }
@@ -7542,12 +7540,12 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": {
-        "text": "Stanna hemma tills du är helt frisk och i minst två dygn till innan du går till jobbet, åker i kollektivtrafiken eller går och handlar. Om du har äldre släktingar bör du som anhörig och närstående undvika att träffa dem, särskilt om du har varit sjuk. Det är för att skydda dem från virus."
+        "text": "Stanna hemma tills du är helt frisk och i minst två dygn till innan du går till jobbet, åker i kollektivtrafiken eller går och handlar. Du som har haft konstaterad covid19-infektion måste sammanlagt stanna hemma i minst sju dagar efter att du insjuknade. "
       },
       "set": {
         "classifiedIntentName": "question: Hur länge ska jag stanna hemma?",
         "classifiedUtterance": "_user_text",
-        "botResponse": "Stanna hemma tills du är helt frisk och i minst två dygn till innan du går till jobbet, åker i kollektivtrafiken eller går och handlar. Om du har äldre släktingar bör du som anhörig och närstående undvika att träffa dem, särskilt om du har varit sjuk. Det är för att skydda dem från virus."
+        "botResponse": "Stanna hemma tills du är helt frisk och i minst två dygn till innan du går till jobbet, åker i kollektivtrafiken eller går och handlar. Du som har haft konstaterad covid19-infektion måste sammanlagt stanna hemma i minst sju dagar efter att du insjuknade. "
       },
       "goto": "VERIFY_ANSWER"
     }
@@ -9058,12 +9056,12 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": {
-        "text": "De som i första hand testas är personer som är i behov av vård på sjukhus och personal inom sjukvård och äldreomsorg med misstänkt smitta av coronaviruset. Det är viktigt att alla som är sjuka i förkylning eller influensaliknande symptom stannar hemma för att inte riskera att sprida smittan."
+        "text": "Folkhälsomyndigheten har tagit fram en nationell strategi för vilka som prioriteras för provtagning, både när det gäller förekomst av viruset vid en pågående infektion och om en person har antikroppar från tidigare infektion. Samtidigt pågår arbete för att utöka kapaciteten så att fler personer ska kunna testas."
       },
       "set": {
         "classifiedIntentName": "question: Vilka personer bör testas för covid-19",
         "classifiedUtterance": "_user_text",
-        "botResponse": "De som i första hand testas är personer som är i behov av vård på sjukhus och personal inom sjukvård och äldreomsorg med misstänkt smitta av coronaviruset. Det är viktigt att alla som är sjuka i förkylning eller influensaliknande symptom stannar hemma för att inte riskera att sprida smittan."
+        "botResponse": "Folkhälsomyndigheten har tagit fram en nationell strategi för vilka som prioriteras för provtagning, både när det gäller förekomst av viruset vid en pågående infektion och om en person har antikroppar från tidigare infektion. Samtidigt pågår arbete för att utöka kapaciteten så att fler personer ska kunna testas."
       },
       "goto": "VERIFY_ANSWER"
     }
@@ -10579,13 +10577,12 @@ export const simpleQuestionAnswers : UserTurn[] = [
     },
     "bot": {
       "say": {
-        "text": "I dagsläget är det inte känt om allergiker är en riskgrupp för covid-19. Om du behöver hjälp att bedöma dina symptom kan du ringa 1177.",
-        "ssml": "I dagsläget är det inte känt om allergiker är en riskgrupp för covid19. Om du behöver hjälp att bedöma dina symptom kan du ringa 11 77."
+        "text": "Hittills visar inga studier att personer med astma tillhör en riskgrupp för covid19, men eftersom det är oklart i vilken utsträckning denna grupp har studerats går det inte att helt utesluta att de löper en ökad risk."
       },
       "set": {
         "classifiedIntentName": "question: Är man riskgrupp om man har allergi?",
         "classifiedUtterance": "_user_text",
-        "botResponse": "I dagsläget är det inte känt om allergiker är en riskgrupp för covid-19. Om du behöver hjälp att bedöma dina symptom kan du ringa 1177."
+        "botResponse": "Hittills visar inga studier att personer med astma tillhör en riskgrupp för covid19, men eftersom det är oklart i vilken utsträckning denna grupp har studerats går det inte att helt utesluta att de löper en ökad risk."
       },
       "goto": "VERIFY_ANSWER"
     }

@@ -1,6 +1,6 @@
 import { BotTurn, BridgeTurn } from "narratory"
 
-// Generated at Friday, April 24th 2020, 3:01:28 pm
+// Generated at Wednesday, May 13th 2020, 3:15:24 pm
 
 export const presentNews : BridgeTurn[] = [
   {

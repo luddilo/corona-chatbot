@@ -31,7 +31,7 @@
     "@types/node": "^12.12.21",
     "axios": "^0.19.2",
     "google-spreadsheet": "^3.0.11",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "narratory": "^0.11.4"
   },
   "devDependencies": {
